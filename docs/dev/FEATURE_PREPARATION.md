@@ -10,7 +10,7 @@ Accepted baseline: PROJECT, ARCHITECTURE, DECOMPOSITION, SPEC and spec/modern-ru
 
 ## Current control
 
-Continue project preference autodoc/onepass, pass1 for this feature only. FEATURE approval remains active; downstream design-through-TASKS document checkpoints are preapproved after brief acceptance, subject to technical QC. No material-decision delegation is inferred. FEATURE was approved by the user’s “k” in response to the published brief and explicit approval question. The active autodoc stop is after FDOCS-008 before package QC/integration/implementation unless explicitly requested. No new implementation range is activated by opening this campaign. Preserve earlier completed task/phase ranges.
+Continue project preference autodoc/onepass, pass1 for this feature only. First FEATURE approval is complete; downstream design-through-TASKS checkpoints use the retained autodoc preapproval, subject to technical QC. No material-decision delegation is inferred. FEATURE was approved by the user’s “k” in response to the published brief and explicit approval question. The active autodoc stop is after FDOCS-008 before package QC/integration/implementation unless explicitly requested. No new implementation range is activated by opening this campaign. Preserve earlier completed task/phase ranges.
 
 Reporting Standard: concise consequential decisions/results. Minimal and Explicit profiles remain available. Tracking enabled by root AGENTS policy. Required campaign milestone and all nine complete FDOCS issue identities/markers/native associations were verified before repository writes. Existing protected credential storage/ignore rules and manual provenance scaffold are reused unchanged; no transcript was recorded or setup replayed.
 
@@ -33,7 +33,9 @@ Cross-scope decisions: none beyond this one pass. Reconsider predicate/default/s
 | --- | --- |
 | FDOCS-001 | Linux/bash usable Git worktree, clean published main baseline, campaign/global-sequence collision scan, existing instructions/auth/provenance and nine-stage tracking verified. Initialization published/read back; FDOCS-001 issue42 closed/read back. |
 | FDOCS-002 | FEATURE proposal reviewed against current session ghost derivation and shared-view cell/accessible-description rendering; all requested behavior covered. Canonical projection must remain independent of display suppression. Source SHA256 df766608bc3b4bf8f1defcfd9e4453e225ea6352840cf0b6996c876163eb2dbb. Human accepted the presented brief/defaults with “k”; accepted product text removes proposal-only approval narration, preserving the approved behavior. FDOCS-002 completion records exact current source below. |
-| FDOCS-003–009 | Pending ordered downstream assessments under autodoc preapproval. |
+| FDOCS-003–007 | Completed/published with issue closures; per-stage exact source identities and assessments below. |
+| FDOCS-008 | Current completion: unchecked product tasks, adjacent conformance review and HANDOFF; publish/read back and close49 before stop. |
+| FDOCS-009 | Not run; leave unchecked and issue50/milestone11 open at autodoc boundary. |
 
 ## Hosted preparation mapping
 
@@ -53,7 +55,7 @@ Milestone #11 (sdd-docs-002_0adba6e), open/read back.
 
 ## Current reset and pending transitions
 
-No reset. Record/publish/read back FDOCS-002 acceptance, close43 then continue ordered FDOCS-003–008 under autodoc; stop before FDOCS-009. No product code, version, release or main contract changes authorized at this checkpoint.
+No reset. FDOCS-002–007 are published/read back and issues43–48 closed/read back. Publish/read back this FDOCS-008 completion, close/read back49, then stop before FDOCS-009, package integration or implementation. No product code, version, release or main contract changes authorized at this checkpoint.
 
 ## FDOCS-002 completion
 
@@ -112,3 +114,14 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: f98b139a5fad171a0e847c43f4e6391f3f1467782f966927a441bf5c82dbbf56
 
 Publish/read back this coherent completion before closing/readback of issue #48 or dependent work.
+
+## FDOCS-008 completion
+
+Derive unchecked T-024 complete C-05 capability, T-025 verified static distribution/milestone review and T-026 dedicated phase review/incorporation/audit. Adjacent task conformance QC Ready with explicit1-milestone/2-delivery-task rationale and unique IDs/ownership. Source links/current review hashes and unchanged code/main tasks/prior history checks pass. Include HANDOFF/AGENTS and retained autodoc stop: FDOCS-009 not run, no implementation or package QC.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-TASKS.md: d4a61a5d25c95bbcf2e98a6efee722e448f9d29dea5979b76f32a4bc7aa31b08
+- docs/dev/FEATURE-TASKS-REVIEW-REPORT.md: 0870443920dd115bb73226c7a0eb278092c465ae7d9d15f289c88beaa00c5ca9
+- AGENTS.md: 995aa3b6b66e88c11b3ae3ff568f72b08591a5b65bccc73058e1b46f9c21f4be
+
+Publish/read back this coherent completion before closing/readback of issue #49 or dependent work.
