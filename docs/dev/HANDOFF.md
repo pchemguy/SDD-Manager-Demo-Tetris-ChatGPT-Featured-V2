@@ -1,15 +1,17 @@
 # Project handoff
 
-Checkpoint: whole-package QC passed/published, issue50 closed/read back; preparation merge on main pending publication.
+Checkpoint: T-024 complete and verified; task publication/issue51 closure pending.
 
-## Authority and current owners
+## Authority and result
 
-User accepted the published brief/defaults with “k”. Autodoc/onepass preapproves downstream document checkpoints only. Approved scope: Always default and Lower half only selector, bottom occupied projected cell rows1–10 hidden/11–20 shown, straddling visible, immediate view-local nonpersistent selection retained through restart/pause and reset on reload. Canonical landing/hard drop/gameplay are unchanged. Active FEATURE/FEATURE_DECOMPOSITION/FEATURE-SPEC/FEATURE-PLAN and physical map/FEATURE-TASKS describe the intended delta; adjacent scoped QC reports are Ready, not whole-package certification. Main ARCHITECTURE reused with assessment. FEATURE_PREPARATION retains exact decisions/source identities and tracking.
+User authorized whole QC and full T-024–T-026 implementation through main integration/v1.2.0 release. Accepted conditional scope and current FEATURE-SPEC G-01–G-05 remain active. C-05 helper/select/local snapshot state now implement exact occupied-cell midline visibility and accessible suppression, preserving canonical model/host APIs. T-025 distribution and T-026 phase incorporation/review remain next.
 
-## Git and tracking
+## Branch and tracking
 
-Receiving main, preparation source design-docs/002_0adba6e-conditional-ghost-visibility at4105c915e9aa766d41ccd4da8ba9e46a0057aee8; original full main baseline/creation parent0adba6e9898e9c1bb2389cca3ad23bd8fadfacb9. Intended future implementation branch feature/002_0adba6e-conditional-ghost-visibility may be created only after verified published preparation integration. Milestone11 and issues42–50 identify the9 preparation stages. FDOCS-001–007 published/closed; FDOCS-008 source/QC/control/checkoff/HANDOFF commit must publish/read back then close/read back49. FDOCS-009/issue50 and milestone11 remain open. No product-phase objects projected; all T-024–T-026 remain unchecked.
+Current feature/002_0adba6e-conditional-ghost-visibility, created from published main preparation merge1bbfae895b4fd889d59dbe00b3263ca0e01d4898. Original campaign baseline0adba6e9898e9c1bb2389cca3ad23bd8fadfacb9; return target main at1bbfae8. Preparation issues42–50 and milestone11 closed/read back. Phase3 label, milestones12/13 and issues51–53 projected/verified before task work.
 
-## Stop and next eligible action
+## Evidence and next action
 
-User explicitly authorized QC and full implementation. Publish/read back FDOCS-009/report/control/HANDOFF, close50; explicitly integrate/verify/publish preparation to default main, close11, then create feature branch and project Phase3 before T-024–T-026. Complete verified main integration and v1.2.0 release without another routine approval. No code, tests, dependency install, app version, release or canonical main contract changes occurred in this preparation pass. Prior v1.1.0 history/evidence and closed campaign001 remain unchanged. Native headed focus remains unverified and Electron outside scope.
+RED29 missing-helper model cases and2 missing-selector browser cases; GREEN142 units/type/boundaries/build,52 source/48 built Chromium/Firefox cases passed. Independent review findings for conditional rotate/hold/replacement and intermediate native selection/active-coordinate coverage resolved. Inspected320/1000px focus and hidden/restored screenshots. Diagnosed local Firefox pointer protocol/scroll failure under paused virtual time: capture received no pointer/mouse events; onscreen1000×1200 setup passed3 repeated cases. No production workaround; native/recovery limits retained.
+
+Publish/read back T-024 and close/read back51, then T-025 fresh distribution/version/docs/release inputs and independent milestone review/report. Complete T-026 before explicit verified main integration and exact-body1.2.0 commit/tag/provider release. No pending human checkpoint. Native headed OS-window focus unverified; Firefox recovery process-local; Electron outside scope.

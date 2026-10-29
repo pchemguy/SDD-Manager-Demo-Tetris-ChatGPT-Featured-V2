@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Owned ghost view fixture</title></head><body><main id="a"></main><main id="b"></main><script type="module">
+import {createGameView} from '/src/ui/game-view.ts';import {createSession} from '/src/application/session.ts';import '/src/ui/styles.css';
+const seed=createSession(()=>0.999999);seed.dispatch('start');const views=[createGameView(document.querySelector('#a'),()=>{}),createGameView(document.querySelector('#b'),()=>{})];
+const base=seed.getSnapshot();let snapshot=structuredClone(base);
+function render(kind){snapshot=structuredClone(base);snapshot.ghost={type:'I',rotation:0,x:3,y:kind==='lower'?9:8};if(kind==='paused')snapshot.status='paused';if(kind==='null'){snapshot.active=null;snapshot.ghost=null;snapshot.status='game-over'}views.forEach(v=>v.render(snapshot))}
+render('upper');globalThis.ghostFixture={render,snapshot:()=>structuredClone(snapshot),destroy:()=>views.forEach(v=>v.destroy())};
+</script></body></html>

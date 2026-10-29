@@ -60,3 +60,4 @@ footer {margin-top:22px;text-align:center;font-size:9px;letter-spacing:2px;color
 .cell[data-ghost="true"]{background:repeating-linear-gradient(135deg,transparent 0,transparent 4px,#78905b33 4px,#78905b33 6px);border:2px dashed #b9db88}.projection{font-size:11px;color:#afc18e;text-align:center;margin:6px 0 12px}
 
 .settings{display:flex;align-items:flex-start;gap:8px;margin:14px 0;color:#b8c7dd;font-size:12px;line-height:1.5}.settings input{flex:none;margin:3px 0;accent-color:#bcfa60}@media(max-width:540px){.settings{grid-column:1/-1}}
+.ghost-setting{flex-direction:column}.ghost-setting select{width:100%;min-width:0;padding:8px;color:#e8edfa;background:#151e2e;border:1px solid #687b9c;border-radius:5px;font:inherit}.ghost-setting select:focus-visible{outline:2px solid #bcfa60;outline-offset:3px}
