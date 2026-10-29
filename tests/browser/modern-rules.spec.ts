@@ -29,3 +29,8 @@ test('@modern hold keys and button exchange once per lock without consuming swap
  for(let i=0;i<18;i++)await page.keyboard.press('ArrowDown');await page.clock.runFor(1100);await expect(page.getByRole('button',{name:'Hold piece',exact:true})).toBeEnabled();
  await page.getByRole('button',{name:'Hold piece',exact:true}).click();await expect(page.getByTestId('held-type')).toHaveText('L');await expect(page.getByTestId('next-type')).toHaveText('O');await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind','I');await expect(page.getByRole('img',{name:'Tetris playfield'})).toBeFocused();
 });
+test('@modern ghost outlines landing cells and yields to the grounded active piece',async({page},info)=>{
+ await expect(page.locator('[data-ghost="true"]')).toHaveCount(4);await expect(page.locator('[data-ghost="true"]').first()).toHaveAttribute('data-y','19');await expect(page.getByTestId('ghost-description')).toContainText('I');
+ for(const width of [320,1000]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath(`planning-${width}.png`),fullPage:true})}
+ await page.keyboard.press('c');await expect(page.getByTestId('ghost-description')).toContainText('J');for(let i=0;i<18;i++)await page.keyboard.press('ArrowDown');await expect(page.locator('[data-ghost="true"]')).toHaveCount(0);await expect(page.locator('[data-active="true"]')).toHaveCount(4);await expect(page.locator('.cell[data-filled="true"][data-active="false"]')).toHaveCount(0);
+});

@@ -35,7 +35,7 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
             Verification: unit/type/boundary/build regression and isolated Chromium/Firefox source/built checks. Include separate whole-Milestone-2.1 code review, required repairs, working demonstration, report with TODO None or eligible details, and HANDOFF in this completion. Report: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/2.1.md. Publish/close task, then close/read back milestone before 2.2. References: F-01/F-04/F-06/F-07.
             Completion evidence: RED: both browser rotation cases failed before complete controls. GREEN: 72 units/typecheck/boundaries/build; full28 source/26 built cases plus4 added floor-kick cases on each target passed across managed Chromium/Firefox. Independent milestone review M21-R1 actual-kick coverage gap resolved; inspected320/1000px screenshots. Report/HANDOFF and milestone checkoff included; no TODO.
 
-    - [ ] Milestone 2.2 — Piece flow and planning aids
+    - [x] Milestone 2.2 — Piece flow and planning aids
         - [x] T-017 — Integrate seven-bag generation and next-only preview
             Scope: new src/core/bag.ts, session bag/next state, shared next miniature, focused bag/session/browser tests. Depends on: T-016 and verified 2.1 closure.
             Interfaces: shuffleBag follows F-02's six-draw Fisher–Yates; bag cursor lives in transaction-cloned session state. Snapshot next is null in ready and exactly one available upcoming Kind after start/consumption. View consumes this value, never draws independently.
@@ -50,11 +50,13 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
             Verification: RED hold/consumption/error fixtures first; GREEN full unit/type/boundary/build and both-browser hold cases. Controls guidance describes the once-per-lock rule. References: F-02/F-03/F-04/F-06/F-07.
             Completion evidence: RED: four model hold cases and both browser hold cases failed before capability. GREEN:100 unit tests/typecheck/boundaries/build;12 modern-rule and14 hold/lifecycle/remount browser cases passed across Chromium/Firefox. Covered once-per-lock exchange, queue-preserving swap, fresh clocks, pause/restart, repeated input, refill rollback and literal reachable blocked empty/occupied spawn fixtures without debug injection. Shared miniatures reuse geometry.
 
-        - [ ] T-019 — Render the shared ghost and verify planning aids
+        - [x] T-019 — Render the shared ghost and verify planning aids
             Scope: session ghost snapshot derivation, shared board/panels/styles, unit/browser rendering and lifecycle tests. Depends on: T-017, T-018.
             Interfaces: Snapshot ghost is a detached landing piece or null; use T-014 landing rather than a view collision model. Ready/game-over ghost null; paused frozen; active cells dominate overlap.
             Acceptance: projected cells match canonical landing after both-direction kicks, moves and hold; no settled mutation; snapshot ghost cannot mutate live state. Distinguish active/ghost/settled without color alone. All panels/controls fit 320px with visible focus and labeled type miniatures. Repeated mount/focus/pause behavior remains sound with new controls.
             Verification: unit/type/boundary/build, both-browser source/built aid/recovery tests and inspected narrow/ordinary screenshots. Include separate whole-Milestone-2.2 code review, repairs, working demonstration, report/TODOs and HANDOFF in this completion. Report: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/2.2.md. Publish/close task then close/read back milestone. References: F-01–F-04/F-06/F-07.
+            Completion evidence: RED: model/browser ghost cases failed before projection. GREEN:104 units/typecheck/boundaries/build,38 source/36 built cases passed. Independent review M22-R1 ghost CCW/support coverage resolved; literal kicked/support/escape fixtures added. Inspected running320/1000px screenshots; fixed long rotation text with full aria names retained, then four focused built control/ghost cases passed. Report/HANDOFF and milestone checkoff included; no TODO.
+
     - [ ] Milestone 2.3 — Hard drop and browser distribution
         - [ ] T-020 — Implement hard-drop scoring and session options
             Scope: session hardDrop and copied SessionOptions boundary; tests/unit/session.test.ts and module API docs. Depends on: T-019 and verified 2.2 closure.

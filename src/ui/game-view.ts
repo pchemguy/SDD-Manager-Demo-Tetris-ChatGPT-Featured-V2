@@ -7,17 +7,18 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
  const doc = mount.ownerDocument;
  const root = doc.createElement('section');
  const legendId = `game-controls-${++sequence}`;
+ const ghostId=legendId+'-ghost';
  root.className = 'game';
  root.innerHTML = `
   <header><p class="eyebrow">THE ORIGINAL CHALLENGE</p><h1>CLASSIC<span>TETRIS</span></h1><p>Find your rhythm. Clear a little space.</p></header>
   <div class="game-layout">
-   <div class="board-wrap"><div class="board" role="img" aria-label="Tetris playfield" aria-describedby="${legendId}" tabindex="0"></div><p class="status" role="status" aria-live="polite" data-testid="status">Ready</p></div>
+   <div class="board-wrap"><div class="board" role="img" aria-label="Tetris playfield" aria-describedby="${legendId} ${ghostId}" tabindex="0"></div><p class="status" role="status" aria-live="polite" data-testid="status">Ready</p><p class="projection" id="${ghostId}" data-testid="ghost-description">No active piece</p></div>
    <aside aria-label="Game information">
     <div class="stat"><span>SCORE</span><strong data-testid="score">0</strong></div>
     <div class="stat"><span>LEVEL</span><strong data-testid="level">1</strong></div>
     <div class="stat"><span>LINES</span><strong data-testid="lines">0</strong></div>
     <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
-    <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate">Rotate clockwise</button><button class="secondary" data-play data-action="rotateCCW">Rotate counterclockwise</button><button class="secondary" data-play data-action="hold">Hold piece</button></div>
+    <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button></div>
     <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X / Space</dt><dd>Rotate clockwise</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
   </div><footer>10 × 20 · SEVEN SHAPES · ONE MORE TRY</footer>`;
@@ -57,9 +58,12 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   root.querySelector('[data-testid="held-type"]')!.textContent=snapshot.held??'None';renderHeld(snapshot.held);
   root.querySelector('[data-testid="hold-status"]')!.textContent=snapshot.canHold?'Available':'Unavailable';
   const activeCells = new Map(snapshot.active ? cells(snapshot.active).map(([x,y]) => [y * 10 + x, snapshot.active!.type]) : []);
+  const ghostCells=new Set(snapshot.ghost?cells(snapshot.ghost).map(([x,y])=>y*10+x):[]);
+  root.querySelector('[data-testid="ghost-description"]')!.textContent=snapshot.ghost?`Ghost ${snapshot.ghost.type} lands on row ${Math.max(...cells(snapshot.ghost).map(([,y])=>y))+1}`:'No active piece';
   tiles.forEach((tile, i) => {
    const active = activeCells.get(i);
    const kind = active ?? snapshot.board[Math.floor(i / 10)][i % 10];
+   tile.dataset.ghost=String(ghostCells.has(i)&&!kind);
    tile.dataset.kind = kind ?? ''; tile.dataset.filled = String(!!kind); tile.dataset.active = String(!!active);
   });
   for (const key of ['score','level','lines'] as const) root.querySelector(`[data-testid="${key}"]`)!.textContent = String(snapshot[key]);

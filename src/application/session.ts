@@ -1,13 +1,13 @@
 /** Deterministic session transactions. Only explicit durations and random inputs enter. */
 import type { Board, Piece, Kind } from '../core/types.js';
 import { spawn } from '../core/pieces.js';
-import { createBoard, canPlace, move, lock } from '../core/board.js';
+import { createBoard, canPlace, move, lock, landing } from '../core/board.js';
 import {shuffleBag} from '../core/bag.js';
 import {tryRotate} from '../core/kicks.js';
 import { progress, gravityInterval } from '../core/progression.js';
 export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'pause'|'resume';
-export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean}
-interface State extends Snapshot { remainder:number; lockRemaining:number|null;bag:Kind[] }
+export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null}
+interface State extends Omit<Snapshot,'ghost'> { remainder:number; lockRemaining:number|null;bag:Kind[] }
 const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','hold','pause','resume'];
 const copy=(s:State):State=>({...s,bag:s.bag.slice(),board:s.board.map(r=>r.slice()),active:s.active?{...s.active}:null});
 /** Construct ready state; no draw occurs until start. Listener failures are isolated. */
@@ -15,7 +15,7 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
  const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false});
  let state=initial(),busy=false;
  const listeners=new Set<(s:Snapshot)=>void>();
- const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return snapshot};
+ const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return {...snapshot,ghost:snapshot.active?landing(snapshot.board,snapshot.active):null}};
  /** Consume candidate-owned sequence and keep exactly one public look-ahead. */
  const draw=(s:State):Piece=>{
   if(s.bag.length===0)s.bag=shuffleBag(random);
