@@ -40,11 +40,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: deterministic `npm run test:unit` session scenarios using exact durations and controlled random callbacks; `npm run typecheck` and `npm run check:boundaries`. Tests must distinguish ground contact from the failed downward attempt and make no browser-timing claim. References: C-04 and the collaborating C-01–C-03 contracts.
             Completion evidence: RED: ten session interaction tests failed against the interface placeholder; GREEN: all 29 unit tests passed, then typecheck/boundaries. Verified exact time/drop remainder, ground contact versus failed-attempt lock, residual discard, pause/restart, repeated draws, blocked spawn/statistics, transaction rollback on bad RNG/inputs, detached snapshots and observer/reentrancy/error isolation.
 
-        - [ ] T-005 — Integrate a playable browser loop
+        - [x] T-005 — Integrate a playable browser loop
             Scope: src/ui/game-view.ts/styles.css, src/platform/browser/main.ts, index.html and basic browser tests. Render the real session and provide start, board keyboard movement/rotation/soft drop and frame-driven play with score/lines/level/game-over status. Keep host and view responsibilities separate.
             Depends on: T-001, T-004.
             Acceptance: a real player can start and play the classic loop in the built app; the UI renders actual state rather than a parallel model. Active cells remain separate until lock. Minimal native controls and focusable board use the semantic session boundary. Apply the R-05 frame delta policy. Later interaction refinements do not defer basic play, scoring or game over.
             Verification: unit regression, build and basic assembled-app `npm run test:browser` on both managed targets; actual keyboard actions and board screenshot inspection. Exercise valid frame/session creation and cleanup through the runner. References: C-05/C-06; R-01–R-05 and minimal R-07/R-09/R-10/R-12.
+            Completion evidence: RED: all four actual-app browser cases failed because the smoke scaffold lacked the Start control. GREEN: 29 unit tests, typecheck, boundaries and build passed; four built-app checks passed across Chromium/Firefox, exercising real keyboard play, soft-drop score, blocked-spawn game over and actual frame gravity. Inspected full-page board/status screenshot; no environment-fixture substitution. Added required Vite CSS declaration.
+
         - [ ] T-006 — Review test and report the playable loop milestone
             Scope: whole Milestone 1.1 capability and dependencies, required blocker repairs, docs/dev/reports/phases/1/1.1.md and HANDOFF.
             Depends on: T-001 through T-005 completed, published and issues closed.
