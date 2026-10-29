@@ -69,3 +69,12 @@ Source identities (SHA-256):
 - docs/dev/FEATURE.md: 22be8e8d6c8774d6563ccc0a59a5d0216f69948f63039fd2c46af28570c27073
 
 Publish/read back this coherent completion before closing/readback of issue #24 or dependent work.
+
+## FDOCS-003 completion
+
+Autodoc-scoped acceptance: retain the verified four-block architecture and extend pure landing/kick/bag rules plus session-owned piece-flow/timing/options. Reviewed cohesion, dependency direction, transaction/error ownership, test seams and static deployment against accepted FEATURE/main architecture. No unresolved architectural choice.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE_ARCHITECTURE.md: 1ea3014d92c234413e28a85c6605a1e89e9c09123369912ebdf7d51d78c49662
+
+Publish/read back this coherent completion before closing/readback of issue #25 or dependent work.
