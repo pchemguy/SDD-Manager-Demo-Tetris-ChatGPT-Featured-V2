@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: Phase 1 entry; T-001 in progress.
+Checkpoint: Milestone 1.1 playable classic loop complete; T-006 publication/closure pending.
 
-## Scope and authority
+## Scope and evidence
 
-User authorized QC and full implementation of T-001 through T-013, phase integration and the requested browser release. Preparation QC passed and explicit main merge 6775927c52a8ef5b04c9cbd732f25b97a81b18f8 was published/read back. The preparation milestone and nine issues are closed.
+User authorized all T-001 through T-013, complete phase integration and the requested browser release. [TASKS](TASKS.md) remains the executable owner. [Milestone 1.1 report](reports/phases/1/1.1.md) records code review, 32 passing unit tests, type/boundary/build checks and four passing built-app browser checks. Complete controls/usability and distribution remain pending; no whole-phase or release claim.
 
-## Branches and sources
+## Branches and tracking
 
-Working branch: phase/1-classic-browser-game. Creation parent/integration target: main. Branch-off: 6775927c52a8ef5b04c9cbd732f25b97a81b18f8. Product owner: [TASKS](TASKS.md), with [SPEC](SPEC.md), [PLAN](PLAN.md), [layout](layout.md) and preparation/review evidence adjacent.
+Working branch: phase/1-classic-browser-game. Creation parent/integration target: main. Branch-off: 6775927c52a8ef5b04c9cbd732f25b97a81b18f8. Phase projection verified milestones #2–#5, task issues #10–#22 and the phase label. T-001 through T-005 publication and issue closures verified. Publish/read back T-006, close issue #15, then close/read back milestone #2 before T-007.
 
-## Tracking and next action
+## Next action and limits
 
-Phase label sdd-phase-1-Classic-browser-game, native milestones #2 through #5 and all 13 task issues #10 through #22 are verified with exact briefs, phase labels and milestone associations. The initial projection utility deadline was reconciled by exact readback and creation of only missing objects. No task is complete yet. Execute one task at a time, test/document/commit its result with its checkoff, push/read back and close the issue before advancing. Full phase integration/release is the stopping boundary. Browser/runtime evidence is still pending; root policies govern isolation and recovery.
+Continue T-007 through T-013 within the existing full-implementation grant. Milestone reports/HANDOFF belong to T-009/T-012/T-013. Preserve the failed-downward locking scope and excluded modern/Electron features. Chromium shell and managed Firefox work with documented official download recovery and opt-in local Firefox content-sandbox workaround. Native headed focus remains unverified. Stop after complete verified phase integration and requested release, or a concrete unresolved blocker.

@@ -11,7 +11,7 @@ Each task includes meaningful tests and module/user documentation for its own ch
 ## Phase 1 — Classic browser game
 
 - [ ] Phase 1 — Classic browser game
-    - [ ] Milestone 1.1 — Playable classic loop
+    - [x] Milestone 1.1 — Playable classic loop
         - [x] T-001 — Establish reproducible build and isolated verification tooling
             Scope: package/lockfile, compiler configurations, Vite/Playwright configuration, scripts/browser-env.mjs, boundary-check entry, CI skeleton, minimal index.html/browser bootstrap for an explicitly nonplayable toolchain smoke build, and owned ignore rules. T-005 supplies the actual game composition. Use version 1.0.0 as the planned release metadata. Pin compatible tool/browser versions from official distributions. Establish planned command interfaces; packaging entries may clearly fail until T-010 rather than produce empty artifacts.
             Depends on: verified preparation integration into main and eligible Phase 1 tracking; no product task prerequisite.
@@ -47,11 +47,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: unit regression, build and basic assembled-app `npm run test:browser` on both managed targets; actual keyboard actions and board screenshot inspection. Exercise valid frame/session creation and cleanup through the runner. References: C-05/C-06; R-01–R-05 and minimal R-07/R-09/R-10/R-12.
             Completion evidence: RED: all four actual-app browser cases failed because the smoke scaffold lacked the Start control. GREEN: 29 unit tests, typecheck, boundaries and build passed; four built-app checks passed across Chromium/Firefox, exercising real keyboard play, soft-drop score, blocked-spawn game over and actual frame gravity. Inspected full-page board/status screenshot; no environment-fixture substitution. Added required Vite CSS declaration.
 
-        - [ ] T-006 — Review test and report the playable loop milestone
+        - [x] T-006 — Review test and report the playable loop milestone
             Scope: whole Milestone 1.1 capability and dependencies, required blocker repairs, docs/dev/reports/phases/1/1.1.md and HANDOFF.
             Depends on: T-001 through T-005 completed, published and issues closed.
             Acceptance: perform code review independently of running tests; assess milestone exits and early gameplay demonstration. Confirm all core-loop contracts, ownership and tests; repair bugs/SPEC violations before completion. Record actual browser/tool versions and evidence limits, including environment versus application coverage. Report TODOs with None when empty and retain options/owner for any eligible non-critical deferral.
             Verification: typecheck/boundaries, unit regression, build, basic actual browser play and visual evidence. Commit review/report/HANDOFF and initial T-006 completion together; publish/read back, close its issue and only then close/read back Milestone 1.1. References: PLAN 1.1, R-01–R-05/R-08/R-09/R-10/R-12.
+            Completion evidence: Independent read-only code review: no critical/important finding; minor stale documentation M1 corrected in DEVELOPMENT and AGENTS. Added composed clear/scoring, grounded-escape and wall-rotation checks; all 32 unit tests, typecheck/boundaries/build and four actual built-app browser checks passed. Milestone report and HANDOFF included; native headed focus remains unverified. No deferred TODO.
+
     - [ ] Milestone 1.2 — Usable session controls
         - [ ] T-007 — Complete browser input focus and time lifecycle
             Scope: src/platform/browser/main.ts and focused host integration tests; preserve the playable loop.
