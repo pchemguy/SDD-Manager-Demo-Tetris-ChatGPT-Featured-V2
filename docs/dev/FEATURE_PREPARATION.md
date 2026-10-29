@@ -82,3 +82,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE_DECOMPOSITION.md: f90feffc9a91a5917fdaa6fab7082ed4744bfbc1e2cda1d7bb79af0a9bf69b9b
 
 Publish/read back this coherent completion before closing/readback of issue #45 or dependent work.
+
+## FDOCS-005 completion
+
+G-01–G-05 specify occupied-cell midline predicate, dynamic mode/lifetime, common cell/accessibility suppression, native focus and immutable canonical gameplay boundaries plus static-delivery acceptance. Scoped SPEC/design QC report records exact source identities and Ready; approved brief covered, no unresolved material choice or conformance finding. No tests or implementation claimed.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-SPEC.md: f146ce63d65c0e1e7e921689917eff1e3f8dd328bf18c8dacb131c87d0f26cf5
+- docs/dev/FEATURE-SPEC-REVIEW-REPORT.md: 49679dd7783cd1821902c85defde0a79265f0bfa6051dd9b428bebe6b679c719
+
+Publish/read back this coherent completion before closing/readback of issue #46 or dependent work.
