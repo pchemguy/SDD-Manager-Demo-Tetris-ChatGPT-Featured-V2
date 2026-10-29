@@ -33,11 +33,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: table-driven `npm run test:unit` progression cases at 0/1/2/3/4 rows, 9-to-10 and multi-threshold totals, first/high levels and soft-drop addition; typecheck/boundary checks. References: C-03; R-04/R-05.
             Completion evidence: RED: seven progression scenarios failed against placeholders while existing board cases passed. GREEN: all 19 unit tests passed, followed by typecheck/boundaries. Literal awards, pre-clear multiplier, line threshold ordering, additive soft-drop score, input preservation and exact gravity floor are covered.
 
-        - [ ] T-004 — Implement deterministic session orchestration
+        - [x] T-004 — Implement deterministic session orchestration
             Scope: src/application/session.ts and session tests/fixtures. Compose rule modules with explicit randomness, lifecycle, elapsed time, snapshots and subscriptions.
             Depends on: T-002, T-003.
             Acceptance: R-02/R-03/R-05/R-06/R-08 model contracts hold. Cover independent piece draws and endpoints, blocked spawn after compaction, exact/sub-interval gravity, grounded escape and failed-attempt lock, manual-drop remainder, pause/resume/restart, residual-time discard, immutable snapshots, notification count, idempotent unsubscribe, reentrancy and throwing listener/random error containment. Bad integration inputs leave state unchanged.
             Verification: deterministic `npm run test:unit` session scenarios using exact durations and controlled random callbacks; `npm run typecheck` and `npm run check:boundaries`. Tests must distinguish ground contact from the failed downward attempt and make no browser-timing claim. References: C-04 and the collaborating C-01–C-03 contracts.
+            Completion evidence: RED: ten session interaction tests failed against the interface placeholder; GREEN: all 29 unit tests passed, then typecheck/boundaries. Verified exact time/drop remainder, ground contact versus failed-attempt lock, residual discard, pause/restart, repeated draws, blocked spawn/statistics, transaction rollback on bad RNG/inputs, detached snapshots and observer/reentrancy/error isolation.
+
         - [ ] T-005 — Integrate a playable browser loop
             Scope: src/ui/game-view.ts/styles.css, src/platform/browser/main.ts, index.html and basic browser tests. Render the real session and provide start, board keyboard movement/rotation/soft drop and frame-driven play with score/lines/level/game-over status. Keep host and view responsibilities separate.
             Depends on: T-001, T-004.
