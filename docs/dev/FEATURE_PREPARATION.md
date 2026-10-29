@@ -31,8 +31,8 @@ Cross-scope decisions: none beyond this one pass. Reconsider predicate/default/s
 
 | Stage | Assessment and state |
 | --- | --- |
-| FDOCS-001 | Linux/bash usable Git worktree, clean published main baseline, campaign/global-sequence collision scan, existing instructions/auth/provenance and nine-stage tracking verified. This initial checked entry/control/HANDOFF commit is pending publication/issue closure. |
-| FDOCS-002 | FEATURE proposal next; no approval claimed. |
+| FDOCS-001 | Linux/bash usable Git worktree, clean published main baseline, campaign/global-sequence collision scan, existing instructions/auth/provenance and nine-stage tracking verified. Initialization published/read back; FDOCS-001 issue42 closed/read back. |
+| FDOCS-002 | FEATURE proposal reviewed against current session ghost derivation and shared-view cell/accessible-description rendering; all requested behavior covered. Canonical projection must remain independent of display suppression. Source SHA256 df766608bc3b4bf8f1defcfd9e4453e225ea6352840cf0b6996c876163eb2dbb. Human acceptance pending; FDOCS-002 remains unchecked. |
 | FDOCS-003–009 | Pending brief acceptance and ordered assessments. |
 
 ## Hosted preparation mapping
@@ -53,4 +53,4 @@ Milestone #11 (sdd-docs-002_0adba6e), open/read back.
 
 ## Current reset and pending transitions
 
-No reset. Publish/read back FDOCS-001, close/read back its issue, then publish FEATURE proposal with assessed main/code context and pending decisions. Stop for FEATURE acceptance; FDOCS-002 stays unchecked until actual approval. No product code, version, release or main contract changes authorized at this checkpoint.
+No reset. FEATURE proposal publication/readback is the current operation. Stop for FEATURE acceptance; FDOCS-002 stays unchecked until actual approval. No product code, version, release or main contract changes authorized at this checkpoint.
