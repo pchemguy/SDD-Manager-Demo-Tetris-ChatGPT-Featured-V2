@@ -2,7 +2,7 @@
 
 Use Node.js 24+, npm and Python 3.11+ for packaging. The browser deployment requires none of these tools at player runtime. Dependencies are pinned in package-lock.json.
 
-Validated tooling entry points: `npm ci`, `npm run typecheck`, `npm run check:boundaries`, `npm run build`, `npm run browsers:install`, and `npm run test:environment`. The playable browser loop is implemented. `npm run test:unit` checks deterministic rules/session behavior. `SDD_FIREFOX_RECOVERY=1 TEST_TARGET=built npm run test:browser` checks the built application on this diagnosed Linux host; use the ordinary command without the recovery variable on unrestricted hosts. Complete controls and deployment packaging follow their task boundaries.
+Validated tooling entry points: `npm ci`, `npm run typecheck`, `npm run check:boundaries`, `npm run build`, `npm run browsers:install`, and `npm run test:environment`. The playable browser loop is implemented. `npm run test:unit` checks deterministic rules/session behavior. `SDD_FIREFOX_RECOVERY=1 TEST_TARGET=built npm run test:browser` checks the built application on this diagnosed Linux host; use the ordinary command without the recovery variable on unrestricted hosts. Complete controls are implemented; deployment packaging follows its task boundary. Browser acceptance now fails on runtime/console errors and distinguishes source-only remount harnesses from built assets.
 
 ## Browser isolation and observed recovery
 

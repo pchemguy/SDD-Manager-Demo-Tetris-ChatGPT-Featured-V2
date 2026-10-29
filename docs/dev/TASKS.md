@@ -54,7 +54,7 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: typecheck/boundaries, unit regression, build, basic actual browser play and visual evidence. Commit review/report/HANDOFF and initial T-006 completion together; publish/read back, close its issue and only then close/read back Milestone 1.1. References: PLAN 1.1, R-01–R-05/R-08/R-09/R-10/R-12.
             Completion evidence: Independent read-only code review: no critical/important finding; minor stale documentation M1 corrected in DEVELOPMENT and AGENTS. Added composed clear/scoring, grounded-escape and wall-rotation checks; all 32 unit tests, typecheck/boundaries/build and four actual built-app browser checks passed. Milestone report and HANDOFF included; native headed focus remains unverified. No deferred TODO.
 
-    - [ ] Milestone 1.2 — Usable session controls
+    - [x] Milestone 1.2 — Usable session controls
         - [x] T-007 — Complete browser input focus and time lifecycle
             Scope: src/platform/browser/main.ts and focused host integration tests; preserve the playable loop.
             Depends on: T-006 and verified Milestone 1.1 closure.
@@ -69,11 +69,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: focused browser assertions and screenshots at narrow/ordinary widths; keyboard traversal/button activation and unit regression. Inspect visible rendering rather than treating text presence as visual proof. References: C-05; R-07/R-09/R-12.
             Completion evidence: RED: native button and narrow-view checks failed before complete UI existed. Traced a real Pause click bug to focusout microtasks before internal focusin; using relatedTarget preserves inside-mount focus without an unintended pause/resume. GREEN: 32 unit tests and all 14 built-app Chromium/Firefox checks passed with typecheck/boundaries/build. Inspected narrow screenshot; 320px has no horizontal overflow. Native buttons, focus return, restrained live status and visible legend are covered.
 
-        - [ ] T-009 — Verify integrated session recovery and usability
+        - [x] T-009 — Verify integrated session recovery and usability
             Scope: cross-view/host browser tests, relevant repairs/documentation, docs/dev/reports/phases/1/1.2.md and HANDOFF. This is the final delivery task with folded milestone review obligations.
             Depends on: T-007, T-008.
             Acceptance: pause preserves active state/remainder; resume has no catch-up; restart and reload reset; hidden/blurred sessions remain paused on return; native buttons do not rotate or double-dispatch. Repeated context/page and mount lifecycle leaves no duplicate event/frame work. Review the complete milestone code separately from tests; repair blockers and assess the usable controls demonstration.
             Verification: full unit suite and both-target control/recovery/browser tests, build/boundary checks, screenshot inspection. Include actual native versus modeled evidence limits, milestone report/TODOs and HANDOFF with T-009 completion; publish/read back before issue and Milestone 1.2 closure. References: PLAN 1.2; R-05–R-10/R-12.
+            Completion evidence: Milestone review I1 reproduced RED and resolved: ineligible Start no longer discards frame time. I2 render-time lifecycle reentry reproduced; coalesced owned macrotask auto-pause and timer cleanup resolve Firefox logs. Runtime guard includes page closure. 32 unit, 22 source and 20 built-app browser checks passed, with typecheck/boundaries/build. Remount/reload recovery and folded code-review/report/HANDOFF completed; no TODO; native headed focus unverified.
+
     - [ ] Milestone 1.3 — Verified browser distribution
         - [ ] T-010 — Build and inspect the static deployment package
             Scope: scripts/package_browser.py, scripts/verify_package.py, build/package entry points, truthful initial docs/INSTALL.md and docs/CONTROLS.md required by the archive, and package-check fixtures; generated artifacts remain ignored.
