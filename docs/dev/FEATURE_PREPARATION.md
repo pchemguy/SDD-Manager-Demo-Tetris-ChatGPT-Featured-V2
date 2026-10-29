@@ -8,7 +8,7 @@ Original request: open a feature campaign to implement hold, next-piece preview,
 
 ## Current control
 
-Autodoc/onepass is continued from the user's project preference. Current pass: one, covering exactly the requested modern rules. FEATURE approval remains active; downstream design-through-task checkpoints are preapproved under autodoc, subject to technical QC. No material-decision delegation is inferred from that mode. Stop at FDOCS-008 before package QC/integration/implementation unless subsequently requested. A narrower present stop is the pending first FEATURE approval. Reporting: Standard (brief consequential decisions/results); Minimal and Explicit remain available. No future passes are inferred; prior completed task ranges and release remain preserved.
+Autodoc/onepass is continued from the user's project preference. Current pass: one, covering exactly the requested modern rules. FEATURE approval remains active; downstream design-through-task checkpoints are preapproved under autodoc, subject to technical QC. No material-decision delegation is inferred from that mode. Stop at FDOCS-008 before package QC/integration/implementation unless subsequently requested. The user approved the amended FEATURE after the single-next-piece change. The first brief checkpoint is satisfied; continue through FDOCS-008. Reporting: Standard (brief consequential decisions/results); Minimal and Explicit remain available. No future passes are inferred; prior completed task ranges and release remain preserved.
 
 Tracking is policy-selected by root AGENTS.md. Campaign milestone and all nine qualified FDOCS issues were created/reconciled and read back with exact complete template briefs, machine markers and native associations before any repository write. Implementation phase projection is not yet selected/created. The per-stage issue mapping below is verified at initialization.
 
@@ -21,11 +21,11 @@ Tracking is policy-selected by root AGENTS.md. Campaign milestone and all nine q
 | Default rules | User selected Modern default | No classic/modern mode selector. |
 | Hard-drop option | User selected Pre-game option | Default delayed locking; immediate locking selectable for start/restart. |
 | Rotation | User selected SRS both directions | Add counterclockwise rotation and explicit standard kick-table behavior. |
-| Existing architecture | Agent recommendation, subject to FEATURE approval | Extend pure core/session/shared view and browser adapter rather than replace the engine or add a framework. |
+| Existing architecture | Accepted with FEATURE approval | Extend pure core/session/shared view and browser adapter rather than replace the engine or add a framework. |
 | Preview count | User amendment: Change to next only | Display exactly one next piece; supersedes the initial five-piece proposal. |
-| Hold/scoring | Proposed for FEATURE approval | One hold per lock, two hard-drop points per descended cell; existing line/soft-drop scores retained. |
-| Timer boundaries | Proposed for FEATURE approval | Capture interval at landing; pause freezes; blocked drops do not shorten/reset it; delayed hard drop already grounded preserves it. |
-| Compatibility/delivery | Proposed for FEATURE approval | Space becomes hard drop; strict visible-board top boundary retained; no full guideline certification. Browser-only v1.1.0 target, with a release after each completed verified integrated phase under the standing policy. |
+| Hold/scoring | Accepted with FEATURE approval | One hold per lock, two hard-drop points per descended cell; existing line/soft-drop scores retained. |
+| Timer boundaries | Accepted with FEATURE approval | Capture interval at landing; pause freezes; blocked drops do not shorten/reset it; delayed hard drop already grounded preserves it. |
+| Compatibility/delivery | Accepted with FEATURE approval | Space becomes hard drop; strict visible-board top boundary retained; no full guideline certification. Browser-only v1.1.0 target, with a release after each completed verified integrated phase under the standing policy. |
 
 These choices apply across all modern-rule work. Further exact tables, event ordering and acceptance are owned by the later specification. Proposed choices are not human acceptance. Unresolved material changes must be surfaced before dependent use.
 
@@ -56,3 +56,16 @@ FEATURE.md draft SHA-256: 8b756e876d2c541f0e0d552f61db14649acbd2c63f20878b3c7587
 ## Preview amendment
 
 The user instructed Change to next only after asking what five previews meant. FEATURE now shows exactly one upcoming piece; later bag entries remain internal. This changes presentation depth only, preserving 7-bag generation and hold/lock consumption rules. Current FEATURE SHA-256: 22be8e8d6c8774d6563ccc0a59a5d0216f69948f63039fd2c46af28570c27073. Checked current brief for stale five-piece requirements and reviewed consistency with hold, bag and preview success criteria. The prior proposal hash/review above describes the original draft; this bounded amendment has been reviewed locally. Whole-brief acceptance remains pending; FDOCS-002 stays unchecked/open.
+
+## FEATURE acceptance
+
+The user replied Approved after the next-only amendment. This accepts FEATURE.md as published in 5edeca8181fac25c73569640a6a5193fbd5f2b5f, SHA-256 22be8e8d6c8774d6563ccc0a59a5d0216f69948f63039fd2c46af28570c27073. The earlier pending/proposal statements describe their historical checkpoints. All current brief proposals are accepted; downstream autodoc preparation may proceed. No implementation or FDOCS-009 authority is inferred.
+
+## FDOCS-002 completion
+
+User Approved accepts the exact published next-only FEATURE at 5edeca8181fac25c73569640a6a5193fbd5f2b5f. Confirmed scope and proposals are coherent; independent brief-gap review plus bounded preview amendment review passed. Continue autodoc through FDOCS-008, then stop before package QC.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE.md: 22be8e8d6c8774d6563ccc0a59a5d0216f69948f63039fd2c46af28570c27073
+
+Publish/read back this coherent completion before closing/readback of issue #24 or dependent work.
