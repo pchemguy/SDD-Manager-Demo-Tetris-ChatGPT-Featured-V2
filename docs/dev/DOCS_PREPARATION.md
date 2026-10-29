@@ -30,7 +30,7 @@ Detailed behavioral contracts and verification commands belong in later document
 | DOCS-002 | [PROJECT](PROJECT.md) approved by the user's `k` response. Accepted unchanged proposal commit `8e5fcc878ea39dc5b3c5f38f6b8a0b43ff0c0eb6`; accepted PROJECT blob: `c321b57d5b4033f67170b13f8fb3b9b920cde0e7`. |
 | DOCS-003 | Accepted under autodoc preapproval. Reviewed against accepted PROJECT: all major responsibilities have one owner, dependencies are acyclic, shared UI supports a future Electron renderer, and core/session testing is independent of browser APIs. No material scope change or unresolved structural decision. Reviewed state: `docs/dev/ARCHITECTURE.md` blob `9f25f4b30b84e2b9d95eeb920ffa0b399a657bce`. |
 | DOCS-004 | Accepted under autodoc preapproval. Reviewed C-01 through C-06 against ARCHITECTURE: unique state ownership, explicit provided/required boundaries, no dependency cycles, detached snapshots, atomic lock/clear/spawn collaboration, lifecycle cleanup and independently assessable seams. Exact contracts remain owned by SPEC. Reviewed state: `docs/dev/DECOMPOSITION.md` blob `7ee0b9887853edaf73e78053d5abadb7ded5d94e`. |
-| DOCS-005 | Not started; preapproved subject to required SPEC QC. |
+| DOCS-005 | Accepted under autodoc preapproval. SPEC/design conformance review is Ready in SPEC-REVIEW-REPORT. R-01 through R-12 cover geometry, random spawn, failed-downward locking, progression, pause/time boundaries, integration errors, shared UI/host separation, browser evidence and static release acceptance. Manual boundary walkthrough and Markdown checks found no unresolved defect; no runtime checks are claimed. Reviewed state: `docs/dev/SPEC.md` blob `6f3bcf0d11f9446e9ca894aa5ba2bef69e996d38`; `docs/dev/SPEC-REVIEW-REPORT.md` blob `a6a53927129451c0601577fc59de3884726e8665`. |
 | DOCS-006 | Not started; preapproved subject to PLAN strategy QC. |
 | DOCS-007 | Not started; preapproved subject to combined PLAN/layout QC. |
 | DOCS-008 | Not started; preapproved subject to TASKS QC; final selected autodoc boundary. |
@@ -51,4 +51,4 @@ Detailed behavioral contracts and verification commands belong in later document
 
 ## Pending transitions
 
-Publish/read back the DOCS-004 completion commit and close/read back its corresponding issue before dependent work. Completed earlier issue closures are verified externally. Stop after DOCS-008; DOCS-009 package QC, preparation integration and implementation remain unselected. Recover actual effects from Git and GitHub before replay.
+Publish/read back the DOCS-005 completion commit and close/read back its corresponding issue before dependent work. Completed earlier issue closures are verified externally. Stop after DOCS-008; DOCS-009 package QC, preparation integration and implementation remain unselected. Recover actual effects from Git and GitHub before replay.
