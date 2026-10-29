@@ -1,6 +1,6 @@
 # Implementation tasks
 
-This is the sole executable product-task owner. [PLAN](PLAN.md) owns delivery boundaries, [SPEC](SPEC.md) owns R-01 through R-12, and [layout](layout.md) owns physical placement. All tasks are initially unchecked; no product implementation is claimed.
+This is the sole executable product-task owner. [PLAN](PLAN.md) owns delivery boundaries, [SPEC](SPEC.md) owns R-01 through R-12, and [layout](layout.md) owns physical placement. Task checkoffs and attached completion evidence record delivered implementation; the implementation report records final integration and release outcomes.
 
 ## Verification command contract
 
