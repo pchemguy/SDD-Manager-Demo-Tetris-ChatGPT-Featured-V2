@@ -87,3 +87,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE_DECOMPOSITION.md: be357fad5c2b179992064a447ec52b7cd8d2b3ed9d78297f0f90c63c1c7a1218
 
 Publish/read back this coherent completion before closing/readback of issue #26 or dependent work.
+
+## FDOCS-005 completion
+
+Autodoc acceptance after scoped SPEC/design QC: F-01–F-08 define exact kick tables/axis, six-draw bag, single preview, hold, independent landing countdown chronology, hard-drop options/scoring, controls, atomic errors and delivery acceptance. Adjacent hash-bound review is Ready; no unresolved finding or product execution claimed.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-SPEC.md: a2db353c3101c8c4ca1cdc288d900591ee2bb1845e20cc986d94975df6fdadc7
+- docs/dev/FEATURE-SPEC-REVIEW-REPORT.md: 5963faed9ec1afc6e9474f208b4f2bee9bd694a0bc2cb29067b9d9cb903529eb
+
+Publish/read back this coherent completion before closing/readback of issue #27 or dependent work.
