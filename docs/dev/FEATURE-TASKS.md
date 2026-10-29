@@ -13,7 +13,7 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
 ## Phase 2 — Modern browser rules
 
 - [ ] Phase 2 — Modern browser rules
-    - [ ] Milestone 2.1 — Grounding and modern rotation
+    - [x] Milestone 2.1 — Grounding and modern rotation
         - [x] T-014 — Add canonical landing and both-direction kick rotation
             Scope: src/core/types.ts/pieces.ts/board.ts, new src/core/kicks.ts; tests/unit/kicks.test.ts and board.test.ts. Depends on: main T-013 and feature preparation/phase activation.
             Interfaces: produce landing and tryRotate signatures above; preserve spawn/cells/canPlace/lock. Use F-01's exact sixteen ordered transition rows, application's downward-positive y and strict ceiling; O is invariant.
@@ -28,11 +28,13 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
             Verification: observe old code fail exact-timing regressions; implement F-04 chronology and run complete unit/type/boundary checks plus build. Module docs distinguish manual input from elapsed events. References: F-01/F-04/F-07, C-04.
             Completion evidence: RED: seven session cases failed under the old failed-downward policy. GREEN: all 72 units, typecheck/boundaries/build passed. Independent landing/gravity clocks handle late/manual and mid-advance landings, equality, blocked drops, support escape/relanding, pause, wall kicks/CCW, atomic draw failure and one-lock excess-time discard. Superseded classic assertions were updated while scoring/detachment/observer regressions remain.
 
-        - [ ] T-016 — Expose modern rotation and verify grounded play
+        - [x] T-016 — Expose modern rotation and verify grounded play
             Scope: src/platform/browser/main.ts, src/ui/game-view.ts/styles.css, modern/browser lifecycle tests and controls guidance for the delivered subset. Depends on: T-015.
             Interfaces: retain mountGame disposer/view callbacks; add Up/X CW and Z CCW plus corresponding semantic native buttons, without exposing unimplemented future controls. Keep the old Space alias until the hard-drop task changes it and document this intermediate boundary.
             Acceptance: real board and native-button rotation use the same session boundary, ignore repeat, preserve focus eligibility and use kicks/landing delay in actual play. Exercise grounded adjustment without timer extension, pause/focus recovery and no runtime/console errors through teardown. Use model fixtures for exact time; browser frame evidence is additional.
             Verification: unit/type/boundary/build regression and isolated Chromium/Firefox source/built checks. Include separate whole-Milestone-2.1 code review, required repairs, working demonstration, report with TODO None or eligible details, and HANDOFF in this completion. Report: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/2.1.md. Publish/close task, then close/read back milestone before 2.2. References: F-01/F-04/F-06/F-07.
+            Completion evidence: RED: both browser rotation cases failed before complete controls. GREEN: 72 units/typecheck/boundaries/build; full28 source/26 built cases plus4 added floor-kick cases on each target passed across managed Chromium/Firefox. Independent milestone review M21-R1 actual-kick coverage gap resolved; inspected320/1000px screenshots. Report/HANDOFF and milestone checkoff included; no TODO.
+
     - [ ] Milestone 2.2 — Piece flow and planning aids
         - [ ] T-017 — Integrate seven-bag generation and next-only preview
             Scope: new src/core/bag.ts, session bag/next state, shared next miniature, focused bag/session/browser tests. Depends on: T-016 and verified 2.1 closure.

@@ -6,13 +6,14 @@ Click Start game. The playfield receives keyboard focus; click it to regain focu
 | --- | --- |
 | Left / Right | Move one column |
 | Down | Soft drop |
-| Up / Space | Rotate clockwise |
+| Up / X / Space | Rotate clockwise |
+| Z | Rotate counterclockwise |
 | P / Escape | Pause or resume |
 | Enter | Start a ready game |
 | R | Restart |
 
-Native Start, Pause/Resume and Restart buttons are keyboard operable. Focus leaving the game, window blur or hiding the page pauses play; return does not resume automatically. Resume explicitly. Restart and reload discard the session; there is no saved game.
+Native rotation, Start, Pause/Resume and Restart buttons are keyboard operable. Focus leaving the game, window blur or hiding the page pauses play; return does not resume automatically. Resume explicitly. Restart and reload discard the session; there is no saved game.
 
-A piece locks when gravity or soft drop cannot move it down. Ground contact alone does not lock; movement/rotation can still succeed until a downward attempt fails. There is no separate lock timer or wall kick. Seven independent piece draws can repeat. Hold, next preview, ghost, bags and hard drop are excluded.
+A grounded piece locks after one full current gravity interval from landing. Blocked soft drops and grounded moves/rotations do not shorten or reset that countdown. Leaving support cancels it; landing again grants a full interval. Pause freezes it. Rotation uses both-direction SRS kicks within the visible board. In this intermediate milestone, Space remains a clockwise alias; hard drop, bag/hold and planning aids are not delivered yet. Independent piece draws can still repeat. Numeric scores and speed are unchanged.
 
 Clear one/two/three/four rows for 40/100/300/1200 points multiplied by the pre-clear level. Soft drop adds one point per row. Level increases every ten total lines; gravity accelerates to a 100 ms minimum. A blocked spawn ends the game. Use Restart for another try.
