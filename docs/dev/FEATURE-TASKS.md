@@ -43,11 +43,13 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
             Verification: RED old independent-draw/absent-preview cases, GREEN unit/type/boundary/build plus both-browser preview acceptance. Update module docs and affected deterministic fixtures without removing unrelated assertions. References: F-02/F-06/F-07, C-04/C-05.
             Completion evidence: RED: new shuffle/session assertions and both browser preview cases failed before capability existed. GREEN: 94 units/typecheck/boundaries/build and all34 source-browser cases passed. Six-draw bags, single look-ahead, bag-boundary repeats, start/refill rollback at every draw and exact bag-composed line-clear scoring verified. Preview miniatures match actual consumption; board assertions scoped to playfield after detecting mini-cell selector overlap.
 
-        - [ ] T-018 — Implement one-hold-per-lock piece exchange
+        - [x] T-018 — Implement one-hold-per-lock piece exchange
             Scope: session hold state/command, shared hold slot/native button, C/Shift browser input and focused tests/docs. Depends on: T-017.
             Interfaces: Snapshot held/canHold and Action hold; use the same spawn and bag consumption boundary as ordinary replacement.
             Acceptance: empty hold consumes preview, occupied swap does not; one hold until lock, orientation/spawn reset, fresh gravity/landing clocks, no score/board change, ineligible/paused/repeated holds no-op. Blocked queued or held replacement ends game with correct retained fields. Refill exception during empty hold rolls back the full transaction. Actual native/keyboard hold, unavailable indication and focus/repeat behavior match.
             Verification: RED hold/consumption/error fixtures first; GREEN full unit/type/boundary/build and both-browser hold cases. Controls guidance describes the once-per-lock rule. References: F-02/F-03/F-04/F-06/F-07.
+            Completion evidence: RED: four model hold cases and both browser hold cases failed before capability. GREEN:100 unit tests/typecheck/boundaries/build;12 modern-rule and14 hold/lifecycle/remount browser cases passed across Chromium/Firefox. Covered once-per-lock exchange, queue-preserving swap, fresh clocks, pause/restart, repeated input, refill rollback and literal reachable blocked empty/occupied spawn fixtures without debug injection. Shared miniatures reuse geometry.
+
         - [ ] T-019 — Render the shared ghost and verify planning aids
             Scope: session ghost snapshot derivation, shared board/panels/styles, unit/browser rendering and lifecycle tests. Depends on: T-017, T-018.
             Interfaces: Snapshot ghost is a detached landing piece or null; use T-014 landing rather than a view collision model. Ready/game-over ghost null; paused frozen; active cells dominate overlap.

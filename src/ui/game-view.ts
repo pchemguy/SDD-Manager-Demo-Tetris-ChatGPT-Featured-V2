@@ -16,9 +16,9 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <div class="stat"><span>SCORE</span><strong data-testid="score">0</strong></div>
     <div class="stat"><span>LEVEL</span><strong data-testid="level">1</strong></div>
     <div class="stat"><span>LINES</span><strong data-testid="lines">0</strong></div>
-    <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div></div>
-    <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate">Rotate clockwise</button><button class="secondary" data-play data-action="rotateCCW">Rotate counterclockwise</button></div>
-    <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X / Space</dt><dd>Rotate clockwise</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
+    <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
+    <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate">Rotate clockwise</button><button class="secondary" data-play data-action="rotateCCW">Rotate counterclockwise</button><button class="secondary" data-play data-action="hold">Hold piece</button></div>
+    <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X / Space</dt><dd>Rotate clockwise</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
   </div><footer>10 × 20 · SEVEN SHAPES · ONE MORE TRY</footer>`;
  mount.append(root);
@@ -38,20 +38,24 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   onAction(button.dataset.action as Action); board.focus();
  };
  actions.addEventListener('click', handleClick);
- const nextMini=root.querySelector<HTMLElement>('.piece-mini')!;
- const miniTiles=Array.from({length:16},()=>{const tile=doc.createElement('span');tile.className='mini-cell';tile.setAttribute('aria-hidden','true');nextMini.append(tile);return tile});
  /** Miniatures reuse geometry, normalized inside a four-cell display box. */
- function renderMini(type:Kind|null){
-  const occupied=type?cells({type,rotation:0,x:0,y:0}):[];
-  const minX=Math.min(...occupied.map(([x])=>x)),minY=Math.min(...occupied.map(([,y])=>y));
-  const width=occupied.length?Math.max(...occupied.map(([x])=>x))-minX+1:0;
-  const height=occupied.length?Math.max(...occupied.map(([,y])=>y))-minY+1:0;
-  const filled=new Set(occupied.map(([x,y])=>(y-minY+Math.floor((4-height)/2))*4+x-minX+Math.floor((4-width)/2)));
-  miniTiles.forEach((tile,i)=>{tile.dataset.filled=String(filled.has(i))});nextMini.setAttribute('aria-label',`Next piece: ${type??'none'}`);
+ function makeMini(container:HTMLElement,label:string){
+  const tiles=Array.from({length:16},()=>{const tile=doc.createElement('span');tile.className='mini-cell';tile.setAttribute('aria-hidden','true');container.append(tile);return tile});
+  return (type:Kind|null)=>{
+   const occupied=type?cells({type,rotation:0,x:0,y:0}):[];
+   const minX=Math.min(...occupied.map(([x])=>x)),minY=Math.min(...occupied.map(([,y])=>y));
+   const width=occupied.length?Math.max(...occupied.map(([x])=>x))-minX+1:0,height=occupied.length?Math.max(...occupied.map(([,y])=>y))-minY+1:0;
+   const filled=new Set(occupied.map(([x,y])=>(y-minY+Math.floor((4-height)/2))*4+x-minX+Math.floor((4-width)/2)));
+   tiles.forEach((tile,i)=>{tile.dataset.filled=String(filled.has(i))});container.setAttribute('aria-label',`${label} piece: ${type??'none'}`);
+  };
  }
+ const renderNext=makeMini(root.querySelector<HTMLElement>('[data-preview="next"] .piece-mini')!,'Next');
+ const renderHeld=makeMini(root.querySelector<HTMLElement>('[data-preview="held"] .piece-mini')!,'Held');
  function render(snapshot: Snapshot) {
   root.dataset.status = snapshot.status;
-  root.querySelector('[data-testid="next-type"]')!.textContent=snapshot.next??'None';renderMini(snapshot.next);
+  root.querySelector('[data-testid="next-type"]')!.textContent=snapshot.next??'None';renderNext(snapshot.next);
+  root.querySelector('[data-testid="held-type"]')!.textContent=snapshot.held??'None';renderHeld(snapshot.held);
+  root.querySelector('[data-testid="hold-status"]')!.textContent=snapshot.canHold?'Available':'Unavailable';
   const activeCells = new Map(snapshot.active ? cells(snapshot.active).map(([x,y]) => [y * 10 + x, snapshot.active!.type]) : []);
   tiles.forEach((tile, i) => {
    const active = activeCells.get(i);
@@ -61,7 +65,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   for (const key of ['score','level','lines'] as const) root.querySelector(`[data-testid="${key}"]`)!.textContent = String(snapshot[key]);
   const label = {ready:'Ready',running:'Playing',paused:'Paused','game-over':'Game over'}[snapshot.status];
   if (status.textContent !== label) status.textContent = label;
-  root.querySelectorAll<HTMLButtonElement>('[data-play]').forEach(button=>{button.disabled=snapshot.status!=='running'});
+  root.querySelectorAll<HTMLButtonElement>('[data-play]').forEach(button=>{button.disabled=snapshot.status!=='running'||(button.dataset.action==='hold'&&!snapshot.canHold)});
   start.disabled = snapshot.status !== 'ready';
   pause.disabled = !['running','paused'].includes(snapshot.status);
   pause.textContent = snapshot.status === 'paused' ? 'Resume' : 'Pause';

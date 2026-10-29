@@ -5,14 +5,14 @@ import { createBoard, canPlace, move, lock } from '../core/board.js';
 import {shuffleBag} from '../core/bag.js';
 import {tryRotate} from '../core/kicks.js';
 import { progress, gravityInterval } from '../core/progression.js';
-export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'pause'|'resume';
-export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null}
+export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'pause'|'resume';
+export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean}
 interface State extends Snapshot { remainder:number; lockRemaining:number|null;bag:Kind[] }
-const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','pause','resume'];
+const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','hold','pause','resume'];
 const copy=(s:State):State=>({...s,bag:s.bag.slice(),board:s.board.map(r=>r.slice()),active:s.active?{...s.active}:null});
 /** Construct ready state; no draw occurs until start. Listener failures are isolated. */
 export function createSession(random:()=>number,onListenerError:(e:unknown)=>void=()=>{}) {
- const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null});
+ const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false});
  let state=initial(),busy=false;
  const listeners=new Set<(s:Snapshot)=>void>();
  const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return snapshot};
@@ -45,7 +45,7 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
   const result=lock(s.board,s.active!);
   const nextPiece=draw(s); // Validate before any public state is committed.
   const stats=progress(s,result.cleared),legal=canPlace(result.board,nextPiece);
-  return grounding({...s,...stats,board:result.board,active:legal?nextPiece:null,status:legal?'running':'game-over',remainder:0,lockRemaining:null});
+  return grounding({...s,...stats,board:result.board,active:legal?nextPiece:null,status:legal?'running':'game-over',canHold:legal,remainder:0,lockRemaining:null});
  }
  function down(s:State,soft:boolean):State {
   const p=move(s.board,s.active!,0,1);
@@ -53,10 +53,15 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
  }
  const dispatch=(action:Action):Snapshot=>run(s=>{
   if(!actions.includes(action))throw new RangeError('Unknown action');
-  if(action==='restart'||(action==='start'&&s.status==='ready')){const fresh=initial();fresh.status='running';fresh.active=draw(fresh);return grounding(fresh)}
+  if(action==='restart'||(action==='start'&&s.status==='ready')){const fresh=initial();fresh.status='running';fresh.active=draw(fresh);fresh.canHold=true;return grounding(fresh)}
   if(action==='pause')return s.status==='running'?{...s,status:'paused'}:s;
   if(action==='resume')return s.status==='paused'?{...s,status:'running'}:s;
   if(s.status!=='running'||!s.active)return s;
+  if(action==='hold'){
+   if(!s.canHold)return s;
+   const outgoing=s.active.type,incoming=s.held?spawn(s.held):draw(s),legal=canPlace(s.board,incoming);
+   return grounding({...s,held:outgoing,active:legal?incoming:null,canHold:false,status:legal?'running':'game-over',remainder:0,lockRemaining:null});
+  }
   if(action==='softDrop')return down(s,true);
   if(action==='left'||action==='right')return grounding({...s,active:move(s.board,s.active,action==='left'?-1:1,0)??s.active});
   if(action==='rotate'||action==='rotateCCW')return grounding({...s,active:tryRotate(s.board,s.active,action==='rotate'?1:-1)??s.active});

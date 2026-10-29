@@ -22,3 +22,10 @@ test('@modern preview exposes only the next bag type and follows consumption',as
  for(let i=0;i<18;i++)await page.keyboard.press('ArrowDown');await page.clock.runFor(1100);
  await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind','J');await expect(page.getByTestId('next-type')).toHaveText('L');
 });
+test('@modern hold keys and button exchange once per lock without consuming swap preview',async({page})=>{
+ await page.getByRole('img',{name:'Tetris playfield'}).dispatchEvent('keydown',{key:'c',repeat:true});await expect(page.getByTestId('held-type')).toHaveText('None');
+ await page.keyboard.press('c');await expect(page.getByTestId('held-type')).toHaveText('I');await expect(page.getByTestId('next-type')).toHaveText('L');await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind','J');await expect(page.getByRole('button',{name:'Hold piece',exact:true})).toBeDisabled();
+ await page.keyboard.press('Shift');await expect(page.getByTestId('held-type')).toHaveText('I');
+ for(let i=0;i<18;i++)await page.keyboard.press('ArrowDown');await page.clock.runFor(1100);await expect(page.getByRole('button',{name:'Hold piece',exact:true})).toBeEnabled();
+ await page.getByRole('button',{name:'Hold piece',exact:true}).click();await expect(page.getByTestId('held-type')).toHaveText('L');await expect(page.getByTestId('next-type')).toHaveText('O');await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind','I');await expect(page.getByRole('img',{name:'Tetris playfield'})).toBeFocused();
+});
