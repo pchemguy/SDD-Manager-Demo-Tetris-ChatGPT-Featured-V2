@@ -1,5 +1,7 @@
 /** Delivery app remains playable with every external request prohibited. */
+import {readFileSync} from 'node:fs';
 import {test,expect} from './test-base.js';
+const expectedVersion=JSON.parse(readFileSync(new URL('../../package.json',import.meta.url),'utf8')).version;
 test('@deployment local assets and embedded package metadata',async({page,baseURL})=>{
  const external:string[]=[];
  const origin=new URL(baseURL!).origin;
@@ -8,7 +10,7 @@ test('@deployment local assets and embedded package metadata',async({page,baseUR
  await expect(page.getByTestId('score')).toHaveText('1');await expect(page.locator('[data-active="true"]')).toHaveCount(4);expect(external).toEqual([]);
  if(process.env.TEST_TARGET==='extracted'){
   const response=await page.request.get('BUILD-MANIFEST.json');expect(response.ok()).toBe(true);
-  const manifest=await response.json();expect(manifest.version).toBe('1.0.0');expect(manifest.kind).toBe('static-browser');
+  const manifest=await response.json();expect(manifest.version).toBe(expectedVersion);expect(manifest.kind).toBe('static-browser');
   expect(Object.keys(manifest.files)).toContain('docs/INSTALL.md');expect(Object.keys(manifest.files)).toContain('LICENSE');
  }
 });

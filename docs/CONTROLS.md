@@ -1,21 +1,35 @@
-# Controls and classic rules
+# Controls and rules
 
-Click Start game. The playfield receives keyboard focus; click it to regain focus when needed.
+Click Start game. The playfield receives keyboard focus; click it to regain focus when needed. Modern extensions are the default rules.
 
 | Key | Action |
 | --- | --- |
 | Left / Right | Move one column |
 | Down | Soft drop |
 | Up / X | Rotate clockwise |
-| Space | Hard drop |
 | Z | Rotate counterclockwise |
 | C / Shift | Hold piece |
+| Space | Hard drop |
 | P / Escape | Pause or resume |
 | Enter | Start a ready game |
 | R | Restart |
 
-Native rotation, Start, Pause/Resume and Restart buttons are keyboard operable. Focus leaving the game, window blur or hiding the page pauses play; return does not resume automatically. Resume explicitly. Restart and reload discard the session; there is no saved game.
+Native rotation, Hold, Hard drop, Start, Pause/Resume and Restart controls are keyboard operable. Single-action keys ignore repeat; movement/soft drop use native repeat. Buttons and the checkbox retain their ordinary keyboard behavior. Focus leaving the game, window blur or hiding the page pauses play; return does not resume automatically. Resume explicitly. Restart discards game state; reload returns to ready. There is no saved game.
 
-A grounded piece locks after one full current gravity interval from landing. Blocked soft drops and grounded moves/rotations do not shorten or reset that countdown. Leaving support cancels it; landing again grants a full interval. Pause freezes it. Rotation uses both-direction SRS kicks within the visible board. Hard drop moves to the ghost landing and awards two points per descended row. It uses the same countdown by default; repeated zero-distance drops neither score nor extend time. Each bag contains all seven shapes once, with possible repeats across bag boundaries. The Next panel shows only the single next piece, including across refills. Hold exchanges the active type once per lock. An empty slot consumes Next; an occupied slot swaps without consuming it. Replacements use spawn orientation and fresh timers; holding awards no points. The dashed, patterned ghost marks the active piece's straight-down landing. It changes with movement, rotation and hold, never settles cells, and yields to the active piece when they overlap. Select Immediate hard-drop lock (next game) to lock immediately after a hard drop, including zero-distance drops. The checkbox affects only the next Start/Restart, stays separate from current rules and resets off on reload. The current line-clear and soft-drop scores/speed are unchanged.
+## Pieces and planning
 
-Clear one/two/three/four rows for 40/100/300/1200 points multiplied by the pre-clear level. Soft drop adds one point per row. Level increases every ten total lines; gravity accelerates to a 100 ms minimum. A blocked spawn ends the game. Use Restart for another try.
+Each shuffled bag contains all seven shapes once; matching types may touch across bag boundaries. Next shows exactly one upcoming piece. Hold stores a type once per locked piece: an empty slot consumes Next, while an occupied slot swaps without consuming Next. Replacements use spawn orientation/position and fresh timers. A blocked spawn, including a held replacement, ends the game.
+
+The patterned, dashed ghost shows the active piece's straight-down landing. Movement, rotation and hold update it; it never settles cells and yields visually when the active piece overlaps it. Rotation uses both-direction SRS kick tables inside the ten-by-twenty visible board. There are no hidden rows or 180-degree rotation.
+
+## Landing and hard drop
+
+A grounded piece locks after one full current gravity interval from landing. A nearly due gravity tick cannot shorten that interval. Grounded movement, rotation and blocked drops do not reset it. Leaving support cancels it; landing again grants a fresh full interval. Pause freezes the countdown.
+
+Hard drop moves immediately to the ghost landing and awards two points per descended row. It uses the same landing delay by default, leaving adjustment or eligible hold available before lock. Repeated zero-distance delayed drops neither score nor extend the countdown.
+
+Immediate hard-drop lock (next game) defaults off. When selected for Start/Restart, every hard drop locks immediately after placement, even at zero distance. Changing the checkbox during play affects only the next game; it does not alter current rules. Pause retains the selection; reload resets it off. Ordinary gravity and soft drop always retain the landing-delay policy.
+
+## Scoring
+
+Clear one/two/three/four rows for 40/100/300/1200 points multiplied by the level before the clear. Soft drop adds one point per moved row; hard drop adds two. Level increases every ten total lines; gravity accelerates to a 100ms minimum. There are no T-spin, combo, back-to-back or perfect-clear bonuses. These are the specified browser-game rules, not a full Tetris Guideline-compliance claim.

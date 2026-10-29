@@ -18,7 +18,7 @@ In Bash: `SDD_FIREFOX_RECOVERY=1 npm run test:environment`. In Windows CMD, set 
 
 Install the pinned Node toolchain with `npm ci`. Install the optional Python test tools into the owned directory with `python -m pip install --target .test-tools -r requirements-dev.txt`; no global Python environment change is required. Package construction itself uses only the Python standard library.
 
-Run `npm run typecheck`, `npm run check:boundaries`, `npm run test:unit`, `npm run test:package`, and `npm run build`. `npm run test:unit` compiles TypeScript and runs Node tests without shell glob assumptions; `npm run test:package` selects the local pinned pytest tools. `npm run package` creates artifacts/classic-tetris-browser-v1.0.0.zip and its checksum; `npm run verify:package` checks all members, CRCs, manifest digests, required instructions and local asset references. Archive generation fixes entry times/order/modes; repeated actual build/package bytes were compared successfully.
+Run `npm run typecheck`, `npm run check:boundaries`, `npm run test:unit`, `npm run test:package`, and `npm run build`. `npm run test:unit` compiles TypeScript and runs Node tests without shell glob assumptions; `npm run test:package` selects the local pinned pytest tools. `npm run package` creates artifacts/classic-tetris-browser-v1.1.0.zip and its checksum; `npm run verify:package` checks all members, CRCs, manifest digests, required instructions and local asset references. Archive generation fixes entry times/order/modes; repeated actual build/package bytes were compared successfully.
 
 Run `npm run browsers:install`, then `npm run test:environment` for isolated browser capability checks. `npm run test:browser` runs the source application, including source-only remount fixtures. With TEST_TARGET=built it runs against production dist; with TEST_TARGET=extracted it verifies/extracts the ZIP and serves it below /nested/game/. Built/extracted runs exclude the source-only harness and include actual delivery-app interactions. Runtime and console errors, including page closure, fail app acceptance.
 
@@ -33,3 +33,7 @@ Prepare the complete retained RELEASE-NOTES.md and ignored internal .release-hig
 ## Verification limits
 
 Native headed OS-window focus and future Electron delivery were not tested. Actual page focus/keyboard input is distinguished from controlled blur/visibility events. Firefox local testing uses the documented opt-in sandbox workaround; ordinary environments should first run without it. No signing or store distribution is provided for this static browser package.
+
+## Modern-rule verification
+
+The v1.1.0 model suite covers both kick families/directions, six-draw bag order/refill failures, one-next preview, once-per-lock hold/top-out, canonical ghost, exact independent grounding deadlines, hard-drop scores/options and detached transaction state. Browser modern-rules checks exercise real keys/native controls, delayed/immediate drop, next-game-only configuration, checked reload, repeat/focus and running narrow screenshots. Deployment tests derive expected manifest version from package metadata rather than a hardcoded prior release. Feature milestone evidence remains under docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/. Follow current HANDOFF for completed versus pending integration/publication.
