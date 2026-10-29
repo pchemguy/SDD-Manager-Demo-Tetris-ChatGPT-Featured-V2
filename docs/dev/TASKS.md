@@ -19,11 +19,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: `npm ci`, `npm run typecheck`, `npm run check:boundaries`, `npm run build`, `npm run browsers:install`, `npm run test:environment`; inspect pinned lockfile, ignored browser/generated paths and finite runner deadlines. Setup/check documentation records only commands actually exercised. References: R-09/R-10; C-06 tooling seams.
             Completion evidence: npm ci, typecheck, dependency boundary check and Vite build passed. Pinned TypeScript 7.0.2, Vite 8.3.5 and Playwright 1.64.1. Two environment tests passed, with two isolated input/render/teardown cycles in each browser. Official CFT archive recovery and diagnosed process-local Firefox uid_map workaround are recorded in DEVELOPMENT. No gameplay test is claimed; inherited npm/color warnings are non-failing.
 
-        - [ ] T-002 — Implement piece geometry and board transitions
+        - [x] T-002 — Implement piece geometry and board transitions
             Scope: src/core/types.ts, pieces.ts, board.ts; focused unit tests and deterministic board fixtures. Implement seven definitions, no-kick rotation, legal placement, movement, atomic lock and simultaneous row compaction.
             Depends on: T-001.
             Acceptance: R-01/R-03 geometry/board portions and R-04 compaction are satisfied. Four turns recover non-O orientations, O is invariant, walls/floor/settled cells reject overlap, and zero through four simultaneous rows compact in order. Rule inputs are not mutated by rejected transitions; no DOM or random source enters the modules.
             Verification: focused `npm run test:unit` tests for pieces/board, `npm run typecheck`, `npm run check:boundaries`. References: C-01/C-02; R-01/R-03/R-04.
+            Completion evidence: RED: all 11 geometry/board cases failed against interface placeholders. GREEN: all 11 passed after implementation; typecheck and DOM-free/import boundary checks passed. Covered seven legal spawns, rotations/O invariance, wall/floor/settled overlap, immutable rejection, zero through four simultaneous clears and compaction. Repaired portable Node test-file discovery exposed by the first real suite; no shell glob dependency.
+
         - [ ] T-003 — Implement scoring level and gravity progression
             Scope: src/core/progression.ts, value types as needed, progression unit tests and module documentation.
             Depends on: T-002.

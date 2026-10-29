@@ -1,0 +1,12 @@
+/** Rule fixtures catch lost cells, illegal overlap and sequential-clear errors. */
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { KINDS, spawn, cells, rotate } from '../../src/core/pieces.js';
+import { createBoard, canPlace, move, lock } from '../../src/core/board.js';
+test('board has twenty independent ten-cell empty rows',()=>{const b=createBoard();assert.equal(b.length,20);assert.equal(b[0].length,10);b[0][0]='T';assert.equal(b[1][0],null)});
+test('all seven spawn geometries have four unique legal cells',()=>{for(const k of KINDS){const p=spawn(k);assert.equal(cells(p).length,4);assert.equal(new Set(cells(p).map(String)).size,4);assert.ok(canPlace(createBoard(),p));assert.equal(p.x,k==='O'?4:3)}});
+test('four rotations restore every geometry and O never changes cells',()=>{for(const k of KINDS){let p=spawn(k);const initial=cells(p).sort().map(String);for(let i=0;i<4;i++){p=rotate(p);if(k==='O')assert.deepEqual(cells(p).sort().map(String),initial)}assert.deepEqual(cells(p).sort().map(String),initial)}assert.notDeepEqual(cells(rotate(spawn('T'))),cells(spawn('T')))});
+test('walls floor and occupied cells reject placement without mutation',()=>{const b=createBoard(),p=spawn('O');assert.ok(!canPlace(b,{...p,x:-1}));assert.ok(!canPlace(b,{...p,x:9}));assert.ok(!canPlace(b,{...p,y:19}));assert.ok(!canPlace(b,{...p,y:-1}));b[0][4]='J';assert.ok(!canPlace(b,p));const before=JSON.stringify(b);assert.equal(move(b,p,0,1)?.y,1);assert.equal(JSON.stringify(b),before)});
+for(let count=0;count<=4;count++)test(`lock clears ${count} full rows simultaneously`,()=>{const b=createBoard();for(let y=20-count;y<20;y++){b[y].fill('T');b[y][4]=null}const p={...rotate(spawn('I')),x:2,y:16};const before=JSON.stringify(b);const out=lock(b,p);assert.equal(out.cleared,count);assert.equal(out.board.length,20);assert.equal(out.board.flat().filter(Boolean).length,4-count);assert.equal(JSON.stringify(b),before)});
+test('compaction preserves nonfull row order and adds top empties',()=>{const b=createBoard();b[18].fill('I');b[19].fill('I');b[17][0]='J';const out=lock(b,{...spawn('O'),y:14});assert.equal(out.cleared,2);assert.equal(out.board[19][0],'J');assert.ok(out.board[0].every(c=>c===null))});
+test('invalid lock is rejected rather than overwriting settled cells',()=>{const b=createBoard();b[0][4]='Z';assert.throws(()=>lock(b,spawn('O')),RangeError)});
