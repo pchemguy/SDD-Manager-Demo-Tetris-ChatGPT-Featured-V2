@@ -1,6 +1,8 @@
 # Conditional ghost visibility implementation tasks
 
-This is the sole executable feature delta. [FEATURE](FEATURE.md), [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md), [FEATURE-PLAN](FEATURE-PLAN.md) and its physical allocation govern the work. Main TASKS T-001–T-023 remain completed/unchanged. Nothing below is implemented by preparing this list.
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
+This was the executable feature delta before transfer; ownership is now retired. [FEATURE](FEATURE.md), [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md), [FEATURE-PLAN](FEATURE-PLAN.md) and its physical allocation govern the work. Main TASKS T-001–T-023 remain completed/unchanged. The checkoffs below retain the final verified campaign snapshot.
 
 ## Execution contract
 
@@ -10,7 +12,7 @@ C-05 helper contract: GhostVisibilityMode = always | lower-half; isGhostVisible(
 
 ## Phase 3 — Conditional ghost visibility
 
-- [ ] Phase 3 — Conditional ghost visibility
+- [x] Phase 3 — Conditional ghost visibility
     - [x] Milestone 3.1 — Conditional ghost and browser distribution
         - [x] T-024 — Implement conditional ghost presentation and controls
             Scope: new src/ui/ghost-visibility.ts, game-view.ts/styles.css, pure test compilation/fixtures, new unit/browser ghost-visibility suites and affected lifecycle/remount/view regressions. Depends on: completed T-023, accepted/published preparation and Phase3 activation.
@@ -25,8 +27,10 @@ C-05 helper contract: GhostVisibilityMode = always | lower-half; isGhostVisible(
             Verification: fresh npm ci; typecheck/boundaries/full units/package/environment checks; build/package/verify; full isolated Chromium/Firefox source/built/extracted suites including T-024 actual crossings; inspect package contents/hashes and reproduce exact bytes. Perform independent whole-Milestone3.1 code review separately from tests, repair blockers and demonstrate the result. Include review/findings/checks/TODO None or eligible details, report/HANDOFF and milestone parent checkoff in this task completion. Report: docs/dev/features/002_0adba6e-conditional-ghost-visibility/reports/phases/3/3.1.md. Publish/close this task then close/read back milestone before phase review. References: G-01–G-05 and retained R-09–R-12.
             Completion evidence: Fresh npm ci/type/boundary/142unit/11package/2environment checks pass; source52/built48/extracted48 managed Chromium/Firefox cases passed. Actual1.2.0 build/package reproduced exact18710-byte ZIP SHA256e7390b76e36ca3b011e1d2e1041fa0f6bb9fc9a8c9293c2e03b35fe001de85af; strict integrity/exclusion scans and stable copies pass. Independent whole-milestone review has no remaining finding; exact current notes prepared. Report/HANDOFF and milestone parent included; TODO None.
 
-    - [ ] Milestone 3.2 — Phase review
-        - [ ] T-026 — Review test and report the conditional ghost phase
+    - [x] Milestone 3.2 — Phase review
+        - [x] T-026 — Review test and report the conditional ghost phase
             Scope: whole feature and required repairs, accepted main-document/task incorporation/current QC, unique ownership and eligible source/archive disposition, phase/final reports and HANDOFF. Depends on: T-024/T-025 completed/published and Milestone3.1 tasks/issues/milestone closed/read back.
             Acceptance: independent read-only full-phase code review distinct from test execution, complete G-01–G-05 and preserved modern guarantees. Incorporate accepted scope into affected current PROJECT/design/SPEC/PLAN/layout roots/children and reassess affected adjacent document QC. Reconcile T-024–T-026 into main TASKS once; archive only eligible current campaign FEATURE/preparation/QC sources with historical markers and repaired links under reserved prefix. Preserve prior completed tasks/reports/releases and closed campaigns. Retain T-026 initial closure/evidence coherently through semantic ownership transfer. Aggregate milestone/phase TODOs, None when empty; missing feasible required checks are blockers.
             Verification: fresh appropriate full model/type/boundary/browser/package regression, exact source/artifact identity and document/link/ownership checks; audit actual task-closing parent diffs and transferred initial closure before integration. Include phase report docs/dev/features/002_0adba6e-conditional-ghost-visibility/reports/phases/3/PHASE-REPORT.md and feature-root IMPLEMENTATION-REPORT.md, reviews/checks/limitations/TODOs/HANDOFF in the completion commit. Publish/read back, close issue/review milestone, then explicitly verify/merge/publish the complete phase to recorded main parent and publish v1.2.0 only from its exact default-branch release commit/tag. Record actual integration/tag/assets/notes/latest/public-download/CI outcomes in a task-owned parent-only evidence follow-up without moving the release tag. These post-integration operations are not claimed by preparing tasks.
+
+            Completion evidence: Independent whole-phase code review and final document QC found no blocker. Fresh appropriate type/boundary/full142unit/11package/build/strict-integrity and48 extracted-prefix browser checks passed; identical source/archive retains52 source/48 built acceptance. All current product roots/children and adjacent QC incorporated; current-campaign sources archived with links/historical markers and one task owner. T024/T025 exact closing-diff audit and semantic T026 ownership transfer preserve prior task bytes/evidence. Phase/final reports and HANDOFF included; TODO None. Actual integration/release outcomes follow in task-owned parent-only evidence without moving tag.

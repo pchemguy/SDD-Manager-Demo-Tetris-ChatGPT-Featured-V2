@@ -1,5 +1,7 @@
 # Conditional ghost specification review
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Current gate
 
 Ready for dependent feature planning. This is scoped document conformance, not implementation or whole-package QC.
@@ -11,7 +13,7 @@ SHA-256 of exact current sources:
 | Source | SHA-256 |
 | --- | --- |
 | [FEATURE.md](FEATURE.md) | `fd21c9a6fce63ad400c6e973b31901dd0ac393da4d3b89ca0ade62ed9b488348` |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | `fcfa9e68c8c05f48ce6affe03f45f9a9063046db38f23273890da58b454b90f0` |
+| [ARCHITECTURE.md](../../ARCHITECTURE.md) | `fcfa9e68c8c05f48ce6affe03f45f9a9063046db38f23273890da58b454b90f0` |
 | [FEATURE_DECOMPOSITION.md](FEATURE_DECOMPOSITION.md) | `f90feffc9a91a5917fdaa6fab7082ed4744bfbc1e2cda1d7bb79af0a9bf69b9b` |
 | [FEATURE-SPEC.md](FEATURE-SPEC.md) | `f146ce63d65c0e1e7e921689917eff1e3f8dd328bf18c8dacb131c87d0f26cf5` |
 

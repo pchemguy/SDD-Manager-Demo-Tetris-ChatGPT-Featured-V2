@@ -1,10 +1,12 @@
 # Conditional ghost-piece visibility
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Intended outcome
 
 Give players a ghost visibility mode that suppresses the projection when its landing is in the upper half of the board and restores it automatically when the landing returns to the lower half. The test uses the projected landing, not the active piece's current height.
 
-The existing [game](PROJECT.md) and [modern contracts](spec/modern-rules.md) already provide a canonical ghost shared with hard drop. This feature changes presentation, preserving landing geometry and all gameplay rules.
+The existing [game](../../PROJECT.md) and [modern contracts](../../spec/modern-rules.md) already provide a canonical ghost shared with hard drop. This feature changes presentation, preserving landing geometry and all gameplay rules.
 
 ## Mode and boundary
 

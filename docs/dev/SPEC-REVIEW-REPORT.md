@@ -51,3 +51,18 @@ F-01–F-08 precisely own ordered kick tables, bag/hold/preview, countdown reset
 | DECOMPOSITION.md | `1d2a442a33d09b93ec0356b5edb73d854de3812c` |
 | SPEC.md | `7e100f019cb27252f2d05da6256b9acf4465efcc` |
 | spec/modern-rules.md | `94c48da6aa62b9df364f7ba91d94e4323b394fdd` |
+
+## Revision 2 — Conditional ghost incorporation
+
+Current gate: Ready. Acting as the owning SDD document reviewer, reassessed the complete affected roots/children after accepted incorporation. Original review cycles remain historical.
+
+G-01–G-05 precisely preserve the approved predicate/default/lifetime, immediate common cell/text suppression, canonical ghost/model APIs, native focus and distribution acceptance. R-07/modernF-06 route to this child without conflicting unconditional-visibility claims. Design places preference/snapshot state only in C-05; no unaccepted gameplay behavior or persistent format introduced. Local links/Markdown, current identities and unique ownership checks accompany this review; no unresolved conformance finding.
+
+| Source | Git blob |
+| --- | --- |
+| PROJECT.md | `bc855e160202edf9f018f7a71bfdcd7788d48eec` |
+| ARCHITECTURE.md | `9e10f8aa686ed91059b22740ce20daed49041804` |
+| DECOMPOSITION.md | `be45188ac12ad4844782d880ba6c69ba16890fb0` |
+| SPEC.md | `696c4916aa7bdd79413da3ec98cf85841d98875f` |
+| spec/modern-rules.md | `f1ccc4c59596278d5bd2098d171bfee559626508` |
+| spec/ghost-visibility.md | `e0cb0f3ea461678564aefae36ea0138666ab69be` |

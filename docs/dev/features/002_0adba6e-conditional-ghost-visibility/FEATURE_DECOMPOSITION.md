@@ -1,8 +1,10 @@
 # Conditional ghost visibility components
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Existing boundaries
 
-Reuse [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md). C-01/C-02 geometry/landing, C-03 progression and C-04 session remain unchanged. Canonical Snapshot.ghost is independent of whether it is displayed. No display option is added to SessionOptions, Action or Snapshot.
+Reuse [ARCHITECTURE](../../ARCHITECTURE.md) and [DECOMPOSITION](../../DECOMPOSITION.md). C-01/C-02 geometry/landing, C-03 progression and C-04 session remain unchanged. Canonical Snapshot.ghost is independent of whether it is displayed. No display option is added to SessionOptions, Action or Snapshot.
 
 ## C-05 shared-view delta
 

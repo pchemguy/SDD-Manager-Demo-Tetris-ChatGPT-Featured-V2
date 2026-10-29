@@ -1,5 +1,7 @@
 # Conditional ghost task review
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Current gate
 
 Ready for whole-feature package QC when explicitly selected. This is scoped document conformance, not implementation or whole-package QC.
@@ -15,7 +17,7 @@ SHA-256 of exact current sources:
 | [FEATURE-PLAN-REVIEW-REPORT.md](FEATURE-PLAN-REVIEW-REPORT.md) | `f98b139a5fad171a0e847c43f4e6391f3f1467782f966927a441bf5c82dbbf56` |
 | [FEATURE_DECOMPOSITION.md](FEATURE_DECOMPOSITION.md) | `f90feffc9a91a5917fdaa6fab7082ed4744bfbc1e2cda1d7bb79af0a9bf69b9b` |
 | [FEATURE-TASKS.md](FEATURE-TASKS.md) | `d4a61a5d25c95bbcf2e98a6efee722e448f9d29dea5979b76f32a4bc7aa31b08` |
-| [TASKS.md](TASKS.md) | `42e97a248c358c8394ed715bdc513a66cc5b397071a151568460dd728f124bca` |
+| [TASKS.md](../../TASKS.md) | `42e97a248c358c8394ed715bdc513a66cc5b397071a151568460dd728f124bca` |
 
 ## Assessment
 

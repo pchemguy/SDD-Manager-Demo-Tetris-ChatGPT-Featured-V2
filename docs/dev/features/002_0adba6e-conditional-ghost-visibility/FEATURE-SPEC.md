@@ -1,5 +1,7 @@
 # Conditional ghost visibility specification
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Scope and preserved contracts
 
 This delta implements [FEATURE](FEATURE.md) using [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and reusable main architecture. G-01–G-05 extend SPEC R-07/R-10/R-12 and modern-rules F-06 presentation; canonical F-01/F-04/F-05/F-07 and R-08/R-09 APIs/timing/errors remain unchanged. No new session option, action, snapshot field or persisted format is introduced. Target browser v1.2.0.

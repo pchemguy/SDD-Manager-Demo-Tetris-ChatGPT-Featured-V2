@@ -1,5 +1,7 @@
 # Conditional ghost visibility — preparation record
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Identity and request
 
 Campaign002_0adba6e, full baseline0adba6e9898e9c1bb2389cca3ad23bd8fadfacb9, published main after modern v1.1.0 evidence. Preparation branch design-docs/002_0adba6e-conditional-ghost-visibility, creation parent/default preparation target main. Intended implementation branch feature/002_0adba6e-conditional-ghost-visibility only after accepted preparation integration. Reserved report/archive prefix docs/dev/features/002_0adba6e-conditional-ghost-visibility; no implementation branch exists yet.
