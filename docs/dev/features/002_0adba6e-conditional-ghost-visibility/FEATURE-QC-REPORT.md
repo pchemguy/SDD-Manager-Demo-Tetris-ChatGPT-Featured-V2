@@ -1,5 +1,7 @@
 # Conditional ghost feature package QC
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Current result
 
 Ready for preparation integration and authorized T-024–T-026 execution after tracking activation. User requested QC and full implementation after the completed autodoc pass, selecting FDOCS-009 and subsequent integration/implementation/release. This assessment is whole-set QC, separate from individual scoped reports and future implementation review.
@@ -19,7 +21,7 @@ SHA-256 exact identities:
 | Source | SHA-256 |
 | --- | --- |
 | [FEATURE.md](FEATURE.md) | `fd21c9a6fce63ad400c6e973b31901dd0ac393da4d3b89ca0ade62ed9b488348` |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | `fcfa9e68c8c05f48ce6affe03f45f9a9063046db38f23273890da58b454b90f0` |
+| [ARCHITECTURE.md](../../ARCHITECTURE.md) | `fcfa9e68c8c05f48ce6affe03f45f9a9063046db38f23273890da58b454b90f0` |
 | [FEATURE_DECOMPOSITION.md](FEATURE_DECOMPOSITION.md) | `f90feffc9a91a5917fdaa6fab7082ed4744bfbc1e2cda1d7bb79af0a9bf69b9b` |
 | [FEATURE-SPEC.md](FEATURE-SPEC.md) | `f146ce63d65c0e1e7e921689917eff1e3f8dd328bf18c8dacb131c87d0f26cf5` |
 | [FEATURE-SPEC-REVIEW-REPORT.md](FEATURE-SPEC-REVIEW-REPORT.md) | `49679dd7783cd1821902c85defde0a79265f0bfa6051dd9b428bebe6b679c719` |

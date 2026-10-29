@@ -6,9 +6,11 @@ Deliver a browser-based single-player falling-block game with modern planning an
 
 ## Scope
 
-The current game includes movement, both-direction SRS wall kicks, soft and hard drop, line clearing, scoring, increasing levels, pause/restart, seven-bag randomization, hold, exactly one next preview and ghost projection. Modern rules are the default; there is no classic-mode selector.
+The current game includes movement, both-direction SRS wall kicks, soft and hard drop, line clearing, scoring, increasing levels, pause/restart, seven-bag randomization, hold, exactly one next preview and ghost projection with selectable conditional visibility. Modern rules are the default; there is no classic-mode selector.
 
 Grounding starts one full current gravity interval of lock delay, independently of gravity remainder. Continuously grounded moves and rotations do not reset it; leaving support cancels it and relanding starts a fresh interval. Hard drop uses that policy by default. The next-game checkbox can select immediate hard-drop locking, fixed for the started session.
+
+Ghost visibility defaults to Always. Lower half only hides the whole projection when its lowest occupied cell lands in rows1–10, and shows it in rows11–20 including straddling pieces. The display preference applies immediately, persists through restart/pause in the mount and resets on reload; canonical landing and hard drop remain unchanged.
 
 ## Goals and delivery constraints
 

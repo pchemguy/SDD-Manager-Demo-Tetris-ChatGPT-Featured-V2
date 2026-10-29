@@ -1,0 +1,9 @@
+/** Source-only view snapshots isolate presentation from live rules and clocks. */
+import {test,expect} from './test-base.js';
+test('@conditional-view shared predicate controls cells/text, pause and mount isolation',async({page})=>{
+ await page.goto('/tests/fixtures/ghost-visibility.html');const a=page.locator('#a'),b=page.locator('#b');const mode=a.getByRole('combobox',{name:'Ghost visibility',exact:true});await expect(a.locator('[data-ghost="true"]')).toHaveCount(4);
+ const before=await page.evaluate(()=>(window as any).ghostFixture.snapshot());await mode.selectOption('lower-half');await expect(a.locator('[data-ghost="true"]')).toHaveCount(0);await expect(a.getByTestId('ghost-description')).toHaveText('Ghost hidden above the midline');await expect(b.locator('[data-ghost="true"]')).toHaveCount(4);expect(await page.evaluate(()=>(window as any).ghostFixture.snapshot())).toEqual(before);
+ await page.evaluate(()=>(window as any).ghostFixture.render('lower'));await expect(a.locator('[data-ghost="true"]')).toHaveCount(4);await expect(a.getByTestId('ghost-description')).toHaveText('Ghost I lands on row 11');
+ await page.evaluate(()=>(window as any).ghostFixture.render('paused'));await expect(mode).toHaveValue('lower-half');await expect(a.locator('[data-ghost="true"]')).toHaveCount(0);await mode.selectOption('always');await expect(a.locator('[data-ghost="true"]')).toHaveCount(4);await expect(a.getByTestId('status')).toHaveText('Paused');
+ await page.evaluate(()=>(window as any).ghostFixture.render('null'));await expect(a.locator('[data-ghost="true"]')).toHaveCount(0);await expect(a.getByTestId('ghost-description')).toHaveText('No active piece');await expect(mode).toBeEnabled();await page.evaluate(()=>(window as any).ghostFixture.destroy());await expect(page.locator('.game')).toHaveCount(0);
+});

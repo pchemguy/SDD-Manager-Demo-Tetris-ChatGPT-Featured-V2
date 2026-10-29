@@ -1,0 +1,3 @@
+# Conditional ghost campaign archive
+
+Campaign002_0adba6e, original full baseline0adba6e9898e9c1bb2389cca3ad23bd8fadfacb9. Accepted sources/preparation/adjacent QC are historical non-executable snapshots after T-026 incorporation. Current owners: [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md)/[conditional contracts](../../spec/ghost-visibility.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and sole executable [TASKS](../../TASKS.md). Reports retain their recorded feature prefix. [Phase report](reports/phases/3/PHASE-REPORT.md) and [implementation outcome](IMPLEMENTATION-REPORT.md) record checks/review/integration/publication. Prior closed campaigns remain untouched.

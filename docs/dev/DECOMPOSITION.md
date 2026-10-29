@@ -12,7 +12,7 @@ The [architecture](ARCHITECTURE.md) separates rules, session orchestration, shar
 | C-02 Board rules | Placement checks, downward/horizontal transitions, ordered kicks, canonical landing, lock and simultaneous full-row removal. | C-01 and explicit board/piece values; no scheduler or scoring UI. | Small board fixtures and immutable input comparisons. |
 | C-03 Progression | Score, total lines, level and gravity interval calculations. | Lock/clear results and soft-/hard-drop distance; no wall time or renderer. | Table-driven score and level boundaries. |
 | C-04 Session | Current board, active piece, status, progression, bag/next/hold/options, gravity remainder, independent lock countdown and detached snapshots; semantic command and elapsed-time entry points. | C-01 through C-03; injected random callback. Never imports host/UI. | Seeded random inputs, exact durations and command sequences. |
-| C-05 Shared game view | DOM board, score/level/lines/status, single-next/hold miniatures, ghost, control legend, native buttons and next-game checkbox. Produces semantic action callbacks. | Detached session snapshot, mount element, action callback; no global scheduler or window-level input handling. | Browser assertions on cell state, text, focus and action dispatch. |
+| C-05 Shared game view | DOM board, score/level/lines/status, single-next/hold miniatures, ghost, mount-local visibility selector/latest snapshot, control legend, native buttons and next-game checkbox. Produces semantic action callbacks. | Detached session snapshot, mount element, action callback; no global scheduler or window-level input handling. | Browser assertions on cell state, text, focus and action dispatch. |
 | C-06 Browser host | Application composition, keyboard translation, pending next-game options, frame lifecycle, focus/visibility auto-pause, teardown and asset entry. | C-04/C-05 and browser APIs; never duplicates piece or scoring rules. | Playwright keyboard, visibility/lifecycle and remount scenarios. |
 
 ## Collaboration and data ownership
@@ -34,3 +34,5 @@ Invalid placement commands return unchanged gameplay state. Invalid integration 
 ## Design assessment
 
 Core components can be tested without a DOM, and session time can be advanced without browser frames. C-05 can be reused by a future Electron renderer while C-06 remains replaceable. No component depends on a consumer; no duplicate rule state is owned by the UI. Physical paths are assigned by layout rather than by this logical model.
+
+C-05 owns a pure occupied-cell visibility helper plus selector change cleanup. Both cell flags and described-by projection text use that predicate. Changing display mode rerenders the last detached snapshot without an action callback; start/restart/pause keep the mounted preference, while teardown/remount resets it. C-01–C-04 and C-06 interfaces remain unchanged. [Conditional contracts](spec/ghost-visibility.md) define observable behavior.

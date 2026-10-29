@@ -2,7 +2,7 @@
 
 ## Scope and ownership
 
-This specification defines the classic game in [PROJECT](PROJECT.md), implemented through the boundaries in [ARCHITECTURE](ARCHITECTURE.md) and components C-01 through C-06 in [DECOMPOSITION](DECOMPOSITION.md). R-01 through R-12 are the acceptance groups. Modern rules are the current default. The focused [modern rules contracts](spec/modern-rules.md) own F-01–F-08 within R-01–R-08 and their R-10–R-12 acceptance. Electron delivery is excluded.
+This specification defines the classic game in [PROJECT](PROJECT.md), implemented through the boundaries in [ARCHITECTURE](ARCHITECTURE.md) and components C-01 through C-06 in [DECOMPOSITION](DECOMPOSITION.md). R-01 through R-12 are the acceptance groups. Modern rules are the current default. The focused [modern rules contracts](spec/modern-rules.md) own F-01–F-08 within R-01–R-08 and their R-10–R-12 acceptance. [Conditional ghost visibility](spec/ghost-visibility.md) G-01–G-05 extends presentation while preserving canonical projection and gameplay. Electron delivery is excluded.
 
 ## R-01 Board and piece geometry
 
@@ -54,7 +54,7 @@ Losing window focus, hiding the document or moving focus outside the game mount 
 
 ## R-07 Input and presentation
 
-The board is keyboard focusable and named. [F-06](spec/modern-rules.md#f-06-presentation-and-controls-r-07r-10) owns the full key map, native-button/checkbox behavior and exactly-one next/hold/ghost presentation. Space hard-drops; Up/X rotate clockwise, Z counterclockwise, C/Shift hold. Only movement/soft drop accepts key repeat. Lifecycle shortcuts, native input behavior, disabled states and focus return follow F-06. The legend is always available without hover.
+The board is keyboard focusable and named. [F-06](spec/modern-rules.md#f-06-presentation-and-controls-r-07r-10) owns the full key map, native-button/checkbox behavior and exactly-one next/hold/ghost presentation. Space hard-drops; Up/X rotate clockwise, Z counterclockwise, C/Shift hold. Only movement/soft drop accepts key repeat. Lifecycle shortcuts, native input behavior, disabled states and focus return follow F-06. The legend is always available without hover. [G-01–G-05](spec/ghost-visibility.md) add an immediate per-view Ghost visibility selector with Always default and Lower half only, without changing board shortcuts or session options.
 
 Render the complete board, distinct settled/active occupied cells, score, total lines, level, and ready/running/paused/game-over status. Use distinguishable piece colors with visible cell borders; color is not the sole way to distinguish filled versus empty cells or session status. Announce lifecycle changes through restrained accessible status text; do not announce every gravity frame. At viewport widths of at least 320 CSS pixels, the board and controls remain usable without horizontal page overflow.
 

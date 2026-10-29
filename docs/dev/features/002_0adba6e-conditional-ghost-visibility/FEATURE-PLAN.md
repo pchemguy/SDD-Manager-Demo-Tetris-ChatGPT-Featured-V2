@@ -1,5 +1,7 @@
 # Conditional ghost visibility delivery plan
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Objective and bounded strategy
 
 Deliver the accepted [FEATURE](FEATURE.md) and G-01–G-05 in [FEATURE-SPEC](FEATURE-SPEC.md) as browser v1.2.0. Preserve completed Phases1/2 and existing task IDs. Phase3 is a narrow display capability on the playable v1.1.0 app; no new rules engine, persisted settings or desktop host is needed.
@@ -25,7 +27,7 @@ Integrate the exact complete phase to its recorded main parent by explicit two-p
 
 ## Physical ownership
 
-The existing [layout](layout.md) remains the baseline. The following allocation extends existing C-05 ownership; no FEATURE-LAYOUT document is required.
+The existing [layout](../../layout.md) remains the baseline. The following allocation extends existing C-05 ownership; no FEATURE-LAYOUT document is required.
 
 
 | Path | Owner and change |

@@ -33,3 +33,7 @@ Immediate hard-drop lock (next game) defaults off. When selected for Start/Resta
 ## Scoring
 
 Clear one/two/three/four rows for 40/100/300/1200 points multiplied by the level before the clear. Soft drop adds one point per moved row; hard drop adds two. Level increases every ten total lines; gravity accelerates to a 100ms minimum. There are no T-spin, combo, back-to-back or perfect-clear bonuses. These are the specified browser-game rules, not a full Tetris Guideline-compliance claim.
+
+## Ghost visibility
+
+Ghost visibility defaults to Always. Choose Lower half only to hide the whole ghost when its lowest occupied landing cell is in rows1–10; it reappears in rows11–20, including when it straddles the midline. The selector acts immediately, including while paused. It survives start/restart and pause/resume in the current app, and resets to Always on reload. Hidden ghosts do not announce a landing row. The canonical landing and hard-drop score/locking remain unchanged.

@@ -44,3 +44,7 @@ Dependency checks ensure core/session code imports no UI or browser-host module.
 ## Modern rule ownership
 
 Pure core helpers own six-draw bag shuffling, ordered both-direction kick candidates and canonical landing. The session owns bag consumption, hold eligibility, option validation and atomic lock/clear/spawn. Ghost is derived from detached active/board values by the same landing helper used for hard drop. The shared view renders one next miniature, held type, patterned ghost and semantic controls. The host retains a separate pending next-game option and copies it only on start/restart; active options never change mid-session. All state-changing operations commit before notifications; refill or validation failure rolls back the candidate, including clocks and bag cursor. See [modern contracts](spec/modern-rules.md).
+
+## Conditional ghost display
+
+C-05 owns a per-mounted-view visibility preference and the latest delivered detached snapshot. A pure presentation predicate uses canonical occupied ghost cells; it never duplicates landing/collision rules. Selection immediately rerenders cells and description with the same decision, without dispatching gameplay, requesting RNG or changing clocks. Canonical Snapshot.ghost and SessionOptions remain unchanged. Existing C-06 native-control focus/shortcut and external-pause resource ownership is retained. No preference persists beyond the mounted view.

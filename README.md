@@ -1,8 +1,10 @@
 # Classic Tetris
 
-A browser falling-block game with hold, one next-piece preview, ghost projection, seven-bag generation, both-direction SRS kicks and hard drop. Score, levels, pause/resume and restart complete the single-player game.
+A browser falling-block game with hold, one next-piece preview, ghost projection with optional conditional visibility, seven-bag generation, both-direction SRS kicks and hard drop. Score, levels, pause/resume and restart complete the single-player game.
 
 Pieces lock after one full gravity interval from landing. Grounded moves/rotations and blocked drops preserve the countdown; leaving support and landing again grants a new interval. Hard drop follows that delay by default. A next-game checkbox selects immediate hard-drop locking when starting or restarting.
+
+Ghost visibility defaults to Always. Lower half only hides the whole projection when its lowest occupied landing cell is in rows 1–10 and restores it in rows 11–20, including midline-straddling pieces. Changes apply immediately, survive restart/pause, and reset to Always on reload; hard drop and locking are unchanged.
 
 ## Play
 

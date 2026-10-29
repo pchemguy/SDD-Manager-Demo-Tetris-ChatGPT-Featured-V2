@@ -38,3 +38,9 @@ No unresolved finding blocks preparation integration. Browser provisioning, code
 ## Revision — T-023 incorporated current package
 
 Current gate: Ready. Reassessed the complete current product package after accepted modern incorporation. SPEC and its focused child route F-01–F-08 without conflicting old rules; design preserves ownership, PLAN includes three delivery milestones and dedicated phase review, layout assigns all new modules, and TASKS alone owns23 unique project IDs. Adjacent SPEC/PLAN/TASKS revisions record reviewed Git blobs. Local links, historical archive disposition and prior-task preservation pass; no unresolved document blocker. Implementation and native evidence limits are recorded separately in the feature phase report.
+
+## Revision — Conditional ghost current package (T-026)
+
+Current gate: Ready. Whole current product package is coherent after G-01–G-05 incorporation: C-05 owns display preference; R-07/modernF-06 route current contracts; PLAN/layout map the narrow Phase3; TASKS owns26 unique IDs, with retired archived snapshots. Adjacent SPEC/PLAN/TASKS revisions identify exact sources. No prior closed campaign was amended. Links, ownership and completed-task preservation pass; runtime/release evidence remains separately owned by the feature reports.
+
+CG-DOC1 from independent final document QC resolved: current PLAN/layout version wording now1.2.0, and strategy includes all3 browser phases. Adjacent plan/task reviews append correction/recheck identities without altering prior cycles or completed scope.

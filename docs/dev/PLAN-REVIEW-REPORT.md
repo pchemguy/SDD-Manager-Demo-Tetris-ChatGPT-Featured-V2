@@ -47,3 +47,25 @@ Three capability delivery milestones plus one dedicated phase review implement a
 | layout.md | `059a24d891ba03af7131d435e9e5948067647fbe` |
 | SPEC.md | `7e100f019cb27252f2d05da6256b9acf4465efcc` |
 | spec/modern-rules.md | `94c48da6aa62b9df364f7ba91d94e4323b394fdd` |
+
+## Revision 2 — Conditional ghost incorporation
+
+Current gate: Ready. Acting as the owning SDD document reviewer, reassessed the complete affected roots/children after accepted incorporation. Original review cycles remain historical.
+
+Phase3 adds one cohesive display/distribution milestone and one dedicated review milestone without changing prior phase ranges. Small milestone count remains justified; all G contracts have model/actual browser/package exits and review/report ownership. Physical allocation includes pure UI helper/compiler inclusion, actual tests/source-only fixture exclusion, docs/version and stable feature reports/archive. Local links/Markdown, current identities and unique ownership checks accompany this review; no unresolved conformance finding.
+
+| Source | Git blob |
+| --- | --- |
+| PLAN.md | `3f4fa552963de7acd5a4e66d6876eab40d208157` |
+| layout.md | `d15d7c88f8e1d21bfce640494ce230f8459ad895` |
+| spec/ghost-visibility.md | `e0cb0f3ea461678564aefae36ea0138666ab69be` |
+
+## Revision 3 — Current-version consistency recheck
+
+Independent final document QC finding CG-DOC1: inherited current metadata/archive wording still named1.1.0 and the strategy said both browser phases after Phase3 addition. Corrected PLAN/layout to current1.2.0 and all browser phases. Reviewed task scopes/IDs/dependencies/exits unchanged. Rechecked version and physical ownership consistency; finding resolved, current gate Ready. Original reviewed identities above remain historical.
+
+| Source | Git blob |
+| --- | --- |
+| PLAN.md | `db0d0eec396d0e452d3bb490c5310093d1937e78` |
+| layout.md | `79cb3532cf1251a0716d57d618156b2844254c77` |
+| spec/ghost-visibility.md | `e0cb0f3ea461678564aefae36ea0138666ab69be` |

@@ -17,6 +17,7 @@
   "include": [
     "src/core",
     "src/application",
-    "tests/unit"
+    "tests/unit",
+    "src/ui/ghost-visibility.ts"
   ]
 }

@@ -1,5 +1,7 @@
 # Feature documentation tasks
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 Task definitions/checkoffs only. Control, decisions, applicability/reuse and evidence belong in FEATURE_PREPARATION.md. FDOCS IDs are qualified by the campaign for hosting; product T IDs and main DOCS tasks are separate.
 
 - [x] FDOCS-001 — Establish feature preparation context.

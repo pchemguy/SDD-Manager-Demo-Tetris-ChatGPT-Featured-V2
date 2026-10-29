@@ -54,3 +54,25 @@ Project-wide IDs T-001–T-023 are unique in the sole executable owner. T-014–
 | TASKS.md | `4c11b56da70ce630bc947e2bfc2e0e083f16cb15` |
 | PLAN.md | `f7e6329f0fef4fbd165e276cb4281a649c89e6af` |
 | layout.md | `059a24d891ba03af7131d435e9e5948067647fbe` |
+
+## Revision 2 — Conditional ghost incorporation
+
+Current gate: Ready. Acting as the owning SDD document reviewer, reassessed the complete affected roots/children after accepted incorporation. Original review cycles remain historical.
+
+T-024–T-026 preserve the accepted2-delivery-task plus mandatory1-review structure. All26 IDs are unique in the only executable owner; archived snapshots are retired. Original T001–T023 bytes and T024/025 closure evidence are preserved; only T026 status changes through semantic transfer. Independent milestone/phase review, required checks, incorporation/current QC/audit/report/HANDOFF and post-integration release evidence are assigned. Local links/Markdown, current identities and unique ownership checks accompany this review; no unresolved conformance finding.
+
+| Source | Git blob |
+| --- | --- |
+| TASKS.md | `4b31862231593a222ea126592775af278c605a86` |
+| PLAN.md | `3f4fa552963de7acd5a4e66d6876eab40d208157` |
+| layout.md | `d15d7c88f8e1d21bfce640494ce230f8459ad895` |
+
+## Revision 3 — Current-version consistency recheck
+
+Independent final document QC finding CG-DOC1: inherited current metadata/archive wording still named1.1.0 and the strategy said both browser phases after Phase3 addition. Corrected PLAN/layout to current1.2.0 and all browser phases. Reviewed task scopes/IDs/dependencies/exits unchanged. Rechecked version and physical ownership consistency; finding resolved, current gate Ready. Original reviewed identities above remain historical.
+
+| Source | Git blob |
+| --- | --- |
+| TASKS.md | `4b31862231593a222ea126592775af278c605a86` |
+| PLAN.md | `db0d0eec396d0e452d3bb490c5310093d1937e78` |
+| layout.md | `79cb3532cf1251a0716d57d618156b2844254c77` |

@@ -1,5 +1,7 @@
 # Conditional ghost plan review
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Current gate
 
 Ready for TASKS after combined strategy/layout review. This is scoped document conformance, not implementation or whole-package QC.
@@ -14,7 +16,7 @@ SHA-256 of exact current sources:
 | [FEATURE-SPEC.md](FEATURE-SPEC.md) | `f146ce63d65c0e1e7e921689917eff1e3f8dd328bf18c8dacb131c87d0f26cf5` |
 | [FEATURE_DECOMPOSITION.md](FEATURE_DECOMPOSITION.md) | `f90feffc9a91a5917fdaa6fab7082ed4744bfbc1e2cda1d7bb79af0a9bf69b9b` |
 | [FEATURE-PLAN.md](FEATURE-PLAN.md) | `7a61cb086f487b2968070a9c166878e205df6b153f62bd3db67d4f685cabde8b` |
-| [layout.md](layout.md) | `4c93a8415510c91f99a6b5b351ab8070241544ddc787bab940d7c23e7a8081bf` |
+| [layout.md](../../layout.md) | `4c93a8415510c91f99a6b5b351ab8070241544ddc787bab940d7c23e7a8081bf` |
 
 ## Assessment
 
@@ -29,5 +31,5 @@ Assessed and added the explicit C-05 helper/view/test/doc/version/report/archive
 | Source | SHA-256 |
 | --- | --- |
 | [FEATURE-PLAN.md](FEATURE-PLAN.md) | `e0b08b69522df4a3028011d2faa16413fbe3489046489fe8eb677c6fa593525f` |
-| [layout.md](layout.md) | `4c93a8415510c91f99a6b5b351ab8070241544ddc787bab940d7c23e7a8081bf` |
+| [layout.md](../../layout.md) | `4c93a8415510c91f99a6b5b351ab8070241544ddc787bab940d7c23e7a8081bf` |
 | [FEATURE-SPEC.md](FEATURE-SPEC.md) | `f146ce63d65c0e1e7e921689917eff1e3f8dd328bf18c8dacb131c87d0f26cf5` |

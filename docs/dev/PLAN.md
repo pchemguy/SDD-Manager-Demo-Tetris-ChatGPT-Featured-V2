@@ -2,9 +2,9 @@
 
 ## Strategy and version coverage
 
-Deliver the initial classic browser phase and the modern extensions phase below. Phase 1 records the v1.0.0 delivery baseline. This is the simplest useful product in the accepted scope: a playable falling-block loop with score/levels, session controls and a deployable static package. Additional platforms remain outside both browser phases. Splitting rules, UI and packaging into separately released phases would release incomplete slices of this small product rather than useful application increments.
+Deliver the initial classic browser phase, modern extensions and conditional ghost visibility phases below. Phase 1 records the v1.0.0 delivery baseline. This is the simplest useful product in the accepted scope: a playable falling-block loop with score/levels, session controls and a deployable static package. Additional platforms remain outside all browser phases. Splitting rules, UI and packaging into separately released phases would release incomplete slices of this small product rather than useful application increments.
 
-The initial completed browser release is version 1.0.0. The initial build metadata and deployment archive used that version. Current modern metadata/archive use v1.1.0; publication requires the phase review, integration and release checks below. Subsequent delivered changes use semantic version increments appropriate to their compatibility and scope. No release is published merely because a milestone is complete.
+The initial completed browser release is version 1.0.0. The initial build metadata and deployment archive used that version. Current browser metadata/archive use v1.2.0; publication requires the phase review, integration and release checks below. Subsequent delivered changes use semantic version increments appropriate to their compatibility and scope. No release is published merely because a milestone is complete.
 
 ## Phase 1 — Classic browser game
 
@@ -99,3 +99,22 @@ Only after all exits and selected issue/milestone closures, merge the exact camp
 The principal risks are deadline event ordering, coordinate-sign mistakes, refill rollback, hold/preview mismatches and browser-focus reentry. Give them explicit model fixtures and assembled browser checks at their owning milestone. Update deterministic tests that encode superseded classic behavior without weakening unaffected assertions. Keep runtime/console-error guards through teardown.
 
 Use the repository's isolated managed browsers and documented environment diagnostics. Restricted-host Firefox recovery is opt-in only when diagnosed. Native headed OS-window focus and Windows/Electron execution remain explicitly unverified/excluded rather than blocking browser artifacts. Packaging must reject unsafe paths/secrets and maintain relative prefix-hosted assets. No outstanding product decision blocks this plan.
+
+## Phase 3 — Conditional ghost visibility
+
+One delivery milestone plus one dedicated phase review milestone fits the cohesive scope. Separating predicate, selector and description into independently released milestones would expose incomplete presentation; a separate distribution milestone adds a handoff without an independent capability. Keep implementation integrated early, then finish delivery evidence. No padding to reach3–5 milestones. Additional modes, thresholds and platforms remain excluded.
+
+| Milestone | Outcome and dependencies | Required exit evidence |
+| --- | --- | --- |
+| 3.1 — Conditional ghost and browser distribution | After accepted/QC/published preparation and eligible tracking, integrate the pure UI predicate, native selector, immediate state/description rendering and preference lifetime into the existing app; then finalize v1.2.0 docs/static delivery. | Independently calculated all-shape/orientation midline tests; both crossing directions, actual high-stack gameplay, paused edits, native focus/repeat/shortcut exclusion, restart/reload/remount and320px screenshots; unchanged canonical hard drop/timing/model regressions. Full source/built/extracted managed Chromium/Firefox acceptance, clean build/package/exclusion/integrity/reproducibility checks. Whole-milestone independent code review, repairs, demonstration and milestone report/HANDOFF belong to the final delivery task. |
+| 3.2 — Phase review | After3.1 delivery tasks and hosted milestone close, assess complete G-01–G-05 and retained guarantees. | Exactly one dedicated code-review/testing/report task, independent inspection separate from test execution; appropriate fresh regression, accepted main-document incorporation/current QC, unique task ownership and eligible current-campaign archive; task-closing audit, phase/final reports and TODO aggregation before integration. |
+
+The first implementation checkpoint is working conditional visibility in the real game, including selector and accessible description. It allows assessment of the chosen landing-edge boundary and retained Always default; feedback can inform explicit amendment without adding routine approval pauses to authorized execution. Distribution completes evidence for that same app, not a separate copy.
+
+## Verification and integration
+
+Use pure fixtures for the exact predicate, shared-view snapshots for boundary rendering and actual gameplay for shipped-browser crossings. Ensure both hidden and restored states are exercised in built/extracted apps. Preserve source-fixture exclusion and all existing model/lifecycle/packaging regressions. Browser resource policy and local diagnosed recovery remain unchanged; native headed focus is reported separately and Electron is outside delivery.
+
+Keep the persistent feature/002_0adba6e-conditional-ghost-visibility branch created from its published preparation-containing main parent. At complete phase closure, incorporate the delivered accepted delta into current product owners, reassess affected document QC, transfer tasks once and archive eligible active campaign sources/adjacent QC under the recorded feature prefix. Preserve prior closed records. Reports stay under that prefix. Close verified task issues/milestones only after owning publication/readback.
+
+Integrate the exact complete phase to its recorded main parent by explicit two-parent merge; run merged checks, rebuild/compare the final package and publish/read back main. Only then create the default-branch v1.2.0 release commit/tag with exact finalized notes. Publish/reconcile ZIP/checksum assets, read back source/body/latest/inventory and public download bytes. Record actual release outcomes in a task-owned parent-only evidence follow-up without moving the release tag. No implementation or release is claimed by this plan.

@@ -47,7 +47,7 @@ Packaging uses Python 3.11+ standard-library scripts; this is a developer/releas
 
 dist/, artifacts/, .test-build/, .browser-cache/, test-results/, playwright-report/, node_modules/ and local caches are generated and ignored. Browser profiles/downloads and temporary extraction/server state live only in owned ignored directories. Never package .agents, docs/dev, source tests, credentials or browser installations.
 
-The conventional ignored gh.tkn remains beside root .gitignore. It is never an asset, fixture, report input or archive member. Packaging allowlists contents and rejects symlinks, unsafe archive paths and credential-like files. The final artifact names are classic-tetris-browser-v1.1.0.zip and classic-tetris-browser-v1.1.0.zip.sha256 under artifacts/.
+The conventional ignored gh.tkn remains beside root .gitignore. It is never an asset, fixture, report input or archive member. Packaging allowlists contents and rejects symlinks, unsafe archive paths and credential-like files. The final artifact names are classic-tetris-browser-v1.2.0.zip and classic-tetris-browser-v1.2.0.zip.sha256 under artifacts/.
 
 Root AGENTS.md retains execution policies and links current authorities. Setup/check commands are added there only after their implementation and validation; this planned layout does not claim those commands already work.
 
@@ -62,4 +62,18 @@ Root AGENTS.md retains execution policies and links current authorities. Setup/c
 | tests/browser/modern-rules.spec.ts | Actual modern controls, panels, timers and options. |
 | docs/dev/features/001_0882e5d-modern-rule-extensions/ | Historical accepted feature/preparation/QC sources and retained Phase 2 reports. |
 
-C-04 owns private bag/hold/options and two clocks; C-05 renders next/hold/ghost and next-game setting; C-06 owns pending input and existing browser resources. TASKS is the sole current executable task owner. Version metadata and local artifacts use v1.1.0; stable release asset names remain unchanged.
+C-04 owns private bag/hold/options and two clocks; C-05 renders next/hold/ghost and next-game setting; C-06 owns pending input and existing browser resources. TASKS is the sole current executable task owner. Version metadata and local artifacts use v1.2.0; stable release asset names remain unchanged.
+
+## Conditional ghost allocation
+
+| Path | Owner |
+| --- | --- |
+| src/ui/ghost-visibility.ts | C-05 pure typed occupied-cell predicate. |
+| src/ui/game-view.ts, src/ui/styles.css | Mount-local mode/latest snapshot, native select, common cell/text rendering and cleanup. |
+| tests/unit/ghost-visibility.test.ts, tsconfig.test.json | DOM-free28 shape/orientation boundary tests and compiler inclusion. |
+| tests/browser/ghost-visibility.spec.ts | Actual native controls, high-stack crossings, hidden hard drop and lifecycle. |
+| tests/browser/ghost-view.spec.ts, tests/fixtures/ghost-visibility.html | Source-only shared-view fixture, excluded from built/extracted suites and package. |
+| docs/dev/spec/ghost-visibility.md | Current focused G-01–G-05 contracts. |
+| docs/dev/features/002_0adba6e-conditional-ghost-visibility/ | Historical current-campaign feature/preparation/QC archive and fixed Phase3 milestone/phase/final reports. |
+
+Canonical core/session and host resources retain their previous ownership. Current application metadata/package uses1.2.0; stable release asset names are unchanged. TASKS owns all executable product tasks.
