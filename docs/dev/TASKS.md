@@ -62,11 +62,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: focused browser keyboard/lifecycle tests and session regression. Exercise actual board focus/input; distinguish controlled visibility/blur handler tests from native window evidence. Check restart/resume initial delta zero and repeated mount teardown. References: C-06; R-05–R-10.
             Completion evidence: RED: three lifecycle checks failed before host controls existed. GREEN: 32 unit tests, typecheck/build/boundaries and ten built-app Chromium/Firefox tests passed. Exercised keyboard pause/resume/restart and repeat eligibility, actual page focus leaving mount, no auto-resume, controlled blur/hidden handlers and resume baseline. Focusout is deferred until transfer completes to avoid reentrant pause when disabling a clicked control. Native OS-window focus remains unverified.
 
-        - [ ] T-008 — Finish accessible responsive gameplay controls
+        - [x] T-008 — Finish accessible responsive gameplay controls
             Scope: src/ui/game-view.ts/styles.css and view tests. Add complete native session buttons, visible control legend, restrained lifecycle status announcements, focus feedback and narrow-width layout.
             Depends on: T-007.
             Acceptance: all R-07 presentation/control contracts hold, including disabled status-ineligible controls, keyboard-operable buttons, board focus return and occupied-cell visibility independent of color. At 320 CSS pixels no horizontal page overflow hides controls/board. Use one shared view with no host scheduler or global-keyboard imports.
             Verification: focused browser assertions and screenshots at narrow/ordinary widths; keyboard traversal/button activation and unit regression. Inspect visible rendering rather than treating text presence as visual proof. References: C-05; R-07/R-09/R-12.
+            Completion evidence: RED: native button and narrow-view checks failed before complete UI existed. Traced a real Pause click bug to focusout microtasks before internal focusin; using relatedTarget preserves inside-mount focus without an unintended pause/resume. GREEN: 32 unit tests and all 14 built-app Chromium/Firefox checks passed with typecheck/boundaries/build. Inspected narrow screenshot; 320px has no horizontal overflow. Native buttons, focus return, restrained live status and visible legend are covered.
+
         - [ ] T-009 — Verify integrated session recovery and usability
             Scope: cross-view/host browser tests, relevant repairs/documentation, docs/dev/reports/phases/1/1.2.md and HANDOFF. This is the final delivery task with folded milestone review obligations.
             Depends on: T-007, T-008.

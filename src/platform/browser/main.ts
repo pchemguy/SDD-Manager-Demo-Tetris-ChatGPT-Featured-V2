@@ -24,7 +24,7 @@ export function mountGame(mount:HTMLElement,random:()=>number=Math.random):()=>v
  const pause=()=>{if(!disposed){last=null;session.dispatch('pause')}};
  const hidden=()=>{if(doc.hidden)pause()};
  // Wait until focus transfers finish; disabling a clicked control can transiently focus body.
- const focusOut=()=>queueMicrotask(()=>{if(!mount.contains(doc.activeElement))pause()});
+ const focusOut=(event:FocusEvent)=>{if(event.relatedTarget&&mount.contains(event.relatedTarget as Node))return;queueMicrotask(()=>{if(!mount.contains(doc.activeElement))pause()})};
  view.board.addEventListener('keydown',key);mount.addEventListener('focusout',focusOut);
  win.addEventListener('blur',pause);doc.addEventListener('visibilitychange',hidden);
  frame=win.requestAnimationFrame(tick);
