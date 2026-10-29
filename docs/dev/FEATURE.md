@@ -2,11 +2,11 @@
 
 ## Outcome and scope
 
-Upgrade the released browser game with hold, five next-piece previews, a ghost landing projection, 7-bag generation, SRS wall kicks in both rotation directions, hard drop and a full-gravity-interval lock delay. The modern rules become the default; a separate classic-mode selector is outside this feature. Existing single-player browser delivery and future desktop reuse constraints remain those of [PROJECT](PROJECT.md) and [ARCHITECTURE](ARCHITECTURE.md).
+Upgrade the released browser game with hold, a single next-piece preview, a ghost landing projection, 7-bag generation, SRS wall kicks in both rotation directions, hard drop and a full-gravity-interval lock delay. The modern rules become the default; a separate classic-mode selector is outside this feature. Existing single-player browser delivery and future desktop reuse constraints remain those of [PROJECT](PROJECT.md) and [ARCHITECTURE](ARCHITECTURE.md).
 
 ## Piece flow and player information
 
-Each shuffled bag contains each of I, J, L, O, S, T and Z exactly once. Bags follow consecutively and can repeat a type across their boundary. Randomness remains injectable and independently testable. The preview displays the next five spawn types in their consumption order. Holding into an empty slot consumes the next queued piece; swapping an occupied slot does not consume the queue. Preview and active piece always agree with actual generation.
+Each shuffled bag contains each of I, J, L, O, S, T and Z exactly once. Bags follow consecutively and can repeat a type across their boundary. Randomness remains injectable and independently testable. The preview displays only the single next piece to spawn. Later pieces in the bag are not shown. Holding into an empty slot consumes the next queued piece; swapping an occupied slot does not consume the queue. Preview and active piece always agree with actual generation.
 
 The player may hold once before the current piece locks. Holding stores its type and brings the held or queued replacement into the ordinary spawn orientation/position, with fresh piece timers. Movement, rotation, soft drop or delayed hard drop do not restore hold eligibility; a completed lock does. Blocked replacement spawn ends the game using the retained blocked-spawn rule. Start/restart reset the bag/queue, held slot and hold eligibility; pause preserves them.
 

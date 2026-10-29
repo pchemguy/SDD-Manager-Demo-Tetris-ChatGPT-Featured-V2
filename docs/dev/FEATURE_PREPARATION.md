@@ -22,7 +22,8 @@ Tracking is policy-selected by root AGENTS.md. Campaign milestone and all nine q
 | Hard-drop option | User selected Pre-game option | Default delayed locking; immediate locking selectable for start/restart. |
 | Rotation | User selected SRS both directions | Add counterclockwise rotation and explicit standard kick-table behavior. |
 | Existing architecture | Agent recommendation, subject to FEATURE approval | Extend pure core/session/shared view and browser adapter rather than replace the engine or add a framework. |
-| Preview/hold/scoring | Proposed for FEATURE approval | Five next pieces, one hold per lock, two hard-drop points per descended cell; existing line/soft-drop scores retained. |
+| Preview count | User amendment: Change to next only | Display exactly one next piece; supersedes the initial five-piece proposal. |
+| Hold/scoring | Proposed for FEATURE approval | One hold per lock, two hard-drop points per descended cell; existing line/soft-drop scores retained. |
 | Timer boundaries | Proposed for FEATURE approval | Capture interval at landing; pause freezes; blocked drops do not shorten/reset it; delayed hard drop already grounded preserves it. |
 | Compatibility/delivery | Proposed for FEATURE approval | Space becomes hard drop; strict visible-board top boundary retained; no full guideline certification. Browser-only v1.1.0 target, with a release after each completed verified integrated phase under the standing policy. |
 
@@ -51,3 +52,7 @@ Initialization 67118c85f562031def0650b8d5956431b5959a91 was pushed/read back, th
 ## FDOCS-002 proposal
 
 FEATURE.md draft SHA-256: 8b756e876d2c541f0e0d552f61db14649acbd2c63f20878b3c7587bd37be74bc. Seed coverage and retained-versus-changed scope reviewed. Confirmed choices are retained; five previews, one hold per lock, hard-drop scoring, timer capture, strict board ceiling and controls/delivery details are explicit proposals awaiting whole-brief acceptance. No human approval of this draft is claimed. FDOCS-002 remains unchecked/open; publish/read back the reviewable draft, present it and pause before dependent design. Independent read-only builder-gap review found nothing important left: bag/preview/hold consumption, rotation/board boundary, landing-only resets, hard-drop options, scoring, controls and delivery are sufficiently defined for the brief checkpoint. Exact kick tables, event ordering and UI allocation remain explicitly owned by downstream design/specification. Seed coverage, maintained links, credential-pattern exclusion and git whitespace checks passed. This is brief readiness, not whole-package QC or product acceptance.
+
+## Preview amendment
+
+The user instructed Change to next only after asking what five previews meant. FEATURE now shows exactly one upcoming piece; later bag entries remain internal. This changes presentation depth only, preserving 7-bag generation and hold/lock consumption rules. Current FEATURE SHA-256: 22be8e8d6c8774d6563ccc0a59a5d0216f69948f63039fd2c46af28570c27073. Checked current brief for stale five-piece requirements and reviewed consistency with hold, bag and preview success criteria. The prior proposal hash/review above describes the original draft; this bounded amendment has been reviewed locally. Whole-brief acceptance remains pending; FDOCS-002 stays unchecked/open.
