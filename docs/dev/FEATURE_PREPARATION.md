@@ -10,7 +10,7 @@ Accepted baseline: PROJECT, ARCHITECTURE, DECOMPOSITION, SPEC and spec/modern-ru
 
 ## Current control
 
-Continue project preference autodoc/onepass, pass1 for this feature only. FEATURE approval remains active; downstream design-through-TASKS document checkpoints are preapproved after brief acceptance, subject to technical QC. No material-decision delegation is inferred. Current stop is first FEATURE approval; subsequent autodoc stop is after FDOCS-008 before package QC/integration/implementation unless explicitly requested. No new implementation range is activated by opening this campaign. Preserve earlier completed task/phase ranges.
+Continue project preference autodoc/onepass, pass1 for this feature only. FEATURE approval remains active; downstream design-through-TASKS document checkpoints are preapproved after brief acceptance, subject to technical QC. No material-decision delegation is inferred. FEATURE was approved by the user’s “k” in response to the published brief and explicit approval question. The active autodoc stop is after FDOCS-008 before package QC/integration/implementation unless explicitly requested. No new implementation range is activated by opening this campaign. Preserve earlier completed task/phase ranges.
 
 Reporting Standard: concise consequential decisions/results. Minimal and Explicit profiles remain available. Tracking enabled by root AGENTS policy. Required campaign milestone and all nine complete FDOCS issue identities/markers/native associations were verified before repository writes. Existing protected credential storage/ignore rules and manual provenance scaffold are reused unchanged; no transcript was recorded or setup replayed.
 
@@ -19,11 +19,11 @@ Reporting Standard: concise consequential decisions/results. Minimal and Explici
 | Topic | Source/status and rationale |
 | --- | --- |
 | Dynamic upper-half hide/lower-half restore | User supplied. Reevaluate after changes to projected landing; whole-ghost visibility, not cell clipping. |
-| Selector and default | Agent proposal pending approval: Always and Lower half only; Always initially retains v1.1.0 behavior. No third Never mode. |
-| Midline predicate | Agent proposal pending approval: use lowest occupied projected cell, not padded matrix origin. On20 rows, hide when that cell is in rows1–10, show in rows11–20. Straddling projection stays visible. |
-| Timing and lifetime | Agent proposal pending approval: display mode applies immediately, survives start/restart and pause/resume for the mounted app; reload resets Always; no persisted preference. No debounce/hysteresis. |
-| Accessibility and rule isolation | Agent proposal pending approval: hidden ghost has no rendered ghost cells or landing-row announcement; describe conditional suppression. Keep canonical projection available for hard drop and detached snapshot contract. Paused projection/visibility stay frozen except direct display-mode changes. |
-| Delivery/version | Agent recommendation, not yet accepted: additive browser v1.2.0 after complete verified phase integration; retain v1.1.0 artifacts and all existing rules/controls. |
+| Selector and default | Accepted with the brief: Always and Lower half only; Always initially retains v1.1.0 behavior. No third Never mode. |
+| Midline predicate | Accepted with the brief: use lowest occupied projected cell, not padded matrix origin. On20 rows, hide when that cell is in rows1–10, show in rows11–20. Straddling projection stays visible. |
+| Timing and lifetime | Accepted with the brief: display mode applies immediately, survives start/restart and pause/resume for the mounted app; reload resets Always; no persisted preference. No debounce/hysteresis. |
+| Accessibility and rule isolation | Accepted with the brief: hidden ghost has no rendered ghost cells or landing-row announcement; describe conditional suppression. Keep canonical projection available for hard drop and detached snapshot contract. Paused projection/visibility stay frozen except direct display-mode changes. |
+| Delivery/version | Accepted with the brief: additive browser v1.2.0 after complete verified phase integration; retain v1.1.0 artifacts and all existing rules/controls. |
 
 Cross-scope decisions: none beyond this one pass. Reconsider predicate/default/selection lifetime only through explicit user correction or material conflicting evidence. No future scopes inferred.
 
@@ -32,8 +32,8 @@ Cross-scope decisions: none beyond this one pass. Reconsider predicate/default/s
 | Stage | Assessment and state |
 | --- | --- |
 | FDOCS-001 | Linux/bash usable Git worktree, clean published main baseline, campaign/global-sequence collision scan, existing instructions/auth/provenance and nine-stage tracking verified. Initialization published/read back; FDOCS-001 issue42 closed/read back. |
-| FDOCS-002 | FEATURE proposal reviewed against current session ghost derivation and shared-view cell/accessible-description rendering; all requested behavior covered. Canonical projection must remain independent of display suppression. Source SHA256 df766608bc3b4bf8f1defcfd9e4453e225ea6352840cf0b6996c876163eb2dbb. Human acceptance pending; FDOCS-002 remains unchecked. |
-| FDOCS-003–009 | Pending brief acceptance and ordered assessments. |
+| FDOCS-002 | FEATURE proposal reviewed against current session ghost derivation and shared-view cell/accessible-description rendering; all requested behavior covered. Canonical projection must remain independent of display suppression. Source SHA256 df766608bc3b4bf8f1defcfd9e4453e225ea6352840cf0b6996c876163eb2dbb. Human accepted the presented brief/defaults with “k”; accepted product text removes proposal-only approval narration, preserving the approved behavior. FDOCS-002 completion records exact current source below. |
+| FDOCS-003–009 | Pending ordered downstream assessments under autodoc preapproval. |
 
 ## Hosted preparation mapping
 
@@ -53,4 +53,13 @@ Milestone #11 (sdd-docs-002_0adba6e), open/read back.
 
 ## Current reset and pending transitions
 
-No reset. FEATURE proposal publication/readback is the current operation. Stop for FEATURE acceptance; FDOCS-002 stays unchecked until actual approval. No product code, version, release or main contract changes authorized at this checkpoint.
+No reset. Record/publish/read back FDOCS-002 acceptance, close43 then continue ordered FDOCS-003–008 under autodoc; stop before FDOCS-009. No product code, version, release or main contract changes authorized at this checkpoint.
+
+## FDOCS-002 completion
+
+User accepted the published FEATURE and explicit defaults with k: Always/Lower half only, retained Always default, lowest occupied landing cell rows1–10 hidden/11–20 shown, straddling visible and immediate nonpersistent selection. Canonical projection/gameplay unchanged; target v1.2.0. Continue autodoc downstream documents only; stop before package QC.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE.md: fd21c9a6fce63ad400c6e973b31901dd0ac393da4d3b89ca0ade62ed9b488348
+
+Publish/read back this coherent completion before closing/readback of issue #43 or dependent work.

@@ -6,7 +6,7 @@ Give players a ghost visibility mode that suppresses the projection when its lan
 
 The existing [game](PROJECT.md) and [modern contracts](spec/modern-rules.md) already provide a canonical ghost shared with hard drop. This feature changes presentation, preserving landing geometry and all gameplay rules.
 
-## Proposed mode and boundary
+## Mode and boundary
 
 Provide a labeled, keyboard-operable Ghost visibility selector with Always and Lower half only. Always is the initial default, preserving current visibility. Lower half only applies the condition immediately to the current projection.
 
@@ -22,8 +22,8 @@ Preserve hold, exactly one next preview, seven-bag, both-direction kicks, scorin
 
 No Never mode, threshold customization, persisted preferences, new shortcuts, animations, hidden rows or Electron delivery is included. Existing controls retain their bindings. Controls remain usable at320 CSS pixels with visible focus and native keyboard behavior.
 
-## Scope decisions for review
+## Boundary rationale
 
-The requested dynamic upper/lower-half behavior is supplied by the user. Selector choices, retained Always default, lowest-occupied-cell boundary, straddling visibility and preference lifetime above are proposed choices awaiting brief acceptance; they are not assumed approved. A threshold based on matrix origin would depend on padding, and one based on the highest occupied cell would hide straddling projections. The lowest-cell rule provides a consistent occupied landing edge across shapes/orientations.
+A threshold based on matrix origin would depend on padding, and one based on the highest occupied cell would hide straddling projections. The lowest-cell rule provides a consistent occupied landing edge across shapes/orientations.
 
 Target an additive browser v1.2.0 release after complete verified integration, retaining published v1.1.0. Acceptance must cover every piece/orientation near the midline, both crossing directions, immediate mode changes, pause/restart/reload, accessible suppression, keyboard/native focus, and unchanged hard drop/timing in isolated Chromium/Firefox source/built/extracted delivery. Detailed contracts and delivery tasks follow accepted scope.
