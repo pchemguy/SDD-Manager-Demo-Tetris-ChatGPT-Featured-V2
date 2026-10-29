@@ -26,11 +26,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: focused `npm run test:unit` tests for pieces/board, `npm run typecheck`, `npm run check:boundaries`. References: C-01/C-02; R-01/R-03/R-04.
             Completion evidence: RED: all 11 geometry/board cases failed against interface placeholders. GREEN: all 11 passed after implementation; typecheck and DOM-free/import boundary checks passed. Covered seven legal spawns, rotations/O invariance, wall/floor/settled overlap, immutable rejection, zero through four simultaneous clears and compaction. Repaired portable Node test-file discovery exposed by the first real suite; no shell glob dependency.
 
-        - [ ] T-003 — Implement scoring level and gravity progression
+        - [x] T-003 — Implement scoring level and gravity progression
             Scope: src/core/progression.ts, value types as needed, progression unit tests and module documentation.
             Depends on: T-002.
             Acceptance: score multipliers use the pre-clear level; total-line thresholds update level after the clear; soft-drop points are additive; interval reaches but does not cross the 100 ms floor. Zero-row locks add no clear award. Functions have explicit inputs without clock/UI dependencies.
             Verification: table-driven `npm run test:unit` progression cases at 0/1/2/3/4 rows, 9-to-10 and multi-threshold totals, first/high levels and soft-drop addition; typecheck/boundary checks. References: C-03; R-04/R-05.
+            Completion evidence: RED: seven progression scenarios failed against placeholders while existing board cases passed. GREEN: all 19 unit tests passed, followed by typecheck/boundaries. Literal awards, pre-clear multiplier, line threshold ordering, additive soft-drop score, input preservation and exact gravity floor are covered.
+
         - [ ] T-004 — Implement deterministic session orchestration
             Scope: src/application/session.ts and session tests/fixtures. Compose rule modules with explicit randomness, lifecycle, elapsed time, snapshots and subscriptions.
             Depends on: T-002, T-003.
