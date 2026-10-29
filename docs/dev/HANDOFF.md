@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: conditional ghost feature autodoc pass complete through FDOCS-008; package QC not run.
+Checkpoint: whole-package QC passed; FDOCS-009 publication/closure and preparation integration next.
 
 ## Authority and current owners
 
@@ -12,4 +12,4 @@ Current design-docs/002_0adba6e-conditional-ghost-visibility; original full main
 
 ## Stop and next eligible action
 
-Stop after FDOCS-008 publication/closure before package QC. Await explicit selection of QC/implementation; then assess whole package, persist/report FDOCS-009, publish/close50, explicitly integrate/verify/publish preparation to actual default main before milestone closure or implementation branch/Phase3 activation. No code, tests, dependency install, app version, release or canonical main contract changes occurred in this preparation pass. Prior v1.1.0 history/evidence and closed campaign001 remain unchanged. Native headed focus remains unverified and Electron outside scope.
+User explicitly authorized QC and full implementation. Publish/read back FDOCS-009/report/control/HANDOFF, close50; explicitly integrate/verify/publish preparation to default main, close11, then create feature branch and project Phase3 before T-024–T-026. Complete verified main integration and v1.2.0 release without another routine approval. No code, tests, dependency install, app version, release or canonical main contract changes occurred in this preparation pass. Prior v1.1.0 history/evidence and closed campaign001 remain unchanged. Native headed focus remains unverified and Electron outside scope.

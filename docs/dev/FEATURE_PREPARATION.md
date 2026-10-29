@@ -125,3 +125,16 @@ Source identities (SHA-256):
 - AGENTS.md: 995aa3b6b66e88c11b3ae3ff568f72b08591a5b65bccc73058e1b46f9c21f4be
 
 Publish/read back this coherent completion before closing/readback of issue #49 or dependent work.
+
+## Authorization to advance
+
+User requested “Do qc and full implememnt”, explicitly selecting whole-package QC, preparation integration and complete T-024–T-026 through verified main integration and v1.2.0 release. FEATURE-QC-REPORT assessed the full current package and found Ready with no blocker. Original baseline/identity remain unchanged. No further routine human checkpoint is pending.
+
+## FDOCS-009 completion
+
+User explicitly authorized QC/full implementation. Whole-package scope/design/contracts/plan/layout/tasks and accepted decisions are coherent; exact source identities, links, unique task ownership and review/report/test/release gates pass. FEATURE-QC-REPORT Ready, no unresolved finding. Preparation integration and tracking activation remain prerequisites to product work.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-QC-REPORT.md: 50e4a095b1bb48213822822cb7dbd100a568833d52ebc52d4531902ba157a175
+
+Publish/read back this coherent completion before closing/readback of issue #50 or dependent work.
