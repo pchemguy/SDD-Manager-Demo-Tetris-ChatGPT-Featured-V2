@@ -8,7 +8,7 @@ Original request: open a feature campaign to implement hold, next-piece preview,
 
 ## Current control
 
-Autodoc/onepass is continued from the user's project preference. Current pass: one, covering exactly the requested modern rules. FEATURE approval remains active; downstream design-through-task checkpoints are preapproved under autodoc, subject to technical QC. No material-decision delegation is inferred from that mode. Stop at FDOCS-008 before package QC/integration/implementation unless subsequently requested. The user approved the amended FEATURE after the single-next-piece change. The first brief checkpoint is satisfied; continue through FDOCS-008. Reporting: Standard (brief consequential decisions/results); Minimal and Explicit remain available. No future passes are inferred; prior completed task ranges and release remain preserved.
+Autodoc/onepass is continued from the user's project preference. Current pass: one, covering exactly the requested modern rules. FEATURE approval remains active; downstream design-through-task checkpoints are preapproved under autodoc, subject to technical QC. No material-decision delegation is inferred from that mode. Stop at FDOCS-008 before package QC/integration/implementation unless subsequently requested. The documentation pass is now complete locally; publish/read back and close FDOCS-008 before reporting its final boundary. The user approved the amended FEATURE after the single-next-piece change. The first brief checkpoint is satisfied; continue through FDOCS-008. Reporting: Standard (brief consequential decisions/results); Minimal and Explicit remain available. No future passes are inferred; prior completed task ranges and release remain preserved.
 
 Tracking is policy-selected by root AGENTS.md. Campaign milestone and all nine qualified FDOCS issues were created/reconciled and read back with exact complete template briefs, machine markers and native associations before any repository write. Implementation phase projection is not yet selected/created. The per-stage issue mapping below is verified at initialization.
 
@@ -117,3 +117,18 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: 1d8cfb2e4fdececbecc481998eb9b58f5aa6ca0d2e598fb72a6ceccdf26e788d
 
 Publish/read back this coherent completion before closing/readback of issue #29 or dependent work.
+
+## Current pass boundary
+
+FDOCS-002–007 are accepted under the actual brief approval/autodoc preapproval, published/read back and their campaign issues closed/read back. FDOCS-005 direct API readback was blocked by the network gateway before an issue mutation; the connected GitHub integration verified and closed it. Later issue closures use that integration. The documentation pass finishes with FEATURE-TASKS and adjacent conformance review at FDOCS-008. FDOCS-009 stays unchecked/open; milestone #6 stays open. No product task projection, whole-package QC, merge, version change or implementation is performed. Next eligible scope is an explicit package-QC/implementation request under the retained autodoc stop.
+
+## FDOCS-008 completion
+
+Autodoc pass complete: FEATURE-TASKS defines T-014–T-023, nine bounded delivery tasks across three milestones plus one phase review. Exact upstream hashes, unique project-wide IDs, hierarchy/dependencies, full contract coverage and folded milestone review/report/HANDOFF obligations passed conformance QC. Refresh control/navigation/HANDOFF; stop before FDOCS-009, preparation integration or implementation.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-TASKS.md: 05666a108964ebdbab93ac43726953dd4385fe67ee11b6bb28d57047e38cd33f
+- docs/dev/FEATURE-TASKS-REVIEW-REPORT.md: 0727d910ad60be0a1c28b4e70d9d1cd11a643d05f1b2ba5460f1666bbd6dbda7
+- AGENTS.md: 01c13825430b73f12148702050948c90275ba99e0703ab6db7abdf5020e61d0a
+
+Publish/read back this coherent completion before closing/readback of issue #30 or dependent work.
