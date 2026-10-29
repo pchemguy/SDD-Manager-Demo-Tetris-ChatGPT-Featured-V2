@@ -14,11 +14,13 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
 
 - [ ] Phase 2 — Modern browser rules
     - [ ] Milestone 2.1 — Grounding and modern rotation
-        - [ ] T-014 — Add canonical landing and both-direction kick rotation
+        - [x] T-014 — Add canonical landing and both-direction kick rotation
             Scope: src/core/types.ts/pieces.ts/board.ts, new src/core/kicks.ts; tests/unit/kicks.test.ts and board.test.ts. Depends on: main T-013 and feature preparation/phase activation.
             Interfaces: produce landing and tryRotate signatures above; preserve spawn/cells/canPlace/lock. Use F-01's exact sixteen ordered transition rows, application's downward-positive y and strict ceiling; O is invariant.
             Acceptance: spatial fixtures demonstrate all transitions in both families, first-legal preference, later-candidate fallback, blocked full rejection and unchanged input. Landing returns the last legal row without tunneling or settled mutation. Include invalid direction rejection; do not validate tables only by copying implementation constants into tests.
             Verification: RED focused geometric fixtures first; GREEN npm run test:unit, typecheck and check:boundaries. Update module docs for the shared collision/landing boundary. References: F-01, C-01/C-02.
+            Completion evidence: RED: 20 core acceptance cases failed on missing kick/landing functions. GREEN: 68 unit tests plus typecheck/boundaries passed. Sixteen literal spatial kick fixtures exercise both families/transitions with obstacles, alongside hand-checked floor/wall ordering, rejection, O/direction, landing and immutability. Baseline 32 units and both managed environment checks passed; entry HANDOFF records verified phase activation.
+
         - [ ] T-015 — Integrate the independent landing countdown
             Scope: src/application/session.ts and tests/unit/session.test.ts using T-014 primitives. Depends on: T-014.
             Interfaces: existing dispatch/advance and snapshot remain usable; rotate uses tryRotate and rotateCCW is added. Session owns gravity remainder plus nullable lock countdown. Do not implement bag/hold/drop capabilities early.

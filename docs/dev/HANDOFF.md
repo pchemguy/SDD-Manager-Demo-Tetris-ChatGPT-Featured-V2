@@ -13,3 +13,7 @@ Receiving main, source design-docs/001_0882e5d-modern-rule-extensions at 44433ec
 ## Verification and reporting
 
 All seven capabilities, landing-only lock resets, modern default, both-direction SRS and next-game option fit existing four-block architecture. Ten tasks cover three delivery milestones plus one phase review; reports stay in the feature prefix. Browser/model/package and native-focus limits remain in FEATURE-SPEC/PLAN/TASKS. Record actual implementation, integration and hosted release outcomes only after their gates run; no local Ready label certifies future effects.
+
+## Activated implementation context
+
+Preparation merge bcfa8e13867e8222831da965a4b56872a694a373 is published on main; preparation milestone #6 closed/read back. Current feature/001_0882e5d-modern-rule-extensions was created from that exact main checkpoint and returns to main. Phase 2 label, milestones #7–#10 and task issues #32–#41 have complete initial association readback. All T-014–T-023 are selected by Do QC and full implement; proceed sequentially to final integration/release. No new worktree is needed for this clean dedicated repository/branch.

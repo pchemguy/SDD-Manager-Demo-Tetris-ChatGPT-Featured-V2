@@ -20,4 +20,4 @@ export function cells(piece:Piece): Point[] {
   return [x+piece.x,y+piece.y];
  });
 }
-export const rotate = (p:Piece): Piece => p.type==='O'?{...p}:{...p,rotation:(p.rotation+1)%4};
+export const rotate = (p:Piece,direction:1|-1=1): Piece => p.type==='O'?{...p}:{...p,rotation:(p.rotation+direction+4)%4};
