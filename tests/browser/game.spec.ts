@@ -1,6 +1,6 @@
 /** Actual application keyboard/frame tests, independent of environment fixtures. */
 import {test,expect} from './test-base.js';
-test.beforeEach(async({page})=>{await page.addInitScript(()=>{Math.random=()=>0.5});await page.goto('/')});
+test.beforeEach(async({page})=>{await page.addInitScript(()=>{Math.random=()=>0.5});await page.goto('./')});
 test('@basic start, move, soft drop and reach blocked-spawn game over',async({page},info)=>{
  await page.getByRole('button',{name:'Start game'}).click();
  const board=page.getByRole('img',{name:'Tetris playfield'});await expect(board).toBeFocused();
