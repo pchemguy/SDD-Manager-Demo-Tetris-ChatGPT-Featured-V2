@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: modern feature fully implemented, verified, integrated and published as v1.1.0; final task-owned evidence follow-up records the completed outcome.
+Checkpoint: whole-package QC passed/published, issue50 closed/read back; preparation merge on main pending publication.
 
-## Current authorities and outcomes
+## Authority and current owners
 
-PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC and spec/modern-rules.md/PLAN/layout describe the current browser game. TASKS is the sole executable owner; all23 project tasks are checked. Accepted feature/preparation/QC snapshots under features/001_0882e5d-modern-rule-extensions are historical/non-executable. Its IMPLEMENTATION-REPORT and reports/phases/2/PHASE-REPORT retain actual integration/release/CI/download evidence, independent reviews, checks and TODO None. Prior Phase1 reports, completed task bytes and v1.0.0 remain unchanged.
+User accepted the published brief/defaults with “k”. Autodoc/onepass preapproves downstream document checkpoints only. Approved scope: Always default and Lower half only selector, bottom occupied projected cell rows1–10 hidden/11–20 shown, straddling visible, immediate view-local nonpersistent selection retained through restart/pause and reset on reload. Canonical landing/hard drop/gameplay are unchanged. Active FEATURE/FEATURE_DECOMPOSITION/FEATURE-SPEC/FEATURE-PLAN and physical map/FEATURE-TASKS describe the intended delta; adjacent scoped QC reports are Ready, not whole-package certification. Main ARCHITECTURE reused with assessment. FEATURE_PREPARATION retains exact decisions/source identities and tracking.
 
-## Git and hosting
+## Git and tracking
 
-Current main. Campaign baseline0882e5d675c100e8d5cba514de17d092e2b736fc; implementation creation parentbcfa8e13867e8222831da965a4b56872a694a373. Published feature tipca74941a7177454852f99101d2c05d2d95aeac8d; explicit main merge0ea9492f9f831ab0a76e4c4c680b95436743315b. Release commitfb403baccfd6922972e79251ef503d09f38258c0, annotated v1.1.0 tagbce7c736a897cec76cdc8354a7dc9a43c9ab99f8. GitHub release428259932 is published/latest with exactly ZIP/checksum; public downloads byte-verified. Release commit/tag/provider bodies match retained notes exactly. Release-source CI passes. All issues/milestones closed/read back.
+Receiving main, preparation source design-docs/002_0adba6e-conditional-ghost-visibility at4105c915e9aa766d41ccd4da8ba9e46a0057aee8; original full main baseline/creation parent0adba6e9898e9c1bb2389cca3ad23bd8fadfacb9. Intended future implementation branch feature/002_0adba6e-conditional-ghost-visibility may be created only after verified published preparation integration. Milestone11 and issues42–50 identify the9 preparation stages. FDOCS-001–007 published/closed; FDOCS-008 source/QC/control/checkoff/HANDOFF commit must publish/read back then close/read back49. FDOCS-009/issue50 and milestone11 remain open. No product-phase objects projected; all T-024–T-026 remain unchecked.
 
-## Stop and limitations
+## Stop and next eligible action
 
-After this T-023 parent-only evidence follow-up is published/read back, verify clean main and unchanged release tag and return completed authorized work. No task/gameplay/release action remains. Native headed OS-window focus is unverified; local Firefox recovery was process-local, while GitHub release CI passes normally. Electron/Windows installers remain future scope. No pending human decision or unresolved finding.
+User explicitly authorized QC and full implementation. Publish/read back FDOCS-009/report/control/HANDOFF, close50; explicitly integrate/verify/publish preparation to default main, close11, then create feature branch and project Phase3 before T-024–T-026. Complete verified main integration and v1.2.0 release without another routine approval. No code, tests, dependency install, app version, release or canonical main contract changes occurred in this preparation pass. Prior v1.1.0 history/evidence and closed campaign001 remain unchanged. Native headed focus remains unverified and Electron outside scope.
