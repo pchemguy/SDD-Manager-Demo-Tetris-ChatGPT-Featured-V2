@@ -26,8 +26,8 @@ Detailed behavioral contracts and verification commands belong in later document
 
 | Task | Current evidence / decision basis |
 | --- | --- |
-| DOCS-001 | Initialization checks below; completion is submitted with DOCS_TASKS and HANDOFF in the same commit. Publication and issue closure require subsequent readback. |
-| DOCS-002 | PROJECT proposal pending. Human acceptance remains active. |
+| DOCS-001 | Initialization commit `b666fad9cd229338ad0d93e6e8acb94dce4cfff5` is published and exactly read back. Issue #1 is closed as completed with completion evidence. Checks are retained below. |
+| DOCS-002 | [PROJECT](PROJECT.md) is proposed with the confirmed baseline decisions. Human acceptance remains pending; DOCS-002 stays unchecked and issue #2 open. Proposed PROJECT blob: `c321b57d5b4033f67170b13f8fb3b9b920cde0e7`. |
 | DOCS-003 | Not started; preapproved after accepted PROJECT. |
 | DOCS-004 | Not started; preapproved after accepted ARCHITECTURE. |
 | DOCS-005 | Not started; preapproved subject to required SPEC QC. |
@@ -51,4 +51,4 @@ Detailed behavioral contracts and verification commands belong in later document
 
 ## Pending transitions
 
-Publish/read back the initialization commit on design-docs/main, then close/read back DOCS-001 issue #1 with that commit's evidence. Only afterward publish the PROJECT proposal; keep DOCS-002 unchecked until human approval. Recover later effects from Git and GitHub before replaying any operation.
+Publish/read back the PROJECT proposal on design-docs/main and present it for human acceptance. Keep DOCS-002 unchecked and issue #2 open. After acceptance, retain the accepted document identity and check DOCS-002 in the same owning approval commit, publish/read back and close/read back its issue before dependent architecture. Recover actual publication state from Git before replaying an operation.
