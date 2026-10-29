@@ -78,3 +78,12 @@ Source identities (SHA-256):
 - docs/dev/FEATURE_ARCHITECTURE.md: 1ea3014d92c234413e28a85c6605a1e89e9c09123369912ebdf7d51d78c49662
 
 Publish/read back this coherent completion before closing/readback of issue #25 or dependent work.
+
+## FDOCS-004 completion
+
+Autodoc-scoped acceptance: reviewed C-01–C-06 delta and exact session/snapshot/value seams against approved FEATURE and architecture. Bag state is transactional, ghost/drop share landing, options apply only at new-session boundaries, and existing error/lifecycle ownership is retained. No duplicate rule state or unresolved component boundary.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE_DECOMPOSITION.md: be357fad5c2b179992064a447ec52b7cd8d2b3ed9d78297f0f90c63c1c7a1218
+
+Publish/read back this coherent completion before closing/readback of issue #26 or dependent work.
