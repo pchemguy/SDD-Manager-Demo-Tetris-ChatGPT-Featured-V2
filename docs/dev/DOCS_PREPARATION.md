@@ -28,7 +28,7 @@ Detailed behavioral contracts and verification commands belong in later document
 | --- | --- |
 | DOCS-001 | Initialization commit `b666fad9cd229338ad0d93e6e8acb94dce4cfff5` is published and exactly read back. Issue #1 is closed as completed with completion evidence. Checks are retained below. |
 | DOCS-002 | [PROJECT](PROJECT.md) approved by the user's `k` response. Accepted unchanged proposal commit `8e5fcc878ea39dc5b3c5f38f6b8a0b43ff0c0eb6`; accepted PROJECT blob: `c321b57d5b4033f67170b13f8fb3b9b920cde0e7`. |
-| DOCS-003 | Not started; preapproved after accepted PROJECT. |
+| DOCS-003 | Accepted under autodoc preapproval. Reviewed against accepted PROJECT: all major responsibilities have one owner, dependencies are acyclic, shared UI supports a future Electron renderer, and core/session testing is independent of browser APIs. No material scope change or unresolved structural decision. Reviewed state: `docs/dev/ARCHITECTURE.md` blob `9f25f4b30b84e2b9d95eeb920ffa0b399a657bce`. |
 | DOCS-004 | Not started; preapproved after accepted ARCHITECTURE. |
 | DOCS-005 | Not started; preapproved subject to required SPEC QC. |
 | DOCS-006 | Not started; preapproved subject to PLAN strategy QC. |
@@ -51,4 +51,4 @@ Detailed behavioral contracts and verification commands belong in later document
 
 ## Pending transitions
 
-Publish/read back the PROJECT acceptance commit and close/read back issue #2 before architecture. Then complete DOCS-003 through DOCS-008 under autodoc preapproval and stop before package QC. Recover actual publication/closure state from Git and GitHub before replay.
+Publish/read back the DOCS-003 completion commit and close/read back its corresponding issue before dependent work. Completed earlier issue closures are verified externally. Stop after DOCS-008; DOCS-009 package QC, preparation integration and implementation remain unselected. Recover actual effects from Git and GitHub before replay.
