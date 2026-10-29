@@ -55,11 +55,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Completion evidence: Independent read-only code review: no critical/important finding; minor stale documentation M1 corrected in DEVELOPMENT and AGENTS. Added composed clear/scoring, grounded-escape and wall-rotation checks; all 32 unit tests, typecheck/boundaries/build and four actual built-app browser checks passed. Milestone report and HANDOFF included; native headed focus remains unverified. No deferred TODO.
 
     - [ ] Milestone 1.2 — Usable session controls
-        - [ ] T-007 — Complete browser input focus and time lifecycle
+        - [x] T-007 — Complete browser input focus and time lifecycle
             Scope: src/platform/browser/main.ts and focused host integration tests; preserve the playable loop.
             Depends on: T-006 and verified Milestone 1.1 closure.
             Acceptance: implement complete shortcut eligibility, native repeat handling, scroll prevention, pause/resume/restart commands, focus-out/window-blur/hidden auto-pause, timestamp-baseline reset and owned frame/listener teardown. Buttons/editable elements never double-dispatch board shortcuts. Focus/visibility return requires explicit resume.
             Verification: focused browser keyboard/lifecycle tests and session regression. Exercise actual board focus/input; distinguish controlled visibility/blur handler tests from native window evidence. Check restart/resume initial delta zero and repeated mount teardown. References: C-06; R-05–R-10.
+            Completion evidence: RED: three lifecycle checks failed before host controls existed. GREEN: 32 unit tests, typecheck/build/boundaries and ten built-app Chromium/Firefox tests passed. Exercised keyboard pause/resume/restart and repeat eligibility, actual page focus leaving mount, no auto-resume, controlled blur/hidden handlers and resume baseline. Focusout is deferred until transfer completes to avoid reentrant pause when disabling a clicked control. Native OS-window focus remains unverified.
+
         - [ ] T-008 — Finish accessible responsive gameplay controls
             Scope: src/ui/game-view.ts/styles.css and view tests. Add complete native session buttons, visible control legend, restrained lifecycle status announcements, focus feedback and narrow-width layout.
             Depends on: T-007.
