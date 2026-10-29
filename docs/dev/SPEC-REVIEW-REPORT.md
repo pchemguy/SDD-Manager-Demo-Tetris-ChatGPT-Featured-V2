@@ -31,3 +31,9 @@ Scope/count assessment: one cohesive root is sufficient for this small system; t
 No confirmed conformance defect was found. Reviewed specifically that successful soft drop does not create a lock delay, failed soft drop can lock immediately, pause preserves only the gravity remainder, and browser stalls cannot cascade locks. An advance call's model behavior is distinct from the browser delta clamp. Listener-error handling preserves the single authoritative state owner.
 
 Checks performed: manual contract/design coverage and boundary walkthrough; local Markdown heading/whitespace checks; Git content identities. Provisioning, build, runtime, native window focus and screenshot behavior remain implementation verification work. Ready here does not certify those behaviors.
+
+## Revision 1
+
+Finding S-01: R-08 described an injected listener-error callback without including its optional parameter in the constructor signature, and left immediate subscription delivery unspecified. The sdd-specify owner clarified createSession(random, onListenerError?) and specified that subscribe does not synchronously deliver an initial snapshot. This makes the existing orchestration contract directly implementable without adding product scope.
+
+Revised SPEC blob: `87368c5c720058b401f6ef3bc3b3cfceb06fcc26`. Rechecked notification count, observer failure containment, constructor defaults and snapshot acquisition against C-04/C-06. S-01 is resolved. The initial identity table retains the original reviewed state; this revision identifies the current state. Gate remains Ready for PLAN. No runtime evidence is claimed.
