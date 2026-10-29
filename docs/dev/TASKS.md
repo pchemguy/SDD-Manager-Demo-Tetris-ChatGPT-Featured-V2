@@ -77,11 +77,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Completion evidence: Milestone review I1 reproduced RED and resolved: ineligible Start no longer discards frame time. I2 render-time lifecycle reentry reproduced; coalesced owned macrotask auto-pause and timer cleanup resolve Firefox logs. Runtime guard includes page closure. 32 unit, 22 source and 20 built-app browser checks passed, with typecheck/boundaries/build. Remount/reload recovery and folded code-review/report/HANDOFF completed; no TODO; native headed focus unverified.
 
     - [ ] Milestone 1.3 — Verified browser distribution
-        - [ ] T-010 — Build and inspect the static deployment package
+        - [x] T-010 — Build and inspect the static deployment package
             Scope: scripts/package_browser.py, scripts/verify_package.py, build/package entry points, truthful initial docs/INSTALL.md and docs/CONTROLS.md required by the archive, and package-check fixtures; generated artifacts remain ignored.
             Depends on: T-009 and verified Milestone 1.2 closure.
             Acceptance: build relative static assets; produce classic-tetris-browser-v1.0.0.zip and its .zip.sha256 file under artifacts. Allowlist dist assets, LICENSE/required notices and installation/control documents. Reject unsafe paths/symlinks and exclude tokens, source tests, .agents, browser binaries/profiles, node_modules and caches. Verify checksum and extracted asset references; do not silently omit required final instructions.
             Verification: `npm run build`, `npm run package`, `npm run verify:package`; inspect ZIP members, digest and path-prefix asset routing. Negative fixtures cover secret-like entries, traversal/symlink and missing-asset rejection. The initial included instructions must be sufficient to deploy/play the current game; T-012 finalizes the complete guidance and rebuilds the archive. A verified package at this task is not a published release. References: R-09/R-11/R-12; layout delivery ownership.
+            Completion evidence: RED: ten adversarial packaging cases failed against placeholders. GREEN: all ten pytest cases pass, including exact allowlist, secret/symlink/traversal/duplicate rejection, missing assets, corruption and byte reproducibility. Actual production archive/manifest/checksum verified; extracted index and assets matched digests through a nested HTTP prefix. Repeated real build/archive bytes identical. Initial install/controls docs and full Vite notices included; pinned pytest tooling installed only in ignored .test-tools.
+
         - [ ] T-011 — Verify built and extracted app acceptance in both browsers
             Scope: tests/browser, deterministic fixtures where justified, actual built/extracted static server configuration and acceptance evidence; fix discovered in-scope failures.
             Depends on: T-010.

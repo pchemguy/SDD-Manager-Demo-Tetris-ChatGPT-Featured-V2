@@ -16,7 +16,8 @@
     "test:environment": "node scripts/browser-env.mjs test --grep @environment",
     "test:browser": "node scripts/browser-env.mjs test --grep-invert @environment",
     "package": "python scripts/package_browser.py",
-    "verify:package": "python scripts/verify_package.py"
+    "verify:package": "python scripts/verify_package.py",
+    "test:package": "python scripts/test-package.py"
   },
   "devDependencies": {
     "typescript": "7.0.2",
