@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: receiving main has complete verified Phase2 merge staged; release publication pending.
+Checkpoint: modern feature fully implemented, verified, integrated and published as v1.1.0; final task-owned evidence follow-up records the completed outcome.
 
-## Authorities and result
+## Current authorities and outcomes
 
-User-authorized full QC/implementation covers T-014–T-023, main integration and v1.1.0 release. PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC plus spec/modern-rules.md/PLAN/layout are current. TASKS is sole executable owner; all23 project tasks checked. Current feature sources/preparation/QC are historical under features/001_0882e5d-modern-rule-extensions. Phase/final reports there retain checks, independent review, repairs, exact hashes, task audit and TODO None. Prior Phase1 and campaigns preserved.
+PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC and spec/modern-rules.md/PLAN/layout describe the current browser game. TASKS is the sole executable owner; all23 project tasks are checked. Accepted feature/preparation/QC snapshots under features/001_0882e5d-modern-rule-extensions are historical/non-executable. Its IMPLEMENTATION-REPORT and reports/phases/2/PHASE-REPORT retain actual integration/release/CI/download evidence, independent reviews, checks and TODO None. Prior Phase1 reports, completed task bytes and v1.0.0 remain unchanged.
 
-## Branch and tracking
+## Git and hosting
 
-Receiving main; pinned source feature/001_0882e5d-modern-rule-extensions at ca74941a7177454852f99101d2c05d2d95aeac8d; campaign baseline0882e5d675c100e8d5cba514de17d092e2b736fc. Implementation parent/return main at preparation merge bcfa8e13867e8222831da965a4b56872a694a373. T-014–T-022 published; issues32–40 and milestones7–9 closed/read back. T-023 published/read back; issue41 and milestone10 closed/read back. Archived task snapshots do not supply ownership.
+Current main. Campaign baseline0882e5d675c100e8d5cba514de17d092e2b736fc; implementation creation parentbcfa8e13867e8222831da965a4b56872a694a373. Published feature tipca74941a7177454852f99101d2c05d2d95aeac8d; explicit main merge0ea9492f9f831ab0a76e4c4c680b95436743315b. Release commitfb403baccfd6922972e79251ef503d09f38258c0, annotated v1.1.0 tagbce7c736a897cec76cdc8354a7dc9a43c9ab99f8. GitHub release428259932 is published/latest with exactly ZIP/checksum; public downloads byte-verified. Release commit/tag/provider bodies match retained notes exactly. Release-source CI passes. All issues/milestones closed/read back.
 
-## Next action
+## Stop and limitations
 
-Actual T023 semantic transfer audit passed. Merged typecheck/boundaries/113unit/11package/build/strict verification and42 extracted-prefix browser cases passed; ZIP hash remains351c215782558e6b195aaaf60a60ab350d682b4d09ac262bbd21e8b37de1da79. Commit explicit two-parent integration and publish/read back main. Refresh release highlights through merge and release marker. Create exact-body default-branch Release v1.1.0 commit/tag, publish two stable ZIP/checksum assets and verify notes/source/latest/public download bytes and actual CI. Record actual outcomes in T-023 parent-only evidence follow-up without moving tag. Preserve old releases/branches. Native headed focus unverified, Firefox recovery process-local; no pending human decision.
+After this T-023 parent-only evidence follow-up is published/read back, verify clean main and unchanged release tag and return completed authorized work. No task/gameplay/release action remains. Native headed OS-window focus is unverified; local Firefox recovery was process-local, while GitHub release CI passes normally. Electron/Windows installers remain future scope. No pending human decision or unresolved finding.
