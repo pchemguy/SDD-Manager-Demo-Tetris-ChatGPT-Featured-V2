@@ -73,3 +73,12 @@ Source identities (SHA-256):
 - docs/dev/FEATURE.md: fd21c9a6fce63ad400c6e973b31901dd0ac393da4d3b89ca0ade62ed9b488348
 
 Publish/read back this coherent completion before closing/readback of issue #44 or dependent work.
+
+## FDOCS-004 completion
+
+Scoped C-05 decomposition owns pure visibility predicate, per-mount display preference/latest snapshot, one rendering decision for cells/text and owned selector cleanup. Retain all session/view API boundaries and C-06 native focus/shortcut resources. Downstream design acceptance is covered by approved autodoc scope; reviewed dependency direction and verification seams, no unresolved design decision.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE_DECOMPOSITION.md: f90feffc9a91a5917fdaa6fab7082ed4744bfbc1e2cda1d7bb79af0a9bf69b9b
+
+Publish/read back this coherent completion before closing/readback of issue #45 or dependent work.
