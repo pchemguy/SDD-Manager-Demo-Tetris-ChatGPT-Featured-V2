@@ -132,3 +132,16 @@ Source identities (SHA-256):
 - AGENTS.md: 01c13825430b73f12148702050948c90275ba99e0703ab6db7abdf5020e61d0a
 
 Publish/read back this coherent completion before closing/readback of issue #30 or dependent work.
+
+## Authorized QC and full implementation
+
+The user requested Do QC and full implement after FDOCS-008. This selects FDOCS-009, verified preparation integration/closure, all T-014–T-023, final feature integration and the standing per-phase release policy. It supersedes the earlier autodoc stop prospectively, preserving prior decisions. Independent whole-package review found no material blockers; coordinator current-link/hash checks passed. FEATURE-QC-REPORT owns exact readiness and remaining publication/tracking gates.
+
+## FDOCS-009 completion
+
+User-authorized whole-package QC passed independent read-only and coordinator review of the complete feature delta, decisions, exact sources/reviews/tasks and affected actual main code/design. No material blocker. Record readiness and full implementation authority; publish and close this issue before explicit preparation integration, milestone closure and verified Phase 2 activation.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-QC-REPORT.md: 36b155018a9a729fbc258f877b51d656b50d9ada0aded9b5a290244127610b05
+
+Publish/read back this coherent completion before closing/readback of issue #31 or dependent work.

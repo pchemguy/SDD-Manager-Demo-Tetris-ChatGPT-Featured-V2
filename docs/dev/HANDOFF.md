@@ -1,17 +1,15 @@
 # Project handoff
 
-Checkpoint: Modern-rule autodoc pass completed through task derivation; publication/FDOCS-008 closure pending.
+Checkpoint: Modern rules whole-package QC passed; FDOCS-009 publication/closure and preparation integration pending.
 
-## Workflow and authorities
+## Authority and scope
 
-Feature campaign 001_0882e5d, autodoc/onepass. The user approved the exact next-only FEATURE at 5edeca8181fac25c73569640a6a5193fbd5f2b5f. FEATURE_PREPARATION owns decisions, acceptance hashes and actual stage/publication evidence; FEATURE_DOCS_TASKS owns preparation checkoffs. FEATURE_ARCHITECTURE/FEATURE_DECOMPOSITION, FEATURE-SPEC and FEATURE-PLAN define the accepted scoped delta. Adjacent SPEC/PLAN/TASKS conformance reports are Ready for their scoped preparation outputs. FEATURE-TASKS is the sole executable feature work owner; its ten tasks are all unchecked.
+The user requested Do QC and full implement, authorizing the remaining preparation gates, full T-014–T-023 range, verified feature integration and v1.1.0 browser release. FEATURE_PREPARATION retains accepted next-only brief, decisions and exact stages; FEATURE-QC-REPORT records independent whole-package Ready review. No material blocker. Product tasks remain unchecked and implementation is not yet claimed.
 
-## Scope, branches and parent
+## Branches and next action
 
-Preparation branch design-docs/001_0882e5d-modern-rule-extensions, original main baseline/creation parent 0882e5d675c100e8d5cba514de17d092e2b736fc; preparation integration target main. No implementation branch exists. The intended later persistent branch is feature/001_0882e5d-modern-rule-extensions, created only after accepted preparation integration/publication. Main Phase 1 and v1.0.0 stay complete/unchanged. No parent execution is suspended.
+Current design-docs/001_0882e5d-modern-rule-extensions, original main baseline/creation parent 0882e5d675c100e8d5cba514de17d092e2b736fc. Publish/read back FDOCS-009, close/read back #31, explicitly merge verified preparation into refreshed actual default main, check/publish/read back, then close/read back preparation milestone #6. Create the persistent feature/001_0882e5d-modern-rule-extensions branch from that integrated main baseline, activate/verify all Phase 2 tracking objects and execute one task at a time. Preserve earlier Phase 1/v1.0.0 and existing branches. No unresolved user approval is pending.
 
-## Pass result and exact stop
+## Verification and reporting
 
-Approved scope: hold, exactly one next preview, ghost, seven-bag, both-direction SRS kicks, hard drop, one full landing interval with landing-only resets, and next-game immediate-drop-lock option. Target v1.1.0. New Phase 2 has three delivery milestones (three tasks each) and one phase-review task, global T-014–T-023. Native headed focus and Electron remain excluded evidence/delivery scope.
-
-Autodoc stops after FDOCS-008. Publish/read back this task-list/review/control/HANDOFF completion, close/read back issue #30, and report the pass result. Issues #23–#29 are closed/read back; #31 whole-package QC and preparation milestone #6 remain open. No package QC, preparation merge, product issue projection, product code/version changes or implementation is authorized by document acceptance alone. Next requested scope may cover QC and implementation; recover exact remaining transitions rather than replay the pass. The direct API gateway block affected only an issue read; the connected GitHub integration reconciled it. Git publication remains supervised and verified.
+All seven capabilities, landing-only lock resets, modern default, both-direction SRS and next-game option fit existing four-block architecture. Ten tasks cover three delivery milestones plus one phase review; reports stay in the feature prefix. Browser/model/package and native-focus limits remain in FEATURE-SPEC/PLAN/TASKS. Record actual implementation, integration and hosted release outcomes only after their gates run; no local Ready label certifies future effects.
