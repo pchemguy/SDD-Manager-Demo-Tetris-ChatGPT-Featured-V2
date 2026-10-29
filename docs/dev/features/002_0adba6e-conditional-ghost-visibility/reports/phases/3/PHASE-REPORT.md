@@ -31,3 +31,7 @@ Implementation parent/return main1bbfae895b4fd889d59dbe00b3263ca0e01d4898; origi
 ## TODO
 
 None. All findings resolved and required feasible checks complete. Native/Electron limitations above are evidence boundaries, not deferred product tasks.
+
+## Post-integration document clarification — CG-DOC2
+
+Final release-source recheck caught inherited R-09 wording permitting only the F-05 option despite accepted G-02 display preference. Current SPEC now names both nonpersistent settings/reload defaults, with adjacent SPEC/QC recheck. No product/shipped-doc/archive byte changed. The already published1.2.0 release tag remains pinned at ca684155c3f60672153b2e494690071abf1978af; this task-owned parent-only clarification does not move it or claim provider publication.

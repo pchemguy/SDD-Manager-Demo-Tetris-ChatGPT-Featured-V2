@@ -72,7 +72,7 @@ The session supplies an injected onListenerError(error) callback, defaulting to 
 
 Rules and session modules use TypeScript without DOM, window, document, scheduler or global Math.random access. Randomness and durations are explicit inputs. Shared UI uses the supplied mount element's document and semantic action callbacks; window-level keyboard, focus, visibility and frame scheduling belong to the browser host. Dependencies remain acyclic in the direction defined by ARCHITECTURE.
 
-The built app requires no Node.js installation, account, backend, remote asset service or worker at runtime. Local HTML, CSS and JavaScript served over static HTTP are sufficient. Direct file:// loading is not a required delivery mode. Only the nonpersistent next-game option in F-05 is supported; reload resets it.
+The built app requires no Node.js installation, account, backend, remote asset service or worker at runtime. Local HTML, CSS and JavaScript served over static HTTP are sufficient. Direct file:// loading is not a required delivery mode. The nonpersistent next-game option in F-05 and view-local ghost visibility preference in G-02 are supported; reload resets both to their defaults. No persisted settings are supported.
 
 ## R-10 Browser verification
 

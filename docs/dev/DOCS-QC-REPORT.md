@@ -44,3 +44,5 @@ Current gate: Ready. Reassessed the complete current product package after accep
 Current gate: Ready. Whole current product package is coherent after G-01–G-05 incorporation: C-05 owns display preference; R-07/modernF-06 route current contracts; PLAN/layout map the narrow Phase3; TASKS owns26 unique IDs, with retired archived snapshots. Adjacent SPEC/PLAN/TASKS revisions identify exact sources. No prior closed campaign was amended. Links, ownership and completed-task preservation pass; runtime/release evidence remains separately owned by the feature reports.
 
 CG-DOC1 from independent final document QC resolved: current PLAN/layout version wording now1.2.0, and strategy includes all3 browser phases. Adjacent plan/task reviews append correction/recheck identities without altering prior cycles or completed scope.
+
+CG-DOC2 post-integration clarification: R-09 now explicitly permits both F-05 next-game locking and G-02 mount-local ghost visibility, with reload defaults and no persistence. Scope/design/tasks and shipped bytes are unchanged; focused SPEC review appended current identities and resolved the inherited contradiction.

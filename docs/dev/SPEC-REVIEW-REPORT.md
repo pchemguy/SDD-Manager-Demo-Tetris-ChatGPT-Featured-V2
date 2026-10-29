@@ -66,3 +66,13 @@ G-01–G-05 precisely preserve the approved predicate/default/lifetime, immediat
 | SPEC.md | `696c4916aa7bdd79413da3ec98cf85841d98875f` |
 | spec/modern-rules.md | `f1ccc4c59596278d5bd2098d171bfee559626508` |
 | spec/ghost-visibility.md | `e0cb0f3ea461678564aefae36ea0138666ab69be` |
+
+## Revision 3 — CG-DOC2 portability clarification
+
+Post-integration recheck found R-09 still said only the nonpersistent next-game option was supported, despite R-07/G-02 adding the display preference. Clarified R-09 to name both independently owned nonpersistent settings and their reload defaults. This removes an inherited scope contradiction; it adds no requirement or application/session API change. Existing G-01–G-05 tests, package and release source remain valid/byte-identical. Current conformance Ready after focused recheck; prior cycles and release tag remain unchanged.
+
+| Source | Git blob |
+| --- | --- |
+| SPEC.md | `e9bc52b633badcbcadfce8356739fcc331e19b70` |
+| spec/ghost-visibility.md | `e0cb0f3ea461678564aefae36ea0138666ab69be` |
+| spec/modern-rules.md | `f1ccc4c59596278d5bd2098d171bfee559626508` |
