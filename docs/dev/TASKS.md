@@ -10,76 +10,101 @@ Each task includes meaningful tests and module/user documentation for its own ch
 
 ## Phase 1 — Classic browser game
 
-- [ ] Phase 1 — Classic browser game
-    - [ ] Milestone 1.1 — Playable classic loop
-        - [ ] T-001 — Establish reproducible build and isolated verification tooling
+- [x] Phase 1 — Classic browser game
+    - [x] Milestone 1.1 — Playable classic loop
+        - [x] T-001 — Establish reproducible build and isolated verification tooling
             Scope: package/lockfile, compiler configurations, Vite/Playwright configuration, scripts/browser-env.mjs, boundary-check entry, CI skeleton, minimal index.html/browser bootstrap for an explicitly nonplayable toolchain smoke build, and owned ignore rules. T-005 supplies the actual game composition. Use version 1.0.0 as the planned release metadata. Pin compatible tool/browser versions from official distributions. Establish planned command interfaces; packaging entries may clearly fail until T-010 rather than produce empty artifacts.
             Depends on: verified preparation integration into main and eligible Phase 1 tracking; no product task prerequisite.
             Acceptance: repeatable dependency install, TypeScript compilation/Node test discovery and browser wrapper agree on their paths/versions. Exercise isolated Chromium headless shell/managed Firefox context-page-render-teardown cycles through the declared runner. Separate environment capability evidence from absent application acceptance. Apply bundled browser/Playwright diagnostics before dependent browser work; retain unavailable-mode limits honestly. Do not create fake game/test passes to make a skeleton green.
             Verification: `npm ci`, `npm run typecheck`, `npm run check:boundaries`, `npm run build`, `npm run browsers:install`, `npm run test:environment`; inspect pinned lockfile, ignored browser/generated paths and finite runner deadlines. Setup/check documentation records only commands actually exercised. References: R-09/R-10; C-06 tooling seams.
-        - [ ] T-002 — Implement piece geometry and board transitions
+            Completion evidence: npm ci, typecheck, dependency boundary check and Vite build passed. Pinned TypeScript 7.0.2, Vite 8.3.5 and Playwright 1.64.1. Two environment tests passed, with two isolated input/render/teardown cycles in each browser. Official CFT archive recovery and diagnosed process-local Firefox uid_map workaround are recorded in DEVELOPMENT. No gameplay test is claimed; inherited npm/color warnings are non-failing.
+
+        - [x] T-002 — Implement piece geometry and board transitions
             Scope: src/core/types.ts, pieces.ts, board.ts; focused unit tests and deterministic board fixtures. Implement seven definitions, no-kick rotation, legal placement, movement, atomic lock and simultaneous row compaction.
             Depends on: T-001.
             Acceptance: R-01/R-03 geometry/board portions and R-04 compaction are satisfied. Four turns recover non-O orientations, O is invariant, walls/floor/settled cells reject overlap, and zero through four simultaneous rows compact in order. Rule inputs are not mutated by rejected transitions; no DOM or random source enters the modules.
             Verification: focused `npm run test:unit` tests for pieces/board, `npm run typecheck`, `npm run check:boundaries`. References: C-01/C-02; R-01/R-03/R-04.
-        - [ ] T-003 — Implement scoring level and gravity progression
+            Completion evidence: RED: all 11 geometry/board cases failed against interface placeholders. GREEN: all 11 passed after implementation; typecheck and DOM-free/import boundary checks passed. Covered seven legal spawns, rotations/O invariance, wall/floor/settled overlap, immutable rejection, zero through four simultaneous clears and compaction. Repaired portable Node test-file discovery exposed by the first real suite; no shell glob dependency.
+
+        - [x] T-003 — Implement scoring level and gravity progression
             Scope: src/core/progression.ts, value types as needed, progression unit tests and module documentation.
             Depends on: T-002.
             Acceptance: score multipliers use the pre-clear level; total-line thresholds update level after the clear; soft-drop points are additive; interval reaches but does not cross the 100 ms floor. Zero-row locks add no clear award. Functions have explicit inputs without clock/UI dependencies.
             Verification: table-driven `npm run test:unit` progression cases at 0/1/2/3/4 rows, 9-to-10 and multi-threshold totals, first/high levels and soft-drop addition; typecheck/boundary checks. References: C-03; R-04/R-05.
-        - [ ] T-004 — Implement deterministic session orchestration
+            Completion evidence: RED: seven progression scenarios failed against placeholders while existing board cases passed. GREEN: all 19 unit tests passed, followed by typecheck/boundaries. Literal awards, pre-clear multiplier, line threshold ordering, additive soft-drop score, input preservation and exact gravity floor are covered.
+
+        - [x] T-004 — Implement deterministic session orchestration
             Scope: src/application/session.ts and session tests/fixtures. Compose rule modules with explicit randomness, lifecycle, elapsed time, snapshots and subscriptions.
             Depends on: T-002, T-003.
             Acceptance: R-02/R-03/R-05/R-06/R-08 model contracts hold. Cover independent piece draws and endpoints, blocked spawn after compaction, exact/sub-interval gravity, grounded escape and failed-attempt lock, manual-drop remainder, pause/resume/restart, residual-time discard, immutable snapshots, notification count, idempotent unsubscribe, reentrancy and throwing listener/random error containment. Bad integration inputs leave state unchanged.
             Verification: deterministic `npm run test:unit` session scenarios using exact durations and controlled random callbacks; `npm run typecheck` and `npm run check:boundaries`. Tests must distinguish ground contact from the failed downward attempt and make no browser-timing claim. References: C-04 and the collaborating C-01–C-03 contracts.
-        - [ ] T-005 — Integrate a playable browser loop
+            Completion evidence: RED: ten session interaction tests failed against the interface placeholder; GREEN: all 29 unit tests passed, then typecheck/boundaries. Verified exact time/drop remainder, ground contact versus failed-attempt lock, residual discard, pause/restart, repeated draws, blocked spawn/statistics, transaction rollback on bad RNG/inputs, detached snapshots and observer/reentrancy/error isolation.
+
+        - [x] T-005 — Integrate a playable browser loop
             Scope: src/ui/game-view.ts/styles.css, src/platform/browser/main.ts, index.html and basic browser tests. Render the real session and provide start, board keyboard movement/rotation/soft drop and frame-driven play with score/lines/level/game-over status. Keep host and view responsibilities separate.
             Depends on: T-001, T-004.
             Acceptance: a real player can start and play the classic loop in the built app; the UI renders actual state rather than a parallel model. Active cells remain separate until lock. Minimal native controls and focusable board use the semantic session boundary. Apply the R-05 frame delta policy. Later interaction refinements do not defer basic play, scoring or game over.
             Verification: unit regression, build and basic assembled-app `npm run test:browser` on both managed targets; actual keyboard actions and board screenshot inspection. Exercise valid frame/session creation and cleanup through the runner. References: C-05/C-06; R-01–R-05 and minimal R-07/R-09/R-10/R-12.
-        - [ ] T-006 — Review test and report the playable loop milestone
+            Completion evidence: RED: all four actual-app browser cases failed because the smoke scaffold lacked the Start control. GREEN: 29 unit tests, typecheck, boundaries and build passed; four built-app checks passed across Chromium/Firefox, exercising real keyboard play, soft-drop score, blocked-spawn game over and actual frame gravity. Inspected full-page board/status screenshot; no environment-fixture substitution. Added required Vite CSS declaration.
+
+        - [x] T-006 — Review test and report the playable loop milestone
             Scope: whole Milestone 1.1 capability and dependencies, required blocker repairs, docs/dev/reports/phases/1/1.1.md and HANDOFF.
             Depends on: T-001 through T-005 completed, published and issues closed.
             Acceptance: perform code review independently of running tests; assess milestone exits and early gameplay demonstration. Confirm all core-loop contracts, ownership and tests; repair bugs/SPEC violations before completion. Record actual browser/tool versions and evidence limits, including environment versus application coverage. Report TODOs with None when empty and retain options/owner for any eligible non-critical deferral.
             Verification: typecheck/boundaries, unit regression, build, basic actual browser play and visual evidence. Commit review/report/HANDOFF and initial T-006 completion together; publish/read back, close its issue and only then close/read back Milestone 1.1. References: PLAN 1.1, R-01–R-05/R-08/R-09/R-10/R-12.
-    - [ ] Milestone 1.2 — Usable session controls
-        - [ ] T-007 — Complete browser input focus and time lifecycle
+            Completion evidence: Independent read-only code review: no critical/important finding; minor stale documentation M1 corrected in DEVELOPMENT and AGENTS. Added composed clear/scoring, grounded-escape and wall-rotation checks; all 32 unit tests, typecheck/boundaries/build and four actual built-app browser checks passed. Milestone report and HANDOFF included; native headed focus remains unverified. No deferred TODO.
+
+    - [x] Milestone 1.2 — Usable session controls
+        - [x] T-007 — Complete browser input focus and time lifecycle
             Scope: src/platform/browser/main.ts and focused host integration tests; preserve the playable loop.
             Depends on: T-006 and verified Milestone 1.1 closure.
             Acceptance: implement complete shortcut eligibility, native repeat handling, scroll prevention, pause/resume/restart commands, focus-out/window-blur/hidden auto-pause, timestamp-baseline reset and owned frame/listener teardown. Buttons/editable elements never double-dispatch board shortcuts. Focus/visibility return requires explicit resume.
             Verification: focused browser keyboard/lifecycle tests and session regression. Exercise actual board focus/input; distinguish controlled visibility/blur handler tests from native window evidence. Check restart/resume initial delta zero and repeated mount teardown. References: C-06; R-05–R-10.
-        - [ ] T-008 — Finish accessible responsive gameplay controls
+            Completion evidence: RED: three lifecycle checks failed before host controls existed. GREEN: 32 unit tests, typecheck/build/boundaries and ten built-app Chromium/Firefox tests passed. Exercised keyboard pause/resume/restart and repeat eligibility, actual page focus leaving mount, no auto-resume, controlled blur/hidden handlers and resume baseline. Focusout is deferred until transfer completes to avoid reentrant pause when disabling a clicked control. Native OS-window focus remains unverified.
+
+        - [x] T-008 — Finish accessible responsive gameplay controls
             Scope: src/ui/game-view.ts/styles.css and view tests. Add complete native session buttons, visible control legend, restrained lifecycle status announcements, focus feedback and narrow-width layout.
             Depends on: T-007.
             Acceptance: all R-07 presentation/control contracts hold, including disabled status-ineligible controls, keyboard-operable buttons, board focus return and occupied-cell visibility independent of color. At 320 CSS pixels no horizontal page overflow hides controls/board. Use one shared view with no host scheduler or global-keyboard imports.
             Verification: focused browser assertions and screenshots at narrow/ordinary widths; keyboard traversal/button activation and unit regression. Inspect visible rendering rather than treating text presence as visual proof. References: C-05; R-07/R-09/R-12.
-        - [ ] T-009 — Verify integrated session recovery and usability
+            Completion evidence: RED: native button and narrow-view checks failed before complete UI existed. Traced a real Pause click bug to focusout microtasks before internal focusin; using relatedTarget preserves inside-mount focus without an unintended pause/resume. GREEN: 32 unit tests and all 14 built-app Chromium/Firefox checks passed with typecheck/boundaries/build. Inspected narrow screenshot; 320px has no horizontal overflow. Native buttons, focus return, restrained live status and visible legend are covered.
+
+        - [x] T-009 — Verify integrated session recovery and usability
             Scope: cross-view/host browser tests, relevant repairs/documentation, docs/dev/reports/phases/1/1.2.md and HANDOFF. This is the final delivery task with folded milestone review obligations.
             Depends on: T-007, T-008.
             Acceptance: pause preserves active state/remainder; resume has no catch-up; restart and reload reset; hidden/blurred sessions remain paused on return; native buttons do not rotate or double-dispatch. Repeated context/page and mount lifecycle leaves no duplicate event/frame work. Review the complete milestone code separately from tests; repair blockers and assess the usable controls demonstration.
             Verification: full unit suite and both-target control/recovery/browser tests, build/boundary checks, screenshot inspection. Include actual native versus modeled evidence limits, milestone report/TODOs and HANDOFF with T-009 completion; publish/read back before issue and Milestone 1.2 closure. References: PLAN 1.2; R-05–R-10/R-12.
-    - [ ] Milestone 1.3 — Verified browser distribution
-        - [ ] T-010 — Build and inspect the static deployment package
+            Completion evidence: Milestone review I1 reproduced RED and resolved: ineligible Start no longer discards frame time. I2 render-time lifecycle reentry reproduced; coalesced owned macrotask auto-pause and timer cleanup resolve Firefox logs. Runtime guard includes page closure. 32 unit, 22 source and 20 built-app browser checks passed, with typecheck/boundaries/build. Remount/reload recovery and folded code-review/report/HANDOFF completed; no TODO; native headed focus unverified.
+
+    - [x] Milestone 1.3 — Verified browser distribution
+        - [x] T-010 — Build and inspect the static deployment package
             Scope: scripts/package_browser.py, scripts/verify_package.py, build/package entry points, truthful initial docs/INSTALL.md and docs/CONTROLS.md required by the archive, and package-check fixtures; generated artifacts remain ignored.
             Depends on: T-009 and verified Milestone 1.2 closure.
             Acceptance: build relative static assets; produce classic-tetris-browser-v1.0.0.zip and its .zip.sha256 file under artifacts. Allowlist dist assets, LICENSE/required notices and installation/control documents. Reject unsafe paths/symlinks and exclude tokens, source tests, .agents, browser binaries/profiles, node_modules and caches. Verify checksum and extracted asset references; do not silently omit required final instructions.
             Verification: `npm run build`, `npm run package`, `npm run verify:package`; inspect ZIP members, digest and path-prefix asset routing. Negative fixtures cover secret-like entries, traversal/symlink and missing-asset rejection. The initial included instructions must be sufficient to deploy/play the current game; T-012 finalizes the complete guidance and rebuilds the archive. A verified package at this task is not a published release. References: R-09/R-11/R-12; layout delivery ownership.
-        - [ ] T-011 — Verify built and extracted app acceptance in both browsers
+            Completion evidence: RED: ten adversarial packaging cases failed against placeholders. GREEN: all ten pytest cases pass, including exact allowlist, secret/symlink/traversal/duplicate rejection, missing assets, corruption and byte reproducibility. Actual production archive/manifest/checksum verified; extracted index and assets matched digests through a nested HTTP prefix. Repeated real build/archive bytes identical. Initial install/controls docs and full Vite notices included; pinned pytest tooling installed only in ignored .test-tools.
+
+        - [x] T-011 — Verify built and extracted app acceptance in both browsers
             Scope: tests/browser, deterministic fixtures where justified, actual built/extracted static server configuration and acceptance evidence; fix discovered in-scope failures.
             Depends on: T-010.
             Acceptance: Chromium headless shell and managed Firefox exercise the assembled built app and extracted deployment path under a prefix. Cover start/play, rotation/soft drop, pause/resume/restart, controls, rendering, lifecycle and responsive layout; retain unit fixtures for exact clear/lock/time boundaries. Verify no remote asset/backend/runtime-Node dependency. Harnesses do not introduce shipped debug interfaces.
             Verification: unit regressions plus `npm run test:browser` for both projects against built/extracted targets, archive checks, screenshots and repeated isolated session cycles. Record exact binaries/modes/commands, required failures and diagnosed exclusions per policy. Synthetic fixture coverage does not substitute for actual delivery-app execution. References: R-01–R-12 acceptance interactions, especially R-10/R-11.
-        - [ ] T-012 — Finalize deployer guidance and release inputs
+            Completion evidence: 32 unit and ten adversarial package checks/typecheck passed. Both browsers passed 22 built-app checks and 22 extracted-prefix checks; extracted suite initially exposed absolute-root test navigation, corrected to relative base URLs after cancelling/confirming closure of the owned server. Added local-only request enforcement and deployed-manifest checks. Added an inline favicon to eliminate observed root favicon 404s, rebuilt/verified, then all22 extracted checks passed again without runtime errors. Native headed focus remains unverified.
+
+        - [x] T-012 — Finalize deployer guidance and release inputs
             Scope: README, docs/INSTALL.md, docs/CONTROLS.md, docs/DEVELOPMENT.md, RELEASE-NOTES.md, validated AGENTS command navigation, final package inputs and CI completeness; docs/dev/reports/phases/1/1.3.md and HANDOFF.
             Depends on: T-010, T-011.
             Acceptance: documentation explains static deployment below a prefix, controls, planned-rule behavior, Node/npm/Python developer prerequisites and absence of player runtime dependencies. Notes match delivered version 1.0.0, tests/limits and deployable artifacts. Rebuild/inspect the archive after final instructions are present and rerun affected extracted-app checks. Do not publish a release/tag yet.
             Verification: follow documented commands from a clean dependency/build path, check links/included instructions, package digest/contents, full feasible browser acceptance and applicable regressions. Perform whole Milestone 1.3 code review and repairs, include report/TODOs/HANDOFF with T-012 completion, publish/read back and close issue before milestone closure. References: PLAN 1.3; R-09–R-12. Final delivery task owns folded review/report obligations.
-    - [ ] Milestone 1.4 — Phase review
-        - [ ] T-013 — Review test and report Phase 1
+            Completion evidence: Final user/developer/install guidance, complete CI checks and exact ignored release-note/highlights inputs prepared. Independent distribution review found no blocker; minor R1 checksum completeness gap reproduced RED and resolved with strict CLI/extraction pairing. Clean npmci/type/boundary/32unit/build/package and22extracted checks passed; all11 package fixtures and two extracted deployment checks passed after verifier-only repair. Stable release copies match candidate bytes. Milestone report/HANDOFF and initial status included; no TODO; publication waits for phase integration.
+
+    - [x] Milestone 1.4 — Phase review
+        - [x] T-013 — Review test and report Phase 1
             Scope: whole phase cross-component code review, feasible acceptance/regressions, blocker repairs, docs/dev/reports/phases/1/PHASE-REPORT.md, docs/dev/reports/IMPLEMENTATION-REPORT.md and HANDOFF.
             Depends on: all tasks T-001 through T-012 complete/published; delivery Milestones 1.1, 1.2 and 1.3 and their issues closed/read back. Its own review milestone remains open until this task completes.
             Acceptance: verify all R-01 through R-12 and phase exits, dependency direction, actual final archive/source/version/notes agreement and complete per-task persistence evidence. Code review is distinct from tests. Aggregate milestone and phase TODOs with disposition/options/provenance; no unresolved contract violation or missing feasible check may be marked passed. Report unavailable native/full-browser behavior explicitly. Final report distinguishes implementation, verification, integration and release states.
             Verification: clean install/typecheck/boundaries/unit/build/package/verify-package and complete feasible two-browser acceptance against final assets; inspect screenshots, archive/digest and task persistence. Commit phase/final reports, HANDOFF and task status together; publish/read back, close task and review milestone. Complete phase parent claims only with their actual exit evidence. No extra tasks beyond the authorized range are implied.
+            Completion evidence: Independent final code review has no outstanding finding. Fresh clean install, typecheck/boundaries, 32 unit, 11 package, two environment, 24 source and 22 extracted browser checks passed. Phase/final reports and HANDOFF retain limits, artifact identity, persistence audit and pending integration/release gates. No TODO.
 
 ## Post-phase integration and release
 

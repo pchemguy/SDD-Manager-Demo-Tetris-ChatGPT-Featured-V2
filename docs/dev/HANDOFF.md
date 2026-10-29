@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: accepted preparation integration into main.
+Checkpoint: Completed phase is being integrated into main; release pending.
 
 ## Scope and authority
 
-User explicitly requested QC and full implementation. Package QC is Ready in [DOCS-QC-REPORT](DOCS-QC-REPORT.md). All nine preparation tasks are complete. [TASKS](TASKS.md) owns T-001 through T-013; [DOCS_PREPARATION](DOCS_PREPARATION.md) retains document approval identities and reviews. Execute the full classic-only phase, verify/integrate it and publish its requested v1.0.0 browser release. No modern extensions or Electron delivery.
+The user authorized Do QC and full implement, including integration and a release after the verified phase. TASKS owns all thirteen tasks; the phase report retains final independent review and clean verification. No unresolved product TODO. No further human checkpoint is pending within this accepted scope.
 
-## Branch and continuation
+## Branches and next action
 
-Preparation source: design-docs/main at d51bd9690f4bb5a4d096a4b33b075f379df94998. Receiving target: main, parent c6000d2dbeac5b4d0f27fbb46d92e9f48d7fa63f. This explicit merge includes accepted documents and QC only. Merged file presence, nine checkoffs, conflict absence and whitespace checks passed. No software verification is claimed.
+Receiving branch main; source phase/1-classic-browser-game at c55ebce15dae7bf2640f250bd57c5a8c6ec4b927, recorded parent/base 6775927c52a8ef5b04c9cbd732f25b97a81b18f8. All thirteen task closing commits passed the actual parent-diff audit. Issues #10–#22 and milestones #2–#5 are closed and read back. Verify and publish the explicit two-parent integration, then create the default-branch release commit and annotated v1.0.0 tag and publish the verified ZIP/checksum release. Preserve the phase branch.
 
-## Next action
+## Release inputs and evidence
 
-Publish/read back this merge, close/read back sdd-docs-main after all nine issue closures, create phase/1-classic-browser-game from this published parent, and verify its phase objects before T-001 edits. All implementation tasks are unchecked. Initial log scaffold remains on its retained branch. Runtime prerequisites and browser isolation follow root AGENTS and the bundled policies.
+Ignored RELEASE-NOTES.md is the exact intended commit/tag/GitHub body; retain it after publication. Refresh ignored .release-highlights.md coverage through the final source and remove only after published-body readback. Stable publication assets under artifacts/release are verified copies; archive SHA-256 183bc578e7a0aebea94348f3c520947f5614a5d140540dffc6d2ba3ad7856681. Final local checks passed 32 unit, 11 packaging, two environment, 24 source and 22 extracted browser cases. Native headed focus remains unverified; Firefox recovery is explicit and process-scoped. Updated full CI passed at e97403e. Exact tag/source and actual published asset downloads still require readback. Record observed integration/release outcomes after publication without moving the release tag to a later evidence commit.

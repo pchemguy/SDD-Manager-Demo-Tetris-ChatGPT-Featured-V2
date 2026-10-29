@@ -1,0 +1,32 @@
+name: Browser verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: python -m pip install --target .test-tools -r requirements-dev.txt
+      - run: npm run typecheck
+      - run: npm run check:boundaries
+      - run: npm run test:unit
+      - run: npm run test:package
+      - run: npm run build
+      - run: node scripts/browser-env.mjs install --with-deps --only-shell chromium firefox
+      - run: npm run test:environment
+      - run: npm run test:browser
+      - run: npm run package
+      - run: npm run verify:package
+      - run: npm run test:browser
+        env:
+          TEST_TARGET: extracted
