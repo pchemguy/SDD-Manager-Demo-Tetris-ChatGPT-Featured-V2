@@ -102,3 +102,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: 546cc42261730c6d37f34aaab1eb4bf1c698c147c192dfeb274415a406edd494
 
 Publish/read back this coherent completion before closing/readback of issue #47 or dependent work.
+
+## FDOCS-007 completion
+
+Extend existing layout through FEATURE-PLAN physical map: C-05 pure helper/view, DOM-free fixtures, real browser acceptance, source-only harness exclusion, docs/version/package/report/archive homes. Combined strategy/layout QC Revision1 rechecked exact current sources; Ready for TASKS. No new model/host preference owner or extra layout root.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-PLAN.md: e0b08b69522df4a3028011d2faa16413fbe3489046489fe8eb677c6fa593525f
+- docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: f98b139a5fad171a0e847c43f4e6391f3f1467782f966927a441bf5c82dbbf56
+
+Publish/read back this coherent completion before closing/readback of issue #48 or dependent work.

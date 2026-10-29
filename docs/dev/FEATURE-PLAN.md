@@ -25,4 +25,21 @@ Integrate the exact complete phase to its recorded main parent by explicit two-p
 
 ## Physical ownership
 
-The existing [layout](layout.md) remains the baseline. Final affected path allocation is assessed before executable task derivation; no FEATURE-LAYOUT document is required.
+The existing [layout](layout.md) remains the baseline. The following allocation extends existing C-05 ownership; no FEATURE-LAYOUT document is required.
+
+
+| Path | Owner and change |
+| --- | --- |
+| src/ui/ghost-visibility.ts (new) | Pure C-05 GhostVisibilityMode/isGhostVisible helper; imports core Piece/geometry only. |
+| src/ui/game-view.ts, src/ui/styles.css | C-05 mode/latest-snapshot state, native selector, common ghost/text predicate and responsive focus styling; owned cleanup. |
+| src/application/session.ts, src/core/, src/platform/browser/main.ts | Existing reusable canonical projection/gameplay and host resources retained; no intended new preference state or API here. Any required compatibility repair must stay within accepted contracts. |
+| tests/unit/ghost-visibility.test.ts (new), tsconfig.test.json | Pure28-orientation boundary/immutability fixtures and inclusion in DOM-free test compilation without importing the full view. |
+| tests/browser/ghost-visibility.spec.ts (new), existing lifecycle/remount/view/deployment suites | Shared-view boundary fixtures plus actual app native controls, gameplay crossings and complete regression. |
+| tests/fixtures/ghost-visibility.html and supporting fixture module if needed (source only) | Mounted real view with explicit detached snapshots, excluded from production assets and built/extracted selection; no production state-injection interface. |
+| README.md, docs/CONTROLS.md, docs/DEVELOPMENT.md, docs/INSTALL.md | Current mode/default/midline/lifetime/accessibility and truthful installation/verification guidance. |
+| package.json, package-lock.json, version-sensitive package fixtures | v1.2.0 identity using existing toolchain/manifest. Preserve package/verify scripts and stable release asset names unless an actual supported version assertion requires correction. |
+| docs/dev/FEATURE-TASKS.md | Sole executable feature delta until eligible reconciliation into main TASKS. |
+| docs/dev/features/002_0adba6e-conditional-ghost-visibility/reports/phases/3/ | Milestone3.1.md and PHASE-REPORT.md evidence; feature-root IMPLEMENTATION-REPORT.md final outcome. |
+| docs/dev/features/002_0adba6e-conditional-ghost-visibility/ | Eligible current feature/preparation/adjacent-QC archive after final incorporation; prior closed campaign remains untouched. |
+
+Retain relative assets, strict allowlists and generated/credential exclusions. Final local ZIP is artifacts/classic-tetris-browser-v1.2.0.zip with checksum; publication copies retain classic-tetris-browser.zip and matching checksum. RELEASE-NOTES.md is the exact retained body; internal highlights follow existing source-coverage rules. Browser policy and dependency boundaries remain in force.
