@@ -63,3 +63,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE.md: fd21c9a6fce63ad400c6e973b31901dd0ac393da4d3b89ca0ade62ed9b488348
 
 Publish/read back this coherent completion before closing/readback of issue #43 or dependent work.
+
+## FDOCS-003 completion
+
+Assessed accepted ARCHITECTURE and approved FEATURE against current core/session/UI/host. Existing shared DOM UI boundary already owns presentation; keep the display preference in that mount, not SessionOptions or browser global storage. Canonical detached ghost, hard-drop landing, transaction clocks and dependency direction stay unchanged. No new architectural block or overlay is necessary. Reuse is an assessment, not an inferred new human approval.
+
+Source identities (SHA-256):
+- docs/dev/ARCHITECTURE.md: fcfa9e68c8c05f48ce6affe03f45f9a9063046db38f23273890da58b454b90f0
+- docs/dev/FEATURE.md: fd21c9a6fce63ad400c6e973b31901dd0ac393da4d3b89ca0ade62ed9b488348
+
+Publish/read back this coherent completion before closing/readback of issue #44 or dependent work.
