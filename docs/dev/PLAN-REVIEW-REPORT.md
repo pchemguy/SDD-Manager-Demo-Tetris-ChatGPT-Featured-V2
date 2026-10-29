@@ -2,7 +2,7 @@
 
 ## Current gate
 
-State: Ready for layout authoring. Strategy conforms to the current SPEC and accepted design. Combined physical-placement readiness for TASKS remains pending until layout is authored and reviewed.
+State: Ready for TASKS generation. Strategy and physical allocation conform to current SPEC and accepted design; Revision 1 establishes combined PLAN/layout readiness.
 
 ## Reviewed identities
 
@@ -28,3 +28,9 @@ The count is within the preferred range and was assessed after the functional bo
 Coverage: 1.1 owns core rules/time/progression and early browser play; 1.2 owns complete input/UI/lifecycle usability; 1.3 owns distributable artifacts and final two-browser acceptance; 1.4 owns cross-milestone review, final reporting and exit assessment. Static ZIP/tag publication is explicitly post-integration. No Electron or modern rule work is scheduled.
 
 Checks performed: manual SPEC coverage, phase-scope and dependency review; count assessment; release ordering; browser-policy evidence limits; local Markdown checks and Git identities. Planned commands are not executed tests. Physical allocation is intentionally pending; this strategy-only gate does not authorize TASKS generation yet.
+
+## Revision 1
+
+Combined PLAN/layout review on 2026-10-29: reviewed layout blob `8c801bdcd0234e5c8a73da8acb24d2273483b827` against the unchanged PLAN and governing design/SPEC identities above. Traced C-01 through C-06 to source, focused checks and host integration; matched all three delivery milestones to their source/test/package/documentation homes. Core/session DOM-free compilation and boundary checks enforce dependency direction; shared UI has one physical owner. Generated browser/test/build/secret paths are isolated and excluded from deployment. Packaging has an explicit Python developer prerequisite with no player runtime implication.
+
+Inspected the actual repository tree: product paths are correctly labeled intended, rather than claimed present. Root AGENTS navigation now links established authorities without inventing validated commands. Package/static-server checks remain implementation work. No confirmed placement or strategy finding remains; no phase/milestone or SPEC scope changed. Markdown and relative navigation checks pass for existing authorities. Current gate is Ready for TASKS; earlier strategy-only evidence remains retained.

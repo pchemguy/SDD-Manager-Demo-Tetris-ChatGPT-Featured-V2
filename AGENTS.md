@@ -49,3 +49,5 @@ Follow `sdd-manage`'s preparation and phase-activation workflows for required tr
 ## Project guidance
 
 Maintain project-specific navigation and validated setup/check commands here as they become established. Do not invent commands, paths, requirements or completion claims.
+
+The browser-game scope is defined in [PROJECT](docs/dev/PROJECT.md), with behavior in [SPEC](docs/dev/SPEC.md), logical design in [ARCHITECTURE](docs/dev/ARCHITECTURE.md) and [DECOMPOSITION](docs/dev/DECOMPOSITION.md), delivery strategy in [PLAN](docs/dev/PLAN.md), and physical ownership in [layout](docs/dev/layout.md). These documents describe the intended product; their presence does not establish implementation completion. Recover the active preparation stage from [DOCS_PREPARATION](docs/dev/DOCS_PREPARATION.md) and the handoff above before selecting work.
