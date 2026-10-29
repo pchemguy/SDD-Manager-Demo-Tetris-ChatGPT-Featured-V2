@@ -1,0 +1,19 @@
+# Feature plan review
+
+Gate: Ready for layout assessment; dependent task derivation waits for combined PLAN/layout review at FDOCS-007. Owner-performed strategic QC; no implementation execution claimed.
+
+## Inputs
+
+- FEATURE.md: SHA-256 22be8e8d6c8774d6563ccc0a59a5d0216f69948f63039fd2c46af28570c27073
+- FEATURE_ARCHITECTURE.md: SHA-256 1ea3014d92c234413e28a85c6605a1e89e9c09123369912ebdf7d51d78c49662
+- FEATURE_DECOMPOSITION.md: SHA-256 be357fad5c2b179992064a447ec52b7cd8d2b3ed9d78297f0f90c63c1c7a1218
+- FEATURE-SPEC.md: SHA-256 a2db353c3101c8c4ca1cdc288d900591ee2bb1845e20cc986d94975df6fdadc7
+- FEATURE-PLAN.md: SHA-256 66df42acf14bb5a7b7411cccb115f6000a2628a35cbe90237518ebd85c375af8
+
+## Assessment
+
+Coverage: F-01/F-04→2.1; F-02/F-03/F-06 planning aids→2.2; F-05/full F-06/F-08 distribution→2.3; F-07 transaction/error/lifecycle guarantees cross all increments; incorporation/review/final aggregation→2.4. Prior Phase 1 and its task identities remain untouched. No missing contract route or unsupported platform scope found.
+
+There are three delivery milestones (preferred 3–5 range), plus one excluded phase-review milestone. Reviewed semantic cohesion rather than relying on the count: geometry/time establishes one landing definition, piece-flow/view establishes one identity sequence, and hard-drop options/distribution completes the same bounded modern game. No enabling-only phase or delayed first-use backlog. Main browser baseline remains usable as new controls are integrated. Each milestone carries working demonstration, risk evidence and code-review/report/HANDOFF exits; the special phase review remains one explicit task. Task-specific counts will be checked after derivation.
+
+No confirmed unresolved strategic finding. Physical allocation is intentionally not yet claimed complete; FDOCS-007 must add/assess the changed owners and recheck this report before FEATURE-TASKS. Whole-package QC remains outside this review.

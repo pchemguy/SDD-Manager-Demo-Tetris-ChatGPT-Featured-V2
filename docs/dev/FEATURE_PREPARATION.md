@@ -97,3 +97,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-SPEC-REVIEW-REPORT.md: 5963faed9ec1afc6e9474f208b4f2bee9bd694a0bc2cb29067b9d9cb903529eb
 
 Publish/read back this coherent completion before closing/readback of issue #27 or dependent work.
+
+## FDOCS-006 completion
+
+Autodoc acceptance after scoped PLAN/SPEC QC: one bounded Phase 2 with three coherent delivery milestones and the mandatory single phase-review milestone. All F contracts have milestone exits, early integrated demonstrations, error/regression coverage and main-document/incorporation/release gates. Adjacent report is ready for physical-layout assessment, not yet task derivation.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-PLAN.md: 66df42acf14bb5a7b7411cccb115f6000a2628a35cbe90237518ebd85c375af8
+- docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: fd08274c211ec34b29ccd63bb91685172dbe2e7e6c5f12ed57643fd98c318c01
+
+Publish/read back this coherent completion before closing/readback of issue #28 or dependent work.
