@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: main preparation, autodoc/onepass DOCS-008 stop.
+Checkpoint: main preparation DOCS-009 package QC, Ready for integration.
 
-Outcome: PROJECT is human-approved and ARCHITECTURE through TASKS are accepted under scoped autodoc preapproval. Per-document conformance checks are complete; whole-package QC has not run. This snapshot describes its containing commit, not later publication or issue effects. Recover those effects before continuing.
+Outcome: PROJECT is human-approved and ARCHITECTURE through TASKS are accepted under scoped autodoc preapproval. Per-document conformance checks are complete; whole-package QC is Ready in DOCS-QC-REPORT. This snapshot describes its containing commit, not later publication or issue effects. Recover those effects before continuing.
 
 ## Workflow and sources
 
@@ -15,7 +15,7 @@ Outcome: PROJECT is human-approved and ARCHITECTURE through TASKS are accepted u
 
 - Objective: classic browser Tetris with reusable TypeScript logic/UI and separate browser integration. Failed gravity/soft-drop downward attempts lock immediately; no independent lock timer. Modern extensions and Electron delivery remain outside the accepted scope.
 - PROJECT approval: user's `k` accepting published proposal 8e5fcc878ea39dc5b3c5f38f6b8a0b43ff0c0eb6; recorded in b17aead31bde94a0fea4bcd227748f621cc61b1e. Later document checkpoints are preapproved by autodoc/onepass, subject to their checks.
-- Exact stop: after DOCS-008 publication and issue closure, before DOCS-009 whole-package QC, documentation integration, phase activation and implementation.
+- Latest authority: user requested Do QC and full implement. Execute all 13 product tasks after preparation integration and tracking, then verify/integrate Phase 1 and publish its requested browser release.
 - PLAN defines one bounded phase with three delivery milestones and one dedicated phase review milestone. TASKS has 13 unchecked product tasks: 11 delivery and 2 dedicated review tasks. Initial completed release is planned as v1.0.0 after verified phase integration.
 - Tracking/publication: root instructions enable preparation and implementation tracking; every owned commit is pushed/read back. Concise Standard reporting applies. There is no local-only exception.
 
@@ -28,6 +28,8 @@ Outcome: PROJECT is human-approved and ARCHITECTURE through TASKS are accepted u
 - Suspended parent: none. Main contains the provenance scaffold, but the current documentation pass is not integrated there yet.
 
 ## Pending work and next action
+
+Current next action: publish DOCS-009, close/read back issue #9, explicitly merge/verify/publish preparation into main, close/read back sdd-docs-main, then activate Phase 1. The older DOCS-008 stop below is superseded by the latest explicit instruction.
 
 - Publish/read back the DOCS-008 completion commit, then close/read back issue #8. Its own commit cannot certify those subsequent effects. Earlier DOCS-001 through DOCS-007 issue closures were verified.
 - DOCS-009 and issue #9 remain open/unchecked; sdd-docs-main remains open. No implementation-phase label, milestone or product task issue has been activated.

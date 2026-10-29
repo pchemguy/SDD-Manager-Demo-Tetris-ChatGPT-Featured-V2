@@ -7,7 +7,7 @@
 - Approval basis: PROJECT was approved by the user's `k` response to the published proposal at commit `8e5fcc878ea39dc5b3c5f38f6b8a0b43ff0c0eb6`. ARCHITECTURE through TASKS have mode-scoped preapproval.
 - Tracking: preparation and implementation GitHub tracking enabled by root AGENTS.md. The native [sdd-docs-main milestone](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/milestone/1) and all nine standard issues were created and read back before repository modifications.
 - Publication: publish and verify every owned commit. No local-only exception applies.
-- Next boundary: DOCS-008 autodoc stop after publication/issue closure. DOCS-009 package QC, preparation integration and implementation are not selected.
+- Next boundary: complete DOCS-009 and preparation integration, then execute all T-001 through T-013 and the phase/release lifecycle under the user's explicit Do QC and full implement instruction.
 
 ## Scope and confirmed decisions
 
@@ -34,7 +34,7 @@ Detailed behavioral contracts are in SPEC and planned verification commands are 
 | DOCS-006 | Accepted under autodoc preapproval. PLAN strategy QC is Ready for layout in PLAN-REVIEW-REPORT. One coherent classic-only phase has three delivery milestones plus the dedicated single-task phase review milestone. R-01 through R-12 have explicit delivery routes; initial release 1.0.0 follows verified default integration. Combined layout readiness remains pending. Reviewed state: `docs/dev/PLAN.md` blob `a84d51def9a21dc9dd17589dd88f124b5187609a`; `docs/dev/PLAN-REVIEW-REPORT.md` blob `95414baf09a48058cc32801010f848cee6a472b2`. |
 | DOCS-007 | Accepted under autodoc preapproval. Combined PLAN/layout review Revision 1 is Ready for TASKS. C-01 through C-06 map to owned source/test seams; generated browsers, profiles, builds and credentials are isolated from allowlisted deployment. Existing AGENTS policies are preserved with current navigation; no unimplemented command is claimed validated. Reviewed state: `docs/dev/layout.md` blob `8c801bdcd0234e5c8a73da8acb24d2273483b827`; `docs/dev/PLAN-REVIEW-REPORT.md` blob `5b3a66ecd689ed2e6aeb3c7c646b014a925fdf5d`; `AGENTS.md` blob `9e4bce516c9e11c01105a67270a9dd85f5258c5c`. |
 | DOCS-008 | Accepted under autodoc preapproval. TASKS/PLAN conformance review is Ready with 13 unchecked product tasks: 11 delivery and 2 dedicated reviews. Revision 1 resolves TQ-01/TQ-02 executable-input sequencing; IDs, milestone boundaries and counts remain unchanged. Checked hierarchy, prerequisites, current links, ownership, review thresholds and evidence separation. HANDOFF records the DOCS-008 stop; package QC and implementation remain unselected. Reviewed state: `docs/dev/TASKS.md` blob `e0b80c3a115187a7402ffde3bba0a4d6c0765fa4`; `docs/dev/TASKS-REVIEW-REPORT.md` blob `0c42d3ff5429e2f6a550253f4d3633ea06e54ff2`; `docs/dev/HANDOFF.md` blob `ceb1b000902d43766a12db2236dccc2bf177853f`; `AGENTS.md` blob `0105ae3d4591fd8d373172d8450eee2198185903`. |
-| DOCS-009 | Not selected; whole-package QC remains outside the current autodoc pass. |
+| DOCS-009 | Accepted under autodoc preapproval. User explicitly authorized QC and full implementation. Reviewed complete package, approval records, current conformance revisions, traceability, task hierarchy/counts/dependencies, relative links and execution/release boundaries. DOCS-QC-REPORT is Ready; no unresolved finding. Runtime and release checks remain implementation work. Reviewed state: `docs/dev/DOCS-QC-REPORT.md` blob `b0a249909a6e7e8ac20f8cd66498cfc8c274a3c0`; `docs/dev/HANDOFF.md` blob `59700d14b381ceebe02b39659e01f64e97da0f3d`. |
 
 ## Initialization
 
@@ -51,4 +51,4 @@ Detailed behavioral contracts are in SPEC and planned verification commands are 
 
 ## Pending transitions
 
-Publish/read back the DOCS-008 completion commit and close/read back its corresponding issue before dependent work. Completed earlier issue closures are verified externally. Stop after DOCS-008; DOCS-009 package QC, preparation integration and implementation remain unselected. Recover actual effects from Git and GitHub before replay.
+Publish/read back the DOCS-009 completion commit and close/read back its corresponding issue before dependent work. Completed earlier issue closures are verified externally. Stop after DOCS-008; DOCS-009 package QC, preparation integration and implementation remain unselected. Recover actual effects from Git and GitHub before replay.
