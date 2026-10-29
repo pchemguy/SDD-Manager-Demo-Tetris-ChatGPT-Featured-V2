@@ -12,11 +12,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
 
 - [ ] Phase 1 — Classic browser game
     - [ ] Milestone 1.1 — Playable classic loop
-        - [ ] T-001 — Establish reproducible build and isolated verification tooling
+        - [x] T-001 — Establish reproducible build and isolated verification tooling
             Scope: package/lockfile, compiler configurations, Vite/Playwright configuration, scripts/browser-env.mjs, boundary-check entry, CI skeleton, minimal index.html/browser bootstrap for an explicitly nonplayable toolchain smoke build, and owned ignore rules. T-005 supplies the actual game composition. Use version 1.0.0 as the planned release metadata. Pin compatible tool/browser versions from official distributions. Establish planned command interfaces; packaging entries may clearly fail until T-010 rather than produce empty artifacts.
             Depends on: verified preparation integration into main and eligible Phase 1 tracking; no product task prerequisite.
             Acceptance: repeatable dependency install, TypeScript compilation/Node test discovery and browser wrapper agree on their paths/versions. Exercise isolated Chromium headless shell/managed Firefox context-page-render-teardown cycles through the declared runner. Separate environment capability evidence from absent application acceptance. Apply bundled browser/Playwright diagnostics before dependent browser work; retain unavailable-mode limits honestly. Do not create fake game/test passes to make a skeleton green.
             Verification: `npm ci`, `npm run typecheck`, `npm run check:boundaries`, `npm run build`, `npm run browsers:install`, `npm run test:environment`; inspect pinned lockfile, ignored browser/generated paths and finite runner deadlines. Setup/check documentation records only commands actually exercised. References: R-09/R-10; C-06 tooling seams.
+            Completion evidence: npm ci, typecheck, dependency boundary check and Vite build passed. Pinned TypeScript 7.0.2, Vite 8.3.5 and Playwright 1.64.1. Two environment tests passed, with two isolated input/render/teardown cycles in each browser. Official CFT archive recovery and diagnosed process-local Firefox uid_map workaround are recorded in DEVELOPMENT. No gameplay test is claimed; inherited npm/color warnings are non-failing.
+
         - [ ] T-002 — Implement piece geometry and board transitions
             Scope: src/core/types.ts, pieces.ts, board.ts; focused unit tests and deterministic board fixtures. Implement seven definitions, no-kick rotation, legal placement, movement, atomic lock and simultaneous row compaction.
             Depends on: T-001.

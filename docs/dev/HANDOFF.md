@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: accepted preparation integration into main.
+Checkpoint: Phase 1 entry; T-001 in progress.
 
 ## Scope and authority
 
-User explicitly requested QC and full implementation. Package QC is Ready in [DOCS-QC-REPORT](DOCS-QC-REPORT.md). All nine preparation tasks are complete. [TASKS](TASKS.md) owns T-001 through T-013; [DOCS_PREPARATION](DOCS_PREPARATION.md) retains document approval identities and reviews. Execute the full classic-only phase, verify/integrate it and publish its requested v1.0.0 browser release. No modern extensions or Electron delivery.
+User authorized QC and full implementation of T-001 through T-013, phase integration and the requested browser release. Preparation QC passed and explicit main merge 6775927c52a8ef5b04c9cbd732f25b97a81b18f8 was published/read back. The preparation milestone and nine issues are closed.
 
-## Branch and continuation
+## Branches and sources
 
-Preparation source: design-docs/main at d51bd9690f4bb5a4d096a4b33b075f379df94998. Receiving target: main, parent c6000d2dbeac5b4d0f27fbb46d92e9f48d7fa63f. This explicit merge includes accepted documents and QC only. Merged file presence, nine checkoffs, conflict absence and whitespace checks passed. No software verification is claimed.
+Working branch: phase/1-classic-browser-game. Creation parent/integration target: main. Branch-off: 6775927c52a8ef5b04c9cbd732f25b97a81b18f8. Product owner: [TASKS](TASKS.md), with [SPEC](SPEC.md), [PLAN](PLAN.md), [layout](layout.md) and preparation/review evidence adjacent.
 
-## Next action
+## Tracking and next action
 
-Publish/read back this merge, close/read back sdd-docs-main after all nine issue closures, create phase/1-classic-browser-game from this published parent, and verify its phase objects before T-001 edits. All implementation tasks are unchecked. Initial log scaffold remains on its retained branch. Runtime prerequisites and browser isolation follow root AGENTS and the bundled policies.
+Phase label sdd-phase-1-Classic-browser-game, native milestones #2 through #5 and all 13 task issues #10 through #22 are verified with exact briefs, phase labels and milestone associations. The initial projection utility deadline was reconciled by exact readback and creation of only missing objects. No task is complete yet. Execute one task at a time, test/document/commit its result with its checkoff, push/read back and close the issue before advancing. Full phase integration/release is the stopping boundary. Browser/runtime evidence is still pending; root policies govern isolation and recovery.

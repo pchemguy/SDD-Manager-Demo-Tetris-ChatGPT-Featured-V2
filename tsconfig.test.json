@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "ES2022"
+    ],
+    "strict": true,
+    "skipLibCheck": true,
+    "types": [
+      "node"
+    ],
+    "outDir": ".test-build",
+    "rootDir": "."
+  },
+  "include": [
+    "src/core",
+    "src/application",
+    "tests/unit"
+  ]
+}

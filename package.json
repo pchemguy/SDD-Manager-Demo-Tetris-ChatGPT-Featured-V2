@@ -1,0 +1,27 @@
+{
+  "name": "classic-tetris-browser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.core.json --noEmit",
+    "check:boundaries": "node scripts/check-boundaries.mjs",
+    "test:unit": "tsc -p tsconfig.test.json && node --test .test-build/tests/unit",
+    "build": "npm run typecheck && vite build",
+    "browsers:install": "node scripts/browser-env.mjs install --only-shell chromium firefox",
+    "test:environment": "node scripts/browser-env.mjs test --grep @environment",
+    "test:browser": "node scripts/browser-env.mjs test --grep-invert @environment",
+    "package": "python scripts/package_browser.py",
+    "verify:package": "python scripts/verify_package.py"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.6"
+  }
+}
