@@ -12,3 +12,6 @@ playwright-report/
 __pycache__/
 .test-tools/
 .pytest_cache/
+
+/RELEASE-NOTES.md
+/.release-highlights.md

@@ -76,7 +76,7 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: full unit suite and both-target control/recovery/browser tests, build/boundary checks, screenshot inspection. Include actual native versus modeled evidence limits, milestone report/TODOs and HANDOFF with T-009 completion; publish/read back before issue and Milestone 1.2 closure. References: PLAN 1.2; R-05–R-10/R-12.
             Completion evidence: Milestone review I1 reproduced RED and resolved: ineligible Start no longer discards frame time. I2 render-time lifecycle reentry reproduced; coalesced owned macrotask auto-pause and timer cleanup resolve Firefox logs. Runtime guard includes page closure. 32 unit, 22 source and 20 built-app browser checks passed, with typecheck/boundaries/build. Remount/reload recovery and folded code-review/report/HANDOFF completed; no TODO; native headed focus unverified.
 
-    - [ ] Milestone 1.3 — Verified browser distribution
+    - [x] Milestone 1.3 — Verified browser distribution
         - [x] T-010 — Build and inspect the static deployment package
             Scope: scripts/package_browser.py, scripts/verify_package.py, build/package entry points, truthful initial docs/INSTALL.md and docs/CONTROLS.md required by the archive, and package-check fixtures; generated artifacts remain ignored.
             Depends on: T-009 and verified Milestone 1.2 closure.
@@ -91,11 +91,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: unit regressions plus `npm run test:browser` for both projects against built/extracted targets, archive checks, screenshots and repeated isolated session cycles. Record exact binaries/modes/commands, required failures and diagnosed exclusions per policy. Synthetic fixture coverage does not substitute for actual delivery-app execution. References: R-01–R-12 acceptance interactions, especially R-10/R-11.
             Completion evidence: 32 unit and ten adversarial package checks/typecheck passed. Both browsers passed 22 built-app checks and 22 extracted-prefix checks; extracted suite initially exposed absolute-root test navigation, corrected to relative base URLs after cancelling/confirming closure of the owned server. Added local-only request enforcement and deployed-manifest checks. Added an inline favicon to eliminate observed root favicon 404s, rebuilt/verified, then all22 extracted checks passed again without runtime errors. Native headed focus remains unverified.
 
-        - [ ] T-012 — Finalize deployer guidance and release inputs
+        - [x] T-012 — Finalize deployer guidance and release inputs
             Scope: README, docs/INSTALL.md, docs/CONTROLS.md, docs/DEVELOPMENT.md, RELEASE-NOTES.md, validated AGENTS command navigation, final package inputs and CI completeness; docs/dev/reports/phases/1/1.3.md and HANDOFF.
             Depends on: T-010, T-011.
             Acceptance: documentation explains static deployment below a prefix, controls, planned-rule behavior, Node/npm/Python developer prerequisites and absence of player runtime dependencies. Notes match delivered version 1.0.0, tests/limits and deployable artifacts. Rebuild/inspect the archive after final instructions are present and rerun affected extracted-app checks. Do not publish a release/tag yet.
             Verification: follow documented commands from a clean dependency/build path, check links/included instructions, package digest/contents, full feasible browser acceptance and applicable regressions. Perform whole Milestone 1.3 code review and repairs, include report/TODOs/HANDOFF with T-012 completion, publish/read back and close issue before milestone closure. References: PLAN 1.3; R-09–R-12. Final delivery task owns folded review/report obligations.
+            Completion evidence: Final user/developer/install guidance, complete CI checks and exact ignored release-note/highlights inputs prepared. Independent distribution review found no blocker; minor R1 checksum completeness gap reproduced RED and resolved with strict CLI/extraction pairing. Clean npmci/type/boundary/32unit/build/package and22extracted checks passed; all11 package fixtures and two extracted deployment checks passed after verifier-only repair. Stable release copies match candidate bytes. Milestone report/HANDOFF and initial status included; no TODO; publication waits for phase integration.
+
     - [ ] Milestone 1.4 — Phase review
         - [ ] T-013 — Review test and report Phase 1
             Scope: whole phase cross-component code review, feasible acceptance/regressions, blocker repairs, docs/dev/reports/phases/1/PHASE-REPORT.md, docs/dev/reports/IMPLEMENTATION-REPORT.md and HANDOFF.

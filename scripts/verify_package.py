@@ -26,7 +26,7 @@ def validate_members(members):
     if total > 128 * 1024 * 1024:
         raise ValueError('Oversized deployment archive')
 
-def verify(path: Path) -> dict:
+def verify(path: Path, require_checksum: bool = False) -> dict:
     """Validate complete CRC, manifest digests, required files and local entry references."""
     with zipfile.ZipFile(path) as archive:
         validate_members(archive.infolist())
@@ -51,6 +51,8 @@ def verify(path: Path) -> dict:
             if ref.startswith('/') or not member or member not in names:
                 raise ValueError('Missing/nonlocal entry asset: ' + ref)
     sidecar = path.with_suffix(path.suffix + '.sha256')
+    if require_checksum and not sidecar.is_file():
+        raise ValueError('Required archive checksum is missing')
     if sidecar.exists():
         expected = sidecar.read_text().split()
         if expected != [hashlib.sha256(path.read_bytes()).hexdigest(), path.name]:
@@ -59,7 +61,7 @@ def verify(path: Path) -> dict:
 
 def extract(path: Path) -> Path:
     """Extract only validated content into the owned prefix test tree."""
-    verify(path)
+    verify(path, require_checksum=True)
     root = ROOT / 'artifacts/extracted'
     if root.is_symlink():
         raise ValueError('Unsafe extraction root')
@@ -77,7 +79,7 @@ def extract(path: Path) -> Path:
 if __name__ == '__main__':
     version = json.loads((ROOT / 'package.json').read_text())['version']
     package = ROOT / 'artifacts' / ('classic-tetris-browser-v' + version + '.zip')
-    manifest = verify(package)
+    manifest = verify(package, require_checksum=True)
     if manifest['version'] != version:
         raise ValueError('Package/source version mismatch')
     print('Verified', package.name, len(manifest['files']), 'content digests', flush=True)

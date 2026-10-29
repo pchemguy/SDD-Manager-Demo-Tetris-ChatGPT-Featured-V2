@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: Milestone 1.2 controls/usability complete; T-009 publication/closure pending.
+Checkpoint: Milestone 1.3 distribution preparation complete; T-012 publication/closure pending.
 
 ## Scope and evidence
 
-User authorized all T-001 through T-013 and complete phase integration/release. [TASKS](TASKS.md) remains executable authority; [milestone 1.2 report](reports/phases/1/1.2.md) retains code review, I1/I2 repairs, 32 passing unit tests, 22 source-browser and 20 built-browser tests. Native OS-window focus remains unverified; modeled visibility evidence is labeled. No unresolved TODO.
+Full implementation/release authority remains the user's Do QC and full implement instruction. [TASKS](TASKS.md) owns all tasks. [Milestone 1.3 report](reports/phases/1/1.3.md) retains independent review, exact archive/notes hashes and final installation-doc checks. Rules/session, complete UI/controls and deployment packaging are implemented. No unresolved TODO; native headed focus remains unverified.
 
-## Branch and tracking
+## Branches and next action
 
-Working branch: phase/1-classic-browser-game. Parent/target: main. Branch-off: 6775927c52a8ef5b04c9cbd732f25b97a81b18f8. All phase objects/associations verified. Milestone #2 and issues through T-008 are closed. Publish/read back T-009, close #18 and milestone #3, then execute T-010 through T-013. No additional approval is required for this retained full range.
+Working branch phase/1-classic-browser-game, parent/target main, branch-off 6775927c52a8ef5b04c9cbd732f25b97a81b18f8. Earlier task/issue and Milestone 1.1/1.2 closures verified. Publish/read back T-012, close #21 and milestone #4. Then execute exactly T-013 phase review/testing/final reports and persistence audit; close its issue/review milestone, explicitly integrate/verify/publish the full phase into main, and publish the authorized v1.0.0 browser release.
 
-## Next boundary
+## Release inputs and limits
 
-Build/verify static deployment, complete delivery-browser acceptance and documentation/release inputs, then phase review, explicit main integration and requested v1.0.0 release. Preserve classic failed-downward locking and shared TypeScript logic/UI boundaries. Provisioning/recovery is in DEVELOPMENT. No package or hosted release has yet been delivered.
+Local versioned ZIP/checksum and stable publication copies are under ignored artifacts/. Retained ignored RELEASE-NOTES.md is the exact intended commit/tag/GitHub Markdown body; .release-highlights.md retains analyzed initial-release coverage. Refresh coverage through the final release commit; do not publish at an unverified phase tip. Current CI definition is complete, but its new hosted run still needs readback. Browser isolation/recovery and developer commands are in DEVELOPMENT. This checkpoint cannot certify its own later push/closure or release publication.

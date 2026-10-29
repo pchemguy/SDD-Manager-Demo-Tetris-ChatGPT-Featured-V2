@@ -52,3 +52,9 @@ def test_missing_reference_and_content_corruption_are_rejected(source):
     with zipfile.ZipFile(corrupt,'w') as z:
         for name,data in members.items():z.writestr(name,data)
     with pytest.raises(ValueError):verify(corrupt)
+
+def test_complete_delivery_requires_checksum_sidecar(source):
+    package=build(source,source/'pair.zip')
+    package.with_suffix('.zip.sha256').unlink()
+    assert verify(package)['version']=='1.0.0'
+    with pytest.raises(ValueError):verify(package,require_checksum=True)
