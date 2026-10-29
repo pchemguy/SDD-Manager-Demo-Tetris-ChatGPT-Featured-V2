@@ -1,6 +1,8 @@
 # Modern rule extensions implementation tasks
 
-Campaign 001_0882e5d implements the accepted [FEATURE](FEATURE.md) through [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and [FEATURE-PLAN](FEATURE-PLAN.md), including its Physical ownership delta. This is the sole executable feature task owner until eligible incorporation into main TASKS. Existing main T-001–T-013 remain completed and unchanged. No feature task below is implemented.
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
+Campaign 001_0882e5d implements the accepted [FEATURE](FEATURE.md) through [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and [FEATURE-PLAN](FEATURE-PLAN.md), including its Physical ownership delta. This was the executable feature task owner before incorporation into main TASKS; ownership is now retired. Existing main T-001–T-013 remain completed and unchanged. The checkoffs below retain the final verified campaign snapshot.
 
 ## Execution and interface contract
 
@@ -12,7 +14,7 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
 
 ## Phase 2 — Modern browser rules
 
-- [ ] Phase 2 — Modern browser rules
+- [x] Phase 2 — Modern browser rules
     - [x] Milestone 2.1 — Grounding and modern rotation
         - [x] T-014 — Add canonical landing and both-direction kick rotation
             Scope: src/core/types.ts/pieces.ts/board.ts, new src/core/kicks.ts; tests/unit/kicks.test.ts and board.test.ts. Depends on: main T-013 and feature preparation/phase activation.
@@ -78,8 +80,10 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
             Verification: fresh npm ci; typecheck/boundaries; full unit/package/environment checks; build/package/verify; source, built and extracted-prefix suites in both isolated managed browsers; screenshot/contents/hash/reproducibility checks. Keep exact native/recovery limits. Include independent whole-Milestone-2.3 code review/repairs, distribution demonstration, report/TODOs and HANDOFF atomically. Report: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/2.3.md. Publish/close before milestone closure. References: F-01–F-08, R-09–R-12.
             Completion evidence: Fresh clean install/type/boundaries/113 unit/11 package/2 environment checks passed; Chromium/Firefox source44,built42,extracted42 passed. Final v1.1.0 ZIP strictly verified, scanned and reproduced byte-for-byte (SHA256 351c215782558e6b195aaaf60a60ab350d682b4d09ac262bbd21e8b37de1da79). Independent milestone review M23-R1 resolved; user docs/version/manifest/release inputs current. Report and HANDOFF included; TODO None.
 
-    - [ ] Milestone 2.4 — Phase review
-        - [ ] T-023 — Review test and report the modern rules phase
+    - [x] Milestone 2.4 — Phase review
+        - [x] T-023 — Review test and report the modern rules phase
             Scope: entire feature, required blocker repairs, accepted incorporation/current-doc QC, unique task ownership and eligible source/archive disposition, phase/final reports and HANDOFF. Depends on: T-014–T-022 completed/published, all delivery milestones/issues closed/read back.
             Acceptance: independent read-only whole-phase code review separate from test execution; all F-01–F-08 exits and preserved guarantees satisfied. Incorporate accepted feature into PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC/PLAN/layout and reconcile TASKS without dual executable owners or altering prior completed evidence. Archive only eligible active feature sources/preparation/QC adjacent reports under the reserved feature prefix, mark historical and update active links. Preserve every task's original closure evidence; retain the final review task's initial checkoff/result/evidence coherently through transfer. Recheck affected main-document conformance. Aggregate unresolved milestone/phase TODOs (None when empty); a missing required check is a blocker, not a deferred TODO.
             Verification: fresh appropriate full source/model/browser/package regression and document/link checks; exact task-closing parent-diff audit before integration, code review, final archive/ownership checks and reports. Reports: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/PHASE-REPORT.md and feature-root IMPLEMENTATION-REPORT.md. Publish/read back this task, close its issue/review milestone, then explicit verified main integration and authorized v1.1.0 default-branch release. Record actual subsequent outcomes in a task-owned parent-only evidence follow-up; never move the release tag to that later commit. Preparation of tasks does not execute these transitions.
+
+            Completion evidence: Independent whole-phase code review found no blockers. Fresh 113 unit/11 package/type/boundary/build/integrity checks and unchanged-application source44/built42/extracted42 Chromium/Firefox acceptance support F-01–F-08. Incorporated all current product roots, focused contracts and task ownership; archived current feature sources with links/historical markers; reassessed main document QC and audited task-closing parent diffs. Reports aggregate TODO None. Subsequent verified main integration/release is recorded separately without moving the release tag.

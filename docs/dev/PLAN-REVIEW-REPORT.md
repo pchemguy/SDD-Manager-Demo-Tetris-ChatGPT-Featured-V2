@@ -34,3 +34,16 @@ Checks performed: manual SPEC coverage, phase-scope and dependency review; count
 Combined PLAN/layout review on 2026-10-29: reviewed layout blob `8c801bdcd0234e5c8a73da8acb24d2273483b827` against the unchanged PLAN and governing design/SPEC identities above. Traced C-01 through C-06 to source, focused checks and host integration; matched all three delivery milestones to their source/test/package/documentation homes. Core/session DOM-free compilation and boundary checks enforce dependency direction; shared UI has one physical owner. Generated browser/test/build/secret paths are isolated and excluded from deployment. Packaging has an explicit Python developer prerequisite with no player runtime implication.
 
 Inspected the actual repository tree: product paths are correctly labeled intended, rather than claimed present. Root AGENTS navigation now links established authorities without inventing validated commands. Package/static-server checks remain implementation work. No confirmed placement or strategy finding remains; no phase/milestone or SPEC scope changed. Markdown and relative navigation checks pass for existing authorities. Current gate is Ready for TASKS; earlier strategy-only evidence remains retained.
+
+## Revision — Modern phase incorporation (T-023)
+
+Current gate: Ready. Author acting as the owning SDD document reviewer reassessed the complete affected current roots/children after incorporation, separately from implementation checks. Original review cycles above remain historical.
+
+Three capability delivery milestones plus one dedicated phase review implement all modern contracts with dependencies and working demonstrations. Physical ownership covers bag/kicks, session clocks/state, shared view and host pending options, tests, docs and retained feature reports. Release follows verified complete-phase integration. No unresolved conformance finding. Markdown/link and unique ownership checks accompany this revision.
+
+| Current document | Git blob |
+| --- | --- |
+| PLAN.md | `f7e6329f0fef4fbd165e276cb4281a649c89e6af` |
+| layout.md | `059a24d891ba03af7131d435e9e5948067647fbe` |
+| SPEC.md | `7e100f019cb27252f2d05da6256b9acf4465efcc` |
+| spec/modern-rules.md | `94c48da6aa62b9df364f7ba91d94e4323b394fdd` |

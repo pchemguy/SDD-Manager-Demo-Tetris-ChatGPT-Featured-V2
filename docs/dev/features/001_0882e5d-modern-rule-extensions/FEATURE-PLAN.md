@@ -1,5 +1,7 @@
 # Modern rules delivery plan
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
 ## Objective and strategy
 
 Deliver the approved [FEATURE](FEATURE.md) as browser v1.1.0 under [FEATURE-SPEC](FEATURE-SPEC.md). Preserve the completed main Phase 1 and use project-wide Phase 2 for this bounded feature. Keep the feature implementation on its persistent campaign branch, returning complete verified scope to its recorded parent main. Detailed executable units belong to FEATURE-TASKS; no implementation is claimed here.
@@ -35,7 +37,7 @@ Use the repository's isolated managed browsers and documented environment diagno
 
 ## Physical ownership delta
 
-Retain [layout](layout.md)'s dependency, tooling, browser-isolation, generated/secret and package-allowlist rules. The following allocation extends its existing owners; new paths are planned, not existing implementations. No FEATURE-LAYOUT document or duplicate main task list is created.
+Retain [layout](../../layout.md)'s dependency, tooling, browser-isolation, generated/secret and package-allowlist rules. The following allocation extends its existing owners; new paths are planned, not existing implementations. No FEATURE-LAYOUT document or duplicate main task list is created.
 
 | Path | Logical owner / intended change |
 | --- | --- |

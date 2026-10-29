@@ -47,6 +47,19 @@ Packaging uses Python 3.11+ standard-library scripts; this is a developer/releas
 
 dist/, artifacts/, .test-build/, .browser-cache/, test-results/, playwright-report/, node_modules/ and local caches are generated and ignored. Browser profiles/downloads and temporary extraction/server state live only in owned ignored directories. Never package .agents, docs/dev, source tests, credentials or browser installations.
 
-The conventional ignored gh.tkn remains beside root .gitignore. It is never an asset, fixture, report input or archive member. Packaging allowlists contents and rejects symlinks, unsafe archive paths and credential-like files. The final artifact names are classic-tetris-browser-v1.0.0.zip and classic-tetris-browser-v1.0.0.zip.sha256 under artifacts/.
+The conventional ignored gh.tkn remains beside root .gitignore. It is never an asset, fixture, report input or archive member. Packaging allowlists contents and rejects symlinks, unsafe archive paths and credential-like files. The final artifact names are classic-tetris-browser-v1.1.0.zip and classic-tetris-browser-v1.1.0.zip.sha256 under artifacts/.
 
 Root AGENTS.md retains execution policies and links current authorities. Setup/check commands are added there only after their implementation and validation; this planned layout does not claim those commands already work.
+
+## Modern phase allocation
+
+| Path | Owner |
+| --- | --- |
+| src/core/kicks.ts | C-02 ordered SRS candidates; board legality and geometry only. |
+| src/core/bag.ts | Pure six-draw shuffle; no singleton state. |
+| docs/dev/spec/modern-rules.md | Focused current F-01–F-08 behavioral contracts. |
+| tests/unit/kicks.test.ts, tests/unit/bag.test.ts | Literal geometry and deterministic bag acceptance. |
+| tests/browser/modern-rules.spec.ts | Actual modern controls, panels, timers and options. |
+| docs/dev/features/001_0882e5d-modern-rule-extensions/ | Historical accepted feature/preparation/QC sources and retained Phase 2 reports. |
+
+C-04 owns private bag/hold/options and two clocks; C-05 renders next/hold/ghost and next-game setting; C-06 owns pending input and existing browser resources. TASKS is the sole current executable task owner. Version metadata and local artifacts use v1.1.0; stable release asset names remain unchanged.

@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: Milestone2.3 verified; T-022 publication and hosted closure pending.
+Checkpoint: complete Phase2 verified and incorporated; T-023 publication/hosted closure pending.
 
-## Scope and authority
+## Authorities and result
 
-The user authorized full QC/implementation of feature001_0882e5d through T-023, complete integration and v1.1.0 publication. All modern gameplay and browser controls are delivered. FEATURE-SPEC/PLAN/TASKS remain current until T-023 incorporation. Report features/001_0882e5d-modern-rule-extensions/reports/phases/2/2.3.md retains complete checks, review and package hashes. TODO None.
+User-authorized full QC/implementation covers T-014–T-023, main integration and v1.1.0 release. PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC plus spec/modern-rules.md/PLAN/layout are current. TASKS is sole executable owner; all23 project tasks checked. Current feature sources/preparation/QC are historical under features/001_0882e5d-modern-rule-extensions. Phase/final reports there retain checks, independent review, repairs, exact hashes, task audit and TODO None. Prior Phase1 and campaigns preserved.
 
 ## Branch and tracking
 
-Current feature/001_0882e5d-modern-rule-extensions; campaign baseline0882e5d675c100e8d5cba514de17d092e2b736fc; implementation parent/return main at published preparation merge bcfa8e13867e8222831da965a4b56872a694a373. T-014–T-021 published; issues32–39 closed/read back, milestones7/8 closed. Preparation milestone6 closed. Phase2 projection covers issues32–41 and milestones7–10.
+Current feature/001_0882e5d-modern-rule-extensions; campaign baseline0882e5d675c100e8d5cba514de17d092e2b736fc. Implementation parent/return main at preparation merge bcfa8e13867e8222831da965a4b56872a694a373. T-014–T-022 published; issues32–40 and milestones7–9 closed/read back. T-023 must publish/read back before closing41/milestone10. Archived task snapshots do not supply ownership.
 
 ## Next action
 
-Publish/read back T-022, close40 and milestone9, then T-023. Whole-phase independent code review found no blockers at unchanged production a758044. Incorporate all accepted product roots/task ownership, archive only this campaign, reassess affected main QC, run appropriate fresh checks/audit and report. Publish/close41/milestone10, explicitly merge verified complete phase to main, then create exact-body release commit/tag and publish/download-verify v1.1.0. Preserve v1.0.0 and completed Phase1 history. Native headed focus remains unverified; Firefox recovery is process-local. No human checkpoint pending.
+Publish/read back T-023; audit semantic task transfer at actual commit, close41 and milestone10. Refresh exact main/source identities; explicitly two-parent merge complete verified feature, run merged checks and confirm package hash, publish/read back main. Refresh release highlights through merge and release marker. Create exact-body default-branch Release v1.1.0 commit/tag, publish two stable ZIP/checksum assets and verify notes/source/latest/public download bytes and actual CI. Record actual outcomes in T-023 parent-only evidence follow-up without moving tag. Preserve old releases/branches. Native headed focus unverified, Firefox recovery process-local; no pending human decision.

@@ -1,8 +1,10 @@
 # Modern rule extensions specification
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
 ## Scope and precedence
 
-This delta implements [FEATURE](FEATURE.md) through [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) and [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md). F-01–F-08 revise [SPEC](SPEC.md) R-01–R-08 and extend R-10–R-12 acceptance. Retain R-04 clear/level/gravity formulas and R-09 portability, R-11 distribution safety and unaffected lifecycle/error guarantees. No classic-mode selector, hidden rows, 180-degree rotation, extra scoring bonuses or desktop delivery is included.
+This delta implements [FEATURE](FEATURE.md) through [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) and [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md). F-01–F-08 revise [SPEC](../../SPEC.md) R-01–R-08 and extend R-10–R-12 acceptance. Retain R-04 clear/level/gravity formulas and R-09 portability, R-11 distribution safety and unaffected lifecycle/error guarantees. No classic-mode selector, hidden rows, 180-degree rotation, extra scoring bonuses or desktop delivery is included.
 
 ## F-01 Rotation and landing (R-01/R-03)
 

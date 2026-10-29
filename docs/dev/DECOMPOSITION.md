@@ -8,24 +8,24 @@ The [architecture](ARCHITECTURE.md) separates rules, session orchestration, shar
 
 | ID / component | Owns and provides | Requires / excludes | Verification seam |
 | --- | --- | --- | --- |
-| C-01 Piece geometry | Seven piece definitions, orientation transforms and occupied local cells. | No board state or random source; no wall kicks. | Enumerate cells/orientations, including O invariance. |
-| C-02 Board rules | Placement checks, downward/horizontal transitions, lock and simultaneous full-row removal. | C-01 and explicit board/piece values; no scheduler or scoring UI. | Small board fixtures and immutable input comparisons. |
-| C-03 Progression | Score, total lines, level and gravity interval calculations. | Lock/clear results and soft-drop distance; no wall time or renderer. | Table-driven score and level boundaries. |
-| C-04 Session | Current board, active piece, status, progression, gravity remainder and detached snapshots; semantic command and elapsed-time entry points. | C-01 through C-03; injected random callback. Never imports host/UI. | Seeded random inputs, exact durations and command sequences. |
-| C-05 Shared game view | DOM board, score/level/lines/status, control legend and native session buttons. Produces semantic action callbacks. | Detached session snapshot, mount element, action callback; no global scheduler or window-level input handling. | Browser assertions on cell state, text, focus and action dispatch. |
-| C-06 Browser host | Application composition, keyboard translation, frame lifecycle, focus/visibility auto-pause, teardown and asset entry. | C-04/C-05 and browser APIs; never duplicates piece or scoring rules. | Playwright keyboard, visibility/lifecycle and remount scenarios. |
+| C-01 Piece geometry | Seven piece definitions, orientation transforms and occupied local cells. | No board state or random source; ordered both-direction transforms. | Enumerate cells/orientations, including O invariance. |
+| C-02 Board rules | Placement checks, downward/horizontal transitions, ordered kicks, canonical landing, lock and simultaneous full-row removal. | C-01 and explicit board/piece values; no scheduler or scoring UI. | Small board fixtures and immutable input comparisons. |
+| C-03 Progression | Score, total lines, level and gravity interval calculations. | Lock/clear results and soft-/hard-drop distance; no wall time or renderer. | Table-driven score and level boundaries. |
+| C-04 Session | Current board, active piece, status, progression, bag/next/hold/options, gravity remainder, independent lock countdown and detached snapshots; semantic command and elapsed-time entry points. | C-01 through C-03; injected random callback. Never imports host/UI. | Seeded random inputs, exact durations and command sequences. |
+| C-05 Shared game view | DOM board, score/level/lines/status, single-next/hold miniatures, ghost, control legend, native buttons and next-game checkbox. Produces semantic action callbacks. | Detached session snapshot, mount element, action callback; no global scheduler or window-level input handling. | Browser assertions on cell state, text, focus and action dispatch. |
+| C-06 Browser host | Application composition, keyboard translation, pending next-game options, frame lifecycle, focus/visibility auto-pause, teardown and asset entry. | C-04/C-05 and browser APIs; never duplicates piece or scoring rules. | Playwright keyboard, visibility/lifecycle and remount scenarios. |
 
 ## Collaboration and data ownership
 
 The host creates the session with its random callback, mounts the view with an action callback and subscribes to state changes. Keyboard and button actions reach the same session command boundary. Each accepted command or gravity transition produces a fresh snapshot for the view. Only the host supplies elapsed durations.
 
-The session asks geometry and board rules for legal transitions. A failed downward attempt resolves a lock, clear, progression update and spawn as one synchronous transition. Progression does not generate pieces; the session invokes the random source only when a piece is needed. The view does not infer locking or clear lines itself.
+The session asks geometry and board rules for legal transitions. A lock deadline or selected immediate hard drop resolves lock, clear, progression update and spawn as one synchronous transition. Blocked downward attempts preserve the independent landing countdown. Progression does not generate pieces; the session invokes the random source in six-value bag refills when look-ahead requires it. The view does not infer locking or clear lines itself.
 
-Board values contain settled cells only; active cells remain separate until lock. Snapshots contain copied board and active-piece data so a subscriber cannot mutate session state. The controller owns status and timing; the UI merely projects them.
+Board values contain settled cells only; active cells remain separate until lock. Snapshots contain copied board, active, ghost and options data so a subscriber cannot mutate session state. The controller owns status and timing; the UI merely projects them.
 
 ## Lifecycle and failure boundaries
 
-Construction yields a ready session. Start/restart initializes a running game. Pause preserves state and gravity remainder; resume continues that session. Game over preserves the settled board and statistics until restart. The specification defines exact input eligibility and timing rules.
+Construction yields a ready session. Start/restart initializes a running game. Pause preserves state and both timing clocks; resume continues that session. Game over preserves the settled board and statistics until restart. The specification defines exact input eligibility and timing rules.
 
 Host teardown cancels its frame, detaches listeners and releases its view/subscription. View teardown removes only its owned nodes/listeners. It does not dispose another host's mount or global state.
 

@@ -1,8 +1,10 @@
 # Modern rule extensions
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
 ## Outcome and scope
 
-Upgrade the released browser game with hold, a single next-piece preview, a ghost landing projection, 7-bag generation, SRS wall kicks in both rotation directions, hard drop and a full-gravity-interval lock delay. The modern rules become the default; a separate classic-mode selector is outside this feature. Existing single-player browser delivery and future desktop reuse constraints remain those of [PROJECT](PROJECT.md) and [ARCHITECTURE](ARCHITECTURE.md).
+Upgrade the released browser game with hold, a single next-piece preview, a ghost landing projection, 7-bag generation, SRS wall kicks in both rotation directions, hard drop and a full-gravity-interval lock delay. The modern rules become the default; a separate classic-mode selector is outside this feature. Existing single-player browser delivery and future desktop reuse constraints remain those of [PROJECT](../../PROJECT.md) and [ARCHITECTURE](../../ARCHITECTURE.md).
 
 ## Piece flow and player information
 

@@ -2,7 +2,7 @@
 
 ## System arrangement
 
-The [project brief](PROJECT.md) requires a classic browser game and reuse of TypeScript logic and UI across future hosts. The application has a deterministic rules core, a session controller, a shared DOM UI and a small browser host. It produces static HTML, CSS and JavaScript; Node.js is development tooling, not a player runtime dependency. No backend service is required.
+The [project brief](PROJECT.md) requires a browser game with modern rules and reuse of TypeScript logic and UI across future hosts. The application has a deterministic rules core, a session controller, a shared DOM UI and a small browser host. It produces static HTML, CSS and JavaScript; Node.js is development tooling, not a player runtime dependency. No backend service is required.
 
 ## Blocks and dependencies
 
@@ -17,7 +17,7 @@ The host composes the application. The session depends on the core, and the UI c
 
 ## State and time ownership
 
-The session owns the sole mutable game state and gravity accumulator. The UI renders detached snapshots and never mutates rules state. Commands are processed synchronously so input and gravity cannot interleave within a transition.
+The session owns the sole mutable game state, transaction-cloned bag/next/held/options, gravity remainder and independent grounding countdown. The UI renders detached snapshots and never mutates rules state. Commands are processed synchronously so input and gravity cannot interleave within a transition.
 
 The host supplies elapsed durations rather than allowing rules to read wall time. Randomness enters through a supplied callback, enabling deterministic rule tests. The core has no scheduler; the host owns the animation-frame subscription and event listeners. Pausing and host lifecycle changes do not recreate the rules engine.
 
@@ -40,3 +40,7 @@ DOM reuse means reuse within hosts that provide a web document, including an Ele
 Core tests use explicit board fixtures and controlled random values. Controller tests provide elapsed durations without a real clock. UI integration tests inspect snapshots and semantic actions through a browser. End-to-end tests exercise the assembled browser app in isolated Chromium and Firefox environments under the repository's browser policy.
 
 Dependency checks ensure core/session code imports no UI or browser-host module. Build and archive checks verify that the browser delivery contains its required local assets. Runtime behavior and acceptance belong to [SPEC](SPEC.md); logical responsibilities belong to [DECOMPOSITION](DECOMPOSITION.md).
+
+## Modern rule ownership
+
+Pure core helpers own six-draw bag shuffling, ordered both-direction kick candidates and canonical landing. The session owns bag consumption, hold eligibility, option validation and atomic lock/clear/spawn. Ghost is derived from detached active/board values by the same landing helper used for hard drop. The shared view renders one next miniature, held type, patterned ghost and semantic controls. The host retains a separate pending next-game option and copies it only on start/restart; active options never change mid-session. All state-changing operations commit before notifications; refill or validation failure rolls back the candidate, including clocks and bag cursor. See [modern contracts](spec/modern-rules.md).
