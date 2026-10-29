@@ -1,9 +1,9 @@
-/** Shared, mount-scoped DOM view. Render snapshots and emit semantic actions only. */
-import type { Action, Snapshot } from '../application/session.js';
+/** Shared, mount-scoped DOM view. Render snapshots and emit semantic actions/next-game option changes. */
+import type { Action, Snapshot, SessionOptions } from '../application/session.js';
 import type {Kind} from '../core/types.js';
 import { cells } from '../core/pieces.js';
 let sequence = 0;
-export function createGameView(mount: HTMLElement, onAction: (action: Action) => void) {
+export function createGameView(mount: HTMLElement, onAction: (action: Action) => void, onOptionsChange: (options:SessionOptions)=>void=()=>{}) {
  const doc = mount.ownerDocument;
  const root = doc.createElement('section');
  const legendId = `game-controls-${++sequence}`;
@@ -18,8 +18,9 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <div class="stat"><span>LEVEL</span><strong data-testid="level">1</strong></div>
     <div class="stat"><span>LINES</span><strong data-testid="lines">0</strong></div>
     <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
-    <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button></div>
-    <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X / Space</dt><dd>Rotate clockwise</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
+    <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button><button class="secondary" data-play data-action="hardDrop">Hard drop</button></div>
+    <label class="settings"><input type="checkbox" data-option="immediate"> <span>Immediate hard-drop lock (next game)</span></label>
+    <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
   </div><footer>10 × 20 · SEVEN SHAPES · ONE MORE TRY</footer>`;
  mount.append(root);
@@ -29,6 +30,9 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   tile.className = 'cell'; tile.dataset.x = String(i % 10); tile.dataset.y = String(Math.floor(i / 10));
   tile.setAttribute('aria-hidden', 'true'); board.append(tile); return tile;
  });
+ const option=root.querySelector<HTMLInputElement>('[data-option="immediate"]')!;
+ const changeOptions=()=>onOptionsChange({immediateHardDropLock:option.checked});
+ option.addEventListener('change',changeOptions);
  const actions = root.querySelector<HTMLElement>('.actions')!;
  const start = root.querySelector<HTMLButtonElement>('[data-action="start"]')!;
  const pause = root.querySelector<HTMLButtonElement>('[data-pause]')!;
@@ -75,5 +79,5 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   pause.textContent = snapshot.status === 'paused' ? 'Resume' : 'Pause';
   pause.dataset.action = snapshot.status === 'paused' ? 'resume' : 'pause';
  }
- return {board,render,destroy: () => { actions.removeEventListener('click',handleClick); root.remove(); }};
+ return {board,render,destroy: () => { option.removeEventListener('change',changeOptions); actions.removeEventListener('click',handleClick); root.remove(); }};
 }
