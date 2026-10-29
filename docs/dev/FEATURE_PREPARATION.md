@@ -92,3 +92,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-SPEC-REVIEW-REPORT.md: 49679dd7783cd1821902c85defde0a79265f0bfa6051dd9b428bebe6b679c719
 
 Publish/read back this coherent completion before closing/readback of issue #46 or dependent work.
+
+## FDOCS-006 completion
+
+Plan one narrow Phase3 with one integrated conditional-visibility/distribution delivery milestone plus the mandatory phase review milestone. Small-group assessment avoids fragmenting one display capability. Map complete G-01–G-05, working demonstrations, independent reviews/reports and integration/release gates. Scoped strategy QC Ready; final placement assessment remains next before TASKS.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-PLAN.md: 7a61cb086f487b2968070a9c166878e205df6b153f62bd3db67d4f685cabde8b
+- docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: 546cc42261730c6d37f34aaab1eb4bf1c698c147c192dfeb274415a406edd494
+
+Publish/read back this coherent completion before closing/readback of issue #47 or dependent work.
