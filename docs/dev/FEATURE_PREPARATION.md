@@ -107,3 +107,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: fd08274c211ec34b29ccd63bb91685172dbe2e7e6c5f12ed57643fd98c318c01
 
 Publish/read back this coherent completion before closing/readback of issue #28 or dependent work.
+
+## FDOCS-007 completion
+
+Autodoc acceptance after combined PLAN/layout QC: reuse existing layout rules and add scoped physical ownership in FEATURE-PLAN for bag/kicks/landing/session/UI/host, model/browser tests, docs/version/package and feature reports/archive. Hash-bound Revision 1 is Ready for tasks; no unresolved owner or forbidden dependency.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-PLAN.md: 35c0d36f0230aab62a8b0c18dea3e8aee4c44a20b2482511d4e357a3523de162
+- docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: 1d8cfb2e4fdececbecc481998eb9b58f5aa6ca0d2e598fb72a6ceccdf26e788d
+
+Publish/read back this coherent completion before closing/readback of issue #29 or dependent work.

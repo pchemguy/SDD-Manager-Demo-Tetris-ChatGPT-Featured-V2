@@ -1,6 +1,6 @@
 # Feature plan review
 
-Gate: Ready for layout assessment; dependent task derivation waits for combined PLAN/layout review at FDOCS-007. Owner-performed strategic QC; no implementation execution claimed.
+Gate: Ready for dependent task derivation after the combined PLAN/layout review below. Owner-performed strategic QC; no implementation execution claimed.
 
 ## Inputs
 
@@ -17,3 +17,9 @@ Coverage: F-01/F-04→2.1; F-02/F-03/F-06 planning aids→2.2; F-05/full F-06/F-
 There are three delivery milestones (preferred 3–5 range), plus one excluded phase-review milestone. Reviewed semantic cohesion rather than relying on the count: geometry/time establishes one landing definition, piece-flow/view establishes one identity sequence, and hard-drop options/distribution completes the same bounded modern game. No enabling-only phase or delayed first-use backlog. Main browser baseline remains usable as new controls are integrated. Each milestone carries working demonstration, risk evidence and code-review/report/HANDOFF exits; the special phase review remains one explicit task. Task-specific counts will be checked after derivation.
 
 No confirmed unresolved strategic finding. Physical allocation is intentionally not yet claimed complete; FDOCS-007 must add/assess the changed owners and recheck this report before FEATURE-TASKS. Whole-package QC remains outside this review.
+
+## Revision 1 — Combined physical allocation review
+
+FDOCS-007 adds the Physical ownership delta to FEATURE-PLAN. No confirmed defect prompted this scheduled allocation refinement; the prior strategic assessment remains valid. Exact revised plan SHA-256: 35c0d36f0230aab62a8b0c18dea3e8aee4c44a20b2482511d4e357a3523de162. Main layout is reused from baseline 0882e5d675c100e8d5cba514de17d092e2b736fc; accepted feature design/SPEC hashes above remain unchanged.
+
+Checked C-01–C-06 in both directions against planned source/test/tool/document homes: bag and kick modules have one owner, placement and landing are shared rather than duplicated, session owns clocks/sequence, UI emits options/actions, browser owns resources. New modules fit DOM-free imports/compiler boundaries. Every milestone has model/browser evidence homes and final docs/package integration. Reports remain feature-qualified; active and archived task/source ownership is explicit and no history changes are implied. Package/version ownership, source-only fixtures, browser cache, credentials and generated exclusions remain coherent. No cycle, missing owner, unresolved allocation or confirmed finding remains. Plan milestone counts and bounded scope remain as reviewed; task counts are assessed at derivation. Local links and Markdown structure reviewed; no product code/tests run.
