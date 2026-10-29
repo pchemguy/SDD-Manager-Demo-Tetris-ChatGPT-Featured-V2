@@ -1,5 +1,7 @@
 # Feature tasks conformance review
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
 Gate: Ready as a documentation-pass output. Implementation/projected product tasks remain blocked by the intentional FDOCS-009/preparation-integration/phase-activation boundary. This report is owner-performed task conformance, not whole-package QC or implementation evidence.
 
 ## Exact inputs

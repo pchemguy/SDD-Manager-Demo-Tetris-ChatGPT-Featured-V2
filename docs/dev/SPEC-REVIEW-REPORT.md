@@ -37,3 +37,17 @@ Checks performed: manual contract/design coverage and boundary walkthrough; loca
 Finding S-01: R-08 described an injected listener-error callback without including its optional parameter in the constructor signature, and left immediate subscription delivery unspecified. The sdd-specify owner clarified createSession(random, onListenerError?) and specified that subscribe does not synchronously deliver an initial snapshot. This makes the existing orchestration contract directly implementable without adding product scope.
 
 Revised SPEC blob: `87368c5c720058b401f6ef3bc3b3cfceb06fcc26`. Rechecked notification count, observer failure containment, constructor defaults and snapshot acquisition against C-04/C-06. S-01 is resolved. The initial identity table retains the original reviewed state; this revision identifies the current state. Gate remains Ready for PLAN. No runtime evidence is claimed.
+
+## Revision — Modern phase incorporation (T-023)
+
+Current gate: Ready. Author acting as the owning SDD document reviewer reassessed the complete affected current roots/children after incorporation, separately from implementation checks. Original review cycles above remain historical.
+
+F-01–F-08 precisely own ordered kick tables, bag/hold/preview, countdown resets and event priority, drop/options, key eligibility, rollback and objective delivery acceptance. No superseded immediate-lock/no-kick/independent-draw claim remains in current contracts. Geometry, scoring, lifecycle, observer and portability constraints remain coherent. No unresolved conformance finding. Markdown/link and unique ownership checks accompany this revision.
+
+| Current document | Git blob |
+| --- | --- |
+| PROJECT.md | `bc2925077d83e9ccdf1e694958c7ba4c4bca1464` |
+| ARCHITECTURE.md | `ae79154070ca1f3f1aaea9c3457caa331c5f3022` |
+| DECOMPOSITION.md | `1d2a442a33d09b93ec0356b5edb73d854de3812c` |
+| SPEC.md | `7e100f019cb27252f2d05da6256b9acf4465efcc` |
+| spec/modern-rules.md | `94c48da6aa62b9df364f7ba91d94e4323b394fdd` |

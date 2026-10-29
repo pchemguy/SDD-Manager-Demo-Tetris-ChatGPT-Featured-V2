@@ -2,31 +2,22 @@
 
 ## Purpose and intended users
 
-Develop a browser-based, single-player classic Tetris game for people who want a straightforward falling-block game. Deliver a playable browser application with consistent rules and clear game status, while preserving the ability to reuse most application code in future delivery platforms.
+Deliver a browser-based single-player falling-block game with modern planning and control aids, predictable timing and clear status. Keep TypeScript application logic and DOM UI reusable by future delivery platforms.
 
 ## Scope
 
-The game supports piece movement, rotation, soft drop, line clearing, scoring, increasing levels, pause and restart. It communicates the active playfield, score, level and game-over state so the player can understand and control the session.
+The current game includes movement, both-direction SRS wall kicks, soft and hard drop, line clearing, scoring, increasing levels, pause/restart, seven-bag randomization, hold, exactly one next preview and ghost projection. Modern rules are the default; there is no classic-mode selector.
 
-Pieces lock when a gravity or soft-drop attempt cannot move them downward. There is no separate lock-delay timer and no timer reset on movement or rotation. Ground contact alone does not lock a piece; a failed downward attempt does. This same rule applies whether a piece is blocked by the floor or by settled blocks.
+Grounding starts one full current gravity interval of lock delay, independently of gravity remainder. Continuously grounded moves and rotations do not reset it; leaving support cancels it and relanding starts a fresh interval. Hard drop uses that policy by default. The next-game checkbox can select immediate hard-drop locking, fixed for the started session.
 
-## Goals
+## Goals and delivery constraints
 
-- Provide a complete, playable classic browser game with predictable interactions and recoverable session controls.
-- Keep game rules testable independently of browser timing, input and rendering integration.
-- Reuse TypeScript game logic and UI across future delivery platforms, keeping platform-specific integration separate.
-- Verify browser behavior under the repository's browser development policy, with Chromium prioritized and Firefox included.
-
-## Delivery constraints
-
-The delivered platform is the browser. Windows Electron is a future delivery platform whose reuse needs inform code boundaries; an Electron application is outside the current delivery scope.
-
-Each completed implementation phase must be verified and integrated before its corresponding version tag, release notes and GitHub release are published. Versions reflect delivered changes.
+Provide a complete playable browser app, deterministic independently testable rules, and shared logic/UI with platform-specific integration kept separate. Verify the assembled game in managed Chromium and Firefox. Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Completed phases are verified and integrated before version tags and GitHub releases. The initial release is v1.0.0; modern extensions target v1.1.0.
 
 ## Non-goals
 
-Hold, next-piece preview, ghost piece, 7-bag piece randomization, wall kicks, hard drop and a separate lock-delay timer are outside the current scope. Future delivery platforms are not implemented as part of this browser project.
+Windows Electron remains a future host; no desktop executable, installer or native-widget UI is delivered. There are no hidden rows, 180-degree rotations, five-piece preview, classic selector, extra scoring bonuses, persisted settings, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
 
 ## Specification responsibilities
 
-The specification must define exact movement and rotation behavior, piece generation, scoring and level progression, controls, pause/resume timing, spawn and game-over boundaries, and restart behavior consistently with this scope. These details must preserve the confirmed locking rule and must not introduce excluded modern rule extensions.
+[SPEC](SPEC.md) and its [modern rules child](spec/modern-rules.md) define exact geometry, generation, timing, hold/drop/options, scoring, controls, errors, lifecycle and objective acceptance. [ARCHITECTURE](ARCHITECTURE.md) separates reusable modules from the browser host.

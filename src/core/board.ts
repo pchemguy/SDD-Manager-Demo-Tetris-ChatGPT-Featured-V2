@@ -16,3 +16,10 @@ export function lock(board:Board,piece:Piece):{board:Board;cleared:number} {
  const cleared=20-remaining.length;
  return {board:[...Array.from({length:cleared},()=>Array(10).fill(null)),...remaining],cleared};
 }
+
+/** Lowest straight-down legal placement; shared by ghost and hard drop. Inputs are unchanged. */
+export function landing(board:Board,piece:Piece):Piece {
+ let next={...piece},below:Piece|null;
+ while((below=move(board,next,0,1)))next=below;
+ return next;
+}

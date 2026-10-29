@@ -1,5 +1,7 @@
 # Modern rules package QC
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
 Gate: Ready for preparation integration and subsequent authorized phase activation. Whole-set review at 78cd3b23d78a0ea32f3f49596bff17ec87c368e8 against accepted main baseline 0882e5d675c100e8d5cba514de17d092e2b736fc. The user explicitly requested Do QC and full implement after the autodoc stop.
 
 ## Exact product inputs

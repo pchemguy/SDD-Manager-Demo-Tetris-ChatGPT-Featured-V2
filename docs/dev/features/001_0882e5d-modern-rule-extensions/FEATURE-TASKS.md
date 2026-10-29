@@ -1,6 +1,8 @@
 # Modern rule extensions implementation tasks
 
-Campaign 001_0882e5d implements the accepted [FEATURE](FEATURE.md) through [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and [FEATURE-PLAN](FEATURE-PLAN.md), including its Physical ownership delta. This is the sole executable feature task owner until eligible incorporation into main TASKS. Existing main T-001–T-013 remain completed and unchanged. No feature task below is implemented.
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
+Campaign 001_0882e5d implements the accepted [FEATURE](FEATURE.md) through [FEATURE-SPEC](FEATURE-SPEC.md), [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md), [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md) and [FEATURE-PLAN](FEATURE-PLAN.md), including its Physical ownership delta. This was the executable feature task owner before incorporation into main TASKS; ownership is now retired. Existing main T-001–T-013 remain completed and unchanged. The checkoffs below retain the final verified campaign snapshot.
 
 ## Execution and interface contract
 
@@ -12,56 +14,76 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
 
 ## Phase 2 — Modern browser rules
 
-- [ ] Phase 2 — Modern browser rules
-    - [ ] Milestone 2.1 — Grounding and modern rotation
-        - [ ] T-014 — Add canonical landing and both-direction kick rotation
+- [x] Phase 2 — Modern browser rules
+    - [x] Milestone 2.1 — Grounding and modern rotation
+        - [x] T-014 — Add canonical landing and both-direction kick rotation
             Scope: src/core/types.ts/pieces.ts/board.ts, new src/core/kicks.ts; tests/unit/kicks.test.ts and board.test.ts. Depends on: main T-013 and feature preparation/phase activation.
             Interfaces: produce landing and tryRotate signatures above; preserve spawn/cells/canPlace/lock. Use F-01's exact sixteen ordered transition rows, application's downward-positive y and strict ceiling; O is invariant.
             Acceptance: spatial fixtures demonstrate all transitions in both families, first-legal preference, later-candidate fallback, blocked full rejection and unchanged input. Landing returns the last legal row without tunneling or settled mutation. Include invalid direction rejection; do not validate tables only by copying implementation constants into tests.
             Verification: RED focused geometric fixtures first; GREEN npm run test:unit, typecheck and check:boundaries. Update module docs for the shared collision/landing boundary. References: F-01, C-01/C-02.
-        - [ ] T-015 — Integrate the independent landing countdown
+            Completion evidence: RED: 20 core acceptance cases failed on missing kick/landing functions. GREEN: 68 unit tests plus typecheck/boundaries passed. Sixteen literal spatial kick fixtures exercise both families/transitions with obstacles, alongside hand-checked floor/wall ordering, rejection, O/direction, landing and immutability. Baseline 32 units and both managed environment checks passed; entry HANDOFF records verified phase activation.
+
+        - [x] T-015 — Integrate the independent landing countdown
             Scope: src/application/session.ts and tests/unit/session.test.ts using T-014 primitives. Depends on: T-014.
             Interfaces: existing dispatch/advance and snapshot remain usable; rotate uses tryRotate and rotateCCW is added. Session owns gravity remainder plus nullable lock countdown. Do not implement bag/hold/drop capabilities early.
             Acceptance: level-one grounding lasts 999ms and locks at 1000ms; landing with gravity remainder 999ms cannot lock after only 1ms. Cover floor/stack, tail-of-advance landing, coincident deadlines (lock first), continuous-support/rejected/O actions, support escape/relanding, pause/resume, blocked soft drop, spawn/hold-ready timing seam, large elapsed stopping after one lock and errors/observer isolation. Preserve pre-clear scoring and unaffected lifecycle guarantees; replace assertions that deliberately encode superseded immediate locking.
             Verification: observe old code fail exact-timing regressions; implement F-04 chronology and run complete unit/type/boundary checks plus build. Module docs distinguish manual input from elapsed events. References: F-01/F-04/F-07, C-04.
-        - [ ] T-016 — Expose modern rotation and verify grounded play
+            Completion evidence: RED: seven session cases failed under the old failed-downward policy. GREEN: all 72 units, typecheck/boundaries/build passed. Independent landing/gravity clocks handle late/manual and mid-advance landings, equality, blocked drops, support escape/relanding, pause, wall kicks/CCW, atomic draw failure and one-lock excess-time discard. Superseded classic assertions were updated while scoring/detachment/observer regressions remain.
+
+        - [x] T-016 — Expose modern rotation and verify grounded play
             Scope: src/platform/browser/main.ts, src/ui/game-view.ts/styles.css, modern/browser lifecycle tests and controls guidance for the delivered subset. Depends on: T-015.
             Interfaces: retain mountGame disposer/view callbacks; add Up/X CW and Z CCW plus corresponding semantic native buttons, without exposing unimplemented future controls. Keep the old Space alias until the hard-drop task changes it and document this intermediate boundary.
             Acceptance: real board and native-button rotation use the same session boundary, ignore repeat, preserve focus eligibility and use kicks/landing delay in actual play. Exercise grounded adjustment without timer extension, pause/focus recovery and no runtime/console errors through teardown. Use model fixtures for exact time; browser frame evidence is additional.
             Verification: unit/type/boundary/build regression and isolated Chromium/Firefox source/built checks. Include separate whole-Milestone-2.1 code review, required repairs, working demonstration, report with TODO None or eligible details, and HANDOFF in this completion. Report: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/2.1.md. Publish/close task, then close/read back milestone before 2.2. References: F-01/F-04/F-06/F-07.
-    - [ ] Milestone 2.2 — Piece flow and planning aids
-        - [ ] T-017 — Integrate seven-bag generation and next-only preview
+            Completion evidence: RED: both browser rotation cases failed before complete controls. GREEN: 72 units/typecheck/boundaries/build; full28 source/26 built cases plus4 added floor-kick cases on each target passed across managed Chromium/Firefox. Independent milestone review M21-R1 actual-kick coverage gap resolved; inspected320/1000px screenshots. Report/HANDOFF and milestone checkoff included; no TODO.
+
+    - [x] Milestone 2.2 — Piece flow and planning aids
+        - [x] T-017 — Integrate seven-bag generation and next-only preview
             Scope: new src/core/bag.ts, session bag/next state, shared next miniature, focused bag/session/browser tests. Depends on: T-016 and verified 2.1 closure.
             Interfaces: shuffleBag follows F-02's six-draw Fisher–Yates; bag cursor lives in transaction-cloned session state. Snapshot next is null in ready and exactly one available upcoming Kind after start/consumption. View consumes this value, never draws independently.
             Acceptance: controlled draw order, every aligned bag permutation, boundary repeats, no RNG during ready/read/pause, exact preview consumption across locks. Throw/invalid callback at every refill step rolls back board/stats/bag/timers and notifications; retry remains valid. Start/restart reset sequence. Browser miniatures match the next actual piece and never reveal later bag entries.
             Verification: RED old independent-draw/absent-preview cases, GREEN unit/type/boundary/build plus both-browser preview acceptance. Update module docs and affected deterministic fixtures without removing unrelated assertions. References: F-02/F-06/F-07, C-04/C-05.
-        - [ ] T-018 — Implement one-hold-per-lock piece exchange
+            Completion evidence: RED: new shuffle/session assertions and both browser preview cases failed before capability existed. GREEN: 94 units/typecheck/boundaries/build and all34 source-browser cases passed. Six-draw bags, single look-ahead, bag-boundary repeats, start/refill rollback at every draw and exact bag-composed line-clear scoring verified. Preview miniatures match actual consumption; board assertions scoped to playfield after detecting mini-cell selector overlap.
+
+        - [x] T-018 — Implement one-hold-per-lock piece exchange
             Scope: session hold state/command, shared hold slot/native button, C/Shift browser input and focused tests/docs. Depends on: T-017.
             Interfaces: Snapshot held/canHold and Action hold; use the same spawn and bag consumption boundary as ordinary replacement.
             Acceptance: empty hold consumes preview, occupied swap does not; one hold until lock, orientation/spawn reset, fresh gravity/landing clocks, no score/board change, ineligible/paused/repeated holds no-op. Blocked queued or held replacement ends game with correct retained fields. Refill exception during empty hold rolls back the full transaction. Actual native/keyboard hold, unavailable indication and focus/repeat behavior match.
             Verification: RED hold/consumption/error fixtures first; GREEN full unit/type/boundary/build and both-browser hold cases. Controls guidance describes the once-per-lock rule. References: F-02/F-03/F-04/F-06/F-07.
-        - [ ] T-019 — Render the shared ghost and verify planning aids
+            Completion evidence: RED: four model hold cases and both browser hold cases failed before capability. GREEN:100 unit tests/typecheck/boundaries/build;12 modern-rule and14 hold/lifecycle/remount browser cases passed across Chromium/Firefox. Covered once-per-lock exchange, queue-preserving swap, fresh clocks, pause/restart, repeated input, refill rollback and literal reachable blocked empty/occupied spawn fixtures without debug injection. Shared miniatures reuse geometry.
+
+        - [x] T-019 — Render the shared ghost and verify planning aids
             Scope: session ghost snapshot derivation, shared board/panels/styles, unit/browser rendering and lifecycle tests. Depends on: T-017, T-018.
             Interfaces: Snapshot ghost is a detached landing piece or null; use T-014 landing rather than a view collision model. Ready/game-over ghost null; paused frozen; active cells dominate overlap.
             Acceptance: projected cells match canonical landing after both-direction kicks, moves and hold; no settled mutation; snapshot ghost cannot mutate live state. Distinguish active/ghost/settled without color alone. All panels/controls fit 320px with visible focus and labeled type miniatures. Repeated mount/focus/pause behavior remains sound with new controls.
             Verification: unit/type/boundary/build, both-browser source/built aid/recovery tests and inspected narrow/ordinary screenshots. Include separate whole-Milestone-2.2 code review, repairs, working demonstration, report/TODOs and HANDOFF in this completion. Report: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/2.2.md. Publish/close task then close/read back milestone. References: F-01–F-04/F-06/F-07.
-    - [ ] Milestone 2.3 — Hard drop and browser distribution
-        - [ ] T-020 — Implement hard-drop scoring and session options
+            Completion evidence: RED: model/browser ghost cases failed before projection. GREEN:104 units/typecheck/boundaries/build,38 source/36 built cases passed. Independent review M22-R1 ghost CCW/support coverage resolved; literal kicked/support/escape fixtures added. Inspected running320/1000px screenshots; fixed long rotation text with full aria names retained, then four focused built control/ghost cases passed. Report/HANDOFF and milestone checkoff included; no TODO.
+
+    - [x] Milestone 2.3 — Hard drop and browser distribution
+        - [x] T-020 — Implement hard-drop scoring and session options
             Scope: session hardDrop and copied SessionOptions boundary; tests/unit/session.test.ts and module API docs. Depends on: T-019 and verified 2.2 closure.
             Interfaces: dispatch(action, options?) and Snapshot options follow F-05; preserve createSession callbacks. Hard drop uses T-014 landing and existing atomic lock/clear/spawn path.
             Acceptance: distance scores exactly 2 per cell, zero-distance scores zero, delayed grounding starts/preserves countdown as appropriate, immediate option locks at any distance. Include eligible hold after delayed drop, exact additive clear score, one-piece transition/excess-time policy, option omission/copy/mutation/ineligible-start and TypeError validation, random failure on resulting refill and unchanged observer/error guarantees.
             Verification: RED delayed/immediate drop and options cases; GREEN full unit/type/boundary/build. No UI-only duplicate drop algorithm. References: F-04/F-05/F-07, C-03/C-04.
-        - [ ] T-021 — Complete hard-drop controls and next-game settings
+            Completion evidence: RED: nine hard-drop/options model cases failed before capability. GREEN:113 units/typecheck/boundaries/build passed. Canonical landing/distance score, delayed/zero-distance countdown, hold-after-drop, selected immediate locking, exact clear composition, copied fixed options and validation-before-effects, omitted restart retention and refill rollback are verified. No browser setting/control claim until T-021.
+
+        - [x] T-021 — Complete hard-drop controls and next-game settings
             Scope: browser host/shared UI callbacks/buttons/checkbox/legend, real browser and remount fixtures. Depends on: T-020.
             Interfaces: semantic hardDrop button and Space binding; pending option callback/value is separate from Snapshot active options. Start/restart copy pending value, with reload default false.
             Acceptance: changing checkbox mid-game cannot change current locking; restart applies it. Native checkbox/button activation does not double-dispatch or rotate, internal focus does not trigger pause/resume races, repeat does not multiply holds/drops/rotations, external focus still pauses. Full Up/X/Z/C/Shift/Space/lifecycle map and disabled-state rules match F-06. Retain frame-baseline and owned timer/listener cleanup.
             Verification: failing real-app key/setting/control cases first; then complete units/type/boundaries/build and both-browser source/built control/recovery/remount checks with runtime guard. Inspect option label/focus and 320px controls. Update visible and user controls consistently. References: F-05/F-06/F-07, C-05/C-06.
-        - [ ] T-022 — Verify and document the v1.1.0 static distribution
+            Completion evidence: RED: six actual browser hard-drop/settings cases failed before controls. GREEN:113 units/typecheck/boundaries/build,44 source/42 built cases passed; four strengthened options/reload/repeat cases passed on each target. Space/native Hard drop, copied next-game checkbox, no double-dispatch, internal focus and native checkbox Space verified; checked reload resets off. Inspected320/1000px checkbox/focus/control screenshots and updated visible/user controls.
+
+        - [x] T-022 — Verify and document the v1.1.0 static distribution
             Scope: user docs/AGENTS navigation, application version/lockfile, package/version-sensitive assertions, browser deployment suite and release inputs. Depends on: T-020, T-021.
             Acceptance: current supported docs describe all modern defaults, next-only preview, hold, kicks, lock reset/option and changed Space key; source-only fixtures excluded. Set v1.1.0 consistently, build reproducible versioned ZIP/checksum and stable publication copies, strict verify/extract and scan credential/development exclusions. Actual extracted-prefix app supports complete modern controls and options with local assets. Prepare current exact release notes/highlights; no tag/release publication at an unintegrated tip.
             Verification: fresh npm ci; typecheck/boundaries; full unit/package/environment checks; build/package/verify; source, built and extracted-prefix suites in both isolated managed browsers; screenshot/contents/hash/reproducibility checks. Keep exact native/recovery limits. Include independent whole-Milestone-2.3 code review/repairs, distribution demonstration, report/TODOs and HANDOFF atomically. Report: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/2.3.md. Publish/close before milestone closure. References: F-01–F-08, R-09–R-12.
-    - [ ] Milestone 2.4 — Phase review
-        - [ ] T-023 — Review test and report the modern rules phase
+            Completion evidence: Fresh clean install/type/boundaries/113 unit/11 package/2 environment checks passed; Chromium/Firefox source44,built42,extracted42 passed. Final v1.1.0 ZIP strictly verified, scanned and reproduced byte-for-byte (SHA256 351c215782558e6b195aaaf60a60ab350d682b4d09ac262bbd21e8b37de1da79). Independent milestone review M23-R1 resolved; user docs/version/manifest/release inputs current. Report and HANDOFF included; TODO None.
+
+    - [x] Milestone 2.4 — Phase review
+        - [x] T-023 — Review test and report the modern rules phase
             Scope: entire feature, required blocker repairs, accepted incorporation/current-doc QC, unique task ownership and eligible source/archive disposition, phase/final reports and HANDOFF. Depends on: T-014–T-022 completed/published, all delivery milestones/issues closed/read back.
             Acceptance: independent read-only whole-phase code review separate from test execution; all F-01–F-08 exits and preserved guarantees satisfied. Incorporate accepted feature into PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC/PLAN/layout and reconcile TASKS without dual executable owners or altering prior completed evidence. Archive only eligible active feature sources/preparation/QC adjacent reports under the reserved feature prefix, mark historical and update active links. Preserve every task's original closure evidence; retain the final review task's initial checkoff/result/evidence coherently through transfer. Recheck affected main-document conformance. Aggregate unresolved milestone/phase TODOs (None when empty); a missing required check is a blocker, not a deferred TODO.
             Verification: fresh appropriate full source/model/browser/package regression and document/link checks; exact task-closing parent-diff audit before integration, code review, final archive/ownership checks and reports. Reports: docs/dev/features/001_0882e5d-modern-rule-extensions/reports/phases/2/PHASE-REPORT.md and feature-root IMPLEMENTATION-REPORT.md. Publish/read back this task, close its issue/review milestone, then explicit verified main integration and authorized v1.1.0 default-branch release. Record actual subsequent outcomes in a task-owned parent-only evidence follow-up; never move the release tag to that later commit. Preparation of tasks does not execute these transitions.
+
+            Completion evidence: Independent whole-phase code review found no blockers. Fresh 113 unit/11 package/type/boundary/build/integrity checks and unchanged-application source44/built42/extracted42 Chromium/Firefox acceptance support F-01–F-08. Incorporated all current product roots, focused contracts and task ownership; archived current feature sources with links/historical markers; reassessed main document QC and audited task-closing parent diffs. Reports aggregate TODO None. Subsequent verified main integration/release is recorded separately without moving the release tag.

@@ -2,13 +2,13 @@
 
 ## Strategy and version coverage
 
-Deliver one bounded phase: the classic browser game specified in [SPEC](SPEC.md). This is the simplest useful product in the accepted scope: a playable falling-block loop with score/levels, session controls and a deployable static package. No independent modern enhancement or additional platform belongs to this phase. Splitting rules, UI and packaging into separately released phases would release incomplete slices of this small product rather than useful application increments.
+Deliver the initial classic browser phase and the modern extensions phase below. Phase 1 records the v1.0.0 delivery baseline. This is the simplest useful product in the accepted scope: a playable falling-block loop with score/levels, session controls and a deployable static package. Additional platforms remain outside both browser phases. Splitting rules, UI and packaging into separately released phases would release incomplete slices of this small product rather than useful application increments.
 
-The initial completed browser release is version 1.0.0. Build metadata and the deployment archive use that version; publishing the version remains contingent on phase review, integration and release checks. Subsequent delivered changes use semantic version increments appropriate to their compatibility and scope. No release is published merely because a milestone is complete.
+The initial completed browser release is version 1.0.0. The initial build metadata and deployment archive used that version. Current modern metadata/archive use v1.1.0; publication requires the phase review, integration and release checks below. Subsequent delivered changes use semantic version increments appropriate to their compatibility and scope. No release is published merely because a milestone is complete.
 
 ## Phase 1 — Classic browser game
 
-Included scope: R-01 through R-12, preserving all exclusions in PROJECT. The outcome is a player-usable, keyboard-operable browser game distributed as static assets. The starting baseline contains project guidance and development documents, not an existing game.
+Historical v1.0.0 scope: initial R-01 through R-12. Phase 2 below owns modern default changes; completed Phase 1 evidence remains unchanged. The outcome is a player-usable, keyboard-operable browser game distributed as static assets. The starting baseline contains project guidance and development documents, not an existing game.
 
 Three delivery milestones establish and refine the integrated game, followed by one dedicated phase review milestone. Core/session code is exercised without a browser before UI integration. Browser provisioning evidence is established proactively and remains distinct from application compatibility evidence.
 
@@ -72,3 +72,30 @@ After complete phase review, audit persistence and integrate the verified full p
 | R-11/R-12 | Packaging/acceptance in 1.3; complete review and release integration after 1.4 | Missing local assets, path-prefix failures, secret/development-file leakage, premature release claims. |
 
 Physical ownership belongs to [layout](layout.md). Executable work, dependencies and progress belong to TASKS; this plan defines the delivery boundaries rather than a file-edit sequence.
+
+## Phase 2 — Modern browser rules
+
+Prerequisite: accepted complete feature preparation, whole-package QC, verified/published preparation integration and selected phase tracking. The baseline is the already playable browser game. The phase's final outcome includes all F-01–F-08, current documentation, verified static distribution and release readiness.
+
+| Milestone | Working outcome and dependency | Required exit evidence |
+| --- | --- | --- |
+| 2.1 — Grounding and modern rotation | Pure kick/landing primitives and independent landing countdown integrated through actual browser rotation controls. Begins from the existing game. | All kick transitions/order/rejections, exact grounding/deadline/reset/pause semantics, unchanged clear/scoring/lifecycle behavior, actual both-direction rotation and timed-lock demonstration in both browsers. Review the whole milestone independently from its tests; repair blockers, write milestone report/HANDOFF. |
+| 2.2 — Piece flow and planning aids | After 2.1 closure, integrate seven-bag, exactly one next preview, hold and ghost. | Bag order/refill/error atomicity, hold eligibility/consumption/top-out, actual matching miniatures/ghost and accessible 320px layout; prove ghost landing and continuous-support timing agree. Whole-milestone review, required repairs and report/HANDOFF. |
+| 2.3 — Hard drop and browser distribution | After 2.2 closure, integrate hard-drop scoring/locking, next-game option and complete controls; finalize v1.1.0 static delivery. | Positive/zero-distance drops under both options, setting eligibility/restart/reload, no repeat/double-dispatch, full model/browser/package regression, user docs, reproducible ZIP/checksum, built and extracted-prefix acceptance in Chromium/Firefox. Whole-milestone review, repairs and report/HANDOFF. |
+| 2.4 — Phase review | After all delivery milestones complete and selected hosted closures, assess the entire delivered feature. | Separate full-phase code review and verification; accepted main-document/task incorporation and eligible feature-source archive, reassessed affected main-doc QC, final feature report/TODO aggregation, task persistence audit and integration readiness. Exactly one phase review task. |
+
+There are three delivery milestones plus the excluded mandatory review milestone. Each produces a usable/coherent checkpoint and reduces a distinct risk: timing/geometry, piece identity/presentation, then options/input/distribution. Demonstrations inform whether to continue unchanged or request a scoped amendment; they do not add routine approval gates to an authorized implementation range.
+
+## Integration, verification and release gates
+
+Each delivery task includes its own test-first checks and affected documentation. Assigned final milestone tasks include whole-milestone code review, testing, required repairs, report/TODOs and HANDOFF unless the later task count requires a separate review unit. The phase review is always explicit. Unit fixtures establish exact rules/time/errors; real assembled browser tests establish input/render/lifecycle and screenshots. Source-only state fixtures never ship. Tests cannot replace independent code review.
+
+Complete the phase's accepted-document incorporation before its closing review task. Reconcile unique feature task ownership without copying an independently checked list; preserve completed Phase 1 evidence and frozen history. Archive only sources whose active dependencies are finished, under the reserved feature directory, with repaired active links and historical markers. Keep reports within that feature prefix.
+
+Only after all exits and selected issue/milestone closures, merge the exact campaign source explicitly into main, verify merged regressions and push/read back. Prepare the default-branch release commit and v1.1.0 tag from that verified integrated source. Publish a draft with the stable browser ZIP/checksum names, validate inventory/digests, then publish/read back notes/source/latest/download bytes. Retain exact release body and source association; no CI duplicate publisher or tag movement.
+
+## Risks and evidence limits
+
+The principal risks are deadline event ordering, coordinate-sign mistakes, refill rollback, hold/preview mismatches and browser-focus reentry. Give them explicit model fixtures and assembled browser checks at their owning milestone. Update deterministic tests that encode superseded classic behavior without weakening unaffected assertions. Keep runtime/console-error guards through teardown.
+
+Use the repository's isolated managed browsers and documented environment diagnostics. Restricted-host Firefox recovery is opt-in only when diagnosed. Native headed OS-window focus and Windows/Electron execution remain explicitly unverified/excluded rather than blocking browser artifacts. Packaging must reject unsafe paths/secrets and maintain relative prefix-hosted assets. No outstanding product decision blocks this plan.

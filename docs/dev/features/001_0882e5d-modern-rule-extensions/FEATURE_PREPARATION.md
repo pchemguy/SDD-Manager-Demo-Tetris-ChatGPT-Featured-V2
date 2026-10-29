@@ -1,5 +1,7 @@
 # Modern rule extensions — preparation record
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
 ## Identity and request
 
 Campaign: 001_0882e5d; reserved feature directory docs/dev/features/001_0882e5d-modern-rule-extensions/. Original full baseline: 0882e5d675c100e8d5cba514de17d092e2b736fc, the published main tip after v1.0.0 completion. Preparation branch: design-docs/001_0882e5d-modern-rule-extensions; creation parent and preparation integration target: main. Intended implementation branch: feature/001_0882e5d-modern-rule-extensions, created only after accepted preparation is verified/integrated/published. No implementation branch exists yet.

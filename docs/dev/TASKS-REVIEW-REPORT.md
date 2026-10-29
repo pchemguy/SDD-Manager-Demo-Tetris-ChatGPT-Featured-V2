@@ -42,3 +42,15 @@ Checks performed: unique ID/parent/hierarchy/dependency inspection, numerical co
 A per-task executability walkthrough identified two sequencing findings in the initial task state above. TQ-01: T-001 required a build without an owned entry; its scope now includes an explicitly nonplayable HTML/browser smoke bootstrap, keeping real gameplay integration in T-005. TQ-02: T-010 required a deployable archive containing instructions that were otherwise scheduled only in T-012; T-010 now owns truthful initial installation/control docs, and T-012 finalizes/rebuilds them.
 
 The sdd-tasks owner corrected TASKS without changing PLAN milestone boundaries, accepted behavior, IDs or task counts. Revised TASKS blob: `e0b80c3a115187a7402ffde3bba0a4d6c0765fa4`. Rechecked each task's available inputs, command/exclusion expectations and prerequisite ordering, plus the final archive rebuild path. Both findings are resolved; no confirmed issue remains. Count/hierarchy/coverage assessments remain applicable. Current gate is Ready for task-list acceptance, with whole-package QC and execution gates still pending.
+
+## Revision — Modern phase incorporation (T-023)
+
+Current gate: Ready. Author acting as the owning SDD document reviewer reassessed the complete affected current roots/children after incorporation, separately from implementation checks. Original review cycles above remain historical.
+
+Project-wide IDs T-001–T-023 are unique in the sole executable owner. T-014–T-023 retain task scopes, interfaces, acceptance, dependencies and original closure evidence; source archive is explicitly historical. Only T-023 is newly closed by semantic transfer. T-016/019/022 own milestone reviews; T-023 owns phase review, incorporation, audit and reports. No unresolved conformance finding. Markdown/link and unique ownership checks accompany this revision.
+
+| Current document | Git blob |
+| --- | --- |
+| TASKS.md | `4c11b56da70ce630bc947e2bfc2e0e083f16cb15` |
+| PLAN.md | `f7e6329f0fef4fbd165e276cb4281a649c89e6af` |
+| layout.md | `059a24d891ba03af7131d435e9e5948067647fbe` |

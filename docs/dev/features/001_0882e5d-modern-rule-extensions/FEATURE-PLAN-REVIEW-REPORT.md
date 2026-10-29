@@ -1,5 +1,7 @@
 # Feature plan review
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
 Gate: Ready for dependent task derivation after the combined PLAN/layout review below. Owner-performed strategic QC; no implementation execution claimed.
 
 ## Inputs

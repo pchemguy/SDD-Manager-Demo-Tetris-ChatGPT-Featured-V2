@@ -1,8 +1,10 @@
 # Modern rules architecture delta
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
 ## Context and retained arrangement
 
-[FEATURE](FEATURE.md) extends the released game through the four blocks in [ARCHITECTURE](ARCHITECTURE.md): pure rules, transactional session, shared DOM view and browser host. Preserve the current dependency direction, language/toolchain, static deployment and DOM-free rules/session compilation. No engine replacement, platform framework, worker or backend is introduced.
+[FEATURE](FEATURE.md) extends the released game through the four blocks in [ARCHITECTURE](../../ARCHITECTURE.md): pure rules, transactional session, shared DOM view and browser host. Preserve the current dependency direction, language/toolchain, static deployment and DOM-free rules/session compilation. No engine replacement, platform framework, worker or backend is introduced.
 
 ## Changed responsibilities
 

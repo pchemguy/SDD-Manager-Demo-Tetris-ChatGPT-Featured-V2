@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: Modern rules whole-package QC passed; all preparation stages published/closed; explicit preparation integration being verified.
+Checkpoint: receiving main has complete verified Phase2 merge staged; release publication pending.
 
-## Authority and scope
+## Authorities and result
 
-The user requested Do QC and full implement, authorizing the remaining preparation gates, full T-014–T-023 range, verified feature integration and v1.1.0 browser release. FEATURE_PREPARATION retains accepted next-only brief, decisions and exact stages; FEATURE-QC-REPORT records independent whole-package Ready review. No material blocker. Product tasks remain unchecked and implementation is not yet claimed.
+User-authorized full QC/implementation covers T-014–T-023, main integration and v1.1.0 release. PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC plus spec/modern-rules.md/PLAN/layout are current. TASKS is sole executable owner; all23 project tasks checked. Current feature sources/preparation/QC are historical under features/001_0882e5d-modern-rule-extensions. Phase/final reports there retain checks, independent review, repairs, exact hashes, task audit and TODO None. Prior Phase1 and campaigns preserved.
 
-## Branches and next action
+## Branch and tracking
 
-Receiving main, source design-docs/001_0882e5d-modern-rule-extensions at 44433ecb0fd6e6fbc90d7bca595241af373c28bb; original main baseline/creation parent 0882e5d675c100e8d5cba514de17d092e2b736fc. FDOCS-009 was published and #31 closed/read back. Finish verified explicit preparation merge/publication, then close/read back preparation milestone #6. Create the persistent feature/001_0882e5d-modern-rule-extensions branch from that integrated main baseline, activate/verify all Phase 2 tracking objects and execute one task at a time. Preserve earlier Phase 1/v1.0.0 and existing branches. No unresolved user approval is pending.
+Receiving main; pinned source feature/001_0882e5d-modern-rule-extensions at ca74941a7177454852f99101d2c05d2d95aeac8d; campaign baseline0882e5d675c100e8d5cba514de17d092e2b736fc. Implementation parent/return main at preparation merge bcfa8e13867e8222831da965a4b56872a694a373. T-014–T-022 published; issues32–40 and milestones7–9 closed/read back. T-023 published/read back; issue41 and milestone10 closed/read back. Archived task snapshots do not supply ownership.
 
-## Verification and reporting
+## Next action
 
-All seven capabilities, landing-only lock resets, modern default, both-direction SRS and next-game option fit existing four-block architecture. Ten tasks cover three delivery milestones plus one phase review; reports stay in the feature prefix. Browser/model/package and native-focus limits remain in FEATURE-SPEC/PLAN/TASKS. Record actual implementation, integration and hosted release outcomes only after their gates run; no local Ready label certifies future effects.
+Actual T023 semantic transfer audit passed. Merged typecheck/boundaries/113unit/11package/build/strict verification and42 extracted-prefix browser cases passed; ZIP hash remains351c215782558e6b195aaaf60a60ab350d682b4d09ac262bbd21e8b37de1da79. Commit explicit two-parent integration and publish/read back main. Refresh release highlights through merge and release marker. Create exact-body default-branch Release v1.1.0 commit/tag, publish two stable ZIP/checksum assets and verify notes/source/latest/public download bytes and actual CI. Record actual outcomes in T-023 parent-only evidence follow-up without moving tag. Preserve old releases/branches. Native headed focus unverified, Firefox recovery process-local; no pending human decision.

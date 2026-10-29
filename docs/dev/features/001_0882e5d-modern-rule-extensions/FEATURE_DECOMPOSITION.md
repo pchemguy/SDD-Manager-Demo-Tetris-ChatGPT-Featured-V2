@@ -1,6 +1,8 @@
 # Modern rules component delta
 
-[FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) retains C-01–C-06 from [DECOMPOSITION](DECOMPOSITION.md). This overlay changes their responsibilities without adding a host abstraction.
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md) and task ownership is [TASKS](../../TASKS.md). Original reviews/checkoffs describe their recorded source identities.
+
+[FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) retains C-01–C-06 from [DECOMPOSITION](../../DECOMPOSITION.md). This overlay changes their responsibilities without adding a host abstraction.
 
 | Component | Changed responsibility and interface seam |
 | --- | --- |

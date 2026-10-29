@@ -49,3 +49,14 @@ footer {margin-top:22px;text-align:center;font-size:9px;letter-spacing:2px;color
  .hint {grid-column:1/-1;grid-template-columns:auto 1fr auto 1fr;gap:8px;font-size:10px;padding:12px 0}
  footer {font-size:8px;letter-spacing:1px;margin-top:14px}
 }
+
+/* Gameplay controls wrap as a grid rather than squeeze long native labels. */
+@media(max-width:540px){.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.actions button{overflow-wrap:anywhere}}
+
+.planning{display:flex;gap:16px;margin:14px 0}.planning>div{flex:1;min-width:0}.planning span{font-size:12px}.planning strong{display:block;color:#bcfa60}.piece-mini{display:grid;grid-template-columns:repeat(4,14px);grid-template-rows:repeat(4,14px);gap:2px;margin-top:6px}.mini-cell[data-filled="true"]{background:#bcfa60;border:2px solid #e3ffb8;border-radius:2px}@media(max-width:540px){.planning{grid-column:1/-1;justify-content:center}.planning>div{flex:0 1 auto}}
+
+.planning small{display:block;font-size:10px;color:#a8b6ce;margin-top:4px}
+
+.cell[data-ghost="true"]{background:repeating-linear-gradient(135deg,transparent 0,transparent 4px,#78905b33 4px,#78905b33 6px);border:2px dashed #b9db88}.projection{font-size:11px;color:#afc18e;text-align:center;margin:6px 0 12px}
+
+.settings{display:flex;align-items:flex-start;gap:8px;margin:14px 0;color:#b8c7dd;font-size:12px;line-height:1.5}.settings input{flex:none;margin:3px 0;accent-color:#bcfa60}@media(max-width:540px){.settings{grid-column:1/-1}}
