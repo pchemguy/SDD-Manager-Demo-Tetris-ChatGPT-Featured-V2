@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: New modern-rule feature campaign initialized; first FEATURE proposal pending.
+Checkpoint: New modern-rule feature campaign initialized; first FEATURE proposal prepared for acceptance.
 
 ## Workflow and authorized scope
 
@@ -12,4 +12,4 @@ Preparation branch design-docs/001_0882e5d-modern-rule-extensions from actual de
 
 ## Pending work and boundaries
 
-Nine campaign-specific GitHub FDOCS issues and their milestone were verified before writes; see preparation record. Publish/read back FDOCS-001 initialization and close/read back its issue. Draft/publish FEATURE, review material gameplay interactions, and pause for acceptance. Landing-only reset, modern default rules, a pre-game immediate-hard-drop-lock option and both-direction SRS are user-confirmed. Remaining proposals belong to the brief. No product code or version has changed; no feature implementation is claimed.
+Nine campaign-specific GitHub FDOCS issues and their milestone were verified before writes; see preparation record. FDOCS-001 initialization is published and its exact campaign issue is closed/read back. FEATURE.md is the reviewable proposal; publish/read back it and the builder-gap review evidence, then pause for acceptance. Landing-only reset, modern default rules, a pre-game immediate-hard-drop-lock option and both-direction SRS are user-confirmed. Remaining proposals belong to the brief. No product code or version has changed; no feature implementation is claimed.

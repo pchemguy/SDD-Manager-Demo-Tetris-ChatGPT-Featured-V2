@@ -46,4 +46,8 @@ Preparation milestone: #6, sdd-docs-001_0882e5d, open. FDOCS-001 initial checkbo
 
 ## Pending transitions
 
-Publish/read back initialization, then close/read back only 001_0882e5d/FDOCS-001. Prepare a reviewable FEATURE and publish it with current proposal evidence. Pause for its first acceptance; no dependent architecture/SPEC/PLAN/TASKS work or implementation before that checkpoint. Keep the other eight issues and preparation milestone open.
+Initialization 67118c85f562031def0650b8d5956431b5959a91 was pushed/read back, then exact campaign FDOCS-001 issue #23 was closed/read back. Publish the reviewable FEATURE with current proposal evidence. Pause for its first acceptance; no dependent architecture/SPEC/PLAN/TASKS work or implementation before that checkpoint. Keep the other eight issues and preparation milestone open.
+
+## FDOCS-002 proposal
+
+FEATURE.md draft SHA-256: 8b756e876d2c541f0e0d552f61db14649acbd2c63f20878b3c7587bd37be74bc. Seed coverage and retained-versus-changed scope reviewed. Confirmed choices are retained; five previews, one hold per lock, hard-drop scoring, timer capture, strict board ceiling and controls/delivery details are explicit proposals awaiting whole-brief acceptance. No human approval of this draft is claimed. FDOCS-002 remains unchecked/open; publish/read back the reviewable draft, present it and pause before dependent design. Independent read-only builder-gap review found nothing important left: bag/preview/hold consumption, rotation/board boundary, landing-only resets, hard-drop options, scoring, controls and delivery are sufficiently defined for the brief checkpoint. Exact kick tables, event ordering and UI allocation remain explicitly owned by downstream design/specification. Seed coverage, maintained links, credential-pattern exclusion and git whitespace checks passed. This is brief readiness, not whole-package QC or product acceptance.
