@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: Milestone 1.3 distribution preparation complete; T-012 publication/closure pending.
+Checkpoint: Phase 1 final QC passed; T-013 publication and hosted closure pending.
 
-## Scope and evidence
+## Scope and authority
 
-Full implementation/release authority remains the user's Do QC and full implement instruction. [TASKS](TASKS.md) owns all tasks. [Milestone 1.3 report](reports/phases/1/1.3.md) retains independent review, exact archive/notes hashes and final installation-doc checks. Rules/session, complete UI/controls and deployment packaging are implemented. No unresolved TODO; native headed focus remains unverified.
+The user authorized Do QC and full implement, including integration and a release after the verified phase. TASKS owns all thirteen tasks; the phase report retains final independent review and clean verification. No unresolved product TODO. No further human checkpoint is pending within this accepted scope.
 
 ## Branches and next action
 
-Working branch phase/1-classic-browser-game, parent/target main, branch-off 6775927c52a8ef5b04c9cbd732f25b97a81b18f8. Earlier task/issue and Milestone 1.1/1.2 closures verified. Publish/read back T-012, close #21 and milestone #4. Then execute exactly T-013 phase review/testing/final reports and persistence audit; close its issue/review milestone, explicitly integrate/verify/publish the full phase into main, and publish the authorized v1.0.0 browser release.
+Working branch phase/1-classic-browser-game; parent/target main at 6775927c52a8ef5b04c9cbd732f25b97a81b18f8. Publish/read back T-013, audit its actual initial closure, then close/read back issue #22 and milestone #5. Delivery issues #10–#21 and milestones #2–#4 are closed. Explicitly merge the completed phase into main, verify the merged result, publish/read back integration, then create the default-branch release commit and annotated v1.0.0 tag and publish the verified ZIP/checksum release. Preserve the phase branch.
 
-## Release inputs and limits
+## Release inputs and evidence
 
-Local versioned ZIP/checksum and stable publication copies are under ignored artifacts/. Retained ignored RELEASE-NOTES.md is the exact intended commit/tag/GitHub Markdown body; .release-highlights.md retains analyzed initial-release coverage. Refresh coverage through the final release commit; do not publish at an unverified phase tip. Current CI definition is complete, but its new hosted run still needs readback. Browser isolation/recovery and developer commands are in DEVELOPMENT. This checkpoint cannot certify its own later push/closure or release publication.
+Ignored RELEASE-NOTES.md is the exact intended commit/tag/GitHub body; retain it after publication. Refresh ignored .release-highlights.md coverage through the final source and remove only after published-body readback. Stable publication assets under artifacts/release are verified copies; archive SHA-256 183bc578e7a0aebea94348f3c520947f5614a5d140540dffc6d2ba3ad7856681. Final local checks passed 32 unit, 11 packaging, two environment, 24 source and 22 extracted browser cases. Native headed focus remains unverified; Firefox recovery is explicit and process-scoped. Updated hosted CI, exact tag/source and actual published asset downloads still require readback. Record observed integration/release outcomes after publication without moving the release tag to a later evidence commit.

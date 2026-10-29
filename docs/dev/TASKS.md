@@ -10,7 +10,7 @@ Each task includes meaningful tests and module/user documentation for its own ch
 
 ## Phase 1 — Classic browser game
 
-- [ ] Phase 1 — Classic browser game
+- [x] Phase 1 — Classic browser game
     - [x] Milestone 1.1 — Playable classic loop
         - [x] T-001 — Establish reproducible build and isolated verification tooling
             Scope: package/lockfile, compiler configurations, Vite/Playwright configuration, scripts/browser-env.mjs, boundary-check entry, CI skeleton, minimal index.html/browser bootstrap for an explicitly nonplayable toolchain smoke build, and owned ignore rules. T-005 supplies the actual game composition. Use version 1.0.0 as the planned release metadata. Pin compatible tool/browser versions from official distributions. Establish planned command interfaces; packaging entries may clearly fail until T-010 rather than produce empty artifacts.
@@ -98,12 +98,13 @@ Each task includes meaningful tests and module/user documentation for its own ch
             Verification: follow documented commands from a clean dependency/build path, check links/included instructions, package digest/contents, full feasible browser acceptance and applicable regressions. Perform whole Milestone 1.3 code review and repairs, include report/TODOs/HANDOFF with T-012 completion, publish/read back and close issue before milestone closure. References: PLAN 1.3; R-09–R-12. Final delivery task owns folded review/report obligations.
             Completion evidence: Final user/developer/install guidance, complete CI checks and exact ignored release-note/highlights inputs prepared. Independent distribution review found no blocker; minor R1 checksum completeness gap reproduced RED and resolved with strict CLI/extraction pairing. Clean npmci/type/boundary/32unit/build/package and22extracted checks passed; all11 package fixtures and two extracted deployment checks passed after verifier-only repair. Stable release copies match candidate bytes. Milestone report/HANDOFF and initial status included; no TODO; publication waits for phase integration.
 
-    - [ ] Milestone 1.4 — Phase review
-        - [ ] T-013 — Review test and report Phase 1
+    - [x] Milestone 1.4 — Phase review
+        - [x] T-013 — Review test and report Phase 1
             Scope: whole phase cross-component code review, feasible acceptance/regressions, blocker repairs, docs/dev/reports/phases/1/PHASE-REPORT.md, docs/dev/reports/IMPLEMENTATION-REPORT.md and HANDOFF.
             Depends on: all tasks T-001 through T-012 complete/published; delivery Milestones 1.1, 1.2 and 1.3 and their issues closed/read back. Its own review milestone remains open until this task completes.
             Acceptance: verify all R-01 through R-12 and phase exits, dependency direction, actual final archive/source/version/notes agreement and complete per-task persistence evidence. Code review is distinct from tests. Aggregate milestone and phase TODOs with disposition/options/provenance; no unresolved contract violation or missing feasible check may be marked passed. Report unavailable native/full-browser behavior explicitly. Final report distinguishes implementation, verification, integration and release states.
             Verification: clean install/typecheck/boundaries/unit/build/package/verify-package and complete feasible two-browser acceptance against final assets; inspect screenshots, archive/digest and task persistence. Commit phase/final reports, HANDOFF and task status together; publish/read back, close task and review milestone. Complete phase parent claims only with their actual exit evidence. No extra tasks beyond the authorized range are implied.
+            Completion evidence: Independent final code review has no outstanding finding. Fresh clean install, typecheck/boundaries, 32 unit, 11 package, two environment, 24 source and 22 extracted browser checks passed. Phase/final reports and HANDOFF retain limits, artifact identity, persistence audit and pending integration/release gates. No TODO.
 
 ## Post-phase integration and release
 

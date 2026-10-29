@@ -1,6 +1,7 @@
 /** Environment-only evidence: no gameplay compatibility claim. */
 import { test, expect } from '@playwright/test';
 test('@environment repeated isolated input rendering and teardown', async ({ browser }, info) => {
+  console.log('Effective managed browser:', info.project.name, browser.version());
   for (let i = 0; i < 2; i++) {
     const context = await browser.newContext();
     try {
