@@ -52,3 +52,5 @@ footer {margin-top:22px;text-align:center;font-size:9px;letter-spacing:2px;color
 
 /* Gameplay controls wrap as a grid rather than squeeze long native labels. */
 @media(max-width:540px){.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.actions button{overflow-wrap:anywhere}}
+
+.planning{display:flex;gap:16px;margin:14px 0}.planning>div{flex:1;min-width:0}.planning span{font-size:12px}.planning strong{display:block;color:#bcfa60}.piece-mini{display:grid;grid-template-columns:repeat(4,14px);grid-template-rows:repeat(4,14px);gap:2px;margin-top:6px}.mini-cell[data-filled="true"]{background:#bcfa60;border:2px solid #e3ffb8;border-radius:2px}@media(max-width:540px){.planning{grid-column:1/-1;justify-content:center}.planning>div{flex:0 1 auto}}

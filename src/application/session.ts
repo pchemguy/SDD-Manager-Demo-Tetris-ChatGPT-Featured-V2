@@ -1,21 +1,28 @@
 /** Deterministic session transactions. Only explicit durations and random inputs enter. */
-import type { Board, Piece } from '../core/types.js';
-import { KINDS, spawn } from '../core/pieces.js';
+import type { Board, Piece, Kind } from '../core/types.js';
+import { spawn } from '../core/pieces.js';
 import { createBoard, canPlace, move, lock } from '../core/board.js';
+import {shuffleBag} from '../core/bag.js';
 import {tryRotate} from '../core/kicks.js';
 import { progress, gravityInterval } from '../core/progression.js';
 export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'pause'|'resume';
-export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number}
-interface State extends Snapshot { remainder:number; lockRemaining:number|null }
+export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null}
+interface State extends Snapshot { remainder:number; lockRemaining:number|null;bag:Kind[] }
 const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','pause','resume'];
-const copy=(s:State):State=>({...s,board:s.board.map(r=>r.slice()),active:s.active?{...s.active}:null});
+const copy=(s:State):State=>({...s,bag:s.bag.slice(),board:s.board.map(r=>r.slice()),active:s.active?{...s.active}:null});
 /** Construct ready state; no draw occurs until start. Listener failures are isolated. */
 export function createSession(random:()=>number,onListenerError:(e:unknown)=>void=()=>{}) {
- const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null});
+ const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null});
  let state=initial(),busy=false;
  const listeners=new Set<(s:Snapshot)=>void>();
- const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,...snapshot}=copy(state);return snapshot};
- const draw=():Piece=>{const r=random();if(!Number.isFinite(r)||r<0||r>=1)throw new RangeError('Random value must be in [0,1)');return spawn(KINDS[Math.floor(r*7)])};
+ const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return snapshot};
+ /** Consume candidate-owned sequence and keep exactly one public look-ahead. */
+ const draw=(s:State):Piece=>{
+  if(s.bag.length===0)s.bag=shuffleBag(random);
+  const piece=spawn(s.bag.shift()!);
+  if(s.bag.length===0)s.bag=shuffleBag(random);
+  s.next=s.bag[0];return piece;
+ };
  function run(operation:(s:State)=>State):Snapshot {
   if(busy)throw new Error('Reentrant session operation');
   busy=true;
@@ -36,7 +43,7 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
  }
  function settle(s:State):State {
   const result=lock(s.board,s.active!);
-  const nextPiece=draw(); // Validate before any public state is committed.
+  const nextPiece=draw(s); // Validate before any public state is committed.
   const stats=progress(s,result.cleared),legal=canPlace(result.board,nextPiece);
   return grounding({...s,...stats,board:result.board,active:legal?nextPiece:null,status:legal?'running':'game-over',remainder:0,lockRemaining:null});
  }
@@ -46,7 +53,7 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
  }
  const dispatch=(action:Action):Snapshot=>run(s=>{
   if(!actions.includes(action))throw new RangeError('Unknown action');
-  if(action==='restart'||(action==='start'&&s.status==='ready'))return {...initial(),status:'running',active:draw()};
+  if(action==='restart'||(action==='start'&&s.status==='ready')){const fresh=initial();fresh.status='running';fresh.active=draw(fresh);return grounding(fresh)}
   if(action==='pause')return s.status==='running'?{...s,status:'paused'}:s;
   if(action==='resume')return s.status==='paused'?{...s,status:'running'}:s;
   if(s.status!=='running'||!s.active)return s;

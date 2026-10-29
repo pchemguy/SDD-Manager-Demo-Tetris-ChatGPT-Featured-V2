@@ -36,11 +36,13 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
             Completion evidence: RED: both browser rotation cases failed before complete controls. GREEN: 72 units/typecheck/boundaries/build; full28 source/26 built cases plus4 added floor-kick cases on each target passed across managed Chromium/Firefox. Independent milestone review M21-R1 actual-kick coverage gap resolved; inspected320/1000px screenshots. Report/HANDOFF and milestone checkoff included; no TODO.
 
     - [ ] Milestone 2.2 — Piece flow and planning aids
-        - [ ] T-017 — Integrate seven-bag generation and next-only preview
+        - [x] T-017 — Integrate seven-bag generation and next-only preview
             Scope: new src/core/bag.ts, session bag/next state, shared next miniature, focused bag/session/browser tests. Depends on: T-016 and verified 2.1 closure.
             Interfaces: shuffleBag follows F-02's six-draw Fisher–Yates; bag cursor lives in transaction-cloned session state. Snapshot next is null in ready and exactly one available upcoming Kind after start/consumption. View consumes this value, never draws independently.
             Acceptance: controlled draw order, every aligned bag permutation, boundary repeats, no RNG during ready/read/pause, exact preview consumption across locks. Throw/invalid callback at every refill step rolls back board/stats/bag/timers and notifications; retry remains valid. Start/restart reset sequence. Browser miniatures match the next actual piece and never reveal later bag entries.
             Verification: RED old independent-draw/absent-preview cases, GREEN unit/type/boundary/build plus both-browser preview acceptance. Update module docs and affected deterministic fixtures without removing unrelated assertions. References: F-02/F-06/F-07, C-04/C-05.
+            Completion evidence: RED: new shuffle/session assertions and both browser preview cases failed before capability existed. GREEN: 94 units/typecheck/boundaries/build and all34 source-browser cases passed. Six-draw bags, single look-ahead, bag-boundary repeats, start/refill rollback at every draw and exact bag-composed line-clear scoring verified. Preview miniatures match actual consumption; board assertions scoped to playfield after detecting mini-cell selector overlap.
+
         - [ ] T-018 — Implement one-hold-per-lock piece exchange
             Scope: session hold state/command, shared hold slot/native button, C/Shift browser input and focused tests/docs. Depends on: T-017.
             Interfaces: Snapshot held/canHold and Action hold; use the same spawn and bag consumption boundary as ordinary replacement.

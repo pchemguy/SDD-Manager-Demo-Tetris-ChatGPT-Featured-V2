@@ -1,5 +1,6 @@
 /** Shared, mount-scoped DOM view. Render snapshots and emit semantic actions only. */
 import type { Action, Snapshot } from '../application/session.js';
+import type {Kind} from '../core/types.js';
 import { cells } from '../core/pieces.js';
 let sequence = 0;
 export function createGameView(mount: HTMLElement, onAction: (action: Action) => void) {
@@ -15,6 +16,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <div class="stat"><span>SCORE</span><strong data-testid="score">0</strong></div>
     <div class="stat"><span>LEVEL</span><strong data-testid="level">1</strong></div>
     <div class="stat"><span>LINES</span><strong data-testid="lines">0</strong></div>
+    <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div></div>
     <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate">Rotate clockwise</button><button class="secondary" data-play data-action="rotateCCW">Rotate counterclockwise</button></div>
     <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X / Space</dt><dd>Rotate clockwise</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
@@ -36,8 +38,20 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   onAction(button.dataset.action as Action); board.focus();
  };
  actions.addEventListener('click', handleClick);
+ const nextMini=root.querySelector<HTMLElement>('.piece-mini')!;
+ const miniTiles=Array.from({length:16},()=>{const tile=doc.createElement('span');tile.className='mini-cell';tile.setAttribute('aria-hidden','true');nextMini.append(tile);return tile});
+ /** Miniatures reuse geometry, normalized inside a four-cell display box. */
+ function renderMini(type:Kind|null){
+  const occupied=type?cells({type,rotation:0,x:0,y:0}):[];
+  const minX=Math.min(...occupied.map(([x])=>x)),minY=Math.min(...occupied.map(([,y])=>y));
+  const width=occupied.length?Math.max(...occupied.map(([x])=>x))-minX+1:0;
+  const height=occupied.length?Math.max(...occupied.map(([,y])=>y))-minY+1:0;
+  const filled=new Set(occupied.map(([x,y])=>(y-minY+Math.floor((4-height)/2))*4+x-minX+Math.floor((4-width)/2)));
+  miniTiles.forEach((tile,i)=>{tile.dataset.filled=String(filled.has(i))});nextMini.setAttribute('aria-label',`Next piece: ${type??'none'}`);
+ }
  function render(snapshot: Snapshot) {
   root.dataset.status = snapshot.status;
+  root.querySelector('[data-testid="next-type"]')!.textContent=snapshot.next??'None';renderMini(snapshot.next);
   const activeCells = new Map(snapshot.active ? cells(snapshot.active).map(([x,y]) => [y * 10 + x, snapshot.active!.type]) : []);
   tiles.forEach((tile, i) => {
    const active = activeCells.get(i);
