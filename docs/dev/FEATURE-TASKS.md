@@ -58,11 +58,13 @@ Review focus: independent clocks at late landing; kick-table axis/order; partial
             Completion evidence: RED: model/browser ghost cases failed before projection. GREEN:104 units/typecheck/boundaries/build,38 source/36 built cases passed. Independent review M22-R1 ghost CCW/support coverage resolved; literal kicked/support/escape fixtures added. Inspected running320/1000px screenshots; fixed long rotation text with full aria names retained, then four focused built control/ghost cases passed. Report/HANDOFF and milestone checkoff included; no TODO.
 
     - [ ] Milestone 2.3 — Hard drop and browser distribution
-        - [ ] T-020 — Implement hard-drop scoring and session options
+        - [x] T-020 — Implement hard-drop scoring and session options
             Scope: session hardDrop and copied SessionOptions boundary; tests/unit/session.test.ts and module API docs. Depends on: T-019 and verified 2.2 closure.
             Interfaces: dispatch(action, options?) and Snapshot options follow F-05; preserve createSession callbacks. Hard drop uses T-014 landing and existing atomic lock/clear/spawn path.
             Acceptance: distance scores exactly 2 per cell, zero-distance scores zero, delayed grounding starts/preserves countdown as appropriate, immediate option locks at any distance. Include eligible hold after delayed drop, exact additive clear score, one-piece transition/excess-time policy, option omission/copy/mutation/ineligible-start and TypeError validation, random failure on resulting refill and unchanged observer/error guarantees.
             Verification: RED delayed/immediate drop and options cases; GREEN full unit/type/boundary/build. No UI-only duplicate drop algorithm. References: F-04/F-05/F-07, C-03/C-04.
+            Completion evidence: RED: nine hard-drop/options model cases failed before capability. GREEN:113 units/typecheck/boundaries/build passed. Canonical landing/distance score, delayed/zero-distance countdown, hold-after-drop, selected immediate locking, exact clear composition, copied fixed options and validation-before-effects, omitted restart retention and refill rollback are verified. No browser setting/control claim until T-021.
+
         - [ ] T-021 — Complete hard-drop controls and next-game settings
             Scope: browser host/shared UI callbacks/buttons/checkbox/legend, real browser and remount fixtures. Depends on: T-020.
             Interfaces: semantic hardDrop button and Space binding; pending option callback/value is separate from Snapshot active options. Start/restart copy pending value, with reload default false.
