@@ -11,9 +11,9 @@ async function controls(page:Page,values:Record<string,string|boolean>){
   else await expect(control).toHaveValue(value);
  }
 }
-async function saved(context:BrowserContext,baseURL:string,values:Record<string,string|boolean>){await context.addCookies(Object.entries(values).map(([key,value])=>({name:'tetris_config_'+key,value:String(value),url:baseURL,sameSite:'Lax' as const})))}
+async function saved(context:BrowserContext,baseURL:string,values:Record<string,string|boolean>){const url=new URL(baseURL);await context.addCookies(Object.entries(values).map(([key,value])=>({name:'tetris_config_'+key,value:String(value),domain:url.hostname,path:url.pathname,secure:url.protocol==='https:',sameSite:'Lax' as const})))}
 async function cookieValues(context:BrowserContext,baseURL:string){return Object.fromEntries((await context.cookies(baseURL)).filter(c=>c.name.startsWith('tetris_config_')).map(c=>[c.name.slice('tetris_config_'.length),c.value]))}
-test.beforeEach(async({page})=>{await page.setViewportSize({width:1000,height:1800});await page.clock.install({time:0});await page.clock.pauseAt(new Date(1000));await page.addInitScript(()=>{Math.random=()=>0.999999})});
+test.beforeEach(async({page},info)=>{await page.setViewportSize({width:1000,height:1800});await page.clock.install({time:0});await page.clock.pauseAt(new Date(1000));if(!info.title.includes('earned penetrator inventory'))await page.addInitScript(()=>{Math.random=()=>0.999999})});
 test('@persistence all six URL selections restore before play and save explicit defaults',async({page,context,baseURL})=>{
  await saved(context,baseURL!,{ghostVisibility:'never',hardDropEnabled:false,nextPreviewEnabled:false,hardDropLockPolicy:'immediate',generalLockPolicy:'failed-downward',holdEnabled:false});
  const query=new URLSearchParams(Object.fromEntries(Object.entries(defaults).map(([k,v])=>[k,String(v)]))).toString();
@@ -77,4 +77,89 @@ test('@persistence cookies restore when URL keys are omitted and pending rules a
  await expect(page.getByRole('button',{name:'Hard drop',exact:true})).toBeDisabled();await expect(page.getByRole('button',{name:'Hold piece',exact:true})).toBeDisabled();
  await expect(page.locator('[data-option="immediate"]')).toBeChecked();await expect(page.locator('[data-option="immediate"]')).toBeDisabled();
  await page.goto('./');await controls(page,{ghostVisibility:'never',nextPreviewEnabled:false,hardDropEnabled:false,holdEnabled:false,generalLockPolicy:'failed-downward',hardDropLockPolicy:'immediate'});await expect(page.getByTestId('status')).toHaveText('Ready');
+});
+
+test('@persistence-lifetime cookie attributes expiry host and directory scope are actual browser behavior',async({page,context,baseURL})=>{
+ await context.addCookies([{name:'unrelated',value:'keep',url:baseURL!},{name:'tetris_config_hardDropEnabled',value:'false',url:baseURL!,expires:Math.floor(Date.now()/1000)-10}]);
+ const before=(await context.cookies(baseURL!)).find(c=>c.name==='unrelated');
+ await page.goto('./?holdEnabled=false');
+ await controls(page,{holdEnabled:false,hardDropEnabled:true});
+ const cookies=await context.cookies(baseURL!),cookie=cookies.find(c=>c.name==='tetris_config_holdEnabled')!;
+ expect(cookie.value).toBe('false');expect(cookie.path).toBe(new URL(baseURL!).pathname);expect(cookie.sameSite).toBe('Lax');expect(cookie.httpOnly).toBe(false);expect(cookie.secure).toBe(false);
+ expect(Math.abs(cookie.expires-(Date.now()/1000+31536000))).toBeLessThan(30);
+ expect(cookies.find(c=>c.name==='unrelated')).toEqual(before);expect(cookies.some(c=>c.name==='tetris_config_hardDropEnabled')).toBe(false);
+ const otherHost=new URL(baseURL!);otherHost.hostname='localhost';
+ expect((await context.cookies(otherHost.href)).some(c=>c.name==='tetris_config_holdEnabled')).toBe(false);
+ if(cookie.path!=='/'){
+  const sibling=new URL('../other/',baseURL!).href;
+  expect((await context.cookies(sibling)).some(c=>c.name==='tetris_config_holdEnabled')).toBe(false);
+ }
+});
+for(const fault of ['cookie','history','both'])test('@persistence-lifetime blocked '+fault+' effects retain play and the independent persistence source',async({page,context,baseURL})=>{
+ await page.addInitScript(mode=>{
+  if(mode==='cookie'||mode==='both')Object.defineProperty(document,'cookie',{configurable:true,get(){throw Error('Cookie reads denied')},set(){throw Error('Cookie writes denied')}});
+  if(mode==='history'||mode==='both')history.replaceState=()=>{throw Error('History denied')};
+ },fault);
+ await page.goto('./?ghostVisibility=lower-half&holdEnabled=false');
+ await controls(page,{ghostVisibility:'lower-half',holdEnabled:false});
+ await page.getByRole('button',{name:'Start game'}).click();
+ await expect(page.getByRole('button',{name:'Hold piece',exact:true})).toBeDisabled();
+ await page.getByRole('button',{name:'Pause',exact:true}).click();
+ await page.locator('[data-option="ghost"]').selectOption('never');
+ await page.locator('[data-option="preview"]').uncheck();
+ await expect(page.getByTestId('status')).toHaveText('Paused');await expect(page.locator('[data-ghost="true"]')).toHaveCount(0);await expect(page.getByTestId('next-type')).toHaveText('Off');
+ expect(new URL(page.url()).searchParams.get('ghostVisibility')).toBe(fault==='cookie'?'never':'lower-half');
+ const cookies=await cookieValues(context,baseURL!);
+ if(fault==='history')expect(cookies).toEqual({ghostVisibility:'never',holdEnabled:'false',nextPreviewEnabled:'false'});else expect(cookies).toEqual({});
+ await page.getByRole('button',{name:'Resume',exact:true}).click();await page.keyboard.press('ArrowDown');await expect(page.getByTestId('score')).toHaveText('1');
+});
+test('@persistence-lifetime other pages stay unchanged until reload and their explicit URLs still win',async({page,context,baseURL})=>{
+ await page.goto('./');const other=await context.newPage(),errors:string[]=[];
+ other.on('pageerror',e=>errors.push(e.message));other.on('console',e=>{if(e.type()==='error')errors.push(e.text())});
+ try{
+  await other.goto(baseURL!);
+  await page.locator('[data-option="ghost"]').selectOption('never');
+  await page.locator('[data-option="hold"]').uncheck();
+  await controls(other,{ghostVisibility:'always',holdEnabled:true});
+  await other.reload();await controls(other,{ghostVisibility:'never',holdEnabled:false});expect(new URL(other.url()).search).toBe('');
+  await other.locator('[data-option="ghost"]').selectOption('always');await controls(page,{ghostVisibility:'never'});
+  await page.reload();await controls(page,{ghostVisibility:'never',holdEnabled:false});
+  expect((await cookieValues(context,baseURL!)).ghostVisibility).toBe('never');
+ }finally{await other.close()}
+ expect(errors).toEqual([]);
+});
+test('@persistence-lifetime reopened browser context restores six saved values into a fresh Ready game',async({page,context,browser,baseURL})=>{
+ await page.goto('./?ghostVisibility=never&hardDropEnabled=false&nextPreviewEnabled=false&hardDropLockPolicy=immediate&generalLockPolicy=failed-downward&holdEnabled=false');
+ await page.getByRole('button',{name:'Start game'}).click();await page.keyboard.press('ArrowDown');await expect(page.getByTestId('score')).toHaveText('1');
+ const state=await context.storageState(),reopened=await browser.newContext({storageState:state,viewport:{width:1000,height:1800}}),other=await reopened.newPage(),errors:string[]=[];
+ other.on('pageerror',e=>errors.push(e.message));other.on('console',e=>{if(e.type()==='error')errors.push(e.text())});
+ try{
+  await other.goto(baseURL!);await controls(other,{ghostVisibility:'never',hardDropEnabled:false,nextPreviewEnabled:false,hardDropLockPolicy:'immediate',generalLockPolicy:'failed-downward',holdEnabled:false});
+  await expect(other.getByTestId('status')).toHaveText('Ready');await expect(other.getByTestId('score')).toHaveText('0');await expect(other.getByTestId('penetrator-bonuses')).toHaveAttribute('aria-label','Penetrator bonuses: 0');await expect(other.locator('[data-active="true"]')).toHaveCount(0);expect(new URL(other.url()).search).toBe('');
+ }finally{await reopened.close()}
+ expect(errors).toEqual([]);
+});
+test('@persistence-lifetime paused live display edits save without changing the active rules or piece',async({page,context,baseURL},info)=>{
+ await page.goto('./');await page.getByRole('button',{name:'Start game'}).click();await page.getByRole('button',{name:'Pause',exact:true}).click();
+ const before=await page.locator('[data-active="true"]').evaluateAll(ns=>ns.map(n=>[n.getAttribute('data-x'),n.getAttribute('data-y')]));
+ await page.locator('[data-option="ghost"]').selectOption('never');await page.locator('[data-option="preview"]').uncheck();await page.locator('[data-option="hard-drop"]').uncheck();
+ await expect(page.getByTestId('status')).toHaveText('Paused');await expect(page.getByTestId('settings-summary')).toContainText('Pending');
+ expect(await page.locator('[data-active="true"]').evaluateAll(ns=>ns.map(n=>[n.getAttribute('data-x'),n.getAttribute('data-y')]))).toEqual(before);
+ expect(await cookieValues(context,baseURL!)).toEqual({ghostVisibility:'never',nextPreviewEnabled:'false',hardDropEnabled:'false'});
+ for(const width of [320,1000]){await page.setViewportSize({width,height:1800});await page.locator('[data-option="ghost"]').focus();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath('persisted-paused-'+width+'.png'),fullPage:true})}
+});
+test('@persistence-lifetime earned penetrator inventory and score reset on reload while selections restore',async({page})=>{
+ const {WELL,BAGS,traceRandom}=await import('../fixtures/penetrator-gameplay.js'),random=traceRandom();
+ await page.addInitScript(values=>{let index=0;Math.random=()=>values[index++]??0.999999},Array.from({length:BAGS.length*6},random));
+ await page.goto('./?hardDropLockPolicy=immediate&ghostVisibility=never');
+ await page.getByRole('button',{name:'Start game'}).click();
+ for(const [type,rotation,x] of WELL){
+  await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind',type);
+  for(let n=0;n<rotation;n++)await page.keyboard.press('ArrowUp');
+  for(let n=0;n<Math.abs(x-(type==='O'?4:3));n++)await page.keyboard.press(x<(type==='O'?4:3)?'ArrowLeft':'ArrowRight');
+  await page.keyboard.press('Space');
+ }
+ await expect(page.getByTestId('lines')).toHaveText('4');await expect(page.getByTestId('penetrator-bonuses')).toHaveAttribute('aria-label','Penetrator bonuses: 1');
+ await page.reload();await controls(page,{ghostVisibility:'never',hardDropLockPolicy:'immediate'});
+ await expect(page.getByTestId('status')).toHaveText('Ready');await expect(page.getByTestId('score')).toHaveText('0');await expect(page.getByTestId('lines')).toHaveText('0');await expect(page.getByTestId('penetrator-bonuses')).toHaveAttribute('aria-label','Penetrator bonuses: 0');await expect(page.locator('[data-penetrator="true"]')).toHaveCount(0);
 });

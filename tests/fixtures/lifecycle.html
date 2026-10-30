@@ -1,14 +1,19 @@
 <!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Owned lifecycle test harness</title></head><body>
-<button id="remount">Mount fresh</button><button id="retained">Mount retained</button><button id="earned">Mount trace retained</button><button id="unmount">Unmount</button><output id="frames"></output><main id="harness"></main>
+<button id="remount">Mount fresh</button><button id="retained">Mount retained</button><button id="earned">Mount trace retained</button><button id="persisted">Mount persisted</button><button id="unmount">Unmount</button><output id="frames"></output><main id="harness"></main>
 <script type="module">
 import {createConfiguration} from '/src/application/configuration.ts';
+import {createBrowserConfiguration} from '/src/platform/browser/configuration-persistence.ts';
 import {traceRandom} from '/tests/fixtures/penetrator-gameplay.ts';
 import {mountGame} from '/src/platform/browser/main.ts';
 const request=window.requestAnimationFrame.bind(window),cancel=window.cancelAnimationFrame.bind(window),pending=new Set();
 window.requestAnimationFrame=callback=>{const id=request(time=>{pending.delete(id);callback(time)});pending.add(id);return id};
 window.cancelAnimationFrame=id=>{pending.delete(id);cancel(id)};
 const configuration=createConfiguration();
-let dispose=()=>{};
+let dispose=()=>{},persisted;
+document.querySelector('#persisted').onclick=()=>{
+ persisted??=createBrowserConfiguration({readUrl:()=>location.href,readCookies:()=>document.cookie,writeCookie:value=>{document.cookie=value},replaceUrl:url=>history.replaceState(history.state,'',url)});
+ dispose();dispose=mountGame(document.querySelector('#harness'),()=>0.5,persisted);
+};
 document.querySelector('#earned').onclick=()=>{dispose();dispose=mountGame(document.querySelector('#harness'),traceRandom(),configuration)};
 document.querySelector('#retained').onclick=()=>{dispose();dispose=mountGame(document.querySelector('#harness'),()=>0.5,configuration)};
 document.querySelector('#remount').onclick=()=>{dispose();dispose=mountGame(document.querySelector('#harness'),()=>0.5)};

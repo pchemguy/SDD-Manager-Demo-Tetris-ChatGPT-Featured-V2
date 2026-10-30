@@ -64,7 +64,7 @@ Session-only configuration contracts are incorporated into docs/dev/SPEC.md and 
 
 Penetrator contracts are incorporated into current SPEC and spec/penetrator.md; main TASKS alone owns T001–T040. Eligible004 sources/preparation/adjacent QC are historical under docs/dev/features/004_1cadd99-penetrator-mode, with fixed5.1/5.2/phase/final reports. C02 owns deepest landing/guarded kicks/coupled appearance compaction; C04 bank/mode/mask/clocks; C05 white/bonus/mode/Hold presentation; C06 B. Six selected values remain C07. Recover actual integration/release state from HANDOFF.
 
-Source-only penetrator-view/lifecycle fixtures never ship and are excluded from built/extracted targets. Measured complete source82/built68/extracted68 suites use a finite240s global budget/300s wrapper. Actual earned-gameplay traces use normal keys and controlled RNG/time, without production setters.
+Source-only penetrator-view/lifecycle fixtures never ship and are excluded from built/extracted targets. Expanded persistence source110/built94 suites measured218.5s/199.5s; all source/built/extracted suites use a finite300s global budget/360s wrapper. Full v1.5.0 extracted acceptance is finalized in T-045. Actual earned-gameplay traces use normal keys and controlled RNG/time, without production setters.
 
 ## Active URL/cookie persistence preparation
 
