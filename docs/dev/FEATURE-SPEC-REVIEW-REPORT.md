@@ -2,7 +2,7 @@
 
 ## Current gate
 
-Ready for human specification review. FDOCS-005 acceptance remains pending; this assessment does not authorize PLAN, task projection or implementation. No unresolved conformance findings.
+Ready for dependent delivery planning. Human direction "Use autodoc" supplies subsequent-document preapproval; exact specification content and governing sources are unchanged. This assessment alone does not authorize task projection or implementation. No unresolved conformance findings.
 
 ## Exact reviewed state
 
@@ -45,3 +45,7 @@ Owner review compared accepted FEATURE, main design/behavior and observed `src/u
 ## Findings
 
 None. No correction/recheck cycle was needed. Human acceptance and whole-package QC/integration remain independent gates.
+
+## Mode transition
+
+The human selected autodoc after publication of specification `9d79248a07efbb9ad0a42e3f476f32d6cd84f37e`. Its content hash, source review and findings remain unchanged; no correction/recheck cycle is needed for this approval-policy change. FEATURE_PREPARATION retains actual preapproval and the FDOCS-008 stop before package QC. No separate interactive specification acceptance is claimed.
