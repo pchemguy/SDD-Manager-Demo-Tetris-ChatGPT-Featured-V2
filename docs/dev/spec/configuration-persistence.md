@@ -1,8 +1,6 @@
-# URL and cookie configuration contracts
+# Browser configuration persistence contracts
 
-## Scope and governing inputs
-
-The [accepted FEATURE](FEATURE.md), [feature architecture](FEATURE_ARCHITECTURE.md) and [component delta](FEATURE_DECOMPOSITION.md) govern U-01–U-08 below. [Main SPEC](SPEC.md) and [session configuration S-01–S-08](spec/session-configuration.md) govern unchanged gameplay, six-setting validation and selected-versus-active rules. This delta changes S-01/S-07 reload-default/no-cookie/no-URL restoration and S-08's no-persistence exclusion for the actual browser page entry. Pure contexts, legacy APIs, active-rule timing and unrelated gameplay remain compatible.
+This child of [SPEC](../SPEC.md) owns U-01–U-08 for six-setting browser URL/cookie persistence. [Selected configuration](session-configuration.md) owns S-01–S-08 application values, active rules and presentation. C-08 uses C-07 without introducing browser globals into reusable code. Game state is not persisted.
 
 ## U-01 fields, values and format
 
@@ -69,7 +67,7 @@ No new mount/view argument, storage subscription, destroy method, async readines
 
 ## U-07 regression and documentation
 
-Preserve existing six controls, native keyboard/focus ownership, relative static hosting, pure domain/session APIs, ordinary/penetrator gameplay, exactly one preview, ghost projection and all current locking policies. Amend affected current PROJECT/design/SPEC children/PLAN/layout/AGENTS and guides to describe browser persistence while keeping pure contexts distinct. Replace obsolete browser reload-default/no-cookie assertions with the changed contract; retain pure-context/no-browser-global tests and the unchanged gameplay assertions. Freeze all four closed feature archives, prior phase/task ranges and published tags/releases.
+Preserve existing six controls, native keyboard/focus ownership, relative static hosting, pure domain/session APIs, ordinary/penetrator gameplay, exactly one preview, ghost projection and all current locking policies. Current PROJECT/design/SPEC children/PLAN/layout/AGENTS and guides describe browser persistence while keeping pure contexts distinct. Browser reload restores selections under U-01–U-06; pure-context/no-browser-global tests and unchanged gameplay assertions remain. Preserve closed feature archives, prior phase/task ranges and published tags/releases.
 
 Player documentation lists all six names/text values/defaults, precedence, explicit URL cookie writes, omitted-key retention, expiry/path scope, same-session versus next-game behavior and graceful failure/no game restore. No localStorage/sessionStorage, backend/account, seventh control, sharing/reset button, live popstate/cross-tab synchronization, or extra delivery platform is included.
 

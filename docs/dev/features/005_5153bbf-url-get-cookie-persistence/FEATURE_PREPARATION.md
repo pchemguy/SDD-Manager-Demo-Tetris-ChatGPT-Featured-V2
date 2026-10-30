@@ -1,12 +1,14 @@
 # Feature preparation record
 
+Historical accepted campaign005 source/evidence. Current product contracts and executable task ownership are in the main development documents; this snapshot is not an active implementation owner.
+
 ## Identity and request
 
 Campaign: 005_5153bbf, associated slug 005_5153bbf-url-get-cookie-persistence. Full original baseline and branch-off: 5153bbf695ba68dfff4af5faf2821d2d2eb94488, on creation parent/main preparation target `main`. Preparation branch: `design-docs/005_5153bbf-url-get-cookie-persistence`. Reserved implementation branch: `feature/005_5153bbf-url-get-cookie-persistence`, to be created only after accepted preparation is verified, explicitly merged and published into `main`, and implementation is authorized. Reserved historical package: `docs/dev/features/005_5153bbf-url-get-cookie-persistence/`; no archive or extra package navigation is created now.
 
 The human requested opening a feature campaign for “URL GET and cookie persistence”: support cookies and URL query parameters for all existing configuration settings; restore saved or URL-supplied settings on reload/reopening, using sensible defaults otherwise. Resolve each setting independently by explicit URL value, then saved cookie, then default. Every player setting change saves its cookie and updates its URL parameter. Explicit URL values, including defaults, are saved in corresponding cookies. Omitted URL parameters retain saved cookie values rather than overwriting them with defaults.
 
-Accepted main source: v1.4.0 integrated/released state at the baseline, with current [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [session configuration](spec/session-configuration.md), [PLAN](PLAN.md), [layout](layout.md) and [TASKS](TASKS.md). Main TASKS remains sole owner of completed T-001–T-040; no new product task exists yet. Active proposed feature sources are `docs/dev/FEATURE*`; all four closed feature packages remain frozen.
+Accepted main source: v1.4.0 integrated/released state at the baseline, with current [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md), [session configuration](../../spec/session-configuration.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). Main TASKS remains sole owner of completed T-001–T-040; no new product task exists yet. Active proposed feature sources are `docs/dev/FEATURE*`; all four closed feature packages remain frozen.
 
 ## Current control
 

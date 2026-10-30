@@ -1,7 +1,7 @@
 /** Actual shipped app acceptance: no production debug or snapshot-injection API. */
 import {test,expect} from './test-base.js';
 test.beforeEach(async({page})=>{await page.clock.install({time:0});await page.clock.pauseAt(new Date(1000));await page.addInitScript(()=>{Math.random=()=>0.999999});await page.goto('./')});
-test('@conditional native preference is immediate, focus-safe and retained until reload',async({page},info)=>{
+test('@conditional native preference is immediate, focus-safe and retained across reload',async({page},info)=>{
  const mode=page.getByRole('combobox',{name:'Ghost visibility',exact:true});await expect(mode).toHaveValue('always');await expect(mode).toBeEnabled();await mode.selectOption('lower-half');
  await page.getByRole('button',{name:'Start game'}).click();await expect(mode).toHaveValue('lower-half');await expect(page.locator('[data-ghost="true"]')).toHaveCount(4);await expect(page.getByTestId('ghost-description')).toHaveText('Ghost I lands on row 20');
  await mode.focus();await page.keyboard.press('End');await expect(mode).toHaveValue('always');await page.keyboard.press('ArrowUp');await page.keyboard.press('Enter');await expect(mode).toBeFocused();await expect(mode).toHaveValue('lower-half');
@@ -9,7 +9,7 @@ test('@conditional native preference is immediate, focus-safe and retained until
  await page.getByRole('button',{name:'Pause',exact:true}).click();await mode.selectOption('always');await expect(page.getByTestId('status')).toHaveText('Paused');await mode.selectOption('lower-half');await expect(mode).toHaveValue('lower-half');await page.getByRole('button',{name:'Resume',exact:true}).click();await page.getByRole('button',{name:'Restart',exact:true}).click();await expect(mode).toHaveValue('lower-half');
  for(const width of [320,1000]){await page.setViewportSize({width,height:900});await mode.focus();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath(`conditional-mode-${width}.png`),fullPage:true})}
  await page.getByRole('img',{name:'Tetris playfield'}).dispatchEvent('blur');await page.evaluate(()=>window.dispatchEvent(new Event('blur')));await page.clock.runFor(20);await expect(page.getByTestId('status')).toHaveText('Paused');await expect(mode).toHaveValue('lower-half');
- await page.reload();await expect(mode).toHaveValue('always');await expect(page.getByTestId('status')).toHaveText('Ready');
+ await page.reload();await expect(mode).toHaveValue('lower-half');await expect(page.getByTestId('status')).toHaveText('Ready');
 });
 test('@conditional actual high-stack landing hides/restores and hidden hard drop keeps geometry',async({page},info)=>{
  // Keep native pointer targets onscreen with paused time; Firefox protocol scrolling can swallow input.

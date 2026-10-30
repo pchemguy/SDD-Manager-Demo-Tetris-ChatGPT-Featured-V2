@@ -2,6 +2,10 @@
 
 ## Current gate
 
+Ready for current browser-persistence SPEC conformance. Revision6 below records the exact current roots/children and governing states; earlier observations/source identities remain historical. This technical gate is separate from pending T046 phase completion/integration/release.
+
+Prior gate snapshot retained:
+
 State: Ready for PLAN. Review scope is SPEC/design conformance, not implementation or whole-package QC. No unresolved finding blocks planning.
 
 ## Reviewed identities
@@ -109,3 +113,26 @@ P01–08 incorporated without changing accepted bodies; ordinary/final non-overl
 | spec/modern-rules.md | `f60c8678b864c28ec6a6c3385d4a4ab309558a3c` |
 | spec/ghost-visibility.md | `4e1e4ca01e35098f2209af8952841666ddab83bb` |
 | spec/session-configuration.md | `e4038eb6eb7606dd283c81bb9877d4645d5cc832` |
+
+## Revision 6 — Browser persistence incorporation
+
+2026-10-30, scoped spec owner assessment during T046 accepted incorporation.
+
+| Current source | Blob |
+| --- | --- |
+| PROJECT.md | 9a949fdbd1ce006ff42c1cbd86190d63f55a6f19 |
+| ARCHITECTURE.md | 34a96554ed75dcd17d1e6d419fd1c4d5ab773499 |
+| DECOMPOSITION.md | f82aca90c934997eef958cd667b08bd6f776be30 |
+| SPEC.md | 42b8dfcf0fe953b8f296ae610f8d2d7340cdff3d |
+| PLAN.md | bc64f810c2111977fab8700abf9da9bafd9d0f04 |
+| layout.md | 0c36df5acc407d3014cf5a1dd9765c0533c45326 |
+| TASKS.md | ba31674e112f68cdc0099d5994806119702f38a1 |
+| spec/session-configuration.md | aac39edc636a1b2dad1242ebe6bdb8802dce32b0 |
+| spec/ghost-visibility.md | 75500e057435e0bb55594589a333299f7c7cddd6 |
+| spec/modern-rules.md | b7abdf998767aa1702bcf906ad5123095bb315fe |
+| spec/penetrator.md | 5e376fa0ff98c80d71f332f702498da5ea3212fd |
+| spec/configuration-persistence.md | 45accd130c0ce197d46aa6c252199b0994a2b9a3 |
+
+Checked coherent current PROJECT/architecture/C01–C08 ownership and R/F/G/S/P/U contracts. U01–08 exactly preserve accepted six fields/formats, independent precedence, explicit-default saves, omitted/invalid retention, cookie scope/lifetime, independent failures, unchanged controller APIs/history semantics and no game restore. R09/S01/S07/G02/F07 no longer make a contradictory universal browser reload-default/no-URL claim; pure contexts stay storage-free. Canonical U child owns browser persistence, while S owns selected values/active timing and other children preserve gameplay. Existing default values are defaults when no source supplies a value, not mandatory reload values. No new gameplay setting/platform/API scope was invented. All contract groups have objective model/injected/native/package evidence routes.
+
+Cross-document checks compare accepted archived005 sources with current owners, literal source/domain/default interfaces, actual code/tests, declared build/package and prior-range preservation. Confirmed conformance findings: None. Gate Ready; no deferred contract issue or new human decision. Runtime/package results remain separately owned by6.1/6.2 and final phase evidence; archive status does not certify a new run. Native headed OS focus/actual HTTPS engine and future Electron limits remain explicit. Task046 is not marked complete by this document QC.

@@ -18,7 +18,9 @@ export function toRuleOptions(value: GameConfiguration): RuleOptions {
  const {hardDropEnabled,holdEnabled,generalLockPolicy,hardDropLockPolicy}=value;
  return {hardDropEnabled,holdEnabled,generalLockPolicy,hardDropLockPolicy};
 }
-function valid(key: string, value: unknown): boolean {
+/** Canonical domain predicate, shared by typed contexts and platform format adapters. */
+export function isConfigurationValue<K extends keyof GameConfiguration>(key: K, value: unknown): value is GameConfiguration[K] {
+ if(!Object.hasOwn(defaults,key))return false;
  if(key==='ghostVisibility')return ['never','lower-half','always'].includes(value as string);
  if(key==='generalLockPolicy')return ['failed-downward','gravity-interval'].includes(value as string);
  if(key==='hardDropLockPolicy')return ['general','immediate'].includes(value as string);
@@ -35,7 +37,7 @@ export function createConfiguration() {
   for(const key of Reflect.ownKeys(patch)) {
    if(typeof key!=='string'||!Object.hasOwn(defaults,key))throw new TypeError('Unknown configuration setting');
    const value=Reflect.get(patch,key);
-   if(!valid(key,value))throw new TypeError(`Invalid setting: ${key}`);
+   if(!isConfigurationValue(key as keyof GameConfiguration,value))throw new TypeError(`Invalid setting: ${key}`);
    Object.assign(candidate,{[key]:value});
   }
   selected=candidate;

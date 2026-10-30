@@ -47,7 +47,7 @@ Packaging uses Python 3.11+ standard-library scripts; this is a developer/releas
 
 dist/, artifacts/, .test-build/, .browser-cache/, test-results/, playwright-report/, node_modules/ and local caches are generated and ignored. Browser profiles/downloads and temporary extraction/server state live only in owned ignored directories. Never package .agents, docs/dev, source tests, credentials or browser installations.
 
-The conventional ignored gh.tkn remains beside root .gitignore. It is never an asset, fixture, report input or archive member. Packaging allowlists contents and rejects symlinks, unsafe archive paths and credential-like files. The final artifact names are classic-tetris-browser-v1.4.0.zip and classic-tetris-browser-v1.4.0.zip.sha256 under artifacts/.
+The conventional ignored gh.tkn remains beside root .gitignore. It is never an asset, fixture, report input or archive member. Packaging allowlists contents and rejects symlinks, unsafe archive paths and credential-like files. The final artifact names are classic-tetris-browser-v1.5.0.zip and classic-tetris-browser-v1.5.0.zip.sha256 under artifacts/.
 
 Root AGENTS.md retains execution policies and links current authorities. Setup/check commands are added there only after their implementation and validation; this planned layout does not claim those commands already work.
 
@@ -62,7 +62,7 @@ Root AGENTS.md retains execution policies and links current authorities. Setup/c
 | tests/browser/modern-rules.spec.ts | Actual modern controls, panels, timers and options. |
 | docs/dev/features/001_0882e5d-modern-rule-extensions/ | Historical accepted feature/preparation/QC sources and retained Phase 2 reports. |
 
-C-04 owns private bag/hold/options/active rules and policy-specific clocks; C-05 renders snapshots and selected settings; C-07 owns selected memory; C-06 projects its rules and owns browser resources. TASKS is the sole current executable task owner. Version metadata and local artifacts use v1.4.0; stable release asset names remain unchanged.
+C-04 owns private bag/hold/options/active rules and policy-specific clocks; C-05 renders snapshots and selected settings; C-07 owns selected memory; C-06 projects its rules and owns browser resources. TASKS is the sole current executable task owner. Version metadata and local artifacts use v1.5.0; stable release asset names remain unchanged.
 
 ## Conditional ghost allocation
 
@@ -76,7 +76,7 @@ C-04 owns private bag/hold/options/active rules and policy-specific clocks; C-05
 | docs/dev/spec/ghost-visibility.md | Current focused G-01–G-05 contracts. |
 | docs/dev/features/002_0adba6e-conditional-ghost-visibility/ | Historical current-campaign feature/preparation/QC archive and fixed Phase3 milestone/phase/final reports. |
 
-Canonical core/session and host resources retain their previous ownership. Current application metadata/package uses1.4.0; stable release asset names are unchanged. TASKS owns all executable product tasks.
+Canonical core/session and host resources retain their previous ownership. Current application metadata/package uses1.5.0; stable release asset names are unchanged. TASKS owns all executable product tasks.
 
 ## Session configuration allocation
 
@@ -87,12 +87,12 @@ Canonical core/session and host resources retain their previous ownership. Curre
 | src/ui/game-view.ts, src/ui/styles.css, src/ui/ghost-visibility.ts | C-05 six native settings, current/pending state, live concealment, pure visibility predicate/type re-export and explicit refresh. |
 | src/platform/browser/main.ts | C-06 one page context, rule projection on Start/Restart, existing frame/input/focus teardown. |
 | tests/unit/configuration.test.ts, tests/unit/configuration-session.test.ts | Selected96/active16 combinations, exact timing/disabled/rollback/compatibility. |
-| tests/browser/configuration.spec.ts | Actual six controls, live/pending rules, no-storage/URL and independent pages across source/built/extracted. |
+| tests/browser/configuration.spec.ts | Actual six controls, live/pending rules, pure-context isolation/browser persistence and independent pages across source/built/extracted. |
 | tests/browser/ghost-view.spec.ts, tests/browser/remount.spec.ts, tests/fixtures/ | Source-only exact refresh/lifetime seams, excluded from distribution. |
 | docs/dev/spec/session-configuration.md | Current S-01–S-08 contracts. |
 | docs/dev/features/003_3977abb-session-only-game-configuration/ | Historical eligible source/preparation/adjacent-QC archive; fixed Phase4 milestone/phase/final reports. |
 
-Current static package uses1.4.0 and stable release ZIP/checksum names. No storage adapter/backend/new platform is allocated. TASKS alone owns all40 executable product tasks.
+Current static package uses1.5.0 and stable release ZIP/checksum names. C-08 owns browser persistence; no backend/new delivery platform is allocated. TASKS alone owns all46 executable product tasks.
 
 ## Penetrator allocation
 
@@ -115,7 +115,35 @@ Penetrator implementation and verification have the following physical owners.
 | tests/browser/configuration.spec.ts, remount.spec.ts, lifecycle.spec.ts and existing fixtures | Settings independence, focus/repeat, reset and resource/lifetime regression. |
 | playwright.config.ts, tsconfig.test.json if needed | Explicit source-only fixture exclusion for built/extracted, compiler coverage and measured finite suite budget. |
 | README.md, docs/CONTROLS.md, INSTALL.md, DEVELOPMENT.md | Accurate key/bonuses/colors/Hold/landing/settings/lock policy and static deployment guidance. |
-| package.json, package-lock.json, existing scripts/CI/release inputs |1.4.0 metadata, relative build, strict reproducible package and source/artifact/readback checks. |
+| package.json, package-lock.json, existing scripts/CI/release inputs |1.5.0 metadata, relative build, strict reproducible package and source/artifact/readback checks. |
 | docs/dev/features/004_1cadd99-penetrator-mode/ | Fixed milestone5.1/5.2/phase/final evidence and eligible accepted-source/preparation/adjacent-QC archive. |
 
-Local versioned artifacts use classic-tetris-browser-v1.4.0.zip and sidecar; public release assets retain classic-tetris-browser.zip and matching checksum filename. Existing allowlisted assets/docs/licenses only; no test trace/HTML fixture, credential, dev source/cache or browser installation ships. RELEASE-NOTES remains the exact retained release body; the internal highlights file stays ignored and is consumed only after publication verification. No persisted schema, service, generic plugin layer or new runtime dependency is allocated.
+Local versioned artifacts use classic-tetris-browser-v1.5.0.zip and sidecar; public release assets retain classic-tetris-browser.zip and matching checksum filename. Existing allowlisted assets/docs/licenses only; no test trace/HTML fixture, credential, dev source/cache or browser installation ships. RELEASE-NOTES remains the exact retained release body; the internal highlights file stays ignored and is consumed only after publication verification. The six-field browser format belongs to C-08; no service, generic plugin layer or new runtime dependency is allocated.
+
+## Browser persistence allocation
+
+C-08 has pure codec and callback effect modules within the browser platform directory. The following map owns current source, tests and documents.
+
+| Path | Component / purpose |
+| --- | --- |
+| src/application/configuration.ts | C-07 existing module: expose canonical pure field validation while retaining controller/default/rule-projection contracts. |
+| src/platform/browser/configuration-codec.ts | C-08 pure URL/cookie resolution, cookie scope/assignment and current-URL construction; explicit inputs, no ambient DOM or side effects. |
+| src/platform/browser/configuration-persistence.ts | C-08 callback-based persisted-controller factory, initial explicit URL saves, atomic delegation and independently contained changed-field effects. |
+| src/platform/browser/main.ts | C-06 actual page entry supplies document/window callbacks to C-08; reusable mountGame default and existing native lifecycle stay intact. |
+| tests/unit/configuration.test.ts | Existing pure C-07 domain/detachment/unknown-key regression plus exported validator agreement. |
+| tests/unit/configuration-codec.test.ts | Strict six-setting formats/precedence/duplicates, default/omitted cases, immutability, cookie attributes/path and URL semantics. |
+| tests/unit/configuration-persistence.test.ts | Real C-07 with injected sources/effects: initialization, no-op/invalid atomicity, multi-field patches, failures and context reuse. |
+| tests/browser/configuration-persistence.spec.ts | Real page-entry native restoration/edits/reload/reopen/cookies/history/failure behavior for source/built/extracted targets; not excluded from distribution acceptance. |
+| tests/browser/configuration.spec.ts and existing lifecycle/remount/ghost/penetrator suites/fixtures | Amend only obsolete browser-entry no-storage/reload-default assertions; preserve pure-context/default isolation, focus, rule timing and ordinary/penetrator regressions. Existing source-only fixtures remain excluded from shipped targets. |
+| tsconfig.test.json, scripts/test-unit.mjs | Existing compiled Node test discovery/compiler ownership; adjust only if new DOM-free modules/tests need explicit inclusion. |
+| scripts/check-boundaries.mjs | Retain core/application protection and check shared UI cannot import platform modules; allow C-06/C-08 to import reusable modules. |
+| playwright.config.ts, scripts/browser-env.mjs | Keep managed browsers, three actual targets and finite measured budgets. Extend budget only when measured execution justifies it, with the wrapper still longer than the suite. |
+| README.md, docs/CONTROLS.md, docs/INSTALL.md, docs/DEVELOPMENT.md | Player query/cookie behavior, supported hosting/scope, changed lifetime, unchanged gameplay controls and validated development commands/evidence limits. |
+| package.json, package-lock.json, scripts/package_browser.py, scripts/verify_package.py, tests/fixtures/package_checks.py, existing release/CI inputs | v1.5.0 metadata and any existing version assertions; strict reproducible relative archive/checksum, current shipped guides and artifact verification. Do not add another package path or dependency. |
+| docs/dev/spec/configuration-persistence.md | Canonical U-01–U-08 child linked from current SPEC as the canonical U contract owner. |
+| docs/dev/PROJECT.md, ARCHITECTURE.md, DECOMPOSITION.md, SPEC.md and affected spec children, PLAN.md, layout.md, TASKS.md, adjacent QC reports, AGENTS.md | Current product/owner reconciliation at the owning phase review; preserve earlier ranges and update only affected current documents. |
+| docs/dev/features/005_5153bbf-url-get-cookie-persistence/ | Fixed6.1/6.2/phase/final evidence and eligible005 source/preparation/QC archive after final incorporation. |
+
+Public release assets remain `classic-tetris-browser.zip` and its `.sha256` sidecar; local intended outputs are `artifacts/classic-tetris-browser-v1.5.0.zip` and its matching sidecar. Archive membership remains the established build assets, manifest, license/notices and shipped instructions; no codec source, tests, fixtures, docs/dev, credentials, browser cache or node_modules ships. RELEASE-NOTES retains the exact final body at the release boundary; internal highlights remain ignored and are cleaned up only after verified publication consumption.
+
+The adapter's two files separate deterministic format logic from effects without adding a service layer or generic storage abstraction. Both compile without DOM types because effects enter through explicit callbacks; only main.ts binds actual browser objects. C-05's structural controller consumer requires no additional callback or storage import. The component-to-path map supports each milestone without moving unrelated modules or changing existing source-only fixture ownership.

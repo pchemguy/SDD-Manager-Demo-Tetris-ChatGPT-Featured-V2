@@ -2,6 +2,7 @@
 import { createSession } from '../../application/session.js';
 import type { Action } from '../../application/session.js';
 import {createConfiguration,toRuleOptions,type ConfigurationController} from '../../application/configuration.js';
+import {createBrowserConfiguration} from './configuration-persistence.js';
 import { createGameView } from '../../ui/game-view.js';
 import '../../ui/styles.css';
 /** Reuse an explicit context across remounts; omission creates independent default selections. */
@@ -32,4 +33,14 @@ export function mountGame(mount:HTMLElement,random:()=>number=Math.random,config
  frame=win.requestAnimationFrame(tick);
  return ()=>{if(disposed)return;disposed=true;if(pauseTimer!==null)win.clearTimeout(pauseTimer);win.cancelAnimationFrame(frame);view.board.removeEventListener('keydown',key);mount.removeEventListener('focusout',focusOut);win.removeEventListener('blur',pause);doc.removeEventListener('visibilitychange',hidden);unsubscribe();view.destroy()};
 }
-const mount=document.querySelector<HTMLElement>('#app');if(mount)mountGame(mount,Math.random,createConfiguration());
+const mount=document.querySelector<HTMLElement>('#app');
+if(mount){
+ const doc=mount.ownerDocument,win=doc.defaultView!;
+ const configuration=createBrowserConfiguration({
+  readUrl:()=>win.location.href,
+  readCookies:()=>doc.cookie,
+  writeCookie:assignment=>{doc.cookie=assignment},
+  replaceUrl:url=>{win.history.replaceState(win.history.state,'',url)},
+ });
+ mountGame(mount,Math.random,configuration);
+}

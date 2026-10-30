@@ -25,7 +25,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>B</dt><dd>Penetrator (1 bonus)</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
   </div>
-  <fieldset class="settings-panel"><legend>Settings</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart. Settings reset on page reload.</p>
+  <fieldset class="settings-panel"><legend>Settings</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart.</p>
    <label class="settings ghost-setting"><span>Ghost visibility</span><select data-option="ghost"><option value="never">Always hide</option><option value="lower-half">Hide above midline</option><option value="always">Always show</option></select></label>
    <label class="settings"><input type="checkbox" data-option="hard-drop"><span>Hard drop (next game)</span></label>
    <label class="settings"><input type="checkbox" data-option="preview"><span>Next-piece preview</span></label>

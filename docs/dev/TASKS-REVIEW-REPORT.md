@@ -2,6 +2,10 @@
 
 ## Current gate
 
+Ready for current browser-persistence TASKS conformance. Revision6 below records the exact current roots/children and governing states; earlier observations/source identities remain historical. This technical gate is separate from pending T046 phase completion/integration/release.
+
+Prior gate snapshot retained:
+
 State: Ready as a task-list/PLAN conformance assessment. No confirmed finding blocks this list's acceptance. Whole-package DOCS-009 QC, preparation integration, phase projection and implementation authorization remain separate pending gates.
 
 ## Reviewed identities
@@ -100,3 +104,26 @@ Main TASKS alone owns40 unique stable IDs. Original1–32 bytes preserved;33–3
 | TASKS.md | `1d26767cd16dbfacb82c0ba852ade2f119a14114` |
 | PLAN.md | `17f471b5da9fe815e710957703687367eb6a9a8f` |
 | layout.md | `2836fc77ef271e36f4d04a2d6a3a2575d056dac3` |
+
+## Revision 6 — Browser persistence incorporation
+
+2026-10-30, scoped tasks owner assessment during T046 accepted incorporation.
+
+| Current source | Blob |
+| --- | --- |
+| PROJECT.md | 9a949fdbd1ce006ff42c1cbd86190d63f55a6f19 |
+| ARCHITECTURE.md | 34a96554ed75dcd17d1e6d419fd1c4d5ab773499 |
+| DECOMPOSITION.md | f82aca90c934997eef958cd667b08bd6f776be30 |
+| SPEC.md | 42b8dfcf0fe953b8f296ae610f8d2d7340cdff3d |
+| PLAN.md | bc64f810c2111977fab8700abf9da9bafd9d0f04 |
+| layout.md | 0c36df5acc407d3014cf5a1dd9765c0533c45326 |
+| TASKS.md | ba31674e112f68cdc0099d5994806119702f38a1 |
+| spec/session-configuration.md | aac39edc636a1b2dad1242ebe6bdb8802dce32b0 |
+| spec/ghost-visibility.md | 75500e057435e0bb55594589a333299f7c7cddd6 |
+| spec/modern-rules.md | b7abdf998767aa1702bcf906ad5123095bb315fe |
+| spec/penetrator.md | 5e376fa0ff98c80d71f332f702498da5ea3212fd |
+| spec/configuration-persistence.md | 45accd130c0ce197d46aa6c252199b0994a2b9a3 |
+
+Checked sole global ownership for46 unique T IDs and preserved original1–40 byte prefix. New Phase6 tasks remain3 deliveries in6.1 and2 in6.2 plus one excluded phase review T046. Thus no standalone milestone review tasks are introduced; final deliveries043/045 own independent review/testing/report/HANDOFF, already evidenced and closed. All dependencies are acyclic and U01–08 have coherent executable tests/docs/failure/distribution/integration routes. Current TASKS owns the T046 phase boundary, completed after independent review and fresh execution checks; archived005 checklist entries are non-executable historical snapshots. Routine final status/evidence updates do not alter this reviewed task decomposition and need no fictitious regenerated plan.
+
+Cross-document checks compare accepted archived005 sources with current owners, literal source/domain/default interfaces, actual code/tests, declared build/package and prior-range preservation. Confirmed conformance findings: None. Gate Ready; no deferred contract issue or new human decision. Runtime/package results remain separately owned by6.1/6.2 and final phase evidence; archive status does not certify a new run. Native headed OS focus/actual HTTPS engine and future Electron limits remain explicit. Task046 is not marked complete by this document QC.

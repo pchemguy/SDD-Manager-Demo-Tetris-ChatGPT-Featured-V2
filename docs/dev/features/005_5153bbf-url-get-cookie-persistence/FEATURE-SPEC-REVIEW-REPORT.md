@@ -1,5 +1,7 @@
 # Feature specification review report
 
+Historical accepted campaign005 source/evidence. Current product contracts and executable task ownership are in the main development documents; this snapshot is not an active implementation owner.
+
 ## Current gate
 
 Ready for dependent feature planning. Reviewed FEATURE-SPEC blob `32dffa3556346fffaa4b6f77f41d0241c8d6e995`; governing FEATURE `edfb2f944044bc1993f1aaab31efb2a028155df2`, FEATURE_ARCHITECTURE `e788464082ee8fa680bd7bbbb638a29823ebcf2c`, FEATURE_DECOMPOSITION `df25f7a067092f2576c66c34ca70fb4b32a069fa`, main SPEC `a9b70229397f273950194eed5ca0f524699f5995` and session configuration `e4038eb6eb7606dd283c81bb9877d4645d5cc832`. This is scoped contract/design QC, not package QC or implemented behavior.

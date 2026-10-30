@@ -1,5 +1,7 @@
 # Feature task conformance review report
 
+Historical accepted campaign005 source/evidence. Current product contracts and executable task ownership are in the main development documents; this snapshot is not an active implementation owner.
+
 ## Current gate
 
 Ready for scoped task derivation/conformance; whole-package QC and implementation remain pending. Current reviewed FEATURE-TASKS blob e775a4e8261e840cc116a72a83b535d923dfe13a per Revision1; initial reviewed source7cb6661b2ec49dd2878bc98839d9bc9e802b5fba, governing FEATURE-PLAN with scoped layout b5a4ef10baec521542e782d7e0665c216f7fbc9e, FEATURE-SPEC 32dffa3556346fffaa4b6f77f41d0241c8d6e995, FEATURE edfb2f944044bc1993f1aaab31efb2a028155df2, current feature design and Ready SPEC/combined PLAN reports. Main TASKS 1d26767cd16dbfacb82c0ba852ade2f119a14114 remains byte-identical with completed1–40. Autodoc preapproval covers this document pass only.

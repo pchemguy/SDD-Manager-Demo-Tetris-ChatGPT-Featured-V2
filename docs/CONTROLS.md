@@ -29,7 +29,7 @@ By default, a grounded piece locks after one full current gravity interval from 
 
 Hard drop moves immediately to the ghost landing and awards two points per descended row. It uses the same landing delay by default, leaving adjustment or eligible hold available before lock. Repeated zero-distance delayed drops neither score nor extend the countdown.
 
-Immediate hard-drop lock (next game) defaults off. When selected for Start/Restart, every hard drop locks immediately after placement, even at zero distance. Changing the checkbox during play affects only the next game; it does not alter current rules. Pause retains the selection; reload resets it off. The selected general locking policy controls ordinary gravity and soft drop.
+Immediate hard-drop lock (next game) defaults off. When selected for Start/Restart, every hard drop locks immediately after placement, even at zero distance. Changing the checkbox during play affects only the next game; it does not alter current rules. Pause retains the selection; reload restores it from the URL or its cookie. The selected general locking policy controls ordinary gravity and soft drop.
 
 ## Next-game rules
 
@@ -37,7 +37,7 @@ The Settings panel shows current rules and pending changes. Hard drop and Hold p
 
 General locking policy defaults to a full gravity interval after grounding, as described above. Failed downward movement instead locks when a gravity or soft-drop attempt is blocked. Contact alone does not lock, and gravity remainder is preserved. Under this policy, a hard drop following the general policy places the piece and waits for the next actual blocked downward attempt. Immediate hard-drop lock overrides either general policy. Turning pending hard drop Off disables its policy control while retaining its value.
 
-Selections survive game lifecycle changes and an explicit same-context remount; reload restores defaults. They are held only in memory, with no browser storage.
+Selections survive game lifecycle changes and an explicit same-context remount. The browser entry restores them from URL parameters or cookies on reload; independent explicitly created reusable contexts start with defaults.
 
 ## Scoring
 
@@ -45,9 +45,9 @@ Clear one/two/three/four rows for 40/100/300/1200 points multiplied by the level
 
 ## Ghost visibility
 
-Ghost visibility defaults to Always show. Choose Hide above midline to hide the whole ghost when its lowest occupied landing cell is in rows1–10; it reappears in rows11–20, including when it straddles the midline. The selector acts immediately, including while paused. It survives start/restart and pause/resume in the current app, and resets to Always show on reload. Hidden ghosts do not announce a landing row. The canonical landing and hard-drop score/locking remain unchanged.
+Ghost visibility defaults to Always show. Choose Hide above midline to hide the whole ghost when its lowest occupied landing cell is in rows1–10; it reappears in rows11–20, including when it straddles the midline. The selector acts immediately, including while paused. It survives start/restart and pause/resume in the current app, and is restored from the URL or its cookie on reload. Hidden ghosts do not announce a landing row. The canonical landing and hard-drop score/locking remain unchanged.
 
-Choose Always hide to conceal the ghost at every height; the description reads Ghost hidden. All three modes act immediately and never change the canonical hard-drop landing. Ghost visibility and Next-piece preview are independent live display settings. All six settings use the same nonmodal panel and reset to sensible defaults on reload.
+Choose Always hide to conceal the ghost at every height; the description reads Ghost hidden. All three modes act immediately and never change the canonical hard-drop landing. Ghost visibility and Next-piece preview are independent live display settings. All six settings use the same nonmodal panel and resolve independently from URL, cookie and default on reload.
 
 ## Settings defaults and timing
 
@@ -60,7 +60,7 @@ Choose Always hide to conceal the ghost at every height; the description reads G
 | General locking policy | Full gravity interval after grounding | Next Start/Restart; Failed downward movement also available |
 | Hold piece | On | Next Start/Restart |
 
-The panel stays editable in ready, playing, paused and game-over states. Native settings keys remain settings input; return focus to the playfield for game shortcuts. Current play buttons follow the active game, not pending choices. Disabled hard drop consumes Space without another action; disabled Hold consumes C/Shift without changing pieces. All settings reset on reload, with no localStorage, sessionStorage, cookies, URL state or cross-tab synchronization.
+The panel stays editable in ready, playing, paused and game-over states. Native settings keys remain settings input; return focus to the playfield for game shortcuts. Current play buttons follow the active game, not pending choices. Disabled hard drop consumes Space without another action; disabled Hold consumes C/Shift without changing pieces. Each selected setting saves to its own cookie and current URL parameter. There is no localStorage/sessionStorage or live cross-tab synchronization.
 
 ## Penetrator bonuses
 
@@ -69,3 +69,22 @@ Clear four rows at once to earn one penetrator bonus; up to three accumulate. Th
 A penetrator passes through occupied cells without changing them. Its movement and rotations must retain a valid in-board, non-overlapping landing at or below the candidate. Hard drop and the visible ghost use the deepest valid landing beyond obstacles. The selected general/hard-drop policies still apply; activation preserves a supported deadline, canceling it only if a lower landing opens. Locked penetrator cells stay white until cleared and act as ordinary obstacles. Regular pieces keep their nonwhite colors.
 
 Pause retains the ability and bank. Start/Restart/reload reset both to zero/inactive. There is no free bonus, saved bank, extra setting or activation button.
+
+## Remembered browser settings
+
+On HTTP/HTTPS hosting, each setting loads independently from its explicit URL query value, then its saved cookie, then the default. Names and values are case-sensitive; booleans use true/false.
+
+Valid explicit URL selections, including defaults, save to their own cookies. An omitted parameter retains its saved value. Native edits save that field and replace its current URL parameter without adding a history entry or reloading. Cookies last 365 days and are scoped to the app directory. Blocked browser persistence leaves in-memory play available. Reload restores selections into a fresh Ready game; scores, board and penetrator bonuses are not saved. The four gameplay selections still take effect only on Start/Restart; ghost/preview remain live.
+
+| URL parameter / cookie suffix | Accepted query/cookie text | Default |
+| --- | --- | --- |
+| ghostVisibility | never / lower-half / always | always |
+| hardDropEnabled | true / false | true |
+| nextPreviewEnabled | true / false | true |
+| hardDropLockPolicy | general / immediate | general |
+| generalLockPolicy | failed-downward / gravity-interval | gravity-interval |
+| holdEnabled | true / false | true |
+
+For example, append ?ghostVisibility=never&holdEnabled=false to the deployed game URL. Each cookie is named tetris_config_ followed by its parameter name. Empty/invalid values fall back per setting without overwriting that cookie. The first occurrence of a repeated recognized query parameter wins; if invalid, use cookie/default fallback. Returning a setting to its default still saves that explicit value.
+
+Edits preserve unrelated query values and the URL fragment while replacing the current history entry. Other already-open pages do not change automatically. On reload, a still-explicit URL value wins over a newer cookie; omit that parameter to use the cookie. Cookies are host-only, SameSite=Lax and Secure on HTTPS. Browser restrictions can prevent saving; no failure dialog or automatic retry is added. No board, score, piece sequence, timers, Hold slot or penetrator inventory is persisted.

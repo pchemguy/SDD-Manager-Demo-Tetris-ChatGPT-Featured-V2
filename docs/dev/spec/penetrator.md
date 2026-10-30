@@ -70,7 +70,7 @@ Acceptance: detached new fields, complete old input/error/observer regression, o
 
 ## P-08 assembled delivery acceptance
 
-Deliver browser1.4.0 with updated controls/install/developer notes, strict static ZIP/manifest/checksum, relative prefix hosting, reproducible bytes and credential/fixture/development exclusions. Current C-07 values/defaults and all16 active-rule/6 display combinations remain supported; select representative penetrating cases across these rather than redundant Cartesian clock tests.
+Deliver browser1.5.0 with updated controls/install/developer notes, strict static ZIP/manifest/checksum, relative prefix hosting, reproducible bytes and credential/fixture/development exclusions. Current C-07 values/defaults and all16 active-rule/6 display combinations remain supported; select representative penetrating cases across these rather than redundant Cartesian clock tests.
 
 Managed Chromium/Firefox source, built and extracted-prefix apps must earn at least one bonus through an actual four-line clear, activate via B and demonstrate shared ghost/drop geometry, white transit/settled rendering, indicator spending/earning/cap, Hold inhibition, selected-policy behavior, reset and settings/focus/repeat isolation. Use a deterministic legal gameplay trace, with no production bonus/board setter or debug activation. Source-only fixtures supplement exact geometry/presentation boundaries but never replace shipped-app acceptance or ship.
 

@@ -8,4 +8,9 @@ for (const dir of ['src/core', 'src/application']) {
     if (/from\s+['"][^'"]*(?:ui|platform)\//.test(text) || /\b(?:window|document|requestAnimationFrame|setTimeout)\s*[.(]|Math\.random/.test(text)) throw new Error(`Browser dependency in ${dir}/${name}`);
   }
 }
-console.log('Core/session dependency boundaries passed');
+// Shared DOM presentation consumes explicit configuration; it cannot import its browser adapter.
+if(existsSync('src/ui'))for(const name of readdirSync('src/ui').filter(n=>n.endsWith('.ts'))){
+ const text=readFileSync(join('src/ui',name),'utf8');
+ if(/from\s+['"][^'"]*platform\//.test(text))throw new Error('Platform dependency in src/ui/'+name);
+}
+console.log('Core/application and shared UI dependency boundaries passed');

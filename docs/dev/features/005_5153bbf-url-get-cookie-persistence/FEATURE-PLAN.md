@@ -1,5 +1,7 @@
 # URL and cookie persistence delivery plan
 
+Historical accepted campaign005 source/evidence. Current product contracts and executable task ownership are in the main development documents; this snapshot is not an active implementation owner.
+
 ## Delivery objective
 
 Deliver the six-setting persistence capability in [FEATURE](FEATURE.md) and U-01–U-08 of [FEATURE-SPEC](FEATURE-SPEC.md) on the verified v1.4.0 browser baseline. Keep existing Phases1–5 and T-001–T-040 unchanged. Phase6 adds one bounded browser capability and releases v1.5.0 after complete verification and integration; Electron and other platforms remain outside this delivery.
@@ -44,7 +46,7 @@ Integrate only the complete verified phase by explicit two-parent merge into its
 
 ## Scoped physical allocation
 
-[Main layout](layout.md) remains the repository-wide owner. The following feature allocation adds C-08 within the existing browser platform directory; main layout's no-storage/current-version statements remain the v1.4.0 baseline until accepted incorporation. Paths marked new are intended physical homes, not implementation claims.
+[Main layout](../../layout.md) remains the repository-wide owner. The following feature allocation adds C-08 within the existing browser platform directory; main layout's no-storage/current-version statements remain the v1.4.0 baseline until accepted incorporation. Paths marked new are intended physical homes, not implementation claims.
 
 | Path | Component / purpose |
 | --- | --- |
