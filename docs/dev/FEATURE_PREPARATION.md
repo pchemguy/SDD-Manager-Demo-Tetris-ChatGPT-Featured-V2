@@ -70,3 +70,9 @@ Autodoc acceptance applies. P01–P08 define exact guarded transit/deepest landi
 Sources: `docs/dev/FEATURE-SPEC.md` blob `09cfe0fd7052928775d7581a03e0c2762e85a959`, `docs/dev/FEATURE-SPEC-REVIEW-REPORT.md` blob `74116f19b471e2ab7e80ebaa8668ed3dc44a6dc1`.
 
 FDOCS-005 precision recheck: PEN-S01 resolved before planning/issue closure. P-03 separates rejected lateral/rotation invariance from blocked-down locking and preserves specified upward kicks while excluding upward rescue. FEATURE-SPEC blob `8febc774b234aae010d6275f927180d4151b0a4d`; adjacent QC Revision2 Ready, accepted scope unchanged. Publish/read back correction then close issue73.
+
+### FDOCS-006 — Plan bounded penetrator delivery milestones
+
+Autodoc applies; current SPEC/design QC Revision2 Ready. One bounded Phase5 has two justified delivery milestones: playable earned penetrator loop, then completed native presentation/lifetime/distribution; separate mandatory phase review follows. Strategy QC Ready with full P01–P08 coverage, demonstrations, dependencies and review/release exits. Physical allocation/combined QC remains next; TASKS held.
+
+Sources: `docs/dev/FEATURE-PLAN.md` blob `8952e2649b1116584a2231a7721aad7b9882bfb5`, `docs/dev/FEATURE-PLAN-REVIEW-REPORT.md` blob `30e29d959a4f384b8dc2b8e785659d0da60d64b4`.
