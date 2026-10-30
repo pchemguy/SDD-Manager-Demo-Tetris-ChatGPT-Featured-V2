@@ -1,15 +1,9 @@
 # Project handoff
 
-Checkpoint: session-only configuration fully implemented, verified, integrated and published as v1.3.0; final T-032 parent-only evidence records actual outcomes.
+Checkpoint: FDOCS009 whole penetrator package QC Ready; current request authorizes full T033–T040 and release after prerequisite gates.
 
-## Current authorities and delivered scope
+Campaign004_1cadd99 accepted brief/design/SPEC/PLAN/tasks are in docs/dev. FEATURE_PREPARATION retains original baseline main1cadd995008432ec1fe6668f6000d14ed4333692 and decisions; FEATURE_DOCS_TASKS owns preparation; FEATURE-QC-REPORT owns whole-set assessment. Active FEATURE-TASKS alone owns unchecked T033–T040, main TASKS retains completed1–32. Application remains1.3.0; no product task/test completed here.
 
-PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC plus spec/session-configuration.md, modern-rules.md and ghost-visibility.md, PLAN/layout describe current behavior. TASKS solely owns32 completed IDs. Eligible003 source/preparation/QC snapshots are historical under features/003_3977abb-session-only-game-configuration; its phase/final reports retain independent reviews, checks, task-persistence/transfer audit, integration/release/download/CI identities. Earlier tasks/campaigns/releases preserved; TODO None. Six session-only settings use explicit memory, live displays and copied next-game rules; no persisted preferences/backend/new platform.
+Publish/read back this FDOCS009 tree and close issue77, then refresh actual main and explicitly merge verified preparation branch design-docs/004_1cadd99-penetrator-mode, verify/publish, close milestone18. Only then branch feature/004_1cadd99-penetrator-mode from that published main and project eligible Phase5 (all8 issues/3 milestones/label) before T033 execution. No repeat permission checkpoint is needed for this full authorized range. Final main integration/release only after phase review/incorporation/archive/audit. Preserve frozen older records and native focus/Electron limits.
 
-## Git and hosting
-
-Current main. Original campaign baseline3977abbcb640490c2cf60f3365681f29067b3835; preparation/implementation parent7dff2f421152e7bf69f2614462dbfbc8cd26ed11. Published featuredc2594c7fc4fe83becebf7b29ac21792c7a85783; explicit main merge27c6d9d70f6c7a6dc86d6625ec6a89631f327e48. Release commitc630b7388a5ace13c2f9accca7b448ee0751074b; immutable annotated v1.3.0 objectf1442270499edb04ed5d975da5fab8cf87cc1606. GitHub release428659891 is published/latest with exactly2 ZIP/checksum assets and byte-verified public downloads. Exact notes/commit/tag/provider body agrees. Both release-source CI runs pass. All scoped task issues/milestones closed/read back.
-
-## Return and limits
-
-Publish/read back this T-032 evidence-only follow-up, confirm clean main/unchanged release tag and return the completed authorized result. No implementation/release work remains. Native headed OS-window focus unverified; managed Chromium/Firefox and process-local diagnosed Firefox recovery are documented. Windows Electron/installers/signing/store distribution remain future scope. No pending human decision or unresolved finding.
+Preparation integration: incoming b0503eac04209f3c51ce83d8cd3ecf5fea2c3d3e into main parent1cadd995008432ec1fe6668f6000d14ed4333692. Prospective merged feature links/IDs and docs-only scope verified; all9 prep issues closed/read back. Publish this two-parent merge, then close milestone18 before execution branch setup.
