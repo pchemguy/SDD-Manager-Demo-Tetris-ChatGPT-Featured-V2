@@ -56,3 +56,9 @@ Sources: `docs/dev/FEATURE.md` blob `3ca6e5a8d4b41a81971dcb02eaaf4ca878a1bf6d`.
 Autodoc preapproval applies after accepted brief. Necessary architecture overlay keeps logical Board/shape compatibility with a separate transaction-owned white-cell mask, shared compaction and one pure penetrating landing authority. Review covers ownership/dependencies/clocks/rollback/native seams; no unresolved design choice, storage or new setting. Decomposition next.
 
 Sources: `docs/dev/FEATURE_ARCHITECTURE.md` blob `9a2d7e3f82598a13036cb9a2b1645b5cd2177156`.
+
+### FDOCS-004 — Define penetrator component contracts and state flow
+
+Autodoc preapproval applies. Scoped decomposition assigns C02 pure reachability/landing, default-compatible predicate kicks and shared appearance compaction; C04 mode/bank/mask plus atomic award/spawn; C05 snapshot-only white/bonus rendering; C06 nonrepeating B. Review preserves public legacy shapes/defaults, active-rule/configuration separation and feasible deterministic/actual-browser seams. No unresolved boundary or product behavior.
+
+Sources: `docs/dev/FEATURE_DECOMPOSITION.md` blob `a0e2e6122ca971a6960acbd57fa7a1fd3f9e5c96`.
