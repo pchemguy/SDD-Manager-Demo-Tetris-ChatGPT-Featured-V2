@@ -16,7 +16,7 @@ Save and Restore at the bottom of Settings manually transfer the current top ten
 
 ## Panels and game controls
 
-At1440 CSS pixels and wider, panels run left to right: Leaderboard, Game info and controls, centered Board, Settings, Controls/help. The Board stays centered when supporting panels are hidden. Below1440px, panels stack with the Board first and normal vertical scrolling; no horizontal scrolling is needed at320px.
+At 1440 CSS pixels and wider, panels run left to right: Leaderboard, Game info and controls, centered Board, Settings, Controls/help. The Board stays centered when supporting panels are hidden. Below 1440px, panels stack with the Board first and normal vertical scrolling; no horizontal scrolling is needed at 320px.
 
 Three Show/Hide buttons in Game info independently control Leaderboard, Settings and Controls/help. Board and Game info remain shown. All supporting panels start shown; choices survive rendering, resizing, Restart and Restore within the view, and reset on a fresh mount/page. They are not game settings or saved-file fields.
 
