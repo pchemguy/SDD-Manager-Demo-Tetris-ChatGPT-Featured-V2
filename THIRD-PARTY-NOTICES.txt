@@ -2184,3 +2184,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # SQLite
 SQLite is in the public domain. sql.js bundles SQLite as WebAssembly.
 https://www.sqlite.org/copyright.html
+
+# Electron desktop runtime (45.2.0)
+
+Windows distribution bundles the complete official Electron45.2.0 win32-x64 runtime, including Chromium/Node/V8 dependencies. Official source: https://github.com/electron/electron/releases/tag/v45.2.0
+Runtime ZIP SHA256: 8b3475a4c1e56ac70f4802b4fc05db758c8821c766f26445acdb90e3c4e68e71
+The original runtime LICENSE and complete LICENSES.chromium.html are preserved verbatim at the Windows ZIP root, alongside every vendor runtime resource. Electron itself uses the MIT license; bundled dependency terms are retained in the vendor notices. The browser distribution does not contain Electron runtime binaries. Classic Tetris application MIT license and these application dependency notices also remain in resources/app/renderer/ inside the desktop package.
