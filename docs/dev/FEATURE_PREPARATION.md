@@ -50,3 +50,7 @@ Open a feature campaign to implement "UI layout" capability. Arrange panels left
 ## Pending effects and next boundary
 
 Human "Do QC and full implement" authorizes complete campaign through T068, incorporation, integration and planned1.8.0 release. Prior261f780 publication and issue141 closure verified. Publish009/QC then close142; explicitly merge preparation into refreshed main, verify/publish and close milestone34. Activate only Phase9 with all required native objects/associations before implementation; retain one task per verified closing commit and publish before advancing. No remaining document approval pause under existing autodoc/preapproval and explicit full implementation authority.
+
+## Verified implementation entry
+
+Preparation84ab776 explicitly merged/published as main56f459d35d40600b2fc29ebc37dc5f2aaca9bc36; all9 prep issues and milestone34 closed/read back. Implementation feature branch created from that exact main parent/branch-off, returning to main. Phase9 label and milestones35/36/37 plus task issues143–149 verified with exact markers/associations before T062. Full human-authorized range remains062–068 through integration/release. Scratch projection multiline-title422 corrected/reconciled before activation, with no duplicate objects. Existing independent packageQC Ready; environment2 repeated managed-browser smoke cases pass.

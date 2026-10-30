@@ -10,10 +10,11 @@ Execution requires whole-package preparation QC and verified published integrati
 
 - [ ] Phase 9 — Centered UI layout
     - [ ] Milestone 9.1 — Playable centered panels
-        - [ ] T-062 — Arrange centered responsive game panels
+        - [x] T-062 — Arrange centered responsive game panels
             Depends on: completed Phase8 baseline and verified preparation/Phase9 activation prerequisites.
             Scope: C05 `src/ui/game-view.ts` and `src/ui/styles.css`; split the existing content into five panels with initially shown supporting content, preserve all bindings and stable Board DOM, implement1440px wide arrangement and narrow stacking under UL01/02. Add actual-entry `tests/browser/ui-layout.spec.ts` for initial geometry/content/resize and adapt directly affected location assertions without dropping preserved behavior. Retain existing lifecycle behavior until T-064 consolidation; no new core/application/store/framework.
             Verification: type/boundary checks and relevant managed source Chromium/Firefox cases, absolute Board midpoint/order/no-overlap and320/1439/1440/1600 geometry. Confirm all200 cells, settings and file controls remain usable and real gameplay remains functional. Document any intermediate contract not yet delivered; do not claim toggle/lifecycle acceptance early.
+            Completion evidence: Observed RED: real wide midpoint test measured94px error on baseline. GREEN:10 managed Chromium/Firefox geometry/resize/view cases passed12.2s across320/375/768/1000/1439/1440/1600/1920; all200cells, settings/file controls and native existing actions retained.457 units, type/schema/boundary checks pass. Five-panel DOM and equal side tracks implemented; independent toggles and lifecycle consolidation remain T063/064. Entry records capture published two-parent preparation merge56f459d, closed prep milestone34 and verified Phase9 tasks143–149/milestones35–37. No application/persistence rule change; native headed/HTTPS limits remain.
         - [ ] T-063 — Add independent accessible panel visibility
             Depends on: T-062.
             Scope: C05 view-local visibility and three semantic toggles above lifecycle actions, unique aria-controls/expanded state, hidden content keyboard exclusion and focus retention; remove competing native Settings summary. Preserve control/operation state and all-six configuration/file values. Extend actual-entry geometry/keyboard/state coverage and reuse existing source-only lifecycle fixtures only for precise supplemental seams.
