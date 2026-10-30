@@ -50,3 +50,9 @@ Initialization published/read back and issue69 closed/read back. FEATURE proposa
 User ok accepted the exact published brief70e4800f/fb61a262, including B/Hold/reachability/timing/reset/white-settled interactions and1.4.0 target. Normalize proposal wording without scope change; record first approval and carried autodoc preapproval through necessary task preparation. Stop before FDOCS-009; no implementation grant.
 
 Sources: `docs/dev/FEATURE.md` blob `3ca6e5a8d4b41a81971dcb02eaaf4ca878a1bf6d`.
+
+### FDOCS-003 — Define penetrator rule and appearance ownership
+
+Autodoc preapproval applies after accepted brief. Necessary architecture overlay keeps logical Board/shape compatibility with a separate transaction-owned white-cell mask, shared compaction and one pure penetrating landing authority. Review covers ownership/dependencies/clocks/rollback/native seams; no unresolved design choice, storage or new setting. Decomposition next.
+
+Sources: `docs/dev/FEATURE_ARCHITECTURE.md` blob `9a2d7e3f82598a13036cb9a2b1645b5cd2177156`.
