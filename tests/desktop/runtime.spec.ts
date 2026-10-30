@@ -29,6 +29,7 @@ async function save(d:Desktop,info:TestInfo,format='json',cancel=false){
 }
 
 test('actual offline renderer is isolated and native resize preserves absolute centering',async({},info)=>usingDesktop(info,async d=>{
+ if(process.platform==='win32'){expect(stage.kind).toBe('packaged');expect(stage.args).toEqual([]);expect(stage.localProbe).toBe(false);expect(stage.archive.sha256).toMatch(/^[a-f0-9]{64}$/)}
  expect(await d.app.evaluate(()=>process.versions.electron)).toBe('45.2.0');
  expect(await d.page.evaluate(()=>({require:typeof (globalThis as any).require,process:typeof (globalThis as any).process,cells:document.querySelectorAll('.cell').length}))).toEqual({require:'undefined',process:'undefined',cells:200});
  const prefs=await d.app.evaluate(({BrowserWindow}:any)=>{const p=BrowserWindow.getAllWindows()[0].webContents.getLastWebPreferences();return{node:p.nodeIntegration,worker:p.nodeIntegrationInWorker,frame:p.nodeIntegrationInSubFrames,isolation:p.contextIsolation,sandbox:p.sandbox,security:p.webSecurity}});expect(prefs).toEqual({node:false,worker:false,frame:false,isolation:true,sandbox:true,security:true});

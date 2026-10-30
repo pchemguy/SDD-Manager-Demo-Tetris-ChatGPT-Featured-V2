@@ -16,7 +16,7 @@ probe=os.environ.get('SDD_ELECTRON_LOCAL_PROBE')=='1'
 if probe and sys.platform!='linux':raise ValueError('Local probe override applies only to the diagnosed Linux host')
 kind='staged-source'
 # The later package task automatically makes this same runner consume its actual verified ZIP.
-if platform=='win32-x64' and (ROOT/'scripts/package_windows.py').exists():
+if platform=='win32-x64':
     subprocess.run([sys.executable,str(ROOT/'scripts/package_windows.py')],check=True,cwd=ROOT)
     subprocess.run([sys.executable,str(ROOT/'scripts/verify_windows.py')],check=True,cwd=ROOT)
     archive=ROOT/'artifacts'/f'classic-tetris-windows-x64-v{version}.zip'
@@ -42,5 +42,8 @@ else:
     args=(['--ozone-platform=headless','--no-sandbox','--disable-gpu'] if probe else [])+[str(app)]
 (base/'unrelated working directory').mkdir()
 out={'base':str(base),'kind':kind,'platform':platform,'appVersion':version,'executable':str(executable),'args':args,'cwd':str(base/'unrelated working directory'),'localProbe':probe}
+if kind=='packaged':
+    import hashlib
+    out['archive']={'filename':archive.name,'sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'size':archive.stat().st_size}
 (ROOT/'artifacts/desktop-stage.json').write_text(json.dumps(out,indent=2)+'\n')
 print('DESKTOP_STAGE '+json.dumps(out),flush=True)

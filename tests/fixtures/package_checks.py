@@ -73,3 +73,15 @@ def test_schema_and_format_guide_are_mandatory(source):
 def test_missing_runtime_is_rejected(source,name):
     (source/name).unlink()
     with pytest.raises(ValueError):collect(source)
+
+def test_zip_host_metadata_is_identical_on_windows_and_unix(source,monkeypatch):
+    """ZIP host defaults must not change shared browser/desktop provenance by build OS."""
+    import package_browser
+    canonical=build(source,source/'unix.zip').read_bytes()
+    original=zipfile.ZipInfo
+    class WindowsInfo(original):
+        def __init__(self,*args,**kwargs):
+            super().__init__(*args,**kwargs);self.create_system=0
+    monkeypatch.setattr(package_browser.zipfile,'ZipInfo',WindowsInfo)
+    windows=build(source,source/'windows.zip').read_bytes()
+    assert windows==canonical
