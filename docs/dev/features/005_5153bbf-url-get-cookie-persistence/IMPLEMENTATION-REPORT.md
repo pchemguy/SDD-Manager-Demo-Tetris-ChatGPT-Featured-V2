@@ -1,0 +1,7 @@
+# Browser persistence implementation outcome
+
+Local feature scope T041–046 is implemented, independently reviewed and verified. Browser selections follow independent URL/cookie/default precedence, explicit/default cookie saves, omitted retention and changed-key persistence; no game progress is restored. [Phase report](reports/phases/6/PHASE-REPORT.md) retains exact sources, counts, reviews, task audit, current incorporation/sole ownership/archive and limits; [6.1](reports/phases/6/6.1.md) and [6.2](reports/phases/6/6.2.md) retain milestone evidence. TODO: None.
+
+Current source yields strict reproducible v1.5.0 ZIP24421bytes SHA256cec199a0be5492dcc92afac22e083b2b698e70f6056492002ad4108211f24c36 and matching stable alias/checksum.294 unit/11 package/2 environment,110 source/94 built/94 extracted checks pass, with fresh phase94 extracted regression and unchanged-source/artifact evidence retained. Native headed focus/actual HTTPS cookie engine unverified; Electron future scope.
+
+Task046 publication/issue100/milestone25, verified feature integration into main, default-branch release commit/tag/body/assets/latest/public-download/CI and actual final outcome followup remain pending. Do not infer provider release success from this local-completion report. Current main TASKS alone owns all46 complete IDs; historical005 has no executable task owner, earlier closed archives/tags remain unchanged.

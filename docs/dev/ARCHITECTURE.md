@@ -12,7 +12,8 @@ The [project brief](PROJECT.md) requires a browser game with modern rules and re
 | Selected configuration | Detached six-setting page memory, atomic validation and pure rule projection. | Explicit typed values; no DOM, clock, RNG, storage or broadcast. |
 | Session controller | Own the current game state; order commands, gravity advances and state notifications. | Rules core, configuration value types/validation and injected random-number callback. |
 | Shared UI | Render board/status/controls and emit semantic actions. | Read-only session snapshots, explicit selected context, action callbacks and an injected DOM mount element. |
-| Browser host | Mount/unmount the app; translate keyboard, frame timing, focus and visibility events. | Session, selected configuration and shared UI; browser APIs. |
+| Browser persistence | Restore/save six selected fields through pure formats and independent best-effort effects. | C-07 and explicit URL/cookie/history callbacks; no game state, DOM globals or scheduler. |
+| Browser host | Mount/unmount the app; translate keyboard, frame timing, focus and visibility events. | Session, selected configuration/persistence and shared UI; browser APIs. |
 
 The host composes the application. The session depends on the core, and the UI consumes the session boundary. No dependency points back from the core or session into the UI or browser host. There is no generic platform-plugin framework.
 
@@ -48,11 +49,11 @@ Pure core helpers own six-draw bag shuffling, ordered both-direction kick candid
 
 ## Conditional ghost display
 
-C-07 owns the page-selected ghost/preview values; C-05 binds that explicit context and the latest delivered detached snapshot. A pure presentation predicate uses canonical occupied ghost cells; it never duplicates landing/collision rules. Selection immediately rerenders cells and description with the same decision, without dispatching gameplay, requesting RNG or changing clocks. Canonical Snapshot.ghost/next remain unchanged by display edits; Snapshot.options keeps its exact legacy boolean shape while Snapshot.rules exposes the detached active four-rule value. Existing C-06 native-control focus/shortcut and external-pause resource ownership is retained. A context owns no DOM/listeners/frames and may outlive its mount. Explicit same-context remount retains selections; omitted context/fresh page creates defaults. No storage or cross-tab singleton exists.
+C-07 owns the page-selected ghost/preview values; C-05 binds that explicit context and the latest delivered detached snapshot. A pure presentation predicate uses canonical occupied ghost cells; it never duplicates landing/collision rules. Selection immediately rerenders cells and description with the same decision, without dispatching gameplay, requesting RNG or changing clocks. Canonical Snapshot.ghost/next remain unchanged by display edits; Snapshot.options keeps its exact legacy boolean shape while Snapshot.rules exposes the detached active four-rule value. Existing C-06 native-control focus/shortcut and external-pause resource ownership is retained. A context owns no DOM/listeners/frames and may outlive its mount. Explicit same-context remount retains selections; omitted pure contexts create defaults. The page entry restores through C-08 before mounting; no cross-tab singleton or autonomous broadcast exists.
 
 ## Configuration flow and compatibility
 
-C-07 supplies createConfiguration/getSnapshot/update and toRuleOptions. C-04 validates exact legacy or complete-rule Start/Restart inputs and copies active rules; it enforces both locking policies and disabled actions. C-05 uses active snapshots for gameplay eligibility and selected values for the six native controls. Display edits explicitly rerender the latest snapshot without dispatch or observer notification; external context updates use refreshConfiguration. C-06 owns the page context and all browser resources. Legacy view/mount arguments and the boolean option callback remain usable. [S-01–S-08](spec/session-configuration.md) own exact timing, errors and lifetime.
+C-07 supplies createConfiguration/getSnapshot/update, canonical isConfigurationValue and toRuleOptions. C-04 validates exact legacy or complete-rule Start/Restart inputs and copies active rules; it enforces both locking policies and disabled actions. C-05 uses active snapshots for gameplay eligibility and selected values for the six native controls. Display edits explicitly rerender the latest snapshot without dispatch or observer notification; external context updates use refreshConfiguration. C-06 owns the page context and all browser resources. Legacy view/mount arguments and the boolean option callback remain usable. [S-01–S-08](spec/session-configuration.md) own exact timing, errors and lifetime.
 
 ## Penetrator rule state and appearance
 
@@ -77,8 +78,16 @@ Both selected general policies and hard-drop overrides remain in force. Clocks c
 
 C-05 renders snapshots: active white piece over unchanged settled cells, white ghost outline/pattern when visible, white mask on settled cells and one bolt per available bonus with an accessible count. Regular-piece fill/borders contain no white; existing seven nonwhite shape colors remain. Color is supplemented by an accessible active-mode description and bonus count. The occupied-cell midline predicate still decides ghost visibility from the canonical projection.
 
-C-06 adds one nonrepeating board-focused B binding to a semantic activation action. It retains frame ownership, native settings shortcut exclusion, external auto-pause and teardown. No extra action button, persisted field, host adapter or delivery platform is added.
+C-06 adds one nonrepeating board-focused B binding to a semantic activation action. It retains frame ownership, native settings shortcut exclusion, external auto-pause and teardown. No extra action button or persisted game/ability field is present; C-08 persists only selected configuration.
 
 ## Verification seams
 
 Pure fixtures isolate separated legal landing pockets, bounds, candidate reachability, kick ordering and coupled row compaction. Session fixtures cover earned/spent/capped bonuses, overlapping transit, both clock/drop policy paths, Hold inhibition, reset/top-out/rollback and detached snapshots. Shared-view fixtures verify all appearance/visibility combinations; actual source/built/extracted managed browsers must earn bonuses through gameplay and activate via B without debug hooks in production. Exact contracts belong to spec/penetrator.md; physical ownership and delivery belong to PLAN/layout.
+
+## Browser persistence flow and failure isolation
+
+C-06 creates C-08 once at page entry and passes its compatible configuration controller through the existing mount/view arguments. C-08 wraps one C-07 selected authority; its pure codec resolves each valid explicit URL value before cookie before default. It restores before initial UI projection and saves only valid explicit URL fields at initialization, including defaults. Omitted/invalid keys retain cookies and never fill the URL.
+
+Successful later updates validate/commit in memory before changed-key cookie writes and one current-URL replacement. Preserve history.state and unrelated query/fragment data. Each source/effect failure is contained independently; valid memory selection and play remain usable. Cookie scope is immutable page-directory metadata, while edit URL reads use the current URL. Same-context remount does not restore again. Pure createConfiguration and omitted mount contexts retain defaults without storage.
+
+C-08 has no game snapshot, competing settings state, scheduler, listener or backend. It never serializes board/score/queue/Hold/timers/penetrator inventory, changes active rules or calls RNG. Platform effects stay outside application/shared UI; source tests enforce the dependency direction. Browser cookie/query contracts and exact lifetime/attributes belong to [U-01–U-08](spec/configuration-persistence.md); C-07 remains pure selected memory under S-01.

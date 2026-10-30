@@ -1,5 +1,7 @@
 # Feature plan and layout review report
 
+Historical accepted campaign005 source/evidence. Current product contracts and executable task ownership are in the main development documents; this snapshot is not an active implementation owner.
+
 ## Current gate
 
 Ready for combined strategy/layout and dependent task derivation, per Revision1. Current FEATURE-PLAN blob `b5a4ef10baec521542e782d7e0665c216f7fbc9e` includes the scoped physical allocation; initial strategy source and assessment remain below. Reviewed FEATURE-PLAN blob `13d937dd479c0ba9cd8b1d544cfb9dbf309d0b6c` against FEATURE-SPEC `32dffa3556346fffaa4b6f77f41d0241c8d6e995` and its current Ready scoped SPEC report, approved FEATURE `edfb2f944044bc1993f1aaab31efb2a028155df2`, feature design and existing PLAN/layout. Governing main PLAN `17f471b5da9fe815e710957703687367eb6a9a8f`, layout `2836fc77ef271e36f4d04a2d6a3a2575d056dac3`. This does not assert whole-package readiness or implementation.

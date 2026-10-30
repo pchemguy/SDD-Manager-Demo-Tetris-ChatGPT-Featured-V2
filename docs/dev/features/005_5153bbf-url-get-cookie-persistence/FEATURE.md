@@ -1,12 +1,14 @@
 # URL GET and cookie persistence
 
+Historical accepted campaign005 source/evidence. Current product contracts and executable task ownership are in the main development documents; this snapshot is not an active implementation owner.
+
 ## Purpose
 
 Remember the player's six existing game-configuration selections across page reloads and later visits, and let a game URL supply any subset of those selections. Resolve every setting independently: a valid explicitly supplied URL query value overrides its saved cookie value, which overrides the existing default.
 
 ## Scope
 
-Support ghost visibility, hard-drop availability, next-piece preview, hard-drop locking policy, general locking policy and Hold availability. Retain the current values and defaults from [session configuration](spec/session-configuration.md). A value equal to its default is still an explicit selection.
+Support ghost visibility, hard-drop availability, next-piece preview, hard-drop locking policy, general locking policy and Hold availability. Retain the current values and defaults from [session configuration](../../spec/session-configuration.md). A value equal to its default is still an explicit selection.
 
 | URL parameter | Accepted text values | Default |
 | --- | --- | --- |

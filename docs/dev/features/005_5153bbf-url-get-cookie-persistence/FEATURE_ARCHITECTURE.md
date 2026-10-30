@@ -1,8 +1,10 @@
 # Browser configuration persistence architecture
 
+Historical accepted campaign005 source/evidence. Current product contracts and executable task ownership are in the main development documents; this snapshot is not an active implementation owner.
+
 ## Scope and arrangement
 
-The [feature brief](FEATURE.md) adds restoration and persistence to the existing browser host. [Main ARCHITECTURE](ARCHITECTURE.md) remains authoritative for core rules, session transactions, shared DOM presentation and selected-versus-active timing. Its no-storage browser-entry/reload-default statements are altered for this feature; pure selected configuration and game state remain unchanged.
+The [feature brief](FEATURE.md) adds restoration and persistence to the existing browser host. [Main ARCHITECTURE](../../ARCHITECTURE.md) remains authoritative for core rules, session transactions, shared DOM presentation and selected-versus-active timing. Its no-storage browser-entry/reload-default statements are altered for this feature; pure selected configuration and game state remain unchanged.
 
 The browser host composes a persistence adapter around one ordinary configuration controller. Before mounting the view, the adapter resolves the six selections from URL/cookies/defaults and commits a complete validated selection into that controller. It presents the same getSnapshot/update interface to existing consumers. Successful later selection updates persist only changed fields, after the in-memory transaction succeeds. The view needs no browser storage dependency or separate pending-settings copy.
 

@@ -54,3 +54,22 @@ Current gate: Ready. Whole current PROJECT/design/SPEC/children/PLAN/layout/TASK
 ## Revision — Penetrator current package (T040)
 
 Current gate: Ready. Complete affected main package coherently incorporates accepted P01–08 with ordinary compatibility, six selected settings and mode-sensitive legal transit/projection/white inventory. PROJECT/design/SPEC and modern/ghost/configuration children agree; PLAN/layout map Phase5 reviews/exits; sole TASKS owns40 IDs with original32 prefix intact. Adjacent SPEC/PLAN/TASKS cycles identify exact current source blobs. Current004 sources/preparation/adjacent QC are historical with repaired links; earlier closed campaigns unchanged. No workflow-pass control was copied into product roots. No unresolved document finding; implementation/integration/release states are separately owned by phase/final reports and HANDOFF.
+
+## Revision — Browser persistence current package (T046)
+
+Current PROJECT/design/C01–C08/SPEC with canonical U01–08/affected children/PLAN/layout/TASKS form a coherent1.5.0 description. Adjacent SPEC/PLAN/TASKS Revision6 assessments are Ready for exact source states below; initial and earlier reviews retain their original scopes. Browser reload restoration is distinct from pure-context defaults and game-state reset. All six formats/precedence/default/omitted/fault/history/path/timing contracts route to implemented boundaries and complete acceptance; closed prior campaigns and completed1–40 prefix stay unchanged.005 accepted source/preparation/QC is historical, main TASKS alone owns1–46, and T046 phase readiness is independently reviewed and freshly verified; actual integration/release outcomes remain separately recorded. No unresolved document blocker; current full-package document gate Ready, not a claim of release publication.
+
+| Current source | Blob |
+| --- | --- |
+| PROJECT.md | 9a949fdbd1ce006ff42c1cbd86190d63f55a6f19 |
+| ARCHITECTURE.md | 34a96554ed75dcd17d1e6d419fd1c4d5ab773499 |
+| DECOMPOSITION.md | f82aca90c934997eef958cd667b08bd6f776be30 |
+| SPEC.md | 42b8dfcf0fe953b8f296ae610f8d2d7340cdff3d |
+| PLAN.md | bc64f810c2111977fab8700abf9da9bafd9d0f04 |
+| layout.md | 0c36df5acc407d3014cf5a1dd9765c0533c45326 |
+| TASKS.md | ba31674e112f68cdc0099d5994806119702f38a1 |
+| spec/session-configuration.md | aac39edc636a1b2dad1242ebe6bdb8802dce32b0 |
+| spec/ghost-visibility.md | 75500e057435e0bb55594589a333299f7c7cddd6 |
+| spec/modern-rules.md | b7abdf998767aa1702bcf906ad5123095bb315fe |
+| spec/penetrator.md | 5e376fa0ff98c80d71f332f702498da5ea3212fd |
+| spec/configuration-persistence.md | 45accd130c0ce197d46aa6c252199b0994a2b9a3 |

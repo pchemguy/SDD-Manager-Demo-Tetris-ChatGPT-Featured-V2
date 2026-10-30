@@ -2,6 +2,10 @@
 
 ## Current gate
 
+Ready for current browser-persistence PLAN conformance. Revision6 below records the exact current roots/children and governing states; earlier observations/source identities remain historical. This technical gate is separate from pending T046 phase completion/integration/release.
+
+Prior gate snapshot retained:
+
 State: Ready for TASKS generation. Strategy and physical allocation conform to current SPEC and accepted design; Revision 1 establishes combined PLAN/layout readiness.
 
 ## Reviewed identities
@@ -93,3 +97,26 @@ Phase5 retains justified two delivery milestones, assigned standalone5.1 review 
 | PLAN.md | `17f471b5da9fe815e710957703687367eb6a9a8f` |
 | layout.md | `2836fc77ef271e36f4d04a2d6a3a2575d056dac3` |
 | spec/penetrator.md | `dccdca409889b3e2cbd49b2a40635b9807d5dcc8` |
+
+## Revision 6 — Browser persistence incorporation
+
+2026-10-30, scoped plan owner assessment during T046 accepted incorporation.
+
+| Current source | Blob |
+| --- | --- |
+| PROJECT.md | 9a949fdbd1ce006ff42c1cbd86190d63f55a6f19 |
+| ARCHITECTURE.md | 34a96554ed75dcd17d1e6d419fd1c4d5ab773499 |
+| DECOMPOSITION.md | f82aca90c934997eef958cd667b08bd6f776be30 |
+| SPEC.md | 42b8dfcf0fe953b8f296ae610f8d2d7340cdff3d |
+| PLAN.md | bc64f810c2111977fab8700abf9da9bafd9d0f04 |
+| layout.md | 0c36df5acc407d3014cf5a1dd9765c0533c45326 |
+| TASKS.md | ba31674e112f68cdc0099d5994806119702f38a1 |
+| spec/session-configuration.md | aac39edc636a1b2dad1242ebe6bdb8802dce32b0 |
+| spec/ghost-visibility.md | 75500e057435e0bb55594589a333299f7c7cddd6 |
+| spec/modern-rules.md | b7abdf998767aa1702bcf906ad5123095bb315fe |
+| spec/penetrator.md | 5e376fa0ff98c80d71f332f702498da5ea3212fd |
+| spec/configuration-persistence.md | 45accd130c0ce197d46aa6c252199b0994a2b9a3 |
+
+Checked full current strategy against all contracts, scoped physical ownership and complete prior phase ranges. Existing Phase1–5 sections remain unchanged; new Phase6 contains2 delivery milestones (6.1 integrated restoration/edit behavior,6.2 lifetime/distribution) plus the excluded one-task6.3 phase review. Small-group rationale remains cohesive without padding. The map covers every U contract, direct source/built/extracted acceptance, failure/legacy/gameplay regression, accurate docs/package, unique task transfer/archive/audit and postintegration default release checks. Canonical layout assigns C08 codec/effect modules, C07 validator, C06 composition, unit/native/source-only checks and strict package/docs owners. No circular dependency or unresolved placement exists.
+
+Cross-document checks compare accepted archived005 sources with current owners, literal source/domain/default interfaces, actual code/tests, declared build/package and prior-range preservation. Confirmed conformance findings: None. Gate Ready; no deferred contract issue or new human decision. Runtime/package results remain separately owned by6.1/6.2 and final phase evidence; archive status does not certify a new run. Native headed OS focus/actual HTTPS engine and future Electron limits remain explicit. Task046 is not marked complete by this document QC.

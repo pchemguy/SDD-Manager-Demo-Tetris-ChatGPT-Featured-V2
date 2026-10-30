@@ -86,7 +86,7 @@ Acceptance: actual board keys and native controls agree, no double-dispatch, sin
 
 Keep existing methods and construction callbacks; extend Action with rotateCCW, hold, hardDrop and activatePenetrator. Snapshot exposes next, held, canHold, ghost, legacy options and detached active rules as defined above and in S-02. P-01 adds detached penetratorActive/penetratorBonuses/penetratorCells; P-06 owns white active/visible ghost/settled appearance and restrained mode/count announcements. Bag remaining/cursors and clocks stay private. Failed random/validation transitions cannot change statistics, queue, hold, timers or notify observers. A valid changed operation notifies each current observer once after full commit; unchanged operations do not notify. Listener errors remain isolated; reentrant operations remain rejected. All core/session work is deterministic given callback values and semantic time/actions; no global randomness or browser APIs enter these modules.
 
-Acceptance: invalid draws during start, refill on lock and empty hold; cloned next/held value types and ghost/options objects; listener failures, reentry and unchanged actions. Retain DOM-free type/boundary checks and host teardown tests. C-07 selected values are detached in-memory context only; no public persistent format is added.
+Acceptance: invalid draws during start, refill on lock and empty hold; cloned next/held value types and ghost/options objects; listener failures, reentry and unchanged actions. Retain DOM-free type/boundary checks and host teardown tests. C-07 selected values remain detached in-memory context; C-08 owns the browser-only six-field persistent format under [U-01–U-08](configuration-persistence.md).
 
 ## F-08 Delivery and compatibility (R-10/R-11/R-12)
 

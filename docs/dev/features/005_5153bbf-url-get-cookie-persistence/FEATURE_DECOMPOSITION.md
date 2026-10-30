@@ -1,8 +1,10 @@
 # Configuration persistence components
 
+Historical accepted campaign005 source/evidence. Current product contracts and executable task ownership are in the main development documents; this snapshot is not an active implementation owner.
+
 ## Scope
 
-This delta refines [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md). Main [DECOMPOSITION](DECOMPOSITION.md) retains C-01–C-07 responsibilities, with the following affected boundaries. Exact externally observable contracts belong to FEATURE-SPEC; paths belong to the scoped layout in FEATURE-PLAN.
+This delta refines [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md). Main [DECOMPOSITION](../../DECOMPOSITION.md) retains C-01–C-07 responsibilities, with the following affected boundaries. Exact externally observable contracts belong to FEATURE-SPEC; paths belong to the scoped layout in FEATURE-PLAN.
 
 ## C-07 selected configuration
 
