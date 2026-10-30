@@ -68,3 +68,5 @@ footer {margin-top:22px;text-align:center;font-size:9px;letter-spacing:2px;color
 .cell[data-penetrator="true"]{background:#fff;border:2px solid #fff;filter:none}
 .cell[data-penetrator-ghost="true"]{background:repeating-linear-gradient(135deg,transparent 0,transparent 4px,#ffffff55 4px,#ffffff55 6px);border:2px dashed #fff}
 .penetrator-info{font-size:12px;color:#b8c7dd;min-width:0}.penetrator-info strong{display:block;min-height:24px;font-size:20px;letter-spacing:3px}@media(max-width:540px){.penetrator-info{grid-column:1/-1}}
+
+.ability-status{font-size:11px;line-height:1.5;margin:4px 0 0;color:#c1cee3;overflow-wrap:anywhere}

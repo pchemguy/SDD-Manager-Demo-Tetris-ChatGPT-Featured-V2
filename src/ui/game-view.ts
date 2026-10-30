@@ -9,17 +9,17 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
  const doc = mount.ownerDocument;
  const root = doc.createElement('section');
  const legendId = `game-controls-${++sequence}`;
- const ghostId=legendId+'-ghost';
+ const ghostId=legendId+'-ghost',abilityId=legendId+'-ability';
  root.className = 'game';
  root.innerHTML = `
   <header><p class="eyebrow">THE ORIGINAL CHALLENGE</p><h1>CLASSIC<span>TETRIS</span></h1><p>Find your rhythm. Clear a little space.</p></header>
   <div class="game-layout">
-   <div class="board-wrap"><div class="board" role="img" aria-label="Tetris playfield" aria-describedby="${legendId} ${ghostId}" tabindex="0"></div><p class="status" role="status" aria-live="polite" data-testid="status">Ready</p><p class="projection" id="${ghostId}" data-testid="ghost-description">No active piece</p></div>
+   <div class="board-wrap"><div class="board" role="img" aria-label="Tetris playfield" aria-describedby="${legendId} ${ghostId} ${abilityId}" tabindex="0"></div><p class="status" role="status" aria-live="polite" data-testid="status">Ready</p><p class="projection" id="${ghostId}" data-testid="ghost-description">No active piece</p></div>
    <aside aria-label="Game information">
     <div class="stat"><span>SCORE</span><strong data-testid="score">0</strong></div>
     <div class="stat"><span>LEVEL</span><strong data-testid="level">1</strong></div>
     <div class="stat"><span>LINES</span><strong data-testid="lines">0</strong></div>
-    <div class="penetrator-info"><span>Penetrator bonuses</span><strong data-testid="penetrator-bonuses" aria-label="Penetrator bonuses: 0"></strong></div>
+    <div class="penetrator-info"><span>Penetrator bonuses</span><strong data-testid="penetrator-bonuses" aria-label="Penetrator bonuses: 0"></strong><p class="ability-status" role="status" aria-live="polite" id="${abilityId}" data-testid="penetrator-mode"></p></div>
     <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
     <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button><button class="secondary" data-play data-action="hardDrop">Hard drop</button></div>
     <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>B</dt><dd>Penetrator (1 bonus)</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
@@ -102,7 +102,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   root.querySelector('[data-testid="next-type"]')!.textContent=selected.nextPreviewEnabled?(snapshot.next??'None'):'Off';renderNext(selected.nextPreviewEnabled?snapshot.next:null);
   if(!selected.nextPreviewEnabled)root.querySelector('[data-preview="next"] .piece-mini')!.setAttribute('aria-label','Next piece: off');
   root.querySelector('[data-testid="held-type"]')!.textContent=snapshot.rules.holdEnabled?(snapshot.held??'None'):'Off';renderHeld(snapshot.rules.holdEnabled?snapshot.held:null);
-  root.querySelector('[data-testid="hold-status"]')!.textContent=!snapshot.rules.holdEnabled?'Off':snapshot.canHold?'Available':'Unavailable';
+  root.querySelector('[data-testid="hold-status"]')!.textContent=snapshot.penetratorActive?'Unavailable during penetration':!snapshot.rules.holdEnabled?'Off':snapshot.canHold?'Available':'Unavailable';
   const activeCells = new Map(snapshot.active ? cells(snapshot.active).map(([x,y]) => [y * 10 + x, snapshot.active!.type]) : []);
   const showGhost = isGhostVisible(snapshot.ghost, mode);
   const ghostCells=new Set(showGhost&&snapshot.ghost?cells(snapshot.ghost).map(([x,y])=>y*10+x):[]);
@@ -116,7 +116,11 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
    tile.dataset.kind = kind ?? ''; tile.dataset.filled = String(!!kind); tile.dataset.active = String(!!active);
   });
   const bonuses=root.querySelector<HTMLElement>('[data-testid="penetrator-bonuses"]')!;
-  bonuses.textContent='⚡'.repeat(snapshot.penetratorBonuses);bonuses.setAttribute('aria-label',`Penetrator bonuses: ${snapshot.penetratorBonuses}`);
+  const symbols='⚡'.repeat(snapshot.penetratorBonuses),countLabel=`Penetrator bonuses: ${snapshot.penetratorBonuses}`;
+  if(bonuses.textContent!==symbols)bonuses.textContent=symbols;
+  if(bonuses.getAttribute('aria-label')!==countLabel)bonuses.setAttribute('aria-label',countLabel);
+  const ability=root.querySelector<HTMLElement>('[data-testid="penetrator-mode"]')!,abilityLabel=`Penetrator ${snapshot.penetratorActive?'active':'inactive'} · Bonuses: ${snapshot.penetratorBonuses}`;
+  if(ability.textContent!==abilityLabel)ability.textContent=abilityLabel;
   for (const key of ['score','level','lines'] as const) root.querySelector(`[data-testid="${key}"]`)!.textContent = String(snapshot[key]);
   const label = {ready:'Ready',running:'Playing',paused:'Paused','game-over':'Game over'}[snapshot.status];
   if (status.textContent !== label) status.textContent = label;

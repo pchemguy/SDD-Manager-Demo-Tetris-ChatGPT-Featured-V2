@@ -64,7 +64,7 @@ The panel stays editable in ready, playing, paused and game-over states. Native 
 
 ## Penetrator bonuses
 
-Clear four rows at once to earn one penetrator bonus; up to three accumulate. The game panel shows one ⚡ per available bonus. With the board focused, B spends one and turns the current piece white until it locks. Hold is unavailable during penetration; the held type is retained. Repeated B does not spend again.
+Clear four rows at once to earn one penetrator bonus; up to three accumulate. The game panel shows one ⚡ per available bonus, an accessible numeric count including zero, and an active/inactive mode description. Mode/count announcements update only when those values change. With the board focused, B spends one and turns the current piece white until it locks. Hold is unavailable during penetration; the held type is retained. Repeated B does not spend again.
 
 A penetrator passes through occupied cells without changing them. Its movement and rotations must retain a valid in-board, non-overlapping landing at or below the candidate. Hard drop and the visible ghost use the deepest valid landing beyond obstacles. The selected general/hard-drop policies still apply; activation preserves a supported deadline, canceling it only if a lower landing opens. Locked penetrator cells stay white until cleared and act as ordinary obstacles. Regular pieces keep their nonwhite colors.
 
