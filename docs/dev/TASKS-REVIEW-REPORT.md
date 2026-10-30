@@ -76,3 +76,15 @@ Independent final document QC finding CG-DOC1: inherited current metadata/archiv
 | TASKS.md | `4b31862231593a222ea126592775af278c605a86` |
 | PLAN.md | `db0d0eec396d0e452d3bb490c5310093d1937e78` |
 | layout.md | `79cb3532cf1251a0716d57d618156b2844254c77` |
+
+## Revision 4 — Session-only configuration incorporation
+
+Current gate: Ready. Acting as the owning document reviewer, assessed the complete affected current owners after accepted incorporation; earlier cycles remain historical.
+
+TASKS alone owns32 unique stable IDs. Transferred T-027–T-031 retain their actual verified state and closing evidence; initial T-032 closure contains phase report/QC/archive/transfer/audit/HANDOFF. Prior1–26 prefix and closed records unchanged. Dependencies, six-setting/rule/display/error/native/package acceptance and milestone/phase review obligations remain mapped. Archived FEATURE-TASKS is expressly non-executable; semantic ownership transfer changes only T-032 state. No unresolved conformance finding. Links/unique ownership and actual task-closing diffs are checked separately before publication.
+
+| Source | Git blob |
+| --- | --- |
+| TASKS.md | `cd6698b5cfe17878dd557632f601f243a23b50bf` |
+| PLAN.md | `febd95f4b18f1c94359a9a2f9b1972bfbf288a3f` |
+| layout.md | `eeba096ba55ee9381e02dacbe473adeb5753a8d6` |

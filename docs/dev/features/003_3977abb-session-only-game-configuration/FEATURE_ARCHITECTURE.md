@@ -1,8 +1,10 @@
 # Session-only configuration architecture
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Delta against existing blocks
 
-Keep [ARCHITECTURE](ARCHITECTURE.md)'s pure rules/session, shared DOM view and browser host. Add a small DOM-free configuration owner within the shared application layer. It holds the six selected values for a loaded page application and produces detached settings and next-game rule values. It has no browser storage, scheduler, global singleton or random source.
+Keep [ARCHITECTURE](../../ARCHITECTURE.md)'s pure rules/session, shared DOM view and browser host. Add a small DOM-free configuration owner within the shared application layer. It holds the six selected values for a loaded page application and produces detached settings and next-game rule values. It has no browser storage, scheduler, global singleton or random source.
 
 Selected configuration and active gameplay rules have separate ownership: the configuration owner retains current display preferences and pending next-game rules; the session copies only the four gameplay rules at Start/Restart. The session alone enforces hard-drop/hold availability, locking chronology, scoring and atomic gameplay. Display changes do not enter session operations. Current rules are exposed read-only so the view can distinguish active from pending values.
 

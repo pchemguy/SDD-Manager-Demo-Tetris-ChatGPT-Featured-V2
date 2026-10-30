@@ -46,3 +46,7 @@ Current gate: Ready. Whole current product package is coherent after G-01–G-05
 CG-DOC1 from independent final document QC resolved: current PLAN/layout version wording now1.2.0, and strategy includes all3 browser phases. Adjacent plan/task reviews append correction/recheck identities without altering prior cycles or completed scope.
 
 CG-DOC2 post-integration clarification: R-09 now explicitly permits both F-05 next-game locking and G-02 mount-local ghost visibility, with reload defaults and no persistence. Scope/design/tasks and shipped bytes are unchanged; focused SPEC review appended current identities and resolved the inherited contradiction.
+
+## Revision — Session-only configuration current package (T-032)
+
+Current gate: Ready. Whole current PROJECT/design/SPEC/children/PLAN/layout/TASKS package is coherent after S-01–S-08 incorporation. Explicit selected context, copied active rules, both policies, disabled actions, live concealment and page-session/no-storage lifetime have one contract owner and mapped validation. Adjacent technical revisions above identify exact blobs. Main TASKS owns32 unique tasks;003 snapshots are historical, prior closed campaigns untouched. Main/archived links, previous-task prefix, current application/package identities and semantic final-task closure pass. Implementation reviews/tests remain separately recorded in the Phase4 reports; this QC does not claim future publication.

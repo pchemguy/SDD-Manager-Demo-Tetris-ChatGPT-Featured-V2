@@ -69,3 +69,15 @@ Independent final document QC finding CG-DOC1: inherited current metadata/archiv
 | PLAN.md | `db0d0eec396d0e452d3bb490c5310093d1937e78` |
 | layout.md | `79cb3532cf1251a0716d57d618156b2844254c77` |
 | spec/ghost-visibility.md | `e0cb0f3ea461678564aefae36ea0138666ab69be` |
+
+## Revision 4 — Session-only configuration incorporation
+
+Current gate: Ready. Acting as the owning document reviewer, assessed the complete affected current owners after accepted incorporation; earlier cycles remain historical.
+
+Phase4 maps all S contracts into two justified delivery milestones (3 and2 delivery tasks) and one dedicated phase review. Reviews/reports/HANDOFF, controlled native integration, exact policy/model tests and actual source/built/extracted delivery have explicit owners/exits. Physical allocation matches C-07 and changed session/view/host/tests, source-only fixture exclusion,1.3 package and stable reports/archive. Earlier phase ranges preserved; no future platform/storage scope added. No unresolved conformance finding. Links/unique ownership and actual task-closing diffs are checked separately before publication.
+
+| Source | Git blob |
+| --- | --- |
+| PLAN.md | `febd95f4b18f1c94359a9a2f9b1972bfbf288a3f` |
+| layout.md | `eeba096ba55ee9381e02dacbe473adeb5753a8d6` |
+| spec/session-configuration.md | `ce2ce1e65a3df7da08c087d867bdaad5c7cab53d` |

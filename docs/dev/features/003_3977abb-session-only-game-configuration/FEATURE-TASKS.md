@@ -1,6 +1,8 @@
 # Session-only configuration implementation tasks
 
-This is the sole executable feature delta. [FEATURE](FEATURE.md), [architecture](FEATURE_ARCHITECTURE.md), [decomposition](FEATURE_DECOMPOSITION.md), [SPEC](FEATURE-SPEC.md), [PLAN](FEATURE-PLAN.md) and its physical map govern the work. Main T-001–T-026 remain completed/unchanged. All tasks below are initially unimplemented.
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
+This was the feature task owner before transfer; it is retired. [FEATURE](FEATURE.md), [architecture](FEATURE_ARCHITECTURE.md), [decomposition](FEATURE_DECOMPOSITION.md), [SPEC](FEATURE-SPEC.md), [PLAN](FEATURE-PLAN.md) and its physical map govern the work. Main T-001–T-026 remain completed/unchanged. Checkoffs retain the campaign closing snapshot; current status is in main TASKS.
 
 ## Execution contract
 
@@ -10,7 +12,7 @@ Core seams: C-07 createConfiguration/getSnapshot/update and detached rule projec
 
 ## Phase 4 — Session-only game configuration
 
-- [ ] Phase 4 — Session-only game configuration
+- [x] Phase 4 — Session-only game configuration
     - [x] Milestone 4.1 — Session-configured gameplay
         - [x] T-027 — Implement selected configuration values and memory
             Scope: new src/application/configuration.ts, tests/unit/configuration.test.ts and compiler inclusion if needed. Depends on: T-026, accepted/QC/published preparation and Phase4 activation.
@@ -47,8 +49,9 @@ Core seams: C-07 createConfiguration/getSnapshot/update and detached rule projec
             Verification: fresh npm ci, full unit/type/boundary/package/environment checks, build/package/verify, isolated Chromium/Firefox source/built/extracted suites covering both policies, disabled and live display combinations, restart/reload/remount/no-storage, screenshots/hash/content/credential/fixture scans and byte reproducibility. Perform independent whole-Milestone4.2 code review, repair blockers and demonstrate final app. Include report/TODOs/HANDOFF and milestone parent with initial task closure: docs/dev/features/003_3977abb-session-only-game-configuration/reports/phases/4/4.2.md. Publish/close then close/read back milestone before phase review. References: S-01–S-08/R-09–R-12.
             Completion evidence: Fresh npm ci;193 units/11 package tests/type/boundaries/build/environment2/source66/built58/extracted58 pass. Independent whole4.2 code/doc/release-scope review has no finding. Version1.3.0 and six-setting/default/timing/no-storage guides finalized; repeated build/package bytes identical with strict8-member inventory/digests, fixture/credential exclusions and stable ZIP/checksum. See4.2 report/HANDOFF for exact artifact identity and native limits; TODO None.
 
-    - [ ] Milestone 4.3 — Phase review
-        - [ ] T-032 — Review test and report the configuration phase
+    - [x] Milestone 4.3 — Phase review
+        - [x] T-032 — Review test and report the configuration phase
             Scope: complete feature/required repairs, accepted current-document incorporation/QC and task reconciliation, eligible source/archive disposition, phase/final reports and HANDOFF. Depends on: T-027–T-031 completed/published and both delivery milestones/issues closed/read back.
             Acceptance: independent whole-phase code review separate from test execution; all S-01–S-08 and default/legacy/purity/rollback guarantees satisfied. Incorporate approved deltas into current PROJECT/design/SPEC/children/PLAN/layout, explicitly removing superseded only-two-settings/only-interval/unconditional-action/current-version claims; reassess affected adjacent QC. Transfer tasks once into main TASKS, archive only eligible current003 sources/preparation/QC with historical markers/repaired links, retain stable evidence and initial final-task closure coherently through transfer. Preserve completed earlier phases/campaigns/releases and aggregate TODO None or eligible findings; missing required feasible checks remain blockers.
             Verification: fresh appropriate full model/type/boundary/browser/package regression with exact source/artifact identities, current docs/links/unique owner checks, actual task-closing parent-diff and semantic-transfer audit. Include docs/dev/features/003_3977abb-session-only-game-configuration/reports/phases/4/PHASE-REPORT.md and feature-root IMPLEMENTATION-REPORT.md plus HANDOFF/review/findings/limits with initial checkbox. Publish/read back, close its issue/review milestone, then explicit verified two-parent main integration and default-branch1.3.0 exact-body commit/tag/provider release with ZIP/checksum and source/body/latest/public-download/CI readback. Record actual subsequent outcomes in a task-owned parent-only follow-up without moving the tag. Preparing this list executes none of those operations.
+            Completion evidence: Independent whole-phase code and incorporated-document reviews found no findings. Fresh193 units/11 package/type/boundary/build/strict integrity and58 extracted-prefix browser checks pass; unchanged source/built inputs retain66/58 acceptance. All current roots/children and adjacent QC incorporated, eligible003 sources archived with links/historical markers,32 unique tasks and prior1–26 prefix preserved. Exact T027–031 closing-diff audit and semantic T032 initial closure/transfer pass. Phase/final reports and HANDOFF included; TODO None. Integration/release outcomes follow in task-owned parent-only evidence without moving tag.

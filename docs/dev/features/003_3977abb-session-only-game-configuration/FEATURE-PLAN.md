@@ -1,5 +1,7 @@
 # Session-only configuration delivery plan
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Strategy and scope
 
 Deliver [FEATURE](FEATURE.md)/[FEATURE-SPEC](FEATURE-SPEC.md) S-01–S-08 as browser1.3.0. Preserve completed Phases1–3 and existing tasks. One bounded Phase4 implements the single configuration capability: reusable selected context and active policies, native next-game application, then complete display/unified panel and verified delivery. Core rules and UI cannot be released independently as the requested feature; milestones expose useful integrated checkpoints without premature releases.
@@ -26,7 +28,7 @@ Explicitly two-parent merge the exact complete verified phase into its recorded 
 
 ## Physical ownership
 
-The existing [layout](layout.md) remains the baseline. The following map extends the existing owners; no FEATURE-LAYOUT root is required.
+The existing [layout](../../layout.md) remains the baseline. The following map extends the existing owners; no FEATURE-LAYOUT root is required.
 
 
 | Path | Owner/change |

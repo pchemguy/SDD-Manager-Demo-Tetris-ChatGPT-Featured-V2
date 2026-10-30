@@ -1,5 +1,7 @@
 # Session-only configuration whole-package QC
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Current gate
 
 Ready for verified preparation integration and authorized T-027–T-032 after Phase4 tracking activation. User explicitly selected QC and full implementation after the autodoc stop. This whole-set assessment is separate from individual conformance reviews and later implementation verification.

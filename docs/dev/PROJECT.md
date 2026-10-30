@@ -1,25 +1,27 @@
 # Classic Tetris
 
-## Purpose and intended users
+## Purpose and users
 
-Deliver a browser-based single-player falling-block game with modern planning and control aids, predictable timing and clear status. Keep TypeScript application logic and DOM UI reusable by future delivery platforms.
+Deliver a browser-based single-player falling-block game with modern planning/control aids, predictable timing and clear status. Keep TypeScript logic and DOM UI reusable by future hosts.
 
 ## Scope
 
-The current game includes movement, both-direction SRS wall kicks, soft and hard drop, line clearing, scoring, increasing levels, pause/restart, seven-bag randomization, hold, exactly one next preview and ghost projection with selectable conditional visibility. Modern rules are the default; there is no classic-mode selector.
+The game includes movement, both-direction SRS kicks, soft/hard drop, line clearing, classic scoring, increasing levels, pause/restart, seven-bag randomization, hold, exactly one next preview and canonical ghost projection. Modern rules are the default; there is no classic-mode selector.
 
-Grounding starts one full current gravity interval of lock delay, independently of gravity remainder. Continuously grounded moves and rotations do not reset it; leaving support cancels it and relanding starts a fresh interval. Hard drop uses that policy by default. The next-game checkbox can select immediate hard-drop locking, fixed for the started session.
+One native Settings panel supplies session-only configuration. Ghost visibility (Always hide / Hide above midline / Always show) and Next-piece preview apply immediately, including while paused. Hard drop, Hold piece, general locking policy and hard-drop locking policy are copied at Start/Restart. Show current rules and pending differences separately. Reload restores defaults; independent pages have no settings synchronization or browser-storage restoration.
 
-Ghost visibility defaults to Always. Lower half only hides the whole projection when its lowest occupied cell lands in rows1–10, and shows it in rows11–20 including straddling pieces. The display preference applies immediately, persists through restart/pause in the mount and resets on reload; canonical landing and hard drop remain unchanged.
+Defaults preserve modern play: ghost Always show, preview/Hard drop/Hold On, full gravity interval after grounding and hard drop following the general policy. The alternative general policy locks on a blocked downward attempt; following it, hard drop places the piece and waits for the next actual blocked gravity/soft-drop attempt. Immediate hard-drop locking overrides either policy. Continuous support never resets the interval-policy deadline; support escape/relanding grants a fresh interval.
 
-## Goals and delivery constraints
+Conditional visibility uses the projected lowest occupied cell: rows1–10 hide, rows11–20 show, including straddling pieces. Always hide conceals the projection at every height. Display settings never change canonical landing or piece order. Explicit retained configuration supports same-context remount; fresh contexts and reload start defaults.
 
-Provide a complete playable browser app, deterministic independently testable rules, and shared logic/UI with platform-specific integration kept separate. Verify the assembled game in managed Chromium and Firefox. Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Completed phases are verified and integrated before version tags and GitHub releases. The initial release is v1.0.0; modern extensions target v1.1.0.
+## Delivery constraints
+
+Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Keep browser input/timing/lifecycle separate from shared logic/UI. Verify the assembled game in dedicated managed Chromium and Firefox. Each completed phase is verified and integrated before its version tag and GitHub release. Current browser metadata and static package use1.3.0.
 
 ## Non-goals
 
-Windows Electron remains a future host; no desktop executable, installer or native-widget UI is delivered. There are no hidden rows, 180-degree rotations, five-piece preview, classic selector, extra scoring bonuses, persisted settings, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
+Windows Electron is a future host; no desktop executable, installer or native-widget UI is delivered. There are no hidden rows,180-degree rotations, five-piece preview, classic selector, extra scoring bonuses, saved settings/profiles/presets/import-export, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
 
-## Specification responsibilities
+## Contract owners
 
-[SPEC](SPEC.md) and its [modern rules child](spec/modern-rules.md) define exact geometry, generation, timing, hold/drop/options, scoring, controls, errors, lifecycle and objective acceptance. [ARCHITECTURE](ARCHITECTURE.md) separates reusable modules from the browser host.
+[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.
