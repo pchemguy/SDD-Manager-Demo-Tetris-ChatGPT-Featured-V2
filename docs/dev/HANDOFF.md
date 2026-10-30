@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: session-only game configuration campaign003_3977abb FEATURE proposal ready; brief acceptance pending.
+Checkpoint: session-only configuration autodoc pass complete through FDOCS-008; whole-package QC not run.
 
-## Authority and scope
+## Authority and current owners
 
-User requested the six-control settings panel and no reload persistence, delegating sensible defaults. Continue autodoc/onepass: first FEATURE approval active; downstream necessary document checkpoints preapproved only after acceptance, with stop after FDOCS-008 before whole-package QC/implementation. Selected defaults preserve v1.2.0. Timing, failed-attempt hard-drop semantics and control dependencies are proposed in FEATURE_PREPARATION, not assumed accepted. No new implementation range activated.
+User y accepted the six-control FEATURE/defaults, immediate display versus next-game rules, failed-attempt follow-general hard-drop interpretation and no-reload-persistence lifetime. Downstream necessary design-through-TASKS checkpoints use retained autodoc preapproval. Active FEATURE/FEATURE_ARCHITECTURE/FEATURE_DECOMPOSITION/FEATURE-SPEC/FEATURE-PLAN and physical map/FEATURE-TASKS define intended1.3.0 scope. Adjacent scoped SPEC/PLAN/TASKS reviews are Ready, not whole-package certification. FEATURE_PREPARATION retains original request, decisions/source identities and tracking.
 
 ## Git and tracking
 
-Current design-docs/003_3977abb-session-only-game-configuration, full baseline/creation-parent main3977abbcb640490c2cf60f3365681f29067b3835. Future implementation feature/003_3977abb-session-only-game-configuration requires verified published preparation integration. All nine campaign stage issues and native milestone were verified before writes; exact mapping in FEATURE_PREPARATION. FDOCS-001 initialization/control/checkoff/HANDOFF published/read back and issue54 closed/read back. FEATURE.md now contains the reviewable proposal; FDOCS-002/issue55 remain open until acceptance. Main TASKS T-001–T-026 and prior campaign records/releases preserved.
+Current design-docs/003_3977abb-session-only-game-configuration, full baseline/creation-parent main3977abbcb640490c2cf60f3365681f29067b3835. Future feature/003_3977abb-session-only-game-configuration requires accepted preparation verified/integrated/published first. Native preparation milestone14 and issues54–62 identify the9 stages. FDOCS-001–007 published/closed; this FDOCS-008 source/QC/control/checkoff/HANDOFF must publish/read back then close61. FDOCS-009/issue62 and milestone14 remain open. Main T-001–T-026 remain complete; FEATURE-TASKS alone owns planned unchecked T-027–T-032. No Phase4 objects projected.
 
-## Next action and stop
+## Stop and next eligible action
 
-Publish/read back FEATURE proposal and stop for first brief acceptance. On acceptance, record exact source/decision evidence and initial FDOCS-002 checkoff coherently before downstream autodoc work. No application/configuration behavior is implemented yet. Existing v1.2.0 evidence remains in closed feature002 reports; no prior task needs resumption. No credentials recorded in source/evidence. Native headed focus remains unverified; Electron outside current browser scope.
+Stop after FDOCS-008 publication/closure before package QC. Await explicit advancement; then assess whole feature, persist report/control/FDOCS-009/checkpoint, publish/close62, explicitly integrate/verify/publish accepted preparation to actual default main before closing14 or creating implementation branch/activating Phase4. No implementation, dependency install, product test, app version, release or canonical main-root change occurred. Existing v1.2.0 application and closed campaigns/releases unchanged; native headed focus unverified, Electron outside scope.

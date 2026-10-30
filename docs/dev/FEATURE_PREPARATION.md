@@ -36,7 +36,9 @@ Cross-scope decisions: none outside this one pass. User accepted scope/timing/fa
 | --- | --- |
 | FDOCS-001 | Linux/bash usable clean main worktree, full published baseline/default identity, global campaign-sequence collision scan, governing instructions and existing auth/provenance reused. Nine-stage tracking gate passed. Initialization885555c29ff330f9d43095dcbce6c164dbe9902d source/control/checkoff/HANDOFF published/read back; issue54 closed/read back. |
 | FDOCS-002 | FEATURE proposal assessed against the current session options/dispatch/advance, shared display preferences and browser host. All six controls, delegated defaults, preserved rules and proposed timing/failed-drop/dependency interactions covered; no material choice is silently adopted. Proposal SHA256 d76f3091f011d2e4fbd0a3bd7eddfb4efb0a6b28e658ffafd7883bc31dffecb5. User “y” accepts the presented brief/proposals; product wording now expresses the accepted timing and locking rule. Exact accepted source below. |
-| FDOCS-003–009 | Pending ordered downstream assessments under retained autodoc preapproval. |
+| FDOCS-003–007 | Complete/published and issues56–60 closed/read back; exact per-stage sources and assessments below. |
+| FDOCS-008 | Current task derivation/conformance/HANDOFF completion; publish/read back then close61. |
+| FDOCS-009 | Not run; retain unchecked, issue62/milestone14 open at autodoc boundary. |
 
 ## Hosted preparation mapping
 
@@ -56,7 +58,7 @@ Native milestone #14 (sdd-docs-003_3977abb), open/read back.
 
 ## Pending transitions
 
-No reset. Persist/publish/read back FDOCS-002 acceptance and close55, then continue FDOCS-003–008 with required scoped QC; stop before FDOCS-009. No application code/tests/version, canonical product root or release change at this opening checkpoint.
+No reset. FDOCS-001–007 published/read back and issues54–60 closed. Publish/read back this FDOCS-008 completion, close/read back61, then stop before FDOCS-009, preparation integration or implementation. No application code/tests/version, canonical product root or release change at this opening checkpoint.
 
 ## FDOCS-002 completion
 
@@ -114,3 +116,18 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: 85796d2152f27e2b748e62661ab724d0ded11e0800d79372ef4b2d4fa830e70b
 
 Publish/read back this coherent completion before closing/readback of issue #60 or dependent work.
+
+## Downstream design choices
+
+Under accepted autodoc design authority: selected page context is DOM-free C-07, copied active rules stay C-04, optional explicit context/refresh integrates C-05/C-06 without storage/global singleton. Preserve exact legacy1-field model input/Snapshot.options while adding complete4-field rules and detached Snapshot.rules. New setting values/rules, validation and lifetime are detailed in FEATURE-SPEC; no new user scope added. Phase4 delivery scope remains onepass with prior phases/tasks preserved.
+
+## FDOCS-008 completion
+
+Derive unchecked T-027–T-032 across Phase4 milestones4.1/4.2 and mandatory4.3 review. Adjacent task QC Ready:3 and2 delivery-task counts justified, whole-milestone reviews/report/HANDOFF assigned to final delivery tasks and unique phase review owns incorporation/archive/audit/final evidence. Exact source/link/ownership and untouched implementation/main baseline checks pass. HANDOFF/AGENTS record required autodoc stop before FDOCS-009; no package QC or implementation run.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-TASKS.md: 87ece57a99c192c7e8a8d20bbd51cfdccf54935fbce7398b579ea265eaecf25a
+- docs/dev/FEATURE-TASKS-REVIEW-REPORT.md: c667093acb73eb17a66b118c7915e1c0316d4d3a16f4bfacafbfd222daf77395
+- AGENTS.md: bb02ed73df251dd9ad8cf02ff3faeb7bef4a2e9bb852ba4ca751416d4157c938
+
+Publish/read back this coherent completion before closing/readback of issue #61 or dependent work.
