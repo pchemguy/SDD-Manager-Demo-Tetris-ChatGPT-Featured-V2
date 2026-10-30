@@ -24,7 +24,7 @@ The patterned, dashed ghost shows the active piece's straight-down landing. Move
 
 ## Landing and hard drop
 
-A grounded piece locks after one full current gravity interval from landing. A nearly due gravity tick cannot shorten that interval. Grounded movement, rotation and blocked drops do not reset it. Leaving support cancels it; landing again grants a fresh full interval. Pause freezes the countdown.
+By default, a grounded piece locks after one full current gravity interval from landing. A nearly due gravity tick cannot shorten that interval. Grounded movement, rotation and blocked drops do not reset it. Leaving support cancels it; landing again grants a fresh full interval. Pause freezes the countdown.
 
 Hard drop moves immediately to the ghost landing and awards two points per descended row. It uses the same landing delay by default, leaving adjustment or eligible hold available before lock. Repeated zero-distance delayed drops neither score nor extend the countdown.
 
@@ -47,3 +47,16 @@ Clear one/two/three/four rows for 40/100/300/1200 points multiplied by the level
 Ghost visibility defaults to Always show. Choose Hide above midline to hide the whole ghost when its lowest occupied landing cell is in rows1–10; it reappears in rows11–20, including when it straddles the midline. The selector acts immediately, including while paused. It survives start/restart and pause/resume in the current app, and resets to Always show on reload. Hidden ghosts do not announce a landing row. The canonical landing and hard-drop score/locking remain unchanged.
 
 Choose Always hide to conceal the ghost at every height; the description reads Ghost hidden. All three modes act immediately and never change the canonical hard-drop landing. Ghost visibility and Next-piece preview are independent live display settings. All six settings use the same nonmodal panel and reset to sensible defaults on reload.
+
+## Settings defaults and timing
+
+| Control | Default | Applies |
+| --- | --- | --- |
+| Ghost visibility | Always show | Immediately; Always hide and Hide above midline also available |
+| Hard drop | On | Next Start/Restart |
+| Next-piece preview | On | Immediately |
+| Immediate hard-drop lock | Off, following general policy | Next Start/Restart |
+| General locking policy | Full gravity interval after grounding | Next Start/Restart; Failed downward movement also available |
+| Hold piece | On | Next Start/Restart |
+
+The panel stays editable in ready, playing, paused and game-over states. Native settings keys remain settings input; return focus to the playfield for game shortcuts. Current play buttons follow the active game, not pending choices. Disabled hard drop consumes Space without another action; disabled Hold consumes C/Shift without changing pieces. All settings reset on reload, with no localStorage, sessionStorage, cookies, URL state or cross-tab synchronization.
