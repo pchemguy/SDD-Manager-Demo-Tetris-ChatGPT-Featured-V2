@@ -46,7 +46,13 @@ export function createConfiguration() {
  /** Validate/detach a complete replacement without committing or causing browser effects. */
  const prepare=(values:GameConfiguration):(()=>GameConfiguration)=>{
   if(values===null||typeof values!=='object'||Array.isArray(values)||Reflect.ownKeys(values).length!==Object.keys(defaults).length||!Object.keys(defaults).every(key=>Object.hasOwn(values,key)))throw new TypeError('Complete six-setting selection required');
-  const candidate=candidateFor(values);
+  const candidate={} as GameConfiguration;
+  for(const key of Object.keys(defaults) as (keyof GameConfiguration)[]){
+   const value=Reflect.get(values,key);
+   if(typeof value!==typeof defaults[key])throw new TypeError(`Invalid setting type: ${key}`);
+   if(!isConfigurationValue(key,value))throw new RangeError(`Invalid setting value: ${key}`);
+   Object.assign(candidate,{[key]:value});
+  }
   return ()=>{selected=candidate;return getSnapshot()};
  };
  return {getSnapshot,update,prepare};

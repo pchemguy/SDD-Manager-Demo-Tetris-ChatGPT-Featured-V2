@@ -78,7 +78,7 @@ The actual source/built/extracted persistence suite exercises all six native fie
 
 ## Session leaderboard implementation and checks
 
-C-09 src/application/leaderboard.ts exports GameResult and recordResult(history,score): a pure validated descending top-ten insertion with earlier ties first and detached outputs. C-04 owns Snapshot.leaderboard and commits one final candidate score on running-to-game-over before observers. Successful Start/Restart preserves results; failed transactions preserve both game/history. No score clock, global store or persistence callback exists.
+C-09 src/application/leaderboard.ts exports GameResult and recordResult(history,finalResult): a pure validated descending top-ten insertion with earlier ties first and detached outputs. C-04 owns Snapshot.leaderboard and commits one complete final result with score/UUID/UTC timestamp on running-to-game-over before observers. Successful Start/Restart preserves results; failed transactions preserve both game/history. Completion metadata comes from explicit injected callbacks; ranking reads no clock and owns no global store or persistence callback.
 
 mountGame retains its original mount/random/configuration arguments and cleanup return; an optional fourth explicit Session supports sequential retained-controller remount. Its RNG/reporter stay owned by that controller; default mounts and fresh page entry create independent controllers. Do not schedule one explicit controller through simultaneous mounts. C-05 renders semantic rank/score rows and the empty message without submission or focus effects.
 
