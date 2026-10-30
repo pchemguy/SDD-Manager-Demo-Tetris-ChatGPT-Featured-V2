@@ -15,7 +15,7 @@ Main v1.5.0 is implemented, verified, integrated and released; no prior unfinish
 - Strict preservation: retain completed prior phase/task ranges, frozen campaigns, tags and releases. No multipass or flexible integration selected.
 - Tracking: enabled by AGENTS default and retained project policy. Native campaign preparation milestone and all nine exact issue identities/markers/associations verified before the first repository write. No product phase objects or product tasks projected.
 - Reporting: concise Standard updates; actual host Linux/bash. Existing eligible repository and protected authentication reused. No product tests or environment installs needed for opening documentation.
-- Next stage: FDOCS-005.
+- Next stage: FDOCS-006.
 
 ## Decision provenance
 
@@ -33,7 +33,7 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | FDOCS-002 | Human reply "k" accepts published FEATURE at20e4bbfd4d4902645168fbbbbf52d249c491d237, blob e97e41c1340ecbbb60b2497214364689f7c5df50, including completion, ties, reset, no-storage and retained-gameplay boundaries. Autodoc preapproves later necessary document stages through008 only. No implementation or package-QC grant inferred. |
 | FDOCS-003 | FEATURE_ARCHITECTURE defines C04 transactional game/history ownership with a pure C09 ranking helper, C05 snapshot projection and C06 explicit-controller lifetime. Accepted main architecture retained elsewhere; reviewed against actual session.run, settle, Hold and mount paths. Single authority/no cycles/no storage and atomic notification/rollback boundaries assessed; autodoc preapproval applies. No product implementation. |
 | FDOCS-004 | FEATURE_DECOMPOSITION assigns C09 pure ranking, C04 transactional bounded history/Snapshot, C05 read-only panel and C06 optional explicit-session remount. Existing three mount arguments/cleanup and configuration persistence remain compatible. Reviewed actual session subscription/rollback and mount teardown paths; no competing store or observer race. Autodoc preapproval applies; specification owns exact acceptance. |
-| FDOCS-005 | [#105](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/105) |
+| FDOCS-005 | FEATURE-SPEC L01–08 and adjacent exact-identity review Ready: qualifying final score, stable top-ten, validation/detachment, atomic once-only completion, page/controller lifetime, semantic panel and retained gameplay/persistence/distribution acceptance. All accepted design owners mapped, links/seed/error and failure paths assessed. No unresolved findings or implementation claimed. Autodoc preapproval applies. |
 | FDOCS-006 | [#106](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/106) |
 | FDOCS-007 | [#107](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/107) |
 | FDOCS-008 | [#108](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/108) |
@@ -47,7 +47,7 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | FDOCS-002 | Human reply "k" accepts published FEATURE at20e4bbfd4d4902645168fbbbbf52d249c491d237, blob e97e41c1340ecbbb60b2497214364689f7c5df50, including completion, ties, reset, no-storage and retained-gameplay boundaries. Autodoc preapproves later necessary document stages through008 only. No implementation or package-QC grant inferred. |
 | FDOCS-003 | FEATURE_ARCHITECTURE defines C04 transactional game/history ownership with a pure C09 ranking helper, C05 snapshot projection and C06 explicit-controller lifetime. Accepted main architecture retained elsewhere; reviewed against actual session.run, settle, Hold and mount paths. Single authority/no cycles/no storage and atomic notification/rollback boundaries assessed; autodoc preapproval applies. No product implementation. |
 | FDOCS-004 | FEATURE_DECOMPOSITION assigns C09 pure ranking, C04 transactional bounded history/Snapshot, C05 read-only panel and C06 optional explicit-session remount. Existing three mount arguments/cleanup and configuration persistence remain compatible. Reviewed actual session subscription/rollback and mount teardown paths; no competing store or observer race. Autodoc preapproval applies; specification owns exact acceptance. |
-| FDOCS-005 | Specification and scoped QC pending. |
+| FDOCS-005 | FEATURE-SPEC L01–08 and adjacent exact-identity review Ready: qualifying final score, stable top-ten, validation/detachment, atomic once-only completion, page/controller lifetime, semantic panel and retained gameplay/persistence/distribution acceptance. All accepted design owners mapped, links/seed/error and failure paths assessed. No unresolved findings or implementation claimed. Autodoc preapproval applies. |
 | FDOCS-006 | Delivery strategy and scoped QC pending. |
 | FDOCS-007 | Layout assessment/combined QC pending. |
 | FDOCS-008 | Executable tasks and scoped QC pending; mapped autodoc stop. |
@@ -55,4 +55,4 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 
 ## Pending transitions
 
-FDOCS-004 accepted or assessed under the approved brief/autodoc mode. Publish/read back this owning completion, then close/read back issue 104 before dependent work. Next stage FDOCS-005. No product implementation, version change or release claimed.
+FDOCS-005 accepted or assessed under the approved brief/autodoc mode. Publish/read back this owning completion, then close/read back issue 105 before dependent work. Next stage FDOCS-006. No product implementation, version change or release claimed.

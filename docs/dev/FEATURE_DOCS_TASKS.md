@@ -17,7 +17,7 @@ Task definitions/checkoffs only. Control, decisions, applicability/reuse and evi
     - Depends on FDOCS-003 and required publication/issue closure.
     - Assess affected components and accepted architecture; prepare FEATURE_DECOMPOSITION only where required. Record sufficient reuse or review/acceptance of the necessary new proposal.
     - Commit the accepted source or assessed reusable inputs, required QC, FEATURE_PREPARATION evidence and initial checked task together; publish/read back before enabled issue closure or dependent work.
-- [ ] FDOCS-005 — Prepare and accept FEATURE-SPEC.
+- [x] FDOCS-005 — Prepare and accept FEATURE-SPEC.
     - Depends on FDOCS-004 and required publication/issue closure.
     - Define precise changed behavior and preserved guarantees against accepted FEATURE/design. Complete scoped SPEC QC/report and applicable human approval/preapproval.
     - Commit the accepted source or assessed reusable inputs, required QC, FEATURE_PREPARATION evidence and initial checked task together; publish/read back before enabled issue closure or dependent work.
