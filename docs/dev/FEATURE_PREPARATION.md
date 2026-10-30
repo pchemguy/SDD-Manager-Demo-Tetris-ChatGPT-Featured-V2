@@ -55,3 +55,9 @@ Next eligible: FDOCS-006. Publication and exact issue closure/readback precede a
 Accept bounded Electron delivery strategy and scoped QC. FEATURE-PLAN SHA256 e51b4db7328dae67cb564f6aaab50555816304784c640d3a4b91ca0a2bf395c6; Revision1 strategy Ready maps ED01–12 to offline host/package, complete dual-platform verification/docs and single final review. Strict prior phases preserved; native facilities accurately scoped and no artificial independent feature added. Autodoc preapproval covers strategy; physical allocation/combined QC remains next.
 
 Next eligible: FDOCS-007. Publication and exact issue closure/readback precede advancement.
+
+### FDOCS-007
+
+Accept Electron physical allocation and combined PLAN/layout QC. FEATURE-PLAN SHA256 9aabc4231e30a9f64460f3a8893eac17f88af724a01ffaa7366977868b94aea2; Revision2 Ready assigns C12/C13/source/test/tooling/docs/artifacts and fixed009 evidence homes without new shared state or browser package leakage. Existing main layout reused outside the scoped delta; no unresolved placement or strategy blocker. Autodoc preapproval covers reviewed allocation; task derivation next.
+
+Next eligible: FDOCS-008. Publication and exact issue closure/readback precede advancement.
