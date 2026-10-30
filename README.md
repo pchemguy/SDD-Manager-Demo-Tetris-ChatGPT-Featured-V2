@@ -12,7 +12,15 @@ Clearing four rows at once earns one penetrator bonus, capped at three. With the
 
 The Leaderboard panel shows the ten best completed-game scores for this page, highest first. Zero scores qualify; earlier completions rank first on ties. Start/Restart retains completed results but abandons an unfinished game. Reload or a new page clears history; leaderboard results are never saved in cookies, URLs or web storage. Saved settings keep their existing independent persistence.
 
-Save and Restore at the bottom of Settings manually transfer the current top ten results and all six selected settings in one JSON or SQLite file. Collapsing Settings hides both buttons. Restore validates the entire file before replacing history and selected settings, including explicit cookie/URL updates for all six values. IDs and UTC completion timestamps remain stable. Current gameplay is retained; restored history lasts for the page session. See the [portable file format](docs/FILE-FORMAT.md).
+Save and Restore at the bottom of Settings manually transfer the current top ten results and all six selected settings in one JSON or SQLite file. Hiding Settings hides both buttons and their format/status controls; showing it again preserves values and any operation state. Restore validates the entire file before replacing history and selected settings, including explicit cookie/URL updates for all six values. IDs and UTC completion timestamps remain stable. Current gameplay is retained; restored history lasts for the page session. See the [portable file format](docs/FILE-FORMAT.md).
+
+## Panels and game controls
+
+At1440 CSS pixels and wider, panels run left to right: Leaderboard, Game info and controls, centered Board, Settings, Controls/help. The Board stays centered when supporting panels are hidden. Below1440px, panels stack with the Board first and normal vertical scrolling; no horizontal scrolling is needed at320px.
+
+Three Show/Hide buttons in Game info independently control Leaderboard, Settings and Controls/help. Board and Game info remain shown. All supporting panels start shown; choices survive rendering, resizing, Restart and Restore within the view, and reset on a fresh mount/page. They are not game settings or saved-file fields.
+
+The first lifecycle button is Start game when ready and Restart thereafter. The second is Pause while playing and Start while paused; paused Start continues the same game, with a visible explanation and accessible resume name. Board shortcuts retain Enter to start a ready game, R to restart and P/Escape to pause/resume. Hiding Settings neither cancels nor starts a file operation; a valid pending operation may finish while hidden.
 
 ## Play
 
