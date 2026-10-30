@@ -7,13 +7,13 @@ async function geometry(page:Page){
   return {board:box('.board'),wrap:box('.board-wrap'),info:box('aside[aria-label="Game information"]'),leaderboard:box('.leaderboard-panel'),settings:box('.settings-disclosure'),help:box('.hint'),width:document.documentElement.clientWidth,overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth};
  });
 }
-test('@ui-basic wide panels keep the playfield centered in the viewport',async({page})=>{
+test('@ui-basic wide panels keep the playfield centered in the viewport',async({page},info)=>{
  for(const width of [1440,1600,1920]){
   await page.setViewportSize({width,height:1000});await page.goto('./');const g=await geometry(page);
   expect(Math.abs(g.board.x+g.board.width/2-g.width/2)).toBeLessThanOrEqual(1);
   expect(g.leaderboard.right).toBeLessThanOrEqual(g.info.x);expect(g.info.right).toBeLessThanOrEqual(g.board.x);
   expect(g.board.right).toBeLessThanOrEqual(g.settings.x);expect(g.settings.right).toBeLessThanOrEqual(g.help.x);
-  expect(g.board.width).toBe(280);expect(g.overflow).toBe(false);await expect(page.locator('.cell')).toHaveCount(200);
+  expect(g.board.width).toBe(280);expect(g.overflow).toBe(false);await expect(page.locator('.cell')).toHaveCount(200);if(width===1440)await page.screenshot({path:info.outputPath('panels-1440.png'),fullPage:true});
  }
 });
 test('@ui-basic narrow panels stack with a centered readable board',async({page})=>{
@@ -76,4 +76,21 @@ test('@ui-toggle hidden choices survive rendering Restart and responsive resize'
  await page.getByRole('button',{name:'Start game',exact:true}).click();await page.clock.runFor(16);await hidden();await page.keyboard.press('ArrowDown');await hidden();
  await page.setViewportSize({width:1440,height:1000});await hidden();await page.getByRole('button',{name:'Restart',exact:true}).click();await hidden();await page.locator('[data-pause]').click();await hidden();
  await page.reload();for(const name of ['Leaderboard','Settings','Controls/help'])await expect(page.getByRole('button',{name:'Hide '+name,exact:true})).toHaveAttribute('aria-expanded','true');await expect(page.locator('[data-option="ghost"]')).toHaveValue('never');
+});
+
+test('@ui-life exactly two lifecycle buttons follow all status actions',async({page})=>{
+ await page.clock.install({time:0});await page.clock.pauseAt(new Date(1000));await page.addInitScript(()=>{Math.random=()=>.999999});await page.goto('./');
+ expect(await page.locator('.actions button[data-action="start"],.actions button[data-action="restart"],.actions button[data-pause]').count()).toBe(2);
+ await expect(page.getByRole('button',{name:'Restart',exact:true})).toHaveCount(0);await expect(page.getByRole('button',{name:'Pause',exact:true})).toBeDisabled();
+ const toggleBottom=await page.getByRole('group',{name:'Panel visibility'}).evaluate(n=>n.getBoundingClientRect().bottom),startTop=await page.getByRole('button',{name:'Start game',exact:true}).evaluate(n=>n.getBoundingClientRect().top);expect(toggleBottom).toBeLessThanOrEqual(startTop);
+ await page.getByRole('button',{name:'Start game',exact:true}).click();await page.clock.runFor(16);await expect(page.getByRole('button',{name:'Restart',exact:true})).toBeEnabled();await expect(page.getByRole('button',{name:'Start game',exact:true})).toHaveCount(0);
+ await page.keyboard.press('ArrowDown');await page.getByRole('button',{name:'Pause',exact:true}).click();await expect(page.getByTestId('status')).toHaveText('Paused');await expect(page.locator('[data-pause]')).toHaveText('Start');await expect(page.getByText('Continue paused game.',{exact:true})).toBeVisible();
+ const before=await page.locator('.cell').evaluateAll(nodes=>nodes.map(n=>n.outerHTML)),next=await page.getByTestId('next-type').textContent();await page.locator('[data-option="hard-drop"]').uncheck();await page.getByRole('button',{name:'Start (resume game)',exact:true}).click();await expect(page.getByTestId('status')).toHaveText('Playing');expect(await page.locator('.cell').evaluateAll(nodes=>nodes.map(n=>n.outerHTML))).toEqual(before);await expect(page.getByTestId('next-type')).toHaveText(next!);await expect(page.getByTestId('score')).toHaveText('1');await expect(page.getByRole('button',{name:'Hard drop',exact:true})).toBeEnabled();
+ await page.getByRole('button',{name:'Restart',exact:true}).click();await expect(page.getByTestId('score')).toHaveText('0');await expect(page.getByRole('button',{name:'Hard drop',exact:true})).toBeDisabled();await expect(page.getByRole('img',{name:'Tetris playfield'})).toBeFocused();
+ const restarted=await page.locator('.cell').evaluateAll(nodes=>nodes.map(n=>n.outerHTML));await page.keyboard.press('Enter');expect(await page.locator('.cell').evaluateAll(nodes=>nodes.map(n=>n.outerHTML))).toEqual(restarted);
+});
+test('@ui-life game over Restart retains completed results and selected rules',async({page})=>{
+ await page.clock.install({time:0});await page.clock.pauseAt(new Date(1000));await page.addInitScript(()=>{Math.random=()=>.999999});await page.goto('./');await page.locator('[data-option="immediate"]').check();await page.getByRole('button',{name:'Start game',exact:true}).click();
+ await page.locator('.board').evaluate(board=>{for(let i=0;i<40&&document.querySelector('[data-testid="status"]')!.textContent!=='Game over';i++)board.dispatchEvent(new KeyboardEvent('keydown',{key:' ',bubbles:true}))});await expect(page.getByTestId('status')).toHaveText('Game over');const rows=await page.locator('[data-testid="leaderboard"] tbody').textContent();await expect(page.getByRole('button',{name:'Pause',exact:true})).toBeDisabled();await expect(page.getByRole('button',{name:'Restart',exact:true})).toBeEnabled();
+ await page.getByRole('button',{name:'Hide Leaderboard',exact:true}).click();await page.getByRole('button',{name:'Restart',exact:true}).click();await expect(page.getByTestId('status')).toHaveText('Playing');await expect(page.getByRole('button',{name:'Show Leaderboard',exact:true})).toBeVisible();expect(await page.locator('[data-testid="leaderboard"] tbody').textContent()).toBe(rows);await expect(page.locator('[data-option="immediate"]')).toBeChecked();
 });

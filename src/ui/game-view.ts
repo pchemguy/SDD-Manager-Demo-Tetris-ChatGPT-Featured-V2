@@ -26,7 +26,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
 
     <div class="panel-toggles" role="group" aria-label="Panel visibility"><button type="button" class="secondary" data-panel-toggle="leaderboard" aria-controls="${legendId}-leaderboard" aria-expanded="true">Hide Leaderboard</button><button type="button" class="secondary" data-panel-toggle="settings" aria-controls="${legendId}-settings" aria-expanded="true">Hide Settings</button><button type="button" class="secondary" data-panel-toggle="help" aria-controls="${legendId}-help" aria-expanded="true">Hide Controls/help</button></div>
-    <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button><button class="secondary" data-play data-action="hardDrop">Hard drop</button></div>
+    <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><small class="resume-hint" hidden>Continue paused game.</small><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button><button class="secondary" data-play data-action="hardDrop">Hard drop</button></div>
 
    </aside>
    </div>
@@ -183,9 +183,13 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   const pending=toRuleOptions(selected);
   const differs=Object.keys(pending).some(key=>pending[key as keyof typeof pending]!==snapshot.rules[key as keyof typeof pending]);
   root.querySelector('[data-testid="settings-summary"]')!.textContent=snapshot.status==='ready'?`Next game: ${describe(pending)}`:`Current game: ${describe(snapshot.rules)}${differs?` | Pending next game: ${describe(pending)}`:' | Next game: same rules'}`;
-  start.disabled = snapshot.status !== 'ready';
+  start.disabled = false;
+  start.textContent = snapshot.status === 'ready' ? 'Start game' : 'Restart';
+  start.dataset.action = snapshot.status === 'ready' ? 'start' : 'restart';
+  root.querySelector<HTMLElement>('.resume-hint')!.hidden = snapshot.status !== 'paused';
   pause.disabled = !['running','paused'].includes(snapshot.status);
-  pause.textContent = snapshot.status === 'paused' ? 'Resume' : 'Pause';
+  pause.textContent = snapshot.status === 'paused' ? 'Start' : 'Pause';
+  pause.setAttribute('aria-label',snapshot.status === 'paused' ? 'Start (resume game)' : 'Pause');
   pause.dataset.action = snapshot.status === 'paused' ? 'resume' : 'pause';
  }
  return {board,render,refreshConfiguration,destroy: () => { destroyed=true;fileSequence++;panelBindings.forEach(({button,toggle})=>button.removeEventListener('click',toggle));settings.removeEventListener('click',fileClick);fileInput.removeEventListener('change',fileChanged); settings.removeEventListener('change',changeSettings); latestSnapshot=undefined; actions.removeEventListener('click',handleClick); root.remove(); }};
