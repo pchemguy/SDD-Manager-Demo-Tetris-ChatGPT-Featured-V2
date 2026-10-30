@@ -75,3 +75,12 @@ Source identities (SHA-256):
 - docs/dev/FEATURE_ARCHITECTURE.md: 45fd94b02dc441cd3a69a46f329f625dfc43501d07641ed4a3401c66c780a5c0
 
 Publish/read back this coherent completion before closing/readback of issue #56 or dependent work.
+
+## FDOCS-004 completion
+
+C-07 owns detached validated selected values/rule projection; C-04 copies/enforces active rules with legacy compatibility; C-05 uses explicit context/refresh and active versus pending presentation; C-06 retains page context and platform resources. Reviewed state/error/lifecycle and verification seams; no DOM/application dependency inversion or persisted setting. Autodoc preapproval covers necessary decomposition.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE_DECOMPOSITION.md: 1620f8d75dcd50ef1b52ccbab591fb39c79bf4f46809dddaa70a225ca2b63dcb
+
+Publish/read back this coherent completion before closing/readback of issue #57 or dependent work.
