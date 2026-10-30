@@ -67,3 +67,9 @@ Human reply `k` accepts FEATURE at commit `9c64fac491567938d1efc20d45da33c119f69
 ## FDOCS-003 architecture assessment
 
 Added FEATURE_ARCHITECTURE: pure transfer model/C10 and browser transfer/C11, injected real metadata, schema-generated validation, isolated packaged SQLite worker, explicit tie-order storage and staged publication. Main architecture is reused elsewhere. Native six-cookie atomicity is unavailable; design requires mutation-free file rejection and checked compensating effects, with the irrecoverable external-interference boundary made explicit in SPEC rather than hidden. Candidate capability checked against official sql.js and Ajv documentation; no dependency installed or runtime feasibility claim made. Autodoc acceptance applies; scoped ownership/dependency review finds no design blocker. Source blob recorded below. Publish/read back and close/read back issue118 before decomposition.
+
+Architecture source blob `9c81831db4be0d00171d662e9e74a27b2e1a4f8b`, publication a71c5ba82886fc94fc9e62a573d6037629ed94ea; issue118 closure/readback verified.
+
+## FDOCS-004 decomposition assessment
+
+FEATURE_DECOMPOSITION assigns C09 result validation, C04 completion/staged history and prepublication collaboration, C07 prepared assignment, C08 checked effects/compensation, C10 schema-driven JSON and C11 browser/worker lifecycle. C05/C06 expose a native Settings disclosure because current UI has no hide control; initially open, session-only visibility. Required metadata injection updates all session consumers coherently; no fake epoch/default timestamp. Domain/presentation/host dependency review passes, with current game preserved and no production board setter. Autodoc acceptance applies. Publish/read back and close/read back119 before SPEC.
