@@ -1,6 +1,6 @@
 # Campaign009 — Windows Electron final implementation
 
-Implementation/review is complete and Ready for explicit integration, pending075publication/hosted closure and the actual provider effects below. [Phase review](PHASE-REPORT.md), [10.1](10.1.md) and [10.2](10.2.md) retain detailed conditions, resolved observations, exact sources/artifacts and limits. The full user-approved stopping boundary is the completed dual-platform1.9.0release with actual sourceCI/provider/publicdownload readback; this preintegration checkpoint does not claim that future outcome.
+Implementation/review/integration/release is complete; actual verified outcomes are recorded below. The following initial075checkpoint is historical. [Phase review](PHASE-REPORT.md), [10.1](10.1.md) and [10.2](10.2.md) retain detailed conditions, resolved observations, exact sources/artifacts and limits. The full user-approved stopping boundary is the completed dual-platform1.9.0release with actual sourceCI/provider/publicdownload readback; this preintegration checkpoint does not claim that future outcome.
 
 C12 is an isolated offline native host around the unchanged shared renderer. C13 packages every pinned official45.2.0vendor runtime resource plus current host/metadata/quickstart and exact same browser distribution, with independent trusted-byte verification/reproducibility. Browser delivery remains usable. Manual JSON/SQLite version1files, all six setting domains, stable result metadata, complete atomic validation and session-only history remain unchanged. Unsigned portable Windows10/11x64target; no player Node/developmentserver/install/bootstrap requirement.
 
@@ -8,6 +8,30 @@ Clean457core/43host/5integrity/19browser-package/21desktop-package/2environment 
 
 Manual Windows10/11installation/SmartScreen/physicaldevice/visual OS-dialog interaction, abrupt-failure durability, publicnetworkTLS and headedbrowserfocus remain unverified or outside the accepted normal-close/build-provenance scope, as detailed in PHASE-REPORT. Local Linux8case probe has explicit test-only singleton/root overrides and proves no nativeWindows/fullsandbox claim.
 
-## Pending integration and release observations
+## Ordered effects at initial075snapshot (historical)
 
 Publish/read back075 and close/read back165/milestone41; explicit two-parent merge into refreshed actual recorded main(a4e9f48baseline), verify/publish merged state. Refresh complete previous-v1.8history notes/highlights; eligible default1.9release commit/rawbody/annotatedtag/source agreement, four stable ZIP/checksum assets/latest selection/anonymoustag+latestbytes and applicable actual exact-source main/tagCI must be observed. Record those actual results in this owning report/PHASE-REPORT/HANDOFF through a published075parent-only followup; preserve all older tags/releases and never move1.9tag to that later outcome commit.
+
+## Verified integration and release outcome
+
+Initial075closure `ac1a05dcccb4a77c4097b5ca36a5626bba1b29ca` published/read back;165/milestone41closed/read back, with159–164/milestones39/40alreadyclosed. Explicit integration `e84946961362dcfeaca0db92f3763bce0bd933a0` has actual parentsa4e9f48faf45e8fe7c6b874a222b82026db89b23 andac1a05dcccb4a77c4097b5ca36a5626bba1b29ca, no conflicts, required parent-return HANDOFF only difference from accepted source. Merged type/schema/boundary/457core/43host+5integrity/19browser-package/21desktop-package/cleanbuild and actualbotharchive/input/frozen/ownership checks pass; main publication read back.
+
+Eligible default-branch release source `2ecdd158ba32d583cdabdca0b9679702b0a47eb4` is an empty release marker on that integration, with exact raw notes body and first-parent placement. Annotated v1.9.0 object `c3cab27b95fe5a2545cb1aba0f37ce1c4f8cd83d` targets that source; branch/tag publication verified. Complete previous-v1.8.0(d865ce5689589a2c434cf3f406d2e6f9db6a9667) range covers27identities through the marker, with primary cumulative integration summary and explicit preparation/review/bookkeeping disposition; no missing or duplicated product highlight. Exact retained notes/rawGitcommit/tag/provider body SHA256 `c7e05082fc41fb5f45f9add6cac66fc843678eb097a42d5549f97dbf1276e9b9` agrees. GitHub's JSON commit-message projection omits one finalLF; diagnosed against the raw content-addressed Git object and matching remote SHA/tree, without altering/normalizing accepted notes or tag bytes.
+
+[GitHub release](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/releases/tag/v1.9.0) is published stable/latest, release ID429579769, with exactly the four expected stable assets below. Actual anonymous tag-specific and latest URLs both returned bytes identical to local inputs for every asset; filename-specific checksum contents are exact. Complete RELEASE-NOTES retained; only the owned ignored highlights checkpoint removed after verified public consumption.
+
+| Asset | Bytes | SHA256 |
+| --- | ---: | --- |
+| [classic-tetris-browser.zip](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/releases/download/v1.9.0/classic-tetris-browser.zip) |397844|58a0c3e7d77f581df2136269e178d43f3135571aafeacfc697b82781d74c8005|
+| [classic-tetris-browser.zip.sha256](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/releases/download/v1.9.0/classic-tetris-browser.zip.sha256) |93|766fbaa36053daea3d1070adb203a74a1d2fb7081207ed4bb0e7fd307a9e79b0|
+| [classic-tetris-windows-x64.zip](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/releases/download/v1.9.0/classic-tetris-windows-x64.zip) |157949386|d605ba0061c33646b5288b306a3a94e3aee596213eaee4c7b6a498294502ac04|
+| [classic-tetris-windows-x64.zip.sha256](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/releases/download/v1.9.0/classic-tetris-windows-x64.zip.sha256) |97|4c8942f82fb590bec7a0561ee6b1672e098d070e59c87fbf9e21734253083a78|
+
+### Actual exact-release-source CI
+
+- [v1.9.0 run41143734061](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/actions/runs/41143734061): source `2ecdd158ba32d583cdabdca0b9679702b0a47eb4`, actual completed/success; both verify and windows-desktop jobs completed/success.
+- [main run41143675160](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/actions/runs/41143675160): source `2ecdd158ba32d583cdabdca0b9679702b0a47eb4`, actual completed/success; both verify and windows-desktop jobs completed/success.
+
+Decoded actual job logs for all four jobs confirm457core,19browser-package,2environment,216source/178built/178actualextracted browser cases in each verify run, and43host/5integrity/21desktop-package/10actualpackaged Windows cases in each native run, with exact final archive hashes. Final provider metadata readback also confirms all9older tag identities unchanged and the exact four assets/body/latest/source association retained. No retained required failure/skip/flakiness. These are observed provider outcomes, not workflow-file or dispatch claims.
+
+All required implementation, reviews, current documents, task/milestone publication/closure, explicit integration, release source/tag/body/assets/latest/publicbytes and applicable exact-source main/tagCI outcomes are verified. Unresolved/deferred TODO: None. Native host is Windows Server2025; manualWindows10/11/visualOSdialog/physicaldevice/headedbrowser/publicTLS limits remain explicit. This owning075parent-only outcome creates no second task closure, changes no product/package input and never moves the release tag. Campaign009 closes/freezes after this outcome publication; no next campaign is selected.
