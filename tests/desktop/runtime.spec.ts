@@ -81,7 +81,10 @@ test('hidden Settings retains an actual pending SQLite Restore and its result',a
 
 test('@native-focus native external focus pauses and returning focus does not resume',async({},info)=>usingDesktop(info,async d=>{
  await d.page.getByRole('button',{name:'Start game',exact:true}).click();await expect(d.page.getByTestId('status')).toHaveText('Playing');
- await d.app.evaluate(({BrowserWindow}:any)=>{const other=new BrowserWindow({width:320,height:300,webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true}});(globalThis as any).__tetrisFocusWindow=other;other.show();other.focus()});
+ await d.app.evaluate(({BrowserWindow}:any)=>{const main=BrowserWindow.getAllWindows()[0];(globalThis as any).__tetrisFocusEvents=[];for(const event of ['focus','blur'])main.on(event,()=>(globalThis as any).__tetrisFocusEvents.push('main-'+event));main.show();main.focus()});
+ console.log('NATIVE FOCUS BEFORE',await d.app.evaluate(async({BrowserWindow}:any)=>{const w=BrowserWindow.getAllWindows()[0];return{native:w.isFocused(),web:w.webContents.isFocused(),dom:await w.webContents.executeJavaScript('document.hasFocus()'),events:(globalThis as any).__tetrisFocusEvents}}));
+ await d.app.evaluate(async({BrowserWindow}:any)=>{const other=new BrowserWindow({width:320,height:300,webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true}});(globalThis as any).__tetrisFocusWindow=other;await other.loadURL('about:blank');other.show();other.focus()});
+ console.log('NATIVE FOCUS AFTER',await d.app.evaluate(async({BrowserWindow}:any)=>{const w=BrowserWindow.getAllWindows()[0];return{main:w.isFocused(),other:(globalThis as any).__tetrisFocusWindow.isFocused(),web:w.webContents.isFocused(),dom:await w.webContents.executeJavaScript('document.hasFocus()'),events:(globalThis as any).__tetrisFocusEvents}}));
  try{await expect(d.page.getByTestId('status')).toHaveText('Paused')}finally{await d.app.evaluate(({BrowserWindow}:any)=>{(globalThis as any).__tetrisFocusWindow?.close();BrowserWindow.getAllWindows()[0]?.focus()})}
  await expect(d.page.getByTestId('status')).toHaveText('Paused');await d.page.getByRole('button',{name:'Start (resume game)',exact:true}).click();await expect(d.page.getByTestId('status')).toHaveText('Playing');
 }));
