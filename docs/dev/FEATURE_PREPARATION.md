@@ -68,3 +68,5 @@ Sources: `docs/dev/FEATURE_DECOMPOSITION.md` blob `a0e2e6122ca971a6960acbd57fa7a
 Autodoc acceptance applies. P01–P08 define exact guarded transit/deepest landing and compatible APIs, B/bank/Hold/lifetime, both selected lock/drop policies, white-mask lock/clear/award atomicity, native/accessibility and actual earned-bonus static delivery. Scoped SPEC/design QC Ready with exact sources and objective acceptance; no unresolved material choice. No implementation/tests executed.
 
 Sources: `docs/dev/FEATURE-SPEC.md` blob `09cfe0fd7052928775d7581a03e0c2762e85a959`, `docs/dev/FEATURE-SPEC-REVIEW-REPORT.md` blob `74116f19b471e2ab7e80ebaa8668ed3dc44a6dc1`.
+
+FDOCS-005 precision recheck: PEN-S01 resolved before planning/issue closure. P-03 separates rejected lateral/rotation invariance from blocked-down locking and preserves specified upward kicks while excluding upward rescue. FEATURE-SPEC blob `8febc774b234aae010d6275f927180d4151b0a4d`; adjacent QC Revision2 Ready, accepted scope unchanged. Publish/read back correction then close issue73.

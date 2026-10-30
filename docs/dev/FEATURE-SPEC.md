@@ -22,7 +22,7 @@ Acceptance: actual earned bonus followed by first activation, repeated/ineligibl
 
 ## P-03 traversal, rotation and grounding
 
-An active penetrator's left/right/soft-drop/gravity candidate must satisfy canTraverse. Such a candidate may overlap settled cells; the Board/mask never change during passage. A rejected candidate retains placement, gravity remainder and supported lock deadline. Downward movement is one origin row per attempt, with ordinary soft-drop1/gravity0 points. No upward movement or out-of-board occupied cell is allowed.
+An active penetrator's left/right/soft-drop/gravity candidate must satisfy canTraverse. Such a candidate may overlap settled cells; the Board/mask never change during passage. A rejected lateral/rotation candidate retains placement, gravity remainder and supported lock deadline. Blocked downward attempts follow the active locking policy in P-04. Downward movement is one origin row per attempt, with ordinary soft-drop1/gravity0 points. There is no upward translation command or automatic upward rescue. The existing rotation kicks may include their specified upward offsets; every candidate still obeys bounds and reachable-landing checks. No out-of-board occupied cell is allowed.
 
 tryRotate(board,piece,direction,acceptsCandidate?) retains the default three-argument behavior and exact ordered F-01 kick offsets. Optional pure predicate signature is (board:Board,candidate:Piece)=>boolean, default canPlace. Penetrator rotation supplies canTraverse and chooses the first accepted offset relative to the original origin. O remains an unchanged copy/no-op; invalid direction retains RangeError-before-effects. Do not duplicate tables or use a later candidate when an earlier one is accepted.
 

@@ -14,3 +14,7 @@ Review/recheck found no confirmed defect, unsupported choice or conformance bloc
 | FEATURE_ARCHITECTURE.md | `9a2d7e3f82598a13036cb9a2b1645b5cd2177156` |
 | FEATURE_DECOMPOSITION.md | `a0e2e6122ca971a6960acbd57fa7a1fd3f9e5c96` |
 | FEATURE-SPEC.md | `09cfe0fd7052928775d7581a03e0c2762e85a959` |
+
+## Revision 2 — Rejected downward attempts and rotation offsets
+
+PEN-S01 (resolved), P-03 first paragraph: unqualified rejected-candidate/no-upward-movement wording could be read to forbid the accepted failed-downward lock or normal upward SRS kicks. Clarified rejection invariance for lateral/rotation, routed blocked down explicitly to P-04, and distinguished absent upward translation/rescue from retained kick offsets. This is a precision repair within the accepted brief, not a scope change. Rechecked P-03/P-04 against both policies and F-01 geometry; no contradiction remains. Current gate Ready; exact revised FEATURE-SPEC blob `8febc774b234aae010d6275f927180d4151b0a4d`. No dependent PLAN authored before this recheck.
