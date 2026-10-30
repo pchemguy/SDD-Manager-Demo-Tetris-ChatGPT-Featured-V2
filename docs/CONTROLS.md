@@ -88,3 +88,9 @@ Valid explicit URL selections, including defaults, save to their own cookies. An
 For example, append ?ghostVisibility=never&holdEnabled=false to the deployed game URL. Each cookie is named tetris_config_ followed by its parameter name. Empty/invalid values fall back per setting without overwriting that cookie. The first occurrence of a repeated recognized query parameter wins; if invalid, use cookie/default fallback. Returning a setting to its default still saves that explicit value.
 
 Edits preserve unrelated query values and the URL fragment while replacing the current history entry. Other already-open pages do not change automatically. On reload, a still-explicit URL value wins over a newer cookie; omit that parameter to use the cookie. Cookies are host-only, SameSite=Lax and Secure on HTTPS. Browser restrictions can prevent saving; no failure dialog or automatic retry is added. No board, score, piece sequence, timers, Hold slot or penetrator inventory is persisted.
+
+## Session leaderboard
+
+Leaderboard shows the ten best final Game Over scores for the current page, highest first. Zero scores qualify; earlier completions rank first when scores tie. Each completed game appears once, including a blocked Hold spawn. Restarting an unfinished game abandons it and submits no result.
+
+Start/Restart preserves completed results while resetting the new game's score and gameplay state. Reloading or opening a fresh page clears the leaderboard. Scores are not saved in cookies, URL parameters or browser storage; remembered settings continue to restore independently. The panel needs no extra button or shortcut and does not move keyboard focus.

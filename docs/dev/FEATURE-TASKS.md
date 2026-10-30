@@ -5,7 +5,7 @@ Implement the scoped [Phase7 plan](FEATURE-PLAN.md) and [L-01–L-08](FEATURE-SP
 ## Phase 7 — Session leaderboard
 
 - [ ] Phase 7 — Session leaderboard
-    - [ ] Milestone 7.1 — Completed scores and visible leaderboard
+    - [x] Milestone 7.1 — Completed scores and visible leaderboard
         - [x] T-047 — Implement pure top-ten result ranking
             Scope: C-09 src/application/leaderboard.ts and tests/unit/leaderboard.test.ts; L-02/L-03. Define score-result types and pure validated stable insertion/capping without mutable authority or platform dependencies.
             Depends on: completed Phase6 baseline and accepted/QC preparation integrated/published; no new task prerequisite.
@@ -18,12 +18,14 @@ Implement the scoped [Phase7 plan](FEATURE-PLAN.md) and [L-01–L-08](FEATURE-SP
             Evidence: RED/GREEN ordinary/Hold top-out and zero/final score, repeated post-game operations, Restart abandonment/retention, listener throw/reentry, draw/new-game failure recovery, both policies and hard-drop override, snapshot mutation, RNG/clock and prior unit regression. No UI-side submission.
             Completion evidence: RED:12 new real-controller assertions failed for absent history while325 existing cases passed. GREEN:337 unit/type/boundary checks pass, zero skips. Running-to-Game Over final candidate submission commits atomically before listeners, covers ordinary and both Hold endings, zero/cap/repeated post-game calls, detached entries, successful/failed reset, refill rollback, throwing/reentrant observers, both general/drop policies and exact six-draw bag-call accounting. Restart preserves only controller history with fresh gameplay fields. No UI/browser behavior claimed.
 
-        - [ ] T-049 — Integrate the visible leaderboard and controller lifetime
+        - [x] T-049 — Integrate the visible leaderboard and controller lifetime
             Scope: C-05 view/styles, C-06 main optional fourth Session argument, actual tests/browser/leaderboard.spec.ts, source-only leaderboard-view.spec.ts/fixtures/leaderboard.html, affected snapshot fixtures and player help; L-01–L-07. Render semantic rank/score rows and empty state from Snapshot; preserve existing mount calls/focus/cleanup, support sequential explicit-controller remount and independent default mounts.
             Depends on: T-048.
             Evidence: real source Chromium/Firefox Game Over panel and Restart retention; empty/one/ten rows and stale-row clearing; retained/fresh remount; screenshots320/1000 and semantic/focus inspection; existing source gameplay/settings/lifecycle regression, unit/type/boundary/build. Keep real completion tests on all targets and mark only internal fixture suites source-only. Source fixtures are not production setters.
             Milestone exit: whole7.1 code review, focused complete-capability tests, blocker repair, demonstration evidence, TODO status and report/HANDOFF co-close in this task. No separate review-only task for this three-task milestone.
             Report: docs/dev/features/006_ea39055-leaderboard/reports/phases/7/7.1.md.
+            Completion evidence: Actual Chromium RED: Leaderboard table absent before view integration. GREEN337 unit/type/boundaries/build,2 environment,10 focused and full120 source Chromium/Firefox cases (240.8s) pass with zero unexpected/skips/flaky. Whole7.1 independent code review Ready, no finding;320/1000 screenshots inspected. Semantic empty/zero/ten/clear rows, both general drop policies, completion/focus/Restart and retained/fresh-controller teardown/remount verified. Player help, report/HANDOFF and initial milestone checkoff included. TODO None; publish then close112/27 before050. Built/extracted acceptance follows7.2; native HTTPS/headed limits retained.
+
     - [ ] Milestone 7.2 — Session lifetime and verified distribution
         - [ ] T-050 — Verify leaderboard isolation and retained gameplay
             Scope: leaderboard browser/session tests, source remount fixture, existing configuration/persistence/penetrator/lifecycle suites, test-only legal gameplay trace if needed and runner exclusions/budgets only where justified; L-01–L-07.

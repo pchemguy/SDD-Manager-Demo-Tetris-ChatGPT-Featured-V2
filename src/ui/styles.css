@@ -70,3 +70,5 @@ footer {margin-top:22px;text-align:center;font-size:9px;letter-spacing:2px;color
 .penetrator-info{font-size:12px;color:#b8c7dd;min-width:0}.penetrator-info strong{display:block;min-height:24px;font-size:20px;letter-spacing:3px}@media(max-width:540px){.penetrator-info{grid-column:1/-1}}
 
 .ability-status{font-size:11px;line-height:1.5;margin:4px 0 0;color:#c1cee3;overflow-wrap:anywhere}
+
+.leaderboard-panel{min-width:0;padding:12px 14px;border:1px solid #35425b;border-radius:10px;background:#151e2e}.leaderboard-panel h2{font-size:14px;color:#b7f66b;margin:0 0 10px}.leaderboard-panel p{font-size:12px;line-height:1.5;color:#b8c7dd;margin:0 0 8px}.leaderboard-panel table{border-collapse:collapse;width:100%;font-size:12px;font-variant-numeric:tabular-nums}.leaderboard-panel th,.leaderboard-panel td{padding:4px 0;text-align:right}.leaderboard-panel th:first-child,.leaderboard-panel td:first-child{text-align:left}.leaderboard-panel th{color:#b8c7dd;font-weight:500;border-bottom:1px solid #35425b}.leaderboard-panel td{color:#e8edfa}@media(max-width:540px){.leaderboard-panel{grid-column:1/-1}}

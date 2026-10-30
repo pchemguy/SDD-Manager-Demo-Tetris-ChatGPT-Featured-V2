@@ -1,14 +1,14 @@
 /** Browser-only input, frame and focus lifecycle. Reusable logic/view have no host globals. */
 import { createSession } from '../../application/session.js';
-import type { Action } from '../../application/session.js';
+import type { Action, Session } from '../../application/session.js';
 import {createConfiguration,toRuleOptions,type ConfigurationController} from '../../application/configuration.js';
 import {createBrowserConfiguration} from './configuration-persistence.js';
 import { createGameView } from '../../ui/game-view.js';
 import '../../ui/styles.css';
-/** Reuse an explicit context across remounts; omission creates independent default selections. */
-export function mountGame(mount:HTMLElement,random:()=>number=Math.random,configuration:ConfigurationController=createConfiguration()):()=>void {
+/** Reuse explicit configuration/controller across sequential remounts; defaults are independent.
+ * An injected controller owns its RNG/reporter; the random argument initializes only default controllers. */
+export function mountGame(mount:HTMLElement,random:()=>number=Math.random,configuration:ConfigurationController=createConfiguration(),session:Session=createSession(random,e=>console.error('Session listener failed',e))):()=>void {
  const doc=mount.ownerDocument,win=doc.defaultView!;
- const session=createSession(random,e=>console.error('Session listener failed',e));
  let last:number|null=null,frame=0,disposed=false,pauseTimer:number|null=null;
  const act=(action:Action)=>{const before=session.getSnapshot().status;const after=session.dispatch(action,action==='start'||action==='restart'?toRuleOptions(configuration.getSnapshot()):undefined);if(action==='restart'||after.status!==before)last=null};
  const view=createGameView(mount,act,undefined,configuration);

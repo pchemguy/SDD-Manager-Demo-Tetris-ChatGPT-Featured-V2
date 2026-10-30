@@ -21,6 +21,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <div class="stat"><span>LINES</span><strong data-testid="lines">0</strong></div>
     <div class="penetrator-info"><span>Penetrator bonuses</span><strong data-testid="penetrator-bonuses" aria-label="Penetrator bonuses: 0"></strong><p class="ability-status" role="status" aria-live="polite" id="${abilityId}" data-testid="penetrator-mode"></p></div>
     <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
+    <section class="leaderboard-panel" aria-label="Leaderboard"><h2>Leaderboard</h2><p data-testid="leaderboard-empty">No completed games yet.</p><table data-testid="leaderboard" aria-label="Leaderboard"><thead><tr><th scope="col">Rank</th><th scope="col">Score</th></tr></thead><tbody></tbody></table></section>
     <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button><button class="secondary" data-play data-action="hardDrop">Hard drop</button></div>
     <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>B</dt><dd>Penetrator (1 bonus)</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
@@ -96,6 +97,14 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
  function render(snapshot: Snapshot) {
   latestSnapshot = snapshot;
   renderControls();
+  const historyBody=root.querySelector<HTMLTableSectionElement>('[data-testid="leaderboard"] tbody')!;
+  const rows=snapshot.leaderboard.map((result,index)=>{
+   const row=doc.createElement('tr');
+   for(const value of [index+1,result.score]){const cell=doc.createElement('td');cell.textContent=String(value);row.append(cell)}
+   return row;
+  });
+  historyBody.replaceChildren(...rows);
+  root.querySelector<HTMLElement>('[data-testid="leaderboard-empty"]')!.hidden=rows.length!==0;
   const selected=configuration.getSnapshot();
   const mode=selected.ghostVisibility;
   root.dataset.status = snapshot.status;
