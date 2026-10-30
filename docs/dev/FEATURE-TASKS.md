@@ -10,10 +10,12 @@ Require separately authorized whole-package QC, verified published preparation i
 
 - [ ] Phase 5 — Penetrator mode
     - [ ] Milestone 5.1 — Playable earned penetrator loop
-        - [ ] T-033 — Implement guarded penetrating landing and kicks
+        - [x] T-033 — Implement guarded penetrating landing and kicks
             Scope: new core/penetrator.ts, optional predicate in kicks.ts, focused literal core tests and module contracts. Depends on: T-032 plus accepted/QC/published preparation and Phase5 activation.
             Acceptance: P-01/P-03 deepest valid disconnected landing search, in-bounds occupied cells/padding, overlapping candidate reachability and rejected sealed candidates; immutable detached outputs. Preserve ordinary landing/canPlace, default three-argument kick tables/order/O/direction errors; supplied canTraverse uses the same ordered offsets without duplicated tables.
             Verification: meaningful RED pocket/bounds/kick assertions, GREEN complete unit/type/boundary/build regression with independently calculated coordinates for all shapes/orientations and both kick families/directions. No session/B/UI change is claimed by this enabling task.
+            Completion evidence: RED missing landing/ignored predicate assertions observed; GREEN228 units including independent7x4 floor/pocket/bounds and kick predicate fixtures, typecheck/boundaries/build pass. Ordinary API regression unchanged. Phase5 entry and verified hosted associations retained. npm emits inherited http-proxy configuration warning only.
+
         - [ ] T-034 — Add coupled white-cell locking and earned inventory
             Scope: core/types.ts/board.ts, application/session.ts snapshot/reset/ordinary lock award/copy paths, appearance/inventory tests and deterministic legal gameplay trace fixture. Depends on: T-033.
             Acceptance: P-01/P-02/P-05/P-07 Appearance empty factory and valid lockWithAppearance with one compaction authority; exact legacy lock result retained. Session adds detached false-mode/0–3 bank/mask fields, resets and ordinary four-line awards/cap; every lock uses compatible appearance compaction. New fields roll back on refill and preserve observer/reentry guarantees. Activation/traversal mode remains T-035.
