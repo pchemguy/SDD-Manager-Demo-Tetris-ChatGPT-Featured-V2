@@ -63,3 +63,7 @@ FEATURE proposal blob: `2cef5ec4a9387ef6cb5c3d1e1d6e64be5dc18523`. Publish/read 
 ## Brief acceptance
 
 Human reply `k` accepts FEATURE at commit `9c64fac491567938d1efc20d45da33c119f69664`, blob `2cef5ec4a9387ef6cb5c3d1e1d6e64be5dc18523`, including selected-setting capture, active-game retention, saved tie order, strict complete-file validation and manual session lifetime. FDOCS-002 closes with this record and initial checkoff; publish/read back, then close/read back issue117. Earlier proposal-pending entries describe their opening checkpoint only. Next eligible stage FDOCS-003; necessary later document checkpoints are preapproved by retained autodoc/onepass. No implementation authorized.
+
+## FDOCS-003 architecture assessment
+
+Added FEATURE_ARCHITECTURE: pure transfer model/C10 and browser transfer/C11, injected real metadata, schema-generated validation, isolated packaged SQLite worker, explicit tie-order storage and staged publication. Main architecture is reused elsewhere. Native six-cookie atomicity is unavailable; design requires mutation-free file rejection and checked compensating effects, with the irrecoverable external-interference boundary made explicit in SPEC rather than hidden. Candidate capability checked against official sql.js and Ajv documentation; no dependency installed or runtime feasibility claim made. Autodoc acceptance applies; scoped ownership/dependency review finds no design blocker. Source blob recorded below. Publish/read back and close/read back issue118 before decomposition.
