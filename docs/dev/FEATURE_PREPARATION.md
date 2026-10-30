@@ -66,3 +66,12 @@ Source identities (SHA-256):
 - docs/dev/FEATURE.md: b9937e48c83785814defb76a14684a7dc4270b971d09d13c830409c0f6345d14
 
 Publish/read back this coherent completion before closing/readback of issue #55 or dependent work.
+
+## FDOCS-003 completion
+
+Necessary architecture delta separates DOM-free selected page configuration from copied active session rules and controlled shared presentation. No storage/global singleton or duplicated gameplay; explicit retained context supports remount while fresh page defaults. Preserve legacy model entry points and host resource ownership. Reviewed dependency/state/lifetime boundaries under approved autodoc scope.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE_ARCHITECTURE.md: 45fd94b02dc441cd3a69a46f329f625dfc43501d07641ed4a3401c66c780a5c0
+
+Publish/read back this coherent completion before closing/readback of issue #56 or dependent work.
