@@ -19,6 +19,7 @@
     "src/application",
     "tests/unit",
     "src/ui/ghost-visibility.ts",
-    "src/platform/browser/configuration-codec.ts"
+    "src/platform/browser/configuration-codec.ts",
+    "src/platform/browser/configuration-persistence.ts"
   ]
 }
