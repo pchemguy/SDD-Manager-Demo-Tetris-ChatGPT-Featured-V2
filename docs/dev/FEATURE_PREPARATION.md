@@ -62,3 +62,9 @@ Sources: `docs/dev/FEATURE_ARCHITECTURE.md` blob `9a2d7e3f82598a13036cb9a2b1645b
 Autodoc preapproval applies. Scoped decomposition assigns C02 pure reachability/landing, default-compatible predicate kicks and shared appearance compaction; C04 mode/bank/mask plus atomic award/spawn; C05 snapshot-only white/bonus rendering; C06 nonrepeating B. Review preserves public legacy shapes/defaults, active-rule/configuration separation and feasible deterministic/actual-browser seams. No unresolved boundary or product behavior.
 
 Sources: `docs/dev/FEATURE_DECOMPOSITION.md` blob `a0e2e6122ca971a6960acbd57fa7a1fd3f9e5c96`.
+
+### FDOCS-005 — Specify penetrating placement rewards timing and presentation
+
+Autodoc acceptance applies. P01–P08 define exact guarded transit/deepest landing and compatible APIs, B/bank/Hold/lifetime, both selected lock/drop policies, white-mask lock/clear/award atomicity, native/accessibility and actual earned-bonus static delivery. Scoped SPEC/design QC Ready with exact sources and objective acceptance; no unresolved material choice. No implementation/tests executed.
+
+Sources: `docs/dev/FEATURE-SPEC.md` blob `09cfe0fd7052928775d7581a03e0c2762e85a959`, `docs/dev/FEATURE-SPEC-REVIEW-REPORT.md` blob `74116f19b471e2ab7e80ebaa8668ed3dc44a6dc1`.
