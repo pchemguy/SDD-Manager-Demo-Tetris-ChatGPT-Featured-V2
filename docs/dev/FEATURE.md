@@ -1,0 +1,11 @@
+# Windows Electron application
+
+Provide a Windows desktop delivery of the existing Tetris game alongside its static browser delivery. A player extracts a portable Windows10/11x64 ZIP and launches Classic Tetris without installing Node.js or running a development server. The package contains Electron and every required game/runtime asset and operates offline.
+
+Use the same application logic, UI and built renderer in both platforms. Preserve all gameplay, centered panel/toggle/lifecycle behavior, six selected settings, session leaderboard and manual version1 JSON/SQLite Save/Restore guarantees. Adapt desktop content loading, window/focus lifecycle and native file interaction within a thin host boundary. Desktop settings are remembered in its own application profile, separate from browser settings; completed results remain session-only unless explicitly saved/restored. Every cold launch starts a fresh game session; a second launch with the same active profile focuses its existing window.
+
+Ship a reproducible inspected Windows x64 ZIP/checksum alongside the existing browser ZIP/checksum in applicable GitHub releases, with pinned vendor runtime provenance, required licenses/notices and accurate installation/check guidance. Keep browser HTTP/HTTPS deployment and its existing release asset names supported. The desktop is an unsigned portable development distribution; signing credentials, installers, app stores, automatic updates, macOS/Linux delivery, arbitrary URL loading and additional game features are outside scope.
+
+Renderer content has no Node.js access; desktop host capabilities stay outside shared core/application/UI. Bundle local worker/WASM/schema assets, contain content/file access and reject unexpected navigation or remote content. Verify generated packages and supported host behavior using available facilities, reporting unavailable native execution separately without claiming it passed.
+
+The portable ZIP is the chosen delivery approach: it satisfies extract-and-launch with few additional tools and explicit runtime provenance. An installer/Forge maker adds deployment mechanics not requested; a local development server adds an unnecessary process/port requirement. Exact platform contracts belong to FEATURE-SPEC and host responsibilities to FEATURE_ARCHITECTURE/FEATURE_DECOMPOSITION.
