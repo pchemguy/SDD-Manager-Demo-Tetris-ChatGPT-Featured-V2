@@ -26,3 +26,7 @@ SQLite explicit insertion order and ORDER BY rowid preserve ties without changin
 ## Findings and limits
 
 No substantive blocking finding. Manual content/conformance review, independent read-only package review and scoped diff/hash/identity checks only. No product tests, dependency installation, format implementation or whole-project audit performed for preparation QC. Required implementation tasks remain unchecked.
+
+## Revision 1 — Independent review and P-R01 closure
+
+file_package_qc final assessment Ready at0f5690d, with one nonblocking reference-precision finding P-R01. Its concrete correction is applied: native cookie semantics link U03 and URL/history U04, checked against actual main child headings. Revised SPEC SHA-256 `10ec54443ee1482bfc626a6718b626839711ee574737a82fd38e0527da49a645`; scoped SPEC/task reports append recheck evidence. Whole-set scope/behavior/tasks remain equivalent; package gate Ready, no unresolved finding.

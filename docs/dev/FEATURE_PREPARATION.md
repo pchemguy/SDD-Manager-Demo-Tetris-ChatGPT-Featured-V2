@@ -95,3 +95,5 @@ FDOCS-001–008 complete under accepted brief/autodoc scope, contingent only on 
 ## FDOCS-009 whole-package QC and execution grant
 
 Human request `Do QC and full implement` authorizes whole-package QC, full T053–061, repairs/reviews/reports, incorporation/unique task ownership, integration and app1.7.0 release with verified artifacts/provider outcomes. Prior autodoc stop is advanced prospectively. Whole-package review at0f5690d and independent file_package_qc assessment Ready, no substantive blocker; FEATURE-QC-REPORT owns exact sources/limits. Co-close009 with report/control/HANDOFF; publish/read back, close/read back124, explicitly merge/verify/publish preparation into main, then close milestone30. Only after verified phase tracking create/publish feature implementation branch and start053. Native/irreversible-browser limits retained.
+
+Independent final review Ready with P-R01 reference-precision correction; current cookie/URL contract pointers corrected and scoped/package reports rechecked. No scope/behavior/task changes or pending finding. Publish/read back correction before issue124 closure and preparation integration.

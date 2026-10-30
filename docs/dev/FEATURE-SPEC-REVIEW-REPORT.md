@@ -22,3 +22,7 @@ Reviewer: coordinating agent,2026-10-30. Method: manual seed/design/interface co
 | Ownership/compatibility | C04/C07 prepared memory and C08 effects precede coherent notification; C10 pure domains, C11 host effects; all metadata-source consumers update together. Main documents remain unchanged until accepted incorporation. |
 
 No confirmed conformance finding remains. The external browser rollback limit is explicitly bounded rather than represented as a native transaction; controlled failure acceptance still requires verified restoration. SQLite byte/runtime/schema behavior, generated-validator integration and expanded suite budgets require implementation evidence and are not marked tested here. No code or dependency was changed.
+
+## Revision 1 — Native-persistence cross-references
+
+Independent package reviewer located nonblocking P-R01: FEATURE-SPEC referenced U05/U06 for cookie attributes instead of owning U03/U04. Corrected those two pointers against actual current configuration-persistence headings; behavioral contracts and task scope/acceptance are unchanged. Revised FEATURE-SPEC SHA-256 `10ec54443ee1482bfc626a6718b626839711ee574737a82fd38e0527da49a645`. Focused reference/affected-conformance recheck Ready; prior initial source hashes remain historical reviewed identities. No runtime checks required by a reference-only correction.

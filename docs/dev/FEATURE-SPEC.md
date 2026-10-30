@@ -4,7 +4,7 @@
 
 F-01–F-12 define the delta under [FEATURE](FEATURE.md), [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) and [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md). They extend main [SPEC](SPEC.md), [leaderboard L-01–L-08](spec/leaderboard.md), [configuration](spec/session-configuration.md) and [browser persistence U-01–U-08](spec/configuration-persistence.md).
 
-L-02/L-03's score-only shape becomes the complete result below; L-04 retains atomic completion with injected metadata; L-05 gains manual history replacement without automatic persistence; L-06 gains no visible metadata columns. U-05–U-07 native edits retain best-effort persistence; F-07 defines a separate checked restore path. Scope exclusions concerning import/export and metadata in main PROJECT/design/SPEC are superseded only for this capability; all other gameplay, six-setting domains, lifecycle and static delivery guarantees remain.
+L-02/L-03's score-only shape becomes the complete result below; L-04 retains atomic completion with injected metadata; L-05 gains manual history replacement without automatic persistence; L-06 gains no visible metadata columns. U-03/U-04 native edits retain best-effort persistence; F-07 defines a separate checked restore path. Scope exclusions concerning import/export and metadata in main PROJECT/design/SPEC are superseded only for this capability; all other gameplay, six-setting domains, lifecycle and static delivery guarantees remain.
 
 ## F-01 — Result identity, score and completion time
 
@@ -82,7 +82,7 @@ Restore opens one local file picker accepting JSON/SQLite hints. Inspect bytes, 
 
 One mount owns one transfer operation. Disable concurrent Save/Restore during a pending operation; ignore stale responses. Settings/gameplay need not be frozen while reading. Immediately before commit, capture current results/settings/persistence, so rejection preserves current legitimate state rather than rewinding to the picker-open snapshot.
 
-For a valid staged file, synchronously replace the entire leaderboard and complete selected settings as one observable application transition. A successful restore writes all six cookie values and all six URL parameters, including selected-equal and default values; do not reuse changed-key-only native update logic. Preserve unrelated cookies, query entries, fragment and history.state; use one successful history replacement with no added history entry. Cookie path, lifetime, SameSite and conditional Secure follow U-05/U-06.
+For a valid staged file, synchronously replace the entire leaderboard and complete selected settings as one observable application transition. A successful restore writes all six cookie values and all six URL parameters, including selected-equal and default values; do not reuse changed-key-only native update logic. Preserve unrelated cookies, query entries, fragment and history.state; use one successful history replacement with no added history entry. Cookie path, lifetime, SameSite and conditional Secure follow U-03; URL/history preservation follows U-04.
 
 Use checked persistence effects and F-07 before publishing memory. Then commit prepared selected values and history before notifying/rendering; observers see both coherent values. Listener exceptions remain postcommit isolated failures, not a failed restore. Duplicate result values already in history do not cause a merge; the file replaces history, including an empty list. Success refreshes rows, selected controls, live display and current/pending rule description without moving focus to the board.
 
