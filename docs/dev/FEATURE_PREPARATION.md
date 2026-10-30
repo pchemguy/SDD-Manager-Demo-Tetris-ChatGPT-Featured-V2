@@ -131,3 +131,16 @@ Source identities (SHA-256):
 - AGENTS.md: bb02ed73df251dd9ad8cf02ff3faeb7bef4a2e9bb852ba4ca751416d4157c938
 
 Publish/read back this coherent completion before closing/readback of issue #61 or dependent work.
+
+## Authorization to implement
+
+User explicitly requested “Do QC and full implement”, selecting whole-package QC, preparation integration and complete T-027–T-032 through verified main integration and1.3.0 release. Whole-package FEATURE-QC-REPORT found Ready with no blocker. Original baseline/identity and accepted decisions preserved; no further routine human checkpoint pending.
+
+## FDOCS-009 completion
+
+Whole-package accepted scope/design/contracts/plan/layout/tasks and current reports assessed coherent. All6 controls,16-rule/6-display matrix, legacy compatibility, page lifetime/no storage, test/review/report/packaging/integration gates and unique task ownership covered. Ready with exact source identities and no unresolved finding. User authorized all T-027–T-032 through1.3.0 release; preparation integration/tracking still precede implementation.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-QC-REPORT.md: 1e3f780882b4f01d55279409b96dd4389805f3ca08539513a336ad42bf430d54
+
+Publish/read back this coherent completion before closing/readback of issue #62 or dependent work.

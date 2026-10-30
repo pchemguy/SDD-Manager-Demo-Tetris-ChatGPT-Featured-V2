@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: session-only configuration autodoc pass complete through FDOCS-008; whole-package QC not run.
+Checkpoint: whole-package QC passed; FDOCS-009 publication/closure and preparation integration next.
 
 ## Authority and current owners
 
@@ -12,4 +12,4 @@ Current design-docs/003_3977abb-session-only-game-configuration, full baseline/c
 
 ## Stop and next eligible action
 
-Stop after FDOCS-008 publication/closure before package QC. Await explicit advancement; then assess whole feature, persist report/control/FDOCS-009/checkpoint, publish/close62, explicitly integrate/verify/publish accepted preparation to actual default main before closing14 or creating implementation branch/activating Phase4. No implementation, dependency install, product test, app version, release or canonical main-root change occurred. Existing v1.2.0 application and closed campaigns/releases unchanged; native headed focus unverified, Electron outside scope.
+User explicitly authorized QC/full implementation. Publish/read back FDOCS-009/report/control/HANDOFF, close62, explicitly integrate/verify/publish preparation to actual default main, close14 and activate Phase4 before executing all T-027–T-032 through1.3.0 publication. No implementation, dependency install, product test, app version, release or canonical main-root change occurred. Existing v1.2.0 application and closed campaigns/releases unchanged; native headed focus unverified, Electron outside scope.
