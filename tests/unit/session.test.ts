@@ -1,6 +1,6 @@
 /** Deterministic interaction tests protect landing countdowns and transactions. */
 import {test} from 'node:test';import assert from 'node:assert/strict';
-import {createSession} from '../../src/application/session.js';
+import {createSession} from '../fixtures/session.js';
 const bagO=()=>{const values=[6.5/7,5.5/6,4.5/5,2.5/4,1.5/3,0.5/2];let i=0;return ()=>values[i++%6]};
 const running=()=>{const s=createSession(bagO());s.dispatch('start');return s};
 test('ready consumes no random input and start/restart expose only one next',()=>{let draws=0;const s=createSession(()=>{draws++;return 0.999999});assert.equal(s.getSnapshot().status,'ready');assert.equal(draws,0);s.dispatch('start');assert.equal(s.getSnapshot().active?.type,'I');assert.equal((s.getSnapshot() as {next?:string}).next,'J');assert.equal(draws,6);s.dispatch('restart');assert.equal(draws,12)});

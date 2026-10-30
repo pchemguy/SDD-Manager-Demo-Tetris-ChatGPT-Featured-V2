@@ -7,7 +7,7 @@ import { createGameView } from '../../ui/game-view.js';
 import '../../ui/styles.css';
 /** Reuse explicit configuration/controller across sequential remounts; defaults are independent.
  * An injected controller owns its RNG/reporter; the random argument initializes only default controllers. */
-export function mountGame(mount:HTMLElement,random:()=>number=Math.random,configuration:ConfigurationController=createConfiguration(),session:Session=createSession(random,e=>console.error('Session listener failed',e))):()=>void {
+export function mountGame(mount:HTMLElement,random:()=>number=Math.random,configuration:ConfigurationController=createConfiguration(),session:Session=createSession(random,e=>console.error('Session listener failed',e),{newId:()=>{const bytes=new Uint8Array(16);mount.ownerDocument.defaultView!.crypto.getRandomValues(bytes);bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;const hex=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');return `${hex.slice(0,8)}-${hex.slice(8,12)}-${hex.slice(12,16)}-${hex.slice(16,20)}-${hex.slice(20)}`},completedAt:()=>new Date().toISOString()})):()=>void {
  const doc=mount.ownerDocument,win=doc.defaultView!;
  let last:number|null=null,frame=0,disposed=false,pauseTimer:number|null=null;
  const act=(action:Action)=>{const before=session.getSnapshot().status;const after=session.dispatch(action,action==='start'||action==='restart'?toRuleOptions(configuration.getSnapshot()):undefined);if(action==='restart'||after.status!==before)last=null};

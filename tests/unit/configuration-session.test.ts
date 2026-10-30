@@ -1,6 +1,6 @@
 /** Rules matrix and exact observable clock/rollback contracts, independent of rendering. */
 import {test} from 'node:test';import assert from 'node:assert/strict';
-import {createSession} from '../../src/application/session.js';
+import {createSession} from '../fixtures/session.js';
 import {createConfiguration,toRuleOptions,type RuleOptions} from '../../src/application/configuration.js';
 const defaults=()=>toRuleOptions(createConfiguration().getSnapshot());
 const make=(rules:RuleOptions):any=>{const s:any=createSession(()=>.999999);s.dispatch('start',rules);return s};

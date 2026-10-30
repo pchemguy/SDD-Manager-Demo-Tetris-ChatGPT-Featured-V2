@@ -1,4 +1,4 @@
-/** Deterministic session transactions. Only explicit durations and random inputs enter. */
+/** Deterministic session transactions. Only explicit durations, random and completion-metadata inputs enter. */
 import type { Board, Piece, Kind, Appearance } from '../core/types.js';
 import { spawn } from '../core/pieces.js';
 import { createBoard, canPlace, move, lockWithAppearance, createAppearance, landing } from '../core/board.js';
@@ -6,7 +6,7 @@ import {shuffleBag} from '../core/bag.js';
 import {canTraverse,penetratingLanding} from '../core/penetrator.js';
 import {tryRotate} from '../core/kicks.js';
 import {createConfiguration,toRuleOptions,type RuleOptions} from './configuration.js';
-import {recordResult,type GameResult} from './leaderboard.js';
+import {recordResult,type GameResult,type ResultMetadataSource} from './leaderboard.js';
 import { progress, gravityInterval } from '../core/progression.js';
 export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'hardDrop'|'pause'|'resume'|'activatePenetrator';
 /** Legacy input/mirror retained; complete RuleOptions selects the expanded active rules. */
@@ -16,8 +16,10 @@ interface State extends Omit<Snapshot,'ghost'> { remainder:number; lockRemaining
 const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','hold','hardDrop','pause','resume','activatePenetrator'];
 const copy=(s:State):State=>({...s,leaderboard:s.leaderboard.map(result=>({...result})),options:{...s.options},rules:{...s.rules},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),penetratorCells:s.penetratorCells.map(r=>r.slice()),active:s.active?{...s.active}:null});
 /** Construct ready state and empty controller-lifetime history; resets preserve results.
- * No draw occurs until start. Listener failures are isolated after the atomic commit. */
-export function createSession(random:()=>number,onListenerError:(e:unknown)=>void=()=>{}) {
+ * No draw occurs until start. Metadata sources supply a UUIDv4 and real UTC completion time.
+ * Sources are explicit host inputs; failures before publication preserve state/history.
+ * Listener failures are isolated after the atomic commit. */
+export function createSession(random:()=>number,onListenerError:(e:unknown)=>void=()=>{},metadata:ResultMetadataSource) {
  const initial=():State=>({leaderboard:[],status:'ready',board:createBoard(),penetratorActive:false,penetratorBonuses:0,penetratorCells:createAppearance(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false},rules:toRuleOptions(createConfiguration().getSnapshot())});
  let state=initial(),busy=false;
  const listeners=new Set<(s:Snapshot)=>void>();
@@ -35,7 +37,7 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
   try {
    const next=operation(copy(state));
    // Capture once inside the transaction, before state publication and observers.
-   if(state.status==='running'&&next.status==='game-over')next.leaderboard=recordResult(next.leaderboard,next.score);
+   if(state.status==='running'&&next.status==='game-over')next.leaderboard=recordResult(next.leaderboard,{id:metadata.newId(),score:next.score,timestamp:metadata.completedAt()});
    if(JSON.stringify(next)!==JSON.stringify(state)) {
     state=next;
     for(const listener of [...listeners]) {

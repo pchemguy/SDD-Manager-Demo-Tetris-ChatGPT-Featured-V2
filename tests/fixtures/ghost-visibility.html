@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Owned ghost view fixture</title></head><body><main id="a"></main><main id="b"></main><script type="module">
 import {createConfiguration} from '/src/application/configuration.ts';
-import {createGameView} from '/src/ui/game-view.ts';import {createSession} from '/src/application/session.ts';import '/src/ui/styles.css';
+import {createGameView} from '/src/ui/game-view.ts';import {createSession} from '/tests/fixtures/session.ts';import '/src/ui/styles.css';
 const callbacks=[],configuration=createConfiguration();
 const seed=createSession(()=>0.999999);seed.dispatch('start');const views=[createGameView(document.querySelector('#a'),()=>{},undefined,configuration),createGameView(document.querySelector('#b'),()=>{},value=>callbacks.push(value))];
 const base=seed.getSnapshot();let snapshot=structuredClone(base);

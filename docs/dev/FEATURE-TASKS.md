@@ -12,12 +12,13 @@ Use focused meaningful tests before changes where new behavior is absent. For te
 
 - [ ] Phase 8 — Manual file persistence
     - [ ] Milestone 8.1 — JSON snapshots and checked restore
-        - [ ] T-053 — Preserve stable completion metadata in session results
+        - [x] T-053 — Preserve stable completion metadata in session results
             Depends on: completed T-052 and eligible Phase8 activation.
             Outcome: extend C09/C04 to complete detached result records, preserving stable tie/capacity behavior and metadata from the original Game Over event.
             Scope: application/leaderboard.ts and session.ts, browser constructor composition and every actual session consumer/fixture; update exact expected records and integration signatures coherently. Inject real UUIDv4/UTC sources from the browser; no hardcoded epoch fallback or clock/RNG reads in pure ranking. Do not implement file UI or automatic persistence.
             Verification: F01/F11 literal domain/extreme/duplicate/timestamp predicates, metadata-once/exception/invalid-source rollback, zero/nonzero/below-capacity completions and ordinary/Hold top-out, observer isolation/reentry, detached copies, restart/remount retention, no extra piece draws. Update and run existing unit suites, type/boundary checks, build and affected leaderboard browser tests. A metadata failure must preserve game/history rather than fabricate a result.
             Documentation: update affected current developer/API guidance within task scope; governing main feature incorporation remains T-061. Record red/green or preserved-behavior evidence, actual limits and TODOs with this task's initial completion.
+            Completion evidence: Observed 13 new behavioral failures against score-only baseline (337 prior tests passed), then 358 unit tests pass including metadata rollback/duplicates/calendar/safe-score boundaries. Type/boundary/build pass; all16 focused Chromium/Firefox leaderboard cases pass39.9s. Environment default Firefox page crashed; documented process-local recovery passed both managed browser cycles4.9s. All constructor consumers updated with explicit sources; pure core/session has no browser clock/RNG access. Docs/API and source-only fixtures updated; TODO None. npm inherited http-proxy warning retained, no application errors.
         - [ ] T-054 — Define and validate the versioned JSON snapshot
             Depends on: T-053 publication and tracking closure.
             Outcome: one pure complete transfer value/validator and faithful JSON encode/decode under F02/F03/F11.
