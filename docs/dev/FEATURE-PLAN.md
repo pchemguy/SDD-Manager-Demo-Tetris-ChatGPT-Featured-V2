@@ -35,3 +35,28 @@ Execute on feature/004_1cadd99-penetrator-mode created only after verified publi
 At final phase closure incorporate the accepted delivered scope into current PROJECT/design/SPEC/modern/ghost/configuration/PLAN/layout, reassess affected adjacent QC, transfer tasks once into main TASKS and archive only eligible004 sources/preparation/QC with historical markers and repaired links. Preserve earlier tasks/campaigns/releases and keep phase reports at their recorded prefix. Complete the actual per-task closing/semantic-transfer audit before integration.
 
 Explicitly two-parent merge the exact verified published feature into its recorded main parent, reconcile HANDOFF, verify merged behavior/package identity and publish/read back main. Only then create the default-branch v1.4.0 release commit/tag using the finalized RELEASE-NOTES body byte-for-byte, publish/read back branch/tag objects and use one GitHub publisher for the stable browser ZIP/checksum. Verify actual source/body/latest/inventory/digest/public-download bytes and release-source CI. Retain notes; consume the internal highlights checkpoint only after verified publication. A task-owned parent-only follow-up records actual outcomes without moving the tag.
+
+## Physical ownership
+
+The existing [layout](layout.md) remains the baseline. This scoped allocation supplies the feature's physical map without another layout root.
+
+| Path | Responsibility |
+| --- | --- |
+| src/core/penetrator.ts (new) | C-02 pure deepest legal landing and guarded traversal predicate; explicit board/piece inputs. |
+| src/core/types.ts, src/core/board.ts | Appearance type/empty factory and appearance-aware lock with shared row compaction; retain logical Board and exact legacy lock result. |
+| src/core/kicks.ts | Optional pure candidate predicate with unchanged default tables/order/O/error behavior. |
+| src/application/session.ts | C-04 detached bank/mode/mask, ordinary four-line awards, activation/hold/traversal/grounding/drop/ghost selection and atomic lock/spawn/rollback. |
+| src/ui/game-view.ts, src/ui/styles.css | C-05 active/settled/ghost white flags, bonus symbols/count, mode/Hold descriptions and stale-state clearing; retain six native settings. |
+| src/platform/browser/main.ts | C-06 nonrepeated board B action and existing input/frame/focus lifecycle. |
+| tests/unit/penetrator.test.ts, tests/unit/appearance.test.ts (new) | Literal pocket/bounds/kick/immutability and coupled row-mask compaction tests. |
+| tests/unit/penetrator-session.test.ts (new), existing session suites | Earn/spend/cap/hold/lifetime/timers/drop/ghost/rollback and legacy regression. |
+| tests/fixtures/penetrator-gameplay.ts (new) | Deterministic legal random/action traces shared by tests to earn actual four-line awards; not production imports or setters. |
+| tests/browser/penetrator.spec.ts (new) | Actual source/built/extracted earned-bonus B gameplay, policies, ghost/drop and indicator/white lifecycle. |
+| tests/browser/penetrator-view.spec.ts, tests/fixtures/penetrator-view.html (new) | Source-only real-view snapshot appearance/bonus/accessibility boundary fixture. |
+| tests/browser/configuration.spec.ts, remount.spec.ts, lifecycle.spec.ts and existing fixtures | Settings independence, focus/repeat, reset and resource/lifetime regression. |
+| playwright.config.ts, tsconfig.test.json if needed | Explicit source-only fixture exclusion for built/extracted, compiler coverage and measured finite suite budget. |
+| README.md, docs/CONTROLS.md, INSTALL.md, DEVELOPMENT.md | Accurate key/bonuses/colors/Hold/landing/settings/lock policy and static deployment guidance. |
+| package.json, package-lock.json, existing scripts/CI/release inputs |1.4.0 metadata, relative build, strict reproducible package and source/artifact/readback checks. |
+| docs/dev/features/004_1cadd99-penetrator-mode/ | Fixed milestone5.1/5.2/phase/final evidence and eligible accepted-source/preparation/adjacent-QC archive. |
+
+Local versioned artifacts use classic-tetris-browser-v1.4.0.zip and sidecar; public release assets retain classic-tetris-browser.zip and matching checksum filename. Existing allowlisted assets/docs/licenses only; no test trace/HTML fixture, credential, dev source/cache or browser installation ships. RELEASE-NOTES remains the exact retained release body; the internal highlights file stays ignored and is consumed only after publication verification. No persisted schema, service, generic plugin layer or new runtime dependency is allocated.

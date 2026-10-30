@@ -76,3 +76,9 @@ FDOCS-005 precision recheck: PEN-S01 resolved before planning/issue closure. P-0
 Autodoc applies; current SPEC/design QC Revision2 Ready. One bounded Phase5 has two justified delivery milestones: playable earned penetrator loop, then completed native presentation/lifetime/distribution; separate mandatory phase review follows. Strategy QC Ready with full P01–P08 coverage, demonstrations, dependencies and review/release exits. Physical allocation/combined QC remains next; TASKS held.
 
 Sources: `docs/dev/FEATURE-PLAN.md` blob `8952e2649b1116584a2231a7721aad7b9882bfb5`, `docs/dev/FEATURE-PLAN-REVIEW-REPORT.md` blob `30e29d959a4f384b8dc2b8e785659d0da60d64b4`.
+
+### FDOCS-007 — Assign penetrator implementation and verification homes
+
+Autodoc applies. FEATURE-PLAN physical map assigns C02/C04/C05/C06 code, appearance/landing/session tests, deterministic earned-game traces, actual versus source-only browser fixtures, compiler/runner exclusions,1.4 distribution and fixed report/archive owners. Combined PLAN/layout QC Revision2 Ready with exact identities; no unresolved placement or source duplication. Task derivation eligible.
+
+Sources: `docs/dev/FEATURE-PLAN.md` blob `9ed0334208558c87f8c0d26db67beb4b8f02256a`, `docs/dev/FEATURE-PLAN-REVIEW-REPORT.md` blob `eead28af136bdcea8ba0240e0e8d1841a5fbfd34`.
