@@ -18,7 +18,7 @@ Native rotation, Hold, Hard drop, Start, Pause/Resume and Restart controls are k
 
 ## Pieces and planning
 
-Each shuffled bag contains all seven shapes once; matching types may touch across bag boundaries. Next shows exactly one upcoming piece. Hold stores a type once per locked piece: an empty slot consumes Next, while an occupied slot swaps without consuming Next. Replacements use spawn orientation/position and fresh timers. A blocked spawn, including a held replacement, ends the game.
+Each shuffled bag contains all seven shapes once; matching types may touch across bag boundaries. Next shows exactly one upcoming piece while Next-piece preview is On (the default). Switch it Off to conceal the name and miniature immediately, including while paused; the next piece is still generated and consumed normally. Hold stores a type once per locked piece: an empty slot consumes Next, while an occupied slot swaps without consuming Next. Replacements use spawn orientation/position and fresh timers. A blocked spawn, including a held replacement, ends the game.
 
 The patterned, dashed ghost shows the active piece's straight-down landing. Movement, rotation and hold update it; it never settles cells and yields visually when the active piece overlaps it. Rotation uses both-direction SRS kick tables inside the ten-by-twenty visible board. There are no hidden rows or 180-degree rotation.
 
@@ -44,4 +44,6 @@ Clear one/two/three/four rows for 40/100/300/1200 points multiplied by the level
 
 ## Ghost visibility
 
-Ghost visibility defaults to Always. Choose Lower half only to hide the whole ghost when its lowest occupied landing cell is in rows1–10; it reappears in rows11–20, including when it straddles the midline. The selector acts immediately, including while paused. It survives start/restart and pause/resume in the current app, and resets to Always on reload. Hidden ghosts do not announce a landing row. The canonical landing and hard-drop score/locking remain unchanged.
+Ghost visibility defaults to Always show. Choose Hide above midline to hide the whole ghost when its lowest occupied landing cell is in rows1–10; it reappears in rows11–20, including when it straddles the midline. The selector acts immediately, including while paused. It survives start/restart and pause/resume in the current app, and resets to Always show on reload. Hidden ghosts do not announce a landing row. The canonical landing and hard-drop score/locking remain unchanged.
+
+Choose Always hide to conceal the ghost at every height; the description reads Ghost hidden. All three modes act immediately and never change the canonical hard-drop landing. Ghost visibility and Next-piece preview are independent live display settings. All six settings use the same nonmodal panel and reset to sensible defaults on reload.

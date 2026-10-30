@@ -12,9 +12,9 @@ test('@remount repeated real mount/unmount has one input owner and no pending fr
 
 test('@remount explicit context retains selected rules with a fresh game',async({page})=>{
  await page.goto('/tests/fixtures/lifecycle.html');await page.getByRole('button',{name:'Mount retained',exact:true}).click();
- await page.getByRole('checkbox',{name:'Hard drop (next game)',exact:true}).uncheck();await page.getByRole('combobox',{name:'Ghost visibility',exact:true}).selectOption('lower-half');
+ await page.getByRole('checkbox',{name:'Hard drop (next game)',exact:true}).uncheck();await page.getByRole('combobox',{name:'Ghost visibility',exact:true}).selectOption('never');await page.getByRole('checkbox',{name:'Next-piece preview',exact:true}).uncheck();
  await page.getByRole('button',{name:'Start game'}).click();await expect(page.getByRole('button',{name:'Hard drop',exact:true})).toBeDisabled();
  await page.getByRole('button',{name:'Unmount',exact:true}).click();await expect(page.locator('#frames')).toHaveText('0');await page.getByRole('button',{name:'Mount retained',exact:true}).click();
- await expect(page.getByTestId('status')).toHaveText('Ready');await expect(page.getByRole('checkbox',{name:'Hard drop (next game)',exact:true})).not.toBeChecked();await expect(page.getByRole('combobox',{name:'Ghost visibility',exact:true})).toHaveValue('lower-half');
+ await expect(page.getByTestId('status')).toHaveText('Ready');await expect(page.getByRole('checkbox',{name:'Hard drop (next game)',exact:true})).not.toBeChecked();await expect(page.getByRole('combobox',{name:'Ghost visibility',exact:true})).toHaveValue('never');await expect(page.getByRole('checkbox',{name:'Next-piece preview',exact:true})).not.toBeChecked();
  await page.getByRole('button',{name:'Mount fresh',exact:true}).click();await expect(page.getByRole('checkbox',{name:'Hard drop (next game)',exact:true})).toBeChecked();await expect(page.getByRole('combobox',{name:'Ghost visibility',exact:true})).toHaveValue('always');
 });

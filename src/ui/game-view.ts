@@ -25,8 +25,9 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
    </aside>
   </div>
   <fieldset class="settings-panel"><legend>Settings</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart. Settings reset on page reload.</p>
-   <label class="settings ghost-setting"><span>Ghost visibility</span><select data-option="ghost"><option value="always">Always</option><option value="lower-half">Lower half only</option></select></label>
+   <label class="settings ghost-setting"><span>Ghost visibility</span><select data-option="ghost"><option value="never">Always hide</option><option value="lower-half">Hide above midline</option><option value="always">Always show</option></select></label>
    <label class="settings"><input type="checkbox" data-option="hard-drop"><span>Hard drop (next game)</span></label>
+   <label class="settings"><input type="checkbox" data-option="preview"><span>Next-piece preview</span></label>
    <label class="settings"><input type="checkbox" data-option="immediate"><span>Immediate hard-drop lock (next game)</span></label>
    <label class="settings ghost-setting"><span>General locking policy (next game)</span><select data-option="general"><option value="gravity-interval">Full gravity interval after grounding</option><option value="failed-downward">Failed downward movement</option></select></label>
    <label class="settings"><input type="checkbox" data-option="hold"><span>Hold piece (next game)</span></label>
@@ -41,6 +42,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   tile.setAttribute('aria-hidden', 'true'); board.append(tile); return tile;
  });
  const option=root.querySelector<HTMLInputElement>('[data-option="immediate"]')!;
+ const preview=root.querySelector<HTMLInputElement>('[data-option="preview"]')!;
  const hardDrop=root.querySelector<HTMLInputElement>('[data-option="hard-drop"]')!;
  const hold=root.querySelector<HTMLInputElement>('[data-option="hold"]')!;
  const general=root.querySelector<HTMLSelectElement>('[data-option="general"]')!;
@@ -51,6 +53,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   const target=event.target;
   if(target===option){configuration.update({hardDropLockPolicy:option.checked?'immediate':'general'});onOptionsChange({immediateHardDropLock:option.checked})}
   else if(target===hardDrop)configuration.update({hardDropEnabled:hardDrop.checked});
+  else if(target===preview)configuration.update({nextPreviewEnabled:preview.checked});
   else if(target===hold)configuration.update({holdEnabled:hold.checked});
   else if(target===general)configuration.update({generalLockPolicy:general.value as 'failed-downward'|'gravity-interval'});
   else if(target===ghostMode)configuration.update({ghostVisibility:ghostMode.value as GhostVisibilityMode});
@@ -62,6 +65,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
  function renderControls(){
   const selected=configuration.getSnapshot();
   option.checked=selected.hardDropLockPolicy==='immediate';option.disabled=!selected.hardDropEnabled;
+  preview.checked=selected.nextPreviewEnabled;
   hardDrop.checked=selected.hardDropEnabled;hold.checked=selected.holdEnabled;general.value=selected.generalLockPolicy;ghostMode.value=selected.ghostVisibility;
  }
  renderControls();
@@ -92,15 +96,16 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   latestSnapshot = snapshot;
   renderControls();
   const selected=configuration.getSnapshot();
-  const mode=selected.ghostVisibility as GhostVisibilityMode;
+  const mode=selected.ghostVisibility;
   root.dataset.status = snapshot.status;
-  root.querySelector('[data-testid="next-type"]')!.textContent=snapshot.next??'None';renderNext(snapshot.next);
+  root.querySelector('[data-testid="next-type"]')!.textContent=selected.nextPreviewEnabled?(snapshot.next??'None'):'Off';renderNext(selected.nextPreviewEnabled?snapshot.next:null);
+  if(!selected.nextPreviewEnabled)root.querySelector('[data-preview="next"] .piece-mini')!.setAttribute('aria-label','Next piece: off');
   root.querySelector('[data-testid="held-type"]')!.textContent=snapshot.rules.holdEnabled?(snapshot.held??'None'):'Off';renderHeld(snapshot.rules.holdEnabled?snapshot.held:null);
   root.querySelector('[data-testid="hold-status"]')!.textContent=!snapshot.rules.holdEnabled?'Off':snapshot.canHold?'Available':'Unavailable';
   const activeCells = new Map(snapshot.active ? cells(snapshot.active).map(([x,y]) => [y * 10 + x, snapshot.active!.type]) : []);
   const showGhost = isGhostVisible(snapshot.ghost, mode);
   const ghostCells=new Set(showGhost&&snapshot.ghost?cells(snapshot.ghost).map(([x,y])=>y*10+x):[]);
-  root.querySelector('[data-testid="ghost-description"]')!.textContent=snapshot.ghost?(showGhost?`Ghost ${snapshot.ghost.type} lands on row ${Math.max(...cells(snapshot.ghost).map(([,y])=>y))+1}`:'Ghost hidden above the midline'):'No active piece';
+  root.querySelector('[data-testid="ghost-description"]')!.textContent=snapshot.ghost?(showGhost?`Ghost ${snapshot.ghost.type} lands on row ${Math.max(...cells(snapshot.ghost).map(([,y])=>y))+1}`:mode==='never'?'Ghost hidden':'Ghost hidden above the midline'):'No active piece';
   tiles.forEach((tile, i) => {
    const active = activeCells.get(i);
    const kind = active ?? snapshot.board[Math.floor(i / 10)][i % 10];
