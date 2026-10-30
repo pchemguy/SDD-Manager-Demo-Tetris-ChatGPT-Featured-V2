@@ -15,7 +15,7 @@ Main v1.5.0 is implemented, verified, integrated and released; no prior unfinish
 - Strict preservation: retain completed prior phase/task ranges, frozen campaigns, tags and releases. No multipass or flexible integration selected.
 - Tracking: enabled by AGENTS default and retained project policy. Native campaign preparation milestone and all nine exact issue identities/markers/associations verified before the first repository write. No product phase objects or product tasks projected.
 - Reporting: concise Standard updates; actual host Linux/bash. Existing eligible repository and protected authentication reused. No product tests or environment installs needed for opening documentation.
-- Next stage: FDOCS-008.
+- Next stage: FDOCS-009 (whole-package QC awaits separate direction).
 
 ## Decision provenance
 
@@ -36,7 +36,7 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | FDOCS-005 | FEATURE-SPEC L01–08 and adjacent exact-identity review Ready: qualifying final score, stable top-ten, validation/detachment, atomic once-only completion, page/controller lifetime, semantic panel and retained gameplay/persistence/distribution acceptance. All accepted design owners mapped, links/seed/error and failure paths assessed. No unresolved findings or implementation claimed. Autodoc preapproval applies. |
 | FDOCS-006 | FEATURE-PLAN defines bounded Phase7 with integrated7.1 capability,7.2 lifetime/distribution and exactly-one7.3 phase review. Adjacent strategy review covers all L contracts, failures, reports, canonical incorporation/archive, merged verification and1.6.0 release/readback. Two delivery milestones explicitly justified; final implementation tasks own milestone review under small-count rule. Layout recheck precedes tasks. Autodoc preapproval applies. |
 | FDOCS-007 | Appended scoped leaderboard allocation to main layout and active-owner AGENTS navigation; no FEATURE-LAYOUT. C09/C04/C05/C06 sources, pure/session/actual-page/source-only-fixture tests, package/docs/canonical incorporation and fixed006 reports/archive all mapped. Combined PLAN/layout Revision1 exact-identity recheck Ready for task derivation; two-milestone rationale retained, no upstream contract changes. Autodoc preapproval applies. |
-| FDOCS-008 | [#108](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/108) |
+| FDOCS-008 | FEATURE-TASKS047–052 derived from accepted Phase7 plan/L01–08/layout; adjacent exact-source conformance review Ready. Five delivery tasks across3/2 groups plus exactly one phase-review task, counts/acyclic dependencies/whole-milestone final-task ownership and code/tests/docs/package/incorporation/release/report routes assessed. Main TASKS/PLAN unchanged, frozen archives retained. HANDOFF/active AGENTS navigation records final autodoc stop; no implementation or whole-package QC. Publish then close108 only;109/milestone26 stay open. |
 | FDOCS-009 | [#109](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/109) |
 
 ## Stage evidence
@@ -50,9 +50,9 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | FDOCS-005 | FEATURE-SPEC L01–08 and adjacent exact-identity review Ready: qualifying final score, stable top-ten, validation/detachment, atomic once-only completion, page/controller lifetime, semantic panel and retained gameplay/persistence/distribution acceptance. All accepted design owners mapped, links/seed/error and failure paths assessed. No unresolved findings or implementation claimed. Autodoc preapproval applies. |
 | FDOCS-006 | FEATURE-PLAN defines bounded Phase7 with integrated7.1 capability,7.2 lifetime/distribution and exactly-one7.3 phase review. Adjacent strategy review covers all L contracts, failures, reports, canonical incorporation/archive, merged verification and1.6.0 release/readback. Two delivery milestones explicitly justified; final implementation tasks own milestone review under small-count rule. Layout recheck precedes tasks. Autodoc preapproval applies. |
 | FDOCS-007 | Appended scoped leaderboard allocation to main layout and active-owner AGENTS navigation; no FEATURE-LAYOUT. C09/C04/C05/C06 sources, pure/session/actual-page/source-only-fixture tests, package/docs/canonical incorporation and fixed006 reports/archive all mapped. Combined PLAN/layout Revision1 exact-identity recheck Ready for task derivation; two-milestone rationale retained, no upstream contract changes. Autodoc preapproval applies. |
-| FDOCS-008 | Executable tasks and scoped QC pending; mapped autodoc stop. |
+| FDOCS-008 | FEATURE-TASKS047–052 derived from accepted Phase7 plan/L01–08/layout; adjacent exact-source conformance review Ready. Five delivery tasks across3/2 groups plus exactly one phase-review task, counts/acyclic dependencies/whole-milestone final-task ownership and code/tests/docs/package/incorporation/release/report routes assessed. Main TASKS/PLAN unchanged, frozen archives retained. HANDOFF/active AGENTS navigation records final autodoc stop; no implementation or whole-package QC. Publish then close108 only;109/milestone26 stay open. |
 | FDOCS-009 | Whole-package QC not selected or performed. |
 
 ## Pending transitions
 
-FDOCS-007 accepted or assessed under the approved brief/autodoc mode. Publish/read back this owning completion, then close/read back issue 107 before dependent work. Next stage FDOCS-008. No product implementation, version change or release claimed.
+FDOCS-008 accepted or assessed under the approved brief/autodoc mode. Publish/read back this owning completion, then close/read back issue 108 before dependent work. Autodoc document pass complete; stop before FDOCS-009. Whole-package QC, preparation integration, product activation and implementation not performed or authorized by this document pass. No product implementation, version change or release claimed.
