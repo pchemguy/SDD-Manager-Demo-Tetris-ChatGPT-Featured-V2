@@ -6,17 +6,19 @@ import {shuffleBag} from '../core/bag.js';
 import {canTraverse,penetratingLanding} from '../core/penetrator.js';
 import {tryRotate} from '../core/kicks.js';
 import {createConfiguration,toRuleOptions,type RuleOptions} from './configuration.js';
+import {recordResult,type GameResult} from './leaderboard.js';
 import { progress, gravityInterval } from '../core/progression.js';
 export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'hardDrop'|'pause'|'resume'|'activatePenetrator';
 /** Legacy input/mirror retained; complete RuleOptions selects the expanded active rules. */
 export interface SessionOptions {immediateHardDropLock:boolean}
-export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null;options:SessionOptions;rules:RuleOptions;penetratorActive:boolean;penetratorBonuses:number;penetratorCells:Appearance}
+export interface Snapshot {leaderboard:GameResult[];status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null;options:SessionOptions;rules:RuleOptions;penetratorActive:boolean;penetratorBonuses:number;penetratorCells:Appearance}
 interface State extends Omit<Snapshot,'ghost'> { remainder:number; lockRemaining:number|null;bag:Kind[] }
 const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','hold','hardDrop','pause','resume','activatePenetrator'];
-const copy=(s:State):State=>({...s,options:{...s.options},rules:{...s.rules},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),penetratorCells:s.penetratorCells.map(r=>r.slice()),active:s.active?{...s.active}:null});
-/** Construct ready state; no draw occurs until start. Listener failures are isolated. */
+const copy=(s:State):State=>({...s,leaderboard:s.leaderboard.map(result=>({...result})),options:{...s.options},rules:{...s.rules},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),penetratorCells:s.penetratorCells.map(r=>r.slice()),active:s.active?{...s.active}:null});
+/** Construct ready state and empty controller-lifetime history; resets preserve results.
+ * No draw occurs until start. Listener failures are isolated after the atomic commit. */
 export function createSession(random:()=>number,onListenerError:(e:unknown)=>void=()=>{}) {
- const initial=():State=>({status:'ready',board:createBoard(),penetratorActive:false,penetratorBonuses:0,penetratorCells:createAppearance(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false},rules:toRuleOptions(createConfiguration().getSnapshot())});
+ const initial=():State=>({leaderboard:[],status:'ready',board:createBoard(),penetratorActive:false,penetratorBonuses:0,penetratorCells:createAppearance(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false},rules:toRuleOptions(createConfiguration().getSnapshot())});
  let state=initial(),busy=false;
  const listeners=new Set<(s:Snapshot)=>void>();
  const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return {...snapshot,ghost:projected(snapshot)}};
@@ -32,6 +34,8 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
   busy=true;
   try {
    const next=operation(copy(state));
+   // Capture once inside the transaction, before state publication and observers.
+   if(state.status==='running'&&next.status==='game-over')next.leaderboard=recordResult(next.leaderboard,next.score);
    if(JSON.stringify(next)!==JSON.stringify(state)) {
     state=next;
     for(const listener of [...listeners]) {
@@ -87,7 +91,7 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
    selected=selectedRules(options);
   }
   if(action==='restart'||(action==='start'&&s.status==='ready')){
-   const fresh=initial();fresh.rules={...(selected??s.rules)};
+   const fresh=initial();fresh.leaderboard=s.leaderboard.map(result=>({...result}));fresh.rules={...(selected??s.rules)};
    fresh.options={immediateHardDropLock:fresh.rules.hardDropLockPolicy==='immediate'};
    fresh.status='running';fresh.active=draw(fresh);fresh.canHold=fresh.rules.holdEnabled;return grounding(fresh);
   }
