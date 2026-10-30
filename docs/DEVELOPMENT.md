@@ -89,3 +89,7 @@ Expanded acceptance measured126 source cases in262.1s and106 built cases in217.6
 ## Completion metadata
 
 `createSession(random, reporter, metadata)` requires explicit `newId()` and `completedAt()` callbacks. The browser host supplies cryptographic UUIDv4 values and canonical UTC timestamps at Game Over. Pure ranking validates and preserves complete `{id, score, timestamp}` records. Unit/source-only fixtures inject deterministic sources; these helpers never ship. A metadata failure rolls back the ending transition before observers; source side effects themselves are external inputs.
+
+## Portable snapshot schema
+
+`schemas/game-save.schema.json` is the canonical version1 JSON Schema. `npm run generate:save-validator` deterministically compiles the standalone runtime validator; `npm run check:save-validator` rejects stale output and runs before type/unit checks. The generated validator uses pinned Ajv8.20.0 and ajv-formats3.0.1; no runtime eval is needed. `file-snapshot.ts` additionally checks unique IDs, real canonical UTC times, score order and duplicate JSON members. Build copies the canonical schema to `dist/schemas/`; deployment allowlisting is completed by the distribution task. The pure codec does not itself download, restore or persist settings.
