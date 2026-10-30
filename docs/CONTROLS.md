@@ -72,6 +72,19 @@ Pause retains the ability and bank. Start/Restart/reload reset both to zero/inac
 
 ## Remembered browser settings
 
-On HTTP/HTTPS hosting, each setting loads independently from its explicit URL query value, then its saved cookie, then the default. URL names match ghostVisibility, hardDropEnabled, nextPreviewEnabled, hardDropLockPolicy, generalLockPolicy and holdEnabled. Booleans use true/false; ghost uses never/lower-half/always, general locking uses failed-downward/gravity-interval and hard-drop locking uses general/immediate.
+On HTTP/HTTPS hosting, each setting loads independently from its explicit URL query value, then its saved cookie, then the default. Names and values are case-sensitive; booleans use true/false.
 
-Valid explicit URL selections, including defaults, save to their own cookies. An omitted parameter retains its saved value. Native edits save that field and replace its current URL parameter without adding a history entry or reloading. Cookies last365 days and are scoped to the app directory. Blocked browser persistence leaves in-memory play available. Reload restores selections into a fresh Ready game; scores, board and penetrator bonuses are not saved. The four gameplay selections still take effect only on Start/Restart; ghost/preview remain live.
+Valid explicit URL selections, including defaults, save to their own cookies. An omitted parameter retains its saved value. Native edits save that field and replace its current URL parameter without adding a history entry or reloading. Cookies last 365 days and are scoped to the app directory. Blocked browser persistence leaves in-memory play available. Reload restores selections into a fresh Ready game; scores, board and penetrator bonuses are not saved. The four gameplay selections still take effect only on Start/Restart; ghost/preview remain live.
+
+| URL parameter / cookie suffix | Accepted query/cookie text | Default |
+| --- | --- | --- |
+| ghostVisibility | never / lower-half / always | always |
+| hardDropEnabled | true / false | true |
+| nextPreviewEnabled | true / false | true |
+| hardDropLockPolicy | general / immediate | general |
+| generalLockPolicy | failed-downward / gravity-interval | gravity-interval |
+| holdEnabled | true / false | true |
+
+For example, append ?ghostVisibility=never&holdEnabled=false to the deployed game URL. Each cookie is named tetris_config_ followed by its parameter name. Empty/invalid values fall back per setting without overwriting that cookie. The first occurrence of a repeated recognized query parameter wins; if invalid, use cookie/default fallback. Returning a setting to its default still saves that explicit value.
+
+Edits preserve unrelated query values and the URL fragment while replacing the current history entry. Other already-open pages do not change automatically. On reload, a still-explicit URL value wins over a newer cookie; omit that parameter to use the cookie. Cookies are host-only, SameSite=Lax and Secure on HTTPS. Browser restrictions can prevent saving; no failure dialog or automatic retry is added. No board, score, piece sequence, timers, Hold slot or penetrator inventory is persisted.
