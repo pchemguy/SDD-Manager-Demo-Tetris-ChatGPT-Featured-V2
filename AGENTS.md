@@ -83,3 +83,5 @@ Current measured acceptance126 source/106 built/106 extracted Chromium/Firefox c
 ## Active file persistence campaign
 
 Campaign007 accepted F01–12 and Phase8 work are owned by active FEATURE documents and FEATURE-TASKS until final incorporation. Main TASKS1–52 and frozen001–006 stay unchanged. C09 complete results have `id`, `score`, `timestamp`; C04 requires explicit metadata callbacks at construction. Browser composition supplies real cryptographic UUIDv4/UTC time; tests/fixtures/session.ts supplies deterministic sources and never ships. Recover exact completed task/evidence and next boundary from FEATURE-TASKS and HANDOFF; no automatic file storage is implied by metadata support.
+
+Phase8 file acceptance uses finite600s suite/660s wrapper deadlines after the measured135-pass300s global timeout; older runtime measurements above describe their original release scopes. Keep production/test inputs fixed during full runs. C11 file-transfer.ts owns DOM/Worker/File resources while file-persistence.ts remains the DOM-free strict commit seam; source-only file-lifecycle tests/fixtures are excluded from built/extracted targets.

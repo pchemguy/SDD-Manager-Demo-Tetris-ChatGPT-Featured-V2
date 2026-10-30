@@ -94,3 +94,9 @@ Edits preserve unrelated query values and the URL fragment while replacing the c
 Leaderboard shows the ten best final Game Over scores for the current page, highest first. Zero scores qualify; earlier completions rank first when scores tie. Each completed game appears once, including a blocked Hold spawn. Restarting an unfinished game abandons it and submits no result.
 
 Start/Restart preserves completed results while resetting the new game's score and gameplay state. Reloading or opening a fresh page clears the leaderboard. Scores are not saved in cookies, URL parameters or browser storage; remembered settings continue to restore independently. The panel needs no extra button or shortcut and does not move keyboard focus.
+
+## Manual JSON snapshots
+
+Open **Settings** to reach the single **Save** and **Restore** buttons at its bottom. Collapsing Settings hides them. Save offers a format choice; choose JSON and Download to obtain one file containing the current top ten completed results and all six selected settings, including changes pending the next game. Cancel closes the choice without saving.
+
+Restore opens a local file picker. A valid JSON file replaces completed history and selected settings, updating their cookies and URL parameters. Display choices apply immediately; gameplay choices apply on Start/Restart. The current game is retained, with the normal pause-on-external-focus policy still active. Invalid files produce a clear error and do not change results or settings. History remains session-only: reload clears it until manually restored. SQLite is not enabled in this intermediate feature milestone.

@@ -22,7 +22,7 @@ function rejectDuplicateMembers(text:string):void {
   else if(c==='"') {
    const start=i++;while(i<text.length){if(text[i]==='\\'){i+=2;continue}if(text[i]==='"')break;i++}
    let next=i+1;while(/\s/.test(text[next]??'')&&next<text.length)next++;
-   if(text[next]===':') {const key=JSON.parse(text.slice(start,i+1)) as string,keys=stack.at(-1)!;if(keys.has(key))throw new RangeError('Duplicate JSON member: '+key);keys.add(key)}
+   if(text[next]===':') {const key=JSON.parse(text.slice(start,i+1)) as string,keys=stack.at(-1)!;if(keys.has(key))throw new RangeError('Duplicate JSON member name');keys.add(key)}
   }
  }
 }
