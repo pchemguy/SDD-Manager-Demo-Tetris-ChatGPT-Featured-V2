@@ -1,17 +1,15 @@
 # Project handoff
 
-Checkpoint: Phase4 feature result incorporated into main integration; merged verification passed, publication and1.3.0 release next.
+Checkpoint: session-only configuration fully implemented, verified, integrated and published as v1.3.0; final T-032 parent-only evidence records actual outcomes.
 
-## Authority, branch and return
+## Current authorities and delivered scope
 
-User authorized full QC/T-027–T-032 through verified main integration and GitHub release. Original campaign baseline3977abbcb640490c2cf60f3365681f29067b3835; preparation integrated/published main7dff2f421152e7bf69f2614462dbfbc8cd26ed11. GitHub default main and its exact remote7dff2f4 parent refreshed/read back before the explicit no-fast-forward merge of published feature dc2594c7fc4fe83becebf7b29ac21792c7a85783; current working branch is main.
+PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC plus spec/session-configuration.md, modern-rules.md and ghost-visibility.md, PLAN/layout describe current behavior. TASKS solely owns32 completed IDs. Eligible003 source/preparation/QC snapshots are historical under features/003_3977abb-session-only-game-configuration; its phase/final reports retain independent reviews, checks, task-persistence/transfer audit, integration/release/download/CI identities. Earlier tasks/campaigns/releases preserved; TODO None. Six session-only settings use explicit memory, live displays and copied next-game rules; no persisted preferences/backend/new platform.
 
-## Verified result and owners
+## Git and hosting
 
-T-0276e3b8d4/T-028e6baa77/T-029212d88f/T-03007d21f9/T-0315043451 published/read back, issues63–67 and milestones15/16 closed/read back. Preparation54–62/milestone14 closed. Independent phase code/document review found no findings, as did both milestone reviews. Fresh phase193 units/11 package/type/boundary/build/strict package/extracted58 pass; unchanged source/built/shipped inputs retain66/58 acceptance and T-031 clean install/environment2/reproducibility. ZIP21079 bytes SHA256364596d9a81c548a7fa500c2556f0e740400276fb3d099fd4d1711beb7568235.
+Current main. Original campaign baseline3977abbcb640490c2cf60f3365681f29067b3835; preparation/implementation parent7dff2f421152e7bf69f2614462dbfbc8cd26ed11. Published featuredc2594c7fc4fe83becebf7b29ac21792c7a85783; explicit main merge27c6d9d70f6c7a6dc86d6625ec6a89631f327e48. Release commitc630b7388a5ace13c2f9accca7b448ee0751074b; immutable annotated v1.3.0 objectf1442270499edb04ed5d975da5fab8cf87cc1606. GitHub release428659891 is published/latest with exactly2 ZIP/checksum assets and byte-verified public downloads. Exact notes/commit/tag/provider body agrees. Both release-source CI runs pass. All scoped task issues/milestones closed/read back.
 
-Current PROJECT/design/SPEC/modern/ghost/configuration/PLAN/layout are incorporated and adjacent QC reassessed. Main TASKS alone owns all32 tasks; eligible003 sources/preparation/QC archived non-executably, prior1–26 task prefix and frozen campaigns untouched. See [phase report](features/003_3977abb-session-only-game-configuration/reports/phases/4/PHASE-REPORT.md) and [outcome](features/003_3977abb-session-only-game-configuration/IMPLEMENTATION-REPORT.md). TODO None. Native headed focus unverified; Electron excluded.
+## Return and limits
 
-## Next action and exact stop
-
-T-032 dc2594c7 closing/semantic audit and publication/readback pass; issue68 and milestone17 closed/read back. Merged193 units/11 package/type/boundary/build/strict integrity/extracted58 pass; merged ZIP equals the reviewed stable bytes. Publish/read back the explicit two-parent integration. Refresh ignored highlights/retained exact RELEASE-NOTES through that source; create the default-branch release commit/tag with identical body, publish/read back both, publish one GitHub release with stable ZIP/checksum and verify actual source/body/latest/download bytes and both release-source CI runs. Record actual outcomes in a T-032 parent-only evidence follow-up without moving tag, publish/read back and stop. No new task/campaign or routine approval is needed; do not claim pending effects completed.
+Publish/read back this T-032 evidence-only follow-up, confirm clean main/unchanged release tag and return the completed authorized result. No implementation/release work remains. Native headed OS-window focus unverified; managed Chromium/Firefox and process-local diagnosed Firefox recovery are documented. Windows Electron/installers/signing/store distribution remain future scope. No pending human decision or unresolved finding.
