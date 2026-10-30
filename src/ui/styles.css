@@ -17,7 +17,7 @@ header>p:last-child {color:#a1aec6;font-size:14px}
 .board-wrap {position:relative}
 .board {display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:repeat(20,1fr);width:280px;aspect-ratio:1/2;background:#070a12;border:2px solid #35425b;border-radius:4px;overflow:hidden;outline:none;box-shadow:0 16px 50px #0005}
 .cell {border:1px solid #182033}
-.cell[data-filled=true] {border:2px outset #ffffff66;background:#9a91ff}
+.cell[data-filled=true] {border:2px outset #34445b;background:#9a91ff}
 .cell[data-kind=I] {background:#5ed8e5}
 .cell[data-kind=J] {background:#6194f4}
 .cell[data-kind=L] {background:#ffa66c}
@@ -63,3 +63,8 @@ footer {margin-top:22px;text-align:center;font-size:9px;letter-spacing:2px;color
 .ghost-setting{flex-direction:column}.ghost-setting select{width:100%;min-width:0;padding:8px;color:#e8edfa;background:#151e2e;border:1px solid #687b9c;border-radius:5px;font:inherit}.ghost-setting select:focus-visible{outline:2px solid #bcfa60;outline-offset:3px}
 
 .settings-panel{margin:24px 0 0;padding:16px;border:1px solid #3e4b64;border-radius:10px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;min-width:0;background:#151e2e}.settings-panel legend{color:#b7f66b;font-weight:700;padding:0 8px}.settings-panel .settings{margin:0;grid-column:auto}.settings-help,.settings-summary{grid-column:1/-1;font-size:12px;line-height:1.6;color:#b8c7dd;margin:0;overflow-wrap:anywhere}.settings-summary{color:#e8edfa}.settings input:focus-visible{outline:2px solid #bcfa60;outline-offset:3px}@media(max-width:540px){.settings-panel{grid-template-columns:minmax(0,1fr)}}
+
+/* White is reserved for activated pieces and their retained settled appearance. */
+.cell[data-penetrator="true"]{background:#fff;border:2px solid #fff;filter:none}
+.cell[data-penetrator-ghost="true"]{background:repeating-linear-gradient(135deg,transparent 0,transparent 4px,#ffffff55 4px,#ffffff55 6px);border:2px dashed #fff}
+.penetrator-info{font-size:12px;color:#b8c7dd;min-width:0}.penetrator-info strong{display:block;min-height:24px;font-size:20px;letter-spacing:3px}@media(max-width:540px){.penetrator-info{grid-column:1/-1}}

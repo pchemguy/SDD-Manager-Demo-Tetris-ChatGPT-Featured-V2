@@ -19,9 +19,10 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <div class="stat"><span>SCORE</span><strong data-testid="score">0</strong></div>
     <div class="stat"><span>LEVEL</span><strong data-testid="level">1</strong></div>
     <div class="stat"><span>LINES</span><strong data-testid="lines">0</strong></div>
+    <div class="penetrator-info"><span>Penetrator bonuses</span><strong data-testid="penetrator-bonuses" aria-label="Penetrator bonuses: 0"></strong></div>
     <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
     <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button><button class="secondary" data-play data-action="hardDrop">Hard drop</button></div>
-    <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
+    <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>B</dt><dd>Penetrator (1 bonus)</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
   </div>
   <fieldset class="settings-panel"><legend>Settings</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart. Settings reset on page reload.</p>
@@ -110,8 +111,12 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
    const active = activeCells.get(i);
    const kind = active ?? snapshot.board[Math.floor(i / 10)][i % 10];
    tile.dataset.ghost=String(ghostCells.has(i)&&!kind);
+   tile.dataset.penetrator=String(active?snapshot.penetratorActive:kind?snapshot.penetratorCells[Math.floor(i/10)][i%10]:false);
+   tile.dataset.penetratorGhost=String(ghostCells.has(i)&&!kind&&snapshot.penetratorActive);
    tile.dataset.kind = kind ?? ''; tile.dataset.filled = String(!!kind); tile.dataset.active = String(!!active);
   });
+  const bonuses=root.querySelector<HTMLElement>('[data-testid="penetrator-bonuses"]')!;
+  bonuses.textContent='⚡'.repeat(snapshot.penetratorBonuses);bonuses.setAttribute('aria-label',`Penetrator bonuses: ${snapshot.penetratorBonuses}`);
   for (const key of ['score','level','lines'] as const) root.querySelector(`[data-testid="${key}"]`)!.textContent = String(snapshot[key]);
   const label = {ready:'Ready',running:'Playing',paused:'Paused','game-over':'Game over'}[snapshot.status];
   if (status.textContent !== label) status.textContent = label;
