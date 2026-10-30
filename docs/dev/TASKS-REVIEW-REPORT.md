@@ -142,3 +142,23 @@ Current gate: Ready for the scoped current document contracts and decomposition.
 | layout.md | `378816622a1a7801f9aa1efd707e8188b20dfee9` |
 | TASKS.md | `fbdfbd34f7b82abfbb70aa25e21cb2ee195c66cb` |
 | spec/leaderboard.md | `e699e3f6687d541a53a42c5c83c8645166cbd322` |
+
+## Revision 8 — Manual file current owners (T061)
+
+Owner assessment: Ready for the scoped current contracts, hierarchy and allocation; independent incorporation recheck Ready. 61 unique ordered IDs001–061 have one executable main owner. Original1–52 byte prefix is preserved;053–060 transfer with their existing completion evidence,061 is the sole newly completed task after final verification. Nine Phase8 entries preserve dependencies, accepted4+3 delivery/2 review counts, individual publication/tracking and milestone/phase/release evidence. Archived007 product task snapshot has zero executable checkboxes; earlier frozen001–006 are unchanged.
+
+No owner-confirmed unresolved conformance finding. Runtime verification and provider completion remain separately attributed to the phase report; pending task status is not a product decomposition change. Final source identities below include only status/evidence completion updates after review; hierarchy and contracts remain unchanged.
+
+Independent DOC-T061-00/01/02 recheck Ready: universal no-worker claim, conflicting dependency restrictions and inaccurate duplicate-key parser ordering are corrected. No unresolved finding. Status-only initial061 completion and semantic transfer preserve the reviewed hierarchy; implementation/provider effects are separately reported.
+
+| Current source | SHA-256 |
+| --- | --- |
+| PROJECT.md | `1fae763366b8b9f2f285eba7c1a2f37713a65398599b2a814d0ff9165c717f13` |
+| ARCHITECTURE.md | `f9c5f5a73f21755c0abc863eb6407313d81d1eebdfe694cfd068c344a1a870f7` |
+| DECOMPOSITION.md | `9f0c98024095b5289fafd31eba52bb4134b7aa18195cc20bec588f69cd492967` |
+| SPEC.md | `0c375f850fb40379d10ed539ffd5e267ce5cdc70ba2a3360b265a4c17e933761` |
+| PLAN.md | `52951a55b83cd537926a072df2c217a403244b77f4f8c2c7e67dc0cdf79ba90a` |
+| layout.md | `0d3ebd2bae492c3b494ddf499c6409c5c0bc545c8bf7227d29b69afeac888c88` |
+| TASKS.md | `637b6e69c9edc8618e4de492d0c8c5164669f4fbe7916c4352d7fdfb25291381` |
+| spec/leaderboard.md | `9d685067c2c2ee642721c0ac27aed27d213b8b52e8790d5b8a6e9effeaee3cba` |
+| spec/file-persistence.md | `87063e4d40f72ca1be7e4988eb8ff85ee9a3f4fded6ee536e1eb3c2c58ad4208` |

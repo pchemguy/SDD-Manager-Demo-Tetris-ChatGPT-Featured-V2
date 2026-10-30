@@ -2,7 +2,7 @@
 
 ## Scope and ownership
 
-L-01–L-08 extend [SPEC](../SPEC.md) under [PROJECT](../PROJECT.md), [ARCHITECTURE](../ARCHITECTURE.md) and [DECOMPOSITION](../DECOMPOSITION.md). C-04 owns transactional controller history; C-09 pure ranking; C-05 projection; C-06 page lifetime. Existing game/scoring/configuration/browser-persistence contracts remain unchanged. No persistent score format or seventh setting exists.
+L-01–L-08 extend [SPEC](../SPEC.md) under [PROJECT](../PROJECT.md), [ARCHITECTURE](../ARCHITECTURE.md) and [DECOMPOSITION](../DECOMPOSITION.md). C-04 owns transactional controller history; C-09 pure ranking; C-05 projection; C-06 page lifetime. Existing game/scoring/configuration/browser-persistence contracts remain unchanged. [Manual files](file-persistence.md) add complete result metadata and explicit portable replacement; no automatic score storage or seventh setting exists.
 
 ## L-01 — Completed game and final score
 
@@ -12,13 +12,13 @@ Acceptance: exercise actual lock and Hold top-out paths with nonzero and zero sc
 
 ## L-02 — Ranking and capacity
 
-Keep at most ten individual results. Each result has exactly a numeric score; no name, time, ID, active configuration or game-state data is required. Sort descending by score. Insert a tied result after existing results with the same score. Retain equal-score games as distinct entries. Truncate after position ten; an incoming score below the current tenth, or equal to it after earlier ties, does not displace retained entries. Visible ranks are consecutive 1 through current length, with no shared or skipped rank numbers.
+Keep at most ten individual results. Each result has exactly id, score and timestamp under File F-01. No name, active configuration or unfinished-game data is included. Sort descending by score. Insert a tied result after existing results with the same score. Retain equal-score games as distinct entries. Truncate after position ten; an incoming score below the current tenth, or equal to it after earlier ties, does not displace retained entries. Visible ranks are consecutive 1 through current length, with no shared or skipped rank numbers.
 
 Acceptance: literal histories cover empty insertion, highest/middle/lowest insertion, multiple equal scores, ten zero-score games and more than ten completions. Assert the exact resulting ordered score sequence and ten-row cap, not only a sortedness predicate.
 
 ## L-03 — Pure calculation and detached values
 
-C-09 accepts an ordered current history and final numeric score and returns a new ordered capped history. It does not mutate its inputs, read clocks/RNG/storage or retain state. Scores must be finite nonnegative integers. Malformed history/result/score types cause TypeError; numeric values outside that domain, history longer than ten or history not in descending order cause RangeError. Caller data remains unchanged on errors. C-04 passes only valid committed history and an accepted candidate score.
+C-09 accepts an ordered current history and complete final result and returns a new ordered capped history. It does not mutate its inputs, read clocks/RNG/storage or retain state. Scores must be non-negative safe integers; IDs and real canonical UTC timestamps follow File F-01. Malformed history/result/score types cause TypeError; numeric values outside that domain, history longer than ten or history not in descending order cause RangeError. Caller data remains unchanged on errors. C-04 passes only valid committed history and an accepted complete candidate result with explicit completion metadata.
 
 Public session snapshots include a detached leaderboard result array and detached entries; mutating returned data must not affect current or future snapshots, rendering or controller history. No observer receives a reference to owned mutable history.
 
@@ -26,9 +26,9 @@ Acceptance: freeze inputs, mutate returned arrays/objects and later snapshots, c
 
 ## L-04 — Atomic completion and notification
 
-Within the existing controller transaction, derive candidate game state, recognize L-01 and derive history before publishing the candidate. Commit score/status/history together, then notify existing subscribers with the same complete detached snapshot. Exactly one result is recorded per game regardless of repeated snapshots, post-game actions, frame advances or rerenders. A Game Over subscriber already sees the completed result even if another listener throws. Existing listener isolation and reentrant-operation rejection remain intact.
+Within the existing controller transaction, derive candidate game state, recognize L-01 and read explicit ID/UTC callbacks once for the qualifying attempted completion and derive complete history before publishing the candidate. Commit score/status/history together, then notify existing subscribers with the same complete detached snapshot. Exactly one result is recorded per game regardless of repeated snapshots, post-game actions, frame advances or rerenders. A Game Over subscriber already sees the completed result even if another listener throws. Existing listener isolation and reentrant-operation rejection remain intact.
 
-A failure before commit, including invalid integration input, piece draw/refill failure or ranking failure, preserves prior game and history state and emits no successful-change notification. External RNG callback effects remain outside transaction rollback as specified by the main game contracts. A failed Start/Restart also preserves the prior state/history.
+A failure before commit, including invalid integration input, completion metadata failure, piece draw/refill failure or ranking failure, preserves prior game and history state and emits no successful-change notification. External RNG callback effects remain outside transaction rollback as specified by the main game contracts. A failed Start/Restart also preserves the prior state/history.
 
 Acceptance: deterministic session tests cover dispatch/advance/soft and hard-drop completion paths, both locking policies, listener throw/reentry, repeated post-game commands and draw failure followed by recovery. Verify one completion and consistent listener snapshots, with no extra RNG calls or elapsed-duration consumption.
 
@@ -52,10 +52,12 @@ Acceptance: actual shared view and page inspect empty/one/ten rows, score/rank t
 
 Use ordinary score without normalization or per-configuration boards; all permitted game rules, including penetrator, compete together. Preserve scoring, queue, Hold, ghost projection, lock clocks and bonus inventory. History must not consume random draws or schedule time. Existing six native controls, selected-versus-active timing, URL/cookie effects, input exclusion for native controls, focus/visibility pause and teardown remain governed by main SPEC.
 
-Acceptance: existing ordinary/modern/ghost/configuration/persistence/penetrator and lifecycle suites pass. Add a completed-game trace under immediate and general hard-drop locking rather than assuming all endings originate from one input. Verify history change does not save settings or alter URL/cookies.
+Acceptance: existing ordinary/modern/ghost/configuration/persistence/penetrator and lifecycle suites pass. Add a completed-game trace under immediate and general hard-drop locking rather than assuming all endings originate from one input. Verify completion/ranking history changes do not save settings or alter URL/cookies. Manual Restore follows its separate checked file contract.
 
 ## L-08 — Browser distribution
 
 The deployable static browser archive includes the leaderboard code/UI and accurate player installation/control guidance. Keep local assets relative and the existing strict member/manifest/checksum/exclusion policy; no test fixture, trace, development source, credential or browser cache ships. Source, built and extracted deployments must support L-01–L-07 through managed Chromium and Firefox. Source-only fixtures may test internal view/remount seams; actual game completion/panel/lifetime coverage must run against built and extracted page entry too. Native headed-window focus and actual HTTPS cookie-engine limits remain reported separately; Electron delivery remains outside this feature.
 
 Acceptance: verify a clean install/build, type and boundary checks, unit/package/environment checks, actual source/built/extracted browser suites, repeated build/package identity, strict contents and extracted-prefix hosting. A completed integrated phase receives a minor release with notes and deployable ZIP/checksum, following the established default-branch release source/tag/body/asset/public-download/CI verification contract.
+
+Manual Restore replaces the whole list, including empty history, without submitting a game or resetting current gameplay. Imported tie order is retained; later genuine completions rank normally. File validation, effects and explicit-default persistence follow [File F-01–F-12](file-persistence.md).

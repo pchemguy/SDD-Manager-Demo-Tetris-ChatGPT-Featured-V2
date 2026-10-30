@@ -1,8 +1,10 @@
+> Historical campaign007 source; current authorities are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). This archived source is not an executable owner.
+
 # File persistence component delta
 
 ## Context
 
-Apply [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) to C-04–C-09 in [DECOMPOSITION](DECOMPOSITION.md), adding C-10/C-11. Core C-01–C-03 gameplay helpers remain unchanged. Exact accepted behavior belongs to FEATURE-SPEC.
+Apply [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) to C-04–C-09 in [DECOMPOSITION](../../DECOMPOSITION.md), adding C-10/C-11. Core C-01–C-03 gameplay helpers remain unchanged. Exact accepted behavior belongs to FEATURE-SPEC.
 
 ## C-09 complete result values
 

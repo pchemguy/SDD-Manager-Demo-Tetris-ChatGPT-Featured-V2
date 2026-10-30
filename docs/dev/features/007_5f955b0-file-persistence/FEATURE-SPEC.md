@@ -1,8 +1,10 @@
+> Historical campaign007 source; current authorities are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). This archived source is not an executable owner.
+
 # Manual file persistence specification
 
 ## Scope and governing inputs
 
-F-01–F-12 define the delta under [FEATURE](FEATURE.md), [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) and [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md). They extend main [SPEC](SPEC.md), [leaderboard L-01–L-08](spec/leaderboard.md), [configuration](spec/session-configuration.md) and [browser persistence U-01–U-08](spec/configuration-persistence.md).
+F-01–F-12 define the delta under [FEATURE](FEATURE.md), [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) and [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md). They extend main [SPEC](../../SPEC.md), [leaderboard L-01–L-08](../../spec/leaderboard.md), [configuration](../../spec/session-configuration.md) and [browser persistence U-01–U-08](../../spec/configuration-persistence.md).
 
 L-02/L-03's score-only shape becomes the complete result below; L-04 retains atomic completion with injected metadata; L-05 gains manual history replacement without automatic persistence; L-06 gains no visible metadata columns. U-03/U-04 native edits retain best-effort persistence; F-07 defines a separate checked restore path. Scope exclusions concerning import/export and metadata in main PROJECT/design/SPEC are superseded only for this capability; all other gameplay, six-setting domains, lifecycle and static delivery guarantees remain.
 

@@ -1,8 +1,10 @@
+> Historical campaign007 source; current authorities are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). This archived source is not an executable owner.
+
 # File persistence delivery plan
 
 ## Objective and scope
 
-Deliver [FEATURE-SPEC F-01–F-12](FEATURE-SPEC.md) as Phase8, extending the usable v1.6.0 browser game with one manual portable-snapshot workflow in JSON and SQLite. Use [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) and [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md); retain main [PLAN](PLAN.md) Phases1–7 and completed tasks1–52 unchanged. No other platform, automatic storage or unfinished-game save is included.
+Deliver [FEATURE-SPEC F-01–F-12](FEATURE-SPEC.md) as Phase8, extending the usable v1.6.0 browser game with one manual portable-snapshot workflow in JSON and SQLite. Use [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) and [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md); retain main [PLAN](../../PLAN.md) Phases1–7 and completed tasks1–52 unchanged. No other platform, automatic storage or unfinished-game save is included.
 
 The first integrated milestone delivers real JSON Save/Restore, including metadata and failure-safe application. The second adds equivalent SQLite and verifies the full static distribution. Both formats are part of the one bounded file-persistence capability, sharing the data/validation/commit path. A separate release for internal codec groundwork is unnecessary; release v1.7.0 only after the complete phase is verified and integrated.
 
@@ -55,7 +57,7 @@ The affected physical allocation is established before task derivation; main lay
 
 ### Affected physical owners
 
-This scoped allocation extends [layout](layout.md) for the feature; unchanged paths retain main ownership. Paths below are intended allocation, not evidence that new modules exist.
+This scoped allocation extends [layout](../../layout.md) for the feature; unchanged paths retain main ownership. Paths below are intended allocation, not evidence that new modules exist.
 
 | Path or family | Owner and integration responsibility |
 | --- | --- |
