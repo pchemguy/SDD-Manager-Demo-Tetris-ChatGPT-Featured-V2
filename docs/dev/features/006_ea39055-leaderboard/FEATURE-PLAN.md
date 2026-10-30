@@ -1,5 +1,7 @@
 # Leaderboard delivery plan
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 ## Objective and boundaries
 
 Deliver the complete [accepted leaderboard](FEATURE.md), [L-01–L-08](FEATURE-SPEC.md) and [component delta](FEATURE_DECOMPOSITION.md) as one bounded Phase7 increment on the working v1.5.0 browser game. Earlier phases/task ranges remain unchanged. Session history is useful only when completion capture, ranking and a visible panel work together; persistence, identities and online competition are excluded. No separate infrastructure phase or native-platform expansion is needed.
@@ -37,4 +39,4 @@ Exit: all phase contracts and prior regressions supported by actual evidence, al
 | L07 accidental RNG/clock/setting side effects |7.1 deterministic regression and source guards;7.2 complete existing suites. |
 | L08 source-only success or leaked fixtures |7.2 actual built/extracted acceptance and strict archive;7.3 merged/public release verification. |
 
-Two delivery milestones are intentionally retained: first the integrated playable capability, then lifecycle/deployable acceptance. Splitting pure helpers or administrative review into more milestones would delay an end-to-end useful result without reducing risk. The third milestone is the required excluded phase review unit. There are no unresolved product decisions or later capability phases hidden in this plan. [Main layout](layout.md) remains authoritative for repository placement; the leaderboard allocation is assessed before task derivation.
+Two delivery milestones are intentionally retained: first the integrated playable capability, then lifecycle/deployable acceptance. Splitting pure helpers or administrative review into more milestones would delay an end-to-end useful result without reducing risk. The third milestone is the required excluded phase review unit. There are no unresolved product decisions or later capability phases hidden in this plan. [Main layout](../../layout.md) remains authoritative for repository placement; the leaderboard allocation is assessed before task derivation.

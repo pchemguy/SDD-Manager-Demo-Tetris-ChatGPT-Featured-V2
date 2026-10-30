@@ -150,7 +150,7 @@ The adapter's two files separate deterministic format logic from effects without
 
 ## Session leaderboard allocation
 
-This scoped allocation supports the intended [leaderboard architecture](FEATURE_ARCHITECTURE.md), [component model](FEATURE_DECOMPOSITION.md), [L contracts](FEATURE-SPEC.md) and [Phase7 plan](FEATURE-PLAN.md). New paths below are intended allocations, not claims of implemented files. Unaffected owners and earlier phase/task ranges stay intact.
+This allocation supports the [leaderboard architecture](ARCHITECTURE.md#leaderboard-completion-and-lifetime), [component model](DECOMPOSITION.md#c-09-ranking-and-completed-score-collaboration), [L contracts](spec/leaderboard.md) and [Phase7 plan](PLAN.md#phase-7--session-leaderboard). Source/test owners below follow the current component model. Unaffected owners and earlier phase/task ranges stay intact.
 
 | Path | Component / physical responsibility |
 | --- | --- |
@@ -167,9 +167,9 @@ This scoped allocation supports the intended [leaderboard architecture](FEATURE_
 | tsconfig.test.json, scripts/test-unit.mjs, scripts/check-boundaries.mjs | Existing DOM-free compiler/discovery and dependency enforcement; new application tests already fit directories, adjust only demonstrated gaps. |
 | playwright.config.ts, scripts/browser-env.mjs | Explicit source-only fixture exclusion for built/extracted targets, dedicated Chromium/Firefox and measured finite suite/wrapper budgets. |
 | README.md, docs/CONTROLS.md, docs/INSTALL.md, docs/DEVELOPMENT.md | Accurate leaderboard qualification/ties/page lifetime, preserved configuration behavior, deployment and verified commands/evidence limits. |
-| package.json, package-lock.json, existing package/release/CI scripts and package tests | Planned1.6.0 version metadata and strict relative/reproducible browser ZIP/checksum using current build path and allowlist. No new dependency or publisher. |
-| docs/dev/spec/leaderboard.md | Intended canonical L-01–L-08 owner after accepted phase incorporation; active FEATURE-SPEC remains owner until then. |
+| package.json, package-lock.json, existing package/release/CI scripts and package tests | 1.6.0 version metadata and strict relative/reproducible browser ZIP/checksum using current build path and allowlist. No new dependency or publisher. |
+| docs/dev/spec/leaderboard.md | Canonical L-01–L-08 behavioral owner. |
 | docs/dev/PROJECT.md, ARCHITECTURE.md, DECOMPOSITION.md, SPEC.md and affected children, PLAN.md, layout.md, TASKS.md, current adjacent QC and AGENTS.md | Owning final phase task reconciles accepted scope/current navigation and unique executable task ownership. |
 | docs/dev/features/006_ea39055-leaderboard/reports/phases/7/7.1.md,7.2.md,PHASE-REPORT.md and package IMPLEMENTATION-REPORT.md | Fixed milestone/phase/final implementation evidence. Eligible006 accepted sources/preparation/adjacent QC archive at final incorporation; earlier records untouched. |
 
-Intended local distribution: artifacts/classic-tetris-browser-v1.6.0.zip and corresponding checksum; stable public assets remain classic-tetris-browser.zip and classic-tetris-browser.zip.sha256. Existing build assets/manifest/license/notices/shipped guides only; no source fixture/trace, docs/dev, credential, dependency/browser cache or development source in the archive. Keep finalized root RELEASE-NOTES and ignored internal highlights ownership under the established release workflow. No FEATURE-LAYOUT or extra service/package tree is allocated.
+Local distribution: artifacts/classic-tetris-browser-v1.6.0.zip and corresponding checksum; stable public assets remain classic-tetris-browser.zip and classic-tetris-browser.zip.sha256. Existing build assets/manifest/license/notices/shipped guides only; no source fixture/trace, docs/dev, credential, dependency/browser cache or development source in the archive. Keep finalized root RELEASE-NOTES and ignored internal highlights ownership under the established release workflow. No FEATURE-LAYOUT or extra service/package tree is allocated.

@@ -1,5 +1,7 @@
 # Leaderboard task conformance review
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 Current gate: **Ready for whole-package QC**. Scope: initial derivation of T047–052 against accepted Phase7 strategy and scoped layout, not implementation eligibility or runtime verification. No finding remains open.
 
 ## Reviewed identities

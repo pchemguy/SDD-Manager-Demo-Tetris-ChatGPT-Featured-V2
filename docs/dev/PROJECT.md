@@ -18,7 +18,7 @@ Clear four rows at once to earn one penetrator bonus, capped at three. Board-foc
 
 ## Delivery constraints
 
-Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Keep browser input/timing/lifecycle separate from shared logic/UI. Verify the assembled game in dedicated managed Chromium and Firefox. Each completed phase is verified and integrated before its version tag and GitHub release. Current browser metadata and static package use1.5.0.
+Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Keep browser input/timing/lifecycle separate from shared logic/UI. Verify the assembled game in dedicated managed Chromium and Firefox. Each completed phase is verified and integrated before its version tag and GitHub release. Current browser metadata and static package use1.6.0.
 
 ## Non-goals
 
@@ -26,4 +26,8 @@ Windows Electron is a future host; no desktop executable, installer or native-wi
 
 ## Contract owners
 
-[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) and [penetrator contracts](spec/penetrator.md) and [browser persistence](spec/configuration-persistence.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.
+[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) and [penetrator contracts](spec/penetrator.md) and [browser persistence](spec/configuration-persistence.md) and [session leaderboard](spec/leaderboard.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.
+
+## Session leaderboard
+
+Show the ten best completed-game scores for the current page, highest first, with earlier completions first on ties. Zero scores and blocked Hold-spawn endings qualify. Capture each final Game Over score once. Start/Restart preserves completed results while abandoning an unfinished game; reload and fresh pages clear history. Render a labelled rank/score panel without moving focus. No names, dates, configuration-specific boards or score normalization are added. History is memory-only, independent of remembered settings and fresh-game state; no score cookie, URL parameter, web storage or backend exists.

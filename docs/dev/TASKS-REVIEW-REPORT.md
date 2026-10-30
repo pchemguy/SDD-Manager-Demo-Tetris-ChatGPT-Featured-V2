@@ -127,3 +127,18 @@ Main TASKS alone owns40 unique stable IDs. Original1–32 bytes preserved;33–3
 Checked sole global ownership for46 unique T IDs and preserved original1–40 byte prefix. New Phase6 tasks remain3 deliveries in6.1 and2 in6.2 plus one excluded phase review T046. Thus no standalone milestone review tasks are introduced; final deliveries043/045 own independent review/testing/report/HANDOFF, already evidenced and closed. All dependencies are acyclic and U01–08 have coherent executable tests/docs/failure/distribution/integration routes. Current TASKS owns the T046 phase boundary, completed after independent review and fresh execution checks; archived005 checklist entries are non-executable historical snapshots. Routine final status/evidence updates do not alter this reviewed task decomposition and need no fictitious regenerated plan.
 
 Cross-document checks compare accepted archived005 sources with current owners, literal source/domain/default interfaces, actual code/tests, declared build/package and prior-range preservation. Confirmed conformance findings: None. Gate Ready; no deferred contract issue or new human decision. Runtime/package results remain separately owned by6.1/6.2 and final phase evidence; archive status does not certify a new run. Native headed OS focus/actual HTTPS engine and future Electron limits remain explicit. Task046 is not marked complete by this document QC.
+
+## Revision 7 — Session leaderboard current owners (T052)
+
+Current gate: Ready for the scoped current document contracts and decomposition. 52 unique IDs, original1–46 prefix byte-preserved; transferred047–051 completed with durable evidence,052 is the sole final boundary, completed after independent phase review and fresh final checks. Delivery3/2 tasks plus exactly-one phase review retained; dependencies/review/report/release and source/built/extracted coverage conform to PLAN. Archived feature list has zero executable checkboxes. No confirmed unresolved conformance finding; phase implementation review/verification and actual integration/release outcomes are separately owned. Routine completion/status evidence does not change task decomposition.
+
+| Current source | Git blob |
+| --- | --- |
+| PROJECT.md | `6a9e857d81763dcf9fb073a07bc4f5e39b27547c` |
+| ARCHITECTURE.md | `0bfe9ce7dc414ab631f04aa546b2b079f92f1bff` |
+| DECOMPOSITION.md | `12d64dcf7f94c20deb3429a8d064cf16aee011aa` |
+| SPEC.md | `0a6c2e5d75b841741ac097d9e9b2505ee5d6b9be` |
+| PLAN.md | `4f6ad5ae7560aa2829901f615959bb217b77dade` |
+| layout.md | `378816622a1a7801f9aa1efd707e8188b20dfee9` |
+| TASKS.md | `fbdfbd34f7b82abfbb70aa25e21cb2ee195c66cb` |
+| spec/leaderboard.md | `e699e3f6687d541a53a42c5c83c8645166cbd322` |

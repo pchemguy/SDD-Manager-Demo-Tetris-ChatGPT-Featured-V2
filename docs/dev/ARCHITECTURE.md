@@ -11,7 +11,7 @@ The [project brief](PROJECT.md) requires a browser game with modern rules and re
 | Rules core | Piece geometry, legal placements, movement, rotation, locking, row removal and score/level progression. | TypeScript language and explicit inputs; no DOM, wall clock or global random source. |
 | Selected configuration | Detached six-setting page memory, atomic validation and pure rule projection. | Explicit typed values; no DOM, clock, RNG, storage or broadcast. |
 | Session controller | Own the current game state; order commands, gravity advances and state notifications. | Rules core, configuration value types/validation and injected random-number callback. |
-| Shared UI | Render board/status/controls and emit semantic actions. | Read-only session snapshots, explicit selected context, action callbacks and an injected DOM mount element. |
+| Shared UI | Render board/status/controls/leaderboard and emit semantic actions. | Read-only session snapshots, explicit selected context, action callbacks and an injected DOM mount element. |
 | Browser persistence | Restore/save six selected fields through pure formats and independent best-effort effects. | C-07 and explicit URL/cookie/history callbacks; no game state, DOM globals or scheduler. |
 | Browser host | Mount/unmount the app; translate keyboard, frame timing, focus and visibility events. | Session, selected configuration/persistence and shared UI; browser APIs. |
 
@@ -19,7 +19,7 @@ The host composes the application. The session depends on the core, and the UI c
 
 ## State and time ownership
 
-The session owns the sole mutable game state, transaction-cloned bag/next/held/options/rules, penetrator bank/mode/appearance, gravity remainder and the interval-policy grounding countdown. The UI renders detached snapshots and never mutates rules state. Commands are processed synchronously so input and gravity cannot interleave within a transition.
+The session owns controller-lifetime completed history alongside the sole mutable game state, transaction-cloned bag/next/held/options/rules, penetrator bank/mode/appearance, gravity remainder and the interval-policy grounding countdown. The UI renders detached snapshots and never mutates rules state. Commands are processed synchronously so input and gravity cannot interleave within a transition.
 
 The host supplies elapsed durations rather than allowing rules to read wall time. Randomness enters through a supplied callback, enabling deterministic rule tests. The core has no scheduler; the host owns the animation-frame subscription and event listeners. Pausing and host lifecycle changes do not recreate the rules engine.
 
@@ -91,3 +91,11 @@ C-06 creates C-08 once at page entry and passes its compatible configuration con
 Successful later updates validate/commit in memory before changed-key cookie writes and one current-URL replacement. Preserve history.state and unrelated query/fragment data. Each source/effect failure is contained independently; valid memory selection and play remain usable. Cookie scope is immutable page-directory metadata, while edit URL reads use the current URL. Same-context remount does not restore again. Pure createConfiguration and omitted mount contexts retain defaults without storage.
 
 C-08 has no game snapshot, competing settings state, scheduler, listener or backend. It never serializes board/score/queue/Hold/timers/penetrator inventory, changes active rules or calls RNG. Platform effects stay outside application/shared UI; source tests enforce the dependency direction. Browser cookie/query contracts and exact lifetime/attributes belong to [U-01–U-08](spec/configuration-persistence.md); C-07 remains pure selected memory under S-01.
+
+## Leaderboard completion and lifetime
+
+C-04 owns bounded history in the same transaction as the current game. Pure application helper C-09 validates and ranks explicit results with no mutable authority, clock, RNG, DOM or storage. A successful running-to-game-over transition captures the final candidate score through that helper before the combined candidate commits and subscribers run. Both ordinary lock/spawn and Hold/spawn endings use this seam. Precommit failure preserves game/history; listener failure cannot lose or duplicate completion.
+
+Start/Restart constructs fresh gameplay fields while copying retained history. Fresh controllers begin empty. C-05 projects the detached Snapshot.leaderboard through its normal render path; it never submits or ranks scores. C-06 supports sequential explicit-controller remount through optional fourth mountGame argument; default mounts and fresh page entry create independent controllers. An explicit controller retains its RNG/reporter and has one live mount at a time. Teardown releases host resources without submitting or mutating a retained controller.
+
+Controller ownership avoids a UI-observer race and a second store. C-08 still persists only six selected values; settings may restore while a new page has empty score history. Shared core/application/UI never import platform code. Exact L-01–L-08 contracts belong to [leaderboard specification](spec/leaderboard.md), with logical responsibilities in [DECOMPOSITION](DECOMPOSITION.md).

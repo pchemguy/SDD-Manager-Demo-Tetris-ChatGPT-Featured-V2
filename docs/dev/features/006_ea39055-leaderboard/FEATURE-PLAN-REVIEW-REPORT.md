@@ -1,5 +1,7 @@
 # Leaderboard plan and layout review
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 Current gate: **Ready for task derivation**, after the combined Revision1 layout assessment below. Author review of Phase7 strategy, L01–08 coverage, review/report/package/incorporation/release route and retained earlier ranges. No implementation claimed.
 
 ## Initial reviewed identities

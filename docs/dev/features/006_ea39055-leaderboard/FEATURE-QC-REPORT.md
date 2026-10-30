@@ -1,5 +1,7 @@
 # Leaderboard feature package QC
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 Current gate: **Ready** for verified preparation integration, hosted activation and authorized T047–052 execution. Candidate c7cf8e4636e9f074144ee5c4cd470904f31615d8; campaign006_ea39055, original baseline ea3905572ff8e3fa473862e154faccee9055c18b. Human requested “Do QC and full implement” after accepting FEATURE and the autodoc document pass. This is preparation readiness; no runtime implementation claimed.
 
 ## Reviewed active identities

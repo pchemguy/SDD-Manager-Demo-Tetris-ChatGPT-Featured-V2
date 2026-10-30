@@ -136,3 +136,18 @@ P01–08 incorporated without changing accepted bodies; ordinary/final non-overl
 Checked coherent current PROJECT/architecture/C01–C08 ownership and R/F/G/S/P/U contracts. U01–08 exactly preserve accepted six fields/formats, independent precedence, explicit-default saves, omitted/invalid retention, cookie scope/lifetime, independent failures, unchanged controller APIs/history semantics and no game restore. R09/S01/S07/G02/F07 no longer make a contradictory universal browser reload-default/no-URL claim; pure contexts stay storage-free. Canonical U child owns browser persistence, while S owns selected values/active timing and other children preserve gameplay. Existing default values are defaults when no source supplies a value, not mandatory reload values. No new gameplay setting/platform/API scope was invented. All contract groups have objective model/injected/native/package evidence routes.
 
 Cross-document checks compare accepted archived005 sources with current owners, literal source/domain/default interfaces, actual code/tests, declared build/package and prior-range preservation. Confirmed conformance findings: None. Gate Ready; no deferred contract issue or new human decision. Runtime/package results remain separately owned by6.1/6.2 and final phase evidence; archive status does not certify a new run. Native headed OS focus/actual HTTPS engine and future Electron limits remain explicit. Task046 is not marked complete by this document QC.
+
+## Revision 7 — Session leaderboard current owners (T052)
+
+Current gate: Ready for the scoped current document contracts and decomposition. L01–08 and R06/R08 links match C04/C05/C06/C09 final ownership; atomic final score, stable ranking, errors/detachment, restart/page lifetime, semantic projection, no score storage and unchanged gameplay/settings all have objective acceptance. No confirmed unresolved conformance finding; phase implementation review/verification and actual integration/release outcomes are separately owned. Routine completion/status evidence does not change task decomposition.
+
+| Current source | Git blob |
+| --- | --- |
+| PROJECT.md | `6a9e857d81763dcf9fb073a07bc4f5e39b27547c` |
+| ARCHITECTURE.md | `0bfe9ce7dc414ab631f04aa546b2b079f92f1bff` |
+| DECOMPOSITION.md | `12d64dcf7f94c20deb3429a8d064cf16aee011aa` |
+| SPEC.md | `0a6c2e5d75b841741ac097d9e9b2505ee5d6b9be` |
+| PLAN.md | `4f6ad5ae7560aa2829901f615959bb217b77dade` |
+| layout.md | `378816622a1a7801f9aa1efd707e8188b20dfee9` |
+| TASKS.md | `fbdfbd34f7b82abfbb70aa25e21cb2ee195c66cb` |
+| spec/leaderboard.md | `e699e3f6687d541a53a42c5c83c8645166cbd322` |

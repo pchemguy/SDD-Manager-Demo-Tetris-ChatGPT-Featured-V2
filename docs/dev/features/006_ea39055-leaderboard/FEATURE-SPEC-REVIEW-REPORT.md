@@ -1,5 +1,7 @@
 # Leaderboard specification review
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 Current gate: **Ready** for dependent feature planning. Scope: L-01–L-08 and affected existing game/controller/UI/host/persistence boundaries, not whole-project recertification. Author review; no implementation or runtime checks claimed.
 
 ## Reviewed identities

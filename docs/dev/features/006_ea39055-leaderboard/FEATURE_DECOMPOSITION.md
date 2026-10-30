@@ -1,6 +1,8 @@
 # Leaderboard component delta
 
-The [accepted feature](FEATURE.md) and [architecture delta](FEATURE_ARCHITECTURE.md) extend the [main component model](DECOMPOSITION.md). C-01–C-03 and C-07–C-08 retain their responsibilities.
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
+The [accepted feature](FEATURE.md) and [architecture delta](FEATURE_ARCHITECTURE.md) extend the [main component model](../../DECOMPOSITION.md). C-01–C-03 and C-07–C-08 retain their responsibilities.
 
 | Component | Responsibility and boundary | Verification seam |
 | --- | --- | --- |

@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Owned leaderboard view and lifetime fixture</title></head><body>
+<button id="rows">Ten rows</button><button id="zero">One zero</button><button id="empty">Empty</button><button id="repeat">Repeat render</button><button id="retained">Retain controller</button><button id="fresh">Fresh controller</button><button id="unmount">Unmount</button><output id="frames"></output><main id="harness"></main>
+<script type="module">
+import {createSession} from '/src/application/session.ts';
+import {createConfiguration} from '/src/application/configuration.ts';
+import {createGameView} from '/src/ui/game-view.ts';
+import {mountGame} from '/src/platform/browser/main.ts';
+const doc=document,container=doc.querySelector('#harness'),configuration=createConfiguration(),retained=createSession(()=>.999999);
+const request=window.requestAnimationFrame.bind(window),cancel=window.cancelAnimationFrame.bind(window),pending=new Set();
+window.requestAnimationFrame=callback=>{const id=request(time=>{pending.delete(id);callback(time)});pending.add(id);return id};window.cancelAnimationFrame=id=>{pending.delete(id);cancel(id)};
+let dispose=()=>{},view,snapshot;
+function show(scores){dispose();view=createGameView(container,()=>{});snapshot={...retained.getSnapshot(),leaderboard:scores.map(score=>({score}))};view.render(snapshot);dispose=()=>view.destroy()}
+doc.querySelector('#rows').onclick=()=>show([999,90,80,70,60,50,40,30,20,0]);doc.querySelector('#zero').onclick=()=>show([0]);doc.querySelector('#empty').onclick=()=>show([]);doc.querySelector('#repeat').onclick=()=>{for(let i=0;i<5;i++)view.render(snapshot)};
+doc.querySelector('#retained').onclick=()=>{dispose();dispose=mountGame(container,()=>{throw Error('Injected session must own RNG')},configuration,retained)};
+doc.querySelector('#fresh').onclick=()=>{dispose();dispose=mountGame(container,()=>.999999)};
+doc.querySelector('#unmount').onclick=()=>{dispose();dispose();doc.querySelector('#frames').textContent=String(pending.size)};
+show([]);
+</script></body></html>

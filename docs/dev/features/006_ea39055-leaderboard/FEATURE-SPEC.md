@@ -1,8 +1,10 @@
 # Session leaderboard specification
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 ## Scope and ownership
 
-The [accepted feature](FEATURE.md), [architecture delta](FEATURE_ARCHITECTURE.md) and [component delta](FEATURE_DECOMPOSITION.md) add the following L contracts to the [main SPEC](SPEC.md). Existing movement, scoring, timing, penetrator, configuration and browser-persistence contracts remain unchanged. C-04 owns completion/history; C-09 ranks; C-05 displays; C-06 owns browser lifetime. This delta adds no persistent format or seventh setting.
+The [accepted feature](FEATURE.md), [architecture delta](FEATURE_ARCHITECTURE.md) and [component delta](FEATURE_DECOMPOSITION.md) add the following L contracts to the [main SPEC](../../SPEC.md). Existing movement, scoring, timing, penetrator, configuration and browser-persistence contracts remain unchanged. C-04 owns completion/history; C-09 ranks; C-05 displays; C-06 owns browser lifetime. This delta adds no persistent format or seventh setting.
 
 ## L-01 — Completed game and final score
 

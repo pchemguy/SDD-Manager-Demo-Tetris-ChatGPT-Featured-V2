@@ -1,8 +1,10 @@
 # Leaderboard architecture
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 ## Scope and retained boundaries
 
-The accepted [feature](FEATURE.md) adds page-lifetime top-ten completed scores to the [existing architecture](ARCHITECTURE.md). Core gameplay, C-07 selected configuration, C-08 browser persistence and their dependencies retain their current responsibilities. There is no score backend or storage adapter.
+The accepted [feature](FEATURE.md) adds page-lifetime top-ten completed scores to the [existing architecture](../../ARCHITECTURE.md). Core gameplay, C-07 selected configuration, C-08 browser persistence and their dependencies retain their current responsibilities. There is no score backend or storage adapter.
 
 ## State and dependency direction
 
