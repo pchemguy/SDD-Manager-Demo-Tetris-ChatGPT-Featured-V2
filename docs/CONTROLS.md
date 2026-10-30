@@ -14,7 +14,7 @@ Click Start game. The playfield receives keyboard focus; click it to regain focu
 | Enter | Start a ready game |
 | R | Restart |
 
-Native rotation, Hold, Hard drop, Start, Pause/Resume and Restart controls are keyboard operable. Single-action keys ignore repeat; movement/soft drop use native repeat. Buttons and the checkbox retain their ordinary keyboard behavior. Focus leaving the game, window blur or hiding the page pauses play; return does not resume automatically. Resume explicitly. Restart discards game state; reload returns to ready. There is no saved game.
+Native rotation, Hold, Hard drop, Start, Pause/Resume and Restart controls are keyboard operable. Single-action keys ignore repeat; movement/soft drop use native repeat. Buttons and settings controls retain their ordinary keyboard behavior. Focus leaving the game, window blur or hiding the page pauses play; return does not resume automatically. Resume explicitly. Restart discards game state; reload returns to ready. There is no saved game.
 
 ## Pieces and planning
 
@@ -28,7 +28,15 @@ A grounded piece locks after one full current gravity interval from landing. A n
 
 Hard drop moves immediately to the ghost landing and awards two points per descended row. It uses the same landing delay by default, leaving adjustment or eligible hold available before lock. Repeated zero-distance delayed drops neither score nor extend the countdown.
 
-Immediate hard-drop lock (next game) defaults off. When selected for Start/Restart, every hard drop locks immediately after placement, even at zero distance. Changing the checkbox during play affects only the next game; it does not alter current rules. Pause retains the selection; reload resets it off. Ordinary gravity and soft drop always retain the landing-delay policy.
+Immediate hard-drop lock (next game) defaults off. When selected for Start/Restart, every hard drop locks immediately after placement, even at zero distance. Changing the checkbox during play affects only the next game; it does not alter current rules. Pause retains the selection; reload resets it off. The selected general locking policy controls ordinary gravity and soft drop.
+
+## Next-game rules
+
+The Settings panel shows current rules and pending changes. Hard drop and Hold piece default On; switching either Off takes effect at Start/Restart and disables its action then. The Hold slot reads Off while disabled. Changing selections never pauses, resumes or restarts the current game.
+
+General locking policy defaults to a full gravity interval after grounding, as described above. Failed downward movement instead locks when a gravity or soft-drop attempt is blocked. Contact alone does not lock, and gravity remainder is preserved. Under this policy, a hard drop following the general policy places the piece and waits for the next actual blocked downward attempt. Immediate hard-drop lock overrides either general policy. Turning pending hard drop Off disables its policy control while retaining its value.
+
+Selections survive game lifecycle changes and an explicit same-context remount; reload restores defaults. They are held only in memory, with no browser storage.
 
 ## Scoring
 

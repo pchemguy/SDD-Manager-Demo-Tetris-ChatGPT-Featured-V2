@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: T-027 selected configuration verified; publication/issue63 closure next.
+Checkpoint: Milestone4.1 verified; T-029 publication/issue65/milestone15 closure next.
 
 ## Authority and branch
 
-User authorized QC/full T-027–T-032 through verified integration and1.3.0 release. Whole-package QC passed/published; preparation source81ddb25ec9fd1768d817e48dca15ce839bde1186 integrated to default main by7dff2f421152e7bf69f2614462dbfbc8cd26ed11 and published/read back. Current feature/003_3977abb-session-only-game-configuration created from that published main parent; return target same parent. Original campaign baseline3977abbcb640490c2cf60f3365681f29067b3835. Preparation issues54–62 and milestone14 closed/read back.
+User authorized full QC/T-027–T-032 through main integration and1.3.0 release. Preparation integrated/published main7dff2f421152e7bf69f2614462dbfbc8cd26ed11; current feature/003_3977abb-session-only-game-configuration branches from that exact return parent. Original campaign baseline3977abbcb640490c2cf60f3365681f29067b3835. FDOCS54–62/milestone14 closed; phase4 objects63–68/milestones15–17 were verified before implementation.
 
-## Tracking and evidence
+## Evidence and hosted checkpoint
 
-Phase4 label/milestones15,16,17 and issues63–68 all projected/verified before task work. T-027 RED18 new missing-configuration assertions with142 retained passes; GREEN160 units/typecheck/boundaries. C-07 flat values/defaults,96 combinations/rule projections, detached/independent contexts, invalid patches/nonenumerable/getter rollback verified. This is an enabling module, not finished panel behavior.
+T-0276e3b8d4 and T-028e6baa77 published/read back; issues63/64 closed/read back. T-029 closing tree contains native composition, whole4.1 report, review and192 unit/environment2/source60/built54 passing evidence. See features/003_3977abb-session-only-game-configuration/reports/phases/4/4.1.md. No TODO/findings. Native OS focus unverified; Electron excluded.
 
-## Next action
+## Next action and stop
 
-Publish/read back T-027 and close63; T-028 active rule input/legacy/timing/disabled enforcement next, then T-029 native integration and independent4.1 review/report. Continue all authorized tasks, required milestone/phase closures, current-root incorporation/QC/archive/audit and main integration/release without routine approval. Existing app1.2.0 remains until integration; no persistence allowed. Native headed focus unverified, Electron excluded.
+Publish/read back T-029, close/read back issue65 then milestone15. Complete T-030 full live displays, T-031 clean1.3 distribution/review/milestone16, T-032 independent phase review/incorporation/QC/archive/task-transfer/audit and milestone17. Then explicit two-parent verified main integration, exact notes commit/tag/GitHub release/download/CI verification and task-owned evidence follow-up. Preserve original task closures and frozen earlier campaigns; memory only, no storage. Continue to the authorized full release boundary without routine permission.

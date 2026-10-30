@@ -1,0 +1,20 @@
+/** Native controls exercise the shipped composition, not a debug session API. */
+import {test,expect} from './test-base.js';
+test.beforeEach(async({page})=>{await page.setViewportSize({width:1000,height:1600});await page.clock.install({time:0});await page.clock.pauseAt(new Date(1000));await page.addInitScript(()=>{Math.random=()=>0.999999});await page.goto('./')});
+test('@configuration pending rules retain values and apply only on restart',async({page},info)=>{
+ const hard=page.getByRole('checkbox',{name:'Hard drop (next game)',exact:true}),hold=page.getByRole('checkbox',{name:'Hold piece (next game)',exact:true}),immediate=page.getByRole('checkbox',{name:'Immediate hard-drop lock (next game)',exact:true}),general=page.getByRole('combobox',{name:'General locking policy (next game)',exact:true});
+ await expect(hard).toBeChecked();await expect(hold).toBeChecked();await expect(general).toHaveValue('gravity-interval');
+ await immediate.check();await hard.uncheck();await expect(immediate).toBeDisabled();await expect(immediate).toBeChecked();await hard.check();await expect(immediate).toBeChecked();await immediate.uncheck();
+ await page.getByRole('button',{name:'Start game'}).click();await hard.uncheck();await hold.uncheck();await general.selectOption('failed-downward');await expect(page.getByTestId('settings-summary')).toContainText('Pending');await expect(page.getByTestId('status')).toHaveText('Playing');
+ await expect(page.getByRole('button',{name:'Hard drop',exact:true})).toBeEnabled();await expect(page.getByRole('button',{name:'Hold piece',exact:true})).toBeEnabled();
+ await general.focus();for(const key of ['Space','Escape','r','x','c'])await page.keyboard.press(key);await expect(page.getByTestId('score')).toHaveText('0');await expect(page.getByTestId('held-type')).toHaveText('None');await expect(page.getByTestId('status')).toHaveText('Playing');
+ await page.getByRole('button',{name:'Restart',exact:true}).click();await expect(page.getByRole('button',{name:'Hard drop',exact:true})).toBeDisabled();await expect(page.getByRole('button',{name:'Hold piece',exact:true})).toBeDisabled();await expect(page.getByTestId('held-type')).toHaveText('Off');await page.keyboard.press('Space');await page.keyboard.press('c');await expect(page.getByTestId('score')).toHaveText('0');await expect(page.getByTestId('settings-summary')).not.toContainText('Pending');
+ for(const width of [320,1000]){await page.setViewportSize({width,height:1600});await general.focus();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath(`pending-rules-${width}.png`),fullPage:true})}
+ await page.reload();await expect(hard).toBeChecked();await expect(hold).toBeChecked();await expect(immediate).not.toBeChecked();await expect(general).toHaveValue('gravity-interval');
+});
+for(const policy of ['failed-downward','gravity-interval'])test(`@configuration general hard drop waits under ${policy}`,async({page})=>{
+ await page.getByRole('combobox',{name:'General locking policy (next game)',exact:true}).selectOption(policy);await page.getByRole('button',{name:'Start game'}).click();await page.keyboard.press('Space');await expect(page.getByTestId('score')).toHaveText('36');await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind','I');await page.keyboard.press('Space');await expect(page.getByTestId('score')).toHaveText('36');
+ await page.keyboard.press('ArrowDown');await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind',policy==='failed-downward'?'J':'I');
+ if(policy==='gravity-interval'){await page.clock.runFor(1100);await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind','J')}
+ await page.getByRole('checkbox',{name:'Immediate hard-drop lock (next game)',exact:true}).check();await page.getByRole('button',{name:'Restart',exact:true}).click();await page.keyboard.press('Space');await expect(page.locator('[data-active="true"]').first()).toHaveAttribute('data-kind','J');
+});

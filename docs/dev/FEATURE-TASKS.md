@@ -11,7 +11,7 @@ Core seams: C-07 createConfiguration/getSnapshot/update and detached rule projec
 ## Phase 4 — Session-only game configuration
 
 - [ ] Phase 4 — Session-only game configuration
-    - [ ] Milestone 4.1 — Session-configured gameplay
+    - [x] Milestone 4.1 — Session-configured gameplay
         - [x] T-027 — Implement selected configuration values and memory
             Scope: new src/application/configuration.ts, tests/unit/configuration.test.ts and compiler inclusion if needed. Depends on: T-026, accepted/QC/published preparation and Phase4 activation.
             Interfaces: implement S-01 full6-field defaults, typed modes/RuleOptions, detached factory reads/updates and pure rule projection without DOM/RNG/storage. Preserve existing ghost value spellings for later helper migration.
@@ -26,11 +26,13 @@ Core seams: C-07 createConfiguration/getSnapshot/update and detached rule projec
             Verification: observe RED changed-policy/disabled/legacy-isolation cases, GREEN complete unit/type/boundary/build regression with independently calculated clock/board/score fixtures. Update module contract docs. No display setting enters the session. References: S-02–S-05/S-08, C-04.
             Completion evidence: RED27 new policy/matrix/isolation assertions failed under old one-field-only behavior; GREEN192 unit/type/boundary/build checks pass. Exact legacy/complete rules, detached active snapshot/mirror and fixed/omitted rules verified; all16 active combinations, blocked-drop/general-clock/zero-distance pairs, support escape, pause and one-lock excess policy covered. Disabled HD/hold no-op and hold eligibility, exact182-point composed clear under both general policies, custom-start/restart and refill rollback preserve rules/queue/clocks/notifications. Module API documentation updated; no display state enters model.
 
-        - [ ] T-029 — Integrate native next-game rules and page context
+        - [x] T-029 — Integrate native next-game rules and page context
             Scope: browser composition, shared view/styles, native configuration/lifecycle/remount tests and affected fixtures/controls guide. Depends on: T-028.
             Interfaces: shared selected context passed to view and Start/Restart projection; legacy mount/view arguments retained where unaffected, single selected owner replaces duplicate pendingOptions. Render current/pending gameplay distinction and active-rule button eligibility.
             Acceptance: working native four gameplay controls with pending-policy dependency/retained value, no current-game mutation before Restart, actual both-policy/immediate/disabled gameplay, retained context through game lifecycle and explicit remount; independent fresh contexts. Existing two-mode ghost presentation stays usable; do not expose unimplemented always-hide/preview controls before T-030. Native settings keys/focus do not dispatch game shortcuts or auto-pause; external auto-pause/teardown preserved. Once the complete feature ships, all6 controls use one panel.
             Verification: RED native pending/active/focus cases then full model/type/boundaries/build and isolated Chromium/Firefox source/built gameplay/lifecycle checks; inspect ordinary/narrow panel/focus screenshots. Perform separate whole-Milestone4.1 code review, blocker repairs and working demonstration; include report/TODO aggregation/HANDOFF and milestone parent in this completion. Report: docs/dev/features/003_3977abb-session-only-game-configuration/reports/phases/4/4.1.md. Publish/close task then close/read back milestone before4.2. References: S-01–S-05/S-07, C-04/C-05/C-06/C-07.
+            Completion evidence: RED6 native missing-control cases; GREEN192 units, type/boundaries/build, environment2/source60/built54. Independent whole4.1 review found no issues; native rule/lifetime/callback demonstrations and320/1000 screenshots inspected. See reports/phases/4/4.1.md and HANDOFF; TODO None.
+
     - [ ] Milestone 4.2 — Complete settings and browser distribution
         - [ ] T-030 — Complete live ghost and preview configuration
             Scope: ghost-visibility.ts/shared type re-export, shared view/styles/configuration binding, native configuration/ghost/preview/context fixtures and affected controls docs. Depends on: T-029 and closed Milestone4.1.
