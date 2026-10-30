@@ -54,4 +54,8 @@ Preparation milestone [30](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 
 FDOCS-001: clean main baseline, adopted guidance/discovery from SDD Manager0.15.4 and Technical Writing Assistant retained; no unfinished workflow branch; campaign allocation007 follows repository maximum006. Hosted preparation gate verified before branch/record writes. Context, task-only records and HANDOFF co-close at initialization. Publish/read back and close/read back only FDOCS-001 before proceeding.
 
-FDOCS-002: proposal pending publication and human acceptance; checkbox/issue remain open until accepted. FDOCS-003–008 pending; FDOCS-009 not selected. No product code, version, release, test run, implementation or package-QC readiness is claimed.
+FDOCS-001 initialization published and exact remote ref verified at d1efdbe79d59b3d1fb186b5ee805d1e127ec5f0e; issue116 closed/read back with milestone30 association.
+
+FDOCS-002: [FEATURE](FEATURE.md) proposal prepared against the supplied request and current code/contracts. Scoped brief assessment: every seed requirement represented; existing score-only metadata and best-effort persistence conflicts identified; gameplay/selected-setting timing retained by proposal; no dependent design or implementation. Proposal source identity is its Git blob (recorded below); first human acceptance pending, so checkbox/issue117 remain open. FDOCS-003–008 pending; FDOCS-009 not selected. No product code, version, release, test run, implementation or package-QC readiness is claimed.
+
+FEATURE proposal blob: `2cef5ec4a9387ef6cb5c3d1e1d6e64be5dc18523`. Publish/read back this proposal, then await first acceptance. No package QC or dependent feature design selected.
