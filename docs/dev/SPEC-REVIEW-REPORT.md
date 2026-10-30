@@ -92,3 +92,20 @@ All current roots/children form one coherent supported contract. S-01–S-08 is 
 | spec/modern-rules.md | `4a039e03f16f61d4b6a3c5afa41df4f0d3f64284` |
 | spec/ghost-visibility.md | `a0b38cad3632effb29e483c403444a0bb7fbe44d` |
 | spec/session-configuration.md | `ce2ce1e65a3df7da08c087d867bdaad5c7cab53d` |
+
+## Revision 5 — Penetrator incorporation
+
+Current gate: Ready. Reassessed complete affected current roots/children against accepted004 scope and independent phase review. Earlier cycles remain historical.
+
+P01–08 incorporated without changing accepted bodies; ordinary/final non-overlap, mode-sensitive support/projection, guarded kicks, coupled mask, inventory/Hold/timing/API/error/native/display contracts agree with current boundaries. Six selected values unchanged; no unresolved ambiguity or unaccepted behavior. Current link/Markdown/unique-owner checks pass; no unresolved conformance finding. Runtime/release outcomes remain separate report evidence.
+
+| Source | Git blob |
+| --- | --- |
+| PROJECT.md | `0920f5be81ec3b05403ed7482332753d755189a0` |
+| ARCHITECTURE.md | `36b58d4da6d85a2445c455af7dfcb60bd6d166ec` |
+| DECOMPOSITION.md | `290e8dc38f4b7bd4d7ca66b14b7e5516a95086b6` |
+| SPEC.md | `a9b70229397f273950194eed5ca0f524699f5995` |
+| spec/penetrator.md | `dccdca409889b3e2cbd49b2a40635b9807d5dcc8` |
+| spec/modern-rules.md | `f60c8678b864c28ec6a6c3385d4a4ab309558a3c` |
+| spec/ghost-visibility.md | `4e1e4ca01e35098f2209af8952841666ddab83bb` |
+| spec/session-configuration.md | `e4038eb6eb7606dd283c81bb9877d4645d5cc832` |

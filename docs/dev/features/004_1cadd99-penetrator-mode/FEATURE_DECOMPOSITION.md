@@ -1,6 +1,8 @@
 # Penetrator components and collaboration
 
-[FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) defines the delta to [C-01–C-07](DECOMPOSITION.md). Preserve unchanged component identities and direction; no new platform/configuration component is needed.
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
+[FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) defines the delta to [C-01–C-07](../../DECOMPOSITION.md). Preserve unchanged component identities and direction; no new platform/configuration component is needed.
 
 ## C-02 placement, landing and coupled compaction
 

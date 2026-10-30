@@ -1,8 +1,10 @@
 # Penetrator mode
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 ## Intended outcome
 
-Add a bonus-funded penetrator ability to the existing [browser Tetris game](PROJECT.md). Activating it converts the current falling piece for the remainder of that piece's fall. It may pass through occupied cells without destroying or recoloring them; its locked placement must have all four occupied cells inside the visible board and overlap no settled cell.
+Add a bonus-funded penetrator ability to the existing [browser Tetris game](../../PROJECT.md). Activating it converts the current falling piece for the remainder of that piece's fall. It may pass through occupied cells without destroying or recoloring them; its locked placement must have all four occupied cells inside the visible board and overlap no settled cell.
 
 A penetrating hard drop passes through intervening obstructions to the lowest valid straight-down placement for the current position/orientation. The visible ghost previews exactly that placement. Ordinary pieces keep their existing landing and collision behavior.
 
@@ -25,6 +27,6 @@ The following interactions define the capability:
 
 ## Retained scope and delivery
 
-Respect all six [session-only settings](spec/session-configuration.md): ghost visibility remains live and uses the penetrating projected landing for its midline decision; Next preview remains independent; active hard-drop/Hold availability and both locking policies still govern. Keep existing geometry, seven-bag, clear scores, controls, pause/focus lifecycle and reusable logic/UI/browser separation except for the explicit penetrator changes above. No new setting, activation button, shape, scoring multiplier, persisted bonus bank, platform or multiplayer behavior is included.
+Respect all six [session-only settings](../../spec/session-configuration.md): ghost visibility remains live and uses the penetrating projected landing for its midline decision; Next preview remains independent; active hard-drop/Hold availability and both locking policies still govern. Keep existing geometry, seven-bag, clear scores, controls, pause/focus lifecycle and reusable logic/UI/browser separation except for the explicit penetrator changes above. No new setting, activation button, shape, scoring multiplier, persisted bonus bank, platform or multiplayer behavior is included.
 
 Target a browser **v1.4.0** feature release after implementation, verification and integration, with the static ZIP/checksum and updated instructions. Windows Electron remains future scope.

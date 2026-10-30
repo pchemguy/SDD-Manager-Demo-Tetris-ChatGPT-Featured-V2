@@ -1,8 +1,10 @@
 # Penetrator architecture
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 ## Scope and retained boundaries
 
-[FEATURE](FEATURE.md) adds penetrator passage, bonus inventory and white piece appearance to the [current architecture](ARCHITECTURE.md). Retain the deterministic core → session → shared view/browser composition direction. No scheduler, storage, RNG or DOM enters the core/configuration boundary. C-07 selected settings remain unchanged; penetration is current-game state, not a seventh setting.
+[FEATURE](FEATURE.md) adds penetrator passage, bonus inventory and white piece appearance to the [current architecture](../../ARCHITECTURE.md). Retain the deterministic core → session → shared view/browser composition direction. No scheduler, storage, RNG or DOM enters the core/configuration boundary. C-07 selected settings remain unchanged; penetration is current-game state, not a seventh setting.
 
 ## Rule state and appearance
 

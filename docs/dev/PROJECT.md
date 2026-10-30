@@ -6,7 +6,7 @@ Deliver a browser-based single-player falling-block game with modern planning/co
 
 ## Scope
 
-The game includes movement, both-direction SRS kicks, soft/hard drop, line clearing, classic scoring, increasing levels, pause/restart, seven-bag randomization, hold, exactly one next preview and canonical ghost projection. Modern rules are the default; there is no classic-mode selector.
+The game includes movement, both-direction SRS kicks, soft/hard drop, line clearing, classic scoring, increasing levels, pause/restart, seven-bag randomization, hold, exactly one next preview and canonical ghost projection and earned penetrator mode. Modern rules are the default; there is no classic-mode selector.
 
 One native Settings panel supplies session-only configuration. Ghost visibility (Always hide / Hide above midline / Always show) and Next-piece preview apply immediately, including while paused. Hard drop, Hold piece, general locking policy and hard-drop locking policy are copied at Start/Restart. Show current rules and pending differences separately. Reload restores defaults; independent pages have no settings synchronization or browser-storage restoration.
 
@@ -14,14 +14,16 @@ Defaults preserve modern play: ghost Always show, preview/Hard drop/Hold On, ful
 
 Conditional visibility uses the projected lowest occupied cell: rows1–10 hide, rows11–20 show, including straddling pieces. Always hide conceals the projection at every height. Display settings never change canonical landing or piece order. Explicit retained configuration supports same-context remount; fresh contexts and reload start defaults.
 
+Clear four rows at once to earn one penetrator bonus, capped at three. Board-focused B spends one on the current piece; it passes through occupied cells without destroying them and must retain a valid final landing. Ghost/hard drop use the deepest valid position. Hold is inhibited until lock; active/visible ghost/locked penetrator cells are white, ordinary pieces nonwhite. Pause retains mode/bank; Start/Restart/reload reset them. No new setting or persistence is added.
+
 ## Delivery constraints
 
-Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Keep browser input/timing/lifecycle separate from shared logic/UI. Verify the assembled game in dedicated managed Chromium and Firefox. Each completed phase is verified and integrated before its version tag and GitHub release. Current browser metadata and static package use1.3.0.
+Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Keep browser input/timing/lifecycle separate from shared logic/UI. Verify the assembled game in dedicated managed Chromium and Firefox. Each completed phase is verified and integrated before its version tag and GitHub release. Current browser metadata and static package use1.4.0.
 
 ## Non-goals
 
-Windows Electron is a future host; no desktop executable, installer or native-widget UI is delivered. There are no hidden rows,180-degree rotations, five-piece preview, classic selector, extra scoring bonuses, saved settings/profiles/presets/import-export, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
+Windows Electron is a future host; no desktop executable, installer or native-widget UI is delivered. There are no hidden rows,180-degree rotations, five-piece preview, classic selector, extra score bonuses, saved settings/profiles/presets/import-export, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
 
 ## Contract owners
 
-[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.
+[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) and [penetrator contracts](spec/penetrator.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.

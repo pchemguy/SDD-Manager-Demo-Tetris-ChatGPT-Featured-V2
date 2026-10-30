@@ -1,5 +1,7 @@
 # Penetrator delivery/layout review
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 Current gate: Ready for combined strategy/physical allocation and downstream task derivation.
 
 ## Revision 1 — Strategy conformance

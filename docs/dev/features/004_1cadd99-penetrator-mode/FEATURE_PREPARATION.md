@@ -1,5 +1,7 @@
 # Feature preparation record
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 Control/evidence only; FEATURE_DOCS_TASKS owns preparation checkoffs. Main TASKS retains32 completed product tasks. No implementation work is authorized by this campaign opening.
 
 ## Identity and request
@@ -19,7 +21,7 @@ Original request (verbatim, user message):
 > Render penetrator pieces entirely white, and do not use white for regular pieces. Show the available bonuses in the game info and controls panel using one symbol per bonus, such as a lightning bolt. Update the indicator whenever a bonus is earned or spent.
 
 
-Accepted context: [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [modern](spec/modern-rules.md), [ghost](spec/ghost-visibility.md), [configuration](spec/session-configuration.md), [PLAN](PLAN.md), [layout](layout.md) and [TASKS](TASKS.md). Current browser v1.3.0 fully integrated/published with completed phase4; no active feature sources, uncommitted changes or pending prior publication. Existing adoption/disclosure/manual provenance/authentication retained. Actual host Linux/bash; Windows-only shell policy does not apply here. No native/browser runtime work is needed to open the campaign.
+Accepted context: [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md), [modern](../../spec/modern-rules.md), [ghost](../../spec/ghost-visibility.md), [configuration](../../spec/session-configuration.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). Current browser v1.3.0 fully integrated/published with completed phase4; no active feature sources, uncommitted changes or pending prior publication. Existing adoption/disclosure/manual provenance/authentication retained. Actual host Linux/bash; Windows-only shell policy does not apply here. No native/browser runtime work is needed to open the campaign.
 
 ## Current control
 

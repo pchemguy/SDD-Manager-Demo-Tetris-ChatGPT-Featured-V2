@@ -1,0 +1,3 @@
+# Penetrator campaign archive
+
+Campaign004_1cadd99, original full baseline1cadd995008432ec1fe6668f6000d14ed4333692. Accepted sources/preparation/adjacent QC are historical non-executable snapshots after T040 incorporation. Current owners: [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), [PLAN](../../PLAN.md), [layout](../../layout.md), sole executable [TASKS](../../TASKS.md). Reports retain their fixed paths. [Phase report](reports/phases/5/PHASE-REPORT.md) and [final outcome](IMPLEMENTATION-REPORT.md) record actual verification/integration/release. Earlier frozen campaigns remain untouched.

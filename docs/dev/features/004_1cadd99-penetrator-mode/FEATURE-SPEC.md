@@ -1,8 +1,10 @@
 # Penetrator mode contracts
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 ## Scope and precedence
 
-[FEATURE](FEATURE.md), [architecture](FEATURE_ARCHITECTURE.md) and [decomposition](FEATURE_DECOMPOSITION.md) govern P-01–P-08. This delta explicitly revises [SPEC](SPEC.md) R-01–R-03/R-05–R-09/R-12, modern F-01/F-03–F-07, ghost G-01–G-04 and configuration S-03–S-07 only for active penetration, bonus inventory and appearance. Ordinary geometry/bag/scoring, legacy options, six selected settings, errors, clocks and browser resource guarantees otherwise remain. Target browser1.4.0; no persistence/new platform.
+[FEATURE](FEATURE.md), [architecture](FEATURE_ARCHITECTURE.md) and [decomposition](FEATURE_DECOMPOSITION.md) govern P-01–P-08. This delta explicitly revises [SPEC](../../SPEC.md) R-01–R-03/R-05–R-09/R-12, modern F-01/F-03–F-07, ghost G-01–G-04 and configuration S-03–S-07 only for active penetration, bonus inventory and appearance. Ordinary geometry/bag/scoring, legacy options, six selected settings, errors, clocks and browser resource guarantees otherwise remain. Target browser1.4.0; no persistence/new platform.
 
 ## P-01 placement and appearance values
 

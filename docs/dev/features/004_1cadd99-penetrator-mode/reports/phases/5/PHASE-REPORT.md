@@ -1,0 +1,25 @@
+# Phase 5 — Penetrator mode
+
+Result: Ready for published phase integration in this T040 closing tree. Original campaign baseline1cadd995008432ec1fe6668f6000d14ed4333692; creation parent/published preparation merge52f01bf44344a08e9a1c22122213e6fc9bf42979 on main. Working feature/004_1cadd99-penetrator-mode returns to main. Reviewed published implementation through e3aa80fe1a8d4f4053bc57e01bd756303e6854f0 plus current incorporation/closure. User “Do QC and full implement” authorizes33–40, main integration and1.4 release.
+
+## Delivered and independently reviewed
+
+B spends one earned bonus on the current piece, bank cap3; exact four-row clears award one. Pure deepest legal landing and guarded transforms permit occupied transit while preserving final legality and shared ghost/drop/support geometry. Exact selected locking/remainder/escape/activation semantics, Hold inhibition, atomic white compaction/award/spawn/refill/top-out, reset/pause and legacy API behavior are retained. White active/visible ghost/settled appearance, nonwhite ordinary cells, exact bolts/count/mode/Hold explanation and board-only nonrepeat input are integrated with the six unchanged settings.
+
+Independent penetrator_phase_review assessed whole core/session/UI/host/tests/contracts/package/public guides and current main incorporation separately from test execution. Ready, no blocking finding or production defect. Accepted P01–08 bodies match current spec child; task ownership/prefix and frozen001–003 identities independently confirmed. Arbitrary malformed board/mask validation is outside canonical-input contracts; fixtures need no production injection; finite expanded test budget preserves assertions. Native headed focus/Electron remain excluded. Independent5.1 and5.2 reviews are retained in5.1.md/5.2.md.
+
+## Findings and rechecks
+
+PEN-M51-01–03 were Important required model evidence gaps, not observed defects: retained white/nonzero bank at blocked replacement; already-active support escape/relanding; late999ms movement/non-O rotation/nonlocking drop. T037 added public legal traces/literal positions and independent recheck accepted all fixes. T038 full run exposed the obsolete single-status test selector after a second legitimate live region; scoped lifecycle selector fixed it and full rerun passed. T039 final local stable-alias check found prior-release staging bytes; refreshed verified1.4 ZIP/checksum and strict byte/integrity checks pass. All resolved before owning task commits. TODO: None.
+
+## Executed acceptance
+
+Fresh T040 typecheck/check:boundaries/build,265 units (0 failures/skips),11 package tests, strict package/7 content digests and full68 extracted-prefix Chromium/Firefox checks pass (2.6m). Source82/built68/environment2 fresh T039 evidence is reused for identical production source and byte-identical artifact; no implementation changed during T040. Actual earned gameplay covers all required native/white/bonus/locking/settings/lifetime behavior, source-only view fixtures supplement exact boundaries, and320/1000 screenshots were inspected. ZIP22354bytes SHA25677217981cf4c1e7994ad61e45cd80d7bd57caefcccdb99e9308e0c0e90e3a7ca reproduced across actual builds; strict stable alias/checksum match. Managed dedicated Chromium156 headless shell/Firefox157, process-local diagnosed Firefox recovery; native headed OS focus unverified, Electron future. Tooling-only npm proxy/color warnings observed; no app console/runtime errors.
+
+## Documentation, ownership and audit
+
+Current PROJECT/design/SPEC/penetrator/modern/ghost/configuration/PLAN/layout and adjacent current QC reconciled Ready. Main TASKS preserves original1–32 entire byte prefix;33–39 statuses/evidence transferred once,40 closes here. Archived004 source tasks are nonexecutable, source/preparation/QC links repaired. Frozen001–003 paths/tree identities unchanged. Actual parent diffs for33–39 each establish one leading-ID task result/evidence/initial checkbox in its own published commit (36c227e,4e9fb75,437d4c8,ea95623,81ebbf7,e749dca,e3aa80f). T040 parent owns unchecked feature40; this tree transfers its sole executable entry and initial checked completion into main TASKS with substantive reports/HANDOFF/current QC. Composition/acceptance/ownership gates pass; inspect committed boundary before publication.
+
+## Pending integration and release
+
+Publish/read back T040, close issue85 then milestone21 (19/20 already closed). Explicitly two-parent merge exact verified tip into refreshed actual main, verify merged behavior/package identity and publish. Refresh complete highlights/notes through default-branch release source, make exact-body release commit/tag and publish/read back; then one GitHub publisher uploads verified stable ZIP/checksum, publishes/latest and verifies body/source/inventory/digests/public downloads/release-source CI. Record actual outcomes in task-owned parent-only followup without moving tag. These effects are not yet claimed complete. Separate optional whole-project prerelease audit was advised, not selected; required independent milestone/phase reviews and release checks proceed.
