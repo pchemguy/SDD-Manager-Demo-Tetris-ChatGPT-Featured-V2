@@ -34,8 +34,8 @@ Cross-scope decisions: none outside this one pass. Scope/timing/failed-drop prop
 
 | Stage | Source/assessment and state |
 | --- | --- |
-| FDOCS-001 | Linux/bash usable clean main worktree, full published baseline/default identity, global campaign-sequence collision scan, governing instructions and existing auth/provenance reused. Nine-stage tracking gate passed. This context/task/checkoff/HANDOFF commit publication/issue closure pending. |
-| FDOCS-002 | FEATURE proposal next; first approval not claimed. |
+| FDOCS-001 | Linux/bash usable clean main worktree, full published baseline/default identity, global campaign-sequence collision scan, governing instructions and existing auth/provenance reused. Nine-stage tracking gate passed. Initialization885555c29ff330f9d43095dcbce6c164dbe9902d source/control/checkoff/HANDOFF published/read back; issue54 closed/read back. |
+| FDOCS-002 | FEATURE proposal assessed against the current session options/dispatch/advance, shared display preferences and browser host. All six controls, delegated defaults, preserved rules and proposed timing/failed-drop/dependency interactions covered; no material choice is silently adopted. Proposal SHA256 d76f3091f011d2e4fbd0a3bd7eddfb4efb0a6b28e658ffafd7883bc31dffecb5. First approval pending; FDOCS-002 remains unchecked. |
 | FDOCS-003–009 | Pending ordered stage assessments after accepted brief. |
 
 ## Hosted preparation mapping
@@ -56,4 +56,4 @@ Native milestone #14 (sdd-docs-003_3977abb), open/read back.
 
 ## Pending transitions
 
-No reset. Publish/read back FDOCS-001 and close/read back its exact issue. Draft/publish FEATURE with current-code context, defaults and material interaction proposals; stop for brief acceptance. No application code/tests/version, canonical product root or release change at this opening checkpoint.
+No reset. Publish/read back this FEATURE proposal with exact source identity and stop for first brief acceptance. Gameplay timing/failed-attempt hard-drop proposals remain pending acceptance or correction; no dependent specification or implementation yet. No application code/tests/version, canonical product root or release change at this opening checkpoint.
