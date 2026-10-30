@@ -37,10 +37,10 @@ Proposals for the first brief, not yet accepted: B is the free board-focused act
 
 | Stage | Evidence |
 | --- | --- |
-| FDOCS-001 | Clean published main baseline, governing current inputs/actual host, campaign identity/source ownership, carried mode/checkpoint, existing provenance/authentication and complete preparation projection verified. This commit owns initialization/checkoff/HANDOFF. Publication and issue69 closure follow before brief drafting. |
-| FDOCS-002 | Brief not yet drafted/accepted; next owner sdd-design. |
+| FDOCS-001 | Clean published main baseline, governing current inputs/actual host, campaign identity/source ownership, carried mode/checkpoint, existing provenance/authentication and complete preparation projection verified. Initialization4a349dfe0db7b3abfdc6e7e8bf92d6cee7b5c255 published/read back; issue69 closed/read back before brief drafting. |
+| FDOCS-002 | FEATURE proposal blob `fb61a262fed18781bdcc8101c8d55d6c7cde943e` authored/reviewed by sdd-design against the supplied seed and current PROJECT/SPEC/modern/ghost/configuration/implementation seams. All requested outcomes covered; proposed interactions explicitly separated. First approval pending; FDOCS-002 remains unchecked. No dependent design/implementation. |
 | FDOCS-003–009 | Not started. |
 
 ## Pending transitions
 
-Publish/read back initialization, close/read back issue69, then draft/publish FEATURE with this record updated and FDOCS-002 unchecked. Present material choices and pause for first brief acceptance. No downstream design, QC, integration, implementation or release has run.
+Initialization published/read back and issue69 closed/read back. Publish/read back this FEATURE proposal, present choices and pause for first approval. B/reachability/Hold/clock/bank/color policies remain proposed, not confirmed. No downstream design, QC, integration, implementation or release has run.
