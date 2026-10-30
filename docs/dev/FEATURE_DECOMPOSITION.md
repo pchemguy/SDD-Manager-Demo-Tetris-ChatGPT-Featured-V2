@@ -1,0 +1,19 @@
+# Electron component delta
+
+Retain C01–C11 and their current public interfaces. C04/C07/C09/C10 own game, settings, ranking and complete validated files; C05 owns shared presentation/view visibility; C06 mounts the same built web entry; C08/C11 retain actual cookie/URL effects, native browser file selection and worker/WASM work. Desktop does not become a second state owner.
+
+## C12 — Desktop host
+
+The Electron main process owns one application window, its dedicated persistent session/profile, fixed local HTTPS origin, renderer isolation/content policy, native download interaction and lifecycle cleanup. It consumes the verified renderer/asset manifest and Electron/Node host APIs; no reusable core/application/UI module imports it. It does not parse leaderboard/settings, encode save files, change gameplay, provide a Node bridge or automatically restore sessions.
+
+A DOM-free policy unit maps an approved request URL/method and manifest into a safe bundled relative path/response policy, rejecting unsupported origins, unknown members, malformed/unsafe paths and methods. Main resolves only that path under its packaged root, rejects symlinks/escape and serves bytes with explicit MIME/security headers. Main denies remote requests/navigation/new windows/permissions/webviews; required local worker/WASM/schema and blob download routes remain permitted. Isolation applies to renderer, workers and subframes. Failure to load required app content is reported clearly and cannot silently switch to remote content or a development server.
+
+Use the existing web File picker/Blob download semantics. The host configures a native Save destination flow for allowed JSON/SQLite downloads and reports download failures; cancellation does not change application data. Export status retains the browser's handoff semantics rather than promising filesystem durability before native destination completion. Restore remains complete validation before cookie/URL/model effects through the unchanged shared adapter. The six cookies persist in Electron's profile; every launch gets fresh renderer/controller/result/visibility state. Close destroys the window/session resources and exits; reopen starts at the fixed entry without replaying previous URL/history/gameplay.
+
+## C13 — Desktop distribution tooling
+
+A build-time runtime manifest owns the exact supported Electron version, official asset URL/checksum and required vendor members. A deterministic packager checks those inputs and the existing browser ZIP/manifest, assembles a Windows x64 directory with renamed executable, Electron resources, app host/metadata and byte-identical renderer, and writes a manifest/ZIP/checksum/stable alias. The verifier independently checks artifact paths/members/CRC/digests/version/entry point/runtime provenance/licenses and renderer equivalence, with strict secret/source/test/cache exclusions. Vendor runtime files are required assets, not unrestricted checkout inputs. No packaging dependency is installed for players.
+
+Browser packaging retains its current path/asset names and strict policy; desktop artifacts supplement it. Release tooling/CI consumes the two verified package/checksum pairs. Tests use pure host-policy seams, actual package extraction and available desktop runtime facilities; missing Windows execution is explicitly unverified, never substituted by a browser result. Current app/package metadata and documentation are the shared version authority.
+
+Native test orchestration belongs to tests/tooling, with isolated user-data/download paths. Production code has no test-only gameplay setters, arbitrary executable/URL hooks or debug-server fallback. Hosted Windows checks are used where actually available; artifact delivery remains possible from the Linux host with native limits stated accurately.

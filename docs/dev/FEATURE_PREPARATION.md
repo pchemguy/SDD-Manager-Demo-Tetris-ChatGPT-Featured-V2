@@ -37,3 +37,9 @@ Next eligible: FDOCS-003. Publication and exact issue closure/readback precede a
 Accept scoped Electron architecture delta. FEATURE_ARCHITECTURE SHA256 08ece37031b95825e595af5a7389c70048d5c621e01fecb5d997abab423da615; main dependency direction retained, necessary desktop boundary added. Fixed in-process HTTPS interception preserves existing cookie/URL contracts with no server or shared-core changes; isolated renderer and local-asset-only policies assessed against official Electron docs. Manual pinned-runtime packaging selected for portable delivery. Autodoc preapproval covers this reviewed proposal; no unresolved structural blocker.
 
 Next eligible: FDOCS-004. Publication and exact issue closure/readback precede advancement.
+
+### FDOCS-004
+
+Accept Electron component decomposition delta. FEATURE_DECOMPOSITION SHA256 d9ae8d2d58bbf516bee54ded434aaef138a0ec0d6c9776d9878054585d75d6fd; C01–11 reuse assessed and C12 host/C13 build-time distribution have single ownership with explicit policy/lifecycle/error/test seams. No second state store, renderer Node bridge or mandatory unavailable native gate. Browser export handoff semantics remain accurate; native cancellation changes no application data. Autodoc preapproval covers assessed design, with no unresolved component blocker.
+
+Next eligible: FDOCS-005. Publication and exact issue closure/readback precede advancement.
