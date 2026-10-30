@@ -94,3 +94,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-SPEC-REVIEW-REPORT.md: 48b36d3ae038ced6b0b2164abe0a7343866f69c8fa89f6d8fd90efb67262991c
 
 Publish/read back this coherent completion before closing/readback of issue #58 or dependent work.
+
+## FDOCS-006 completion
+
+Phase4 covers the coherent session-only configuration feature in2 justified delivery milestones plus the mandatory phase review. First checkpoint integrates copied gameplay rules/native pending state; second completes live displays/lifetime and distribution. All S-01–S-08, independent review/report obligations and integration/release gates mapped. Scoped strategy QC Ready, placement assessment next.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-PLAN.md: aa3ee86282d66818029271e27a8c0dbc26478ac4c0ccadd41f65e2a58ee4bdb9
+- docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: 7d219f9ef18ba9330c8c477914167c5edb90ee732ac6a9bf6af8c28dadab4b10
+
+Publish/read back this coherent completion before closing/readback of issue #59 or dependent work.
