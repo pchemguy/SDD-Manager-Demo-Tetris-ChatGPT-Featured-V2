@@ -1,3 +1,5 @@
+> Historical campaign009 source/evidence snapshot; current product owners are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and sole executable [TASKS](../../TASKS.md). Archived checklists are non-executable.
+
 # Windows Electron application
 
 Provide a Windows desktop delivery of the existing Tetris game alongside its static browser delivery. A player extracts a portable Windows10/11x64 ZIP and launches Classic Tetris without installing Node.js or running a development server. The package contains Electron and every required game/runtime asset and operates offline.

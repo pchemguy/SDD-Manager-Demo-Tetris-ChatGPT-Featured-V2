@@ -1,3 +1,5 @@
+> Historical campaign009 source/evidence snapshot; current product owners are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and sole executable [TASKS](../../TASKS.md). Archived checklists are non-executable.
+
 # Electron feature package QC
 
 ## Result — Ready

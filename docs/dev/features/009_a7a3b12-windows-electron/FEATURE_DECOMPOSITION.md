@@ -1,3 +1,5 @@
+> Historical campaign009 source/evidence snapshot; current product owners are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and sole executable [TASKS](../../TASKS.md). Archived checklists are non-executable.
+
 # Electron component delta
 
 Retain C01–C11 and their current public interfaces. C04/C07/C09/C10 own game, settings, ranking and complete validated files; C05 owns shared presentation/view visibility; C06 mounts the same built web entry; C08/C11 retain actual cookie/URL effects, native browser file selection and worker/WASM work. Desktop does not become a second state owner.

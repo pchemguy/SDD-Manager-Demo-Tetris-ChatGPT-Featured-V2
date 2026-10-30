@@ -2,7 +2,7 @@
 
 ## System arrangement
 
-The [project brief](PROJECT.md) requires a browser game with modern rules and reuse of TypeScript logic and UI across future hosts. The application has a deterministic rules core, selected page configuration, a session controller, a shared DOM UI and a small browser host. It produces static HTML, CSS and JavaScript; Node.js is development tooling, not a player runtime dependency. No backend service is required.
+The [project brief](PROJECT.md) requires browser and Windows delivery with modern rules and shared TypeScript logic/UI. The application has a deterministic rules core, selected page configuration, a session controller, a shared DOM UI and a small browser host. Browser delivery produces static HTML/CSS/JavaScript. Desktop delivery bundles Electron and its Node runtime around that exact renderer; players install no separate Node.js or development server. No backend service is required.
 
 ## Blocks and dependencies
 
@@ -15,7 +15,9 @@ The [project brief](PROJECT.md) requires a browser game with modern rules and re
 | Browser persistence | Restore/save six selected fields through pure formats, independent best-effort native-edit effects and a separate checked Restore batch. | C-07 and explicit URL/cookie/history callbacks; no game state, DOM globals or scheduler. |
 | Portable contract | C-10 complete detached version/results/settings values, JSON/schema and semantic validation. | C-09 and C-07 domain predicates; no host effects. |
 | Manual file workflow | C-11 capture, byte codecs, bounded workers, native transfer resources and staged checked restore. | Application boundaries, C-08 effects and explicit browser capabilities. |
-| Browser host | Mount/unmount the app; translate keyboard, frame timing, focus and visibility events. | Session, selected configuration/persistence and shared UI; browser APIs. |
+| Browser host | Mount/unmount the same renderer app; translate keyboard, frame timing, focus and visibility events. | Session, selected configuration/persistence and shared UI; browser APIs. |
+| Desktop host | C12 native window/profile/single-instance/close/download lifecycle, restricted local protocol and renderer isolation. | Electron/Node only in desktop main; exact bundled browser renderer, no shared-module desktop imports. |
+| Desktop distribution | C13 trusted pinned runtime, complete deterministic Windows ZIP and independent source/vendor/renderer verification. | Existing browser distribution plus build-time standard-library tooling; no player tooling/network bootstrap. |
 
 The host composes the application. The session depends on the core, and the UI consumes the session boundary. No dependency points back from the core or session into the UI or browser host. There is no generic platform-plugin framework.
 
@@ -27,7 +29,7 @@ The host supplies elapsed durations rather than allowing rules to read wall time
 
 ## Rendering choice
 
-Use a CSS grid of DOM cells with text status and native buttons. It supports a small fixed board, keyboard focus, inspectable browser tests and reuse in a future Electron renderer without requiring a graphics engine or a UI framework. Canvas would make cell drawing compact but would require separate semantic status and inspection support. A component framework would add dependency and lifecycle machinery without a current scope need.
+Use a CSS grid of DOM cells with text status and native buttons. It supports a small fixed board, keyboard focus, inspectable browser tests and reuse in the Electron renderer without requiring a graphics engine or a UI framework. Canvas would make cell drawing compact but would require separate semantic status and inspection support. A component framework would add dependency and lifecycle machinery without a current scope need.
 
 DOM reuse means reuse within hosts that provide a web document, including an Electron renderer; it does not claim a native-widget UI. Shared UI uses its injected mount's document and semantic actions. Access to window-level keyboard, visibility and scheduling facilities stays in the browser host.
 
@@ -141,3 +143,19 @@ Use literal metadata sources and complete records in pure/controller tests; faul
 C05 reuses persistent DOM for five panels with an equal-track layout around the Board and CSS responsive stacking. Three native disclosure buttons target Leaderboard, Settings and Controls/help by unique per-view IDs. Their hidden state belongs only to the mounted view, not C04/C07 or browser persistence. Rendering and game actions do not recreate or reset those panels. New views default to all shown, including retained-controller/configuration remounts.
 
 Game info and Board remain present. Two lifecycle buttons translate status to the existing start/restart/pause/resume actions; host command validation, active-rule copying and Board-only shortcuts remain unchanged. The view keeps concise Board instructions independent of visual help, transfers focus before concealing a focused descendant and removes each toggle listener on destruction. The external Settings button is its one disclosure authority; native settings/transfer DOM and pending operations remain intact while hidden. [UL contracts](spec/ui-layout.md) define exact positions, states, responsive boundary and acceptance.
+
+## Windows desktop boundary
+
+The desktop main process creates one isolated BrowserWindow, owns application/window teardown, session/profile, local content access and native download behavior. The renderer uses the existing C06 web lifecycle and all C07–C11 interfaces. Node integration is disabled in renderer/workers/subframes, context isolation and sandboxing enabled, and no preload/IPC bridge is needed. Renderer/browser code never imports Electron or Node. Closing the window exits the app; normal blur/visibility pause still comes from shared host behavior.
+
+Serve the bundled renderer at a fixed private HTTPS origin through Electron's in-process protocol handler. The handler maps only approved renderer assets to bundled files; it never opens a listening socket, resolves DNS or forwards remote requests. This retains the existing HTTP(S) cookie/URL/checked-Restore semantics without adding a custom-scheme branch to shared persistence. A dedicated desktop profile keeps six remembered values separate from browser state. A cold launch loads the fixed entry and creates a new game/session; a second process for the same active profile focuses the existing window without resetting it; no leaderboard or unfinished game is automatically restored.
+
+Only known local assets and blob downloads are permitted. Reject unsupported methods/origins/paths, remote navigation/new windows, webviews and permission requests. Apply a restrictive content policy allowing bundled scripts/styles/worker and required WASM compilation; do not disable web security or bypass CSP. Resources include actual built worker/WASM/schema. Main-process host policies are testable independently of Electron; packaged runtime acceptance covers their composed behavior.
+
+## Packaging and delivery
+
+One deterministic desktop packager consumes the verified browser distribution and exact official Electron Windows x64 runtime with pinned version/checksum. Preserve vendor binaries/resources/licenses, add the app host/metadata and the shared renderer, and generate a manifest/checksum with strict exclusion and independent verification. Stable Windows ZIP/checksum assets supplement unchanged browser asset names in the same release. Vendor downloads are build-time only. Installation is extraction and executable launch; no Node/development server/network bootstrap is required.
+
+Manual vendor-runtime packaging is selected over installer tooling because the requested artifact is portable and existing Python packaging can retain explicit allowlists/reproducibility. A new custom app scheme would require cookie/URL adapters; fixed intercepted HTTPS preserves the established web contracts. An embedded HTTP server adds port/process behavior without user benefit. The desktop origin is internal and not an internet service.
+
+Native Windows BrowserWindow blur is forwarded only as a constant DOM blur event to the unchanged C06 listener; focus never dispatches resume. There is no privileged renderer bridge. Valid absolute APPDATA selects the Windows per-user root, with native appData fallback; userData and sessionData directories are created before assignment. Native destination and bounded cookie-flush failures report clear errors. [ED01–12](spec/electron.md) owns exact behavior.

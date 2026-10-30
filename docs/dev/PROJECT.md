@@ -2,7 +2,7 @@
 
 ## Purpose and users
 
-Deliver a browser-based single-player falling-block game with modern planning/control aids, predictable timing and clear status. Keep TypeScript logic and DOM UI reusable by future hosts.
+Deliver a single-player falling-block game for browsers and Windows with modern planning/control aids, predictable timing and clear status. Share TypeScript logic and DOM UI between browser and desktop hosts.
 
 ## Scope
 
@@ -18,15 +18,15 @@ Clear four rows at once to earn one penetrator bonus, capped at three. Board-foc
 
 ## Delivery constraints
 
-Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Keep browser input/timing/lifecycle separate from shared logic/UI. Verify the assembled game in dedicated managed Chromium and Firefox. Each completed phase is verified and integrated before its version tag and GitHub release. Current browser metadata and static package use 1.8.0.
+Browser delivery uses static HTML/CSS/JavaScript over HTTP/HTTPS, including prefix hosting. Windows10/11x64 delivery is an unsigned portable Electron ZIP: extract and run ClassicTetris.exe with its complete bundled runtime/assets, without a separate Node.js installation, development server or internet bootstrap. Both platforms share the same renderer, game logic, UI and version1 manual formats. Keep native desktop lifecycle/resources in the thin host, outside reusable logic/UI. Verify browser source/built/extracted targets in managed Chromium/Firefox and the actual packaged desktop using available native facilities; report unavailable facilities accurately. Each completed phase is reviewed, verified and explicitly integrated before its version tag/GitHub release. Current app/package metadata is1.9.0; applicable releases contain both stable ZIP/checksum pairs.
 
 ## Non-goals
 
-Windows Electron is a future host; no desktop executable, installer or native-widget UI is delivered. There are no hidden rows,180-degree rotations, five-piece preview, classic selector, extra score bonuses, profiles/presets, unfinished-game saves, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
+Installer/store/updater/signing provisioning, macOS/Linux delivery and native-widget UI are excluded. There are no hidden rows,180-degree rotations, five-piece preview, classic selector, extra score bonuses, named game profiles/presets, unfinished-game saves, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
 
 ## Contract owners
 
-[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) and [penetrator contracts](spec/penetrator.md) and [browser persistence](spec/configuration-persistence.md) and [session leaderboard](spec/leaderboard.md) and [manual files](spec/file-persistence.md) and [UI layout](spec/ui-layout.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.
+[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) and [penetrator contracts](spec/penetrator.md) and [browser persistence](spec/configuration-persistence.md) and [session leaderboard](spec/leaderboard.md) and [manual files](spec/file-persistence.md) and [UI layout](spec/ui-layout.md) and [Windows Electron](spec/electron.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.
 
 ## Session leaderboard
 
@@ -43,3 +43,7 @@ Restore validates the entire file before replacing history and applying all six 
 Arrange Leaderboard, Game info and controls, Board, Settings and Controls/help left to right on wide screens, with the Board horizontally centered independently of shown side content. Narrow screens stack the same content with normal scrolling. Board and Game info remain shown. Three independent Show/Hide buttons above the two lifecycle buttons control supporting panels; all start shown and retain choices within the view, including through render/resize/Restart/Restore, while a fresh view starts shown.
 
 Start game becomes Restart after play starts; paused Start continues the same game. Native Board shortcuts, focus/pause behavior and six-setting timing remain. Hiding Settings conceals its Save/Restore pair and operation/status controls without cancellation or lost values; pending operations may finish while hidden. Visibility adds no setting, cookie, URL parameter, saved-file field or platform.
+
+## Windows desktop lifetime
+
+The native host loads the exact browser renderer at a restricted private HTTPS origin through in-process interception, without a listening server. The sandboxed renderer has no Node/IPC/preload bridge or arbitrary remote content. A separate stable per-user ClassicTetris profile retains only the six selected settings. Normal close flushes cookies and exits; cold launch starts Ready, with empty results/all supporting panels shown and no previous query. A second launch focuses/restores the existing game without reset. Native focus loss pauses; returning focus never resumes. Manual JSON/SQLite Restore retains complete validation/atomicity and session-only results; destination cancellation changes no application data. [ED01–12](spec/electron.md) owns exact platform, package and release contracts.

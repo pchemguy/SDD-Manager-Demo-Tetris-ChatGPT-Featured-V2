@@ -195,3 +195,9 @@ Owner assessment: Ready. UL01–10 aligns five panels, absolute center,1440px bo
 | spec/ui-layout.md | `4abf9acde3d9cff24ff6b23f7115e8c1f34d8dc669ee75c7a61fca120dbed4c0` |
 
 Independent current-document review/recheck: Ready. Reviewer confirmed UL01–10 conformance, corrected U08/layout metadata, preserved exact old TASKS byte prefix, unique main1–68 ownership, historical008 banners, unchanged frozen001–007 and no remaining blocker. Final reports now exist; owner link audit covers their resolved links. This is read-only document assessment, not additional runtime evidence.
+
+## Revision 10 — Windows Electron current owners (T075)
+
+Current PROJECT/design/C01–C13/SPEC with ED01–12 and affected shared children; game/UL/U/L/File invariants unchanged, desktop/native/package/release contracts incorporated. Author reassessment of base2c13b9f80c76bf1675fa652a17eac177cef7e263 plus owned075worktree is complete; fresh independent wholephase code/coverage review and separate current-document QC/targeted refinement recheck are Ready, zero unresolved findings. Main TASKS now carries the verified initial075completion; task/result/evidence/report/HANDOFF close coherently. No release publication or future CI/provider outcome is claimed.
+
+Final recheck: actual descriptor owns version/URL/SHA; producer/verifier own complete trusted-member checks. Product-only PLAN and nested10.x headings, exact current physical paths, shared leaderboard/ED references and sole1–75ownership agree. Original reviewed identities/findings above remain historical; latest Revision10 current gate Ready, not proof of subsequent integration/provider publication.

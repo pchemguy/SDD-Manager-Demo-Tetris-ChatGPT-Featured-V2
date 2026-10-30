@@ -1,3 +1,5 @@
+> Historical campaign009 source/evidence snapshot; current product owners are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and sole executable [TASKS](../../TASKS.md). Archived checklists are non-executable.
+
 # Electron desktop architecture delta
 
 The existing core, Session/configuration/leaderboard/file validation and shared DOM view remain authoritative. Add one desktop host around the exact static renderer build used by browser delivery. Electron supplies Chromium and Node within the distribution; players install neither. No second game implementation, frontend framework, generic platform registry or runtime server is introduced.

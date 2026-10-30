@@ -50,7 +50,7 @@ Exit evidence: all delivery milestones and their issues are complete/closed; the
 
 Use Node's test runner for deterministic compiled TypeScript unit tests and Playwright for assembled-browser checks. Pin development dependencies and a lockfile during tooling implementation; select compatible current versions using their official distribution information. Node.js/npm are build tools, not browser runtime requirements.
 
-Follow the root browser policy and bundled Playwright recovery guidance. Use a dedicated absolute browser path and managed matching Chromium headless shell/Firefox revisions. Record provisioning, representative sessions and rendering separately from app acceptance. A diagnosed unavailable full/headed mode is excluded and reported under policy; failed feasible headless acceptance remains blocking. Native Windows Electron, signed installer and store checks are outside the delivered platform.
+Follow the root browser policy and bundled Playwright recovery guidance. Use a dedicated absolute browser path and managed matching Chromium headless shell/Firefox revisions. Record provisioning, representative sessions and rendering separately from app acceptance. A diagnosed unavailable full/headed mode is excluded and reported under policy; failed feasible headless acceptance remains blocking. Windows Electron package/native checks belong to Phase10; signed installer and store checks remain outside delivery.
 
 Select targeted checks within tasks, then complete meaningful regressions at milestone/phase exits. Preserve evidence of actual commands, versions, modes, failures, repairs and limits. Passing tests alone does not replace code review. No test, build, screenshot or compatibility pass is implied by this plan.
 
@@ -98,7 +98,7 @@ Only after all exits and selected issue/milestone closures, merge the exact camp
 
 The principal risks are deadline event ordering, coordinate-sign mistakes, refill rollback, hold/preview mismatches and browser-focus reentry. Give them explicit model fixtures and assembled browser checks at their owning milestone. Update deterministic tests that encode superseded classic behavior without weakening unaffected assertions. Keep runtime/console-error guards through teardown.
 
-Use the repository's isolated managed browsers and documented environment diagnostics. Restricted-host Firefox recovery is opt-in only when diagnosed. Native headed OS-window focus and Windows/Electron execution remain explicitly unverified/excluded rather than blocking browser artifacts. Packaging must reject unsafe paths/secrets and maintain relative prefix-hosted assets. No outstanding product decision blocks this plan.
+Use the repository's isolated managed browsers and documented environment diagnostics. Restricted-host Firefox recovery is opt-in only when diagnosed. Native headed browser OS-window focus remains a separate evidence limit; available Windows/Electron acceptance belongs to Phase10 and does not block these historical browser-phase artifacts. Packaging must reject unsafe paths/secrets and maintain relative prefix-hosted assets. No outstanding product decision blocks this plan.
 
 ## Phase 3 — Conditional ghost visibility
 
@@ -113,7 +113,7 @@ The first implementation checkpoint is working conditional visibility in the rea
 
 ## Verification and integration
 
-Use pure fixtures for the exact predicate, shared-view snapshots for boundary rendering and actual gameplay for shipped-browser crossings. Ensure both hidden and restored states are exercised in built/extracted apps. Preserve source-fixture exclusion and all existing model/lifecycle/packaging regressions. Browser resource policy and local diagnosed recovery remain unchanged; native headed focus is reported separately and Electron is outside delivery.
+Use pure fixtures for the exact predicate, shared-view snapshots for boundary rendering and actual gameplay for shipped-browser crossings. Ensure both hidden and restored states are exercised in built/extracted apps. Preserve source-fixture exclusion and all existing model/lifecycle/packaging regressions. Browser resource policy and local diagnosed recovery remain unchanged; native headed focus is reported separately and Electron acceptance is assigned separately to Phase10.
 
 Keep the persistent feature/002_0adba6e-conditional-ghost-visibility branch created from its published preparation-containing main parent. At complete phase closure, incorporate the delivered accepted delta into current product owners, reassess affected document QC, transfer tasks once and archive eligible active campaign sources/adjacent QC under the recorded feature prefix. Preserve prior closed records. Reports stay under that prefix. Close verified task issues/milestones only after owning publication/readback.
 
@@ -133,7 +133,7 @@ The first demonstration lets a player configure next-game rule behavior and veri
 
 ## Verification, integration and release
 
-Use deterministic settings/model fixtures for96 selected values/16 active rules, invalid inputs, exact time and rollback; actual browser play for control focus, copied-rule changes, disabled inputs and display/lifetime. Keep source-only fixtures separate from shipped source/built/extracted behavior. Preserve managed-browser/provisioning policy, process-local diagnosed recovery and native headed-focus limits; Electron remains outside scope.
+Use deterministic settings/model fixtures for96 selected values/16 active rules, invalid inputs, exact time and rollback; actual browser play for control focus, copied-rule changes, disabled inputs and display/lifetime. Keep source-only fixtures separate from shipped source/built/extracted behavior. Preserve managed-browser/provisioning policy, process-local diagnosed recovery and native headed-focus limits; Electron delivery is assigned separately to Phase10.
 
 Execute on persistent feature/003_3977abb-session-only-game-configuration from its verified published preparation-containing main parent. Milestone exits require publication/issue closure before dependent work. Before final phase review closes, incorporate delivered scope into affected canonical owners, reassess adjacent current QC, transfer tasks once and archive eligible current sources/reports under the reserved campaign prefix. Preserve prior closed campaigns and completed task evidence.
 
@@ -157,7 +157,7 @@ Core placement/rotation and shared compaction precede session state changes; inv
 
 Principal risks are sealed overlapping poses with no legal lock, divergent ghost/drop searches, mode-sensitive grounding and supported-delay resets, mask/board row drift, award/spend/refill rollback, stale white rendering and native key double-dispatch. Address each at its owning boundary and retain all ordinary gameplay/configuration regressions. Actual game traces must earn bonuses; do not add debug starts or shortcuts. Both general policies and all6 display choices receive representative penetrating integration coverage alongside exact model tests.
 
-Use the existing dedicated managed Chromium/Firefox environment and documented provisioning/recovery, with current runner/binaries verified before browser-dependent work. Native headed OS focus unavailable on the host is an explicit evidence limit; Electron is excluded. Source-only fixtures remain excluded from built/extracted suites and packages. Physical ownership is assessed against [layout](layout.md) before task derivation.
+Use the existing dedicated managed Chromium/Firefox environment and documented provisioning/recovery, with current runner/binaries verified before browser-dependent work. Native headed OS focus unavailable on the host is an explicit evidence limit; Electron delivery is assigned separately to Phase10. Source-only fixtures remain excluded from built/extracted suites and packages. Physical ownership is assessed against [layout](layout.md) before task derivation.
 
 Every delivery milestone has independent whole-boundary code review and test/report exits. The task list assigns a standalone review when the milestone has at least four implementation tasks and the phase has two delivery milestones; otherwise its final implementation task owns review/report/HANDOFF. The phase review always remains its own single final task. Reports stay under docs/dev/features/004_1cadd99-penetrator-mode/reports/phases/5/, with feature-root IMPLEMENTATION-REPORT.md for the final outcome.
 
@@ -279,3 +279,27 @@ Exit: current implementation/doc/coverage reviews Ready; all required task/miles
 ## UI layout integration and evidence
 
 Two delivery milestones establish the playable view then full lifetime/distribution acceptance; the final dedicated review milestone has exactly one phase review unit. Fold milestone review/testing/repair/report/HANDOFF into the last delivery task when its group has fewer than4 tasks. Preserve earlier completed ranges and closed campaigns. Final phase incorporation transfers the seven UI tasks once to main TASKS, retains eligible008 sources as historical and reconciles current document conformance before complete verified integration and1.8.0 release. Static browser artifacts keep their stable ZIP/checksum names; native headed/HTTPS limits remain separately explicit.
+
+## Phase 10 — Windows Electron platform
+
+Deliver the existing usable browser game as an offline portable Windows10/11x64 Electron application and retain browser delivery. The single coherent increment includes a secure thin desktop host, complete Windows runtime/assets, shared renderer, configuration/manual-file compatibility and dual-platform1.9.0 release. Installer/store/updater/signing provisioning, other desktop OS distribution and gameplay changes are excluded. Existing Phase1–9 boundaries and completed ranges remain intact.
+
+### Milestone 10.1 — Offline desktop host and Windows package
+
+Establish the earliest meaningful desktop outcome: a real local renderer in an isolated Electron window with compatible gameplay/profile/native-file behavior and a complete Windows portable artifact. Pin verified official runtime inputs before using them. Implement restrictive in-process local origin and window lifecycle around the existing renderer; exercise offline startup and malicious/missing-resource rejection. Validate settings cookie/URL/close-relaunch, session/toggle lifetime, normal gameplay and real JSON/SQLite worker/WASM paths with available desktop facilities. Produce the complete inspected Windows package with independent provenance/member/entry/renderer verification and reproducibility.
+
+Use real runtime smoke where facilities exist, with native Windows runner orchestration when actually accessible. Source staging can establish host behavior before final packaging; final extracted artifact acceptance remains explicit. Missing native facilities are reported unverified rather than fabricated or made a blocking prerequisite; feasible build/policy/artifact failures remain blockers. Inspected actual artifacts and available runtime acceptance establish this milestone exit. Fold whole-milestone independent code/coverage review, repaired/rechecked findings, appropriate checks/report/HANDOFF into the final delivery task because this group has fewer than4 delivery tasks.
+
+### Milestone 10.2 — Verified dual-platform distribution
+
+Depends on complete published/closed10.1. Complete actual extracted Windows runtime acceptance and feasible hosted CI, player/developer instructions/version/notices and browser/desktop package integrity. Verify both actual distributions from a clean install, all existing source/built/extracted managed Chromium/Firefox regressions, desktop isolation/profile/manual-file/error/lifecycle/layout behavior where executable, and deterministic pinned Windows artifact equivalence. Keep finite measured CI/test budgets; never hide failed mandatory checks as skips. Distinguish native Windows, any Linux Electron and browser evidence. Fold independent whole-milestone code/docs/package review, checks/repairs/rechecks and report/HANDOFF into its last delivery task.
+
+### Milestone 10.3 — Phase review
+
+One dedicated phase-review unit assesses the whole implementation/contracts/coverage/current docs/task persistence and final TODO aggregation. Incorporate accepted platform scope into current authorities, transfer new tasks once into main ownership, archive eligible009 sources and preserve frozen001–008. Current adjacent QC and navigation must agree before complete verified feature integration into its recorded refreshed main parent.
+
+### Integration, release and evidence
+
+After all tasks/publication/tracking/reviews and feasible exits pass, integrate by explicit two-parent merge into the actual recorded main parent, run merged checks and publish/read back. Version1.9.0 covers both platforms and retains game-save format1. Create the eligible default-branch release commit/annotated tag with the same complete notes body, stable browser and Windows ZIP/checksum pairs, latest selection and actual anonymous tag/latest bytes for all four assets. Verify both release-source main/tag CI outcomes for applicable workflows/jobs; record actual provider outcomes in the owning parent-only followup without moving the tag. Never claim a native facility/check ran without evidence.
+
+The main risks are local-origin worker/WASM/cookie behavior, native file/focus/profile lifetime, runtime provenance/complete dependencies and strict package trust. Early composed-runtime checks address the first two; independent pinned-vendor/package verification and actual extraction address the latter. Shared renderer equivalence and full browser regression guard platform preservation. No unresolved design decision is deferred into implementation.
