@@ -44,7 +44,7 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | Stage | Source and assessment |
 | --- | --- |
 | FDOCS-001 | Clean eligible Git worktree at published main `ea3905572ff8e3fa473862e154faccee9055c18b`; campaign/branch collision checks clear; pre-write native milestone/nine issues verified. Existing adoption/disclosure/provenance retained. Context/task/control/HANDOFF initialization co-closes here; publish/read back and issue closure follow. |
-| FDOCS-002 | FEATURE proposal pending; first acceptance required. |
+| FDOCS-002 | Reviewable [FEATURE](FEATURE.md) proposed, blob `e97e41c1340ecbbb60b2497214364689f7c5df50`. Seed coverage, existing Game Over/Hold paths, once-only completion, tie/capacity/session boundaries and no-persistence compatibility assessed. Technical brief review found no unresolved contradiction; proposed product choices still require human acceptance. Stage remains unchecked/open. |
 | FDOCS-003 | Architecture assessment pending accepted brief. |
 | FDOCS-004 | Decomposition assessment pending. |
 | FDOCS-005 | Specification and scoped QC pending. |
@@ -55,4 +55,4 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 
 ## Pending transitions
 
-No reset. Publish/read back initialization and close/read back only FDOCS-001. Then publish FEATURE proposal with exact source identity and stop for acceptance. No product code, version, release, implementation readiness or integration is claimed.
+No reset. Initialization published/read back; FDOCS-001 issue 101 closed/read back. Publish/read back this FEATURE proposal, blob `e97e41c1340ecbbb60b2497214364689f7c5df50`, and stop for first acceptance. FDOCS-002 remains unchecked/open. No product code, version, release, implementation readiness or integration is claimed.
