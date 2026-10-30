@@ -31,3 +31,9 @@ Next eligible: FDOCS-002. Publication and exact issue closure/readback precede a
 Accept preapproved Windows Electron feature brief. FEATURE SHA256 b3990f97bc4a417380e8c926ff88018ce84e0ab5255839d425a1405a94a51394; seed coverage and retained browser/game/settings/file contracts checked. Agent chose portable Windows10/11x64 unsigned ZIP with bundled pinned runtime, shared exact renderer and isolated host; installer/signing/updates/other desktop OS delivery excluded. Explicit human brief/autodoc preapproval covers acceptance; no unresolved principal-scope question blocks design.
 
 Next eligible: FDOCS-003. Publication and exact issue closure/readback precede advancement.
+
+### FDOCS-003
+
+Accept scoped Electron architecture delta. FEATURE_ARCHITECTURE SHA256 08ece37031b95825e595af5a7389c70048d5c621e01fecb5d997abab423da615; main dependency direction retained, necessary desktop boundary added. Fixed in-process HTTPS interception preserves existing cookie/URL contracts with no server or shared-core changes; isolated renderer and local-asset-only policies assessed against official Electron docs. Manual pinned-runtime packaging selected for portable delivery. Autodoc preapproval covers this reviewed proposal; no unresolved structural blocker.
+
+Next eligible: FDOCS-004. Publication and exact issue closure/readback precede advancement.
