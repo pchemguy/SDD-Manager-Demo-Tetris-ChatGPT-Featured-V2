@@ -1,0 +1,19 @@
+{
+  "electronVersion": "45.2.0",
+  "checksums": {
+    "url": "https://github.com/electron/electron/releases/download/v45.2.0/SHASUMS256.txt",
+    "sha256": "1b4c936fff1b7995cb5cb88174fa6faf39dd3368ba1b6bea4b10d99a810f0e6d"
+  },
+  "assets": {
+    "win32-x64": {
+      "filename": "electron-v45.2.0-win32-x64.zip",
+      "url": "https://github.com/electron/electron/releases/download/v45.2.0/electron-v45.2.0-win32-x64.zip",
+      "sha256": "8b3475a4c1e56ac70f4802b4fc05db758c8821c766f26445acdb90e3c4e68e71"
+    },
+    "linux-x64": {
+      "filename": "electron-v45.2.0-linux-x64.zip",
+      "url": "https://github.com/electron/electron/releases/download/v45.2.0/electron-v45.2.0-linux-x64.zip",
+      "sha256": "765936b06ec7e03c2848a03e4035df535d4370986ec3469607195c3f309f530b"
+    }
+  }
+}
