@@ -41,3 +41,31 @@ Use persistent `feature/005_5153bbf-url-get-cookie-persistence` created from its
 At the final phase boundary, incorporate delivered scope into current PROJECT/design/SPEC and its focused configuration child/PLAN/layout, reassess affected adjacent current QC, transfer new executable tasks exactly once into main TASKS, and archive eligible active005 feature/preparation/adjacent-QC sources under the reserved feature prefix. Preserve prior closed packages and original completed task evidence. Milestone reports stay at `docs/dev/features/005_5153bbf-url-get-cookie-persistence/reports/phases/6/6.1.md` and `6.2.md`; phase evidence at its `PHASE-REPORT.md`, final outcome at the feature-root `IMPLEMENTATION-REPORT.md`.
 
 Integrate only the complete verified phase by explicit two-parent merge into its recorded main parent. Run merged-state checks and source/artifact identity comparisons, publish/read back main, then create the eligible default-branch v1.5.0 release commit/annotated tag with exact finalized notes. Publish stable ZIP/checksum assets and verify body/source/latest/inventory, actual public download bytes and release-source CI. Record actual release outcomes in an owning task's parent-only evidence followup without moving the release tag. Document preparation performs none of those implementation/release operations.
+
+## Scoped physical allocation
+
+[Main layout](layout.md) remains the repository-wide owner. The following feature allocation adds C-08 within the existing browser platform directory; main layout's no-storage/current-version statements remain the v1.4.0 baseline until accepted incorporation. Paths marked new are intended physical homes, not implementation claims.
+
+| Path | Component / purpose |
+| --- | --- |
+| src/application/configuration.ts | C-07 existing module: expose canonical pure field validation while retaining controller/default/rule-projection contracts. |
+| src/platform/browser/configuration-codec.ts (new) | C-08 pure URL/cookie resolution, cookie scope/assignment and current-URL construction; explicit inputs, no ambient DOM or side effects. |
+| src/platform/browser/configuration-persistence.ts (new) | C-08 callback-based persisted-controller factory, initial explicit URL saves, atomic delegation and independently contained changed-field effects. |
+| src/platform/browser/main.ts | C-06 actual page entry supplies document/window callbacks to C-08; reusable mountGame default and existing native lifecycle stay intact. |
+| tests/unit/configuration.test.ts | Existing pure C-07 domain/detachment/unknown-key regression plus exported validator agreement. |
+| tests/unit/configuration-codec.test.ts (new) | Strict six-setting formats/precedence/duplicates, default/omitted cases, immutability, cookie attributes/path and URL semantics. |
+| tests/unit/configuration-persistence.test.ts (new) | Real C-07 with injected sources/effects: initialization, no-op/invalid atomicity, multi-field patches, failures and context reuse. |
+| tests/browser/configuration-persistence.spec.ts (new) | Real page-entry native restoration/edits/reload/reopen/cookies/history/failure behavior for source/built/extracted targets; not excluded from distribution acceptance. |
+| tests/browser/configuration.spec.ts and existing lifecycle/remount/ghost/penetrator suites/fixtures | Amend only obsolete browser-entry no-storage/reload-default assertions; preserve pure-context/default isolation, focus, rule timing and ordinary/penetrator regressions. Existing source-only fixtures remain excluded from shipped targets. |
+| tsconfig.test.json, scripts/test-unit.mjs | Existing compiled Node test discovery/compiler ownership; adjust only if new DOM-free modules/tests need explicit inclusion. |
+| scripts/check-boundaries.mjs | Retain core/application protection and check shared UI cannot import platform modules; allow C-06/C-08 to import reusable modules. |
+| playwright.config.ts, scripts/browser-env.mjs | Keep managed browsers, three actual targets and finite measured budgets. Extend budget only when measured execution justifies it, with the wrapper still longer than the suite. |
+| README.md, docs/CONTROLS.md, docs/INSTALL.md, docs/DEVELOPMENT.md | Player query/cookie behavior, supported hosting/scope, changed lifetime, unchanged gameplay controls and validated development commands/evidence limits. |
+| package.json, package-lock.json, scripts/package_browser.py, scripts/verify_package.py, tests/package/, existing release/CI inputs | v1.5.0 metadata and any existing version assertions; strict reproducible relative archive/checksum, current shipped guides and artifact verification. Do not add another package path or dependency. |
+| docs/dev/spec/configuration-persistence.md (new at incorporation) | Canonical U-01–U-08 child linked from current SPEC after the delivered delta is incorporated. |
+| docs/dev/PROJECT.md, ARCHITECTURE.md, DECOMPOSITION.md, SPEC.md and affected spec children, PLAN.md, layout.md, TASKS.md, adjacent QC reports, AGENTS.md | Current product/owner reconciliation at complete phase review; preserve earlier ranges and update only affected current documents. |
+| docs/dev/features/005_5153bbf-url-get-cookie-persistence/ | Fixed6.1/6.2/phase/final evidence and eligible005 source/preparation/QC archive after final incorporation. |
+
+Public release assets remain `classic-tetris-browser.zip` and its `.sha256` sidecar; local intended outputs are `artifacts/classic-tetris-browser-v1.5.0.zip` and its matching sidecar. Archive membership remains the established build assets, manifest, license/notices and shipped instructions; no codec source, tests, fixtures, docs/dev, credentials, browser cache or node_modules ships. RELEASE-NOTES retains the exact final body at the release boundary; internal highlights remain ignored and are cleaned up only after verified publication consumption.
+
+The adapter's two files separate deterministic format logic from effects without adding a service layer or generic storage abstraction. Both compile without DOM types because effects enter through explicit callbacks; only main.ts binds actual browser objects. C-05's structural controller consumer requires no additional callback or storage import. The component-to-path map supports each milestone without moving unrelated modules or changing existing source-only fixture ownership.
