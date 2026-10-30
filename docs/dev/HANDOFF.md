@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: conditional ghost feature fully implemented, verified, integrated and published as v1.2.0; final task-owned evidence follow-up records actual outcomes.
+Checkpoint: session-only game configuration campaign003_3977abb initialized; FEATURE proposal/approval next.
 
-## Current authorities and result
+## Authority and scope
 
-PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC plus spec/ghost-visibility.md/spec/modern-rules.md/PLAN/layout describe current behavior. TASKS solely owns26 completed task IDs. Current feature002 source/preparation/QC snapshots are historical under features/002_0adba6e-conditional-ghost-visibility; its phase/final reports retain exact review/check/task-audit/integration/release/download/CI evidence. CG-R1/R2,CG-DOC1 and post-integration CG-DOC2 resolved; TODO None. Prior closed campaigns, reports, tasks and releases preserved.
+User requested the six-control settings panel and no reload persistence, delegating sensible defaults. Continue autodoc/onepass: first FEATURE approval active; downstream necessary document checkpoints preapproved only after acceptance, with stop after FDOCS-008 before whole-package QC/implementation. Selected defaults preserve v1.2.0. Timing, failed-attempt hard-drop semantics and control dependencies are proposed in FEATURE_PREPARATION, not assumed accepted. No new implementation range activated.
 
-## Git and hosting
+## Git and tracking
 
-Current main. Original campaign baseline0adba6e9898e9c1bb2389cca3ad23bd8fadfacb9; implementation creation parent1bbfae895b4fd889d59dbe00b3263ca0e01d4898. Published feature2793a287ceab3f55d8eb9f949594e29fdffadce3; explicit main mergec0df86a06e4ef67791987913dff6be81b2cbd4a1. Release commitca684155c3f60672153b2e494690071abf1978af; immutable annotated v1.2.0 objectafaceff526079a2c565739824c72d9b5e2d63b25. GitHub release428322121 published/latest with exactly2 ZIP/checksum assets and byte-verified public downloads. Body matches retained notes; both release-source CI runs pass. Current main includes parent-only CG-DOC2 clarification af40fed19ff511add1895a0017490383e6c817d0 without code/archive/tag changes. All task issues and milestones closed/read back.
+Current design-docs/003_3977abb-session-only-game-configuration, full baseline/creation-parent main3977abbcb640490c2cf60f3365681f29067b3835. Future implementation feature/003_3977abb-session-only-game-configuration requires verified published preparation integration. All nine campaign stage issues and native milestone were verified before writes; exact mapping in FEATURE_PREPARATION. FDOCS-001 initial checkoff/control/HANDOFF publication/closure pending. Main TASKS T-001–T-026 and prior campaign records/releases preserved.
 
-## Return and limits
+## Next action and stop
 
-Publish/read back this T-026 evidence-only follow-up, confirm clean main/unchanged tag, then return completed authorized work. No task/gameplay/release work remains. Native headed focus unverified; managed-browser/process-local Firefox recovery and onscreen paused-time test diagnostic are explicit. Electron/native installers remain future scope. No pending human decision or unresolved finding.
+Publish/read back initialization, close its exact issue, publish FEATURE proposal and stop for first brief acceptance. No application/configuration behavior is implemented yet. Existing v1.2.0 evidence remains in closed feature002 reports; no prior task needs resumption. No credentials recorded in source/evidence. Native headed focus remains unverified; Electron outside current browser scope.
