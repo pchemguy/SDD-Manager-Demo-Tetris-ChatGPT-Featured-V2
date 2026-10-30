@@ -19,7 +19,7 @@ Build on the current [game](PROJECT.md), [system contracts](SPEC.md), [modern ru
 
 These defaults preserve v1.2.0 play. Conditional ghost visibility retains the occupied-cell boundary: hide the entire projection when its lowest occupied landing cell is in rows 1–10; show it in rows 11–20, including projections straddling the midline. Empty rotation-matrix padding and the active piece's current height do not change that boundary. Always hide suppresses projection cells and landing-row description at every height. Canonical landing remains available independently of visibility and hard-drop enablement.
 
-## Recommended application timing
+## Application timing
 
 Ghost visibility and next-preview visibility are display preferences and apply immediately, including while paused. Hard-drop enablement, hold enablement and both locking policies are gameplay rules: edit them for the next game and copy them on Start/Restart. Clearly distinguish pending selections from the rules of the active game. Pending edits do not change the current piece, held piece, enablement or lock countdown mid-game.
 
@@ -31,7 +31,7 @@ Use one nonmodal panel with labeled native controls, visible focus and usable la
 
 Under failed-downward locking, ground contact alone does not lock. A blocked gravity or soft-drop attempt locks atomically; horizontal moves and rotations do not. Under full-interval locking, preserve the existing independent countdown: one complete current gravity interval from becoming grounded, continuous-support actions preserve it, leaving support cancels it, relanding starts a full interval, and pause freezes it.
 
-Recommended hard-drop interpretation: Follow general moves to the canonical landing. With full-interval general locking, retain the existing landing countdown behavior. With failed-downward general locking, placement itself is not a synthetic failed attempt: the piece remains adjustable until the next failed gravity or soft-drop attempt. Lock immediately overrides either general policy and locks after placement, including zero-distance hard drops.
+Hard-drop interpretation: Follow general moves to the canonical landing. With full-interval general locking, retain the existing landing countdown behavior. With failed-downward general locking, placement itself is not a synthetic failed attempt: the piece remains adjustable until the next failed gravity or soft-drop attempt. Lock immediately overrides either general policy and locks after placement, including zero-distance hard drops.
 
 When hard drop is Off for the active game, its button is disabled and its command/Space shortcut is a no-op: no movement, score, lock, randomness or fallback action. Disable the pending hard-drop locking control while pending hard drop is Off, retaining its selected policy so re-enabling restores the choice. Ghost visibility remains independent of hard-drop availability.
 

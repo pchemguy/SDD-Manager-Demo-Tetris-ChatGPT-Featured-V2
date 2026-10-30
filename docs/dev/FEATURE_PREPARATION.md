@@ -10,7 +10,7 @@ Accepted main baseline: PROJECT, ARCHITECTURE, DECOMPOSITION, SPEC with spec/mod
 
 ## Current control
 
-Continue the user's project preference autodoc/onepass for this feature only. First FEATURE approval remains active. Subsequent necessary design-through-TASKS checkpoints are preapproved after brief acceptance, subject to technical QC. Current stop is first FEATURE review/acceptance; then the ordinary autodoc stop is FDOCS-008 before whole-package QC/integration/implementation unless explicitly selected later. No new product tasks are activated by opening the campaign. Preserve prior completed phase/task ranges; no future passes inferred.
+Continue the user's project preference autodoc/onepass for this feature only. User accepted the published FEATURE and timing/locking proposals with “y”; the first brief checkpoint is complete. Subsequent necessary design-through-TASKS checkpoints are preapproved after brief acceptance, subject to technical QC. The active autodoc stop is FDOCS-008 before whole-package QC/integration/implementation unless explicitly selected later. No new product tasks are activated by opening the campaign. Preserve prior completed phase/task ranges; no future passes inferred.
 
 Default reporting Standard (concise consequential decisions/results); Minimal/Explicit available. Tracking enabled by AGENTS policy. Native campaign milestone and all nine complete stage issue identities/briefs/markers/associations verified before repository writes. Reuse existing protected authentication/ignore rules and manual provenance scaffold without replaying setup or recording a transcript.
 
@@ -19,24 +19,24 @@ Default reporting Standard (concise consequential decisions/results); Minimal/Ex
 | Topic | Source/status and rationale |
 | --- | --- |
 | Six controls and no reload persistence | User supplied. Current settings remain in page-session memory; no storage/cookie/URL/backend persistence. |
-| Sensible defaults | Agent selection under explicit user delegation: ghost Always show, hard drop/next preview/hold On, hard drop Follow general, general Full gravity interval. Preserve v1.2.0 default gameplay. First brief acceptance still required. |
-| When changes apply | Agent proposal pending brief acceptance: ghost/preview display immediately; hard drop/hold/general lock/hard-drop lock copied only on Start/Restart. Avoid ambiguous mid-piece timer, held-piece and enablement transitions. Keep pending versus active rules clear. |
-| Failed-attempt hard drop | Agent proposal pending acceptance: Follow general places at canonical landing and waits for next failed gravity/soft-drop attempt; the drop itself is placement, not a synthetic failed step. Immediate always locks, including zero distance. |
-| Disabled capabilities/dependencies | Agent proposal pending acceptance: disabled hard-drop/hold commands are no-ops with disabled buttons; preview Off conceals type/miniature but retains canonical bag/look-ahead. Hard-drop policy disabled/ignored when hard drop Off, retaining selected policy for reenablement; ghost independent of hard drop. |
-| UI interaction | Agent proposal pending acceptance: one nonmodal native-control panel replaces existing separate settings; interaction within it does not itself restart/pause/resume. Preserve manual pause and external-focus auto-pause. |
-| Page-session lifetime | User-supplied no-reload-persistence refined by agent proposal: retain selections across ordinary panel interaction, Start/Restart, pause/resume and game over in the current loaded page; fresh reload gets defaults. Separate pages/tabs independent. No Reset/presets/import/export feature added. |
+| Sensible defaults | Agent selection under explicit user delegation: ghost Always show, hard drop/next preview/hold On, hard drop Follow general, general Full gravity interval. Preserve v1.2.0 default gameplay. Accepted with the brief. |
+| When changes apply | Accepted with the brief: ghost/preview display immediately; hard drop/hold/general lock/hard-drop lock copied only on Start/Restart. Avoid ambiguous mid-piece timer, held-piece and enablement transitions. Keep pending versus active rules clear. |
+| Failed-attempt hard drop | Accepted with the brief: Follow general places at canonical landing and waits for next failed gravity/soft-drop attempt; the drop itself is placement, not a synthetic failed step. Immediate always locks, including zero distance. |
+| Disabled capabilities/dependencies | Accepted with the brief: disabled hard-drop/hold commands are no-ops with disabled buttons; preview Off conceals type/miniature but retains canonical bag/look-ahead. Hard-drop policy disabled/ignored when hard drop Off, retaining selected policy for reenablement; ghost independent of hard drop. |
+| UI interaction | Accepted with the brief: one nonmodal native-control panel replaces existing separate settings; interaction within it does not itself restart/pause/resume. Preserve manual pause and external-focus auto-pause. |
+| Page-session lifetime | Accepted page-session interpretation: retain selections across ordinary panel interaction, Start/Restart, pause/resume and game over in the current loaded page; fresh reload gets defaults. Separate pages/tabs independent. No Reset/presets/import/export feature added. |
 | Existing ghost threshold | Retain accepted occupied-bottom-cell rule: rows1–10 upper/hidden,11–20 lower/shown, straddling visible. Extend with Always hide, preserve canonical projection regardless of display. |
-| Version | Agent recommendation pending brief acceptance: additive browser1.3.0 after full verified phase integration; preserve prior tags/assets and unaffected API guarantees. |
+| Version | Accepted with the brief: additive browser1.3.0 after full verified phase integration; preserve prior tags/assets and unaffected API guarantees. |
 
-Cross-scope decisions: none outside this one pass. Scope/timing/failed-drop proposals remain distinguishable from supplied requirements and delegated defaults; acceptance or explicit correction precedes dependent specification.
+Cross-scope decisions: none outside this one pass. User accepted scope/timing/failed-drop/dependency choices with “y”; preserve their provenance separately from delegated defaults.
 
 ## Stage evidence
 
 | Stage | Source/assessment and state |
 | --- | --- |
 | FDOCS-001 | Linux/bash usable clean main worktree, full published baseline/default identity, global campaign-sequence collision scan, governing instructions and existing auth/provenance reused. Nine-stage tracking gate passed. Initialization885555c29ff330f9d43095dcbce6c164dbe9902d source/control/checkoff/HANDOFF published/read back; issue54 closed/read back. |
-| FDOCS-002 | FEATURE proposal assessed against the current session options/dispatch/advance, shared display preferences and browser host. All six controls, delegated defaults, preserved rules and proposed timing/failed-drop/dependency interactions covered; no material choice is silently adopted. Proposal SHA256 d76f3091f011d2e4fbd0a3bd7eddfb4efb0a6b28e658ffafd7883bc31dffecb5. First approval pending; FDOCS-002 remains unchecked. |
-| FDOCS-003–009 | Pending ordered stage assessments after accepted brief. |
+| FDOCS-002 | FEATURE proposal assessed against the current session options/dispatch/advance, shared display preferences and browser host. All six controls, delegated defaults, preserved rules and proposed timing/failed-drop/dependency interactions covered; no material choice is silently adopted. Proposal SHA256 d76f3091f011d2e4fbd0a3bd7eddfb4efb0a6b28e658ffafd7883bc31dffecb5. User “y” accepts the presented brief/proposals; product wording now expresses the accepted timing and locking rule. Exact accepted source below. |
+| FDOCS-003–009 | Pending ordered downstream assessments under retained autodoc preapproval. |
 
 ## Hosted preparation mapping
 
@@ -56,4 +56,13 @@ Native milestone #14 (sdd-docs-003_3977abb), open/read back.
 
 ## Pending transitions
 
-No reset. Publish/read back this FEATURE proposal with exact source identity and stop for first brief acceptance. Gameplay timing/failed-attempt hard-drop proposals remain pending acceptance or correction; no dependent specification or implementation yet. No application code/tests/version, canonical product root or release change at this opening checkpoint.
+No reset. Persist/publish/read back FDOCS-002 acceptance and close55, then continue FDOCS-003–008 with required scoped QC; stop before FDOCS-009. No application code/tests/version, canonical product root or release change at this opening checkpoint.
+
+## FDOCS-002 completion
+
+User y accepted the exact published six-control brief/defaults and proposed immediate display versus next-game rules, failed-attempt follow-general hard-drop behavior, disabled-feature dependencies and page-session-only lifetime. Target1.3.0. Downstream necessary design-through-task checkpoints retain autodoc preapproval, with stop before FDOCS-009/package QC/implementation.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE.md: b9937e48c83785814defb76a14684a7dc4270b971d09d13c830409c0f6345d14
+
+Publish/read back this coherent completion before closing/readback of issue #55 or dependent work.
