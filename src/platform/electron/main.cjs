@@ -3,7 +3,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
-const {APP_ORIGIN,contentPolicy,resolveAsset}=require('./asset-policy.cjs');
+const {APP_ORIGIN,contentPolicy,resolveAsset,chooseAppData}=require('./asset-policy.cjs');
 const entry=APP_ORIGIN+'/index.html';
 function bundledFiles(root){
  const manifestPath=path.join(root,'BUILD-MANIFEST.json');
@@ -29,10 +29,10 @@ function bundledFiles(root){
 /** Explicit native collaborators keep policy/lifecycle testable without exposing a renderer bridge. */
 async function startDesktop(electron,rendererRoot=path.join(__dirname,'renderer')){
  const {app,BrowserWindow,session,Menu,dialog}=electron;
- let window;
+ let window,flushing=false,flushed=false;
  try{
  app.setName('Classic Tetris');
- const profile=path.join(app.getPath('appData'),'ClassicTetris'),sessionPath=path.join(profile,'Session');
+ const profile=path.join(chooseAppData(process.platform,process.env,app.getPath('appData')),'ClassicTetris'),sessionPath=path.join(profile,'Session');
  fs.mkdirSync(sessionPath,{recursive:true});
  app.setPath('userData',profile);app.setPath('sessionData',sessionPath);
  if(!app.requestSingleInstanceLock()){app.quit();return}
@@ -51,6 +51,22 @@ async function startDesktop(electron,rendererRoot=path.join(__dirname,'renderer'
     const bytes=bundle.read(resolved.relativePath);
     return new Response(resolved.head?null:bytes,{headers:{'content-type':resolved.mime,'content-security-policy':contentPolicy,'x-content-type-options':'nosniff','cache-control':'no-store'}});
    }catch{return new Response('Bundled resource unavailable',{status:404,headers:{'content-type':'text/plain; charset=utf-8'}})}
+  });
+  ses.on('will-download',(event,item)=>{
+   const name=item.getFilename(),types={'classic-tetris-save.json':'application/json','classic-tetris-save.sqlite':'application/vnd.sqlite3'};
+   if(!item.getURL().startsWith('blob:'+APP_ORIGIN+'/')||!Object.hasOwn(types,name)||types[name]!==item.getMimeType()){event.preventDefault();return}
+   try{
+    item.setSaveDialogOptions({defaultPath:path.join(app.getPath('downloads'),name),filters:[{name:'Tetris snapshot',extensions:[name.endsWith('.json')?'json':'sqlite']}]});
+    item.once('done',(_event,state)=>{if(state==='interrupted')dialog.showErrorBox('Save failed','The snapshot download could not be completed. Choose Save to try again.')});
+   }catch{event.preventDefault();dialog.showErrorBox('Save failed','The native destination could not be opened. Choose Save to try again.')}
+  });
+  app.on('before-quit',event=>{
+   if(flushed)return;
+   event.preventDefault();if(flushing)return;flushing=true;
+   let timer;
+   Promise.race([Promise.resolve().then(()=>ses.cookies.flushStore()),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('Settings storage timed out')),3000)})])
+    .catch(()=>dialog.showErrorBox('Settings could not be saved','The application could not confirm its settings were written. Your manual save files are unaffected.'))
+    .finally(()=>{clearTimeout(timer);flushed=true;app.quit()});
   });
   Menu.setApplicationMenu(null);
   const area=electron.screen?.getPrimaryDisplay()?.workAreaSize??{width:1632,height:1008};

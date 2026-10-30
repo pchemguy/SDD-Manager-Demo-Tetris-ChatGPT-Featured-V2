@@ -20,7 +20,8 @@
     "test:package": "python scripts/test-package.py",
     "generate:save-validator": "node scripts/generate-save-validator.mjs",
     "check:save-validator": "node scripts/generate-save-validator.mjs --check",
-    "test:desktop:policy": "node --check src/platform/electron/main.cjs && node --check src/platform/electron/asset-policy.cjs && node --test tests/desktop/host-policy.test.mjs tests/desktop/host-lifecycle.test.mjs && python tests/desktop/runtime-integrity.test.py"
+    "test:desktop:policy": "node --check src/platform/electron/main.cjs && node --check src/platform/electron/asset-policy.cjs && node --test tests/desktop/host-policy.test.mjs tests/desktop/host-lifecycle.test.mjs && python tests/desktop/runtime-integrity.test.py",
+    "test:desktop": "node scripts/desktop-env.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",

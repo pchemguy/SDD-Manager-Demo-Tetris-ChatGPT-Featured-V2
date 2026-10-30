@@ -18,4 +18,8 @@ function resolveAsset(href,method,approved){
   return mime?{relativePath:name,mime,head:method==='HEAD'}:null;
  }catch{return null}
 }
-module.exports={APP_ORIGIN,contentPolicy,resolveAsset};
+function chooseAppData(platform,environment,fallback){
+ const configured=environment.APPDATA;
+ return platform==='win32'&&typeof configured==='string'&&require('node:path').win32.isAbsolute(configured)?configured:fallback;
+}
+module.exports={APP_ORIGIN,contentPolicy,resolveAsset,chooseAppData};
