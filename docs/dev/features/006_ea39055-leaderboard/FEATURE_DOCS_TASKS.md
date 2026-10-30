@@ -1,5 +1,7 @@
 # Feature documentation tasks
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 Task definitions/checkoffs only. Control, decisions, applicability/reuse and evidence belong in FEATURE_PREPARATION.md. FDOCS IDs are qualified by the campaign for hosting; product T IDs and main DOCS tasks are separate.
 
 - [x] FDOCS-001 — Establish feature preparation context.

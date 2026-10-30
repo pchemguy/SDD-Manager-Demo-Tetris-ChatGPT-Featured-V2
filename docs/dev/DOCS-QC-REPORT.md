@@ -73,3 +73,18 @@ Current PROJECT/design/C01–C08/SPEC with canonical U01–08/affected children/
 | spec/modern-rules.md | b7abdf998767aa1702bcf906ad5123095bb315fe |
 | spec/penetrator.md | 5e376fa0ff98c80d71f332f702498da5ea3212fd |
 | spec/configuration-persistence.md | 45accd130c0ce197d46aa6c252199b0994a2b9a3 |
+
+## Revision 7 — Session leaderboard current owners (T052)
+
+Current gate: Ready for the scoped current document contracts and decomposition. Current PROJECT/design/SPEC canonical L01–08/PLAN/layout/sole TASKS form one coherent1.6.0 product. Main owners independently reassessed; eligible006 sources/preparation/adjacent QC archived with repaired links/historical marker. No workflow preparation narrative copied into product roots, no earlier frozen package changed; actual runtime/integration/release states remain in owning reports. No confirmed unresolved conformance finding; phase implementation review/verification and actual integration/release outcomes are separately owned. Routine completion/status evidence does not change task decomposition.
+
+| Current source | Git blob |
+| --- | --- |
+| PROJECT.md | `6a9e857d81763dcf9fb073a07bc4f5e39b27547c` |
+| ARCHITECTURE.md | `0bfe9ce7dc414ab631f04aa546b2b079f92f1bff` |
+| DECOMPOSITION.md | `12d64dcf7f94c20deb3429a8d064cf16aee011aa` |
+| SPEC.md | `0a6c2e5d75b841741ac097d9e9b2505ee5d6b9be` |
+| PLAN.md | `4f6ad5ae7560aa2829901f615959bb217b77dade` |
+| layout.md | `378816622a1a7801f9aa1efd707e8188b20dfee9` |
+| TASKS.md | `fbdfbd34f7b82abfbb70aa25e21cb2ee195c66cb` |
+| spec/leaderboard.md | `e699e3f6687d541a53a42c5c83c8645166cbd322` |

@@ -120,3 +120,18 @@ Phase5 retains justified two delivery milestones, assigned standalone5.1 review 
 Checked full current strategy against all contracts, scoped physical ownership and complete prior phase ranges. Existing Phase1–5 sections remain unchanged; new Phase6 contains2 delivery milestones (6.1 integrated restoration/edit behavior,6.2 lifetime/distribution) plus the excluded one-task6.3 phase review. Small-group rationale remains cohesive without padding. The map covers every U contract, direct source/built/extracted acceptance, failure/legacy/gameplay regression, accurate docs/package, unique task transfer/archive/audit and postintegration default release checks. Canonical layout assigns C08 codec/effect modules, C07 validator, C06 composition, unit/native/source-only checks and strict package/docs owners. No circular dependency or unresolved placement exists.
 
 Cross-document checks compare accepted archived005 sources with current owners, literal source/domain/default interfaces, actual code/tests, declared build/package and prior-range preservation. Confirmed conformance findings: None. Gate Ready; no deferred contract issue or new human decision. Runtime/package results remain separately owned by6.1/6.2 and final phase evidence; archive status does not certify a new run. Native headed OS focus/actual HTTPS engine and future Electron limits remain explicit. Task046 is not marked complete by this document QC.
+
+## Revision 7 — Session leaderboard current owners (T052)
+
+Current gate: Ready for the scoped current document contracts and decomposition. Phase7 is the accepted bounded leaderboard increment,2 justified delivery milestones and one excluded phase-review milestone. L01–08 map to capability/lifetime/distribution and phase exits. Scoped layout owns all C04/C05/C06/C09 sources/tests/guides/package and fixed006 reports/archive; prior Phase1–6 body ranges preserved. No confirmed unresolved conformance finding; phase implementation review/verification and actual integration/release outcomes are separately owned. Routine completion/status evidence does not change task decomposition.
+
+| Current source | Git blob |
+| --- | --- |
+| PROJECT.md | `6a9e857d81763dcf9fb073a07bc4f5e39b27547c` |
+| ARCHITECTURE.md | `0bfe9ce7dc414ab631f04aa546b2b079f92f1bff` |
+| DECOMPOSITION.md | `12d64dcf7f94c20deb3429a8d064cf16aee011aa` |
+| SPEC.md | `0a6c2e5d75b841741ac097d9e9b2505ee5d6b9be` |
+| PLAN.md | `4f6ad5ae7560aa2829901f615959bb217b77dade` |
+| layout.md | `378816622a1a7801f9aa1efd707e8188b20dfee9` |
+| TASKS.md | `fbdfbd34f7b82abfbb70aa25e21cb2ee195c66cb` |
+| spec/leaderboard.md | `e699e3f6687d541a53a42c5c83c8645166cbd322` |

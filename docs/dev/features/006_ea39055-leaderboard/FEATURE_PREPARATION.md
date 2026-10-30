@@ -1,12 +1,14 @@
 # Feature preparation record
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 ## Identity and request
 
 Campaign `006_ea39055`, slug `006_ea39055-leaderboard`. Original baseline/branch-off `ea3905572ff8e3fa473862e154faccee9055c18b`, creation parent and preparation integration target `main`. Preparation branch `design-docs/006_ea39055-leaderboard`. Reserved implementation branch `feature/006_ea39055-leaderboard` begins only after accepted preparation is verified, explicitly merged and published into main, and implementation is authorized. Reserved historical package `docs/dev/features/006_ea39055-leaderboard/` is not created during opening.
 
 Original human request: Open a feature campaign to implement "leaderboard" capability. Show a leaderboard panel with the 10 best completed-game results, ranked by score. Update it after each game and keep the history only for the current session.
 
-Main v1.5.0 is implemented, verified, integrated and released; no prior unfinished campaign resumes. Accepted context: [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [configuration](spec/session-configuration.md), [browser persistence](spec/configuration-persistence.md), [PLAN](PLAN.md), [layout](layout.md) and [TASKS](TASKS.md). Main TASKS owns completed T-001–T-046. Frozen feature001–005 records remain unchanged. Existing manual conversation scaffold under docs/ai-logs and its design-docs/ai-logs branch are reused; recording remains manual.
+Main v1.5.0 is implemented, verified, integrated and released; no prior unfinished campaign resumes. Accepted context: [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md), [browser persistence](../../spec/configuration-persistence.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). Main TASKS owns completed T-001–T-046. Frozen feature001–005 records remain unchanged. Existing manual conversation scaffold under docs/ai-logs and its design-docs/ai-logs branch are reused; recording remains manual.
 
 ## Current control
 

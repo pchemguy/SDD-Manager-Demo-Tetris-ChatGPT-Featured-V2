@@ -1,5 +1,7 @@
 # Session leaderboard
 
+Historical accepted campaign006 source/evidence. Current main documents own product contracts and executable tasks; this snapshot is not an active implementation owner.
+
 ## Purpose
 
 Show the player the ten best completed-game results from the current page session, ranked by final score. Update a visible Leaderboard panel as soon as a game finishes so successive games can be compared.
@@ -24,4 +26,4 @@ Player names, accounts, timestamps, persistent scores, live cross-tab synchroniz
 
 ## Existing contract context
 
-[PROJECT](PROJECT.md), [SPEC](SPEC.md), [session configuration](spec/session-configuration.md) and [browser persistence](spec/configuration-persistence.md) own retained behavior. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) own reusable boundaries. Exact event/state contracts, physical placement and executable tasks are to be derived from this scope.
+[PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [session configuration](../../spec/session-configuration.md) and [browser persistence](../../spec/configuration-persistence.md) own retained behavior. [ARCHITECTURE](../../ARCHITECTURE.md) and [DECOMPOSITION](../../DECOMPOSITION.md) own reusable boundaries. Exact event/state contracts, physical placement and executable tasks are to be derived from this scope.
