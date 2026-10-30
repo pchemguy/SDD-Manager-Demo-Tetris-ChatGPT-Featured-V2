@@ -60,3 +60,7 @@ for(const format of ['json','sqlite'])test('@file-both '+format+' preserves earn
  const check=async()=>{await page.getByRole('button',{name:'Pause',exact:true}).click();const before=await state(),bytes=await save(page,format);await upload(page,bytes,'state.bin');await expect(page.getByTestId('file-status')).toContainText('Restored');expect(await state()).toEqual(before);await page.clock.runFor(16);await page.getByRole('button',{name:'Resume',exact:true}).click()};
  await check();await page.keyboard.press('b');await expect(page.getByTestId('penetrator-mode')).toContainText('active');await expect(page.getByRole('button',{name:'Hold piece',exact:true})).toBeDisabled();await check();await page.keyboard.press('Space');expect(await page.locator('[data-penetrator="true"][data-active="false"]').count()).toBeGreaterThan(0);await check();
 });
+
+test('@file-distribution published schema validates a native JSON download independently',async({page,request},info)=>{
+ const {execFileSync}=await import('node:child_process'),{writeFile}=await import('node:fs/promises');await page.goto('./');const response=await request.get('schemas/game-save.schema.json');expect(response.status()).toBe(200);const schema=await response.body();expect(schema).toEqual(await readFile('schemas/game-save.schema.json'));const schemaPath=info.outputPath('schema.json'),savePath=info.outputPath('native.json');await writeFile(schemaPath,schema);await writeFile(savePath,await save(page));execFileSync(process.execPath,['tests/fixtures/schema_check.mjs',schemaPath,savePath]);
+});

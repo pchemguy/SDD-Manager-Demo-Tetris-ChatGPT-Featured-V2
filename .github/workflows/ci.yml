@@ -5,7 +5,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,6 +25,9 @@ jobs:
       - run: node scripts/browser-env.mjs install --with-deps --only-shell chromium firefox
       - run: npm run test:environment
       - run: npm run test:browser
+      - run: npm run test:browser
+        env:
+          TEST_TARGET: built
       - run: npm run package
       - run: npm run verify:package
       - run: npm run test:browser
