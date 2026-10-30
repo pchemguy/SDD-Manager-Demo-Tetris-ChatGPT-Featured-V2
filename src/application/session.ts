@@ -1,7 +1,7 @@
 /** Deterministic session transactions. Only explicit durations and random inputs enter. */
-import type { Board, Piece, Kind } from '../core/types.js';
+import type { Board, Piece, Kind, Appearance } from '../core/types.js';
 import { spawn } from '../core/pieces.js';
-import { createBoard, canPlace, move, lock, landing } from '../core/board.js';
+import { createBoard, canPlace, move, lockWithAppearance, createAppearance, landing } from '../core/board.js';
 import {shuffleBag} from '../core/bag.js';
 import {tryRotate} from '../core/kicks.js';
 import {createConfiguration,toRuleOptions,type RuleOptions} from './configuration.js';
@@ -9,13 +9,13 @@ import { progress, gravityInterval } from '../core/progression.js';
 export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'hardDrop'|'pause'|'resume';
 /** Legacy input/mirror retained; complete RuleOptions selects the expanded active rules. */
 export interface SessionOptions {immediateHardDropLock:boolean}
-export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null;options:SessionOptions;rules:RuleOptions}
+export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null;options:SessionOptions;rules:RuleOptions;penetratorActive:boolean;penetratorBonuses:number;penetratorCells:Appearance}
 interface State extends Omit<Snapshot,'ghost'> { remainder:number; lockRemaining:number|null;bag:Kind[] }
 const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','hold','hardDrop','pause','resume'];
-const copy=(s:State):State=>({...s,options:{...s.options},rules:{...s.rules},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),active:s.active?{...s.active}:null});
+const copy=(s:State):State=>({...s,options:{...s.options},rules:{...s.rules},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),penetratorCells:s.penetratorCells.map(r=>r.slice()),active:s.active?{...s.active}:null});
 /** Construct ready state; no draw occurs until start. Listener failures are isolated. */
 export function createSession(random:()=>number,onListenerError:(e:unknown)=>void=()=>{}) {
- const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false},rules:toRuleOptions(createConfiguration().getSnapshot())});
+ const initial=():State=>({status:'ready',board:createBoard(),penetratorActive:false,penetratorBonuses:0,penetratorCells:createAppearance(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false},rules:toRuleOptions(createConfiguration().getSnapshot())});
  let state=initial(),busy=false;
  const listeners=new Set<(s:Snapshot)=>void>();
  const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return {...snapshot,ghost:snapshot.active?landing(snapshot.board,snapshot.active):null}};
@@ -46,10 +46,10 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
   return {...s,lockRemaining:s.active&&!move(s.board,s.active,0,1)?s.lockRemaining??gravityInterval(s.level):null};
  }
  function settle(s:State):State {
-  const result=lock(s.board,s.active!);
+  const result=lockWithAppearance(s.board,s.active!,s.penetratorCells,s.penetratorActive);
   const nextPiece=draw(s); // Validate before any public state is committed.
   const stats=progress(s,result.cleared),legal=canPlace(result.board,nextPiece);
-  return grounding({...s,...stats,board:result.board,active:legal?nextPiece:null,status:legal?'running':'game-over',canHold:legal&&s.rules.holdEnabled,remainder:0,lockRemaining:null});
+  return grounding({...s,...stats,board:result.board,penetratorCells:result.penetratorCells,penetratorActive:false,penetratorBonuses:Math.min(3,s.penetratorBonuses+(result.cleared===4?1:0)),active:legal?nextPiece:null,status:legal?'running':'game-over',canHold:legal&&s.rules.holdEnabled,remainder:0,lockRemaining:null});
  }
  function down(s:State,soft:boolean):State {
   const p=move(s.board,s.active!,0,1);
