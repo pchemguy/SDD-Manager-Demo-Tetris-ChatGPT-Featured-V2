@@ -1,3 +1,5 @@
+> Historical accepted campaign008 snapshot. Current main documents/TASKS own behavior and executable work.
+
 # UI layout feature preparation
 
 ## Identity and scope
@@ -6,7 +8,7 @@
 - Accepted main baseline and preparation branch-off: `b7c98134963d5dde5fd9bb743b8117c485f3ef24`, the clean published `main` checkpoint after v1.7.0.
 - Creation parent/default preparation target/intended implementation parent: `main` in `pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2`.
 - Working branch: `design-docs/008_b7c9813-ui-layout`; intended later implementation branch: `feature/008_b7c9813-ui-layout`, not created or activated.
-- Active source owners: [FEATURE](FEATURE.md) when drafted, this evidence record and [feature documentation tasks](FEATURE_DOCS_TASKS.md). Affected main context: [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [layout](layout.md), [PLAN](PLAN.md), [TASKS](TASKS.md). FEATURE is accepted at proposal commit `93622d99e8b8753e2f547309f8e9f38f4824ef56` by the subsequent human reply "k".
+- Active source owners: [FEATURE](FEATURE.md) when drafted, this evidence record and [feature documentation tasks](FEATURE_DOCS_TASKS.md). Affected main context: [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md), [layout](../../layout.md), [PLAN](../../PLAN.md), [TASKS](../../TASKS.md). FEATURE is accepted at proposal commit `93622d99e8b8753e2f547309f8e9f38f4824ef56` by the subsequent human reply "k".
 
 ## Original request
 
@@ -50,3 +52,13 @@ Open a feature campaign to implement "UI layout" capability. Arrange panels left
 ## Pending effects and next boundary
 
 Human "Do QC and full implement" authorizes complete campaign through T068, incorporation, integration and planned1.8.0 release. Prior261f780 publication and issue141 closure verified. Publish009/QC then close142; explicitly merge preparation into refreshed main, verify/publish and close milestone34. Activate only Phase9 with all required native objects/associations before implementation; retain one task per verified closing commit and publish before advancing. No remaining document approval pause under existing autodoc/preapproval and explicit full implementation authority.
+
+## Verified implementation entry
+
+Preparation84ab776 explicitly merged/published as main56f459d35d40600b2fc29ebc37dc5f2aaca9bc36; all9 prep issues and milestone34 closed/read back. Implementation feature branch created from that exact main parent/branch-off, returning to main. Phase9 label and milestones35/36/37 plus task issues143–149 verified with exact markers/associations before T062. Full human-authorized range remains062–068 through integration/release. Scratch projection multiline-title422 corrected/reconciled before activation, with no duplicate objects. Existing independent packageQC Ready; environment2 repeated managed-browser smoke cases pass.
+
+## Queued next campaign — Windows Electron
+
+After UI layout campaign008 is completed and verified, the human explicitly requests a new feature campaign for a Windows Electron packaged app as the second delivery platform. Preserve browser usability; share application logic/UI, adapt platform behavior, bundle all desktop runtime assets and require no separate Node.js installation or development server. Applicable later releases include both the Windows package and browser build. New campaign identity/baseline is allocated only after008 completion.
+
+Authorization: human selected autodoc with project/feature brief, pre-QC checkpoint, QC and full implementation in scope/preapproved. This covers the new campaign's document checkpoints and advancing beyond its autodoc008 stop into whole-package QC, preparation integration and full task implementation/integration/release; no repeated routine approval is required. Technical QC/tracking/publication and honest native-verification limits remain. Do not fold Electron into the UI campaign or begin it before UI completion/verification.

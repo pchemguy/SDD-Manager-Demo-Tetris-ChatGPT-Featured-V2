@@ -15,7 +15,7 @@ Click Start game. The playfield receives keyboard focus; click it to regain focu
 | Enter | Start a ready game |
 | R | Restart |
 
-Native rotation, Hold, Hard drop, Start, Pause/Resume and Restart controls are keyboard operable. Single-action keys ignore repeat; movement/soft drop use native repeat. Buttons and settings controls retain their ordinary keyboard behavior. Focus leaving the game, window blur or hiding the page pauses play; return does not resume automatically. Resume explicitly. Restart discards game state; reload returns to ready. There is no saved game.
+Native rotation, Hold and Hard drop controls are keyboard operable. The first lifecycle button reads Start game when ready and Restart otherwise. The second reads Pause while running and Start while paused; paused Start resumes the existing game without resetting it, as its adjacent explanation states. It is disabled in Ready/Game Over. Single-action keys ignore repeat; movement/soft drop use native repeat. Buttons and settings controls retain their ordinary keyboard behavior. Focus leaving the game, window blur or hiding the page pauses play; return does not resume automatically. Resume explicitly. Restart discards game state; reload returns to ready. There is no saved game.
 
 ## Pieces and planning
 
@@ -97,6 +97,12 @@ Start/Restart preserves completed results while resetting the new game's score a
 
 ## Manual file snapshots
 
-Open **Settings** to reach the single **Save** and **Restore** buttons at its bottom. Collapsing Settings hides them. Save offers a format choice; choose JSON or SQLite and Download to obtain one file containing the current top ten completed results and all six selected settings, including changes pending the next game. Cancel closes the choice without saving.
+Use **Show Settings** when needed to reach the single **Save** and **Restore** buttons at its bottom. **Hide Settings** conceals them and related format/status controls, preserving their state; hiding never cancels an operation. Save offers a format choice; choose JSON or SQLite and Download to obtain one file containing the current top ten completed results and all six selected settings, including changes pending the next game. Cancel closes the choice without saving.
 
 Restore opens a local file picker. A valid JSON or SQLite file replaces completed history and selected settings, updating their cookies and URL parameters. Display choices apply immediately; gameplay choices apply on Start/Restart. The current game is retained, with the normal pause-on-external-focus policy still active. Invalid files produce a clear error and do not change results or settings. History remains session-only: reload clears it until manually restored.
+
+## Panel layout and visibility
+
+At 1440 CSS pixels or wider, Leaderboard and Game info/controls sit left of the horizontally centered Board; Settings and Controls/help sit on its right. Below 1440px they stack: Board, Game info, Leaderboard, Settings, Controls/help. Normal vertical scrolling is allowed. The three independent Show/Hide buttons appear in Game info above both lifecycle buttons. They retain keyboard focus and expose whether their target is expanded; hidden content cannot be tabbed into. Board and Game info cannot be hidden.
+
+All panels start shown. Visibility choices survive game actions, render/resize and manual Restore in the current view; a fresh mount or reload shows all panels. Visibility never changes cookies, URL parameters, portable settings or the current game. Hiding visual help keeps concise Board instructions available to assistive technology. Showing Settings after an operation reveals its retained success/error state; a pending operation can finish while it is hidden.

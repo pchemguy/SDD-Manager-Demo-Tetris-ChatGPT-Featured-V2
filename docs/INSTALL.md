@@ -4,7 +4,7 @@ Extract the static browser ZIP and copy its contents, including assets/ and sche
 
 For a local development preview, run `python -m http.server 8080 --bind 127.0.0.1` in the extracted directory, then open http://127.0.0.1:8080/. Python is only one optional way to serve static files; the player's browser needs no Python, Node.js, account or backend service.
 
-See [controls](CONTROLS.md). Keep the included LICENSE, third-party notices and BUILD-MANIFEST.json with the deployment. The adjacent .sha256 file verifies the exact downloaded ZIP bytes; embedded metadata identifies version 1.7.0.
+See [controls](CONTROLS.md). Keep the included LICENSE, third-party notices and BUILD-MANIFEST.json with the deployment. The adjacent .sha256 file verifies the exact downloaded ZIP bytes; embedded metadata identifies version 1.8.0.
 
 ## Verify the download
 
@@ -19,3 +19,5 @@ Cookies last 365 days from each save, use SameSite=Lax and HTTPS Secure when app
 Leaderboard history is memory-only for the current page. Game Over records one final score, including a blocked Hold spawn; Restart preserves completed results while abandoning an unfinished game. Reload or a new page clears the panel even when saved settings restore. No additional installation, storage permission or service is required.
 
 Manual **Save** offers JSON or SQLite; **Restore** accepts either file and replaces the session leaderboard and all six selected settings. Files do not include unfinished games. Keep the local worker/runtime/WASM assets together; SQLite requires no server-side database, CDN or browser storage. The canonical [JSON Schema and SQLite contracts](FILE-FORMAT.md) ship with the deployment.
+
+Panel layout adapts automatically: five columns at 1440 CSS pixels and above, stacked content below. Use the three independent Show/Hide buttons above Start/Restart and Pause/Start to control supporting panels; the Board remains horizontally centered. Visibility is local to the current view and does not require a cookie, permission or extra installation. The Board and Game info remain present, with normal vertical scrolling on short/narrow screens.

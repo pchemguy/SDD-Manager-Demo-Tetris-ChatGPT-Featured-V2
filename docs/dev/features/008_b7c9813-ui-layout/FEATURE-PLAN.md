@@ -1,3 +1,5 @@
+> Historical accepted campaign008 snapshot. Current main documents/TASKS own behavior and executable work.
+
 # UI layout delivery plan
 
 ## Delivery objective
@@ -46,11 +48,11 @@ Versioned local artifacts and stable browser ZIP/checksum aliases retain existin
 
 Two delivery milestones are intentional: a cohesive playable view first, followed by compatibility/lifetime and actual deployable acceptance. More milestones would fragment tightly related view behavior or split verification from the useful capability without reducing uncertainty. The one dedicated phase review milestone is excluded from this delivery count. Both milestones are narrow enough for task derivation; no unresolved behavioral choice blocks it after physical allocation assessment.
 
-Physical allocation is assessed against the existing [layout](layout.md) before task derivation. Shared UI and browser host remain the owners; a new physical layout document is unnecessary.
+Physical allocation is assessed against the existing [layout](../../layout.md) before task derivation. Shared UI and browser host remain the owners; a new physical layout document is unnecessary.
 
 ## Scoped physical allocation
 
-Reuse the existing [main layout](layout.md) and component homes. This section is the bounded feature placement proposal; no new FEATURE-LAYOUT or package root is introduced. Paths marked proposed are not existing implementation claims.
+Reuse the existing [main layout](../../layout.md) and component homes. This section is the bounded feature placement proposal; no new FEATURE-LAYOUT or package root is introduced. Paths marked proposed are not existing implementation claims.
 
 | Physical home | Owner and intended allocation |
 | --- | --- |

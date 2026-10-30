@@ -2,7 +2,7 @@
 
 ## Current gate
 
-Ready for current browser-persistence TASKS conformance. Revision6 below records the exact current roots/children and governing states; earlier observations/source identities remain historical. This technical gate is separate from pending T046 phase completion/integration/release.
+Ready for current UI layout hierarchy/task ownership conformance. Revision9 records current identities; earlier source identities/observations are historical. Actual integration/release effects are owned by the008 final report.
 
 Prior gate snapshot retained:
 
@@ -162,3 +162,27 @@ Independent DOC-T061-00/01/02 recheck Ready: universal no-worker claim, conflict
 | TASKS.md | `637b6e69c9edc8618e4de492d0c8c5164669f4fbe7916c4352d7fdfb25291381` |
 | spec/leaderboard.md | `9d685067c2c2ee642721c0ac27aed27d213b8b52e8790d5b8a6e9effeaee3cba` |
 | spec/file-persistence.md | `87063e4d40f72ca1be7e4988eb8ff85ee9a3f4fded6ee536e1eb3c2c58ad4208` |
+
+## Revision 9 — Centered UI current owners (T068)
+
+Owner assessment: Ready. UL01–10 aligns five panels, absolute center,1440px boundary, independent view state/accessibility/lifetime and two lifecycle controls with C05 and unchanged C06/application/persistence boundaries. Current children resolve old help/leaderboard/Settings presentation; current delivery metadata has no stale version claim. PLAN maps two delivery milestones plus one dedicated phase-review task; main TASKS solely owns68 ordered completed IDs and preserves exact1–61 prefix. Archived008 lists are non-executable; frozen001–007 unchanged. DOC-UI-068-01 metadata correction rechecked; no owner-confirmed unresolved conformance finding. Independent current-document result follows after review. Runtime/provider outcomes are separately attributed to008 phase/final reports.
+
+| Current source | SHA-256 |
+| --- | --- |
+| PROJECT.md | `61202945932af142ae302c67c68a03c07cf46cf781197734100d02028029dbf2` |
+| ARCHITECTURE.md | `0def3951bc260ff3de8a5eec5dd8a3684ab506876761e6421cce7af7e6be1f95` |
+| DECOMPOSITION.md | `4c0c6af1dfd7fa15618cc7c866d39b9a5e59477c3c1beb302761079a1f0f5fa1` |
+| SPEC.md | `aa79f337478de4e54f85cffc8dc79e66f3a2a6cd63161e7b7b67cd36a98df7ae` |
+| PLAN.md | `4fdeb3e6ec8ba0dd0ed0f3571b3266ae57d7c41104e68314092af0dd4a750354` |
+| layout.md | `4e9cf373a74b10f9b2eecb4bb4e783f72f0f2278ab45d05b55b479dcc38d64d5` |
+| TASKS.md | `220c1753d8cfa759883846c2542f03a79de44a6f14817190444a15fc55c42e0e` |
+| spec/configuration-persistence.md | `f75cb904761b5444b316e1a91879592e8914b7590edac30657e9ed87ea3c2c75` |
+| spec/file-persistence.md | `a5d8c02f24e8d29982e954a7538c66e55e761da4fbd9d30425311ee1257afc89` |
+| spec/ghost-visibility.md | `b23dab4a1b2e58827459f2effdd2fb466cb2e19d390df291cdb03d764653cad8` |
+| spec/leaderboard.md | `70f2df2c2b467769d27b9a444257df8c8f571193af224b7fce434e516272883c` |
+| spec/modern-rules.md | `851663e2e127c285e41f46b4541f18d418059691ec93715116932fad783288c4` |
+| spec/penetrator.md | `de59d046824cc604888b7d9b9be8e2aca8984d61bd650516a576ad4f1a2c7100` |
+| spec/session-configuration.md | `1af0d7b8fef62dba849c1fba1a6b907336559abddce99787745a09331ae0a596` |
+| spec/ui-layout.md | `4abf9acde3d9cff24ff6b23f7115e8c1f34d8dc669ee75c7a61fca120dbed4c0` |
+
+Independent current-document review/recheck: Ready. Reviewer confirmed UL01–10 conformance, corrected U08/layout metadata, preserved exact old TASKS byte prefix, unique main1–68 ownership, historical008 banners, unchanged frozen001–007 and no remaining blocker. Final reports now exist; owner link audit covers their resolved links. This is read-only document assessment, not additional runtime evidence.

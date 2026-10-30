@@ -11,7 +11,7 @@ The [project brief](PROJECT.md) requires a browser game with modern rules and re
 | Rules core | Piece geometry, legal placements, movement, rotation, locking, row removal and score/level progression. | TypeScript language and explicit inputs; no DOM, wall clock or global random source. |
 | Selected configuration | Detached six-setting page memory, atomic validation and pure rule projection. | Explicit typed values; no DOM, clock, RNG, storage or broadcast. |
 | Session controller | Own the current game state; order commands, gravity advances and state notifications. | Rules core, configuration value types/validation and injected random-number and completion-metadata callbacks. |
-| Shared UI | Render board/status/controls/leaderboard and emit semantic actions. | Read-only session snapshots, explicit selected context, action callbacks and an injected DOM mount element. |
+| Shared UI | Render five panels/status/controls/leaderboard, own per-view visibility and emit semantic game actions. | Read-only session snapshots, explicit selected context, action callbacks and an injected DOM mount element. |
 | Browser persistence | Restore/save six selected fields through pure formats, independent best-effort native-edit effects and a separate checked Restore batch. | C-07 and explicit URL/cookie/history callbacks; no game state, DOM globals or scheduler. |
 | Portable contract | C-10 complete detached version/results/settings values, JSON/schema and semantic validation. | C-09 and C-07 domain predicates; no host effects. |
 | Manual file workflow | C-11 capture, byte codecs, bounded workers, native transfer resources and staged checked restore. | Application boundaries, C-08 effects and explicit browser capabilities. |
@@ -104,7 +104,7 @@ Controller ownership avoids a UI-observer race and a second store. C-08 still pe
 
 ## Manual file integration
 
-C-04 requires explicit completion callbacks and exposes staged history replacement. C-07 prepares complete selected values without effects; C-08 stages checked browser effects. C-05 projects a native Settings disclosure, one bottom Save/Restore pair and transfer state through semantic callbacks. C-06 supplies cryptographic UUIDv4/UTC time, browser capabilities and disposal. No second history/configuration authority is introduced.
+C-04 requires explicit completion callbacks and exposes staged history replacement. C-07 prepares complete selected values without effects; C-08 stages checked browser effects. C-05 projects one externally controlled Settings panel, one bottom Save/Restore pair and transfer state through semantic callbacks. C-06 supplies cryptographic UUIDv4/UTC time, browser capabilities and disposal. No second history/configuration authority is introduced.
 
 ## Metadata and ordering
 
@@ -135,3 +135,9 @@ The upstream [sql.js documentation](https://sql.js.org/) documents in-memory dat
 ## Verification seams
 
 Use literal metadata sources and complete records in pure/controller tests; faults before publication test retained state and observers. Codec tests compare normalized datasets across JSON/SQLite and independent Python sqlite3 reads. Browser tests use actual downloads/uploads, real gameplay completions, malformed files, checked-persistence faults, cancellation/teardown and actual extracted-prefix deployment. No production board/bonus setter or automatic import shortcut is introduced. The [component decomposition](DECOMPOSITION.md) owns detailed collaborations; [file contracts](spec/file-persistence.md) owns exact formats and failures.
+
+## UI layout and view-local state
+
+C05 reuses persistent DOM for five panels with an equal-track layout around the Board and CSS responsive stacking. Three native disclosure buttons target Leaderboard, Settings and Controls/help by unique per-view IDs. Their hidden state belongs only to the mounted view, not C04/C07 or browser persistence. Rendering and game actions do not recreate or reset those panels. New views default to all shown, including retained-controller/configuration remounts.
+
+Game info and Board remain present. Two lifecycle buttons translate status to the existing start/restart/pause/resume actions; host command validation, active-rule copying and Board-only shortcuts remain unchanged. The view keeps concise Board instructions independent of visual help, transfers focus before concealing a focused descendant and removes each toggle listener on destruction. The external Settings button is its one disclosure authority; native settings/transfer DOM and pending operations remain intact while hidden. [UL contracts](spec/ui-layout.md) define exact positions, states, responsive boundary and acceptance.

@@ -21,3 +21,11 @@ test('@configuration-view explicit refresh conceals all six combinations without
   }
  }
 });
+
+test('@ui-view two live views own distinct visibility IDs and remove detached handlers',async({page})=>{
+ await page.goto('/tests/fixtures/ghost-visibility.html');const a=page.locator('#a'),b=page.locator('#b');
+ const ids=await page.locator('[data-panel-toggle]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-controls')));expect(ids).toHaveLength(6);expect(new Set(ids).size).toBe(6);
+ await a.getByRole('button',{name:'Hide Leaderboard',exact:true}).click();await expect(a.locator('.leaderboard-panel')).toBeHidden();await expect(b.locator('.leaderboard-panel')).toBeVisible();
+ await page.evaluate(()=>{(globalThis as any).ghostFixture.render('paused');(globalThis as any).ghostFixture.update({ghostVisibility:'never'})});await expect(a.locator('.leaderboard-panel')).toBeHidden();await expect(b.locator('.leaderboard-panel')).toBeVisible();
+ expect(await page.evaluate(()=>{const orphan=document.querySelector<HTMLButtonElement>('#a [data-panel-toggle="leaderboard"]')!,before=orphan.getAttribute('aria-expanded');(globalThis as any).ghostFixture.destroy();orphan.click();return {before,after:orphan.getAttribute('aria-expanded'),remaining:document.querySelectorAll('.game').length}})).toEqual({before:'false',after:'false',remaining:0});
+});

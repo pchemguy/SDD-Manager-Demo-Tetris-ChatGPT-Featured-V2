@@ -73,9 +73,9 @@ Player documentation lists all six names/text values/defaults, precedence, expli
 
 ## U-08 delivery acceptance
 
-Deliver v1.5.0 after the full authorized phase is implemented, independently reviewed, verified and integrated. Run current type, boundary, unit, package and source/built/extracted browser checks using dedicated managed Chromium and Firefox. Add direct persistence coverage to each shipped target and update measured finite test budgets only with execution evidence; do not hide new tests behind a source-only fixture exclusion.
+Deliver the current browser release after the full authorized phase is implemented, independently reviewed, verified and integrated. Run current type, boundary, unit, package and source/built/extracted browser checks using dedicated managed Chromium and Firefox. Add direct persistence coverage to each shipped target and update measured finite test budgets only with execution evidence; do not hide new tests behind a source-only fixture exclusion.
 
-Keep reproducible relative-path static ZIP/checksum, strict manifest/CRC/member/content verification, allowlisted shipped docs/assets only, and no credentials/source fixtures/dev caches. Versioned local artifacts use v1.5.0; public stable asset names stay unchanged. Verify extracted prefix-hosted persistence and actual public downloads/CI during release. Native headed OS focus and future Electron delivery remain outside verified browser delivery; distinguish injected HTTPS attribute checks from actual native HTTPS behavior.
+Keep reproducible relative-path static ZIP/checksum, strict manifest/CRC/member/content verification, allowlisted shipped docs/assets only, and no credentials/source fixtures/dev caches. Versioned local artifacts use the current application version; public stable asset names stay unchanged. Verify extracted prefix-hosted persistence and actual public downloads/CI during release. Native headed OS focus and future Electron delivery remain outside verified browser delivery; distinguish injected HTTPS attribute checks from actual native HTTPS behavior.
 
 ## Browser API references
 

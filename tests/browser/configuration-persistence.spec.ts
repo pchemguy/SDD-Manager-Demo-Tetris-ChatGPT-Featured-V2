@@ -111,7 +111,7 @@ for(const fault of ['cookie','history','both'])test('@persistence-lifetime block
  expect(new URL(page.url()).searchParams.get('ghostVisibility')).toBe(fault==='cookie'?'never':'lower-half');
  const cookies=await cookieValues(context,baseURL!);
  if(fault==='history')expect(cookies).toEqual({ghostVisibility:'never',holdEnabled:'false',nextPreviewEnabled:'false'});else expect(cookies).toEqual({});
- await page.getByRole('button',{name:'Resume',exact:true}).click();await page.keyboard.press('ArrowDown');await expect(page.getByTestId('score')).toHaveText('1');
+ await page.getByRole('button',{name:'Start (resume game)',exact:true}).click();await page.keyboard.press('ArrowDown');await expect(page.getByTestId('score')).toHaveText('1');
 });
 test('@persistence-lifetime other pages stay unchanged until reload and their explicit URLs still win',async({page,context,baseURL})=>{
  await page.goto('./');const other=await context.newPage(),errors:string[]=[];

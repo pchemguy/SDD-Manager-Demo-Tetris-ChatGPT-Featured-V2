@@ -1,8 +1,10 @@
+> Historical accepted campaign008 snapshot. Current main documents/TASKS own behavior and executable work.
+
 # UI layout specification
 
 ## Scope and governing contracts
 
-UL-01–UL-10 define the UI layout delta to [SPEC](SPEC.md) under the accepted [FEATURE](FEATURE.md). The existing [architecture](ARCHITECTURE.md) and [component decomposition](DECOMPOSITION.md) remain sufficient: C05 owns view-local presentation; C06 owns input/focus/time and browser resources; application and persistence owners remain unchanged.
+UL-01–UL-10 define the UI layout delta to [SPEC](../../SPEC.md) under the accepted [FEATURE](FEATURE.md). The existing [architecture](../../ARCHITECTURE.md) and [component decomposition](../../DECOMPOSITION.md) remain sufficient: C05 owns view-local presentation; C06 owns input/focus/time and browser resources; application and persistence owners remain unchanged.
 
 | Affected baseline | Explicit delta |
 | --- | --- |

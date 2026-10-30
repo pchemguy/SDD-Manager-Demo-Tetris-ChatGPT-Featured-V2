@@ -33,3 +33,10 @@ test('@remount persisted context restores once and retains selections across sou
  await page.getByRole('button',{name:'Mount fresh',exact:true}).click();await expect(page.locator('[data-option="hold"]')).toBeChecked();await expect(page.locator('[data-option="ghost"]')).toHaveValue('always');
  await page.getByRole('button',{name:'Unmount',exact:true}).click();await expect(page.locator('#frames')).toHaveText('0');
 });
+
+test('@ui-view retained configuration remount starts with all panels shown',async({page})=>{
+ await page.goto('/tests/fixtures/lifecycle.html');await page.getByRole('button',{name:'Mount retained',exact:true}).click();await page.locator('[data-option="ghost"]').selectOption('never');
+ for(const name of ['Leaderboard','Settings','Controls/help'])await page.getByRole('button',{name:'Hide '+name,exact:true}).click();
+ await page.getByRole('button',{name:'Unmount',exact:true}).click();await expect(page.locator('#frames')).toHaveText('0');await page.getByRole('button',{name:'Mount retained',exact:true}).click();
+ for(const name of ['Leaderboard','Settings','Controls/help'])await expect(page.getByRole('button',{name:'Hide '+name,exact:true})).toHaveAttribute('aria-expanded','true');await expect(page.locator('[data-option="ghost"]')).toHaveValue('never');
+});
