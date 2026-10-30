@@ -1,15 +1,15 @@
 # Project handoff
 
-Checkpoint: whole-package QC published, issue62 closed/read back; preparation merge pending main publication.
+Checkpoint: T-027 selected configuration verified; publication/issue63 closure next.
 
-## Authority and current owners
+## Authority and branch
 
-User y accepted the six-control FEATURE/defaults, immediate display versus next-game rules, failed-attempt follow-general hard-drop interpretation and no-reload-persistence lifetime. Downstream necessary design-through-TASKS checkpoints use retained autodoc preapproval. Active FEATURE/FEATURE_ARCHITECTURE/FEATURE_DECOMPOSITION/FEATURE-SPEC/FEATURE-PLAN and physical map/FEATURE-TASKS define intended1.3.0 scope. Adjacent scoped SPEC/PLAN/TASKS reviews are Ready, not whole-package certification. FEATURE_PREPARATION retains original request, decisions/source identities and tracking.
+User authorized QC/full T-027–T-032 through verified integration and1.3.0 release. Whole-package QC passed/published; preparation source81ddb25ec9fd1768d817e48dca15ce839bde1186 integrated to default main by7dff2f421152e7bf69f2614462dbfbc8cd26ed11 and published/read back. Current feature/003_3977abb-session-only-game-configuration created from that published main parent; return target same parent. Original campaign baseline3977abbcb640490c2cf60f3365681f29067b3835. Preparation issues54–62 and milestone14 closed/read back.
 
-## Git and tracking
+## Tracking and evidence
 
-Receiving main with preparation source design-docs/003_3977abb-session-only-game-configuration at81ddb25ec9fd1768d817e48dca15ce839bde1186, full baseline/creation-parent main3977abbcb640490c2cf60f3365681f29067b3835. Future feature/003_3977abb-session-only-game-configuration requires accepted preparation verified/integrated/published first. Native preparation milestone14 and issues54–62 identify the9 stages. FDOCS-001–007 published/closed; this FDOCS-008 source/QC/control/checkoff/HANDOFF must publish/read back then close61. FDOCS-009/issue62 and milestone14 remain open. Main T-001–T-026 remain complete; FEATURE-TASKS alone owns planned unchecked T-027–T-032. No Phase4 objects projected.
+Phase4 label/milestones15,16,17 and issues63–68 all projected/verified before task work. T-027 RED18 new missing-configuration assertions with142 retained passes; GREEN160 units/typecheck/boundaries. C-07 flat values/defaults,96 combinations/rule projections, detached/independent contexts, invalid patches/nonenumerable/getter rollback verified. This is an enabling module, not finished panel behavior.
 
-## Stop and next eligible action
+## Next action
 
-User explicitly authorized QC/full implementation. Publish/read back FDOCS-009/report/control/HANDOFF, close62, explicitly integrate/verify/publish preparation to actual default main, close14 and activate Phase4 before executing all T-027–T-032 through1.3.0 publication. No implementation, dependency install, product test, app version, release or canonical main-root change occurred. Existing v1.2.0 application and closed campaigns/releases unchanged; native headed focus unverified, Electron outside scope.
+Publish/read back T-027 and close63; T-028 active rule input/legacy/timing/disabled enforcement next, then T-029 native integration and independent4.1 review/report. Continue all authorized tasks, required milestone/phase closures, current-root incorporation/QC/archive/audit and main integration/release without routine approval. Existing app1.2.0 remains until integration; no persistence allowed. Native headed focus unverified, Electron excluded.

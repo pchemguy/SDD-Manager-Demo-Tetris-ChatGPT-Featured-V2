@@ -12,11 +12,13 @@ Core seams: C-07 createConfiguration/getSnapshot/update and detached rule projec
 
 - [ ] Phase 4 — Session-only game configuration
     - [ ] Milestone 4.1 — Session-configured gameplay
-        - [ ] T-027 — Implement selected configuration values and memory
+        - [x] T-027 — Implement selected configuration values and memory
             Scope: new src/application/configuration.ts, tests/unit/configuration.test.ts and compiler inclusion if needed. Depends on: T-026, accepted/QC/published preparation and Phase4 activation.
             Interfaces: implement S-01 full6-field defaults, typed modes/RuleOptions, detached factory reads/updates and pure rule projection without DOM/RNG/storage. Preserve existing ghost value spellings for later helper migration.
             Acceptance: all96 valid selected combinations and four-field projections, immutable reads/results, partial/equal/empty patches, unknown string/symbol/malformed/enum/type rejection and full candidate rollback. Contexts independent; explicit retained object preserves values; no live session side effects or autonomous broadcast.
             Verification: observe RED cases before implementation, GREEN full unit/type/boundary checks and module API docs. This is an enabling value boundary; do not claim a complete native settings app. References: S-01/S-02, C-07.
+            Completion evidence: RED18 missing configuration cases,142 baseline passes; GREEN160 unit/type/boundary checks passed. Shared DOM-free selected context implements exact six defaults, detached reads/atomic patches,96 valid combinations and complete four-rule projection. Invalid keys/types/symbols, own nonenumerable values and throwing getter rollback verified; independent contexts retain no platform/RNG/storage state. Activation/parent/tracking recorded in HANDOFF; panel behavior remains subsequent tasks.
+
         - [ ] T-028 — Enforce active rule configuration in the session
             Scope: session.ts and focused/full session tests using T-027 value contracts. Depends on: T-027.
             Interfaces: exact legacy/complete-rule input normalization, copied active Snapshot.rules and unchanged legacy Snapshot.options; retain constructor/actions/subscriptions.
