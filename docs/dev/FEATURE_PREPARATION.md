@@ -15,7 +15,7 @@ Main v1.5.0 is implemented, verified, integrated and released; no prior unfinish
 - Strict preservation: retain completed prior phase/task ranges, frozen campaigns, tags and releases. No multipass or flexible integration selected.
 - Tracking: enabled by AGENTS default and retained project policy. Native campaign preparation milestone and all nine exact issue identities/markers/associations verified before the first repository write. No product phase objects or product tasks projected.
 - Reporting: concise Standard updates; actual host Linux/bash. Existing eligible repository and protected authentication reused. No product tests or environment installs needed for opening documentation.
-- Next stage: FDOCS-003, architecture assessment; FDOCS-004–009 pending.
+- Next stage: FDOCS-004.
 
 ## Decision provenance
 
@@ -31,7 +31,7 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | --- | --- |
 | FDOCS-001 | [#101](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/101) |
 | FDOCS-002 | Human reply "k" accepts published FEATURE at20e4bbfd4d4902645168fbbbbf52d249c491d237, blob e97e41c1340ecbbb60b2497214364689f7c5df50, including completion, ties, reset, no-storage and retained-gameplay boundaries. Autodoc preapproves later necessary document stages through008 only. No implementation or package-QC grant inferred. |
-| FDOCS-003 | [#103](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/103) |
+| FDOCS-003 | FEATURE_ARCHITECTURE defines C04 transactional game/history ownership with a pure C09 ranking helper, C05 snapshot projection and C06 explicit-controller lifetime. Accepted main architecture retained elsewhere; reviewed against actual session.run, settle, Hold and mount paths. Single authority/no cycles/no storage and atomic notification/rollback boundaries assessed; autodoc preapproval applies. No product implementation. |
 | FDOCS-004 | [#104](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/104) |
 | FDOCS-005 | [#105](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/105) |
 | FDOCS-006 | [#106](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/106) |
@@ -45,7 +45,7 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | --- | --- |
 | FDOCS-001 | Clean eligible Git worktree at published main `ea3905572ff8e3fa473862e154faccee9055c18b`; campaign/branch collision checks clear; pre-write native milestone/nine issues verified. Existing adoption/disclosure/provenance retained. Context/task/control/HANDOFF initialization co-closes here; publish/read back and issue closure follow. |
 | FDOCS-002 | Human reply "k" accepts published FEATURE at20e4bbfd4d4902645168fbbbbf52d249c491d237, blob e97e41c1340ecbbb60b2497214364689f7c5df50, including completion, ties, reset, no-storage and retained-gameplay boundaries. Autodoc preapproves later necessary document stages through008 only. No implementation or package-QC grant inferred. |
-| FDOCS-003 | Architecture assessment pending accepted brief. |
+| FDOCS-003 | FEATURE_ARCHITECTURE defines C04 transactional game/history ownership with a pure C09 ranking helper, C05 snapshot projection and C06 explicit-controller lifetime. Accepted main architecture retained elsewhere; reviewed against actual session.run, settle, Hold and mount paths. Single authority/no cycles/no storage and atomic notification/rollback boundaries assessed; autodoc preapproval applies. No product implementation. |
 | FDOCS-004 | Decomposition assessment pending. |
 | FDOCS-005 | Specification and scoped QC pending. |
 | FDOCS-006 | Delivery strategy and scoped QC pending. |
@@ -55,4 +55,4 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 
 ## Pending transitions
 
-FDOCS-002 accepted or assessed under the approved brief/autodoc mode. Publish/read back this owning completion, then close/read back issue 102 before dependent work. Next stage FDOCS-003. No product implementation, version change or release claimed.
+FDOCS-003 accepted or assessed under the approved brief/autodoc mode. Publish/read back this owning completion, then close/read back issue 103 before dependent work. Next stage FDOCS-004. No product implementation, version change or release claimed.
