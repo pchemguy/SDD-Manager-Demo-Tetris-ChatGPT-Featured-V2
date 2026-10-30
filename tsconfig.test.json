@@ -22,6 +22,8 @@
     "src/ui/ghost-visibility.ts",
     "src/platform/browser/configuration-codec.ts",
     "src/platform/browser/configuration-persistence.ts",
-    "src/platform/browser/file-persistence.ts"
+    "src/platform/browser/file-persistence.ts",
+    "src/platform/browser/sqlite-codec.ts",
+    "src/platform/browser/sql-js.d.ts"
   ]
 }

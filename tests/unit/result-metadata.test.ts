@@ -17,3 +17,4 @@ for(const mode of ['invalid-id','invalid-time','duplicate-id'] as const)test('in
  if(mode==='duplicate-id'){s.dispatch('start');while(s.getSnapshot().status==='running')s.advance(100000)}s.dispatch('restart');let failed=false;
  for(let i=0;i<40;i++){const before=s.getSnapshot();try{s.advance(100000)}catch(e){assert.ok(e instanceof RangeError);assert.deepEqual(s.getSnapshot(),before);failed=true;break}}assert.equal(failed,true);assert.equal(completions,mode==='duplicate-id'?2:1);
 });
+for(const suffix of ['\n','\r','\r\n','\u2028','\u2029'])test('canonical UUID rejects a trailing line terminator '+JSON.stringify(suffix),()=>assert.throws(()=>rank([],{...record(),id:record().id+suffix}),RangeError));
