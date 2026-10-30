@@ -12,9 +12,9 @@ Clearing exactly four lines in one lock awards one penetrator bonus. Each activa
 
 Show one lightning-bolt symbol per available bonus in the existing game info and controls panel, plus an accessible count including zero. Update the indicator immediately when a bonus is earned or spent. Penetrator pieces use white exclusively; regular pieces use no white fill or border. Preserve the logical seven-shape identity and existing bag, Next preview and classic scoring.
 
-## Proposed gameplay interactions
+## Gameplay interactions
 
-The following choices resolve unspecified interactions and are proposed for acceptance:
+The following interactions define the capability:
 
 - Use **B** while the playfield has focus to activate once during running play with an active ordinary piece and an available bonus. Key repeat, a second activation of the same piece, no bonus, paused/game-over/ready status or focus on native settings never spends a bonus or activates. Activation has no score cost or free initial grant.
 - **Disable Hold while the penetrator is active**, including its keyboard commands, so the ability cannot transfer to another piece or create an implicit cancellation/refund. Lock ends the ability; the next piece is ordinary. Existing once-per-lock Hold rules otherwise remain.

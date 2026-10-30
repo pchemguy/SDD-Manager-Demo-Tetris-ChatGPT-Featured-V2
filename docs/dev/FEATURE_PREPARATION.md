@@ -23,7 +23,7 @@ Accepted context: [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOM
 
 ## Current control
 
-Autodoc/onepass carried from the user's project instruction, one penetrator scope; strict delivery preservation. The first FEATURE approval remains active. Necessary subsequent design-through-FEATURE-TASKS checkpoints are covered by autodoc only after that acceptance; stop after FDOCS-008 before package QC, preparation merge or implementation unless separately authorized. Prior feature's full-implementation grant is complete and does not authorize this feature's implementation.
+Autodoc/onepass carried from the user's project instruction, one penetrator scope; strict delivery preservation. User ok accepted the published FEATURE brief70e4800fc77b771d5342b4b34fc63153dadb87b8 / blob fb61a262fed18781bdcc8101c8d55d6c7cde943e and its proposed interactions. Necessary subsequent design-through-FEATURE-TASKS checkpoints are covered by autodoc under that acceptance; stop after FDOCS-008 before package QC, preparation merge or implementation unless separately authorized. Prior feature's full-implementation grant is complete and does not authorize this feature's implementation.
 
 Repository-default GitHub tracking retained. Native preparation milestone18 and all9 issues69–77 were projected/read back before any repository/branch write: exact stage titles/briefs/markers/campaign scope/dependencies/native milestone association verified. No product Phase5 projection or issue is created at this point.
 
@@ -31,16 +31,22 @@ Repository-default GitHub tracking retained. Native preparation milestone18 and 
 
 User-supplied: one activation spends a bonus; pass through occupied cells without destruction; valid in-board non-overlapping final placement; lowest valid penetrating hard drop and matching visible ghost; one bonus per four-line clear, bank cap3; white penetrator/never-white regular pieces; one indicator symbol per available bonus.
 
-Proposals for the first brief, not yet accepted: B is the free board-focused activation key; no repeat/double spend and no activation outside running/active/bonus-available conditions. Hold is disabled while penetration is active, avoiding an undefined ability transfer/cancel/refund. Movement/rotation may overlap settled cells but must retain a valid landing at or below the candidate, avoiding an impossible lock state. Existing bounds and ordered rotation kicks remain; no cell destruction or implicit upward rescue. Penetrating grounding uses the lowest valid landing and retains selected general/hard-drop policies; activation cancels a deadline only if it actually leaves support, otherwise preserves it. Start/Restart/reload start with zero bonuses; pause/game over retain the current game's bank. White is retained on penetrator-locked cells until removed; logical I–Z shape identity remains. White active/visible ghost styling is exclusive to penetrators; regular-piece white borders must be removed. No new setting/platform/persistence/scoring bonus is proposed. Target minor release1.4.0 after complete verified integration, without changing current version now.
+Accepted with the first brief (user ok): B is the free board-focused activation key; no repeat/double spend and no activation outside running/active/bonus-available conditions. Hold is disabled while penetration is active, avoiding an undefined ability transfer/cancel/refund. Movement/rotation may overlap settled cells but must retain a valid landing at or below the candidate, avoiding an impossible lock state. Existing bounds and ordered rotation kicks remain; no cell destruction or implicit upward rescue. Penetrating grounding uses the lowest valid landing and retains selected general/hard-drop policies; activation cancels a deadline only if it actually leaves support, otherwise preserves it. Start/Restart/reload start with zero bonuses; pause/game over retain the current game's bank. White is retained on penetrator-locked cells until removed; logical I–Z shape identity remains. White active/visible ghost styling is exclusive to penetrators; regular-piece white borders must be removed. No new setting/platform/persistence/scoring bonus is proposed. Target minor release1.4.0 after complete verified integration, without changing current version now.
 
 ## Stage evidence
 
 | Stage | Evidence |
 | --- | --- |
 | FDOCS-001 | Clean published main baseline, governing current inputs/actual host, campaign identity/source ownership, carried mode/checkpoint, existing provenance/authentication and complete preparation projection verified. Initialization4a349dfe0db7b3abfdc6e7e8bf92d6cee7b5c255 published/read back; issue69 closed/read back before brief drafting. |
-| FDOCS-002 | FEATURE proposal blob `fb61a262fed18781bdcc8101c8d55d6c7cde943e` authored/reviewed by sdd-design against the supplied seed and current PROJECT/SPEC/modern/ghost/configuration/implementation seams. All requested outcomes covered; proposed interactions explicitly separated. First approval pending; FDOCS-002 remains unchecked. No dependent design/implementation. |
+| FDOCS-002 | FEATURE proposal blob `fb61a262fed18781bdcc8101c8d55d6c7cde943e` authored/reviewed by sdd-design against the supplied seed and current PROJECT/SPEC/modern/ghost/configuration/implementation seams. All requested outcomes covered; proposed interactions explicitly separated. User ok accepted this exact proposal; status wording only is normalized in the accepted source. Downstream necessary documents are preapproved under autodoc; implementation is not authorized. |
 | FDOCS-003–009 | Not started. |
 
 ## Pending transitions
 
-Initialization published/read back and issue69 closed/read back. Publish/read back this FEATURE proposal, present choices and pause for first approval. B/reachability/Hold/clock/bank/color policies remain proposed, not confirmed. No downstream design, QC, integration, implementation or release has run.
+Initialization published/read back and issue69 closed/read back. FEATURE proposal70e4800f published/read back and accepted by user ok. Persist/publish acceptance and close issue70, then proceed through necessary design/specification/plan/layout/task preparation to FDOCS-008; stop before package QC. No downstream design, QC, integration, implementation or release has run.
+
+### FDOCS-002 — Accept penetrator mode brief
+
+User ok accepted the exact published brief70e4800f/fb61a262, including B/Hold/reachability/timing/reset/white-settled interactions and1.4.0 target. Normalize proposal wording without scope change; record first approval and carried autodoc preapproval through necessary task preparation. Stop before FDOCS-009; no implementation grant.
+
+Sources: `docs/dev/FEATURE.md` blob `3ca6e5a8d4b41a81971dcb02eaaf4ca878a1bf6d`.
