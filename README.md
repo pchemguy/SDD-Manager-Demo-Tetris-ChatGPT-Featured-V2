@@ -1,6 +1,6 @@
 # Classic Tetris
 
-A browser falling-block game with configurable hold, one next-piece preview, ghost visibility, seven-bag generation, both-direction SRS kicks, hard drop and an earned penetrator ability. Score, levels, pause/resume, restart and a session leaderboard complete the single-player game.
+A falling-block game for browsers and Windows with configurable hold, one next-piece preview, ghost visibility, seven-bag generation, both-direction SRS kicks, hard drop and an earned penetrator ability. Score, levels, pause/resume, restart and a session leaderboard complete the single-player game.
 
 The Settings panel offers six remembered choices. Ghost visibility (Always hide / Hide above midline / Always show) and Next-piece preview apply immediately, including while paused. Hard drop, Hold piece, general locking policy and hard-drop locking policy apply on Start/Restart. Current rules and pending differences are shown separately. On reload or a later visit, each selection resolves independently from its explicit URL query value, then its saved cookie, then its default. Valid URL values, including defaults, save to cookies; omitted parameters retain saved values. Native edits update the corresponding cookie and URL. Game progress is not saved.
 
@@ -24,16 +24,16 @@ The first lifecycle button is Start game when ready and Restart thereafter. The 
 
 ## Play
 
-Download the browser ZIP and checksum from [Releases](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/releases/latest), extract and serve the contents using any static HTTP host. Hosting below a URL prefix is supported. The player needs no Node.js, account or backend service.
+Download a platform ZIP and its matching checksum from [Releases](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/releases/latest). For Windows10/11x64, extract the complete Windows ZIP and double-click ClassicTetris.exe. The unsigned portable application bundles its runtime and works offline, with no separate Node.js installation or development server. Keep all extracted files together. For browsers, extract the browser ZIP and serve it using any static HTTP/HTTPS host; URL-prefix hosting is supported. Neither platform needs an account or backend service.
 
 Use arrows to move/soft drop; Up/X rotates clockwise, Z counterclockwise, C/Shift holds, Space hard-drops and B activates a funded penetrator. See [controls and scoring](docs/CONTROLS.md) and [installation](docs/INSTALL.md). Space has meant hard drop since v1.1.0; it was a clockwise alias in v1.0.0.
 
-Assets use stable names classic-tetris-browser.zip and classic-tetris-browser.zip.sha256. The tag and embedded BUILD-MANIFEST.json identify the version. This is a static browser deployment, not an Electron installer or store package. The game retains classic line scores and a strict visible-board ceiling; no separate classic-mode selector, hidden rows, 180-degree rotation or extra scoring bonuses are included.
+Release1.9.0 supplies classic-tetris-browser.zip and classic-tetris-windows-x64.zip, each with its matching .sha256. The tag and embedded manifests identify the version. Windows delivery is a portable ZIP, with no installer, store package or updater. Desktop settings use a separate per-user profile; closing and reopening starts a fresh game/session leaderboard. Manually restore a saved file to recover results. The game retains classic line scores and a strict visible-board ceiling; no separate classic-mode selector, hidden rows, 180-degree rotation or extra scoring bonuses are included.
 
 ## Develop and verify
 
-Use Node.js 24+, npm and Python 3.11+. [DEVELOPMENT](docs/DEVELOPMENT.md) describes repeatable setup, model/package/browser checks and isolated browser provisioning/recovery. Pure TypeScript rules/session and shared DOM UI are separate from browser input/timing and cookie/URL persistence for future host reuse.
+Use Node.js 24+, npm and Python 3.11+. [DEVELOPMENT](docs/DEVELOPMENT.md) describes repeatable setup, model/package/browser checks and isolated browser provisioning/recovery. Pure TypeScript rules/session and shared DOM UI are separate from browser input/timing and cookie/URL persistence shared by browser and desktop hosts.
 
-Chromium headless shell and managed Firefox are used for actual source, built and extracted-prefix acceptance. Native headed OS-window focus remains unverified; Windows Electron delivery is future scope.
+Chromium headless shell and managed Firefox are used for actual source, built and extracted-prefix acceptance. Packaged Electron45.2.0 native acceptance runs on Windows Server2025 CI, including external-focus pause and single-instance behavior. Manual Windows10/11 installation and native headed browser focus remain unverified.
 
 Current development authorities are [PROJECT](docs/dev/PROJECT.md), [SPEC](docs/dev/SPEC.md), [TASKS](docs/dev/TASKS.md) and [HANDOFF](docs/dev/HANDOFF.md). Development uses [SDD Manager](SDD-MANAGER.md); see the [AI-assisted development disclosure](AI_DISCLOSURE.md). License: [MIT](LICENSE), with [third-party notices](THIRD-PARTY-NOTICES.txt).

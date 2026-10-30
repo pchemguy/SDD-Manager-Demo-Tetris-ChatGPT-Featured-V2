@@ -136,3 +136,31 @@ Owner assessment: Ready. UL01–10 aligns five panels, absolute center,1440px bo
 | spec/ui-layout.md | `4abf9acde3d9cff24ff6b23f7115e8c1f34d8dc669ee75c7a61fca120dbed4c0` |
 
 Independent current-document review/recheck: Ready. Reviewer confirmed UL01–10 conformance, corrected U08/layout metadata, preserved exact old TASKS byte prefix, unique main1–68 ownership, historical008 banners, unchanged frozen001–007 and no remaining blocker. Final reports now exist; owner link audit covers their resolved links. This is read-only document assessment, not additional runtime evidence.
+
+## Revision 10 — Windows Electron current owners (T075)
+
+Current whole main package plus affected children, task transfer/archive/navigation and current player/developer/package consistency. Archived Ready assessments remain historical only. Author reassessment of base2c13b9f80c76bf1675fa652a17eac177cef7e263 plus owned075worktree is complete; fresh independent wholephase code/coverage review and separate current-document QC/targeted refinement recheck are Ready, zero unresolved findings. Main TASKS now carries the verified initial075completion; task/result/evidence/report/HANDOFF close coherently. No release publication or future CI/provider outcome is claimed.
+
+Final recheck: actual descriptor owns version/URL/SHA; producer/verifier own complete trusted-member checks. Product-only PLAN and nested10.x headings, exact current physical paths, shared leaderboard/ED references and sole1–75ownership agree. Original reviewed identities/findings above remain historical; latest Revision10 current gate Ready, not proof of subsequent integration/provider publication.
+
+### Revision10 final reviewed source identities
+
+| Current source | SHA256 |
+| --- | --- |
+| docs/dev/PROJECT.md | 1f97538a6507475328a50ed804d7ec3f3b608e51a84cc587a835530a988e949e |
+| docs/dev/ARCHITECTURE.md | ffe3c20ac671146bfe4cb118563e9138c38336ff84d8c27a0660d0c0b5e5a4ca |
+| docs/dev/DECOMPOSITION.md | 06d5fefff7169253a4ed9a362a0b5127cf2d20f54f087085120522b2d05e8409 |
+| docs/dev/SPEC.md | 6d53ca717ef1322088466b04fcd5bf1c2018bfca598a4d2def103d53705086ec |
+| docs/dev/PLAN.md | 4811e4df571afdddb931145d58bc79ff53fe814f46e8d1ba6fcc91956f6a14fb |
+| docs/dev/layout.md | e63a58a616c722429e652f77e8d7dfc7f08dae2b6e0698a9168d767d5f99b8ea |
+| docs/dev/TASKS.md | 9a74ff4fa1eab8f38d6bda6d5fc78389e3e9dd6b6e8946f5c6cb9fdd94671fce |
+| docs/dev/spec/configuration-persistence.md | b25ac0141deb16859b5faf72bab199a0fb5877a0c5aa872549870a7c111a0c50 |
+| docs/dev/spec/electron.md | c1e6c87060901aeb98b2a892d1ed2dc6e032b59cf3451572ec74c51d29f0bce4 |
+| docs/dev/spec/file-persistence.md | 4a21e8d36e253900a8cbf56430619efcceeaece0a9c068d427ec637376ce49d7 |
+| docs/dev/spec/ghost-visibility.md | 22792089047a389831d50c9eabb71a516603b371abf306af587603334d898520 |
+| docs/dev/spec/leaderboard.md | 0416d8f4c087f964c605f26ce8ff944c04e575da72018db200a1e89dfd9e914c |
+| docs/dev/spec/modern-rules.md | 07ac6943e823c325f296e0619e9fd9b24f3d232d3fc03ddc65b0d1c45a2cd2e6 |
+| docs/dev/spec/penetrator.md | 43ed2fff232ed50b63856ee395a1bfa441d1314d66d912dfeb2bed6326fbdc22 |
+| docs/dev/spec/session-configuration.md | d861676ec331873718227a7b7afbafb06d25c968c9dc5140e9f988d4a05a4880 |
+| docs/dev/spec/ui-layout.md | 4abf9acde3d9cff24ff6b23f7115e8c1f34d8dc669ee75c7a61fca120dbed4c0 |
+| AGENTS.md | 88e9da9db3f37819f5cc1f06dbaef84012b51bf40c9b41f348a88a7ec3f7765f |

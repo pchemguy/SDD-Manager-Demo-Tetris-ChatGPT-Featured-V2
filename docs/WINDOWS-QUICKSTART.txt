@@ -1,0 +1,18 @@
+CLASSIC TETRIS FOR WINDOWS (x64)
+
+Extract the complete ZIP into a folder, then open ClassicTetris.exe.
+Keep the DLLs, locales and resources beside the executable. The game works
+offline and needs no separate Node.js installation or development server.
+Windows 10/11 x64 is the delivery target. This project distribution is unsigned.
+
+Settings are remembered in your own ClassicTetris application profile.
+Completed results belong to the current session. Use Save and Restore in
+Settings for one portable JSON or SQLite file; there is no automatic game save.
+
+Shared controls and file-format guidance:
+  resources/app/renderer/docs/CONTROLS.md
+  resources/app/renderer/docs/FILE-FORMAT.md
+
+Electron/runtime licenses: LICENSE and LICENSES.chromium.html.
+Game/dependency licenses: resources/app/renderer/LICENSE and
+resources/app/renderer/THIRD-PARTY-NOTICES.txt.

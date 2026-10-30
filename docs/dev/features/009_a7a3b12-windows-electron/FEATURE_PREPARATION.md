@@ -1,3 +1,5 @@
+> Historical campaign009 source/evidence snapshot; current product owners are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and sole executable [TASKS](../../TASKS.md). Archived checklists are non-executable.
+
 # Windows Electron feature preparation
 
 ## Identity and request
@@ -73,3 +75,7 @@ Next eligible: FDOCS-009. Publication and exact issue closure/readback precede a
 Pass Windows Electron whole-package QC and select full implementation. Independent review at d856e7555da19ac16abb12ec3e0783ea7a012996 and owner audit Ready; FEATURE-QC-REPORT pins exact reviewed sources and no unresolved blocker/TODO. Human brief/pre-QC/QC/full069–075 authority retained; no product execution claimed. Initial009 checkoff/report/preparation/HANDOFF co-committed. Publication/158closure, explicit preparation merge/main verification/publication then milestone38closure and Phase10 activation remain ordered pending effects.
 
 Next eligible: verified preparation integration, milestone closure and full implementation. Publication and exact issue closure/readback precede advancement.
+
+## Implementation activation
+
+Accepted preparation3da5db43d4b2a2e2b52f2b2d9bb4bd784aa76bcd explicitly integrated/published into maina4e9f48faf45e8fe7c6b874a222b82026db89b23; all9issues150–158 and preparationmilestone38closed/read back. Phase10label, native milestones39/40/41 and tasks159–165 complete briefs/markers/associations verified before execution. Actual feature execution creation parent/branch-off/return target maina4e9f48faf45e8fe7c6b874a222b82026db89b23, distinct from fixed campaignbaselinea7a3b12. Working feature/009_a7a3b12-windows-electron; authorized range069–075 through full integration/1.9.0 dual release. Native execution in this dedicated clean checkout with single feature branch preserves other work; no additional implementer agents. Execution uses accepted TASKS/evidence/HANDOFF as durable SDD owners rather than another progress registry.

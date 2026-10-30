@@ -2,7 +2,7 @@
 
 ## Relationship to architecture
 
-The [architecture](ARCHITECTURE.md) separates rules, session orchestration, shared UI and browser integration. The following logical components keep rules and UI reusable without introducing a platform abstraction framework. [SPEC](SPEC.md) owns precise behavior and acceptance.
+The [architecture](ARCHITECTURE.md) separates rules, session orchestration, shared UI, browser integration and a thin native desktop host. The following logical components keep rules and UI reusable without introducing a platform abstraction framework. [SPEC](SPEC.md) owns precise behavior and acceptance.
 
 ## Components and interfaces
 
@@ -17,7 +17,9 @@ The [architecture](ARCHITECTURE.md) separates rules, session orchestration, shar
 | C-07 Selected configuration | Detached six-field memory, atomic partial updates, typed defaults, canonical field validation and pure four-rule projection. | Explicit values only; no DOM, RNG, scheduler, storage or broadcast. |96 selected combinations, invalid/rollback and copy/context tests. |
 | C-09 Complete ranking | Validated detached {id, score, timestamp} results and stable capped insertion. | Explicit values only; no metadata generation or storage. | Literal ordering/domain/copy fixtures. |
 | C-10 Portable snapshot | Versioned complete DTO, schema-backed JSON and shared semantic validation. | C-09/C-07; no browser state or SQL runtime. | Raw JSON/schema/domain and equivalence fixtures. |
-| C-11 Manual transfer | Browser composition, checked restore, transient byte worker/SQLite runtime, file/download resources. | C-10/C-08 and injected browser capabilities. | Native downloads/uploads, effect/lifecycle faults, real deployed runtime. |
+| C-11 Manual transfer | Shared web composition, checked restore, transient byte worker/SQLite runtime, file/download resources. | C-10/C-08 and injected browser capabilities. | Native downloads/uploads, effect/lifecycle faults, real deployed runtime. |
+| C-12 Desktop host | Native window/profile/single-instance/teardown, restricted local protocol, isolation and native download destination/errors. | Electron/Node desktop main and verified renderer; no game/settings parsing or renderer bridge. | Pure policy/lifecycle/error checks plus actual packaged native execution. |
+| C-13 Desktop distribution | Pinned vendor fetch/integrity, complete Windows package, manifest/checksums/aliases and independent verification. | Trusted runtime/current C12/exact browser distribution; build-time tooling only. | Adversarial package fixtures, real vendor-backed extraction/reproducibility and native actual ZIP. |
 | C-08 Browser persistence | Pure text resolution/serialization and callback-based selected-controller wrapper; initial explicit saves, changed-key edit effects and checked complete Restore effects. | C-07 and explicit readUrl/readCookies/writeCookie/replaceUrl callbacks; no session/UI/global DOM or scheduler. | Literal formats, real-controller fault/atomicity tests and actual browser reload/cookie/history cases. |
 
 ## Collaboration and data ownership
@@ -38,7 +40,7 @@ Invalid placement commands return unchanged gameplay state. Invalid integration 
 
 ## Design assessment
 
-Core components can be tested without a DOM, and session time can be advanced without browser frames. C-05 can be reused by a future Electron renderer while C-06 remains replaceable. No component depends on a consumer; no duplicate rule state is owned by the UI. Physical paths are assigned by layout rather than by this logical model.
+Core components can be tested without a DOM, and session time can be advanced without browser frames. C-05 and the unchanged C-06 renderer entry are reused in Electron; C12 owns only the native boundary. No component depends on a consumer; no duplicate rule state is owned by the UI. Physical paths are assigned by layout rather than by this logical model.
 
 C-05 owns a pure occupied-cell visibility helper plus selector change cleanup. Both cell flags and described-by projection text use that predicate. Changing display mode rerenders the last detached snapshot without an action callback; start/restart/pause keep the selected context, and explicit same-context remount retains it. Fresh/omitted contexts reset defaults. C-04 accepts exact legacy/complete-rule inputs and C-05/C-06 retain legacy arguments with optional context/refresh extensions. [Ghost contracts](spec/ghost-visibility.md) and [configuration contracts](spec/session-configuration.md) define observable behavior.
 
@@ -141,3 +143,21 @@ Pure fixtures verify exact records, schema/semantic rejection, stable ties, copi
 ## C-05 panel and host collaboration
 
 C05 owns target IDs, DOM-local visibility, native hidden semantics, accessible disclosure state and owned listener cleanup. Equal side tracks keep the playfield centered; media queries rearrange stable DOM without a resize state owner. Its existing board/render/refreshConfiguration/destroy interface and construction arguments remain compatible. C06 continues translating Board keys and supplying time/focus/file lifecycle; no visibility callback or state enters C04/C07/C08/C09/C10/C11. Session actions remain start/restart/pause/resume despite two-button presentation. [UL01–10](spec/ui-layout.md) owns exact behavior; source-only fixtures supplement real source/built/extracted entry acceptance.
+
+## C12 — Desktop host
+
+The Electron main process owns one application window, its dedicated persistent session/profile, fixed local HTTPS origin, renderer isolation/content policy, native download interaction and lifecycle cleanup. It consumes the verified renderer/asset manifest and Electron/Node host APIs; no reusable core/application/UI module imports it. It does not parse leaderboard/settings, encode save files, change gameplay, provide a Node bridge or automatically restore sessions.
+
+A DOM-free policy unit maps an approved request URL/method and manifest into a safe bundled relative path/response policy, rejecting unsupported origins, unknown members, malformed/unsafe paths and methods. Main resolves only that path under its packaged root, rejects symlinks/escape and serves bytes with explicit MIME/security headers. Main denies remote requests/navigation/new windows/permissions/webviews; required local worker/WASM/schema and blob download routes remain permitted. Isolation applies to renderer, workers and subframes. Failure to load required app content is reported clearly and cannot silently switch to remote content or a development server.
+
+Use the existing web File picker/Blob download semantics. The host configures a native Save destination flow for allowed JSON/SQLite downloads and reports download failures; cancellation does not change application data. Export status retains the browser's handoff semantics rather than promising filesystem durability before native destination completion. Restore remains complete validation before cookie/URL/model effects through the unchanged shared adapter. The six cookies persist in Electron's profile; every cold launch gets fresh renderer/controller/result/visibility state. A second launch with the same profile focuses the existing window instead of opening competing cookie writers. Close destroys the window/session resources and exits; reopen starts at the fixed entry without replaying previous URL/history/gameplay.
+
+## C13 — Desktop distribution tooling
+
+A build-time runtime manifest owns the exact supported Electron version and official asset URL/checksum; the C13 producer/verifier own required-member checks against the complete pinned vendor archive. A deterministic packager checks those inputs and the existing browser ZIP/manifest, assembles a Windows x64 directory with renamed executable, Electron resources, app host/metadata and byte-identical renderer, and writes a manifest/ZIP/checksum/stable alias. The verifier independently checks artifact paths/members/CRC/digests/version/entry point/runtime provenance/licenses and renderer equivalence, with strict secret/source/test/cache exclusions. Vendor runtime files are required assets, not unrestricted checkout inputs. No packaging dependency is installed for players.
+
+Browser packaging retains its current path/asset names and strict policy; desktop artifacts supplement it. Release tooling/CI consumes the two verified package/checksum pairs. Tests use pure host-policy seams, actual package extraction and available desktop runtime facilities; missing Windows execution is explicitly unverified, never substituted by a browser result. Current app/package metadata and documentation are the shared version authority.
+
+Native test orchestration belongs to tests/tooling, with isolated user-data/download paths. Production code has no test-only gameplay setters, arbitrary executable/URL hooks or debug-server fallback. Hosted Windows checks are used where actually available; artifact delivery remains possible from the Linux host with native limits stated accurately.
+
+C12 additionally forwards native blur as the existing DOM event, never automatic resume; bounds normal-shutdown cookie flushing and owns native destination failure diagnostics. C13 uses the exact checked browser ZIP and current built inputs, retains every pinned vendor member, and independently binds output to trusted source/vendor bytes. [ED01–12](spec/electron.md) owns acceptance.

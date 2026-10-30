@@ -33,3 +33,37 @@ jobs:
       - run: npm run test:browser
         env:
           TEST_TARGET: extracted
+
+  windows-desktop:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: cmd
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run check:boundaries
+      - run: npm run test:desktop:policy
+      - run: npm run test:desktop:package
+      - run: npm run build
+      - run: npm run package
+      - run: npm run verify:package
+      - run: npm run test:desktop
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-desktop-evidence
+          path: |
+            artifacts/desktop-results/**/*.png
+            artifacts/desktop-results/**/error-context.md
+            artifacts/desktop-stage.json
+          if-no-files-found: error

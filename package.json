@@ -1,6 +1,6 @@
 {
   "name": "classic-tetris-browser",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -19,7 +19,12 @@
     "verify:package": "python scripts/verify_package.py",
     "test:package": "python scripts/test-package.py",
     "generate:save-validator": "node scripts/generate-save-validator.mjs",
-    "check:save-validator": "node scripts/generate-save-validator.mjs --check"
+    "check:save-validator": "node scripts/generate-save-validator.mjs --check",
+    "test:desktop:policy": "node --check src/platform/electron/main.cjs && node --check src/platform/electron/asset-policy.cjs && node --test tests/desktop/host-policy.test.mjs tests/desktop/host-lifecycle.test.mjs && python tests/desktop/runtime-integrity.test.py",
+    "test:desktop": "node scripts/desktop-env.mjs",
+    "package:windows": "python scripts/package_windows.py",
+    "verify:windows": "python scripts/verify_windows.py",
+    "test:desktop:package": "python scripts/test-desktop-package.py"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",

@@ -1,3 +1,5 @@
+> Historical campaign009 source/evidence snapshot; current product owners are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and sole executable [TASKS](../../TASKS.md). Archived checklists are non-executable.
+
 # Windows Electron contracts
 
 ED01–ED12 define the second delivery platform under FEATURE/design. Existing current SPEC and all game/UL/U/L/File contracts remain except the explicit platform additions here. C12 owns desktop runtime behavior; C13 owns distribution. Browser delivery stays independently usable.
