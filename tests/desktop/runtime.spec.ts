@@ -89,3 +89,18 @@ test('@native-focus native external focus pauses and returning focus does not re
  try{await expect(d.page.getByTestId('status')).toHaveText('Paused')}finally{await d.app.evaluate(({BrowserWindow}:any)=>{(globalThis as any).__tetrisFocusWindow?.close();BrowserWindow.getAllWindows()[0]?.focus()})}
  await expect(d.page.getByTestId('status')).toHaveText('Paused');await d.page.getByRole('button',{name:'Start (resume game)',exact:true}).click();await expect(d.page.getByTestId('status')).toHaveText('Playing');
 }));
+
+test('maximum-score history and a real restore error stay usable across every panel state',async({},info)=>usingDesktop(info,async d=>{
+ const value=snapshot();value.results=Array.from({length:10},(_,i)=>({id:'00000000-0000-4000-8000-'+String(i+1).padStart(12,'0'),score:Number.MAX_SAFE_INTEGER-i,timestamp:value.results[0].timestamp}));
+ await restore(d,Buffer.from(JSON.stringify(value)));await expect(d.page.getByTestId('file-status')).toContainText('Restored');await expect(d.page.locator('[data-testid="leaderboard"] tbody tr')).toHaveCount(10);
+ const before={url:d.page.url(),cookies:await d.page.context().cookies()};const bad:any=structuredClone(value);bad.settings.holdEnabled='false';await restore(d,Buffer.from(JSON.stringify(bad)));await expect(d.page.getByTestId('file-status')).toContainText('Restore failed');expect(d.page.url()).toBe(before.url);expect(await d.page.context().cookies()).toEqual(before.cookies);
+ for(const width of [320,1440]){
+  await d.app.evaluate(({BrowserWindow}:any,width)=>BrowserWindow.getAllWindows()[0].setContentSize(width,900),width);await expect.poll(()=>d.page.evaluate(()=>innerWidth)).toBe(width);
+  for(let mask=0;mask<8;mask++){
+   for(const [i,panel] of ['Leaderboard','Settings','Controls/help'].entries()){const toggle=d.page.getByRole('button',{name:new RegExp('^(Show|Hide) '+panel+'$')});if((await toggle.innerText()).startsWith('Hide')!==Boolean(mask&(1<<i)))await toggle.click()}
+   const board=d.page.getByRole('img',{name:'Tetris playfield'});await expect(board).toBeVisible();const b=(await board.boundingBox())!,viewport=await d.page.evaluate(()=>document.documentElement.clientWidth);expect(Math.abs(b.x+b.width/2-viewport/2)).toBeLessThanOrEqual(1);expect(await d.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  }
+  await expect(d.page.getByTestId('file-status')).toContainText('Restore failed');await d.page.screenshot({path:info.outputPath('desktop-stress-'+width+'.png'),fullPage:true});
+ }
+ expect(JSON.parse((await save(d,info)).toString())).toEqual(value);
+}));
