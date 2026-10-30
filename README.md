@@ -1,6 +1,6 @@
 # Classic Tetris
 
-A browser falling-block game with configurable hold, one next-piece preview, ghost visibility, seven-bag generation, both-direction SRS kicks, hard drop and an earned penetrator ability. Score, levels, pause/resume and restart complete the single-player game.
+A browser falling-block game with configurable hold, one next-piece preview, ghost visibility, seven-bag generation, both-direction SRS kicks, hard drop and an earned penetrator ability. Score, levels, pause/resume, restart and a session leaderboard complete the single-player game.
 
 The Settings panel offers six remembered choices. Ghost visibility (Always hide / Hide above midline / Always show) and Next-piece preview apply immediately, including while paused. Hard drop, Hold piece, general locking policy and hard-drop locking policy apply on Start/Restart. Current rules and pending differences are shown separately. On reload or a later visit, each selection resolves independently from its explicit URL query value, then its saved cookie, then its default. Valid URL values, including defaults, save to cookies; omitted parameters retain saved values. Native edits update the corresponding cookie and URL. Game progress is not saved.
 
@@ -9,6 +9,8 @@ Defaults preserve modern play: ghost Always show, preview/Hard drop/Hold On, one
 Hide above midline hides the whole ghost when its lowest occupied landing cell is in rows1–10 and restores it in rows11–20, including straddling pieces. Display choices never alter landing geometry, piece order or scoring.
 
 Clearing four rows at once earns one penetrator bonus, capped at three. With the board focused, B spends one to turn the current piece white. It passes through occupied cells without destroying them; ghost and hard drop target the deepest valid non-overlapping landing. Hold is inhibited until lock. Locked cells stay white until cleared; normal pieces remain nonwhite. The selected locking policies still apply. Restart/reload reset bonuses and ability.
+
+The Leaderboard panel shows the ten best completed-game scores for this page, highest first. Zero scores qualify; earlier completions rank first on ties. Start/Restart retains completed results but abandons an unfinished game. Reload or a new page clears history; leaderboard results are never saved in cookies, URLs or web storage. Saved settings keep their existing independent persistence.
 
 ## Play
 
