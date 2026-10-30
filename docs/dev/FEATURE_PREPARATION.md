@@ -61,3 +61,9 @@ Next eligible: FDOCS-007. Publication and exact issue closure/readback precede a
 Accept Electron physical allocation and combined PLAN/layout QC. FEATURE-PLAN SHA256 9aabc4231e30a9f64460f3a8893eac17f88af724a01ffaa7366977868b94aea2; Revision2 Ready assigns C12/C13/source/test/tooling/docs/artifacts and fixed009 evidence homes without new shared state or browser package leakage. Existing main layout reused outside the scoped delta; no unresolved placement or strategy blocker. Autodoc preapproval covers reviewed allocation; task derivation next.
 
 Next eligible: FDOCS-008. Publication and exact issue closure/readback precede advancement.
+
+### FDOCS-008
+
+Accept Electron task derivation and pre-QC checkpoint. FEATURE-TASKS SHA256 4770c3863a1c23c512b9a972409df0d17723722b3ad70157bee7b91dd9ec0ff3; Revision1 Ready verifies seven unique069–075,3+3delivery groups with folded071/074 reviews and one075phase review. Main1–68/frozen001–008 preserved. HANDOFF records mapped autodoc pre-QC checkpoint; explicit human scope already authorizes subsequent package QC and full implementation, so no repeated permission pause. Whole-package QC remains next after publication/157closure.
+
+Next eligible: FDOCS-009. Publication and exact issue closure/readback precede advancement.
