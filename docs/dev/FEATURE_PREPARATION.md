@@ -67,3 +67,9 @@ Next eligible: FDOCS-008. Publication and exact issue closure/readback precede a
 Accept Electron task derivation and pre-QC checkpoint. FEATURE-TASKS SHA256 4770c3863a1c23c512b9a972409df0d17723722b3ad70157bee7b91dd9ec0ff3; Revision1 Ready verifies seven unique069–075,3+3delivery groups with folded071/074 reviews and one075phase review. Main1–68/frozen001–008 preserved. HANDOFF records mapped autodoc pre-QC checkpoint; explicit human scope already authorizes subsequent package QC and full implementation, so no repeated permission pause. Whole-package QC remains next after publication/157closure.
 
 Next eligible: FDOCS-009. Publication and exact issue closure/readback precede advancement.
+
+### FDOCS-009
+
+Pass Windows Electron whole-package QC and select full implementation. Independent review at d856e7555da19ac16abb12ec3e0783ea7a012996 and owner audit Ready; FEATURE-QC-REPORT pins exact reviewed sources and no unresolved blocker/TODO. Human brief/pre-QC/QC/full069–075 authority retained; no product execution claimed. Initial009 checkoff/report/preparation/HANDOFF co-committed. Publication/158closure, explicit preparation merge/main verification/publication then milestone38closure and Phase10 activation remain ordered pending effects.
+
+Next eligible: verified preparation integration, milestone closure and full implementation. Publication and exact issue closure/readback precede advancement.
