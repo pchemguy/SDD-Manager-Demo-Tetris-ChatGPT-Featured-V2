@@ -71,6 +71,8 @@ async function startDesktop(electron,rendererRoot=path.join(__dirname,'renderer'
   Menu.setApplicationMenu(null);
   const area=electron.screen?.getPrimaryDisplay()?.workAreaSize??{width:1632,height:1008};
   window=new BrowserWindow({title:'Classic Tetris',useContentSize:true,width:Math.max(320,Math.min(1600,area.width-32)),height:Math.max(300,Math.min(960,area.height-48)),minWidth:320,minHeight:300,backgroundColor:'#111827',webPreferences:{nodeIntegration:false,nodeIntegrationInWorker:false,nodeIntegrationInSubFrames:false,contextIsolation:true,sandbox:true,webSecurity:true,webviewTag:false,devTools:false,spellcheck:false,navigateOnDragDrop:false}});
+  // Native Windows blur does not reliably reach the renderer's DOM window.
+  window.on('blur',()=>{if(!window.isDestroyed()&&!window.webContents.isDestroyed())void window.webContents.executeJavaScript("window.dispatchEvent(new Event('blur'))").catch(()=>{/* The renderer may already be closing. */})});
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));
   window.webContents.on('will-attach-webview',event=>event.preventDefault());
   window.webContents.on('will-navigate',(event,url)=>{try{const u=new URL(url);if(!local(url)||u.pathname!=='/index.html')event.preventDefault()}catch{event.preventDefault()}});
