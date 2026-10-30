@@ -147,3 +147,29 @@ C-08 has pure codec and callback effect modules within the browser platform dire
 Public release assets remain `classic-tetris-browser.zip` and its `.sha256` sidecar; local intended outputs are `artifacts/classic-tetris-browser-v1.5.0.zip` and its matching sidecar. Archive membership remains the established build assets, manifest, license/notices and shipped instructions; no codec source, tests, fixtures, docs/dev, credentials, browser cache or node_modules ships. RELEASE-NOTES retains the exact final body at the release boundary; internal highlights remain ignored and are cleaned up only after verified publication consumption.
 
 The adapter's two files separate deterministic format logic from effects without adding a service layer or generic storage abstraction. Both compile without DOM types because effects enter through explicit callbacks; only main.ts binds actual browser objects. C-05's structural controller consumer requires no additional callback or storage import. The component-to-path map supports each milestone without moving unrelated modules or changing existing source-only fixture ownership.
+
+## Session leaderboard allocation
+
+This scoped allocation supports the intended [leaderboard architecture](FEATURE_ARCHITECTURE.md), [component model](FEATURE_DECOMPOSITION.md), [L contracts](FEATURE-SPEC.md) and [Phase7 plan](FEATURE-PLAN.md). New paths below are intended allocations, not claims of implemented files. Unaffected owners and earlier phase/task ranges stay intact.
+
+| Path | Component / physical responsibility |
+| --- | --- |
+| src/application/leaderboard.ts | C-09 pure score-result types, validation and detached top-ten insertion; no DOM/platform/storage imports or mutable singleton. |
+| src/application/session.ts | C-04 transaction-owned history, additive detached Snapshot field, final-score completion and Start/Restart preservation. |
+| src/ui/game-view.ts, src/ui/styles.css | C-05 read-only labelled rank/score panel, empty state, narrow/wide layout and existing focus-preserving render path. |
+| src/platform/browser/main.ts | C-06 optional explicit Session argument and unchanged default fresh controller/page-entry/cleanup. No history storage or settings-codec modification. |
+| tests/unit/leaderboard.test.ts | Literal ranking/tie/capacity/zero/validation/immutability fixtures. |
+| tests/unit/leaderboard-session.test.ts, existing session suites | Final-score/once-only/ordinary and Hold endings, rollback/listener/reentry, reset, policies/RNG/clock and detached-history tests. |
+| tests/browser/leaderboard.spec.ts | Actual page-entry completion/ranking/Restart/reload/new-page/settings-independence and panel acceptance on source/built/extracted. |
+| tests/browser/leaderboard-view.spec.ts, tests/fixtures/leaderboard.html | Source-only injected real-view snapshots and explicit-controller sequential remount seam; no production setter. |
+| tests/fixtures/leaderboard-gameplay.ts if shared trace needed | Test-only deterministic legal action/RNG trace for real top-out; no production import or fixture shortcut to game state. |
+| Existing snapshot fixtures, configuration/lifecycle/remount/browser tests | Supply detached history field and preserve earlier consumer/control/resource/persistence acceptance. |
+| tsconfig.test.json, scripts/test-unit.mjs, scripts/check-boundaries.mjs | Existing DOM-free compiler/discovery and dependency enforcement; new application tests already fit directories, adjust only demonstrated gaps. |
+| playwright.config.ts, scripts/browser-env.mjs | Explicit source-only fixture exclusion for built/extracted targets, dedicated Chromium/Firefox and measured finite suite/wrapper budgets. |
+| README.md, docs/CONTROLS.md, docs/INSTALL.md, docs/DEVELOPMENT.md | Accurate leaderboard qualification/ties/page lifetime, preserved configuration behavior, deployment and verified commands/evidence limits. |
+| package.json, package-lock.json, existing package/release/CI scripts and package tests | Planned1.6.0 version metadata and strict relative/reproducible browser ZIP/checksum using current build path and allowlist. No new dependency or publisher. |
+| docs/dev/spec/leaderboard.md | Intended canonical L-01–L-08 owner after accepted phase incorporation; active FEATURE-SPEC remains owner until then. |
+| docs/dev/PROJECT.md, ARCHITECTURE.md, DECOMPOSITION.md, SPEC.md and affected children, PLAN.md, layout.md, TASKS.md, current adjacent QC and AGENTS.md | Owning final phase task reconciles accepted scope/current navigation and unique executable task ownership. |
+| docs/dev/features/006_ea39055-leaderboard/reports/phases/7/7.1.md,7.2.md,PHASE-REPORT.md and package IMPLEMENTATION-REPORT.md | Fixed milestone/phase/final implementation evidence. Eligible006 accepted sources/preparation/adjacent QC archive at final incorporation; earlier records untouched. |
+
+Intended local distribution: artifacts/classic-tetris-browser-v1.6.0.zip and corresponding checksum; stable public assets remain classic-tetris-browser.zip and classic-tetris-browser.zip.sha256. Existing build assets/manifest/license/notices/shipped guides only; no source fixture/trace, docs/dev, credential, dependency/browser cache or development source in the archive. Keep finalized root RELEASE-NOTES and ignored internal highlights ownership under the established release workflow. No FEATURE-LAYOUT or extra service/package tree is allocated.

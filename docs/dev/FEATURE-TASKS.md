@@ -1,0 +1,40 @@
+# Session leaderboard tasks
+
+Implement the scoped [Phase7 plan](FEATURE-PLAN.md) and [L-01–L-08](FEATURE-SPEC.md) using the [component delta](FEATURE_DECOMPOSITION.md) and [layout allocation](layout.md#session-leaderboard-allocation). Existing [TASKS](TASKS.md) T-001–T-046 are completed prerequisites and retain sole ownership there. This active list owns only new T-047–T-052 until eligible reconciliation. All feature work below is planned and unchecked.
+
+## Phase 7 — Session leaderboard
+
+- [ ] Phase 7 — Session leaderboard
+    - [ ] Milestone 7.1 — Completed scores and visible leaderboard
+        - [ ] T-047 — Implement pure top-ten result ranking
+            Scope: C-09 src/application/leaderboard.ts and tests/unit/leaderboard.test.ts; L-02/L-03. Define score-result types and pure validated stable insertion/capping without mutable authority or platform dependencies.
+            Depends on: completed Phase6 baseline and accepted/QC preparation integrated/published; no new task prerequisite.
+            Evidence: meaningful RED missing behavior, then literal empty/high/middle/low/tie/zero/overflow outputs, error classes, frozen input/returned-value detachment, type/boundary and existing unit checks pass. No clocks/RNG/storage.
+        - [ ] T-048 — Record completed-game history atomically
+            Scope: C-04 src/application/session.ts, tests/unit/leaderboard-session.test.ts and affected existing unit fixtures; L-01/L-03/L-04/L-05/L-07. Add detached Snapshot history, commit final-score submission once for both Game Over paths before observers, preserve history across new games and rollback on failures.
+            Depends on: T-047.
+            Evidence: RED/GREEN ordinary/Hold top-out and zero/final score, repeated post-game operations, Restart abandonment/retention, listener throw/reentry, draw/new-game failure recovery, both policies and hard-drop override, snapshot mutation, RNG/clock and prior unit regression. No UI-side submission.
+        - [ ] T-049 — Integrate the visible leaderboard and controller lifetime
+            Scope: C-05 view/styles, C-06 main optional fourth Session argument, actual tests/browser/leaderboard.spec.ts, source-only leaderboard-view.spec.ts/fixtures/leaderboard.html, affected snapshot fixtures and player help; L-01–L-07. Render semantic rank/score rows and empty state from Snapshot; preserve existing mount calls/focus/cleanup, support sequential explicit-controller remount and independent default mounts.
+            Depends on: T-048.
+            Evidence: real source Chromium/Firefox Game Over panel and Restart retention; empty/one/ten rows and stale-row clearing; retained/fresh remount; screenshots320/1000 and semantic/focus inspection; existing source gameplay/settings/lifecycle regression, unit/type/boundary/build. Keep real completion tests on all targets and mark only internal fixture suites source-only. Source fixtures are not production setters.
+            Milestone exit: whole7.1 code review, focused complete-capability tests, blocker repair, demonstration evidence, TODO status and report/HANDOFF co-close in this task. No separate review-only task for this three-task milestone.
+            Report: docs/dev/features/006_ea39055-leaderboard/reports/phases/7/7.1.md.
+    - [ ] Milestone 7.2 — Session lifetime and verified distribution
+        - [ ] T-050 — Verify leaderboard isolation and retained gameplay
+            Scope: leaderboard browser/session tests, source remount fixture, existing configuration/persistence/penetrator/lifecycle suites, test-only legal gameplay trace if needed and runner exclusions/budgets only where justified; L-01–L-07.
+            Depends on: T-049 and verified milestone7.1 completion/hosted closure.
+            Evidence: actual reload/new-page isolation with remembered settings, repeated completions/capacity/score ordering, unchanged URL/cookies after completion, teardown/reentry/failure behavior, paused/live/pending settings and existing ordinary/penetrator/clock controls. Run source and built suites plus focused extracted-prefix leaderboard cases. Verification-only cases may start green; reproduce any real defect before bounded repair, do not manufacture RED. Runtime/console guards, actual managed Chromium/Firefox and measured finite budgets required.
+        - [ ] T-051 — Produce and verify the v1.6.0 browser distribution
+            Scope: README/player/developer guides, package/root-lock metadata, existing package/release/CI inputs and tests, retained release notes/highlights; L-08 and deployed L-01–L-07.
+            Depends on: T-050.
+            Evidence: clean dependency install; type/boundary/unit/package/environment/build; full actual source/built/extracted Chromium/Firefox acceptance with no unexpected failures/skips/flaky cases; strict manifest/member/relative asset/exclusion/checksum scans and repeated actual build/package byte identity. Stable aliases classic-tetris-browser.zip/.sha256 and local versioned1.6.0 candidate verified. Notes reflect actual results/limits; refresh Git highlights through exact later release source before tagging. No provider publication success claimed here.
+            Milestone exit: whole7.2 code/package/document review, regressions/blocker repairs, actual distributable demonstration, report/HANDOFF and initial parent checkoff co-close here. Two delivery tasks intentionally need no standalone review-only task.
+            Report: docs/dev/features/006_ea39055-leaderboard/reports/phases/7/7.2.md.
+    - [ ] Milestone 7.3 — Phase review
+        - [ ] T-052 — Review test and report the leaderboard phase
+            Scope: whole Phase7 code/document/coverage review and applicable fresh final checks; accepted main PROJECT/design/SPEC and affected children/PLAN/layout/TASKS/current adjacent QC/AGENTS reconciliation; fixed006 accepted-source/preparation/QC archive, phase/final reports and HANDOFF. L-01–L-08 and preserved prior behavior.
+            Depends on: T-051 and verified completion/hosted closure of7.1 and7.2.
+            Evidence: all phase exits reviewed Ready, blockers repaired, final strict reproducible artifact and browser regression, exact source/evidence limits, no outstanding TODO, compliant actual single-task closing audits. Main TASKS becomes sole executable owner through semantic transfer; only052 initially closes in this boundary, moved already-complete047–051 are not new closures. Preserve original1–46 prefix, Phase1–6 ranges and frozen001–005.
+            Phase/final exit: publish this verified result, close task/milestone tracking, explicitly integrate complete feature into its recorded creation-parent main with two parents, verify merged regression/artifact identity and publish/read back. Under full implementation/release authority, create/publish eligible default-branch1.6.0 release commit/annotated tag and exact finalized body, ZIP/checksum/latest/public-download readback and both actual source CI runs. Add actual provider outcome in owning T-052 parent-only reports/HANDOFF followup without task/checkoff changes or moving the tag; record pending effects honestly until verified.
+            Reports: docs/dev/features/006_ea39055-leaderboard/reports/phases/7/PHASE-REPORT.md and docs/dev/features/006_ea39055-leaderboard/IMPLEMENTATION-REPORT.md.
