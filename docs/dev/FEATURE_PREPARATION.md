@@ -15,7 +15,7 @@ Accepted main source: v1.4.0 integrated/released state at the baseline, with cur
 - Authorized range now: prepare the accepted six-setting persistence document pass through FDOCS-008. Autodoc ends at FDOCS-008 before whole-package QC; the prior campaign's QC/full-implementation grant ended and does not authorize this feature's implementation.
 - Tracking: enabled by repository AGENTS default and retained project policy. Preparation milestone and all nine exact campaign/stage markers/native associations verified before the first repository write. Product phase activation has not occurred.
 - Reporting: Standard, with concise meaningful progress. No new execution-host setup is needed for document preparation; actual host Linux/bash. The optional cloud environment-status tool and policy snapshot were unavailable; actual authenticated GitHub API reads independently verified repository access and current default/main identity.
-- Next stage: FDOCS-003; later covered document preparation remains preapproved. Stop after FDOCS-008 before whole-package QC.
+- Next stage: FDOCS-004; later covered document preparation remains preapproved. Stop after FDOCS-008 before whole-package QC.
 
 ## Decisions and cross-scope applicability
 
@@ -33,7 +33,7 @@ Preparation milestone: [sdd-docs-005_5153bbf](https://github.com/pchemguy/SDD-Ma
 | --- | --- |
 | FDOCS-001 | [#86](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/86) |
 | FDOCS-002 | Human accepted FEATURE blob edfb2f944044bc1993f1aaab31efb2a028155df2, presented at published228ce8ab10bfca9e92456a23858d3f66d4f8f6c7, with “k” on 2026-10-30. Scope/edge choices and browser-only compatibility consequences accepted; downstream FDOCS-003–008 preapproved under retained autodoc/onepass. Brief coverage assessment remains applicable; no source changes since presentation. |
-| FDOCS-003 | [#88](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/88) |
+| FDOCS-003 | FEATURE_ARCHITECTURE blob e788464082ee8fa680bd7bbbb638a29823ebcf2c; accepted FEATURE edfb2f944044bc1993f1aaab31efb2a028155df2 and main architecture36b58d4da6d85a2445c455af7dfcb60bd6d166ec govern. sdd-design assessment: one selected authority, browser adapter wrapping the existing structural controller, unidirectional dependencies, once-per-page restoration and independent best-effort effects; no session/UI storage globals, scheduler, backend or new gameplay setting. Canonical validation retained in C-07. No unresolved architectural choice; accepted by autodoc preapproval after the human brief approval. |
 | FDOCS-004 | [#89](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/89) |
 | FDOCS-005 | [#90](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/90) |
 | FDOCS-006 | [#91](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/91) |
@@ -47,7 +47,7 @@ Preparation milestone: [sdd-docs-005_5153bbf](https://github.com/pchemguy/SDD-Ma
 | --- | --- |
 | FDOCS-001 | Clean eligible Git worktree; local/remote default main both 5153bbf695ba68dfff4af5faf2821d2d2eb94488; campaign/branch collision readback clear; all nine hosted issues and milestone verified. Existing AGENTS/discovery/disclosure/usage and manual provenance scaffold reused without resetting main initialization. Context/record/task/HANDOFF initialized coherently; owning commit publication and issue closure follow this checkpoint. |
 | FDOCS-002 | Human accepted FEATURE blob edfb2f944044bc1993f1aaab31efb2a028155df2, presented at published228ce8ab10bfca9e92456a23858d3f66d4f8f6c7, with “k” on 2026-10-30. Scope/edge choices and browser-only compatibility consequences accepted; downstream FDOCS-003–008 preapproved under retained autodoc/onepass. Brief coverage assessment remains applicable; no source changes since presentation. |
-| FDOCS-003 | Pending architecture assessment after brief acceptance. |
+| FDOCS-003 | FEATURE_ARCHITECTURE blob e788464082ee8fa680bd7bbbb638a29823ebcf2c; accepted FEATURE edfb2f944044bc1993f1aaab31efb2a028155df2 and main architecture36b58d4da6d85a2445c455af7dfcb60bd6d166ec govern. sdd-design assessment: one selected authority, browser adapter wrapping the existing structural controller, unidirectional dependencies, once-per-page restoration and independent best-effort effects; no session/UI storage globals, scheduler, backend or new gameplay setting. Canonical validation retained in C-07. No unresolved architectural choice; accepted by autodoc preapproval after the human brief approval. |
 | FDOCS-004 | Pending decomposition assessment. |
 | FDOCS-005 | Pending specification and scoped QC. |
 | FDOCS-006 | Pending delivery strategy and scoped QC. |
@@ -57,4 +57,4 @@ Preparation milestone: [sdd-docs-005_5153bbf](https://github.com/pchemguy/SDD-Ma
 
 ## Current reset and pending transitions
 
-No reset. FDOCS-001 initialization74def8a909e1e5b98a2e330a6d37387c31b70235 and FEATURE proposal228ce8ab10bfca9e92456a23858d3f66d4f8f6c7 were published/read back. The human accepted the exact FEATURE proposal with “k” on 2026-10-30. Earlier stages through FDOCS-001 are committed/published with their issues closed/read back. Publish/read back this FDOCS-002 completion, then close/read back issue87; recover these effects from Git/API rather than replaying writes. After confirmed closure, continue only the covered document pass through FDOCS-008. FDOCS-009/issue94 and milestone22 stay open. No whole-package QC readiness, preparation integration, product implementation, version change or release is claimed.
+No reset. FDOCS-001 initialization74def8a909e1e5b98a2e330a6d37387c31b70235 and FEATURE proposal228ce8ab10bfca9e92456a23858d3f66d4f8f6c7 were published/read back. The human accepted the exact FEATURE proposal with “k” on 2026-10-30. Earlier stages through FDOCS-002 are committed/published with their issues closed/read back. Publish/read back this FDOCS-003 completion, then close/read back issue88; recover these effects from Git/API rather than replaying writes. After confirmed closure, continue only the covered document pass through FDOCS-008. FDOCS-009/issue94 and milestone22 stay open. No whole-package QC readiness, preparation integration, product implementation, version change or release is claimed.
