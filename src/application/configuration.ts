@@ -31,7 +31,7 @@ export function createConfiguration() {
  let selected={...defaults};
  const getSnapshot=():GameConfiguration=>({...selected});
  /** Validate the complete patch before committing; results never alias retained values. */
- const update=(patch:Partial<GameConfiguration>):GameConfiguration=>{
+ const candidateFor=(patch:Partial<GameConfiguration>):GameConfiguration=>{
   if(patch===null||typeof patch!=='object'||Array.isArray(patch))throw new TypeError('Configuration patch must be an object');
   const candidate={...selected};
   for(const key of Reflect.ownKeys(patch)) {
@@ -40,9 +40,15 @@ export function createConfiguration() {
    if(!isConfigurationValue(key as keyof GameConfiguration,value))throw new TypeError(`Invalid setting: ${key}`);
    Object.assign(candidate,{[key]:value});
   }
-  selected=candidate;
-  return getSnapshot();
+  return candidate;
  };
- return {getSnapshot,update};
+ const update=(patch:Partial<GameConfiguration>):GameConfiguration=>{selected=candidateFor(patch);return getSnapshot()};
+ /** Validate/detach a complete replacement without committing or causing browser effects. */
+ const prepare=(values:GameConfiguration):(()=>GameConfiguration)=>{
+  if(values===null||typeof values!=='object'||Array.isArray(values)||Reflect.ownKeys(values).length!==Object.keys(defaults).length||!Object.keys(defaults).every(key=>Object.hasOwn(values,key)))throw new TypeError('Complete six-setting selection required');
+  const candidate=candidateFor(values);
+  return ()=>{selected=candidate;return getSnapshot()};
+ };
+ return {getSnapshot,update,prepare};
 }
 export type ConfigurationController = ReturnType<typeof createConfiguration>;

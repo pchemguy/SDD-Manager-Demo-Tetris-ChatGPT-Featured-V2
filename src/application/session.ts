@@ -6,7 +6,7 @@ import {shuffleBag} from '../core/bag.js';
 import {canTraverse,penetratingLanding} from '../core/penetrator.js';
 import {tryRotate} from '../core/kicks.js';
 import {createConfiguration,toRuleOptions,type RuleOptions} from './configuration.js';
-import {recordResult,type GameResult,type ResultMetadataSource} from './leaderboard.js';
+import {recordResult,validateResults,type GameResult,type ResultMetadataSource} from './leaderboard.js';
 import { progress, gravityInterval } from '../core/progression.js';
 export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'hardDrop'|'pause'|'resume'|'activatePenetrator';
 /** Legacy input/mirror retained; complete RuleOptions selects the expanded active rules. */
@@ -31,14 +31,14 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
   if(s.bag.length===0)s.bag=shuffleBag(random);
   s.next=s.bag[0];return piece;
  };
- function run(operation:(s:State)=>State):Snapshot {
+ function run(operation:(s:State)=>State,force=false):Snapshot {
   if(busy)throw new Error('Reentrant session operation');
   busy=true;
   try {
    const next=operation(copy(state));
    // Capture once inside the transaction, before state publication and observers.
    if(state.status==='running'&&next.status==='game-over')next.leaderboard=recordResult(next.leaderboard,{id:metadata.newId(),score:next.score,timestamp:metadata.completedAt()});
-   if(JSON.stringify(next)!==JSON.stringify(state)) {
+   if(force||JSON.stringify(next)!==JSON.stringify(state)) {
     state=next;
     for(const listener of [...listeners]) {
      try {listener(getSnapshot())} catch(e){try{onListenerError(e)}catch{/* A broken reporter must not starve observers. */}}
@@ -133,6 +133,12 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
   return s;
  });
  const subscribe=(listener:(s:Snapshot)=>void):(()=>void)=>{listeners.add(listener);return ()=>{listeners.delete(listener)}};
- return {getSnapshot,dispatch,advance,subscribe};
+ /** Replace only completed history; the synchronous collaborator commits prepared settings/effects. */
+ const replaceLeaderboard=(results:unknown,beforePublish:()=>void=()=>{}):Snapshot=>run(s=>{
+  const history=validateResults(results);
+  if(typeof beforePublish!=='function')throw new TypeError('Invalid restore collaborator');
+  beforePublish();return {...s,leaderboard:history};
+ },true);
+ return {getSnapshot,dispatch,advance,subscribe,replaceLeaderboard};
 }
 export type Session=ReturnType<typeof createSession>;

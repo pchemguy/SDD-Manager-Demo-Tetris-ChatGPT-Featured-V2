@@ -1,6 +1,6 @@
 /** Best-effort browser persistence around one pure selected-configuration authority. */
 import {createConfiguration,type ConfigurationController,type GameConfiguration} from '../../application/configuration.js';
-import {configurationKeys,cookieScope,cookieAssignment,resolveConfiguration,updateConfigurationUrl} from './configuration-codec.js';
+import {configurationKeys,cookieName,cookieScope,cookieAssignment,resolveConfiguration,updateConfigurationUrl} from './configuration-codec.js';
 /** The page binds browser objects; tests/future hosts can supply explicit access boundaries. */
 export interface BrowserConfigurationAccess {
  readUrl():string;
@@ -29,6 +29,7 @@ export function createBrowserConfiguration(access:BrowserConfigurationAccess):Co
  save(resolution.urlValues);
  return {
   getSnapshot:selected.getSnapshot,
+  prepare:selected.prepare,
   update(patch){
    const before=selected.getSnapshot(),after=selected.update(patch);
    const changed:Partial<GameConfiguration>={};
@@ -38,5 +39,41 @@ export function createBrowserConfiguration(access:BrowserConfigurationAccess):Co
    try{access.replaceUrl(updateConfigurationUrl(access.readUrl(),changed))}catch{/* Preserve committed selection/cookies. */}
    return after;
   },
+ };
+}
+
+/** Restore requires explicit history-state access; native setting edits keep the legacy contract. */
+export interface BrowserRestoreAccess extends BrowserConfigurationAccess {
+ readHistoryState():unknown;
+ replaceUrl(url:string,state?:unknown):void;
+}
+/** Stage browser state and a complete validated target before any write. */
+export function prepareConfigurationRestore(access:BrowserRestoreAccess,values:GameConfiguration):()=>void {
+ const target=createConfiguration().prepare(values)();
+ const beforeUrl=access.readUrl(),scope=cookieScope(beforeUrl);
+ if(!scope)throw new TypeError('Restore requires a valid HTTP(S) cookie scope');
+ const state=access.readHistoryState(),afterUrl=updateConfigurationUrl(beforeUrl,target);
+ const ownedNames=new Set(configurationKeys.map(cookieName));
+ const readOwned=()=>{
+  const text=access.readCookies();if(typeof text!=='string')throw new TypeError('Cookies unavailable');
+  const result=new Map<string,string>();
+  for(const part of text.split(';')){const i=part.indexOf('=');if(i<0)continue;const name=part.slice(0,i).trim();if(!ownedNames.has(name))continue;if(result.has(name))throw new Error('Ambiguous configuration cookies');result.set(name,part.slice(i+1))}
+  return result;
+ };
+ const before=readOwned();
+ return ()=>{
+  const attempted:string[]=[];let urlAttempted=false;
+  try {
+   for(const key of configurationKeys){const name=cookieName(key);attempted.push(name);access.writeCookie(cookieAssignment(key,target[key],scope));if(readOwned().get(name)!==String(target[key]))throw new Error('Configuration cookie was rejected')}
+   urlAttempted=true;access.replaceUrl(afterUrl,state);
+   if(access.readUrl()!==afterUrl)throw new Error('Configuration URL was rejected');
+  }catch(cause){
+   let rollback=true;
+   // Attempt every compensation even when another fails. Only owned names are touched.
+   for(const name of attempted){try{access.writeCookie(name+'='+(before.get(name)??'')+'; Max-Age='+(before.has(name)?'31536000':'0')+'; Path='+scope.path+'; SameSite=Lax'+(scope.secure?'; Secure':''))}catch{rollback=false}}
+   if(urlAttempted)try{access.replaceUrl(beforeUrl,state)}catch{rollback=false}
+   try{const current=readOwned();if(attempted.some(name=>current.get(name)!==before.get(name))||access.readUrl()!==beforeUrl)rollback=false}catch{rollback=false}
+   throw new Error(rollback?'Restore failed: persistence values were not changed':'Restore failed: persistence rollback could not be verified',{cause});
+  }
  };
 }
