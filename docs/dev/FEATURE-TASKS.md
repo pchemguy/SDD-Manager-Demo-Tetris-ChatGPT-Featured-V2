@@ -9,7 +9,7 @@ Require separately authorized whole-package QC, verified published preparation i
 ## Phase 5 — Penetrator mode
 
 - [ ] Phase 5 — Penetrator mode
-    - [ ] Milestone 5.1 — Playable earned penetrator loop
+    - [x] Milestone 5.1 — Playable earned penetrator loop
         - [x] T-033 — Implement guarded penetrating landing and kicks
             Scope: new core/penetrator.ts, optional predicate in kicks.ts, focused literal core tests and module contracts. Depends on: T-032 plus accepted/QC/published preparation and Phase5 activation.
             Acceptance: P-01/P-03 deepest valid disconnected landing search, in-bounds occupied cells/padding, overlapping candidate reachability and rejected sealed candidates; immutable detached outputs. Preserve ordinary landing/canPlace, default three-argument kick tables/order/O/direction errors; supplied canTraverse uses the same ordered offsets without duplicated tables.
@@ -34,11 +34,13 @@ Require separately authorized whole-package QC, verified published preparation i
             Verification: RED native earned-bonus/key/appearance cases then unit/type/boundary/build and managed Chromium/Firefox source checks with console/runtime guards. Actually earn a four-line award, activate, transit/drop to canonical ghost and lock white without destroying underlying cells; inspect ordinary/narrow screenshots. No production bonus/board setter, debug key or activation button. Whole-milestone review remains T-037.
             Completion evidence: RED missing bonus display observed in actual Chromium; GREEN262 units/type/boundaries/build,2 environment checks and70 source-browser checks in Chromium/Firefox (2.2m, finite180s invocation). Native15-piece earned pocket loop proves B/repeat/Hold/white transit/underlying restoration/ghost-drop identity/white settlement;40-piece bank cap/spend/reset/reload with immediate lock. Runtime/console guards through teardown,320/1000 screenshots visually inspected: white active/settled/pattern ghost and nonwhite ordinary cells, no horizontal overflow. Source runner budget adjustment belongs next presentation task; native headed focus remains unverified.
 
-        - [ ] T-037 — Review test and report the playable penetrator milestone
+        - [x] T-037 — Review test and report the playable penetrator milestone
             Scope: all T-033–T-036 code/contracts, integration/error paths, demonstration and required repairs/evidence. Depends on: T-033–T-036 verified/published with issues closed/read back.
             Acceptance: independent whole-Milestone5.1 code review separate from test execution, including core/session/native behavior and preserved legacy/default/settings invariants. Fix blockers and demonstrate earned activation; enabling tasks alone cannot satisfy the exit. Aggregate TODO None or eligible noncritical findings and explicit native limitations.
             Verification: fresh appropriate complete unit/type/boundary/build and actual managed two-browser gameplay regression; exact source/artifact state, no debug hooks and policy/rollback coverage assessed. Include milestone report and HANDOFF with initial task/milestone checkoff; publish/read back, close its issue then milestone before5.2.
             Report: docs/dev/features/004_1cadd99-penetrator-mode/reports/phases/5/5.1.md.
+            Completion evidence: Independent full5.1 review and recheck Ready; PEN-M51-01–03 required coverage gaps repaired with legal top-out/active escape-reland/late transform-drop tests.265 units/type/boundaries/build pass; fresh native earned game4/25.8s plus unchanged-source full70/2.2m. Report/HANDOFF and initial task/milestone checkoff coherent; TODO None. Publish then close issue82/milestone19 before5.2.
+
     - [ ] Milestone 5.2 — Complete presentation and browser distribution
         - [ ] T-038 — Complete accessible penetrator presentation and lifecycle coverage
             Scope: shared view/styles and native/session integration repairs, source-only penetrator view fixture/test, existing configuration/remount/lifecycle suites, runner source-fixture exclusion and controls guide. Depends on: T-037 and closed Milestone5.1.
