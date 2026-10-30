@@ -1,8 +1,10 @@
+> Historical campaign007 source; current authorities are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). This archived source is not an executable owner.
+
 # File persistence architecture
 
 ## Scope and retained arrangement
 
-Implement [FEATURE](FEATURE.md) as a scoped extension to [ARCHITECTURE](ARCHITECTURE.md). Retain the deterministic rules core, pure selected configuration and ranking, transactional session, shared DOM view and composing browser host. No rule, game-progress serialization, backend, automatic file storage or additional platform is introduced.
+Implement [FEATURE](FEATURE.md) as a scoped extension to [ARCHITECTURE](../../ARCHITECTURE.md). Retain the deterministic rules core, pure selected configuration and ranking, transactional session, shared DOM view and composing browser host. No rule, game-progress serialization, backend, automatic file storage or additional platform is introduced.
 
 The portable snapshot is an explicit data-transfer value containing version, ranked completed results and all six selected settings. It is not the session's gameplay Snapshot. Parsing, complete validation and staging precede any state or browser-persistence mutation.
 

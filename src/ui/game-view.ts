@@ -4,8 +4,9 @@ import {createConfiguration, toRuleOptions, type ConfigurationController} from '
 import type {Kind} from '../core/types.js';
 import { cells } from '../core/pieces.js';
 import { isGhostVisible, type GhostVisibilityMode } from './ghost-visibility.js';
+export interface FileTransferControls {save(format:'json'|'sqlite'):Promise<void>;restore(file:File):Promise<void>;cancel():void;formats:readonly ('json'|'sqlite')[]}
 let sequence = 0;
-export function createGameView(mount: HTMLElement, onAction: (action: Action) => void, onOptionsChange: (options:SessionOptions)=>void=()=>{}, configuration:ConfigurationController=createConfiguration()) {
+export function createGameView(mount: HTMLElement, onAction: (action: Action) => void, onOptionsChange: (options:SessionOptions)=>void=()=>{}, configuration:ConfigurationController=createConfiguration(),transfer?:FileTransferControls) {
  const doc = mount.ownerDocument;
  const root = doc.createElement('section');
  const legendId = `game-controls-${++sequence}`;
@@ -26,7 +27,7 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>B</dt><dd>Penetrator (1 bonus)</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
   </div>
-  <fieldset class="settings-panel"><legend>Settings</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart.</p>
+  <details class="settings-disclosure" open><summary>Settings</summary><fieldset class="settings-panel"><legend>Game configuration</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart.</p>
    <label class="settings ghost-setting"><span>Ghost visibility</span><select data-option="ghost"><option value="never">Always hide</option><option value="lower-half">Hide above midline</option><option value="always">Always show</option></select></label>
    <label class="settings"><input type="checkbox" data-option="hard-drop"><span>Hard drop (next game)</span></label>
    <label class="settings"><input type="checkbox" data-option="preview"><span>Next-piece preview</span></label>
@@ -35,7 +36,11 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
    <label class="settings"><input type="checkbox" data-option="hold"><span>Hold piece (next game)</span></label>
    <p class="settings-help">Unchecked immediate lock follows the general policy. With failed downward movement, hard drop waits for a blocked downward attempt.</p>
    <p class="settings-summary" data-testid="settings-summary"></p>
-  </fieldset><footer>10 × 20 · SEVEN SHAPES · ONE MORE TRY</footer>`;
+   <div class="file-controls"><button type="button" class="secondary" data-file="save">Save</button><button type="button" class="secondary" data-file="restore">Restore</button></div>
+   <fieldset class="file-format" hidden><legend>Save file</legend><label>Save format <select data-file-format aria-label="Save format"><option value="json">JSON</option><option value="sqlite" ${transfer?.formats.includes('sqlite')?'':'disabled'}>SQLite</option></select></label><button type="button" data-file="download">Download</button><button type="button" class="secondary" data-file="cancel">Cancel</button></fieldset>
+   <input type="file" data-file-input hidden aria-label="Restore file" accept=".json,.sqlite,.db,application/json,application/vnd.sqlite3">
+   <p class="file-status" role="status" aria-live="polite" aria-label="File operation" data-testid="file-status"></p>
+  </fieldset></details><footer>10 × 20 · SEVEN SHAPES · ONE MORE TRY</footer>`;
  mount.append(root);
  const board = root.querySelector<HTMLElement>('.board')!;
  const tiles = Array.from({length: 200}, (_, i) => {
@@ -62,6 +67,25 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   refreshConfiguration();
  };
  settings.addEventListener('change',changeSettings);
+ const fileInput=root.querySelector<HTMLInputElement>('[data-file-input]')!,formatBox=root.querySelector<HTMLFieldSetElement>('.file-format')!,format=root.querySelector<HTMLSelectElement>('[data-file-format]')!,fileStatus=root.querySelector<HTMLElement>('[data-testid="file-status"]')!;
+ const saveButton=root.querySelector<HTMLButtonElement>('[data-file="save"]')!,restoreButton=root.querySelector<HTMLButtonElement>('[data-file="restore"]')!;
+ let fileBusy=false,fileSequence=0,destroyed=false;
+ const fileState=(message:string,error=false)=>{fileStatus.setAttribute('role',error?'alert':'status');fileStatus.setAttribute('aria-live',error?'assertive':'polite');if(fileStatus.textContent!==message)fileStatus.textContent=message;fileStatus.classList.toggle('error',error)};
+ const busy=(value:boolean)=>{fileBusy=value;saveButton.disabled=value||!transfer;restoreButton.disabled=value||!transfer;root.querySelector<HTMLButtonElement>('[data-file="download"]')!.disabled=value};busy(false);
+ const perform=async(name:'Save'|'Restore',operation:()=>Promise<void>)=>{
+  if(!transfer||fileBusy)return;const id=++fileSequence;busy(true);fileState(name==='Save'?'Preparing file…':'Validating file…');
+  try{await operation();if(destroyed||fileSequence!==id)return;formatBox.hidden=true;refreshConfiguration();fileState(name==='Save'?'Saved file.':'Restored results and settings.')}
+  catch(error){if(destroyed||fileSequence!==id)return;if(error instanceof DOMException&&error.name==='AbortError'){fileState('');return}const detail=error instanceof Error?error.message:'The operation could not be completed';fileState(detail.startsWith(name+' failed')?detail:name+' failed: '+detail,true)}
+  finally{if(!destroyed&&fileSequence===id)busy(false)}
+ };
+ const fileClick=(event:Event)=>{const button=(event.target as Element).closest<HTMLButtonElement>('button[data-file]');if(!button||!settings.contains(button))return;
+  if(button.dataset.file==='save'){formatBox.hidden=false;format.focus()}
+  else if(button.dataset.file==='restore'){fileInput.value='';fileInput.click()}
+  else if(button.dataset.file==='download')void perform('Save',()=>transfer!.save(format.value as 'json'|'sqlite'));
+  else if(button.dataset.file==='cancel'){fileSequence++;transfer?.cancel();busy(false);formatBox.hidden=true;fileState('');saveButton.focus()}
+ };
+ const fileChanged=()=>{const file=fileInput.files?.[0];if(file)void perform('Restore',()=>transfer!.restore(file));fileInput.value=''};
+ settings.addEventListener('click',fileClick);fileInput.addEventListener('change',fileChanged);
  /** Explicitly refresh after external context updates; no session dispatch or broadcast. */
  function refreshConfiguration(){if(latestSnapshot)render(latestSnapshot);else renderControls()}
  function renderControls(){
@@ -143,5 +167,5 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   pause.textContent = snapshot.status === 'paused' ? 'Resume' : 'Pause';
   pause.dataset.action = snapshot.status === 'paused' ? 'resume' : 'pause';
  }
- return {board,render,refreshConfiguration,destroy: () => { settings.removeEventListener('change',changeSettings); latestSnapshot=undefined; actions.removeEventListener('click',handleClick); root.remove(); }};
+ return {board,render,refreshConfiguration,destroy: () => { destroyed=true;fileSequence++;settings.removeEventListener('click',fileClick);fileInput.removeEventListener('change',fileChanged); settings.removeEventListener('change',changeSettings); latestSnapshot=undefined; actions.removeEventListener('click',handleClick); root.remove(); }};
 }

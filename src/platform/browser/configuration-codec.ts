@@ -5,7 +5,7 @@ type Key=keyof GameConfiguration;
 export const configurationKeys=Object.freeze(['ghostVisibility','hardDropEnabled','nextPreviewEnabled','hardDropLockPolicy','generalLockPolicy','holdEnabled'] as const);
 export interface ConfigurationResolution {values:GameConfiguration;urlValues:Partial<GameConfiguration>}
 export interface CookieScope {path:string;secure:boolean}
-const cookieName=(key:Key)=>'tetris_config_'+key;
+export const cookieName=(key:Key)=>'tetris_config_'+key;
 function decoded(key:Key,text:string|null|undefined):GameConfiguration[Key]|undefined {
  const value=text==='true'?true:text==='false'?false:text;
  return isConfigurationValue(key,value)?value:undefined;

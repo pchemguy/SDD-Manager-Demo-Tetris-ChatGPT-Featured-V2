@@ -2,16 +2,25 @@
 import { createSession } from '../../application/session.js';
 import type { Action, Session } from '../../application/session.js';
 import {createConfiguration,toRuleOptions,type ConfigurationController} from '../../application/configuration.js';
+import {createFileTransfer,type WorkerAccess} from './file-transfer.js';
 import {createBrowserConfiguration} from './configuration-persistence.js';
 import { createGameView } from '../../ui/game-view.js';
 import '../../ui/styles.css';
+/** Real completion sources are supplied only by the browser host, never by ranking. */
+function createBrowserSession(mount:HTMLElement,random:()=>number):Session {
+ return createSession(random,e=>console.error('Session listener failed',e),{
+  newId:()=>{const bytes=new Uint8Array(16);mount.ownerDocument.defaultView!.crypto.getRandomValues(bytes);bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;const hex=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');return `${hex.slice(0,8)}-${hex.slice(8,12)}-${hex.slice(12,16)}-${hex.slice(16,20)}-${hex.slice(20)}`},
+  completedAt:()=>new Date().toISOString(),
+ });
+}
 /** Reuse explicit configuration/controller across sequential remounts; defaults are independent.
  * An injected controller owns its RNG/reporter; the random argument initializes only default controllers. */
-export function mountGame(mount:HTMLElement,random:()=>number=Math.random,configuration:ConfigurationController=createConfiguration(),session:Session=createSession(random,e=>console.error('Session listener failed',e))):()=>void {
+export function mountGame(mount:HTMLElement,random:()=>number=Math.random,configuration:ConfigurationController=createConfiguration(),session:Session=createBrowserSession(mount,random),workerAccess?:WorkerAccess):()=>void {
  const doc=mount.ownerDocument,win=doc.defaultView!;
  let last:number|null=null,frame=0,disposed=false,pauseTimer:number|null=null;
  const act=(action:Action)=>{const before=session.getSnapshot().status;const after=session.dispatch(action,action==='start'||action==='restart'?toRuleOptions(configuration.getSnapshot()):undefined);if(action==='restart'||after.status!==before)last=null};
- const view=createGameView(mount,act,undefined,configuration);
+ const transfer=createFileTransfer(win,session,configuration,{readUrl:()=>win.location.href,readCookies:()=>doc.cookie,readHistoryState:()=>win.history.state,writeCookie:value=>{doc.cookie=value},replaceUrl:(url,state)=>win.history.replaceState(state,'',url)},workerAccess);
+ const view=createGameView(mount,act,undefined,configuration,transfer);
  const unsubscribe=session.subscribe(view.render);view.render(session.getSnapshot());
  const tick=(time:number)=>{if(disposed)return;if(session.getSnapshot().status==='running'){session.advance(last===null?0:Math.max(0,Math.min(100,time-last)));last=time}else last=null;frame=win.requestAnimationFrame(tick)};
  const key=(e:KeyboardEvent)=>{
@@ -31,7 +40,7 @@ export function mountGame(mount:HTMLElement,random:()=>number=Math.random,config
  view.board.addEventListener('keydown',key);mount.addEventListener('focusout',focusOut);
  win.addEventListener('blur',pause);doc.addEventListener('visibilitychange',hidden);
  frame=win.requestAnimationFrame(tick);
- return ()=>{if(disposed)return;disposed=true;if(pauseTimer!==null)win.clearTimeout(pauseTimer);win.cancelAnimationFrame(frame);view.board.removeEventListener('keydown',key);mount.removeEventListener('focusout',focusOut);win.removeEventListener('blur',pause);doc.removeEventListener('visibilitychange',hidden);unsubscribe();view.destroy()};
+ return ()=>{if(disposed)return;disposed=true;if(pauseTimer!==null)win.clearTimeout(pauseTimer);win.cancelAnimationFrame(frame);view.board.removeEventListener('keydown',key);mount.removeEventListener('focusout',focusOut);win.removeEventListener('blur',pause);doc.removeEventListener('visibilitychange',hidden);unsubscribe();view.destroy();transfer.destroy()};
 }
 const mount=document.querySelector<HTMLElement>('#app');
 if(mount){

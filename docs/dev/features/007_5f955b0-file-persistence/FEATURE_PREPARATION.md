@@ -1,10 +1,12 @@
+> Historical campaign007 source; current authorities are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). This archived source is not an executable owner.
+
 # Feature preparation record
 
 ## Identity and governing inputs
 
 Campaign `007_5f955b0`, slug `007_5f955b0-file-persistence`. Original baseline and branch-off `5f955b0eec0d871d37d256b8bb7927d29dffbb0f` (published v1.6.0); creation parent and preparation integration target `main`. Working preparation branch `design-docs/007_5f955b0-file-persistence`; reserved implementation branch `feature/007_5f955b0-file-persistence`; reserved historical package `docs/dev/features/007_5f955b0-file-persistence/`. No historical directory is created at opening.
 
-Current [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [leaderboard](spec/leaderboard.md), [configuration](spec/session-configuration.md), [browser persistence](spec/configuration-persistence.md), [PLAN](PLAN.md), [layout](layout.md) and [TASKS](TASKS.md) govern retained behavior. Main TASKS owns completed T-001–T-052. Frozen campaigns001–006, completed ranges and releases remain unchanged. Existing manual AI-log scaffold is reused; recording remains manual. No previous workflow is resumed.
+Current [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md), [leaderboard](../../spec/leaderboard.md), [configuration](../../spec/session-configuration.md), [browser persistence](../../spec/configuration-persistence.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md) govern retained behavior. Main TASKS owns completed T-001–T-052. Frozen campaigns001–006, completed ranges and releases remain unchanged. Existing manual AI-log scaffold is reused; recording remains manual. No previous workflow is resumed.
 
 ## Original human request
 

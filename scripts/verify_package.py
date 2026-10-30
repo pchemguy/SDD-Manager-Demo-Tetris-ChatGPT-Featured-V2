@@ -9,7 +9,7 @@ import shutil
 import stat
 import sys
 import zipfile
-from package_browser import ROOT, REQUIRED, allowed_name
+from package_browser import ROOT, REQUIRED, allowed_name, require_runtime
 
 def validate_members(members):
     """Reject duplicate, noncanonical, encrypted, excessive or nonregular entries."""
@@ -33,6 +33,7 @@ def verify(path: Path, require_checksum: bool = False) -> dict:
         if archive.testzip() is not None:
             raise ValueError('Archive CRC failed')
         names = set(archive.namelist())
+        require_runtime(names)
         if not (REQUIRED | {'BUILD-MANIFEST.json'}) <= names:
             raise ValueError('Missing required deployment member')
         manifest = json.loads(archive.read('BUILD-MANIFEST.json'))

@@ -6,13 +6,20 @@ import re
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED = {'index.html', 'LICENSE', 'THIRD-PARTY-NOTICES.txt', 'docs/INSTALL.md', 'docs/CONTROLS.md'}
+BUILD_REQUIRED = {'index.html', 'schemas/game-save.schema.json'}
+REQUIRED = BUILD_REQUIRED | {'LICENSE', 'THIRD-PARTY-NOTICES.txt', 'docs/INSTALL.md', 'docs/CONTROLS.md', 'docs/FILE-FORMAT.md'}
 ASSET_TYPES = {'.js', '.css', '.svg', '.png', '.jpg', '.webp', '.woff', '.woff2', '.ico'}
 
 def allowed_name(name: str) -> bool:
     """Accept canonical portable member names and only deployment-owned files."""
     p = PurePosixPath(name)
-    return bool(re.fullmatch(r'[A-Za-z0-9_./-]+', name)) and str(p) == name and not p.is_absolute() and '..' not in p.parts and (name in REQUIRED or name == 'BUILD-MANIFEST.json' or (name.startswith('assets/') and p.suffix in ASSET_TYPES))
+    return bool(re.fullmatch(r'[A-Za-z0-9_./-]+', name)) and str(p) == name and not p.is_absolute() and '..' not in p.parts and (name in REQUIRED or name == 'BUILD-MANIFEST.json' or (name.startswith('assets/') and p.suffix in ASSET_TYPES) or bool(re.fullmatch(r'assets/sql-wasm-browser-[A-Za-z0-9_-]+\.wasm', name)))
+
+def require_runtime(names) -> None:
+    """Fail closed on missing or stale duplicate worker/WASM deployment assets."""
+    for pattern in [r'assets/file-worker-[A-Za-z0-9_-]+\.js', r'assets/sql-wasm-browser-[A-Za-z0-9_-]+\.wasm']:
+        if sum(bool(re.fullmatch(pattern, name)) for name in names) != 1:
+            raise ValueError('Expected exactly one current file worker and SQLite WASM')
 
 def safe_bytes(root: Path, path: Path) -> bytes:
     """Reject symbolic links in any selected source path component."""
@@ -34,13 +41,14 @@ def collect(root: Path) -> dict[str, bytes]:
             raise ValueError('Symbolic links are not deployment inputs')
         if path.is_file():
             name = path.relative_to(dist).as_posix()
-            if not allowed_name(name) or name in REQUIRED - {'index.html'} or name == 'BUILD-MANIFEST.json':
+            if not allowed_name(name) or name in REQUIRED - BUILD_REQUIRED or name == 'BUILD-MANIFEST.json':
                 raise ValueError('Unexpected build asset: ' + name)
             members[name] = safe_bytes(root, path)
-    for name in REQUIRED - {'index.html'}:
+    for name in REQUIRED - BUILD_REQUIRED:
         members[name] = safe_bytes(root, root / name)
     if not REQUIRED <= members.keys():
         raise ValueError('Missing required deployment member')
+    require_runtime(members)
     return members
 
 def build(root: Path, target: Path) -> Path:
@@ -65,4 +73,7 @@ def build(root: Path, target: Path) -> Path:
 if __name__ == '__main__':
     version = json.loads((ROOT / 'package.json').read_text())['version']
     result = build(ROOT, ROOT / 'artifacts' / ('classic-tetris-browser-v' + version + '.zip'))
-    print(result.name, hashlib.sha256(result.read_bytes()).hexdigest())
+    stable = build(ROOT, ROOT / 'artifacts/release/classic-tetris-browser.zip')
+    if stable.read_bytes() != result.read_bytes():
+        raise ValueError('Stable upload alias differs from versioned archive')
+    print(result.name, hashlib.sha256(result.read_bytes()).hexdigest(), 'stable alias verified')

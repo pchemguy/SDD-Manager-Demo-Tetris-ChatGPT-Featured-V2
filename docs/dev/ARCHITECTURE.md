@@ -10,9 +10,11 @@ The [project brief](PROJECT.md) requires a browser game with modern rules and re
 | --- | --- | --- |
 | Rules core | Piece geometry, legal placements, movement, rotation, locking, row removal and score/level progression. | TypeScript language and explicit inputs; no DOM, wall clock or global random source. |
 | Selected configuration | Detached six-setting page memory, atomic validation and pure rule projection. | Explicit typed values; no DOM, clock, RNG, storage or broadcast. |
-| Session controller | Own the current game state; order commands, gravity advances and state notifications. | Rules core, configuration value types/validation and injected random-number callback. |
+| Session controller | Own the current game state; order commands, gravity advances and state notifications. | Rules core, configuration value types/validation and injected random-number and completion-metadata callbacks. |
 | Shared UI | Render board/status/controls/leaderboard and emit semantic actions. | Read-only session snapshots, explicit selected context, action callbacks and an injected DOM mount element. |
-| Browser persistence | Restore/save six selected fields through pure formats and independent best-effort effects. | C-07 and explicit URL/cookie/history callbacks; no game state, DOM globals or scheduler. |
+| Browser persistence | Restore/save six selected fields through pure formats, independent best-effort native-edit effects and a separate checked Restore batch. | C-07 and explicit URL/cookie/history callbacks; no game state, DOM globals or scheduler. |
+| Portable contract | C-10 complete detached version/results/settings values, JSON/schema and semantic validation. | C-09 and C-07 domain predicates; no host effects. |
+| Manual file workflow | C-11 capture, byte codecs, bounded workers, native transfer resources and staged checked restore. | Application boundaries, C-08 effects and explicit browser capabilities. |
 | Browser host | Mount/unmount the app; translate keyboard, frame timing, focus and visibility events. | Session, selected configuration/persistence and shared UI; browser APIs. |
 
 The host composes the application. The session depends on the core, and the UI consumes the session boundary. No dependency points back from the core or session into the UI or browser host. There is no generic platform-plugin framework.
@@ -53,7 +55,7 @@ C-07 owns the page-selected ghost/preview values; C-05 binds that explicit conte
 
 ## Configuration flow and compatibility
 
-C-07 supplies createConfiguration/getSnapshot/update, canonical isConfigurationValue and toRuleOptions. C-04 validates exact legacy or complete-rule Start/Restart inputs and copies active rules; it enforces both locking policies and disabled actions. C-05 uses active snapshots for gameplay eligibility and selected values for the six native controls. Display edits explicitly rerender the latest snapshot without dispatch or observer notification; external context updates use refreshConfiguration. C-06 owns the page context and all browser resources. Legacy view/mount arguments and the boolean option callback remain usable. [S-01–S-08](spec/session-configuration.md) own exact timing, errors and lifetime.
+C-07 supplies createConfiguration/getSnapshot/update/prepare, canonical isConfigurationValue and toRuleOptions. C-04 validates exact legacy or complete-rule Start/Restart inputs and copies active rules; it enforces both locking policies and disabled actions. C-05 uses active snapshots for gameplay eligibility and selected values for the six native controls. Display edits explicitly rerender the latest snapshot without dispatch or observer notification; external context updates use refreshConfiguration. C-06 owns the page context and all browser resources. Legacy view/mount arguments and the boolean option callback remain usable. [S-01–S-08](spec/session-configuration.md) own exact timing, errors and lifetime.
 
 ## Penetrator rule state and appearance
 
@@ -94,8 +96,42 @@ C-08 has no game snapshot, competing settings state, scheduler, listener or back
 
 ## Leaderboard completion and lifetime
 
-C-04 owns bounded history in the same transaction as the current game. Pure application helper C-09 validates and ranks explicit results with no mutable authority, clock, RNG, DOM or storage. A successful running-to-game-over transition captures the final candidate score through that helper before the combined candidate commits and subscribers run. Both ordinary lock/spawn and Hold/spawn endings use this seam. Precommit failure preserves game/history; listener failure cannot lose or duplicate completion.
+C-04 owns bounded history in the same transaction as the current game. Pure application helper C-09 validates and ranks explicit results with no mutable authority, clock, RNG, DOM or storage. A successful running-to-game-over transition captures the final candidate score with injected stable ID/UTC metadata through that helper before the combined candidate commits and subscribers run. Both ordinary lock/spawn and Hold/spawn endings use this seam. Precommit failure preserves game/history; listener failure cannot lose or duplicate completion.
 
 Start/Restart constructs fresh gameplay fields while copying retained history. Fresh controllers begin empty. C-05 projects the detached Snapshot.leaderboard through its normal render path; it never submits or ranks scores. C-06 supports sequential explicit-controller remount through optional fourth mountGame argument; default mounts and fresh page entry create independent controllers. An explicit controller retains its RNG/reporter and has one live mount at a time. Teardown releases host resources without submitting or mutating a retained controller.
 
 Controller ownership avoids a UI-observer race and a second store. C-08 still persists only six selected values; settings may restore while a new page has empty score history. Shared core/application/UI never import platform code. Exact L-01–L-08 contracts belong to [leaderboard specification](spec/leaderboard.md), with logical responsibilities in [DECOMPOSITION](DECOMPOSITION.md).
+
+## Manual file integration
+
+C-04 requires explicit completion callbacks and exposes staged history replacement. C-07 prepares complete selected values without effects; C-08 stages checked browser effects. C-05 projects a native Settings disclosure, one bottom Save/Restore pair and transfer state through semantic callbacks. C-06 supplies cryptographic UUIDv4/UTC time, browser capabilities and disposal. No second history/configuration authority is introduced.
+
+## Metadata and ordering
+
+A real completion obtains a stable UUID and UTC timestamp once, inside the candidate transaction before publication. The browser injects those external inputs; deterministic tests inject literal sources. All controller consumers are updated coherently rather than synthesizing a completion time during Save. A metadata-source failure leaves the candidate uncommitted, as a failed random draw does; external source invocation itself cannot be rewound.
+
+Rank by descending score with existing entries winning ties. Transfer arrays retain that order. SQLite uses an ordinary rowid table with a textual unique result ID: insert rows in array order and read using explicit `ORDER BY rowid`. This preserves tie order without adding a column to `high_scores(id, score, timestamp)` or treating the ID as a rank. Timestamp remains completion metadata, not a replacement tie breaker. No implicit SQL query ordering is relied upon.
+
+## Validation and restore transaction
+
+Decode into detached data; validate complete structure, version, bounded cardinalities, IDs, safe integer scores, real canonical UTC timestamps and all setting values. Both codecs produce the same C-10 domain value. The shipped JSON Schema is the structural source; generated standalone validation avoids a divergent handwritten schema interpreter. Semantic checks supplement it for unique IDs, actual date validity, duplicate text keys and ranking.
+
+The browser coordinator stages the entire import while gameplay remains governed by its ordinary lifecycle. At commit it captures current history, selected values, owned cookies and URL/history state. Commit is synchronous with session/configuration publication withheld until the joint state is coherent. Restore is not a game action and creates no completed result. File parsing completion is never a rollback checkpoint for intervening legitimate gameplay.
+
+Validate first; then attempt checked cookie/URL effects with compensation on failure before exposing changed memory to observers. Native cookie APIs provide no multi-cookie transaction. Keep parsing/validation failures strictly mutation-free, and contain/reverse recoverable persistence failures with verified readback. Do not claim a platform-atomic cookie transaction or silently report Restore success when required effects fail. The detailed contract must state the environmental boundary for irrecoverable external interference; no code can guarantee rollback if the browser itself refuses every compensating write or is terminated. Ordinary manual setting edits retain their independent best-effort behavior.
+
+## Browser formats and resource isolation
+
+Use a packaged SQLite WebAssembly runtime (sql.js) in a dedicated transient Worker for SQLite decoding/encoding; use the same bounded worker pipeline for JSON parsing/validation. Fixed queries inspect an allowlisted schema and rows; never execute SQL taken from the file. Each worker receives bytes or a detached export snapshot, returns a validated value or bytes, and has a finite host deadline. The worker has no session, document, cookies, URL/history or authority to apply data. Terminate it and dispose object URLs/listeners on completion, failure or teardown. One transfer operation per mount prevents stale imports overwriting later manual work.
+
+Package pinned trusted runtime/worker/WASM/schema/license assets locally with relative URLs. Gameplay and JSON exports must not require fetching a CDN or initializing SQLite. Use Vite's supported worker and asset construction from the module URL; avoid linked-worker routing assumptions. In-memory SQLite does not use OPFS, IndexedDB or persistent browser files.
+
+## Chosen approach and alternatives
+
+Use one normalized contract with two boundary codecs and a browser coordinator. Separate independent JSON and SQL restore implementations would duplicate validation and weaken equivalence/atomicity. Moving the leaderboard to a browser database would add automatic persistence and conflict with manual session lifetime. A server-backed converter would violate static delivery. Native SQLite APIs requiring filesystem isolation headers add deployment constraints unnecessary for small downloaded snapshots; packaged in-memory sql.js meets this use case.
+
+The upstream [sql.js documentation](https://sql.js.org/) documents in-memory database import/export from byte arrays. [Ajv standalone validation](https://ajv.js.org/standalone) supports generating isolated validation code at build time. These establish candidate capability, not observed integration or packaged compatibility; exact stable dependency pins, licensing, worker/WASM resolution and CSP-compatible generation require implementation verification.
+
+## Verification seams
+
+Use literal metadata sources and complete records in pure/controller tests; faults before publication test retained state and observers. Codec tests compare normalized datasets across JSON/SQLite and independent Python sqlite3 reads. Browser tests use actual downloads/uploads, real gameplay completions, malformed files, checked-persistence faults, cancellation/teardown and actual extracted-prefix deployment. No production board/bonus setter or automatic import shortcut is introduced. The [component decomposition](DECOMPOSITION.md) owns detailed collaborations; [file contracts](spec/file-persistence.md) owns exact formats and failures.

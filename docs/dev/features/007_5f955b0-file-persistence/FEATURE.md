@@ -1,3 +1,5 @@
+> Historical campaign007 source; current authorities are [PROJECT](../../PROJECT.md), [SPEC](../../SPEC.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and [TASKS](../../TASKS.md). This archived source is not an executable owner.
+
 # File persistence
 
 ## Purpose and scope
@@ -38,4 +40,4 @@ The visible leaderboard remains Rank/Score; exporting timestamps and IDs does no
 
 ## Governing context
 
-Retained behavior is defined by [PROJECT](PROJECT.md), [session leaderboard](spec/leaderboard.md), [configuration](spec/session-configuration.md) and [browser persistence](spec/configuration-persistence.md). This feature adds manual portable files and result metadata to those guarantees.
+Retained behavior is defined by [PROJECT](../../PROJECT.md), [session leaderboard](../../spec/leaderboard.md), [configuration](../../spec/session-configuration.md) and [browser persistence](../../spec/configuration-persistence.md). This feature adds manual portable files and result metadata to those guarantees.

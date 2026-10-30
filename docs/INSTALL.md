@@ -1,10 +1,10 @@
 # Install the browser game
 
-Extract the static browser ZIP and copy its contents, including assets/, to a static HTTP/HTTPS host. Open index.html through that host. Hosting below a prefix such as /games/tetris/ is supported. Direct file:// loading is not a supported deployment mode.
+Extract the static browser ZIP and copy its contents, including assets/ and schemas/, to a static HTTP/HTTPS host. Open index.html through that host. Hosting below a prefix such as /games/tetris/ is supported. Direct file:// loading is not a supported deployment mode.
 
 For a local development preview, run `python -m http.server 8080 --bind 127.0.0.1` in the extracted directory, then open http://127.0.0.1:8080/. Python is only one optional way to serve static files; the player's browser needs no Python, Node.js, account or backend service.
 
-See [controls](CONTROLS.md). Keep the included LICENSE, third-party notices and BUILD-MANIFEST.json with the deployment. The adjacent .sha256 file verifies the exact downloaded ZIP bytes; embedded metadata identifies version 1.6.0.
+See [controls](CONTROLS.md). Keep the included LICENSE, third-party notices and BUILD-MANIFEST.json with the deployment. The adjacent .sha256 file verifies the exact downloaded ZIP bytes; embedded metadata identifies version 1.7.0.
 
 ## Verify the download
 
@@ -17,3 +17,5 @@ Penetrator inventory starts at zero: earn a bonus with a four-line clear (maximu
 Cookies last 365 days from each save, use SameSite=Lax and HTTPS Secure when applicable, and are limited to the host and application directory. Open the deployed directory URL with its trailing slash, or index.html, so directory scope matches the deployment. A root deployment uses root scope; sibling non-root deployments have distinct paths. Browser cookie policy or history restrictions may prevent a save without preventing in-memory play. No account, backend, localStorage/sessionStorage or live cross-tab synchronization is used. Explicit URL parameters keep priority on every reload; remove a parameter to use its saved cookie instead. See the exact names/values in controls.
 
 Leaderboard history is memory-only for the current page. Game Over records one final score, including a blocked Hold spawn; Restart preserves completed results while abandoning an unfinished game. Reload or a new page clears the panel even when saved settings restore. No additional installation, storage permission or service is required.
+
+Manual **Save** offers JSON or SQLite; **Restore** accepts either file and replaces the session leaderboard and all six selected settings. Files do not include unfinished games. Keep the local worker/runtime/WASM assets together; SQLite requires no server-side database, CDN or browser storage. The canonical [JSON Schema and SQLite contracts](FILE-FORMAT.md) ship with the deployment.

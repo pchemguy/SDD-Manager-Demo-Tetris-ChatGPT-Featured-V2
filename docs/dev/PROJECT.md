@@ -18,16 +18,22 @@ Clear four rows at once to earn one penetrator bonus, capped at three. Board-foc
 
 ## Delivery constraints
 
-Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Keep browser input/timing/lifecycle separate from shared logic/UI. Verify the assembled game in dedicated managed Chromium and Firefox. Each completed phase is verified and integrated before its version tag and GitHub release. Current browser metadata and static package use1.6.0.
+Static HTML/CSS/JavaScript require no player-side Node.js, account or backend. Keep browser input/timing/lifecycle separate from shared logic/UI. Verify the assembled game in dedicated managed Chromium and Firefox. Each completed phase is verified and integrated before its version tag and GitHub release. Current browser metadata and static package use 1.7.0.
 
 ## Non-goals
 
-Windows Electron is a future host; no desktop executable, installer or native-widget UI is delivered. There are no hidden rows,180-degree rotations, five-piece preview, classic selector, extra score bonuses, profiles/presets/import-export, saved game state, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
+Windows Electron is a future host; no desktop executable, installer or native-widget UI is delivered. There are no hidden rows,180-degree rotations, five-piece preview, classic selector, extra score bonuses, profiles/presets, unfinished-game saves, network play, touch/gamepad controls or full Tetris Guideline compliance claim.
 
 ## Contract owners
 
-[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) and [penetrator contracts](spec/penetrator.md) and [browser persistence](spec/configuration-persistence.md) and [session leaderboard](spec/leaderboard.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.
+[SPEC](SPEC.md), [modern rules](spec/modern-rules.md), [ghost visibility](spec/ghost-visibility.md) and [configuration](spec/session-configuration.md) and [penetrator contracts](spec/penetrator.md) and [browser persistence](spec/configuration-persistence.md) and [session leaderboard](spec/leaderboard.md) and [manual files](spec/file-persistence.md) define precise behavior/acceptance. [ARCHITECTURE](ARCHITECTURE.md) and [DECOMPOSITION](DECOMPOSITION.md) define reusable boundaries; [PLAN](PLAN.md) defines delivery.
 
 ## Session leaderboard
 
-Show the ten best completed-game scores for the current page, highest first, with earlier completions first on ties. Zero scores and blocked Hold-spawn endings qualify. Capture each final Game Over score once. Start/Restart preserves completed results while abandoning an unfinished game; reload and fresh pages clear history. Render a labelled rank/score panel without moving focus. No names, dates, configuration-specific boards or score normalization are added. History is memory-only, independent of remembered settings and fresh-game state; no score cookie, URL parameter, web storage or backend exists.
+Show the ten best completed-game scores for the current page, highest first, with earlier completions first on ties. Zero scores and blocked Hold-spawn endings qualify. Capture each final Game Over score once. Start/Restart preserves completed results while abandoning an unfinished game; reload and fresh pages clear history. Render a labelled rank/score panel without moving focus. No names, visible metadata columns, configuration-specific boards or score normalization are added. History remains in page memory until manual Save and can be replaced by manual Restore, independently of remembered settings and fresh-game state; no score cookie, URL parameter, web storage or backend exists.
+
+## Manual portable files
+
+A single Save/Restore pair at the bottom of Settings transfers the current top ten complete results and all six selected values in one JSON or SQLite file. Collapsing Settings hides the pair and its related controls. Results preserve stable UUIDv4 IDs, non-negative safe-integer scores, UTC completion timestamps and saved tie order. The canonical JSON Schema and exact SQLite metadata/table contract travel with the static distribution.
+
+Restore validates the entire file before replacing history and applying all six selections, explicitly updating their cookies and URL parameters, including equal/default values. Invalid content leaves those values unchanged and shows an accessible error. Checked effect failures compensate recoverable browser writes; irreversible browser refusal is explicitly reported. The current game, active rules and normal focus/pause policy remain. Display selections apply immediately and gameplay selections on Start/Restart. Later completions join restored history; reload/new pages start empty until manually restored. Saving and restoring remain manual, with no automatic history storage or backend.

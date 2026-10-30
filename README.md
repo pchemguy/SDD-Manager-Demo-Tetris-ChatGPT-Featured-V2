@@ -12,6 +12,8 @@ Clearing four rows at once earns one penetrator bonus, capped at three. With the
 
 The Leaderboard panel shows the ten best completed-game scores for this page, highest first. Zero scores qualify; earlier completions rank first on ties. Start/Restart retains completed results but abandons an unfinished game. Reload or a new page clears history; leaderboard results are never saved in cookies, URLs or web storage. Saved settings keep their existing independent persistence.
 
+Save and Restore at the bottom of Settings manually transfer the current top ten results and all six selected settings in one JSON or SQLite file. Collapsing Settings hides both buttons. Restore validates the entire file before replacing history and selected settings, including explicit cookie/URL updates for all six values. IDs and UTC completion timestamps remain stable. Current gameplay is retained; restored history lasts for the page session. See the [portable file format](docs/FILE-FORMAT.md).
+
 ## Play
 
 Download the browser ZIP and checksum from [Releases](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/releases/latest), extract and serve the contents using any static HTTP host. Hosting below a URL prefix is supported. The player needs no Node.js, account or backend service.

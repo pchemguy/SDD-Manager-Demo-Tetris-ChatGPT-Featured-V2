@@ -233,3 +233,22 @@ Exit: all phase contracts and prior regressions supported by actual evidence, al
 | L08 source-only success or leaked fixtures |7.2 actual built/extracted acceptance and strict archive;7.3 merged/public release verification. |
 
 Two delivery milestones are intentionally retained: first the integrated playable capability, then lifecycle/deployable acceptance. Splitting pure helpers or administrative review into more milestones would delay an end-to-end useful result without reducing risk. The third milestone is the required excluded phase review unit. There are no unresolved product decisions or later capability phases hidden in this plan. [Main layout](layout.md) remains authoritative for repository placement; the leaderboard allocation is assessed before task derivation.
+
+## Phase 8 — Manual file persistence
+
+Deliver [File F-01–F-12](spec/file-persistence.md) after the Phase7 leaderboard. Metadata and one normalized contract precede checked restore; integrated JSON precedes the lazy SQLite runtime and distribution. Both formats form one capability and one v1.7.0 release after phase review/integration. No intermediate codec-only release, automatic history storage, unfinished-game serialization or additional host is included.
+
+| Milestone | Outcome and dependencies | Exit evidence |
+| --- | --- | --- |
+| 8.1 — JSON snapshots and checked restore | Complete stable metadata and schema/semantic JSON validation, staged settings/history/effects and one native disclosure/Save/Restore flow. | Genuine completion metadata, invalid-file zero mutation, checked effect rollback, pending/live timing and accessible native JSON roundtrip. Independent code/coverage review, tests, report and HANDOFF. |
+| 8.2 — Equivalent SQLite and deployable distribution | Depends on8.1. Exact metadata/tables/storage/row order, lazy local worker/WASM, both format choices, lifecycle/resource/failure coverage and complete static distribution. | Cross-format native interoperability and independent schema/sqlite3 checks; full source/built/extracted managed-browser acceptance, inspected narrow/wide layouts, strict archive/manifest/exclusion checks, required guides/licenses/schema, repeated bytes and stable alias/checksum equality. Independent whole-milestone review/report/HANDOFF. |
+| 8.3 — Phase review | Depends on8.1/8.2. Review cross-milestone implementation, current contracts and unique task ownership; integrate the complete feature. | Fresh final scoped checks with retained-input equivalence, current-document QC, archived accepted sources, no unresolved blocker/TODO, tracking closure and explicit verified integration. Eligible default-branch1.7.0 release source/tag/notes/assets/public downloads/latest and both actual source CI runs verified. |
+
+Two delivery milestones expose a usable JSON capability before SQL/platform risk, followed by exactly one excluded phase-review unit. Seven delivery tasks and two dedicated review/report tasks implement the bounded phase; T-060 owns the folded8.2 review. [layout](layout.md) owns physical paths.
+
+| Risk / contract group | Required evidence |
+| --- | --- |
+| File F01/F02/F11 | Stable complete metadata, detached values, safe integer/date/identity domains, true top-out rollback and stable ties. |
+| File F03/F04 | Published generated-schema freshness, strict JSON and exact SQLite structure/version/storage plus independent inspection/equivalence. |
+| File F05–F08/F10 | Native single-pair transfers, checked complete replacement/all-six persistence, retained active gameplay, session lifetime and accessible narrow controls/errors. |
+| File F09/F12 | Bounded transient resources, lazy-runtime failure isolation and actual relative packaged assets, reproducibility/manifest/notices/checksum and release-source identity. |
