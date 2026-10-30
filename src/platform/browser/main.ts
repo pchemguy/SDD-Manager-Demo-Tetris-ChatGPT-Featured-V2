@@ -16,7 +16,7 @@ export function mountGame(mount:HTMLElement,random:()=>number=Math.random,config
  const key=(e:KeyboardEvent)=>{
   if(e.target!==view.board)return;
   const name=e.key.toLowerCase();
-  const map:Record<string,Action>={arrowleft:'left',arrowright:'right',arrowdown:'softDrop',arrowup:'rotate',x:'rotate',z:'rotateCCW',c:'hold',shift:'hold',' ':'hardDrop',enter:'start',r:'restart'};
+  const map:Record<string,Action>={arrowleft:'left',arrowright:'right',arrowdown:'softDrop',arrowup:'rotate',x:'rotate',z:'rotateCCW',c:'hold',b:'activatePenetrator',shift:'hold',' ':'hardDrop',enter:'start',r:'restart'};
   let action=map[name];
   if(name==='p'||name==='escape')action=session.getSnapshot().status==='paused'?'resume':'pause';
   if(!action)return;e.preventDefault();

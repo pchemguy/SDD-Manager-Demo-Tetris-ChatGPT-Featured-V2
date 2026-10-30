@@ -47,7 +47,7 @@ Packaging uses Python 3.11+ standard-library scripts; this is a developer/releas
 
 dist/, artifacts/, .test-build/, .browser-cache/, test-results/, playwright-report/, node_modules/ and local caches are generated and ignored. Browser profiles/downloads and temporary extraction/server state live only in owned ignored directories. Never package .agents, docs/dev, source tests, credentials or browser installations.
 
-The conventional ignored gh.tkn remains beside root .gitignore. It is never an asset, fixture, report input or archive member. Packaging allowlists contents and rejects symlinks, unsafe archive paths and credential-like files. The final artifact names are classic-tetris-browser-v1.3.0.zip and classic-tetris-browser-v1.3.0.zip.sha256 under artifacts/.
+The conventional ignored gh.tkn remains beside root .gitignore. It is never an asset, fixture, report input or archive member. Packaging allowlists contents and rejects symlinks, unsafe archive paths and credential-like files. The final artifact names are classic-tetris-browser-v1.4.0.zip and classic-tetris-browser-v1.4.0.zip.sha256 under artifacts/.
 
 Root AGENTS.md retains execution policies and links current authorities. Setup/check commands are added there only after their implementation and validation; this planned layout does not claim those commands already work.
 
@@ -62,7 +62,7 @@ Root AGENTS.md retains execution policies and links current authorities. Setup/c
 | tests/browser/modern-rules.spec.ts | Actual modern controls, panels, timers and options. |
 | docs/dev/features/001_0882e5d-modern-rule-extensions/ | Historical accepted feature/preparation/QC sources and retained Phase 2 reports. |
 
-C-04 owns private bag/hold/options/active rules and policy-specific clocks; C-05 renders snapshots and selected settings; C-07 owns selected memory; C-06 projects its rules and owns browser resources. TASKS is the sole current executable task owner. Version metadata and local artifacts use v1.3.0; stable release asset names remain unchanged.
+C-04 owns private bag/hold/options/active rules and policy-specific clocks; C-05 renders snapshots and selected settings; C-07 owns selected memory; C-06 projects its rules and owns browser resources. TASKS is the sole current executable task owner. Version metadata and local artifacts use v1.4.0; stable release asset names remain unchanged.
 
 ## Conditional ghost allocation
 
@@ -76,7 +76,7 @@ C-04 owns private bag/hold/options/active rules and policy-specific clocks; C-05
 | docs/dev/spec/ghost-visibility.md | Current focused G-01–G-05 contracts. |
 | docs/dev/features/002_0adba6e-conditional-ghost-visibility/ | Historical current-campaign feature/preparation/QC archive and fixed Phase3 milestone/phase/final reports. |
 
-Canonical core/session and host resources retain their previous ownership. Current application metadata/package uses1.3.0; stable release asset names are unchanged. TASKS owns all executable product tasks.
+Canonical core/session and host resources retain their previous ownership. Current application metadata/package uses1.4.0; stable release asset names are unchanged. TASKS owns all executable product tasks.
 
 ## Session configuration allocation
 
@@ -92,4 +92,30 @@ Canonical core/session and host resources retain their previous ownership. Curre
 | docs/dev/spec/session-configuration.md | Current S-01–S-08 contracts. |
 | docs/dev/features/003_3977abb-session-only-game-configuration/ | Historical eligible source/preparation/adjacent-QC archive; fixed Phase4 milestone/phase/final reports. |
 
-Current static package uses1.3.0 and stable release ZIP/checksum names. No storage adapter/backend/new platform is allocated. TASKS alone owns all32 executable product tasks.
+Current static package uses1.4.0 and stable release ZIP/checksum names. No storage adapter/backend/new platform is allocated. TASKS alone owns all40 executable product tasks.
+
+## Penetrator allocation
+
+
+Penetrator implementation and verification have the following physical owners.
+
+| Path | Responsibility |
+| --- | --- |
+| src/core/penetrator.ts | C-02 pure deepest legal landing and guarded traversal predicate; explicit board/piece inputs. |
+| src/core/types.ts, src/core/board.ts | Appearance type/empty factory and appearance-aware lock with shared row compaction; retain logical Board and exact legacy lock result. |
+| src/core/kicks.ts | Optional pure candidate predicate with unchanged default tables/order/O/error behavior. |
+| src/application/session.ts | C-04 detached bank/mode/mask, ordinary four-line awards, activation/hold/traversal/grounding/drop/ghost selection and atomic lock/spawn/rollback. |
+| src/ui/game-view.ts, src/ui/styles.css | C-05 active/settled/ghost white flags, bonus symbols/count, mode/Hold descriptions and stale-state clearing; retain six native settings. |
+| src/platform/browser/main.ts | C-06 nonrepeated board B action and existing input/frame/focus lifecycle. |
+| tests/unit/penetrator.test.ts, tests/unit/appearance.test.ts | Literal pocket/bounds/kick/immutability and coupled row-mask compaction tests. |
+| tests/unit/penetrator-session.test.ts, existing session suites | Earn/spend/cap/hold/lifetime/timers/drop/ghost/rollback and legacy regression. |
+| tests/fixtures/penetrator-gameplay.ts | Deterministic legal random/action traces shared by tests to earn actual four-line awards; not production imports or setters. |
+| tests/browser/penetrator.spec.ts | Actual source/built/extracted earned-bonus B gameplay, policies, ghost/drop and indicator/white lifecycle. |
+| tests/browser/penetrator-view.spec.ts, tests/fixtures/penetrator-view.html | Source-only real-view snapshot appearance/bonus/accessibility boundary fixture. |
+| tests/browser/configuration.spec.ts, remount.spec.ts, lifecycle.spec.ts and existing fixtures | Settings independence, focus/repeat, reset and resource/lifetime regression. |
+| playwright.config.ts, tsconfig.test.json if needed | Explicit source-only fixture exclusion for built/extracted, compiler coverage and measured finite suite budget. |
+| README.md, docs/CONTROLS.md, INSTALL.md, DEVELOPMENT.md | Accurate key/bonuses/colors/Hold/landing/settings/lock policy and static deployment guidance. |
+| package.json, package-lock.json, existing scripts/CI/release inputs |1.4.0 metadata, relative build, strict reproducible package and source/artifact/readback checks. |
+| docs/dev/features/004_1cadd99-penetrator-mode/ | Fixed milestone5.1/5.2/phase/final evidence and eligible accepted-source/preparation/adjacent-QC archive. |
+
+Local versioned artifacts use classic-tetris-browser-v1.4.0.zip and sidecar; public release assets retain classic-tetris-browser.zip and matching checksum filename. Existing allowlisted assets/docs/licenses only; no test trace/HTML fixture, credential, dev source/cache or browser installation ships. RELEASE-NOTES remains the exact retained release body; the internal highlights file stays ignored and is consumed only after publication verification. No persisted schema, service, generic plugin layer or new runtime dependency is allocated.

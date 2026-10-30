@@ -1,5 +1,7 @@
 # Penetrator feature package QC
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 Result: **Ready**. Revision 1. Scope: campaign004_1cadd99, P-01–P-08 and affected current main context. User explicitly authorized QC and full implementation after the autodoc stop.
 
 ## Exact reviewed sources

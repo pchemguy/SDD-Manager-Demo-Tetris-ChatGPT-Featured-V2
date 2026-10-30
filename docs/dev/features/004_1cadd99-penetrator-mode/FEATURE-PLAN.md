@@ -1,5 +1,7 @@
 # Penetrator delivery plan
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 ## Outcome and version coverage
 
 Deliver [P-01–P-08](FEATURE-SPEC.md) as one bounded browser phase on the working v1.3.0 baseline. The phase adds earned penetrator activation, deepest valid traversal/drop/ghost, valid lock with retained white cells, capped inventory and native presentation. These concerns share one current-piece transaction and cannot be released independently as a complete ability. Browser v1.4.0 follows complete verification and integration; Electron, persistence, extra settings/shapes/scoring are excluded.
@@ -24,7 +26,7 @@ Core placement/rotation and shared compaction precede session state changes; inv
 
 Principal risks are sealed overlapping poses with no legal lock, divergent ghost/drop searches, mode-sensitive grounding and supported-delay resets, mask/board row drift, award/spend/refill rollback, stale white rendering and native key double-dispatch. Address each at its owning boundary and retain all ordinary gameplay/configuration regressions. Actual game traces must earn bonuses; do not add debug starts or shortcuts. Both general policies and all6 display choices receive representative penetrating integration coverage alongside exact model tests.
 
-Use the existing dedicated managed Chromium/Firefox environment and documented provisioning/recovery, with current runner/binaries verified before browser-dependent work. Native headed OS focus unavailable on the host is an explicit evidence limit; Electron is excluded. Source-only fixtures remain excluded from built/extracted suites and packages. Physical ownership is assessed against [layout](layout.md) before task derivation.
+Use the existing dedicated managed Chromium/Firefox environment and documented provisioning/recovery, with current runner/binaries verified before browser-dependent work. Native headed OS focus unavailable on the host is an explicit evidence limit; Electron is excluded. Source-only fixtures remain excluded from built/extracted suites and packages. Physical ownership is assessed against [layout](../../layout.md) before task derivation.
 
 Every delivery milestone has independent whole-boundary code review and test/report exits. The task list assigns a standalone review when the milestone has at least four implementation tasks and the phase has two delivery milestones; otherwise its final implementation task owns review/report/HANDOFF. The phase review always remains its own single final task. Reports stay under docs/dev/features/004_1cadd99-penetrator-mode/reports/phases/5/, with feature-root IMPLEMENTATION-REPORT.md for the final outcome.
 
@@ -38,7 +40,7 @@ Explicitly two-parent merge the exact verified published feature into its record
 
 ## Physical ownership
 
-The existing [layout](layout.md) remains the baseline. This scoped allocation supplies the feature's physical map without another layout root.
+The existing [layout](../../layout.md) remains the baseline. This scoped allocation supplies the feature's physical map without another layout root.
 
 | Path | Responsibility |
 | --- | --- |

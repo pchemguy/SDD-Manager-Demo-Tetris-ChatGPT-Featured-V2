@@ -1,5 +1,7 @@
 # Penetrator specification review
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 Current gate: Ready for scoped delivery planning; package QC and implementation are not assessed.
 
 ## Revision 1 — SPEC/design conformance

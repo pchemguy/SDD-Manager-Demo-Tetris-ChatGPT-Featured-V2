@@ -1,5 +1,7 @@
 # Penetrator task conformance review
 
+Historical accepted campaign source. Non-executable; current authority [SPEC](../../SPEC.md)/[penetrator contracts](../../spec/penetrator.md), sole task owner [TASKS](../../TASKS.md). Recorded review identities are historical.
+
 Current gate: Ready for the scoped implementation task structure. Whole-package FDOCS-009 QC, preparation integration, product tracking and implementation remain pending.
 
 ## Revision 1 — TASKS/PLAN conformance

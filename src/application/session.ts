@@ -1,24 +1,25 @@
 /** Deterministic session transactions. Only explicit durations and random inputs enter. */
-import type { Board, Piece, Kind } from '../core/types.js';
+import type { Board, Piece, Kind, Appearance } from '../core/types.js';
 import { spawn } from '../core/pieces.js';
-import { createBoard, canPlace, move, lock, landing } from '../core/board.js';
+import { createBoard, canPlace, move, lockWithAppearance, createAppearance, landing } from '../core/board.js';
 import {shuffleBag} from '../core/bag.js';
+import {canTraverse,penetratingLanding} from '../core/penetrator.js';
 import {tryRotate} from '../core/kicks.js';
 import {createConfiguration,toRuleOptions,type RuleOptions} from './configuration.js';
 import { progress, gravityInterval } from '../core/progression.js';
-export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'hardDrop'|'pause'|'resume';
+export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'hardDrop'|'pause'|'resume'|'activatePenetrator';
 /** Legacy input/mirror retained; complete RuleOptions selects the expanded active rules. */
 export interface SessionOptions {immediateHardDropLock:boolean}
-export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null;options:SessionOptions;rules:RuleOptions}
+export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null;options:SessionOptions;rules:RuleOptions;penetratorActive:boolean;penetratorBonuses:number;penetratorCells:Appearance}
 interface State extends Omit<Snapshot,'ghost'> { remainder:number; lockRemaining:number|null;bag:Kind[] }
-const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','hold','hardDrop','pause','resume'];
-const copy=(s:State):State=>({...s,options:{...s.options},rules:{...s.rules},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),active:s.active?{...s.active}:null});
+const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','hold','hardDrop','pause','resume','activatePenetrator'];
+const copy=(s:State):State=>({...s,options:{...s.options},rules:{...s.rules},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),penetratorCells:s.penetratorCells.map(r=>r.slice()),active:s.active?{...s.active}:null});
 /** Construct ready state; no draw occurs until start. Listener failures are isolated. */
 export function createSession(random:()=>number,onListenerError:(e:unknown)=>void=()=>{}) {
- const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false},rules:toRuleOptions(createConfiguration().getSnapshot())});
+ const initial=():State=>({status:'ready',board:createBoard(),penetratorActive:false,penetratorBonuses:0,penetratorCells:createAppearance(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false},rules:toRuleOptions(createConfiguration().getSnapshot())});
  let state=initial(),busy=false;
  const listeners=new Set<(s:Snapshot)=>void>();
- const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return {...snapshot,ghost:snapshot.active?landing(snapshot.board,snapshot.active):null}};
+ const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return {...snapshot,ghost:projected(snapshot)}};
  /** Consume candidate-owned sequence and keep exactly one public look-ahead. */
  const draw=(s:State):Piece=>{
   if(s.bag.length===0)s.bag=shuffleBag(random);
@@ -40,19 +41,27 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
    return getSnapshot();
   } finally {busy=false}
  }
+ /** One canonical projection drives ghost, hard drop and support. */
+ function projected(s:Pick<Snapshot,'board'|'active'|'penetratorActive'>):Piece|null {
+  return s.active?(s.penetratorActive?penetratingLanding(s.board,s.active):landing(s.board,s.active)):null;
+ }
+ function shifted(s:State,dx:number,dy:number):Piece|null {
+  if(!s.penetratorActive)return move(s.board,s.active!,dx,dy);
+  const candidate={...s.active!,x:s.active!.x+dx,y:s.active!.y+dy};return canTraverse(s.board,candidate)?candidate:null;
+ }
  /** Re-evaluate support after each placement; continuous support never resets. */
  function grounding(s:State):State {
   if(s.rules.generalLockPolicy==='failed-downward')return {...s,lockRemaining:null};
-  return {...s,lockRemaining:s.active&&!move(s.board,s.active,0,1)?s.lockRemaining??gravityInterval(s.level):null};
+  return {...s,lockRemaining:s.active&&projected(s)!.y===s.active.y?s.lockRemaining??gravityInterval(s.level):null};
  }
  function settle(s:State):State {
-  const result=lock(s.board,s.active!);
+  const result=lockWithAppearance(s.board,s.active!,s.penetratorCells,s.penetratorActive);
   const nextPiece=draw(s); // Validate before any public state is committed.
   const stats=progress(s,result.cleared),legal=canPlace(result.board,nextPiece);
-  return grounding({...s,...stats,board:result.board,active:legal?nextPiece:null,status:legal?'running':'game-over',canHold:legal&&s.rules.holdEnabled,remainder:0,lockRemaining:null});
+  return grounding({...s,...stats,board:result.board,penetratorCells:result.penetratorCells,penetratorActive:false,penetratorBonuses:Math.min(3,s.penetratorBonuses+(result.cleared===4?1:0)),active:legal?nextPiece:null,status:legal?'running':'game-over',canHold:legal&&s.rules.holdEnabled,remainder:0,lockRemaining:null});
  }
  function down(s:State,soft:boolean):State {
-  const p=move(s.board,s.active!,0,1);
+  const p=shifted(s,0,1);
   if(!p&&s.rules.generalLockPolicy==='failed-downward')return settle(s);
   return grounding(p?{...s,active:p,score:s.score+(soft?1:0)}:s);
  }
@@ -85,19 +94,23 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
   if(action==='pause')return s.status==='running'?{...s,status:'paused'}:s;
   if(action==='resume')return s.status==='paused'?{...s,status:'running'}:s;
   if(s.status!=='running'||!s.active)return s;
+  if(action==='activatePenetrator'){
+   if(s.penetratorActive||s.penetratorBonuses===0)return s;
+   return grounding({...s,penetratorActive:true,penetratorBonuses:s.penetratorBonuses-1,canHold:false});
+  }
   if(action==='hardDrop'){
    if(!s.rules.hardDropEnabled)return s;
-   const target=landing(s.board,s.active);const dropped={...s,active:target,score:s.score+2*(target.y-s.active.y)};
+   const target=projected(s)!;const dropped={...s,active:target,score:s.score+2*(target.y-s.active.y)};
    return s.rules.hardDropLockPolicy==='immediate'?settle(dropped):grounding(dropped);
   }
   if(action==='hold'){
-   if(!s.rules.holdEnabled||!s.canHold)return s;
+   if(s.penetratorActive||!s.rules.holdEnabled||!s.canHold)return s;
    const outgoing=s.active.type,incoming=s.held?spawn(s.held):draw(s),legal=canPlace(s.board,incoming);
    return grounding({...s,held:outgoing,active:legal?incoming:null,canHold:false,status:legal?'running':'game-over',remainder:0,lockRemaining:null});
   }
   if(action==='softDrop')return down(s,true);
-  if(action==='left'||action==='right')return grounding({...s,active:move(s.board,s.active,action==='left'?-1:1,0)??s.active});
-  if(action==='rotate'||action==='rotateCCW')return grounding({...s,active:tryRotate(s.board,s.active,action==='rotate'?1:-1)??s.active});
+  if(action==='left'||action==='right')return grounding({...s,active:shifted(s,action==='left'?-1:1,0)??s.active});
+  if(action==='rotate'||action==='rotateCCW')return grounding({...s,active:tryRotate(s.board,s.active,action==='rotate'?1:-1,s.penetratorActive?canTraverse:canPlace)??s.active});
   return s;
  });
  const advance=(elapsed:number):Snapshot=>run(s=>{
@@ -109,7 +122,7 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
    const step=Math.min(left,interval-s.remainder,s.lockRemaining??Infinity);
    left-=step;s.remainder+=step;if(s.lockRemaining!==null)s.lockRemaining-=step;
    if(s.lockRemaining!==null&&s.lockRemaining<=0)return settle(s);
-   if(s.remainder>=interval){s.remainder-=interval;if(s.rules.generalLockPolicy==='failed-downward'&&!move(s.board,s.active!,0,1))return settle(s);s=down(s,false)}
+   if(s.remainder>=interval){s.remainder-=interval;if(s.rules.generalLockPolicy==='failed-downward'&&!shifted(s,0,1))return settle(s);s=down(s,false)}
   }
   return s;
  });

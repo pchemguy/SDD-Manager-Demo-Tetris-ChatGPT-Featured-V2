@@ -81,3 +81,15 @@ Phase4 maps all S contracts into two justified delivery milestones (3 and2 deliv
 | PLAN.md | `febd95f4b18f1c94359a9a2f9b1972bfbf288a3f` |
 | layout.md | `eeba096ba55ee9381e02dacbe473adeb5753a8d6` |
 | spec/session-configuration.md | `ce2ce1e65a3df7da08c087d867bdaad5c7cab53d` |
+
+## Revision 5 — Penetrator incorporation
+
+Current gate: Ready. Reassessed complete affected current roots/children against accepted004 scope and independent phase review. Earlier cycles remain historical.
+
+Phase5 retains justified two delivery milestones, assigned standalone5.1 review and final-delivery5.2 review, plus dedicated phase review. All P outcomes have code/model/native/package exits and fixed report owners. Physical allocation matches implemented helpers, tests/fixtures and explicit distribution exclusions; no future platform/storage allocated. Current link/Markdown/unique-owner checks pass; no unresolved conformance finding. Runtime/release outcomes remain separate report evidence.
+
+| Source | Git blob |
+| --- | --- |
+| PLAN.md | `17f471b5da9fe815e710957703687367eb6a9a8f` |
+| layout.md | `2836fc77ef271e36f4d04a2d6a3a2575d056dac3` |
+| spec/penetrator.md | `dccdca409889b3e2cbd49b2a40635b9807d5dcc8` |

@@ -88,3 +88,15 @@ TASKS alone owns32 unique stable IDs. Transferred T-027–T-031 retain their act
 | TASKS.md | `cd6698b5cfe17878dd557632f601f243a23b50bf` |
 | PLAN.md | `febd95f4b18f1c94359a9a2f9b1972bfbf288a3f` |
 | layout.md | `eeba096ba55ee9381e02dacbe473adeb5753a8d6` |
+
+## Revision 5 — Penetrator incorporation
+
+Current gate: Ready. Reassessed complete affected current roots/children against accepted004 scope and independent phase review. Earlier cycles remain historical.
+
+Main TASKS alone owns40 unique stable IDs. Original1–32 bytes preserved;33–39 verified completion evidence transferred without new closure;40 initially closes in this semantic-transfer tree with substantive review/incorporation/QC/archive/audit/report/HANDOFF. Archived feature tasks are retired nonexecutable sources. No missing dependency, review/report owner or gate. Current link/Markdown/unique-owner checks pass; no unresolved conformance finding. Runtime/release outcomes remain separate report evidence.
+
+| Source | Git blob |
+| --- | --- |
+| TASKS.md | `1d26767cd16dbfacb82c0ba852ade2f119a14114` |
+| PLAN.md | `17f471b5da9fe815e710957703687367eb6a9a8f` |
+| layout.md | `2836fc77ef271e36f4d04a2d6a3a2575d056dac3` |
