@@ -49,3 +49,9 @@ Next eligible: FDOCS-005. Publication and exact issue closure/readback precede a
 Accept Electron contracts and scoped SPEC QC. ED01–12 and FEATURE-SPEC-REVIEW-REPORT Revision1 Ready, exact source SHA256 681f0e10afbe7c8095d7ee4b9bfeb601c0c8c15b20979314906e05d61a3dfd0f; EL-DOC-01 cold/second-launch ambiguity resolved coherently in brief/design under delegated autodoc authority. Independent behavior, errors, native/cross-build evidence classes and dual-artifact release acceptance defined; actual implementation remains pending. Preapproval covers reviewed specification; no unresolved blocker.
 
 Next eligible: FDOCS-006. Publication and exact issue closure/readback precede advancement.
+
+### FDOCS-006
+
+Accept bounded Electron delivery strategy and scoped QC. FEATURE-PLAN SHA256 e51b4db7328dae67cb564f6aaab50555816304784c640d3a4b91ca0a2bf395c6; Revision1 strategy Ready maps ED01–12 to offline host/package, complete dual-platform verification/docs and single final review. Strict prior phases preserved; native facilities accurately scoped and no artificial independent feature added. Autodoc preapproval covers strategy; physical allocation/combined QC remains next.
+
+Next eligible: FDOCS-007. Publication and exact issue closure/readback precede advancement.
