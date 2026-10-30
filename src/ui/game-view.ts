@@ -15,9 +15,9 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
  root.innerHTML = `
   <header><p class="eyebrow">THE ORIGINAL CHALLENGE</p><h1>CLASSIC<span>TETRIS</span></h1><p>Find your rhythm. Clear a little space.</p></header>
   <div class="game-layout">
-   <div class="board-wrap"><div class="board" role="img" aria-label="Tetris playfield" aria-describedby="${legendId} ${ghostId} ${abilityId}" tabindex="0"></div><p class="status" role="status" aria-live="polite" data-testid="status">Ready</p><p class="projection" id="${ghostId}" data-testid="ghost-description">No active piece</p></div>
+   <div class="board-wrap"><p class="visually-hidden" id="${legendId}">Use arrow keys to move or rotate; Space hard drops, Z rotates counterclockwise, C or Shift holds, B activates a bonus, P or Escape pauses, and R restarts.</p><div class="board" role="img" aria-label="Tetris playfield" aria-describedby="${legendId} ${ghostId} ${abilityId}" tabindex="0"></div><p class="status" role="status" aria-live="polite" data-testid="status">Ready</p><p class="projection" id="${ghostId}" data-testid="ghost-description">No active piece</p></div>
    <div class="side-left">
-    <section class="leaderboard-panel" aria-label="Leaderboard"><h2>Leaderboard</h2><p data-testid="leaderboard-empty">No completed games yet.</p><table data-testid="leaderboard" aria-label="Leaderboard"><thead><tr><th scope="col">Rank</th><th scope="col">Score</th></tr></thead><tbody></tbody></table></section>
+    <section class="leaderboard-panel" id="${legendId}-leaderboard" aria-label="Leaderboard"><h2>Leaderboard</h2><p data-testid="leaderboard-empty">No completed games yet.</p><table data-testid="leaderboard" aria-label="Leaderboard"><thead><tr><th scope="col">Rank</th><th scope="col">Score</th></tr></thead><tbody></tbody></table></section>
    <aside aria-label="Game information">
     <div class="stat"><span>SCORE</span><strong data-testid="score">0</strong></div>
     <div class="stat"><span>LEVEL</span><strong data-testid="level">1</strong></div>
@@ -25,12 +25,13 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <div class="penetrator-info"><span>Penetrator bonuses</span><strong data-testid="penetrator-bonuses" aria-label="Penetrator bonuses: 0"></strong><p class="ability-status" role="status" aria-live="polite" id="${abilityId}" data-testid="penetrator-mode"></p></div>
     <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
 
+    <div class="panel-toggles" role="group" aria-label="Panel visibility"><button type="button" class="secondary" data-panel-toggle="leaderboard" aria-controls="${legendId}-leaderboard" aria-expanded="true">Hide Leaderboard</button><button type="button" class="secondary" data-panel-toggle="settings" aria-controls="${legendId}-settings" aria-expanded="true">Hide Settings</button><button type="button" class="secondary" data-panel-toggle="help" aria-controls="${legendId}-help" aria-expanded="true">Hide Controls/help</button></div>
     <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button><button class="secondary" data-play data-action="hardDrop">Hard drop</button></div>
 
    </aside>
    </div>
    <div class="side-right">
-  <details class="settings-disclosure" open><summary>Settings</summary><fieldset class="settings-panel"><legend>Game configuration</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart.</p>
+  <section class="settings-disclosure" id="${legendId}-settings" aria-label="Settings"><h2>Settings</h2><fieldset class="settings-panel"><legend>Game configuration</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart.</p>
    <label class="settings ghost-setting"><span>Ghost visibility</span><select data-option="ghost"><option value="never">Always hide</option><option value="lower-half">Hide above midline</option><option value="always">Always show</option></select></label>
    <label class="settings"><input type="checkbox" data-option="hard-drop"><span>Hard drop (next game)</span></label>
    <label class="settings"><input type="checkbox" data-option="preview"><span>Next-piece preview</span></label>
@@ -43,13 +44,25 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
    <fieldset class="file-format" hidden><legend>Save file</legend><label>Save format <select data-file-format aria-label="Save format"><option value="json">JSON</option><option value="sqlite" ${transfer?.formats.includes('sqlite')?'':'disabled'}>SQLite</option></select></label><button type="button" data-file="download">Download</button><button type="button" class="secondary" data-file="cancel">Cancel</button></fieldset>
    <input type="file" data-file-input hidden aria-label="Restore file" accept=".json,.sqlite,.db,application/json,application/vnd.sqlite3">
    <p class="file-status" role="status" aria-live="polite" aria-label="File operation" data-testid="file-status"></p>
-  </fieldset></details>
-    <section class="help-panel" aria-label="Controls/help"><h2>Controls/help</h2>
-    <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>B</dt><dd>Penetrator (1 bonus)</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
+  </fieldset></section>
+    <section class="help-panel" id="${legendId}-help" aria-label="Controls/help"><h2>Controls/help</h2>
+    <dl class="hint" id="${legendId}-full"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>B</dt><dd>Penetrator (1 bonus)</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
     </section>
    </div>
   </div><footer>10 × 20 · SEVEN SHAPES · ONE MORE TRY</footer>`;
  mount.append(root);
+ const panelBindings=Array.from(root.querySelectorAll<HTMLButtonElement>('[data-panel-toggle]')).map(button=>{
+  const panel=root.querySelector<HTMLElement>('#'+button.getAttribute('aria-controls'))!;
+  const label=button.textContent!.slice(5);
+  const toggle=()=>{
+   if(!panel.hidden&&panel.contains(doc.activeElement))button.focus();
+   panel.hidden=!panel.hidden;
+   button.textContent=(panel.hidden?'Show ':'Hide ')+label;
+   button.setAttribute('aria-expanded',String(!panel.hidden));
+  };
+  button.addEventListener('click',toggle);
+  return {button,toggle};
+ });
  const board = root.querySelector<HTMLElement>('.board')!;
  const tiles = Array.from({length: 200}, (_, i) => {
   const tile = doc.createElement('div');
@@ -175,5 +188,5 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   pause.textContent = snapshot.status === 'paused' ? 'Resume' : 'Pause';
   pause.dataset.action = snapshot.status === 'paused' ? 'resume' : 'pause';
  }
- return {board,render,refreshConfiguration,destroy: () => { destroyed=true;fileSequence++;settings.removeEventListener('click',fileClick);fileInput.removeEventListener('change',fileChanged); settings.removeEventListener('change',changeSettings); latestSnapshot=undefined; actions.removeEventListener('click',handleClick); root.remove(); }};
+ return {board,render,refreshConfiguration,destroy: () => { destroyed=true;fileSequence++;panelBindings.forEach(({button,toggle})=>button.removeEventListener('click',toggle));settings.removeEventListener('click',fileClick);fileInput.removeEventListener('change',fileChanged); settings.removeEventListener('change',changeSettings); latestSnapshot=undefined; actions.removeEventListener('click',handleClick); root.remove(); }};
 }
