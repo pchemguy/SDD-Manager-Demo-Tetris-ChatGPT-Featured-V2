@@ -1,8 +1,10 @@
 # Session-only configuration components
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Relationship to accepted architecture
 
-[FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) adds an application-layer selected-configuration owner while retaining [DECOMPOSITION](DECOMPOSITION.md)'s C-01–C-06 boundaries. Geometry, landing, bag and score modules are unchanged; C-04 enforces the chosen rules, C-05 renders controlled settings and C-06 composes page memory and platform events.
+[FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) adds an application-layer selected-configuration owner while retaining [DECOMPOSITION](../../DECOMPOSITION.md)'s C-01–C-06 boundaries. Geometry, landing, bag and score modules are unchanged; C-04 enforces the chosen rules, C-05 renders controlled settings and C-06 composes page memory and platform events.
 
 ## C-07 selected configuration
 

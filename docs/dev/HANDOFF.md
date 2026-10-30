@@ -1,15 +1,17 @@
 # Project handoff
 
-Checkpoint: whole-package QC published, issue62 closed/read back; preparation merge pending main publication.
+Checkpoint: Phase4 feature result incorporated into main integration; merged verification passed, publication and1.3.0 release next.
 
-## Authority and current owners
+## Authority, branch and return
 
-User y accepted the six-control FEATURE/defaults, immediate display versus next-game rules, failed-attempt follow-general hard-drop interpretation and no-reload-persistence lifetime. Downstream necessary design-through-TASKS checkpoints use retained autodoc preapproval. Active FEATURE/FEATURE_ARCHITECTURE/FEATURE_DECOMPOSITION/FEATURE-SPEC/FEATURE-PLAN and physical map/FEATURE-TASKS define intended1.3.0 scope. Adjacent scoped SPEC/PLAN/TASKS reviews are Ready, not whole-package certification. FEATURE_PREPARATION retains original request, decisions/source identities and tracking.
+User authorized full QC/T-027–T-032 through verified main integration and GitHub release. Original campaign baseline3977abbcb640490c2cf60f3365681f29067b3835; preparation integrated/published main7dff2f421152e7bf69f2614462dbfbc8cd26ed11. GitHub default main and its exact remote7dff2f4 parent refreshed/read back before the explicit no-fast-forward merge of published feature dc2594c7fc4fe83becebf7b29ac21792c7a85783; current working branch is main.
 
-## Git and tracking
+## Verified result and owners
 
-Receiving main with preparation source design-docs/003_3977abb-session-only-game-configuration at81ddb25ec9fd1768d817e48dca15ce839bde1186, full baseline/creation-parent main3977abbcb640490c2cf60f3365681f29067b3835. Future feature/003_3977abb-session-only-game-configuration requires accepted preparation verified/integrated/published first. Native preparation milestone14 and issues54–62 identify the9 stages. FDOCS-001–007 published/closed; this FDOCS-008 source/QC/control/checkoff/HANDOFF must publish/read back then close61. FDOCS-009/issue62 and milestone14 remain open. Main T-001–T-026 remain complete; FEATURE-TASKS alone owns planned unchecked T-027–T-032. No Phase4 objects projected.
+T-0276e3b8d4/T-028e6baa77/T-029212d88f/T-03007d21f9/T-0315043451 published/read back, issues63–67 and milestones15/16 closed/read back. Preparation54–62/milestone14 closed. Independent phase code/document review found no findings, as did both milestone reviews. Fresh phase193 units/11 package/type/boundary/build/strict package/extracted58 pass; unchanged source/built/shipped inputs retain66/58 acceptance and T-031 clean install/environment2/reproducibility. ZIP21079 bytes SHA256364596d9a81c548a7fa500c2556f0e740400276fb3d099fd4d1711beb7568235.
 
-## Stop and next eligible action
+Current PROJECT/design/SPEC/modern/ghost/configuration/PLAN/layout are incorporated and adjacent QC reassessed. Main TASKS alone owns all32 tasks; eligible003 sources/preparation/QC archived non-executably, prior1–26 task prefix and frozen campaigns untouched. See [phase report](features/003_3977abb-session-only-game-configuration/reports/phases/4/PHASE-REPORT.md) and [outcome](features/003_3977abb-session-only-game-configuration/IMPLEMENTATION-REPORT.md). TODO None. Native headed focus unverified; Electron excluded.
 
-User explicitly authorized QC/full implementation. Publish/read back FDOCS-009/report/control/HANDOFF, close62, explicitly integrate/verify/publish preparation to actual default main, close14 and activate Phase4 before executing all T-027–T-032 through1.3.0 publication. No implementation, dependency install, product test, app version, release or canonical main-root change occurred. Existing v1.2.0 application and closed campaigns/releases unchanged; native headed focus unverified, Electron outside scope.
+## Next action and exact stop
+
+T-032 dc2594c7 closing/semantic audit and publication/readback pass; issue68 and milestone17 closed/read back. Merged193 units/11 package/type/boundary/build/strict integrity/extracted58 pass; merged ZIP equals the reviewed stable bytes. Publish/read back the explicit two-parent integration. Refresh ignored highlights/retained exact RELEASE-NOTES through that source; create the default-branch release commit/tag with identical body, publish/read back both, publish one GitHub release with stable ZIP/checksum and verify actual source/body/latest/download bytes and both release-source CI runs. Record actual outcomes in a T-032 parent-only evidence follow-up without moving tag, publish/read back and stop. No new task/campaign or routine approval is needed; do not claim pending effects completed.

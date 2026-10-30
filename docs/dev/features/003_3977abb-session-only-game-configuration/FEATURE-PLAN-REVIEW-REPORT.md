@@ -1,5 +1,7 @@
 # Session-only configuration plan review
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Current gate
 
 Ready for TASKS after combined strategy/layout assessment. Scoped document conformance only; not implementation or whole-package QC.
@@ -14,7 +16,7 @@ SHA-256 of exact reviewed sources:
 | [FEATURE_ARCHITECTURE.md](FEATURE_ARCHITECTURE.md) | `45fd94b02dc441cd3a69a46f329f625dfc43501d07641ed4a3401c66c780a5c0` |
 | [FEATURE_DECOMPOSITION.md](FEATURE_DECOMPOSITION.md) | `1620f8d75dcd50ef1b52ccbab591fb39c79bf4f46809dddaa70a225ca2b63dcb` |
 | [FEATURE-PLAN.md](FEATURE-PLAN.md) | `aa3ee86282d66818029271e27a8c0dbc26478ac4c0ccadd41f65e2a58ee4bdb9` |
-| [layout.md](layout.md) | `02ee23edd9026c3de7d8d5baa5f336abc11bd1cd3e037a22c233a18593ddb5fb` |
+| [layout.md](../../layout.md) | `02ee23edd9026c3de7d8d5baa5f336abc11bd1cd3e037a22c233a18593ddb5fb` |
 
 ## Assessment
 
@@ -29,5 +31,5 @@ Assigned C-07/shared value types, C-04 normalization/timing/gates, controlled C-
 | Source | SHA-256 |
 | --- | --- |
 | [FEATURE-PLAN.md](FEATURE-PLAN.md) | `be494bc18d587cc339984fab493ea4da94481b6fbff2602e17db29886ce612c5` |
-| [layout.md](layout.md) | `02ee23edd9026c3de7d8d5baa5f336abc11bd1cd3e037a22c233a18593ddb5fb` |
+| [layout.md](../../layout.md) | `02ee23edd9026c3de7d8d5baa5f336abc11bd1cd3e037a22c233a18593ddb5fb` |
 | [FEATURE-SPEC.md](FEATURE-SPEC.md) | `a17b63731e323c9f0e9b16d848bcb394200f94e010736d0ef8f100c6ba2a6326` |

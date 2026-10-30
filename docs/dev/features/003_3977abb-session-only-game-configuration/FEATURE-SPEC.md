@@ -1,5 +1,7 @@
 # Session-only game configuration specification
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Scope and precedence
 
 Implement [FEATURE](FEATURE.md) through [FEATURE_ARCHITECTURE](FEATURE_ARCHITECTURE.md) and [FEATURE_DECOMPOSITION](FEATURE_DECOMPOSITION.md). S-01–S-08 explicitly revise R-03/R-05/R-07/R-08/R-09, modern F-03–F-07 and ghost G-01–G-05 where settings, availability, policy selection or ownership differ. Unchanged geometry/bag/progression/error/lifecycle/distribution guarantees remain. This delta replaces the previous two separate settings, not a second conflicting panel. Target browser1.3.0; no persistence or new delivery platform.

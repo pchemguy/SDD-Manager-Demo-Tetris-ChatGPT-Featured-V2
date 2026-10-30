@@ -1,0 +1,3 @@
+# Session-only configuration campaign archive
+
+Campaign003_3977abb, original baseline3977abbcb640490c2cf60f3365681f29067b3835. Accepted sources/preparation/adjacent QC are historical non-executable snapshots after T-032 incorporation. Current owners: [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md)/[configuration](../../spec/session-configuration.md), [PLAN](../../PLAN.md), [layout](../../layout.md) and sole executable [TASKS](../../TASKS.md). Reports retain their recorded prefix. [Phase report](reports/phases/4/PHASE-REPORT.md) and [implementation outcome](IMPLEMENTATION-REPORT.md) own phase/integration/publication evidence. Prior closed campaigns are unchanged.

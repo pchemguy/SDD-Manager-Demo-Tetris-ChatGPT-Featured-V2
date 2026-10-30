@@ -76,3 +76,19 @@ Post-integration recheck found R-09 still said only the nonpersistent next-game 
 | SPEC.md | `e9bc52b633badcbcadfce8356739fcc331e19b70` |
 | spec/ghost-visibility.md | `e0cb0f3ea461678564aefae36ea0138666ab69be` |
 | spec/modern-rules.md | `f1ccc4c59596278d5bd2098d171bfee559626508` |
+
+## Revision 4 — Session-only configuration incorporation
+
+Current gate: Ready. Acting as the owning document reviewer, assessed the complete affected current owners after accepted incorporation; earlier cycles remain historical.
+
+All current roots/children form one coherent supported contract. S-01–S-08 is represented in C-07 selected memory/C-04 copied rules/C-05 controlled displays/C-06 projection, exact errors/rollback, both general/drop policy paths and disabled actions. Root R-03/R-05/R-07/R-08/R-09/R-12 and F-03–F-08/G-01–G-05 remove obsolete universal claims. Geometry/bag/scoring and legacy compatibility retained; explicit page lifetime/no storage, native accessibility and feasible delivery acceptance are objective. Independent phase reviewer inspected the incorporated set without findings. No unresolved conformance finding. Links/unique ownership and actual task-closing diffs are checked separately before publication.
+
+| Source | Git blob |
+| --- | --- |
+| PROJECT.md | `5a41f3eecc2745ca30db3d7cab7bfecce28bfa83` |
+| ARCHITECTURE.md | `ed0dc550d8b893470ccf136c4ff4c48ec7305eec` |
+| DECOMPOSITION.md | `30735a797553929a9b19687ad87122bc4b204e38` |
+| SPEC.md | `facd16e90723a22483edb03285d8e30a68fcb70f` |
+| spec/modern-rules.md | `4a039e03f16f61d4b6a3c5afa41df4f0d3f64284` |
+| spec/ghost-visibility.md | `a0b38cad3632effb29e483c403444a0bb7fbe44d` |
+| spec/session-configuration.md | `ce2ce1e65a3df7da08c087d867bdaad5c7cab53d` |

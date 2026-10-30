@@ -1,5 +1,7 @@
 # Session-only configuration specification review
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Current gate
 
 Ready for dependent planning. Scoped document conformance only; not implementation or whole-package QC.

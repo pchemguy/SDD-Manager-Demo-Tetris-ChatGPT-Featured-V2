@@ -2,7 +2,7 @@
 
 ## Scope and ownership
 
-This specification defines the classic game in [PROJECT](PROJECT.md), implemented through the boundaries in [ARCHITECTURE](ARCHITECTURE.md) and components C-01 through C-06 in [DECOMPOSITION](DECOMPOSITION.md). R-01 through R-12 are the acceptance groups. Modern rules are the current default. The focused [modern rules contracts](spec/modern-rules.md) own F-01–F-08 within R-01–R-08 and their R-10–R-12 acceptance. [Conditional ghost visibility](spec/ghost-visibility.md) G-01–G-05 extends presentation while preserving canonical projection and gameplay. Electron delivery is excluded.
+This specification defines the classic game in [PROJECT](PROJECT.md), implemented through the boundaries in [ARCHITECTURE](ARCHITECTURE.md) and components C-01 through C-07 in [DECOMPOSITION](DECOMPOSITION.md). R-01 through R-12 are the acceptance groups. Modern rules are the current default. The focused [modern rules contracts](spec/modern-rules.md) own F-01–F-08 within R-01–R-08 and their R-10–R-12 acceptance. [Conditional ghost visibility](spec/ghost-visibility.md) G-01–G-05 extends presentation while preserving canonical projection and gameplay. [Session-only configuration](spec/session-configuration.md) S-01–S-08 owns six selected values, copied active rules, both general locking policies, disabled actions and live displays. Electron delivery is excluded.
 
 ## R-01 Board and piece geometry
 
@@ -28,7 +28,7 @@ A placement is legal exactly when all occupied cells are within the board and ov
 
 ## R-03 Downward movement and locking
 
-Left/right attempt one column and soft drop one row. Successful soft drop scores one point per moved row; gravity scores none. Blocked downward attempts do not lock early. [F-04/F-05](spec/modern-rules.md) define the independent full-gravity-interval landing countdown and delayed/immediate hard drop. Lock/clear/progression/spawn is one atomic transition, never a partially observed board.
+Left/right attempt one column and soft drop one row. Successful soft drop scores one point per moved row; gravity scores none. Under the default interval policy, blocked downward attempts do not lock early. Under failed-downward policy, a blocked gravity/soft-drop attempt locks atomically; contact alone does not. [F-04/F-05](spec/modern-rules.md) define the default full-gravity-interval countdown and hard drop; [S-02–S-04](spec/session-configuration.md) define active-rule selection, failed-attempt locking and enabled/disabled actions. Lock/clear/progression/spawn is one atomic transition, never a partially observed board.
 
 ## R-04 Row clearing and progression
 
@@ -40,7 +40,7 @@ Gravity interval in milliseconds is max(100, 1000 - 75 * (level - 1)). The next 
 
 ## R-05 Elapsed time
 
-C-04 consumes running elapsed time chronologically against concurrent gravity and grounding clocks as defined in [F-04](spec/modern-rules.md#f-04-landing-countdown-and-time-r-03r-05). Lock wins coincident deadlines. Stop at the first lock/game-over and discard excess time; no advance can cascade locks across pieces. Manual actions do not consume elapsed time. Pause freezes both clocks; spawn/hold/restart establish fresh clocks.
+C-04 consumes running elapsed time chronologically against gravity and, under interval policy, grounding clocks as defined in [F-04](spec/modern-rules.md#f-04-landing-countdown-and-time-r-03r-05). [S-03](spec/session-configuration.md) defines failed-downward chronology with no grounding timer. Interval-policy lock wins coincident deadlines. Stop at the first lock/game-over and discard excess time; no advance can cascade locks across pieces. Manual actions do not consume elapsed time. Pause freezes both clocks; spawn/hold/restart establish fresh clocks.
 
 The browser host uses requestAnimationFrame timestamps. Its first frame after start/resume has delta zero; later deltas are clamped to [0,100] milliseconds before reaching the session. This prevents wall-clock catch-up after a stall. The host clears its timestamp baseline on pause, hidden state, loss of focus and restart. Model elapsed-time tests are separate from actual browser timing tests.
 
@@ -54,13 +54,13 @@ Losing window focus, hiding the document or moving focus outside the game mount 
 
 ## R-07 Input and presentation
 
-The board is keyboard focusable and named. [F-06](spec/modern-rules.md#f-06-presentation-and-controls-r-07r-10) owns the full key map, native-button/checkbox behavior and exactly-one next/hold/ghost presentation. Space hard-drops; Up/X rotate clockwise, Z counterclockwise, C/Shift hold. Only movement/soft drop accepts key repeat. Lifecycle shortcuts, native input behavior, disabled states and focus return follow F-06. The legend is always available without hover. [G-01–G-05](spec/ghost-visibility.md) add an immediate per-view Ghost visibility selector with Always default and Lower half only, without changing board shortcuts or session options.
+The board is keyboard focusable and named. [F-06](spec/modern-rules.md#f-06-presentation-and-controls-r-07r-10) owns the full key map, native-button/checkbox behavior and exactly-one next/hold/ghost presentation. Space hard-drops; Up/X rotate clockwise, Z counterclockwise, C/Shift hold. Only movement/soft drop accepts key repeat. Lifecycle shortcuts, native input behavior, disabled states and focus return follow F-06. The legend is always available without hover. [G-01–G-05](spec/ghost-visibility.md) define occupied-cell conditional visibility. [S-05–S-07](spec/session-configuration.md) define one six-control panel, live ghost/preview preferences, next-game gameplay choices and current/pending presentation without changing board shortcuts.
 
 Render the complete board, distinct settled/active occupied cells, score, total lines, level, and ready/running/paused/game-over status. Use distinguishable piece colors with visible cell borders; color is not the sole way to distinguish filled versus empty cells or session status. Announce lifecycle changes through restrained accessible status text; do not announce every gravity frame. At viewport widths of at least 320 CSS pixels, the board and controls remain usable without horizontal page overflow.
 
 ## R-08 Integration contract and errors
 
-C-04 exposes createSession(random, onListenerError?), getSnapshot(), dispatch(action, options?), advance(elapsedMs) and subscribe(listener), returning an unsubscribe function. Actions are start, restart, left, right, rotate, rotateCCW, softDrop, hold, hardDrop, pause and resume. Snapshots expose status, copied settled board, copied active piece or null, score, lines, level, next, held, canHold, ghost and copied options under F-07. Snapshot mutation must not alter later session behavior. Options validation and start/restart copying follow F-05. No browser object is part of the session API.
+C-04 exposes createSession(random, onListenerError?), getSnapshot(), dispatch(action, options?), advance(elapsedMs) and subscribe(listener), returning an unsubscribe function. Actions are start, restart, left, right, rotate, rotateCCW, softDrop, hold, hardDrop, pause and resume. Snapshots expose status, copied settled board, copied active piece or null, score, lines, level, next, held, canHold, ghost, copied options and detached four-field rules under F-07/S-02. Snapshot mutation must not alter later session behavior. Options validation and Start/Restart copying follow [S-02](spec/session-configuration.md): exact legacy boolean form or complete four-field RuleOptions, no mixed/partial/extra fields; omission preserves active rules. Unknown-action RangeError precedes options validation; otherwise TypeError validation precedes eligibility/effects. No browser object is part of the session API.
 
 dispatch returns the resulting snapshot; advance returns the resulting snapshot. Notify subscribers once after a state-changing public operation; an unchanged operation produces no notification. A single advance may move through several rows but publishes only its final snapshot. Subscribers must not dispatch reentrant operations; reject reentrant dispatch/advance with an Error before mutation. Subscribing does not invoke the listener immediately; callers obtain the initial state with getSnapshot(). Unsubscribe is idempotent. A throwing subscriber must not prevent other subscribers from observing a committed transition; report that listener failure to the host error channel without rolling back committed gameplay.
 
@@ -72,7 +72,7 @@ The session supplies an injected onListenerError(error) callback, defaulting to 
 
 Rules and session modules use TypeScript without DOM, window, document, scheduler or global Math.random access. Randomness and durations are explicit inputs. Shared UI uses the supplied mount element's document and semantic action callbacks; window-level keyboard, focus, visibility and frame scheduling belong to the browser host. Dependencies remain acyclic in the direction defined by ARCHITECTURE.
 
-The built app requires no Node.js installation, account, backend, remote asset service or worker at runtime. Local HTML, CSS and JavaScript served over static HTTP are sufficient. Direct file:// loading is not a required delivery mode. The nonpersistent next-game option in F-05 and view-local ghost visibility preference in G-02 are supported; reload resets both to their defaults. No persisted settings are supported.
+The built app requires no Node.js installation, account, backend, remote asset service or worker at runtime. Local HTML, CSS and JavaScript served over static HTTP are sufficient. Direct file:// loading is not a required delivery mode. [S-01/S-07](spec/session-configuration.md) support six in-memory page settings, explicit retained contexts and fresh-context/reload defaults. Display edits apply now; gameplay choices copy only at Start/Restart. No localStorage/sessionStorage/cookie/URL/backend restoration or cross-tab synchronization is supported.
 
 ## R-10 Browser verification
 
@@ -91,8 +91,8 @@ Each completed implementation phase is verified and integrated before its GitHub
 | Scenario | Required observation | Components |
 | --- | --- | --- |
 | Start and ordinary play | Empty ready board starts with one legal piece; input/gravity can move and rotate it; settled cells never overlap or leave bounds. | C-01, C-02, C-04, C-05, C-06 |
-| Grounded boundary | Ground contact preserves the piece; successful lateral/rotation actions remain possible; one full interval after grounding locks exactly once; continuous support does not reset the deadline. | C-01, C-02, C-04 |
-| Clock boundary | Exact interval attempts downward movement; sub-interval time does not; late landing gets a separate full countdown; support escape/relanding, pause and coincident events obey F-04; lock discards residual time. | C-03, C-04, C-06 |
+| Grounded boundary | Under interval policy ground contact preserves the piece; successful lateral/rotation actions remain possible; one full interval after grounding locks exactly once; continuous support does not reset the deadline. | C-01, C-02, C-04 |
+| Clock boundary | Exact interval attempts downward movement; sub-interval time does not; under interval policy late landing gets a separate full countdown; support escape/relanding, pause and coincident events obey F-04; lock discards residual time. | C-03, C-04, C-06 |
 | Clear and progression | Fixtures for zero through four cleared rows verify compaction, score, pre-clear multiplier and crossing 10 total lines; gravity reaches its 100 ms floor. | C-02, C-03, C-04 |
 | Spawn failure | A blocked next spawn after row removal ends the game with retained statistics and no active piece. | C-02, C-04, C-05 |
 | Recovery | Pause/resume freezes/restores the same state; restart/reload reset correctly; hidden/blurred sessions require explicit resume. | C-04, C-05, C-06 |
@@ -100,4 +100,4 @@ Each completed implementation phase is verified and integrated before its GitHub
 | Browser delivery | Both managed browser targets can start/play/pause/restart the built app; screenshots show a complete usable board; keyboard and button actions do not double-dispatch. | C-05, C-06 |
 | Package portability | Extracted deployment archive runs under a static HTTP path prefix without Node.js or network asset dependencies; archive exclusions and relative assets are verified. | C-06 / delivery |
 
-Modern acceptance additionally requires every F-01–F-08 scenario in the focused child, including ordered kick families, bag/refill rollback, hold/queue exchange, detached ghost, both hard-drop policies and next-game option isolation.
+Modern acceptance additionally requires every F-01–F-08 scenario in the focused child, including ordered kick families, bag/refill rollback, hold/queue exchange, detached ghost, both general and hard-drop policies and copied active-rule isolation. Configuration acceptance additionally requires all S-01–S-08 scenarios:96 selected/16 active combinations, validation/rollback, disabled commands, all6 live display choices, native pending state, same-context remount/new-context/reload/independent pages and no storage/URL changes.

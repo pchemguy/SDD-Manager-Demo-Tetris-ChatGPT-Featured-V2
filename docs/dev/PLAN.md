@@ -2,9 +2,9 @@
 
 ## Strategy and version coverage
 
-Deliver the initial classic browser phase, modern extensions and conditional ghost visibility phases below. Phase 1 records the v1.0.0 delivery baseline. This is the simplest useful product in the accepted scope: a playable falling-block loop with score/levels, session controls and a deployable static package. Additional platforms remain outside all browser phases. Splitting rules, UI and packaging into separately released phases would release incomplete slices of this small product rather than useful application increments.
+Deliver the initial classic browser phase, modern extensions, conditional ghost visibility and session-only configuration phases below. Phase 1 records the v1.0.0 delivery baseline. This is the simplest useful product in the accepted scope: a playable falling-block loop with score/levels, session controls and a deployable static package. Additional platforms remain outside all browser phases. Splitting rules, UI and packaging into separately released phases would release incomplete slices of this small product rather than useful application increments.
 
-The initial completed browser release is version 1.0.0. The initial build metadata and deployment archive used that version. Current browser metadata/archive use v1.2.0; publication requires the phase review, integration and release checks below. Subsequent delivered changes use semantic version increments appropriate to their compatibility and scope. No release is published merely because a milestone is complete.
+The initial completed browser release is version 1.0.0. The initial build metadata and deployment archive used that version. Current browser metadata/archive use v1.3.0; publication requires the phase review, integration and release checks below. Subsequent delivered changes use semantic version increments appropriate to their compatibility and scope. No release is published merely because a milestone is complete.
 
 ## Phase 1 — Classic browser game
 
@@ -102,7 +102,7 @@ Use the repository's isolated managed browsers and documented environment diagno
 
 ## Phase 3 — Conditional ghost visibility
 
-One delivery milestone plus one dedicated phase review milestone fits the cohesive scope. Separating predicate, selector and description into independently released milestones would expose incomplete presentation; a separate distribution milestone adds a handoff without an independent capability. Keep implementation integrated early, then finish delivery evidence. No padding to reach3–5 milestones. Additional modes, thresholds and platforms remain excluded.
+One delivery milestone plus one dedicated phase review milestone fits the cohesive scope. Separating predicate, selector and description into independently released milestones would expose incomplete presentation; a separate distribution milestone adds a handoff without an independent capability. Keep implementation integrated early, then finish delivery evidence. No padding to reach3–5 milestones. Additional modes, thresholds and platforms are excluded from Phase3; Phase4 adds the approved third display mode without changing the threshold.
 
 | Milestone | Outcome and dependencies | Required exit evidence |
 | --- | --- | --- |
@@ -118,3 +118,23 @@ Use pure fixtures for the exact predicate, shared-view snapshots for boundary re
 Keep the persistent feature/002_0adba6e-conditional-ghost-visibility branch created from its published preparation-containing main parent. At complete phase closure, incorporate the delivered accepted delta into current product owners, reassess affected document QC, transfer tasks once and archive eligible active campaign sources/adjacent QC under the recorded feature prefix. Preserve prior closed records. Reports stay under that prefix. Close verified task issues/milestones only after owning publication/readback.
 
 Integrate the exact complete phase to its recorded main parent by explicit two-parent merge; run merged checks, rebuild/compare the final package and publish/read back main. Only then create the default-branch v1.2.0 release commit/tag with exact finalized notes. Publish/reconcile ZIP/checksum assets, read back source/body/latest/inventory and public download bytes. Record actual release outcomes in a task-owned parent-only evidence follow-up without moving the release tag. No implementation or release is claimed by this plan.
+
+## Phase 4 — Session-only game configuration
+
+| Milestone | Working result/dependency | Required exits |
+| --- | --- | --- |
+| 4.1 — Session-configured gameplay | From accepted/QC/published preparation and eligible tracking, establish typed memory configuration, immutable active rules/legacy compatibility, both general policies and hard-drop/hold gating; integrate native next-game controls/current-versus-pending state with real gameplay. Existing display behavior remains usable. | Pure configuration validation/isolation,16-rule matrix and exact clock/drop/hold/error tests; actual default/failed-downward/immediate/disabled gameplay, pending-to-active restart behavior and native focus. Whole-milestone independent code review, repairs, demonstration and report/HANDOFF in the final delivery task. |
+| 4.2 — Complete settings and browser distribution | After4.1 closure, complete live three-mode ghost and optional next preview in the unified six-control panel; verify full page-context retention/reload/teardown and finalize1.3.0 static distribution. | Six display combinations and retained canonical queue/landing, all six native controls and current/pending distinction, same-context remount/new-page defaults, no storage,320px/focus screenshots, full model/browser/package regression and source/built/extracted acceptance. Reproducible archive/strict exclusions/checksums, exact user docs/release inputs, independent whole-milestone review/repairs/report/HANDOFF in the final delivery task. |
+| 4.3 — Phase review | After both delivery milestones close, assess complete S-01–S-08 and preserved default/legacy contracts. | Exactly one dedicated phase code-review/testing/report task, independent from tests; accepted current-document incorporation/QC, unique task transfer and eligible current-campaign archive, persistence audit, phase/final reports and TODO aggregation. |
+
+There are2 delivery milestones (phase review excluded). Explicit small-group assessment retains them because configuration/rule correctness and full presentation/lifetime/distribution contain different integration risks with demonstrable user outcomes. Splitting six controls into separate milestones would fragment one panel; a third packaging-only milestone adds no independent behavior. No padding or unrelated future feature belongs in the phase.
+
+The first demonstration lets a player configure next-game rule behavior and verify active-game stability. The second demonstrates complete live displays and page lifetime. Feedback can support an explicit amendment; no routine approval pause is added to an authorized range. Prerequisite configuration tasks are enabling work, not a claim of a finished settings UI.
+
+## Verification, integration and release
+
+Use deterministic settings/model fixtures for96 selected values/16 active rules, invalid inputs, exact time and rollback; actual browser play for control focus, copied-rule changes, disabled inputs and display/lifetime. Keep source-only fixtures separate from shipped source/built/extracted behavior. Preserve managed-browser/provisioning policy, process-local diagnosed recovery and native headed-focus limits; Electron remains outside scope.
+
+Execute on persistent feature/003_3977abb-session-only-game-configuration from its verified published preparation-containing main parent. Milestone exits require publication/issue closure before dependent work. Before final phase review closes, incorporate delivered scope into affected canonical owners, reassess adjacent current QC, transfer tasks once and archive eligible current sources/reports under the reserved campaign prefix. Preserve prior closed campaigns and completed task evidence.
+
+Explicitly two-parent merge the exact complete verified phase into its recorded main parent; verify merged regressions/source/artifact identity and publish/read back. Only then create the actual default-branch1.3.0 release commit/tag with exact finalized notes and ZIP/checksum; verify provider source/body/latest/inventory/public download bytes and CI. Record actual outcomes in a task-owned parent-only follow-up without moving the tag. Preparation does not execute those operations.

@@ -1,15 +1,16 @@
 /** Browser-only input, frame and focus lifecycle. Reusable logic/view have no host globals. */
 import { createSession } from '../../application/session.js';
-import type { Action, SessionOptions } from '../../application/session.js';
+import type { Action } from '../../application/session.js';
+import {createConfiguration,toRuleOptions,type ConfigurationController} from '../../application/configuration.js';
 import { createGameView } from '../../ui/game-view.js';
 import '../../ui/styles.css';
-export function mountGame(mount:HTMLElement,random:()=>number=Math.random):()=>void {
+/** Reuse an explicit context across remounts; omission creates independent default selections. */
+export function mountGame(mount:HTMLElement,random:()=>number=Math.random,configuration:ConfigurationController=createConfiguration()):()=>void {
  const doc=mount.ownerDocument,win=doc.defaultView!;
  const session=createSession(random,e=>console.error('Session listener failed',e));
  let last:number|null=null,frame=0,disposed=false,pauseTimer:number|null=null;
- let pendingOptions:SessionOptions={immediateHardDropLock:false};
- const act=(action:Action)=>{const before=session.getSnapshot().status;const after=session.dispatch(action,action==='start'||action==='restart'?pendingOptions:undefined);if(action==='restart'||after.status!==before)last=null};
- const view=createGameView(mount,act,options=>{pendingOptions={...options}});
+ const act=(action:Action)=>{const before=session.getSnapshot().status;const after=session.dispatch(action,action==='start'||action==='restart'?toRuleOptions(configuration.getSnapshot()):undefined);if(action==='restart'||after.status!==before)last=null};
+ const view=createGameView(mount,act,undefined,configuration);
  const unsubscribe=session.subscribe(view.render);view.render(session.getSnapshot());
  const tick=(time:number)=>{if(disposed)return;if(session.getSnapshot().status==='running'){session.advance(last===null?0:Math.max(0,Math.min(100,time-last)));last=time}else last=null;frame=win.requestAnimationFrame(tick)};
  const key=(e:KeyboardEvent)=>{
@@ -31,4 +32,4 @@ export function mountGame(mount:HTMLElement,random:()=>number=Math.random):()=>v
  frame=win.requestAnimationFrame(tick);
  return ()=>{if(disposed)return;disposed=true;if(pauseTimer!==null)win.clearTimeout(pauseTimer);win.cancelAnimationFrame(frame);view.board.removeEventListener('keydown',key);mount.removeEventListener('focusout',focusOut);win.removeEventListener('blur',pause);doc.removeEventListener('visibilitychange',hidden);unsubscribe();view.destroy()};
 }
-const mount=document.querySelector<HTMLElement>('#app');if(mount)mountGame(mount);
+const mount=document.querySelector<HTMLElement>('#app');if(mount)mountGame(mount,Math.random,createConfiguration());

@@ -1,10 +1,11 @@
-/** Shared, mount-scoped DOM view. Render snapshots and emit semantic actions/next-game option changes. */
+/** Shared DOM view: selected configuration is explicit, gameplay availability comes from snapshots. */
 import type { Action, Snapshot, SessionOptions } from '../application/session.js';
+import {createConfiguration, toRuleOptions, type ConfigurationController} from '../application/configuration.js';
 import type {Kind} from '../core/types.js';
 import { cells } from '../core/pieces.js';
 import { isGhostVisible, type GhostVisibilityMode } from './ghost-visibility.js';
 let sequence = 0;
-export function createGameView(mount: HTMLElement, onAction: (action: Action) => void, onOptionsChange: (options:SessionOptions)=>void=()=>{}) {
+export function createGameView(mount: HTMLElement, onAction: (action: Action) => void, onOptionsChange: (options:SessionOptions)=>void=()=>{}, configuration:ConfigurationController=createConfiguration()) {
  const doc = mount.ownerDocument;
  const root = doc.createElement('section');
  const legendId = `game-controls-${++sequence}`;
@@ -20,11 +21,19 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
     <div class="stat"><span>LINES</span><strong data-testid="lines">0</strong></div>
     <div class="planning"><div data-preview="next"><span>Next</span><strong data-testid="next-type">None</strong><div class="piece-mini" role="img" aria-label="Next piece: none"></div></div><div data-preview="held"><span>Hold</span><strong data-testid="held-type">None</strong><div class="piece-mini" role="img" aria-label="Held piece: none"></div><small data-testid="hold-status">Unavailable</small></div></div>
     <div class="actions"><button data-action="start">Start game</button><button class="secondary" data-pause data-action="pause">Pause</button><button class="secondary" data-action="restart">Restart</button><button class="secondary" data-play data-action="rotate" aria-label="Rotate clockwise">Rotate ↻</button><button class="secondary" data-play data-action="rotateCCW" aria-label="Rotate counterclockwise">Rotate ↺</button><button class="secondary" data-play data-action="hold">Hold piece</button><button class="secondary" data-play data-action="hardDrop">Hard drop</button></div>
-    <label class="settings"><input type="checkbox" data-option="immediate"> <span>Immediate hard-drop lock (next game)</span></label>
-    <label class="settings ghost-setting"><span>Ghost visibility</span><select data-option="ghost"><option value="always">Always</option><option value="lower-half">Lower half only</option></select></label>
     <dl class="hint" id="${legendId}"><dt>← →</dt><dd>Move</dd><dt>↑ / X</dt><dd>Rotate clockwise</dd><dt>Space</dt><dd>Hard drop</dd><dt>Z</dt><dd>Rotate counterclockwise</dd><dt>C / Shift</dt><dd>Hold piece</dd><dt>↓</dt><dd>Soft drop</dd><dt>P / Esc</dt><dd>Pause</dd><dt>R</dt><dd>Restart</dd></dl>
    </aside>
-  </div><footer>10 × 20 · SEVEN SHAPES · ONE MORE TRY</footer>`;
+  </div>
+  <fieldset class="settings-panel"><legend>Settings</legend><p class="settings-help">Display changes apply now. Gameplay changes apply on Start or Restart. Settings reset on page reload.</p>
+   <label class="settings ghost-setting"><span>Ghost visibility</span><select data-option="ghost"><option value="never">Always hide</option><option value="lower-half">Hide above midline</option><option value="always">Always show</option></select></label>
+   <label class="settings"><input type="checkbox" data-option="hard-drop"><span>Hard drop (next game)</span></label>
+   <label class="settings"><input type="checkbox" data-option="preview"><span>Next-piece preview</span></label>
+   <label class="settings"><input type="checkbox" data-option="immediate"><span>Immediate hard-drop lock (next game)</span></label>
+   <label class="settings ghost-setting"><span>General locking policy (next game)</span><select data-option="general"><option value="gravity-interval">Full gravity interval after grounding</option><option value="failed-downward">Failed downward movement</option></select></label>
+   <label class="settings"><input type="checkbox" data-option="hold"><span>Hold piece (next game)</span></label>
+   <p class="settings-help">Unchecked immediate lock follows the general policy. With failed downward movement, hard drop waits for a blocked downward attempt.</p>
+   <p class="settings-summary" data-testid="settings-summary"></p>
+  </fieldset><footer>10 × 20 · SEVEN SHAPES · ONE MORE TRY</footer>`;
  mount.append(root);
  const board = root.querySelector<HTMLElement>('.board')!;
  const tiles = Array.from({length: 200}, (_, i) => {
@@ -33,17 +42,33 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   tile.setAttribute('aria-hidden', 'true'); board.append(tile); return tile;
  });
  const option=root.querySelector<HTMLInputElement>('[data-option="immediate"]')!;
- const changeOptions=()=>onOptionsChange({immediateHardDropLock:option.checked});
- option.addEventListener('change',changeOptions);
- // Display preferences belong to this mount, independently of session rules/options.
- const ghostMode = root.querySelector<HTMLSelectElement>('[data-option="ghost"]')!;
- let mode: GhostVisibilityMode = 'always';
- let latestSnapshot: Snapshot | undefined;
- const changeGhostMode = () => {
-  mode = ghostMode.value === 'lower-half' ? 'lower-half' : 'always';
-  if (latestSnapshot) render(latestSnapshot);
+ const preview=root.querySelector<HTMLInputElement>('[data-option="preview"]')!;
+ const hardDrop=root.querySelector<HTMLInputElement>('[data-option="hard-drop"]')!;
+ const hold=root.querySelector<HTMLInputElement>('[data-option="hold"]')!;
+ const general=root.querySelector<HTMLSelectElement>('[data-option="general"]')!;
+ const ghostMode=root.querySelector<HTMLSelectElement>('[data-option="ghost"]')!;
+ let latestSnapshot:Snapshot|undefined;
+ const settings=root.querySelector<HTMLElement>('.settings-panel')!;
+ const changeSettings=(event:Event)=>{
+  const target=event.target;
+  if(target===option){configuration.update({hardDropLockPolicy:option.checked?'immediate':'general'});onOptionsChange({immediateHardDropLock:option.checked})}
+  else if(target===hardDrop)configuration.update({hardDropEnabled:hardDrop.checked});
+  else if(target===preview)configuration.update({nextPreviewEnabled:preview.checked});
+  else if(target===hold)configuration.update({holdEnabled:hold.checked});
+  else if(target===general)configuration.update({generalLockPolicy:general.value as 'failed-downward'|'gravity-interval'});
+  else if(target===ghostMode)configuration.update({ghostVisibility:ghostMode.value as GhostVisibilityMode});
+  refreshConfiguration();
  };
- ghostMode.addEventListener('change', changeGhostMode);
+ settings.addEventListener('change',changeSettings);
+ /** Explicitly refresh after external context updates; no session dispatch or broadcast. */
+ function refreshConfiguration(){if(latestSnapshot)render(latestSnapshot);else renderControls()}
+ function renderControls(){
+  const selected=configuration.getSnapshot();
+  option.checked=selected.hardDropLockPolicy==='immediate';option.disabled=!selected.hardDropEnabled;
+  preview.checked=selected.nextPreviewEnabled;
+  hardDrop.checked=selected.hardDropEnabled;hold.checked=selected.holdEnabled;general.value=selected.generalLockPolicy;ghostMode.value=selected.ghostVisibility;
+ }
+ renderControls();
  const actions = root.querySelector<HTMLElement>('.actions')!;
  const start = root.querySelector<HTMLButtonElement>('[data-action="start"]')!;
  const pause = root.querySelector<HTMLButtonElement>('[data-pause]')!;
@@ -69,14 +94,18 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
  const renderHeld=makeMini(root.querySelector<HTMLElement>('[data-preview="held"] .piece-mini')!,'Held');
  function render(snapshot: Snapshot) {
   latestSnapshot = snapshot;
+  renderControls();
+  const selected=configuration.getSnapshot();
+  const mode=selected.ghostVisibility;
   root.dataset.status = snapshot.status;
-  root.querySelector('[data-testid="next-type"]')!.textContent=snapshot.next??'None';renderNext(snapshot.next);
-  root.querySelector('[data-testid="held-type"]')!.textContent=snapshot.held??'None';renderHeld(snapshot.held);
-  root.querySelector('[data-testid="hold-status"]')!.textContent=snapshot.canHold?'Available':'Unavailable';
+  root.querySelector('[data-testid="next-type"]')!.textContent=selected.nextPreviewEnabled?(snapshot.next??'None'):'Off';renderNext(selected.nextPreviewEnabled?snapshot.next:null);
+  if(!selected.nextPreviewEnabled)root.querySelector('[data-preview="next"] .piece-mini')!.setAttribute('aria-label','Next piece: off');
+  root.querySelector('[data-testid="held-type"]')!.textContent=snapshot.rules.holdEnabled?(snapshot.held??'None'):'Off';renderHeld(snapshot.rules.holdEnabled?snapshot.held:null);
+  root.querySelector('[data-testid="hold-status"]')!.textContent=!snapshot.rules.holdEnabled?'Off':snapshot.canHold?'Available':'Unavailable';
   const activeCells = new Map(snapshot.active ? cells(snapshot.active).map(([x,y]) => [y * 10 + x, snapshot.active!.type]) : []);
   const showGhost = isGhostVisible(snapshot.ghost, mode);
   const ghostCells=new Set(showGhost&&snapshot.ghost?cells(snapshot.ghost).map(([x,y])=>y*10+x):[]);
-  root.querySelector('[data-testid="ghost-description"]')!.textContent=snapshot.ghost?(showGhost?`Ghost ${snapshot.ghost.type} lands on row ${Math.max(...cells(snapshot.ghost).map(([,y])=>y))+1}`:'Ghost hidden above the midline'):'No active piece';
+  root.querySelector('[data-testid="ghost-description"]')!.textContent=snapshot.ghost?(showGhost?`Ghost ${snapshot.ghost.type} lands on row ${Math.max(...cells(snapshot.ghost).map(([,y])=>y))+1}`:mode==='never'?'Ghost hidden':'Ghost hidden above the midline'):'No active piece';
   tiles.forEach((tile, i) => {
    const active = activeCells.get(i);
    const kind = active ?? snapshot.board[Math.floor(i / 10)][i % 10];
@@ -86,11 +115,15 @@ export function createGameView(mount: HTMLElement, onAction: (action: Action) =>
   for (const key of ['score','level','lines'] as const) root.querySelector(`[data-testid="${key}"]`)!.textContent = String(snapshot[key]);
   const label = {ready:'Ready',running:'Playing',paused:'Paused','game-over':'Game over'}[snapshot.status];
   if (status.textContent !== label) status.textContent = label;
-  root.querySelectorAll<HTMLButtonElement>('[data-play]').forEach(button=>{button.disabled=snapshot.status!=='running'||(button.dataset.action==='hold'&&!snapshot.canHold)});
+  root.querySelectorAll<HTMLButtonElement>('[data-play]').forEach(button=>{button.disabled=snapshot.status!=='running'||(button.dataset.action==='hold'&&!snapshot.canHold)||(button.dataset.action==='hardDrop'&&!snapshot.rules.hardDropEnabled)});
+  const describe=(rules:ReturnType<typeof toRuleOptions>)=>`Hard drop ${rules.hardDropEnabled?'On':'Off'} · Hold ${rules.holdEnabled?'On':'Off'} · General lock: ${rules.generalLockPolicy==='gravity-interval'?'full gravity interval':'failed downward movement'} · Hard-drop lock: ${rules.hardDropLockPolicy==='immediate'?'immediate':'general'}`;
+  const pending=toRuleOptions(selected);
+  const differs=Object.keys(pending).some(key=>pending[key as keyof typeof pending]!==snapshot.rules[key as keyof typeof pending]);
+  root.querySelector('[data-testid="settings-summary"]')!.textContent=snapshot.status==='ready'?`Next game: ${describe(pending)}`:`Current game: ${describe(snapshot.rules)}${differs?` | Pending next game: ${describe(pending)}`:' | Next game: same rules'}`;
   start.disabled = snapshot.status !== 'ready';
   pause.disabled = !['running','paused'].includes(snapshot.status);
   pause.textContent = snapshot.status === 'paused' ? 'Resume' : 'Pause';
   pause.dataset.action = snapshot.status === 'paused' ? 'resume' : 'pause';
  }
- return {board,render,destroy: () => { option.removeEventListener('change',changeOptions); ghostMode.removeEventListener('change',changeGhostMode); latestSnapshot=undefined; actions.removeEventListener('click',handleClick); root.remove(); }};
+ return {board,render,refreshConfiguration,destroy: () => { settings.removeEventListener('change',changeSettings); latestSnapshot=undefined; actions.removeEventListener('click',handleClick); root.remove(); }};
 }

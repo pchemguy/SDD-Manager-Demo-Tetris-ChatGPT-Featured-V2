@@ -4,16 +4,18 @@ import { spawn } from '../core/pieces.js';
 import { createBoard, canPlace, move, lock, landing } from '../core/board.js';
 import {shuffleBag} from '../core/bag.js';
 import {tryRotate} from '../core/kicks.js';
+import {createConfiguration,toRuleOptions,type RuleOptions} from './configuration.js';
 import { progress, gravityInterval } from '../core/progression.js';
 export type Action='start'|'restart'|'left'|'right'|'rotate'|'softDrop'|'rotateCCW'|'hold'|'hardDrop'|'pause'|'resume';
+/** Legacy input/mirror retained; complete RuleOptions selects the expanded active rules. */
 export interface SessionOptions {immediateHardDropLock:boolean}
-export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null;options:SessionOptions}
+export interface Snapshot {status:'ready'|'running'|'paused'|'game-over';board:Board;active:Piece|null;score:number;lines:number;level:number;next:Kind|null;held:Kind|null;canHold:boolean;ghost:Piece|null;options:SessionOptions;rules:RuleOptions}
 interface State extends Omit<Snapshot,'ghost'> { remainder:number; lockRemaining:number|null;bag:Kind[] }
 const actions:Action[]=['start','restart','left','right','rotate','softDrop','rotateCCW','hold','hardDrop','pause','resume'];
-const copy=(s:State):State=>({...s,options:{...s.options},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),active:s.active?{...s.active}:null});
+const copy=(s:State):State=>({...s,options:{...s.options},rules:{...s.rules},bag:s.bag.slice(),board:s.board.map(r=>r.slice()),active:s.active?{...s.active}:null});
 /** Construct ready state; no draw occurs until start. Listener failures are isolated. */
 export function createSession(random:()=>number,onListenerError:(e:unknown)=>void=()=>{}) {
- const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false}});
+ const initial=():State=>({status:'ready',board:createBoard(),active:null,score:0,lines:0,level:1,remainder:0,lockRemaining:null,bag:[],next:null,held:null,canHold:false,options:{immediateHardDropLock:false},rules:toRuleOptions(createConfiguration().getSnapshot())});
  let state=initial(),busy=false;
  const listeners=new Set<(s:Snapshot)=>void>();
  const getSnapshot=():Snapshot=>{const {remainder:_,lockRemaining:__,bag:___,...snapshot}=copy(state);return {...snapshot,ghost:snapshot.active?landing(snapshot.board,snapshot.active):null}};
@@ -40,36 +42,56 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
  }
  /** Re-evaluate support after each placement; continuous support never resets. */
  function grounding(s:State):State {
+  if(s.rules.generalLockPolicy==='failed-downward')return {...s,lockRemaining:null};
   return {...s,lockRemaining:s.active&&!move(s.board,s.active,0,1)?s.lockRemaining??gravityInterval(s.level):null};
  }
  function settle(s:State):State {
   const result=lock(s.board,s.active!);
   const nextPiece=draw(s); // Validate before any public state is committed.
   const stats=progress(s,result.cleared),legal=canPlace(result.board,nextPiece);
-  return grounding({...s,...stats,board:result.board,active:legal?nextPiece:null,status:legal?'running':'game-over',canHold:legal,remainder:0,lockRemaining:null});
+  return grounding({...s,...stats,board:result.board,active:legal?nextPiece:null,status:legal?'running':'game-over',canHold:legal&&s.rules.holdEnabled,remainder:0,lockRemaining:null});
  }
  function down(s:State,soft:boolean):State {
   const p=move(s.board,s.active!,0,1);
+  if(!p&&s.rules.generalLockPolicy==='failed-downward')return settle(s);
   return grounding(p?{...s,active:p,score:s.score+(soft?1:0)}:s);
  }
- /** Options are copied only at start/restart; active rules stay fixed until replacement. */
- const dispatch=(action:Action,options?:SessionOptions):Snapshot=>run(s=>{
-  if(!actions.includes(action))throw new RangeError('Unknown action');
-  let selected:SessionOptions|undefined;
-  if(options!==undefined){
-   if(!['start','restart'].includes(action)||options===null||typeof options!=='object'||Array.isArray(options)||Reflect.ownKeys(options).length!==1||!Object.hasOwn(options,'immediateHardDropLock')||typeof options.immediateHardDropLock!=='boolean')throw new TypeError('Options require exactly immediateHardDropLock:boolean on start/restart');
-   selected={immediateHardDropLock:options.immediateHardDropLock};
+ /** Normalize exact legacy or complete rule input, without retaining caller objects. */
+ function selectedRules(options:SessionOptions|RuleOptions):RuleOptions {
+  if(options===null||typeof options!=='object'||Array.isArray(options))throw new TypeError('Invalid session rule options');
+  const keys=Reflect.ownKeys(options),configuration=createConfiguration();
+  if(keys.length===1&&Object.hasOwn(options,'immediateHardDropLock')){
+   const value=Reflect.get(options,'immediateHardDropLock');
+   if(typeof value!=='boolean')throw new TypeError('immediateHardDropLock must be boolean');
+   return toRuleOptions(configuration.update({hardDropLockPolicy:value?'immediate':'general'}));
   }
-  if(action==='restart'||(action==='start'&&s.status==='ready')){const fresh=initial();fresh.options=selected??{...s.options};fresh.status='running';fresh.active=draw(fresh);fresh.canHold=true;return grounding(fresh)}
+  const fields=['hardDropEnabled','holdEnabled','generalLockPolicy','hardDropLockPolicy'];
+  if(keys.length!==4||keys.some(k=>typeof k!=='string'||!fields.includes(k)))throw new TypeError('Options require complete rules or legacy immediateHardDropLock');
+  return toRuleOptions(configuration.update(options as RuleOptions));
+ }
+ /** Active rules are copied only at Start/Restart; page preferences remain separate. */
+ const dispatch=(action:Action,options?:SessionOptions|RuleOptions):Snapshot=>run(s=>{
+  if(!actions.includes(action))throw new RangeError('Unknown action');
+  let selected:RuleOptions|undefined;
+  if(options!==undefined){
+   if(!['start','restart'].includes(action))throw new TypeError('Options only accepted on start/restart');
+   selected=selectedRules(options);
+  }
+  if(action==='restart'||(action==='start'&&s.status==='ready')){
+   const fresh=initial();fresh.rules={...(selected??s.rules)};
+   fresh.options={immediateHardDropLock:fresh.rules.hardDropLockPolicy==='immediate'};
+   fresh.status='running';fresh.active=draw(fresh);fresh.canHold=fresh.rules.holdEnabled;return grounding(fresh);
+  }
   if(action==='pause')return s.status==='running'?{...s,status:'paused'}:s;
   if(action==='resume')return s.status==='paused'?{...s,status:'running'}:s;
   if(s.status!=='running'||!s.active)return s;
   if(action==='hardDrop'){
+   if(!s.rules.hardDropEnabled)return s;
    const target=landing(s.board,s.active);const dropped={...s,active:target,score:s.score+2*(target.y-s.active.y)};
-   return s.options.immediateHardDropLock?settle(dropped):grounding(dropped);
+   return s.rules.hardDropLockPolicy==='immediate'?settle(dropped):grounding(dropped);
   }
   if(action==='hold'){
-   if(!s.canHold)return s;
+   if(!s.rules.holdEnabled||!s.canHold)return s;
    const outgoing=s.active.type,incoming=s.held?spawn(s.held):draw(s),legal=canPlace(s.board,incoming);
    return grounding({...s,held:outgoing,active:legal?incoming:null,canHold:false,status:legal?'running':'game-over',remainder:0,lockRemaining:null});
   }
@@ -87,7 +109,7 @@ export function createSession(random:()=>number,onListenerError:(e:unknown)=>voi
    const step=Math.min(left,interval-s.remainder,s.lockRemaining??Infinity);
    left-=step;s.remainder+=step;if(s.lockRemaining!==null)s.lockRemaining-=step;
    if(s.lockRemaining!==null&&s.lockRemaining<=0)return settle(s);
-   if(s.remainder>=interval){s.remainder-=interval;s=down(s,false)}
+   if(s.remainder>=interval){s.remainder-=interval;if(s.rules.generalLockPolicy==='failed-downward'&&!move(s.board,s.active!,0,1))return settle(s);s=down(s,false)}
   }
   return s;
  });

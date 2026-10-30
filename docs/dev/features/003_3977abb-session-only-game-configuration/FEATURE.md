@@ -1,10 +1,12 @@
 # Session-only game configuration
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Intended outcome
 
 Give players one settings panel for display preferences and gameplay options in the current loaded browser page. Values remain in page-session memory and reset to sensible initial defaults on reload. Replace the existing separate ghost selector and immediate-hard-drop checkbox with the unified controls, retaining their useful behavior within the expanded configuration.
 
-Build on the current [game](PROJECT.md), [system contracts](SPEC.md), [modern rules](spec/modern-rules.md) and [conditional ghost](spec/ghost-visibility.md). This feature intentionally extends the supported ghost modes and settings, adds hard-drop/hold/preview enablement, and makes the general locking policy selectable. Other game rules remain unchanged.
+Build on the current [game](../../PROJECT.md), [system contracts](../../SPEC.md), [modern rules](../../spec/modern-rules.md) and [conditional ghost](../../spec/ghost-visibility.md). This feature intentionally extends the supported ghost modes and settings, adds hard-drop/hold/preview enablement, and makes the general locking policy selectable. Other game rules remain unchanged.
 
 ## Controls and initial defaults
 

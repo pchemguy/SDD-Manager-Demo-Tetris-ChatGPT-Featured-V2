@@ -1,5 +1,7 @@
 # Session-only game configuration — preparation record
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Identity and request
 
 Campaign003_3977abb; full baseline3977abbcb640490c2cf60f3365681f29067b3835, published main after v1.2.0 release evidence. Preparation branch design-docs/003_3977abb-session-only-game-configuration; creation parent/default preparation target main. Intended implementation branch feature/003_3977abb-session-only-game-configuration only after accepted preparation is integrated/verified/published. Reserved report/archive prefix docs/dev/features/003_3977abb-session-only-game-configuration. No implementation branch exists yet.

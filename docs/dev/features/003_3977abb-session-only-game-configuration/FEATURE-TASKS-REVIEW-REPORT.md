@@ -1,5 +1,7 @@
 # Session-only configuration task review
 
+Historical accepted campaign snapshot. Non-executable; current product authority is [SPEC](../../SPEC.md), [configuration](../../spec/session-configuration.md) and sole task owner [TASKS](../../TASKS.md). Recorded source identities/reviews are historical.
+
 ## Current gate
 
 Ready for whole-package QC when explicitly selected. Scoped document conformance only; not implementation or whole-package QC.
@@ -16,7 +18,7 @@ SHA-256 of exact reviewed sources:
 | [FEATURE-PLAN-REVIEW-REPORT.md](FEATURE-PLAN-REVIEW-REPORT.md) | `85796d2152f27e2b748e62661ab724d0ded11e0800d79372ef4b2d4fa830e70b` |
 | [FEATURE_DECOMPOSITION.md](FEATURE_DECOMPOSITION.md) | `1620f8d75dcd50ef1b52ccbab591fb39c79bf4f46809dddaa70a225ca2b63dcb` |
 | [FEATURE-TASKS.md](FEATURE-TASKS.md) | `87ece57a99c192c7e8a8d20bbd51cfdccf54935fbce7398b579ea265eaecf25a` |
-| [TASKS.md](TASKS.md) | `10a74bb1fa49bed0024a93bd230eee005f8d4d64cf87bafe369035d290e49803` |
+| [TASKS.md](../../TASKS.md) | `10a74bb1fa49bed0024a93bd230eee005f8d4d64cf87bafe369035d290e49803` |
 
 ## Assessment
 
