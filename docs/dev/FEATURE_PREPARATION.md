@@ -85,3 +85,9 @@ FEATURE-PLAN defines Phase8 with two delivery milestones (working JSON snapshots
 ## FDOCS-007 physical allocation and combined QC
 
 FEATURE-PLAN Physical allocation extends main layout with exact pure/generated/schema/host/worker/SQLite/UI/testing/packaging/documentation owners; no separate FEATURE-LAYOUT or speculative implementation record. Inspected NodeNext/test inclusions and current package verifier confirm required consumer/generator/schema/WASM updates are planned. Adjacent PLAN report Revision1 records exact revised hash, preserved upstreams/count rationale and combined Ready gate. Autodoc preapproval applies. Publish/read back and close/read back122 before deriving tasks.
+
+## FDOCS-008 executable derivation and autodoc stop
+
+FEATURE-TASKS T053–T061 derives Phase8 exactly: four8.1 deliveries plus dedicated T057 review; three8.2 deliveries with review/report folded into T060; single final8.3/T061 phase review/integration/release task. Adjacent FEATURE-TASKS-REVIEW-REPORT Ready records exact hashes, coverage, counts, dependencies, single ownership and preserved main max52. Autodoc preapproval applies; product tasks remain unchecked. Source/docs-only checks pass; no product code/version/dependency change or runtime tests. Publish/read back and close/read back only123.
+
+FDOCS-001–008 complete under accepted brief/autodoc scope, contingent only on this final publication/issue closure. FDOCS-009/issue124 and preparation milestone30 remain open. Exact next boundary: stop before whole-feature package QC; no preparation integration, product phase activation or implementation is authorized by document completion. Future implementation uses reserved feature branch only after accepted package QC and explicit verified/published main preparation integration. No reset or further scope pass selected.
