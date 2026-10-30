@@ -46,7 +46,7 @@ Preparation milestone: [sdd-docs-005_5153bbf](https://github.com/pchemguy/SDD-Ma
 | Stage | Source/applicability and decision/QC evidence |
 | --- | --- |
 | FDOCS-001 | Clean eligible Git worktree; local/remote default main both 5153bbf695ba68dfff4af5faf2821d2d2eb94488; campaign/branch collision readback clear; all nine hosted issues and milestone verified. Existing AGENTS/discovery/disclosure/usage and manual provenance scaffold reused without resetting main initialization. Context/record/task/HANDOFF initialized coherently; owning commit publication and issue closure follow this checkpoint. |
-| FDOCS-002 | Pending first FEATURE proposal/approval; no implied approval from the original seed. |
+| FDOCS-002 | Reviewable FEATURE proposal blob `edfb2f944044bc1993f1aaab31efb2a028155df2`. Seed coverage checked against all six current fields/defaults, URL/cookie independent precedence, explicit-default cookie writes, omitted-value retention, invalid-source isolation, selected/active lifetime and static-host/platform boundaries. Proposed edge decisions are explicit; no material requirement is silently treated as human acceptance. Human approval pending; task remains unchecked and issue87 open. |
 | FDOCS-003 | Pending architecture assessment after brief acceptance. |
 | FDOCS-004 | Pending decomposition assessment. |
 | FDOCS-005 | Pending specification and scoped QC. |
@@ -57,4 +57,4 @@ Preparation milestone: [sdd-docs-005_5153bbf](https://github.com/pchemguy/SDD-Ma
 
 ## Current reset and pending transitions
 
-No reset. Publish/read back this initialization commit and then close/read back only FDOCS-001. Next publish the reviewable FEATURE proposal and record its exact identity before the human checkpoint. Brief acceptance is pending; FDOCS-002 remains unchecked/open. No package-QC readiness, preparation integration, implementation activation, product version change or release is claimed.
+No reset. Initialization `74def8a909e1e5b98a2e330a6d37387c31b70235` was pushed and exact remote ref read back; issue86 then closed/read back. Publish/read back this FEATURE proposal checkpoint. Brief acceptance is pending; FDOCS-002 remains unchecked/open. No package-QC readiness, preparation integration, implementation activation, product version change or release is claimed.
