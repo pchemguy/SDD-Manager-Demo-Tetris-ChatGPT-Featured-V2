@@ -1,15 +1,17 @@
 # Project handoff
 
-Checkpoint: penetrator campaign004_1cadd99 initialized; first FEATURE approved; autodoc design-through-tasks next, stop before package QC.
+Checkpoint: penetrator autodoc preparation through FDOCS-008 complete in its closing tree; publish/read back and close issue76, then stop before package QC.
 
-## Baseline and authority
+## Scope, authority and source
 
-User requests a penetrator-mode feature campaign; original project autodoc mode retained. Current published main baseline1cadd995008432ec1fe6668f6000d14ed4333692 includes fully completed/released1.3.0 session configuration. Existing TASKS solely owns32 completed product tasks and previous closed campaign records remain unchanged. No new product task or implementation is authorized by opening this campaign.
+User ok accepted published brief70e4800fc77b771d5342b4b34fc63153dadb87b8 / fb61a262fed18781bdcc8101c8d55d6c7cde943e, including B, Hold inhibition, reachable landing, selected clocks, zero/reset bank and retained white settled cells. Carried autodoc/onepass preapproves necessary design-through-tasks. No QC/full-implementation request for this feature has been made. Original baseline/creation parent main1cadd995008432ec1fe6668f6000d14ed4333692 is fully completed1.3.0; active branch design-docs/004_1cadd99-penetrator-mode, preparation target main. Future feature/004_1cadd99-penetrator-mode starts only after verified published preparation integration.
 
-## Active preparation
+## Prepared owners and gates
 
-Branch design-docs/004_1cadd99-penetrator-mode from exact main baseline; preparation target main. Identity/mode/seed/proposed decisions/tracking in [FEATURE_PREPARATION](FEATURE_PREPARATION.md); task-only [FEATURE_DOCS_TASKS](FEATURE_DOCS_TASKS.md) owns nine FDOCS stages. Milestone18/issues69–77 exact identities/briefs/markers/dependencies/associations verified before repository writes. FDOCS-001 initialization4a349dfe published/read back and issue69 closed/read back; FDOCS-002 acceptance is recorded in its owning completion commit; FDOCS-003–009 remain pending. [FEATURE](FEATURE.md) proposal blob fb61a262fed18781bdcc8101c8d55d6c7cde943e was the approved proposal (user ok). Existing provenance/auth reused; no credential content enters documents. Reserved feature/archive prefix004_1cadd99-penetrator-mode, without preparatory README.
+[FEATURE_PREPARATION](FEATURE_PREPARATION.md) retains request/decisions/exact stage evidence; [FEATURE_DOCS_TASKS](FEATURE_DOCS_TASKS.md) owns checkoffs. [FEATURE](FEATURE.md), [architecture](FEATURE_ARCHITECTURE.md), [decomposition](FEATURE_DECOMPOSITION.md), [SPEC](FEATURE-SPEC.md), [PLAN/physical map](FEATURE-PLAN.md) and [task list](FEATURE-TASKS.md) express accepted intent. SPEC/design QC Revision2 Ready (PEN-S01 resolved), combined PLAN/layout Revision2 Ready, TASKS conformance Revision1 Ready. These are scoped document gates, not whole-package or implementation acceptance.
 
-## Next action and stopping boundary
+Phase5 has two justified delivery milestones plus the mandatory phase review. Active FEATURE-TASKS alone owns planned T-033–T-040:4 and2 delivery tasks, separate5.1 review T-037,5.2 review/report assigned to T-039, phase review T-040. All new tasks/parents unchecked; main TASKS retains32 completed tasks unchanged. Source-only fixtures supplement real earned-bonus gameplay and never ship or provide production state setters. No code/version/shipped input changed, no product tests/implementation performed, no new release published.
 
-Publish/read back acceptance, close issue70 then continue autodoc through FDOCS-008. Proposed B key, Hold inhibition, reachable-final-position movement guard, timer interaction, zero initial/restart bank and retained white settled cells were accepted with the brief. After approval autodoc covers necessary design-through-task preparation, then stops before FDOCS-009/package QC. No implementation/release follows without authorization. Current app/version/settings unchanged; native/Electron limits remain from the completed baseline.
+## Tracking and exact next stop
+
+Preparation milestone18/issues69–77 verified before writes. FDOCS-001–007 publication/issue69–75 closure/readback complete. Publish/read back FDOCS-008 and close/read back issue76. Then stop: FDOCS-009 issue77 and milestone18 remain open. Await authorization for whole-package QC; only passing authorized FDOCS-009 permits preparation merge/publish/milestone closure, followed by an authorized implementation range and eligible Phase5 tracking. No new product issues projected. Current native/Electron limits unchanged.

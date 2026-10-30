@@ -39,11 +39,17 @@ Accepted with the first brief (user ok): B is the free board-focused activation 
 | --- | --- |
 | FDOCS-001 | Clean published main baseline, governing current inputs/actual host, campaign identity/source ownership, carried mode/checkpoint, existing provenance/authentication and complete preparation projection verified. Initialization4a349dfe0db7b3abfdc6e7e8bf92d6cee7b5c255 published/read back; issue69 closed/read back before brief drafting. |
 | FDOCS-002 | FEATURE proposal blob `fb61a262fed18781bdcc8101c8d55d6c7cde943e` authored/reviewed by sdd-design against the supplied seed and current PROJECT/SPEC/modern/ghost/configuration/implementation seams. All requested outcomes covered; proposed interactions explicitly separated. User ok accepted this exact proposal; status wording only is normalized in the accepted source. Downstream necessary documents are preapproved under autodoc; implementation is not authorized. |
-| FDOCS-003–009 | Not started. |
+| FDOCS-003/004 | Necessary architecture/component overlays accepted under autodoc and published; issues71/72 closed/read back. |
+| FDOCS-005 | P-01–P-08 SPEC/design QC Revision2 Ready, PEN-S01 resolved; published06b1601, issue73 closed/read back. |
+| FDOCS-006/007 | Strategy then combined physical-map QC Ready, published0fda5fd/f4fec2e; issues74/75 closed/read back. |
+| FDOCS-008 | FEATURE-TASKS33–40 and adjacent conformance QC Ready in this stage closing tree; publication/issue76 closure follows. |
+| FDOCS-009 | Not started; whole-package QC requires separate authorization. |
 
 ## Pending transitions
 
-Initialization published/read back and issue69 closed/read back. FEATURE proposal70e4800f published/read back and accepted by user ok. Persist/publish acceptance and close issue70, then proceed through necessary design/specification/plan/layout/task preparation to FDOCS-008; stop before package QC. No downstream design, QC, integration, implementation or release has run.
+FDOCS-001–007 published/read back and issues69–75 closed/read back. Publish/read back FDOCS-008 with task-list QC/HANDOFF, then close/read back issue76 and stop. FDOCS-009 issue77 and milestone18 stay open. Whole-package QC, preparation integration, phase projection, implementation and1.4.0 release are not executed. Current app remains1.3.0; main TASKS/product code/shipped inputs and prior closed records unchanged.
+
+## Completed stage evidence
 
 ### FDOCS-002 — Accept penetrator mode brief
 
@@ -82,3 +88,9 @@ Sources: `docs/dev/FEATURE-PLAN.md` blob `8952e2649b1116584a2231a7721aad7b9882bf
 Autodoc applies. FEATURE-PLAN physical map assigns C02/C04/C05/C06 code, appearance/landing/session tests, deterministic earned-game traces, actual versus source-only browser fixtures, compiler/runner exclusions,1.4 distribution and fixed report/archive owners. Combined PLAN/layout QC Revision2 Ready with exact identities; no unresolved placement or source duplication. Task derivation eligible.
 
 Sources: `docs/dev/FEATURE-PLAN.md` blob `9ed0334208558c87f8c0d26db67beb4b8f02256a`, `docs/dev/FEATURE-PLAN-REVIEW-REPORT.md` blob `eead28af136bdcea8ba0240e0e8d1841a5fbfd34`.
+
+### FDOCS-008 — Prepare reviewed penetrator implementation tasks
+
+Autodoc preparation through tasks complete: T033–T040 across Phase5 two delivery milestones and one phase review;4/2 delivery counts assessed, standalone5.1 review T037 and final-delivery5.2 review T039 assigned, T040 owns final phase/incorporation/archive/audit/release evidence. Adjacent task conformance QC Ready with unique IDs, exact hierarchy/links/source identities; all product tasks unchecked. HANDOFF/AGENTS updated. Stop before FDOCS-009/package QC; no implementation/version change.
+
+Sources: `docs/dev/FEATURE-TASKS.md` blob `7ac058f73feb2c85310f9bde15cfe5a4d226ab47`, `docs/dev/FEATURE-TASKS-REVIEW-REPORT.md` blob `3f99f813ba798e2ce3c92b4b59416027bbfc3625`, `AGENTS.md` blob `de7e0b5bd9b74d1c7b2cbbc6ac99622f06d7b601`.
