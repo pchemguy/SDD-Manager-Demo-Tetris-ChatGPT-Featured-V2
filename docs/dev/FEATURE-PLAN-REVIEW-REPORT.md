@@ -2,7 +2,7 @@
 
 ## Current gate
 
-Ready for combined strategy/layout and dependent task derivation, per Revision1. Current FEATURE-PLAN blob `6eeb374d2e6d74141b6b4b57330a6601b1b8bdfe` includes the scoped physical allocation; initial strategy source and assessment remain below. Reviewed FEATURE-PLAN blob `13d937dd479c0ba9cd8b1d544cfb9dbf309d0b6c` against FEATURE-SPEC `32dffa3556346fffaa4b6f77f41d0241c8d6e995` and its current Ready scoped SPEC report, approved FEATURE `edfb2f944044bc1993f1aaab31efb2a028155df2`, feature design and existing PLAN/layout. Governing main PLAN `17f471b5da9fe815e710957703687367eb6a9a8f`, layout `2836fc77ef271e36f4d04a2d6a3a2575d056dac3`. This does not assert whole-package readiness or implementation.
+Ready for combined strategy/layout and dependent task derivation, per Revision1. Current FEATURE-PLAN blob `b5a4ef10baec521542e782d7e0665c216f7fbc9e` includes the scoped physical allocation; initial strategy source and assessment remain below. Reviewed FEATURE-PLAN blob `13d937dd479c0ba9cd8b1d544cfb9dbf309d0b6c` against FEATURE-SPEC `32dffa3556346fffaa4b6f77f41d0241c8d6e995` and its current Ready scoped SPEC report, approved FEATURE `edfb2f944044bc1993f1aaab31efb2a028155df2`, feature design and existing PLAN/layout. Governing main PLAN `17f471b5da9fe815e710957703687367eb6a9a8f`, layout `2836fc77ef271e36f4d04a2d6a3a2575d056dac3`. This does not assert whole-package readiness or implementation.
 
 ## Initial strategy review
 
@@ -25,3 +25,7 @@ Reviewed actual tree, tsconfig.test.json/Node test discovery, browser target exc
 The map covers source/public interfaces, pure tests, integration/native tests, docs, version/package/CI, generated artifacts and current-document incorporation/archive/report owners. New files are marked intended; existing paths/commands are not presented as newly validated. Existing report locations, stable public artifact names and exclusions are preserved. Root AGENTS receives active feature navigation without rewriting execution policies or declaring unimplemented commands valid.
 
 Recheck: all U-01–U-08 routes and unchanged Phase6 milestones still match the revised physical allocation; task-sized modifications can remain localized to the named collaborating modules. Earlier phases/tasks/closed packages remain untouched. Confirmed layout/conformance findings: None. Initial strategy conclusions remain valid; combined gate Ready. Autodoc preapproval applies. No runtime tests, package QC, implementation activation or release has been performed.
+
+## Revision 2 — Package-test path correction
+
+2026-10-30, sdd-plan during task derivation. Finding URL-PLAN-01: the scoped package allocation named nonexistent tests/package/; the actual pytest package suite is tests/fixtures/package_checks.py, invoked by scripts/test-package.py. Corrected that one physical reference. Revised FEATURE-PLAN blob b5a4ef10baec521542e782d7e0665c216f7fbc9e. Rechecked actual file discovery and the package npm entry, with no change to contracts, milestones, source ownership or execution commands. Combined strategy/layout gate remains Ready; finding resolved. Earlier source identities/assessments remain historical within their named cycles. No package tests were executed or claimed by this documentation correction.
