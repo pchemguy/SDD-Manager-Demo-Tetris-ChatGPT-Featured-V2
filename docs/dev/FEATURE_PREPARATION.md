@@ -25,3 +25,9 @@ FDOCS stages are recorded below from actual source identities and preapproval/re
 Establish Windows Electron campaign009 preparation context. Required projection read back before writes; UI delivery completed, exact main baseline pinned, original request/preapprovals and strict scope retained; existing provenance reused. FEATURE_PREPARATION/HANDOFF/task-only records initialized coherently; no product or frozen-history change.
 
 Next eligible: FDOCS-002. Publication and exact issue closure/readback precede advancement.
+
+### FDOCS-002
+
+Accept preapproved Windows Electron feature brief. FEATURE SHA256 b3990f97bc4a417380e8c926ff88018ce84e0ab5255839d425a1405a94a51394; seed coverage and retained browser/game/settings/file contracts checked. Agent chose portable Windows10/11x64 unsigned ZIP with bundled pinned runtime, shared exact renderer and isolated host; installer/signing/updates/other desktop OS delivery excluded. Explicit human brief/autodoc preapproval covers acceptance; no unresolved principal-scope question blocks design.
+
+Next eligible: FDOCS-003. Publication and exact issue closure/readback precede advancement.
