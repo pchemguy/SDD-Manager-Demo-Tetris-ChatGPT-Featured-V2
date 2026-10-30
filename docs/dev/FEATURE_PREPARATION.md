@@ -54,3 +54,9 @@ Human "Do QC and full implement" authorizes complete campaign through T068, inco
 ## Verified implementation entry
 
 Preparation84ab776 explicitly merged/published as main56f459d35d40600b2fc29ebc37dc5f2aaca9bc36; all9 prep issues and milestone34 closed/read back. Implementation feature branch created from that exact main parent/branch-off, returning to main. Phase9 label and milestones35/36/37 plus task issues143–149 verified with exact markers/associations before T062. Full human-authorized range remains062–068 through integration/release. Scratch projection multiline-title422 corrected/reconciled before activation, with no duplicate objects. Existing independent packageQC Ready; environment2 repeated managed-browser smoke cases pass.
+
+## Queued next campaign — Windows Electron
+
+After UI layout campaign008 is completed and verified, the human explicitly requests a new feature campaign for a Windows Electron packaged app as the second delivery platform. Preserve browser usability; share application logic/UI, adapt platform behavior, bundle all desktop runtime assets and require no separate Node.js installation or development server. Applicable later releases include both the Windows package and browser build. New campaign identity/baseline is allocated only after008 completion.
+
+Authorization: human selected autodoc with project/feature brief, pre-QC checkpoint, QC and full implementation in scope/preapproved. This covers the new campaign's document checkpoints and advancing beyond its autodoc008 stop into whole-package QC, preparation integration and full task implementation/integration/release; no repeated routine approval is required. Technical QC/tracking/publication and honest native-verification limits remain. Do not fold Electron into the UI campaign or begin it before UI completion/verification.

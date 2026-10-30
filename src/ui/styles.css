@@ -87,7 +87,7 @@ aside[aria-label="Game information"]{width:220px;flex:none;min-width:0}
 .settings-disclosure{width:280px;flex:none;margin:0;min-width:0}
 .settings-disclosure .settings-panel{margin:0;grid-template-columns:minmax(0,1fr);padding:12px}
 .settings-disclosure>summary{padding:0 0 10px}
-.help-panel{width:180px;flex:none;min-width:0;padding:12px;border:1px solid #35425b;border-radius:10px;background:#151e2e}
+.help-panel{width:200px;flex:none;min-width:0;padding:12px;border:1px solid #35425b;border-radius:10px;background:#151e2e}
 .help-panel h2{font-size:14px;color:#b7f66b;margin:0 0 10px}.help-panel .hint{margin:0}
 .actions button,.hint dd,.settings span{overflow-wrap:anywhere}
 @media(max-width:1439px){
