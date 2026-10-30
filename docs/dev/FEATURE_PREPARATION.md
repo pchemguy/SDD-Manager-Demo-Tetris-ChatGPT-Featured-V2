@@ -11,11 +11,11 @@ Main v1.5.0 is implemented, verified, integrated and released; no prior unfinish
 ## Current control
 
 - Mode: autodoc/onepass, retained from the original project-wide instruction. One scope/pass: session-only top-ten completed-game leaderboard. First FEATURE accepted by human reply "k" to the published brief at20e4bbfd4d4902645168fbbbbf52d249c491d237; blob e97e41c1340ecbbb60b2497214364689f7c5df50. Following that acceptance, later necessary document checkpoints through FDOCS-008 are preapproved by the mapped mode; stop before whole-package QC.
-- Authorized range now: complete the accepted single-scope autodoc document pass through FDOCS-008, then stop before package QC/integration/implementation. Earlier QC/full-implementation authorization ended with campaign005 and does not authorize this campaign's implementation.
+- Authorized range now: human “Do QC and full implement” selects FDOCS-009, verified preparation integration/activation, all T047–052 work and reviews, canonical incorporation/archive, main integration and v1.6.0 release/download/CI verification. No further routine permission checkpoint.
 - Strict preservation: retain completed prior phase/task ranges, frozen campaigns, tags and releases. No multipass or flexible integration selected.
 - Tracking: enabled by AGENTS default and retained project policy. Native campaign preparation milestone and all nine exact issue identities/markers/associations verified before the first repository write. No product phase objects or product tasks projected.
 - Reporting: concise Standard updates; actual host Linux/bash. Existing eligible repository and protected authentication reused. No product tests or environment installs needed for opening documentation.
-- Next stage: FDOCS-009 (whole-package QC awaits separate direction).
+- Next stage: publish/read back009, close109, explicitly integrate/publish preparation into main, close26, then activate Phase7 and execute047–052.
 
 ## Decision provenance
 
@@ -37,7 +37,7 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | FDOCS-006 | FEATURE-PLAN defines bounded Phase7 with integrated7.1 capability,7.2 lifetime/distribution and exactly-one7.3 phase review. Adjacent strategy review covers all L contracts, failures, reports, canonical incorporation/archive, merged verification and1.6.0 release/readback. Two delivery milestones explicitly justified; final implementation tasks own milestone review under small-count rule. Layout recheck precedes tasks. Autodoc preapproval applies. |
 | FDOCS-007 | Appended scoped leaderboard allocation to main layout and active-owner AGENTS navigation; no FEATURE-LAYOUT. C09/C04/C05/C06 sources, pure/session/actual-page/source-only-fixture tests, package/docs/canonical incorporation and fixed006 reports/archive all mapped. Combined PLAN/layout Revision1 exact-identity recheck Ready for task derivation; two-milestone rationale retained, no upstream contract changes. Autodoc preapproval applies. |
 | FDOCS-008 | FEATURE-TASKS047–052 derived from accepted Phase7 plan/L01–08/layout; adjacent exact-source conformance review Ready. Five delivery tasks across3/2 groups plus exactly one phase-review task, counts/acyclic dependencies/whole-milestone final-task ownership and code/tests/docs/package/incorporation/release/report routes assessed. Main TASKS/PLAN unchanged, frozen archives retained. HANDOFF/active AGENTS navigation records final autodoc stop; no implementation or whole-package QC. Publish then close108 only;109/milestone26 stay open. |
-| FDOCS-009 | [#109](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/109) |
+| FDOCS-009 | Whole package and affected main/controller/host interfaces reviewed Ready; FEATURE-QC-REPORT retains exact identities and independent/coordinator assessment. Full implementation authorized; publication/issue109/main preparation integration/milestone26/product activation follow in order. |
 
 ## Stage evidence
 
@@ -51,8 +51,8 @@ Preparation milestone [26](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-C
 | FDOCS-006 | FEATURE-PLAN defines bounded Phase7 with integrated7.1 capability,7.2 lifetime/distribution and exactly-one7.3 phase review. Adjacent strategy review covers all L contracts, failures, reports, canonical incorporation/archive, merged verification and1.6.0 release/readback. Two delivery milestones explicitly justified; final implementation tasks own milestone review under small-count rule. Layout recheck precedes tasks. Autodoc preapproval applies. |
 | FDOCS-007 | Appended scoped leaderboard allocation to main layout and active-owner AGENTS navigation; no FEATURE-LAYOUT. C09/C04/C05/C06 sources, pure/session/actual-page/source-only-fixture tests, package/docs/canonical incorporation and fixed006 reports/archive all mapped. Combined PLAN/layout Revision1 exact-identity recheck Ready for task derivation; two-milestone rationale retained, no upstream contract changes. Autodoc preapproval applies. |
 | FDOCS-008 | FEATURE-TASKS047–052 derived from accepted Phase7 plan/L01–08/layout; adjacent exact-source conformance review Ready. Five delivery tasks across3/2 groups plus exactly one phase-review task, counts/acyclic dependencies/whole-milestone final-task ownership and code/tests/docs/package/incorporation/release/report routes assessed. Main TASKS/PLAN unchanged, frozen archives retained. HANDOFF/active AGENTS navigation records final autodoc stop; no implementation or whole-package QC. Publish then close108 only;109/milestone26 stay open. |
-| FDOCS-009 | Whole-package QC not selected or performed. |
+| FDOCS-009 | Whole package and affected main/controller/host interfaces reviewed Ready; FEATURE-QC-REPORT retains exact identities and independent/coordinator assessment. Full implementation authorized; publication/issue109/main preparation integration/milestone26/product activation follow in order. |
 
 ## Pending transitions
 
-FDOCS-008 accepted or assessed under the approved brief/autodoc mode. Publish/read back this owning completion, then close/read back issue 108 before dependent work. Autodoc document pass complete; stop before FDOCS-009. Whole-package QC, preparation integration, product activation and implementation not performed or authorized by this document pass. No product implementation, version change or release claimed.
+Full QC/implementation authorized. Publish/read back009 and close109; explicitly integrate accepted preparation into refreshed main and publish/read back, then close26. Activate all Phase7 product task/milestone associations, branch feature/006_ea39055-leaderboard from that main checkpoint and execute047–052 one at a time. Product implementation/version/release still pending.
