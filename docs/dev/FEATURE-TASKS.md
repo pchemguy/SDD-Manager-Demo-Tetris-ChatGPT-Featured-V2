@@ -6,10 +6,12 @@ Implement the scoped [Phase7 plan](FEATURE-PLAN.md) and [L-01–L-08](FEATURE-SP
 
 - [ ] Phase 7 — Session leaderboard
     - [ ] Milestone 7.1 — Completed scores and visible leaderboard
-        - [ ] T-047 — Implement pure top-ten result ranking
+        - [x] T-047 — Implement pure top-ten result ranking
             Scope: C-09 src/application/leaderboard.ts and tests/unit/leaderboard.test.ts; L-02/L-03. Define score-result types and pure validated stable insertion/capping without mutable authority or platform dependencies.
             Depends on: completed Phase6 baseline and accepted/QC preparation integrated/published; no new task prerequisite.
             Evidence: meaningful RED missing behavior, then literal empty/high/middle/low/tie/zero/overflow outputs, error classes, frozen input/returned-value detachment, type/boundary and existing unit checks pass. No clocks/RNG/storage.
+            Completion evidence: RED:30 new runtime ranking assertions failed for absent C09 while294 existing tests passed; no compiler/collection failure. GREEN:325 unit tests (31 ranking, including added sparse-history characterization), typecheck and dependency checks pass, zero skips. Literal insertion/ties/ten-cap/zero/overflow, malformed/domain/ordering errors, frozen inputs and detached results covered. Sparse input characterization already passed; explicit Array.from validation clarifies its path without manufactured RED. Pure helper has no platform/state/RNG/clock. No controller/UI behavior claimed.
+
         - [ ] T-048 — Record completed-game history atomically
             Scope: C-04 src/application/session.ts, tests/unit/leaderboard-session.test.ts and affected existing unit fixtures; L-01/L-03/L-04/L-05/L-07. Add detached Snapshot history, commit final-score submission once for both Game Over paths before observers, preserve history across new games and rollback on failures.
             Depends on: T-047.
