@@ -8,10 +8,10 @@ The app validates the complete schema and semantic domains, including real dates
 
 Restore also checks cookie/URL effects before publishing selected settings/history, and compensates recoverable failures. Browser/process failure which prevents compensation is explicitly reported as incomplete persistence rollback, never success. Ordinary setting edits retain their best-effort behavior.
 
-SQLite support and its exact metadata/table details are added in the subsequent feature milestone; the current JSON workflow does not claim that capability.
+Both formats carry the same validated dataset; Restore detects content independently of the filename. Saving and restoring are manual actions.
 
 ## SQLite codec version 1
 
 The SQLite database has `PRAGMA application_id=0x54455452` (TETR) and `PRAGMA user_version=1`, with ordinary rowid tables `high_scores(id TEXT NOT NULL PRIMARY KEY, score INTEGER NOT NULL, timestamp TEXT NOT NULL)` and `settings(key TEXT NOT NULL PRIMARY KEY, value TEXT NOT NULL)`. Exported score constraints enforce the exact safe-integer domain. The six settings are stored as canonical text, including lowercase `true`/`false` for booleans. No extra format-version settings row is added.
 
-High-score rows are inserted and read in explicit ascending rowid order, preserving JSON array order for ties without changing stable IDs or timestamps. Unexpected schema objects, defaults/generated columns, foreign dependencies, metadata, storage classes or invalid values are rejected. SQLite constraints are not trusted as proof of valid row values. The worker does not execute SQL supplied in the file or use persistent browser storage. The codec and local WASM pipeline are available at this milestone; the native SQLite format choice is enabled by the following integration task.
+High-score rows are inserted and read in explicit ascending rowid order, preserving JSON array order for ties without changing stable IDs or timestamps. Unexpected schema objects, defaults/generated columns, foreign dependencies, metadata, storage classes or invalid values are rejected. SQLite constraints are not trusted as proof of valid row values. The worker does not execute SQL supplied in the file or use persistent browser storage. The native Save choice offers both formats. SQLite is initialized lazily inside a temporary worker, with local WASM and no network service. Initialization failure reports an error and leaves JSON and gameplay usable.

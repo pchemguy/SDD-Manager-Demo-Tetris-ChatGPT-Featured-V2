@@ -47,5 +47,5 @@ export function createFileTransfer(win:Window & typeof globalThis,session:Sessio
  };
  const cancel=()=>{const reject=abort;active=null;abort=null;sequence++;reject?.()};
  const destroy=()=>{if(disposed)return;disposed=true;cancel();for(const [url,timer] of urls){win.clearTimeout(timer);win.URL.revokeObjectURL(url)}urls.clear()};
- return {save,restore,cancel,destroy,formats:['json'] as readonly SaveFormat[]};
+ return {save,restore,cancel,destroy,formats:['json','sqlite'] as readonly SaveFormat[]};
 }
