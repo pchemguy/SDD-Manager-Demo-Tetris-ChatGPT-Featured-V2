@@ -42,7 +42,7 @@ Acceptance: real source fixture tests cover retained-controller sequential remou
 
 ## L-06 — Panel and accessibility
 
-Display a visible, clearly labelled Leaderboard panel in the game information/control area. Render rank and decimal score for each retained result, in L-02 order. With no results show “No completed games yet.” Update within the same normal rendering turn as the ending score/status; no reload, manual refresh or additional action is needed. Rerender replaces rows instead of appending duplicate DOM entries. A shorter list or fresh context clears obsolete rows.
+Display a clearly labelled optional Leaderboard panel left of Game info on wide screens under [UL01–10](ui-layout.md), with responsive stacking and independent Show/Hide. Render rank and decimal score for each retained result, in L-02 order. With no results show “No completed games yet.” Update within the same normal rendering turn as the ending score/status; no reload, manual refresh or additional action is needed. Rerender replaces rows instead of appending duplicate DOM entries. A shorter list or fresh context clears obsolete rows.
 
 Use a semantic table with Rank and Score headers, or equivalent labelled list semantics available to assistive technology. Completion/ranking never moves focus. No modal, editable score, row button or keyboard binding is added. At widths320 and1000 CSS pixels the panel remains readable and does not cover the board, settings or existing controls. Document scrolling may be used on narrow screens; no horizontal clipping or unreadable compressed board is acceptable.
 

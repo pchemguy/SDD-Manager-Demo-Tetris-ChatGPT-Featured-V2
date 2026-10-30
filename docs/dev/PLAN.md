@@ -252,3 +252,30 @@ Two delivery milestones expose a usable JSON capability before SQL/platform risk
 | File F03/F04 | Published generated-schema freshness, strict JSON and exact SQLite structure/version/storage plus independent inspection/equivalence. |
 | File F05–F08/F10 | Native single-pair transfers, checked complete replacement/all-six persistence, retained active gameplay, session lifetime and accessible narrow controls/errors. |
 | File F09/F12 | Bounded transient resources, lazy-runtime failure isolation and actual relative packaged assets, reproducibility/manifest/notices/checksum and release-source identity. |
+
+## Phase 9 — Centered UI layout
+
+Outcome: a centered playable Board with adjacent Game info, three independently controlled supporting panels, accessible lifecycle controls, responsive stacking and preserved file/settings/gameplay behavior. Wide layout uses the specified1440px boundary; narrow layouts remain readable and scroll vertically. All ten UL contracts belong to this phase; no independent gameplay capability is bundled or deferred.
+
+### Milestone 9.1 — Playable centered panels
+
+Deliver the five-panel view, absolute Board centering, responsive arrangement and three independent accessible toggles. Integrate the two lifecycle buttons with existing actions, preserve native-control input/focus and keep Settings/file resources bound to the existing controllers. Reach an early working browser game with all eight visibility combinations rather than creating detached layout infrastructure.
+
+Exit: managed source Chromium/Firefox demonstrate wide order, midpoint invariance, narrow no-overflow, true toggle keyboard behavior and the four-state lifecycle table. Existing settings/file controls, real game completion and active gameplay remain functional. Review the complete milestone code and focused regressions, repair/recheck blockers and record milestone report/HANDOFF. A demonstration of wide/asymmetric/narrow states informs whether the human wishes to continue, amend presentation or simplify; it adds no automatic extra approval inside an authorized task range.
+
+### Milestone 9.2 — Lifecycle compatibility and deployable distribution
+
+Depends on completion and hosted closure of9.1. Complete native Save/Restore and hidden-panel lifetime coverage, including busy/errors, remount/disposal, retained data, no visibility persistence and unchanged input/focus rules. Align player/developer guidance and distribution metadata. Produce and verify the reproducible v1.8.0 browser archive with existing stable asset names, schema/WASM/worker inclusion and strict exclusions.
+
+Exit: fresh applicable type/boundary/schema/unit/package/environment checks and complete source/built/actual ZIP-extracted managed Chromium/Firefox suites pass. Inspect320px and1440px screenshots including long error text/ten large scores; assert midpoint/no-overlap geometry separately. Verify repeated build/package byte identity, stable/versioned alias/checksum identity and correct relative-prefix operation. Review the complete milestone implementation/docs/package, repair/recheck blockers and record milestone report/HANDOFF. Demonstrate the actual extracted game, not only source fixtures, for deployable acceptance and release readiness.
+
+### Milestone 9.3 — Phase review
+
+Depends on completion/closure of9.1 and9.2. Exactly one phase review/testing/report unit assesses all phase contracts, preserved regressions and task persistence. Incorporate the accepted delivered scope into affected current PROJECT/design/SPEC and a focused UI layout child, PLAN/layout/TASKS/navigation and adjacent current QC. Transfer new tasks exactly once to main TASKS and archive eligible campaign008 sources/preparation/scoped QC. Preserve original tasks1–61, closed001–007 records and prior tags/releases. Aggregate TODOs in the final outcome.
+
+Exit: current implementation/doc/coverage reviews Ready; all required task/milestone publication and closures verified; exact package/source evidence retained. Integrate the complete feature into its recorded main parent with an explicit two-parent merge, verify merged state and publish/read back. Under authorized implementation/release scope, create eligible default-branch v1.8.0 source/tag/complete notes, publish stable ZIP/checksum, verify exact source/body/assets/latest and anonymous public download bytes, and inspect both release-source main/tag CI runs. Record actual provider outcomes without moving the release tag.
+
+
+## UI layout integration and evidence
+
+Two delivery milestones establish the playable view then full lifetime/distribution acceptance; the final dedicated review milestone has exactly one phase review unit. Fold milestone review/testing/repair/report/HANDOFF into the last delivery task when its group has fewer than4 tasks. Preserve earlier completed ranges and closed campaigns. Final phase incorporation transfers the seven UI tasks once to main TASKS, retains eligible008 sources as historical and reconciles current document conformance before complete verified integration and1.8.0 release. Static browser artifacts keep their stable ZIP/checksum names; native headed/HTTPS limits remain separately explicit.

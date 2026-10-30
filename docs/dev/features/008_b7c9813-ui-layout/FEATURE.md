@@ -1,3 +1,5 @@
+> Historical accepted campaign008 snapshot. Current main documents/TASKS own behavior and executable work.
+
 # UI layout
 
 ## Purpose
@@ -30,7 +32,7 @@ At widths where five readable panels cannot fit, use a responsive arrangement wi
 
 ## Retained behavior and compatibility
 
-Retain all gameplay, pause/focus, input, scoring and session-leaderboard behavior defined by [SPEC](SPEC.md) and its children. A visibility toggle must not restart or pause a game, change rules/settings, mutate history, submit a score or perform file operations. Preserve the existing focus-loss pause policy when actual focus leaves the game.
+Retain all gameplay, pause/focus, input, scoring and session-leaderboard behavior defined by [SPEC](../../SPEC.md) and its children. A visibility toggle must not restart or pause a game, change rules/settings, mutate history, submit a score or perform file operations. Preserve the existing focus-loss pause policy when actual focus leaves the game.
 
 Settings retains all six settings, current/pending rule presentation and manual JSON/SQLite Save/Restore, including accessible success/error feedback. Save and Restore remain at the bottom of Settings and are hidden with that panel. Showing a panel again retains its underlying selected values, leaderboard and operation state; hiding it neither creates nor cancels a file operation.
 
@@ -38,4 +40,4 @@ Retain existing JSON/SQLite contracts, cookie/URL semantics, static browser deli
 
 ## Scope boundary
 
-This capability changes panel structure, responsive placement and view visibility controls. It adds no game rule, seventh game configuration setting, automatic persistence, unfinished-game save, backend, new application platform or visual-theme redesign. Existing [architecture](ARCHITECTURE.md), [component ownership](DECOMPOSITION.md) and [repository allocation](layout.md) provide the baseline; assess only the necessary UI and verification changes.
+This capability changes panel structure, responsive placement and view visibility controls. It adds no game rule, seventh game configuration setting, automatic persistence, unfinished-game save, backend, new application platform or visual-theme redesign. Existing [architecture](../../ARCHITECTURE.md), [component ownership](../../DECOMPOSITION.md) and [repository allocation](../../layout.md) provide the baseline; assess only the necessary UI and verification changes.

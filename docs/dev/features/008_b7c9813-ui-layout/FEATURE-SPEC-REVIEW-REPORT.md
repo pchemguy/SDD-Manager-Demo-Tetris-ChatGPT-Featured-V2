@@ -1,3 +1,5 @@
+> Historical accepted campaign008 snapshot. Current main documents/TASKS own behavior and executable work.
+
 # UI layout specification review
 
 ## Current gate
@@ -13,15 +15,15 @@ Ready for dependent delivery planning. Human direction "Use autodoc" supplies su
 | Governing source | SHA-256 |
 | --- | --- |
 | [FEATURE.md](FEATURE.md) | `4cbf0ac46c7b1897db4aa7e1736a48af34cfe0ab128c92e5eeb675e8189f1ff9` |
-| [PROJECT.md](PROJECT.md) | `1fae763366b8b9f2f285eba7c1a2f37713a65398599b2a814d0ff9165c717f13` |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | `f9c5f5a73f21755c0abc863eb6407313d81d1eebdfe694cfd068c344a1a870f7` |
-| [DECOMPOSITION.md](DECOMPOSITION.md) | `9f0c98024095b5289fafd31eba52bb4134b7aa18195cc20bec588f69cd492967` |
-| [SPEC.md](SPEC.md) | `0c375f850fb40379d10ed539ffd5e267ce5cdc70ba2a3360b265a4c17e933761` |
-| [spec/modern-rules.md](spec/modern-rules.md) | `45c9c66fa781cbd384a14471bca6a1044a8e02c24747569252c6029438a3d86a` |
-| [spec/session-configuration.md](spec/session-configuration.md) | `9d34de79bc7669f84c40f99ff4f33580189945044c48d55e5f86faeebaa9090e` |
-| [spec/leaderboard.md](spec/leaderboard.md) | `9d685067c2c2ee642721c0ac27aed27d213b8b52e8790d5b8a6e9effeaee3cba` |
-| [spec/configuration-persistence.md](spec/configuration-persistence.md) | `f26fea76686970f9b5cb9767d2329a3bb71f610c3ba553348f5d959050295ed0` |
-| [spec/file-persistence.md](spec/file-persistence.md) | `87063e4d40f72ca1be7e4988eb8ff85ee9a3f4fded6ee536e1eb3c2c58ad4208` |
+| [PROJECT.md](../../PROJECT.md) | `1fae763366b8b9f2f285eba7c1a2f37713a65398599b2a814d0ff9165c717f13` |
+| [ARCHITECTURE.md](../../ARCHITECTURE.md) | `f9c5f5a73f21755c0abc863eb6407313d81d1eebdfe694cfd068c344a1a870f7` |
+| [DECOMPOSITION.md](../../DECOMPOSITION.md) | `9f0c98024095b5289fafd31eba52bb4134b7aa18195cc20bec588f69cd492967` |
+| [SPEC.md](../../SPEC.md) | `0c375f850fb40379d10ed539ffd5e267ce5cdc70ba2a3360b265a4c17e933761` |
+| [spec/modern-rules.md](../../spec/modern-rules.md) | `45c9c66fa781cbd384a14471bca6a1044a8e02c24747569252c6029438a3d86a` |
+| [spec/session-configuration.md](../../spec/session-configuration.md) | `9d34de79bc7669f84c40f99ff4f33580189945044c48d55e5f86faeebaa9090e` |
+| [spec/leaderboard.md](../../spec/leaderboard.md) | `9d685067c2c2ee642721c0ac27aed27d213b8b52e8790d5b8a6e9effeaee3cba` |
+| [spec/configuration-persistence.md](../../spec/configuration-persistence.md) | `f26fea76686970f9b5cb9767d2329a3bb71f610c3ba553348f5d959050295ed0` |
+| [spec/file-persistence.md](../../spec/file-persistence.md) | `87063e4d40f72ca1be7e4988eb8ff85ee9a3f4fded6ee536e1eb3c2c58ad4208` |
 
 ## Conformance and coverage
 

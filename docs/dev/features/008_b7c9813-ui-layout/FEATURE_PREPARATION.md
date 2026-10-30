@@ -1,3 +1,5 @@
+> Historical accepted campaign008 snapshot. Current main documents/TASKS own behavior and executable work.
+
 # UI layout feature preparation
 
 ## Identity and scope
@@ -6,7 +8,7 @@
 - Accepted main baseline and preparation branch-off: `b7c98134963d5dde5fd9bb743b8117c485f3ef24`, the clean published `main` checkpoint after v1.7.0.
 - Creation parent/default preparation target/intended implementation parent: `main` in `pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2`.
 - Working branch: `design-docs/008_b7c9813-ui-layout`; intended later implementation branch: `feature/008_b7c9813-ui-layout`, not created or activated.
-- Active source owners: [FEATURE](FEATURE.md) when drafted, this evidence record and [feature documentation tasks](FEATURE_DOCS_TASKS.md). Affected main context: [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [layout](layout.md), [PLAN](PLAN.md), [TASKS](TASKS.md). FEATURE is accepted at proposal commit `93622d99e8b8753e2f547309f8e9f38f4824ef56` by the subsequent human reply "k".
+- Active source owners: [FEATURE](FEATURE.md) when drafted, this evidence record and [feature documentation tasks](FEATURE_DOCS_TASKS.md). Affected main context: [PROJECT](../../PROJECT.md), [ARCHITECTURE](../../ARCHITECTURE.md), [DECOMPOSITION](../../DECOMPOSITION.md), [SPEC](../../SPEC.md), [layout](../../layout.md), [PLAN](../../PLAN.md), [TASKS](../../TASKS.md). FEATURE is accepted at proposal commit `93622d99e8b8753e2f547309f8e9f38f4824ef56` by the subsequent human reply "k".
 
 ## Original request
 
