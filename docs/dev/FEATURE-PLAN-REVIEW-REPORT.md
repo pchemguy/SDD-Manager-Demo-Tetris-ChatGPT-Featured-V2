@@ -2,7 +2,7 @@
 
 ## Current gate
 
-Ready for strategy within the reviewed scope. Physical allocation assessment is pending FDOCS-007 before TASKS derivation. Autodoc preapproval applies to the new plan; technical conformance remains independently required. No implementation or product task projection.
+Ready for combined delivery strategy and scoped physical allocation; TASKS derivation may consume the reviewed inputs under autodoc preapproval. Autodoc preapproval applies to the new plan; technical conformance remains independently required. No implementation or product task projection.
 
 ## Exact inputs
 
@@ -26,3 +26,11 @@ Ready for strategy within the reviewed scope. Physical allocation assessment is 
 ## Findings and limits
 
 No confirmed findings. No correction cycle required. Review is document conformance, not code, browser, package or release execution. Native headed/HTTPS limits stay explicit. Combined PLAN/layout readiness must be recorded after physical allocation assessment; whole-package QC remains outside the current autodoc pass stop.
+
+## Revision 1 — Combined strategy and physical allocation assessment
+
+Current FEATURE-PLAN SHA-256 `9dad3e8dc78847853d98d7893ee42f40002ceda2a6654d148655a8db21685a3e`; strategy was published in `b15a35a8d447731d45bb82b88a6c26025e9c5c3d`, with issue139 closed/read back. Added the scoped physical allocation within its existing feature-plan owner; retained every phase/milestone/exit. Existing main layout remains unchanged at baseline.
+
+Checked actual source/browser/fixture/package/config paths and C05/C06 ownership against the repository tree. Proposed ui-layout.spec and current-spec child/report paths are explicitly marked, not claimed existing. Existing fixtures remain source-only; shipped-entry layout tests must run all three targets. No second package producer, new dependency/system, unowned artifact or core/platform reverse import is planned. Current navigation/AGENTS and affected QC reconciliation belong to the phase-review boundary. Every significant contract/component/test/doc/package/report home has an explicit route.
+
+Original strategy review has no confirmed findings; this is a staged combined-readiness assessment, not a retroactive defect claim. Existing two-delivery-milestone rationale, review thresholds and version/release exits remain valid. Local links/Markdown checks pass. No blocking placement choice or unresolved conformance issue remains. Combined gate: Ready. Physical proposal accepted under selected autodoc preapproval; whole-package QC and implementation remain outside the pass stop.

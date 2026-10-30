@@ -47,3 +47,23 @@ Versioned local artifacts and stable browser ZIP/checksum aliases retain existin
 Two delivery milestones are intentional: a cohesive playable view first, followed by compatibility/lifetime and actual deployable acceptance. More milestones would fragment tightly related view behavior or split verification from the useful capability without reducing uncertainty. The one dedicated phase review milestone is excluded from this delivery count. Both milestones are narrow enough for task derivation; no unresolved behavioral choice blocks it after physical allocation assessment.
 
 Physical allocation is assessed against the existing [layout](layout.md) before task derivation. Shared UI and browser host remain the owners; a new physical layout document is unnecessary.
+
+## Scoped physical allocation
+
+Reuse the existing [main layout](layout.md) and component homes. This section is the bounded feature placement proposal; no new FEATURE-LAYOUT or package root is introduced. Paths marked proposed are not existing implementation claims.
+
+| Physical home | Owner and intended allocation |
+| --- | --- |
+| `src/ui/game-view.ts`, `src/ui/styles.css` | C05 panel DOM, view-local visibility, accessible toggle IDs/state, consolidated lifecycle controls and centered responsive layout; preserve board/render/refresh/destroy and injected transfer interfaces. |
+| `src/platform/browser/main.ts` | C06 input/focus/frame/teardown integration; change only if assembled UL acceptance exposes a necessary scoped adaptation. No visibility model or game-rule ownership moves here. |
+| `tests/browser/ui-layout.spec.ts` (proposed) | Real shipped-entry panel order, absolute geometry/all8 states, responsive boundary, accessibility/toggle/lifecycle and data-preservation acceptance. Include on source/built/extracted, not source-only ignore lists. |
+| Existing `tests/browser/game.spec.ts`, `view.spec.ts`, `modern-rules.spec.ts`, `configuration.spec.ts`, `configuration-persistence.spec.ts`, `leaderboard.spec.ts`, `file-persistence.spec.ts` | Update explicit obsolete location/disclosure/lifecycle selectors while retaining behavioral assertions; verify composed real games/files/settings. |
+| Existing `tests/browser/remount.spec.ts`, `file-lifecycle.spec.ts`, `leaderboard-view.spec.ts` and source-only `tests/fixtures/lifecycle.html`, `file-persistence.html`, `leaderboard.html` | Supplement same/two-view/remount/teardown/focus and precise injected-state boundaries. Reuse existing source-only fixtures; never ship or use them as substitute for deployed acceptance. |
+| `playwright.config.ts`, `scripts/browser-env.mjs`, `.github/workflows/ci.yml`, `docs/DEVELOPMENT.md` | Existing managed-browser targets and finite measured budgets; add coverage without omitting a browser/target or disabling timeouts. Adjust budgets only from measured evidence. |
+| `package.json`, `package-lock.json`, `index.html`, `README.md`, `docs/CONTROLS.md`, `docs/INSTALL.md`, `docs/DEVELOPMENT.md` | Consistent verified1.8.0 browser metadata, correct panel/toggle/paused-Start and responsive guidance, installation/check documentation. Keep existing dependency pins unless an actual required change is justified. |
+| `scripts/package_browser.py`, `scripts/verify_package.py`, `scripts/test-package.py`, existing package fixtures | Existing one archive producer and strict member/digest/exclusion policy; change only if actual distribution verification requires it. No new persistence asset, schema field or SQLite runtime. |
+| `artifacts/` and existing stable release-alias directory | Generated versioned/static browser ZIP and filename-specific checksum under existing policy; ignored generated output is not another executable owner. |
+| `docs/dev/spec/ui-layout.md` (proposed), current PROJECT/ARCHITECTURE/DECOMPOSITION/SPEC/PLAN/layout/TASKS, affected current QC and AGENTS | At phase review, incorporate delivered UL contracts and affected presentation/navigation into current authorities, transfer tasks exactly once and preserve existing stable IDs/ranges. |
+| `docs/dev/features/008_b7c9813-ui-layout/9.1.md`, `9.2.md`, `PHASE-REPORT.md`, `IMPLEMENTATION-REPORT.md` (proposed) | Fixed milestone/phase/final evidence homes and final TODO aggregation. Eligible active008 feature/preparation/adjacent QC sources archive into the same package at final incorporation; earlier closed packages untouched. |
+
+No source path is allocated to a new core/application/persistence subsystem. File codecs/schema/SQL table metadata retain their current canonical owners; tests demonstrate that visibility never enters their values. Existing root AGENTS and HANDOFF remain navigation entry points, updated where current ownership or validated commands materially change.
