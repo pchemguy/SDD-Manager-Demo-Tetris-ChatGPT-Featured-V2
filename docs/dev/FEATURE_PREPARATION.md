@@ -84,3 +84,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE_DECOMPOSITION.md: 1620f8d75dcd50ef1b52ccbab591fb39c79bf4f46809dddaa70a225ca2b63dcb
 
 Publish/read back this coherent completion before closing/readback of issue #57 or dependent work.
+
+## FDOCS-005 completion
+
+S-01–S-08 define all6 selected values/defaults, exact update and legacy/complete-rule contracts, frozen active rules, both general/hard-drop policy semantics, disabled action invariants, concealed displays, native pending state and page/no-storage lifetime. Scoped SPEC/design QC Ready with current identities and96/16/6 coverage rationale; no unresolved choice. No implementation or tests claimed.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-SPEC.md: a17b63731e323c9f0e9b16d848bcb394200f94e010736d0ef8f100c6ba2a6326
+- docs/dev/FEATURE-SPEC-REVIEW-REPORT.md: 48b36d3ae038ced6b0b2164abe0a7343866f69c8fa89f6d8fd90efb67262991c
+
+Publish/read back this coherent completion before closing/readback of issue #58 or dependent work.
