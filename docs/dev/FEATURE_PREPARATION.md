@@ -43,3 +43,9 @@ Next eligible: FDOCS-004. Publication and exact issue closure/readback precede a
 Accept Electron component decomposition delta. FEATURE_DECOMPOSITION SHA256 d9ae8d2d58bbf516bee54ded434aaef138a0ec0d6c9776d9878054585d75d6fd; C01–11 reuse assessed and C12 host/C13 build-time distribution have single ownership with explicit policy/lifecycle/error/test seams. No second state store, renderer Node bridge or mandatory unavailable native gate. Browser export handoff semantics remain accurate; native cancellation changes no application data. Autodoc preapproval covers assessed design, with no unresolved component blocker.
 
 Next eligible: FDOCS-005. Publication and exact issue closure/readback precede advancement.
+
+### FDOCS-005
+
+Accept Electron contracts and scoped SPEC QC. ED01–12 and FEATURE-SPEC-REVIEW-REPORT Revision1 Ready, exact source SHA256 681f0e10afbe7c8095d7ee4b9bfeb601c0c8c15b20979314906e05d61a3dfd0f; EL-DOC-01 cold/second-launch ambiguity resolved coherently in brief/design under delegated autodoc authority. Independent behavior, errors, native/cross-build evidence classes and dual-artifact release acceptance defined; actual implementation remains pending. Preapproval covers reviewed specification; no unresolved blocker.
+
+Next eligible: FDOCS-006. Publication and exact issue closure/readback precede advancement.
