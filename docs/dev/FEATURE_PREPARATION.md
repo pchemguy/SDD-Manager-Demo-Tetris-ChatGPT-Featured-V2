@@ -104,3 +104,13 @@ Source identities (SHA-256):
 - docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: 7d219f9ef18ba9330c8c477914167c5edb90ee732ac6a9bf6af8c28dadab4b10
 
 Publish/read back this coherent completion before closing/readback of issue #59 or dependent work.
+
+## FDOCS-007 completion
+
+FEATURE-PLAN physical map assigns C-07 selected values, C-04 active policies, C-05 controlled panel/displays, C-06 composition and all model/native/source-only fixtures, docs/version/package/report/archive paths. Combined PLAN/layout QC Revision1 Ready, exact current identities retained; no storage/unsupported platform or duplicate state owner. TASKS derivation eligible under autodoc.
+
+Source identities (SHA-256):
+- docs/dev/FEATURE-PLAN.md: be494bc18d587cc339984fab493ea4da94481b6fbff2602e17db29886ce612c5
+- docs/dev/FEATURE-PLAN-REVIEW-REPORT.md: 85796d2152f27e2b748e62661ab724d0ded11e0800d79372ef4b2d4fa830e70b
+
+Publish/read back this coherent completion before closing/readback of issue #60 or dependent work.

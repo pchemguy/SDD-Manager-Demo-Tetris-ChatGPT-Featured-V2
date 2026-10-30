@@ -26,4 +26,23 @@ Explicitly two-parent merge the exact complete verified phase into its recorded 
 
 ## Physical ownership
 
-The existing [layout](layout.md) remains the baseline. Final affected allocation follows strategy acceptance before task derivation; no FEATURE-LAYOUT root is required.
+The existing [layout](layout.md) remains the baseline. The following map extends the existing owners; no FEATURE-LAYOUT root is required.
+
+
+| Path | Owner/change |
+| --- | --- |
+| src/application/configuration.ts (new) | C-07 types/defaults, detached memory factory/update validation and pure RuleOptions projection; no DOM/RNG/storage. |
+| src/application/session.ts | C-04 complete/legacy input normalization, copied active rules, both locking policies and command gating. |
+| src/ui/ghost-visibility.ts | Pure three-mode predicate; shared mode type re-export, canonical geometry unchanged. |
+| src/ui/game-view.ts, src/ui/styles.css | Unified native panel, selected-context binding/refresh, active/pending summary, live concealed displays and owned cleanup. |
+| src/platform/browser/main.ts | Page context creation/passing and Start/Restart rule projection; retain key/frame/focus/disposal ownership. |
+| tests/unit/configuration.test.ts (new), session.test.ts, ghost-visibility.test.ts, tsconfig.test.json | Pure defaults/patch/rule matrix/legacy/timing/disabled/visibility fixtures and DOM-free compilation. |
+| tests/browser/configuration.spec.ts (new), ghost/lifecycle/remount/view/deployment suites | Actual controls, selected/active changes, both policies/off actions, displays, native focus/page lifetime and regression. |
+| tests/fixtures/configuration.html and supporting source-only module if needed | Real shared components with explicit contexts/boundary states; excluded from production and built/extracted-only selection. No production injection API. |
+| README.md, docs/CONTROLS.md, docs/DEVELOPMENT.md, docs/INSTALL.md | Six defaults/labels, immediate versus next-game rules, policy semantics/disabled behavior, no-persistence and install/check guidance. |
+| package.json, package-lock.json, version-sensitive tests |1.3.0 identity using existing toolchain/manifest/allowlist. |
+| docs/dev/FEATURE-TASKS.md | Sole executable feature delta until eligible reconciliation into main TASKS. |
+| docs/dev/features/003_3977abb-session-only-game-configuration/reports/phases/4/ |4.1.md,4.2.md,PHASE-REPORT.md; feature-root IMPLEMENTATION-REPORT.md final outcome. |
+| docs/dev/features/003_3977abb-session-only-game-configuration/ | Eligible current source/preparation/adjacent-QC historical archive; earlier campaigns unchanged. |
+
+Versioned local ZIP/checksum use classic-tetris-browser-v1.3.0 names under artifacts; stable release copies remain classic-tetris-browser.zip and matching checksum. Retain ignored exact RELEASE-NOTES/highlights policy, static relative assets, credential/development/browser/fixture exclusions and dependency direction. No storage adapter, backend or generic settings framework is allocated.
