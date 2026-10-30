@@ -10,20 +10,20 @@ Accepted main source: v1.4.0 integrated/released state at the baseline, with cur
 
 ## Current control
 
-- Mode: autodoc/onepass, retained from the human's project-wide autodoc instruction. One scope/pass only: the requested six-setting URL/cookie capability. First FEATURE approval remains required; later necessary document checkpoints through FDOCS-008 are preapproved by that mode only after this approval.
+- Mode: autodoc/onepass, retained from the human's project-wide autodoc instruction. One scope/pass only: the requested six-setting URL/cookie capability. The human accepted FEATURE blob edfb2f944044bc1993f1aaab31efb2a028155df2 in published proposal228ce8ab10bfca9e92456a23858d3f66d4f8f6c7 with “k” on 2026-10-30. Later necessary document checkpoints through FDOCS-008 are preapproved by that mode.
 - Delivery policy: strict preservation of completed prior phase/task ranges; no multipass or flexible scope is selected.
-- Authorized range now: open/prepare this campaign and present its brief. Stop for FEATURE acceptance before dependent feature architecture/specification. After acceptance, autodoc ends at FDOCS-008 before whole-package QC; the prior campaign's QC/full-implementation grant ended and does not authorize this feature's implementation.
+- Authorized range now: prepare the accepted six-setting persistence document pass through FDOCS-008. Autodoc ends at FDOCS-008 before whole-package QC; the prior campaign's QC/full-implementation grant ended and does not authorize this feature's implementation.
 - Tracking: enabled by repository AGENTS default and retained project policy. Preparation milestone and all nine exact campaign/stage markers/native associations verified before the first repository write. Product phase activation has not occurred.
 - Reporting: Standard, with concise meaningful progress. No new execution-host setup is needed for document preparation; actual host Linux/bash. The optional cloud environment-status tool and policy snapshot were unavailable; actual authenticated GitHub API reads independently verified repository access and current default/main identity.
-- Next stage: FDOCS-002, draft/propose FEATURE and await human acceptance. FDOCS-003–009 are pending.
+- Next stage: FDOCS-003; later covered document preparation remains preapproved. Stop after FDOCS-008 before whole-package QC.
 
 ## Decisions and cross-scope applicability
 
 The supplied per-setting precedence and explicit-default/omitted-parameter rules are requirements, not agent proposals. The six current settings/defaults and selected-versus-active timing are established main contracts. The browser reload-to-default/no-storage guarantee is intentionally changed only for browser entry restoration; reusable configuration contexts and current-game rules retain their boundaries.
 
-Proposed for FEATURE approval: existing configuration field names as query keys; exact enum strings and true/false booleans; invalid URL values fall back independently to saved/default values without overwriting a cookie; first repeated parameter wins; separate named cookies lasting one year, scoped to the app directory and host; edits replace the current URL while preserving unrelated parameters/fragment; browser-source/write failure cannot stop in-memory play; restore only settings, with no live cross-tab/history synchronization or game-state persistence. These are proposals, not recorded human acceptance. Detailed current product intent belongs in FEATURE; downstream exact contracts remain pending.
+Accepted with the exact FEATURE proposal: existing configuration field names as query keys; exact enum strings and true/false booleans; invalid URL values fall back independently to saved/default values without overwriting a cookie; first repeated parameter wins; separate named cookies lasting one year, scoped to the app directory and host; edits replace the current URL while preserving unrelated parameters/fragment; browser-source/write failure cannot stop in-memory play; restore only settings, with no live cross-tab/history synchronization or game-state persistence. The human’s “k” accepts these presented choices; implementation remains outside this document-pass grant. Detailed current product intent belongs in FEATURE; downstream exact contracts remain pending.
 
-No other scope sequence/cross-scope pass is selected. Reconsider these proposals if the human revises scope before acceptance; never import unrelated conversation preferences.
+No other scope sequence/cross-scope pass is selected. Reconsider accepted choices only if new evidence or human scope direction warrants it; never import unrelated conversation preferences.
 
 ## Tracking
 
@@ -32,7 +32,7 @@ Preparation milestone: [sdd-docs-005_5153bbf](https://github.com/pchemguy/SDD-Ma
 | Stage | GitHub issue |
 | --- | --- |
 | FDOCS-001 | [#86](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/86) |
-| FDOCS-002 | [#87](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/87) |
+| FDOCS-002 | Human accepted FEATURE blob edfb2f944044bc1993f1aaab31efb2a028155df2, presented at published228ce8ab10bfca9e92456a23858d3f66d4f8f6c7, with “k” on 2026-10-30. Scope/edge choices and browser-only compatibility consequences accepted; downstream FDOCS-003–008 preapproved under retained autodoc/onepass. Brief coverage assessment remains applicable; no source changes since presentation. |
 | FDOCS-003 | [#88](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/88) |
 | FDOCS-004 | [#89](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/89) |
 | FDOCS-005 | [#90](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Featured-V2/issues/90) |
@@ -46,7 +46,7 @@ Preparation milestone: [sdd-docs-005_5153bbf](https://github.com/pchemguy/SDD-Ma
 | Stage | Source/applicability and decision/QC evidence |
 | --- | --- |
 | FDOCS-001 | Clean eligible Git worktree; local/remote default main both 5153bbf695ba68dfff4af5faf2821d2d2eb94488; campaign/branch collision readback clear; all nine hosted issues and milestone verified. Existing AGENTS/discovery/disclosure/usage and manual provenance scaffold reused without resetting main initialization. Context/record/task/HANDOFF initialized coherently; owning commit publication and issue closure follow this checkpoint. |
-| FDOCS-002 | Reviewable FEATURE proposal blob `edfb2f944044bc1993f1aaab31efb2a028155df2`. Seed coverage checked against all six current fields/defaults, URL/cookie independent precedence, explicit-default cookie writes, omitted-value retention, invalid-source isolation, selected/active lifetime and static-host/platform boundaries. Proposed edge decisions are explicit; no material requirement is silently treated as human acceptance. Human approval pending; task remains unchecked and issue87 open. |
+| FDOCS-002 | Human accepted FEATURE blob edfb2f944044bc1993f1aaab31efb2a028155df2, presented at published228ce8ab10bfca9e92456a23858d3f66d4f8f6c7, with “k” on 2026-10-30. Scope/edge choices and browser-only compatibility consequences accepted; downstream FDOCS-003–008 preapproved under retained autodoc/onepass. Brief coverage assessment remains applicable; no source changes since presentation. |
 | FDOCS-003 | Pending architecture assessment after brief acceptance. |
 | FDOCS-004 | Pending decomposition assessment. |
 | FDOCS-005 | Pending specification and scoped QC. |
@@ -57,4 +57,4 @@ Preparation milestone: [sdd-docs-005_5153bbf](https://github.com/pchemguy/SDD-Ma
 
 ## Current reset and pending transitions
 
-No reset. Initialization `74def8a909e1e5b98a2e330a6d37387c31b70235` was pushed and exact remote ref read back; issue86 then closed/read back. Publish/read back this FEATURE proposal checkpoint. Brief acceptance is pending; FDOCS-002 remains unchecked/open. No package-QC readiness, preparation integration, implementation activation, product version change or release is claimed.
+No reset. FDOCS-001 initialization74def8a909e1e5b98a2e330a6d37387c31b70235 and FEATURE proposal228ce8ab10bfca9e92456a23858d3f66d4f8f6c7 were published/read back. The human accepted the exact FEATURE proposal with “k” on 2026-10-30. Earlier stages through FDOCS-001 are committed/published with their issues closed/read back. Publish/read back this FDOCS-002 completion, then close/read back issue87; recover these effects from Git/API rather than replaying writes. After confirmed closure, continue only the covered document pass through FDOCS-008. FDOCS-009/issue94 and milestone22 stay open. No whole-package QC readiness, preparation integration, product implementation, version change or release is claimed.
