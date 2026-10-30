@@ -2,7 +2,7 @@
 
 ## Current gate
 
-Strategy: Ready. Combined PLAN/layout gate for TASKS: Blocked pending the scheduled FDOCS-007 physical allocation. This is a staging dependency, not a known strategy defect. Reviewed FEATURE-PLAN against Ready FEATURE-SPEC/design at published841f621003c90eb0d4fc8d5f0de68dd29cfecc91. Exact states:
+Strategy and combined PLAN/layout gate: Ready after Revision1. Scheduled physical allocation is complete; no remaining blocker to TASKS derivation. Reviewed FEATURE-PLAN against Ready FEATURE-SPEC/design at published841f621003c90eb0d4fc8d5f0de68dd29cfecc91. Exact states:
 
 - `FEATURE-PLAN.md` SHA-256 `70de723586e9800727a0026eaf57f83742f9aac73a626587ec7f2afeffdaa09a`.
 - `FEATURE-SPEC.md` SHA-256 `88eaa1c9270a47f1071c72d705015b055d92a9f5649e21c03b731a8a45f59848`.
@@ -19,3 +19,9 @@ Reviewer: coordinating agent,2026-10-30. Manual contract-to-milestone mapping an
 | 8 | 2:8.1 and8.2 | One:8.3 | Retain the small count: useful JSON transfer first, equivalent SQLite/static delivery second. Shared metadata/validation/commit work is cohesive; splitting extra purely technical milestones delays integrated evidence without useful independent scope. |
 
 F01–12 all map to staged outcomes and objective exits. Full two-format delivery is bounded; no unrelated persistence/platform scope.8.1 integrates JSON early with failures,8.2 covers lazy runtime and exact package,8.3 is a single final phase review. Both delivery milestones require reviews/reports/HANDOFF; TASKS derives the threshold-based dedicated/folded review allocation. Current package policy needs explicit schema/WASM extensions; strategy includes them rather than claiming existing packaging supports them. Earlier completed ranges and frozen records are preserved. No confirmed strategy finding; physical allocation remains the known prerequisite before executable tasks.
+
+## Revision 1 — Physical allocation
+
+Extended FEATURE-PLAN Physical allocation against main layout, actual compiler inclusions, package allowlist/verifier and component paths. Exact revised plan SHA-256 `b3ca7735a46c16823dc1f41bcf4edcd6dd01527fff1aa2087ad35145e8213da4`. Governing SPEC/design identities from Initial review remain unchanged. No strategy or requirement change.
+
+Current paths give C10 pure schema/JSON, C11 browser workflow/worker/SQLite and existing session/configuration/UI/host clear homes. Canonical schema copies once into dist, generated validator needs explicit NodeNext/test inclusion and boundary coverage, runtime chunks/WASM need a narrow allowlist, and the shipped format guide is explicitly allocated. Native uploaded-file inspections belong to test-only Python fixtures, never deployment. Required feature reports have scoped paths, while frozen records are untouched. Manual bidirectional component/path and milestone/verification mapping and `git diff --check` pass. Two delivery milestones and excluded final review retain the Initial review rationale. No confirmed finding; Ready for task derivation. No package build/runtime check performed.

@@ -81,3 +81,7 @@ FEATURE-SPEC F01–12 and adjacent FEATURE-SPEC-REVIEW-REPORT are Ready under au
 ## FDOCS-006 delivery strategy
 
 FEATURE-PLAN defines Phase8 with two delivery milestones (working JSON snapshots/checked restore, then equivalent SQLite/distribution) and one final phase-review milestone. Intentional small delivery count is assessed in adjacent PLAN report; whole capability is bounded and integrated JSON evidence is early. Strategy QC Ready, combined PLAN/layout gate pending FDOCS-007 allocation. App release planned1.7.0 only after verified full phase/integration; portable version remains1. No previous phase/task range changes or implementation projection. Autodoc preapproval applies; publish/read back and close/read back121 before layout.
+
+## FDOCS-007 physical allocation and combined QC
+
+FEATURE-PLAN Physical allocation extends main layout with exact pure/generated/schema/host/worker/SQLite/UI/testing/packaging/documentation owners; no separate FEATURE-LAYOUT or speculative implementation record. Inspected NodeNext/test inclusions and current package verifier confirm required consumer/generator/schema/WASM updates are planned. Adjacent PLAN report Revision1 records exact revised hash, preserved upstreams/count rationale and combined Ready gate. Autodoc preapproval applies. Publish/read back and close/read back122 before deriving tasks.

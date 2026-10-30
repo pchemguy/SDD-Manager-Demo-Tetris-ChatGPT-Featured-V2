@@ -52,3 +52,31 @@ Merge the verified feature into its recorded main parent and verify/publish merg
 ## Physical allocation
 
 The affected physical allocation is established before task derivation; main layout supplies unchanged owners. No separate FEATURE-LAYOUT artifact is introduced.
+
+### Affected physical owners
+
+This scoped allocation extends [layout](layout.md) for the feature; unchanged paths retain main ownership. Paths below are intended allocation, not evidence that new modules exist.
+
+| Path or family | Owner and integration responsibility |
+| --- | --- |
+| `src/application/leaderboard.ts`, `src/application/session.ts` | C09 complete-result predicates/stable insertion and C04 injected completion metadata/staged history replacement. Update every real constructor consumer and existing expected record. |
+| `src/application/configuration.ts` | C07 complete-selection preparation/commit without host effects; retain native update/domain authority. |
+| `src/application/file-snapshot.ts` | C10 normalized portable value, pure JSON decode/encode, duplicate-member and semantic validation. Imports generated structural validator and canonical domain predicates. |
+| `schemas/game-save.schema.json` | Canonical published draft2020-12 structural schema. Build copies the same bytes to `dist/schemas/game-save.schema.json`; no second independently edited public copy. |
+| `scripts/generate-save-validator.mjs`, `src/application/generated/game-save-validator.js` and its declaration | Deterministic Ajv standalone-validator generation and freshness checking; generated module is DOM-free and bundles into application/worker code. Keep source/generation artifacts out of the deployment except their compiled runtime code and canonical schema. |
+| `src/platform/browser/configuration-persistence.ts`, `configuration-codec.ts` | C08 strict batch effect staging/checked apply/compensation beside retained native-edit path; reuse canonical six-key text and URL/cookie scope. |
+| `src/platform/browser/file-persistence.ts` | C11 manual orchestration, native picker/read/download, request fencing, staged joint restore, safe operation state/errors and resource disposal. Explicit host access supports controlled failure tests. |
+| `src/platform/browser/file-worker.ts`, `sqlite-codec.ts`, `sqlite-runtime.ts` | Transient decode/encode worker protocol; fixed SQLite metadata/schema/data checks, byte import/export and lazy pinned runtime/WASM loader. No DOM/cookie/history access; JSON path does not initialize SQLite. |
+| `src/ui/game-view.ts`, `src/ui/styles.css`, `src/platform/browser/main.ts` | C05 native disclosure/single pair/format/status projection; C06 metadata/browser capabilities, worker composition and owned teardown. No platform imports from shared view. |
+| `tests/unit/leaderboard*.test.ts`, `session.test.ts`, `configuration*.test.ts`, `file-snapshot.test.ts`, `file-restore.test.ts`, `sqlite-codec.test.ts` | Complete-record/clock/ID/controller regressions; strict format/domain and checked-effect failure cases. Use actual SQLite/runtime where appropriate; inject browser access, not production test controls. |
+| `tests/browser/file-persistence.spec.ts`, existing leaderboard/configuration/lifecycle suites | Actual native uploads/downloads, both formats, replacement/settings timing, rejected-file atomicity, reset/disclosure/accessibility and resource lifetime on source/built/extracted targets. |
+| `tests/fixtures/file-persistence.html`, `file-persistence.ts`, `tests/fixtures/` literal JSON/SQLite data | Source-only injected access/remount/timeout seams and literal fixture builders. Keep fixtures out of built/extracted acceptance unless only the test runner reads their bytes externally. No fixture entry or corruption helper ships. |
+| `tests/fixtures/file_checks.py` | Independent standard-library sqlite3/JSON inspection of downloaded data; table/types/metadata/order and payload equivalence. Not a player runtime dependency. |
+| `scripts/check-boundaries.mjs`, `tsconfig*.json`, `package.json`, `package-lock.json` | Admit required generated validator/codec tests into the appropriate compiler/test targets; retain DOM-free core/application checks, recursively cover generated nested modules, pin trusted schema/SQLite/tooling dependencies and expose deterministic generation/check commands. |
+| `vite.config.ts`, `scripts/package_browser.py`, `verify_package.py`, `tests/fixtures/package_checks.py`, `.github/workflows/ci.yml` | Relative worker/WASM/schema build output, narrow asset allowlist and required-schema/manifest checks, clean validator-generation check, both-browser/runtime/package verification and measured finite budgets. |
+| `THIRD-PARTY-NOTICES.txt`, `docs/INSTALL.md`, `CONTROLS.md`, `DEVELOPMENT.md`, `docs/FILE-FORMAT.md`, `README.md`, `RELEASE-NOTES.md` | Actual dependency notices, manual transfer/limits/errors, schema/database interoperability and static worker/WASM deployment instructions. Add FILE-FORMAT guide to the explicit deployment-document allowlist; preserve existing installation/control guidance. |
+| `docs/dev/features/007_5f955b0-file-persistence/8.1.md`, `8.2.md`, `PHASE-REPORT.md`, `IMPLEMENTATION-REPORT.md` | Required milestone/phase/final implementation evidence under the reserved feature prefix; create when implementation produces results, not as preparation placeholders. |
+
+The generated validator/declaration and build-copy steps must resolve under the pinned ESM/NodeNext compilation and worker bundler, including Node test output. Update explicit compiler inclusions rather than hiding untested generated code. The SQLite wrapper owns loader-version differences; package tasks verify actual chosen dependency paths instead of relying on assumed deep exports.
+
+Generated artifacts, user downloads, worker scratch/SQLite files and browser profiles remain ignored owned test/build outputs. Runtime chunks, WASM and schema are narrowly allowlisted and included in manifest digests; raw sources, schema generator, npm tree, fixture data, credentials and caches remain excluded. No new repository-level abstraction or directory for unrelated persistence is introduced.
