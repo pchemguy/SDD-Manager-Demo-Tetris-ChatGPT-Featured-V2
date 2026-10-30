@@ -94,3 +94,13 @@ Sources: `docs/dev/FEATURE-PLAN.md` blob `9ed0334208558c87f8c0d26db67beb4b8f0225
 Autodoc preparation through tasks complete: T033–T040 across Phase5 two delivery milestones and one phase review;4/2 delivery counts assessed, standalone5.1 review T037 and final-delivery5.2 review T039 assigned, T040 owns final phase/incorporation/archive/audit/release evidence. Adjacent task conformance QC Ready with unique IDs, exact hierarchy/links/source identities; all product tasks unchecked. HANDOFF/AGENTS updated. Stop before FDOCS-009/package QC; no implementation/version change.
 
 Sources: `docs/dev/FEATURE-TASKS.md` blob `7ac058f73feb2c85310f9bde15cfe5a4d226ab47`, `docs/dev/FEATURE-TASKS-REVIEW-REPORT.md` blob `3f99f813ba798e2ce3c92b4b59416027bbfc3625`, `AGENTS.md` blob `de7e0b5bd9b74d1c7b2cbbc6ac99622f06d7b601`.
+
+## QC and implementation authorization
+
+User “Do QC and full implement” selects FDOCS009 through full T033–T040, integration and1.4.0 release. FDOCS008 was published at1a02b478 and issue76 closed/read back. Whole-package QC Ready, no blocker; prep merge/hosted closure remain pending until observed. The earlier autodoc stop has been satisfied by this explicit continuation.
+
+### FDOCS-009 — Pass complete penetrator package QC
+
+Whole package and affected main context Ready; no blockers. User explicitly authorizes QC/full implementation. Publish before issue77 closure, prep main integration, milestone18 closure and Phase5 activation.
+
+Sources: `docs/dev/FEATURE-QC-REPORT.md` blob `6779d2a239c4893d262a7f134445dc8ed388b670`.
