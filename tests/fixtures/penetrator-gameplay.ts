@@ -18,3 +18,5 @@ export function place(session:Session,rotation:number,x:number){
  session.advance(100000);
 }
 export function earn(session:Session){for(const [type,rotation,x] of WELL){if(session.getSnapshot().active?.type!==type)throw Error('Trace bag mismatch');place(session,rotation,x)}}
+/** O base supports an L roof above an empty2x2 pocket at x2–3/y18–19. */
+export function pocket(session:Session){earn(session);for(const [type,rotation,x] of [['O',0,0],['L',0,1],['S',0,6],['Z',0,6],['J',0,6]] as const){if(session.getSnapshot().active?.type!==type)throw Error('Pocket trace mismatch');place(session,rotation,x)}session.dispatch('left');session.dispatch('left');}
