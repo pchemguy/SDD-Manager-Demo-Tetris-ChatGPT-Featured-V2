@@ -53,6 +53,7 @@ jobs:
       - run: npm run typecheck
       - run: npm run check:boundaries
       - run: npm run test:desktop:policy
+      - run: npm run test:desktop:package
       - run: npm run build
       - run: npm run package
       - run: npm run verify:package

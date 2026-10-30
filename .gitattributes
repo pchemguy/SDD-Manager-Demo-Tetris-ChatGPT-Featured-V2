@@ -10,4 +10,5 @@
 /LICENSE text eol=lf
 /THIRD-PARTY-NOTICES.txt text eol=lf
 /docs/*.md text eol=lf
+/docs/*.txt text eol=lf
 /.github/workflows/*.yml text eol=lf
